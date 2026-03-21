@@ -4,7 +4,6 @@ import { Navigation } from "@/components/Navigation";
 import { ReservationModal } from "@/components/ReservationModal";
 import { useReservationModal } from "@/hooks/use-reservation";
 
-// Animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
@@ -18,6 +17,8 @@ const staggerContainer = {
   }
 };
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function Home() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
@@ -26,39 +27,47 @@ export default function Home() {
       <Navigation onReserveClick={openModal} />
       <ReservationModal isOpen={isOpen} onClose={closeModal} />
 
-      {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      {/* ── HERO ────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Full-bleed athlete close-up on the right half */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={`${import.meta.env.BASE_URL}images/hero-texture.png`} 
-            alt="Dark elegant texture" 
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+          <div className="absolute right-0 top-0 w-full lg:w-[58%] h-full">
+            <img
+              src={`${BASE}images/athlete-hero.png`}
+              alt="Young female athlete"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Gradient: fade left so text stays readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+            {/* Bottom fade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+          </div>
+          {/* Solid bg on the left so text area is fully dark */}
+          <div className="absolute left-0 top-0 w-full lg:w-1/2 h-full bg-background" />
         </div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-12 md:pt-0">
-          <motion.div 
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-28 pb-24">
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-4xl"
+            className="max-w-2xl"
           >
-            <motion.h1 
+            <motion.h1
               variants={fadeUp}
               className="text-6xl md:text-8xl lg:text-9xl font-serif text-balance leading-[1.05] tracking-tight mb-8"
             >
               Stop <span className="italic text-primary/90">Guessing.</span><br />
-              Start <span className="text-glow">Guiding.</span>
+              Start <span className="text-foreground">Guiding.</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={fadeUp}
-              className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-12 font-light"
+              className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 font-light"
             >
               You already love watching her play. Now imagine loving the whole experience — not just the moments on the court but everything around them. The conversations. The car rides. The way your family moves through the hard parts together. That's not a fantasy. That's a system.
             </motion.p>
-            
+
             <motion.button
               variants={fadeUp}
               onClick={openModal}
@@ -71,125 +80,167 @@ export default function Home() {
         </div>
       </section>
 
-      {/* THE PROBLEM SECTION */}
-      <section className="py-24 md:py-32 bg-background relative border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24"
-          >
-            <div className="lg:col-span-5">
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif leading-tight sticky top-32">
-                Here's what <span className="italic text-primary">nobody</span> in youth sports is talking about.
-              </motion.h2>
-            </div>
-            
-            <div className="lg:col-span-7 space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-              <motion.p variants={fadeUp}>
-                Everyone's focused on skill development. Playing time. College pathways. The next tournament. The next level.
-              </motion.p>
-              <motion.p variants={fadeUp} className="text-foreground font-normal text-xl md:text-2xl">
-                Nobody's talking about misalignment.
-              </motion.p>
-              <motion.p variants={fadeUp}>
-                The athlete who's losing confidence isn't failing because she lacks talent. The parent who doesn't know what to say on the car ride home isn't failing because they don't care. The family that shows up every single weekend and still leaves feeling like something is off isn't failing because they're not committed enough.
-              </motion.p>
-              <motion.p variants={fadeUp}>
-                They're operating without a shared system. And when there's no shared system, everyone absorbs everyone else's stress — and nobody can figure out why.
-              </motion.p>
-              <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
-                That's the missing conversation. And it's the one we're going to have.
-              </motion.p>
-              <motion.div variants={fadeUp} className="pt-4">
-                <button 
-                  onClick={openModal}
-                  className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
-                >
-                  Join The Missing Conversation — It's Free
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* ── THE PROBLEM ─────────────────────────────────────────── */}
+      <section className="bg-background border-t border-border/30">
+        {/* Car ride image — full width, cinematic */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+          className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden"
+        >
+          <img
+            src={`${BASE}images/car-ride.png`}
+            alt="Parent and child in the car ride home after a game"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+          <div className="absolute bottom-8 left-0 right-0 text-center px-6">
+            <p className="text-muted-foreground uppercase tracking-[0.3em] text-sm font-medium">
+              The car ride home after a tough game
+            </p>
+          </div>
+        </motion.div>
 
-      {/* WHO THIS IS FOR SECTION */}
-      <section className="py-24 md:py-32 bg-card border-y border-border/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto mb-20"
-          >
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-serif mb-6">
-              You don't have to relate to all of this. <span className="italic text-primary">One is enough.</span>
-            </motion.h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* For You */}
-            <motion.div 
+        <div className="py-24 md:py-32">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              variants={fadeUp}
-              className="bg-background border border-border/50 p-8 md:p-12 relative overflow-hidden"
+              variants={staggerContainer}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent" />
-              <h3 className="text-2xl font-serif mb-8 text-foreground">This is for you if:</h3>
-              <ul className="space-y-6">
-                {[
-                  "The car ride home after a tough game is the hardest part of your weekend",
-                  "You love watching her compete and you have no idea what to say when it goes wrong",
-                  "You've tried privates, camps, and changing clubs — and something still feels off",
-                  "You never know whether to push or give her space — and you're tired of guessing",
-                  "When she's struggling you're struggling — and you can't always explain why",
-                  "You want this experience to build who she is — not just how she plays",
-                  "You're showing up every weekend and wondering if you're doing your part right",
-                  "You want to be the parent she needs — you're just not always sure what that looks like"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mr-4 mt-0.5" />
-                    <span className="text-muted-foreground text-lg">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              <div className="lg:col-span-5">
+                <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif leading-tight sticky top-32">
+                  Here's what <span className="italic text-primary">nobody</span> in youth sports is talking about.
+                </motion.h2>
+              </div>
 
-            {/* Not For You */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeUp}
-              className="bg-secondary/30 border border-border/30 p-8 md:p-12"
-            >
-              <h3 className="text-2xl font-serif mb-8 text-muted-foreground">This is <span className="italic">not</span> for you if:</h3>
-              <ul className="space-y-6 opacity-70 hover:opacity-100 transition-opacity">
-                {[
-                  "You're looking for someone to fix your athlete so you don't have to look at your own role",
-                  "You'd rather hold onto the problem than work toward a solution",
-                  "You believe the problem lives entirely outside your family",
-                  "You're not willing to be part of the process — just the audience for the results"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <XCircle className="w-6 h-6 text-muted-foreground shrink-0 mr-4 mt-0.5" />
-                    <span className="text-muted-foreground text-lg">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="lg:col-span-7 space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                <motion.p variants={fadeUp}>
+                  Everyone's focused on skill development. Playing time. College pathways. The next tournament. The next level.
+                </motion.p>
+                <motion.p variants={fadeUp} className="text-foreground font-normal text-xl md:text-2xl">
+                  Nobody's talking about misalignment.
+                </motion.p>
+                <motion.p variants={fadeUp}>
+                  The athlete who's losing confidence isn't failing because she lacks talent. The parent who doesn't know what to say on the car ride home isn't failing because they don't care. The family that shows up every single weekend and still leaves feeling like something is off isn't failing because they're not committed enough.
+                </motion.p>
+                <motion.p variants={fadeUp}>
+                  They're operating without a shared system. And when there's no shared system, everyone absorbs everyone else's stress — and nobody can figure out why.
+                </motion.p>
+                <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
+                  That's the missing conversation. And it's the one we're going to have.
+                </motion.p>
+                <motion.div variants={fadeUp} className="pt-4">
+                  <button
+                    onClick={openModal}
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
+                  >
+                    Join The Missing Conversation — It's Free
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* THE MISSING PIECE SECTION */}
+      {/* ── WHO THIS IS FOR ─────────────────────────────────────── */}
+      <section className="bg-card border-y border-border/30 overflow-hidden">
+        {/* Athlete blue image as cinematic banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.04 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
+          className="relative w-full h-[45vh] md:h-[55vh] overflow-hidden"
+        >
+          <img
+            src={`${BASE}images/athlete-blue.png`}
+            alt="Female athlete with determination"
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-card/60 via-transparent to-transparent" />
+          {/* Overlay headline */}
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.9 }}
+              className="text-4xl md:text-6xl font-serif text-center text-foreground leading-tight max-w-3xl"
+            >
+              You don't have to relate to all of this. <span className="italic text-primary">One is enough.</span>
+            </motion.h2>
+          </div>
+        </motion.div>
+
+        <div className="py-20 md:py-28">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* For You */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                className="bg-background border border-border/50 p-8 md:p-12 relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent" />
+                <h3 className="text-2xl font-serif mb-8 text-foreground">This is for you if:</h3>
+                <ul className="space-y-6">
+                  {[
+                    "The car ride home after a tough game is the hardest part of your weekend",
+                    "You love watching her compete and you have no idea what to say when it goes wrong",
+                    "You've tried privates, camps, and changing clubs — and something still feels off",
+                    "You never know whether to push or give her space — and you're tired of guessing",
+                    "When she's struggling you're struggling — and you can't always explain why",
+                    "You want this experience to build who she is — not just how she plays",
+                    "You're showing up every weekend and wondering if you're doing your part right",
+                    "You want to be the parent she needs — you're just not always sure what that looks like"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mr-4 mt-0.5" />
+                      <span className="text-muted-foreground text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Not For You */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                className="bg-secondary/30 border border-border/30 p-8 md:p-12"
+              >
+                <h3 className="text-2xl font-serif mb-8 text-muted-foreground">This is <span className="italic">not</span> for you if:</h3>
+                <ul className="space-y-6 opacity-70 hover:opacity-100 transition-opacity">
+                  {[
+                    "You're looking for someone to fix your athlete so you don't have to look at your own role",
+                    "You'd rather hold onto the problem than work toward a solution",
+                    "You believe the problem lives entirely outside your family",
+                    "You're not willing to be part of the process — just the audience for the results"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <XCircle className="w-6 h-6 text-muted-foreground shrink-0 mr-4 mt-0.5" />
+                      <span className="text-muted-foreground text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── THE MISSING PIECE ───────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-background relative">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
@@ -201,7 +252,7 @@ export default function Home() {
             <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-serif mb-12 text-balance leading-tight">
               Most families in youth sports are focused on the <span className="italic text-primary">wrong thing.</span>
             </motion.h2>
-            
+
             <div className="space-y-8 text-lg md:text-2xl text-muted-foreground font-light leading-relaxed text-left max-w-4xl mx-auto">
               <motion.p variants={fadeUp}>
                 Not because they don't care — because nobody told them where to look. Everyone is watching the scoreboard. The playing time. The college pathway. The next level.
@@ -221,7 +272,7 @@ export default function Home() {
             </div>
 
             <motion.div variants={fadeUp} className="mt-12">
-              <button 
+              <button
                 onClick={openModal}
                 className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
               >
@@ -233,28 +284,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEET GABBY SECTION */}
+      {/* ── MEET GABBY ──────────────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-card border-y border-border/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-            <motion.div 
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-5 relative lg:sticky lg:top-28"
             >
               <div className="aspect-[3/4] relative">
                 <div className="absolute inset-4 border border-primary/30 translate-x-4 translate-y-4 z-0" />
-                <img 
-                  src={`${import.meta.env.BASE_URL}images/gabby-portrait.png`}
-                  alt="Gabby Cole" 
+                <img
+                  src={`${BASE}images/gabby-portrait.png`}
+                  alt="Gabby Cole"
                   className="w-full h-full object-cover relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
@@ -264,7 +315,7 @@ export default function Home() {
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-10 text-primary">
                 I was your daughter once
               </motion.h2>
-              
+
               <div className="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
                 <motion.p variants={fadeUp}>
                   I played Division I volleyball at UC Berkeley. I grew up watching my father coach for 40 years. I spent 17 years in pharmaceutical, medical device, and technology sales — high performance, high pressure, high stakes.
@@ -293,7 +344,7 @@ export default function Home() {
               </div>
 
               <motion.div variants={fadeUp} className="mt-10">
-                <button 
+                <button
                   onClick={openModal}
                   className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background hover:bg-primary transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
                 >
@@ -306,13 +357,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT TO EXPECT SECTION */}
-      <section className="py-24 md:py-32 relative">
-        <div className="absolute inset-0 bg-background z-0" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background z-0" />
-        
+      {/* ── MINDSET DIVIDER IMAGE ───────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+        className="relative w-full h-[45vh] md:h-[55vh] overflow-hidden"
+      >
+        <img
+          src={`${BASE}images/mindset-branded.png`}
+          alt="MindSystem — Mindset, Compass Journal & M.A.Z.E. Model Mastery"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
+      </motion.div>
+
+      {/* ── WHAT TO EXPECT ──────────────────────────────────────── */}
+      <section className="pb-24 md:pb-32 bg-background relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/8 via-background to-background z-0" />
+
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -320,7 +387,7 @@ export default function Home() {
             className="bg-card/80 backdrop-blur-md border border-border/60 p-8 md:p-16 shadow-2xl"
           >
             <div className="text-center mb-16">
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-4 text-glow text-primary">
+              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-4 text-primary">
                 The Missing Conversation in Youth Sports
               </motion.h2>
               <motion.p variants={fadeUp} className="text-xl text-muted-foreground uppercase tracking-widest font-semibold">
@@ -397,12 +464,12 @@ export default function Home() {
                 </ul>
               </motion.div>
 
-              {/* Final Callout */}
+              {/* Final Callout + CTA */}
               <motion.div variants={fadeUp} className="text-center pt-8 border-t border-border/50">
                 <p className="text-xl font-serif mb-8 text-foreground">
                   <span className="text-primary">One rule before you join:</span> No blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better — not relitigate everything that came before. See you inside.
                 </p>
-                <button 
+                <button
                   onClick={openModal}
                   className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:shadow-[0_0_50px_rgba(212,175,55,0.4)] w-full sm:w-auto"
                 >
@@ -415,7 +482,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ── FOOTER ──────────────────────────────────────────────── */}
       <footer className="py-12 border-t border-border/30 bg-background text-center">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-serif text-foreground mb-4">MindSystem</h2>
