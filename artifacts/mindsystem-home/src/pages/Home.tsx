@@ -29,21 +29,19 @@ export default function Home() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Full-bleed athlete close-up on the right half */}
+        {/* Full-bleed hero image with seamless fade into dark bg */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute right-0 top-0 w-full lg:w-[58%] h-full">
-            <img
-              src={`${BASE}images/athlete-hero.png`}
-              alt="Young female athlete"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Gradient: fade left so text stays readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-            {/* Bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
-          </div>
-          {/* Solid bg on the left so text area is fully dark */}
-          <div className="absolute left-0 top-0 w-full lg:w-1/2 h-full bg-background" />
+          <img
+            src={`${BASE}images/hero-athlete.png`}
+            alt="Young female athlete"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Left fade — covers text area, stops at ~45% so athlete stays visible */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 25%, hsl(var(--background) / 0.4) 45%, transparent 65%)' }} />
+          {/* Bottom fade — seamlessly bleeds into next section background */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background) / 0.5) 15%, transparent 35%)' }} />
+          {/* Subtle top vignette for nav area */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, hsl(var(--background) / 0.6) 0%, transparent 20%)' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-28 pb-24">
