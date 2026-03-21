@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: 'Oswald';
   src: url('/fonts/Oswald-VariableFont.ttf') format('truetype');
@@ -13,8 +15,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-@import "tailwindcss";
 
 @theme inline {
   --color-background: hsl(var(--background));
@@ -53,14 +53,9 @@
 }
 
 :root {
-  /* ── Palette: #0a0a0a bg, #ffffff text, #ff2d78 primary pink, #9b2ff7 purple, #00d4c8 teal ── */
-
-  /* #0a0a0a */
   --background: 0 0% 4%;
-  /* #ffffff */
   --foreground: 0 0% 100%;
 
-  /* slightly lighter than bg */
   --card: 0 0% 8%;
   --card-foreground: 0 0% 100%;
   --card-border: 0 0% 16%;
@@ -69,19 +64,15 @@
   --popover-foreground: 0 0% 100%;
   --popover-border: 0 0% 16%;
 
-  /* #ff2d78 — hot pink primary */
   --primary: 339 100% 59%;
   --primary-foreground: 0 0% 100%;
 
-  /* #9b2ff7 — electric purple secondary */
   --secondary: 272 93% 58%;
   --secondary-foreground: 0 0% 100%;
 
-  /* dark muted surfaces */
   --muted: 0 0% 12%;
   --muted-foreground: 0 0% 62%;
 
-  /* #00d4c8 — cyan/teal accent */
   --accent: 177 100% 42%;
   --accent-foreground: 0 0% 4%;
 
