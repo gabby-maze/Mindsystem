@@ -36,12 +36,12 @@ export default function Home() {
             alt="Young female athlete"
             className="w-full h-full object-cover object-center"
           />
-          {/* Left fade — covers text area, stops at ~45% so athlete stays visible */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 25%, hsl(var(--background) / 0.4) 45%, transparent 65%)' }} />
-          {/* Bottom fade — seamlessly bleeds into next section background */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background) / 0.5) 15%, transparent 35%)' }} />
+          {/* Left fade — gentle bleed so image fills left but text stays readable */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.82) 0%, rgba(10,10,14,0.55) 30%, rgba(10,10,14,0.15) 55%, transparent 75%)' }} />
+          {/* Bottom fade — seamless transition into next section */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,14,1) 0%, rgba(10,10,14,0.35) 12%, transparent 28%)' }} />
           {/* Subtle top vignette for nav area */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, hsl(var(--background) / 0.6) 0%, transparent 20%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,14,0.5) 0%, transparent 18%)' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-28 pb-24">
