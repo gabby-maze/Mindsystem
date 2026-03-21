@@ -69,7 +69,7 @@ export default function Home() {
             <motion.button
               variants={fadeUp}
               onClick={openModal}
-              className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] w-full sm:w-auto"
+              className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
             >
               Reserve Your Spot - The Missing Conversation [FREE]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -469,7 +469,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={openModal}
-                  className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:shadow-[0_0_50px_rgba(212,175,55,0.4)] w-full sm:w-auto"
+                  className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_50px_rgba(255,45,120,0.45)] w-full sm:w-auto"
                 >
                   Reserve My Spot - It's Free
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
