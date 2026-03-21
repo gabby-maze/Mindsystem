@@ -364,7 +364,7 @@ export default function Home() {
         className="relative w-full h-[45vh] md:h-[55vh] overflow-hidden"
       >
         <img
-          src={`${BASE}images/mindset-branded.png`}
+          src={`${BASE}images/conversation-pic.png`}
           alt="MindSystem - Mindset, Compass Journal & M.A.Z.E. Model Mastery"
           className="w-full h-full object-cover object-center"
         />
