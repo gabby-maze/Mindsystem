@@ -23,7 +23,7 @@ export default function About() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
   return (
-    <div className="min-h-screen bg-background selection:bg-primary/20">
+    <div className="min-h-screen bg-background selection:bg-accent/20">
       <Navigation onReserveClick={openModal} />
       <ReservationModal isOpen={isOpen} onClose={closeModal} />
 
@@ -93,7 +93,7 @@ export default function About() {
                 className="lg:sticky lg:top-32"
               >
                 <div className="aspect-[3/4] relative">
-                  <div className="absolute inset-4 border border-primary/25 translate-x-3 translate-y-3 z-0" />
+                  <div className="absolute inset-4 border border-accent/25 translate-x-3 translate-y-3 z-0" />
                   <img
                     src={`${BASE}images/gabby-headshot.jpg`}
                     alt="Gabby Cole"
@@ -125,7 +125,7 @@ export default function About() {
               <motion.p variants={fadeUp}>
                 The career. The title. The next level. I chased every external marker I could find because that's what the system had taught me to do. Not because anyone failed me. Because those questions — who are you becoming, what do you want, what do you stand for — were never part of the equation to begin with.
               </motion.p>
-              <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-primary pl-6 py-2 my-8 text-xl md:text-2xl font-serif italic">
+              <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-accent pl-6 py-2 my-8 text-xl md:text-2xl font-serif italic">
                 The system I grew up in developed what I could produce. It never developed who I was.
               </motion.p>
             </motion.div>
@@ -186,7 +186,7 @@ export default function About() {
             <motion.p variants={fadeUp}>
               Those are not just athletic skills. Those are survival skills for a world that will spend the rest of her life asking her to be less than she is.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-primary pl-6 py-2 my-10 text-xl md:text-2xl font-serif italic">
+            <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-accent pl-6 py-2 my-10 text-xl md:text-2xl font-serif italic">
               The court is where she learns to fight back against everything society is quietly teaching her to accept. But only if someone teaches her to see it that way.
             </motion.p>
             <motion.p variants={fadeUp}>
@@ -234,7 +234,7 @@ export default function About() {
                 <motion.p variants={fadeUp}>
                   And then I had daughters. Twin girls. Fourteen years old. Competing at the highest levels of club volleyball in our region. Moving through the exact same system I grew up in. Being shaped by the exact same forces I was shaped by.
                 </motion.p>
-                <motion.p variants={fadeUp} className="text-foreground font-serif italic text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-10">
+                <motion.p variants={fadeUp} className="text-foreground font-serif italic text-2xl md:text-3xl border-l-2 border-accent pl-6 py-2 my-10">
                   The cycle stops here.
                 </motion.p>
                 <motion.p variants={fadeUp}>
@@ -252,7 +252,7 @@ export default function About() {
                 <motion.p variants={fadeUp}>
                   Be ten. Be twelve. Be exactly where you are — fully, unapologetically, without rushing toward the next thing. Just be it intentionally. Notice what lights you up. Notice how you feel after a great practice versus a hard loss. Notice the moments when you feel most like yourself.
                 </motion.p>
-                <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-primary pl-6 py-2 my-8">
+                <motion.p variants={fadeUp} className="text-foreground font-medium border-l-2 border-accent pl-6 py-2 my-8">
                   Because the young woman who has been building that self awareness since she was ten does not get to forty three and wonder where she went. She already knows. That is what MindSystem is built to do.
                 </motion.p>
               </div>
@@ -280,7 +280,7 @@ export default function About() {
 
       {/* ── SECTION 4: PHILOSOPHY ────────────────────────────────── */}
       <section className="py-24 md:py-32 bg-background relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/6 via-background to-background z-0" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent/6 via-background to-background z-0" />
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <motion.div
@@ -306,7 +306,7 @@ export default function About() {
               <motion.p variants={fadeUp}>
                 Not a podcast episode you listen to on the way to practice. Not a book you read and feel inspired by and then put down. Not a therapist your athlete sees once a week who has never sat on a bench before a big match. Not another camp or clinic that addresses her skills and sends her back to the same family environment unchanged.
               </motion.p>
-              <motion.p variants={fadeUp} className="text-foreground font-serif italic text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-10">
+              <motion.p variants={fadeUp} className="text-foreground font-serif italic text-2xl md:text-3xl border-l-2 border-accent pl-6 py-2 my-10">
                 A system. Something your whole family moves through — together.
               </motion.p>
               <motion.p variants={fadeUp}>
@@ -324,7 +324,7 @@ export default function About() {
                   { label: "The Family", body: "Moves through a season with a shared process. A common framework for the hard moments, the quiet moments, the moments nobody prepares you for." },
                 ].map(({ label, body }) => (
                   <div key={label} className="bg-card border border-border/60 p-8 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/60 to-transparent" />
+                    <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent/60 to-transparent" />
                     <h3 className="text-xl font-serif text-accent mb-4">{label}</h3>
                     <p className="text-muted-foreground text-base leading-relaxed font-light">{body}</p>
                   </div>
@@ -343,7 +343,7 @@ export default function About() {
               </p>
               <button
                 onClick={openModal}
-                className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_50px_rgba(255,45,120,0.45)] w-full sm:w-auto"
+                className="group inline-flex items-center justify-center px-10 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(0,212,200,0.2)] hover:shadow-[0_0_50px_rgba(0,212,200,0.45)] w-full sm:w-auto"
               >
                 Join The Missing Conversation in Youth Sports — Free
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
