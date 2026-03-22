@@ -266,14 +266,16 @@ export default function About() {
                   <img
                     src={`${BASE}images/about-hero.png`}
                     alt="Gabby Cole with family at a volleyball court"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 18%' }}
                   />
                 </div>
                 <div className="w-full h-72 overflow-hidden">
                   <img
                     src={`${BASE}images/gabby-daughters-2.jpg`}
                     alt="Gabby with her daughters at volleyball practice"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 18%' }}
                   />
                 </div>
               </motion.div>
