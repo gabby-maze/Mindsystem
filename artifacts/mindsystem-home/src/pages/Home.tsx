@@ -294,7 +294,6 @@ export default function Home() {
               className="lg:col-span-5 relative lg:sticky lg:top-28"
             >
               <div className="aspect-[3/4] relative">
-                <div className="absolute inset-4 border border-primary/30 translate-x-4 translate-y-4 z-0" />
                 <img
                   src={`${BASE}images/gabby-cal-23.png`}
                   alt="Gabby Cole"
