@@ -32,9 +32,9 @@ export default function About() {
         {/* Gabby portrait as full-bleed background */}
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/gabby-headshot.jpg`}
-            alt="Gabby Cole"
-            className="w-full h-full object-cover object-center"
+            src={`${BASE}images/about-hero-bg.jpg`}
+            alt="Gabby Cole on the volleyball court"
+            className="w-full h-full object-cover object-top"
           />
           {/* Left text area fade */}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.97) 0%, rgba(10,10,14,0.88) 28%, rgba(10,10,14,0.55) 50%, rgba(10,10,14,0.15) 68%, transparent 80%)' }} />
