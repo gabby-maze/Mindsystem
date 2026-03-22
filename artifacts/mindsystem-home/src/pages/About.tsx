@@ -271,7 +271,7 @@ export default function About() {
                 </div>
                 <div className="w-full h-72 overflow-hidden">
                   <img
-                    src={`${BASE}images/gabby-daughters.png`}
+                    src={`${BASE}images/gabby-daughters-2.jpg`}
                     alt="Gabby with her daughters at volleyball practice"
                     className="w-full h-full object-cover object-center"
                   />
