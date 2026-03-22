@@ -202,32 +202,15 @@ export default function About() {
       {/* ── SECTION 3: WHO I AM NOW ─────────────────────────────── */}
       <section className="py-24 md:py-32 bg-background relative">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={staggerContainer}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-              {/* Sticky photo — half the page wide */}
-              <motion.div
-                variants={fadeUp}
-                className="lg:col-span-6 lg:sticky lg:top-24"
-              >
-                <img
-                  src={`${BASE}images/about-hero.png`}
-                  alt="Gabby Cole with family at a volleyball court"
-                  className="w-full object-cover"
-                  style={{
-                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
-                  }}
-                />
-              </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-              <div className="lg:col-span-6 space-y-7 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+              {/* ── RIGHT: heading + text ── */}
+              <div className="lg:col-span-6 space-y-7 text-lg md:text-xl text-muted-foreground leading-relaxed font-light order-2 lg:order-2">
                 <motion.h2
-                  variants={fadeUp}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
                   className="text-3xl md:text-4xl font-serif text-accent leading-tight mb-10"
                 >
                   I walked through fire to get here. I'm building the shortcut so she doesn't have to.
@@ -269,8 +252,31 @@ export default function About() {
                   Because the young woman who has been building that self awareness since she was ten does not get to forty three and wonder where she went. She already knows. That is what MindSystem is built to do.
                 </motion.p>
               </div>
+
+              {/* ── LEFT: sticky photo stack ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9 }}
+                className="lg:col-span-6 order-1 lg:order-1 lg:sticky lg:top-24 space-y-4"
+              >
+                <div className="w-full h-72 overflow-hidden">
+                  <img
+                    src={`${BASE}images/about-hero.png`}
+                    alt="Gabby Cole with family at a volleyball court"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="w-full h-72 overflow-hidden">
+                  <img
+                    src={`${BASE}images/gabby-daughters.png`}
+                    alt="Gabby with her daughters at volleyball practice"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
         </div>
       </section>
 
