@@ -286,7 +286,8 @@ export default function About() {
         <img
           src={`${BASE}images/gabby-bus-banner.png`}
           alt="MindSystem"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 20%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
