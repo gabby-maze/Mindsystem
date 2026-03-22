@@ -284,7 +284,7 @@ export default function About() {
         className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden"
       >
         <img
-          src={`${BASE}images/conversation-pic.png`}
+          src={`${BASE}images/gabby-bus-banner.png`}
           alt="MindSystem"
           className="w-full h-full object-cover object-center"
         />
