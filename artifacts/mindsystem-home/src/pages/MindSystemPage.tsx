@@ -284,13 +284,13 @@ export default function MindSystemPage() {
                   </p>
                 </div>
 
-                <div className="p-8 md:p-10 flex flex-col flex-1 opacity-40">
-                  <div className="mb-6">
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <div className="mb-6 opacity-40">
                     <span className="text-xs uppercase tracking-widest text-secondary font-semibold border border-secondary/40 px-3 py-1">{tag}</span>
                   </div>
                   <h3 className="text-2xl font-serif text-foreground mb-4">{name}</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed mb-8">{description}</p>
-                  <ul className="space-y-3 mb-8 flex-1">
+                  <p className="text-muted-foreground font-light leading-relaxed mb-8 opacity-40">{description}</p>
+                  <ul className="space-y-3 mb-8 flex-1 opacity-40">
                     {items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm text-muted-foreground font-light">
                         <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 shrink-0" />
@@ -298,7 +298,7 @@ export default function MindSystemPage() {
                       </li>
                     ))}
                   </ul>
-                  <p className="text-sm text-foreground/60 italic font-serif border-t border-border/30 pt-6">{note}</p>
+                  <p className="text-sm text-foreground/60 italic font-serif border-t border-border/30 pt-6 opacity-40">{note}</p>
                 </div>
               </motion.div>
             ))}
