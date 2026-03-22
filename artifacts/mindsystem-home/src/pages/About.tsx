@@ -209,31 +209,29 @@ export default function About() {
             variants={staggerContainer}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-              <div className="lg:col-span-4 space-y-10">
+              {/* Sticky photo — half the page wide */}
+              <motion.div
+                variants={fadeUp}
+                className="lg:col-span-6 lg:sticky lg:top-24"
+              >
+                <img
+                  src={`${BASE}images/about-hero.png`}
+                  alt="Gabby Cole with family at a volleyball court"
+                  className="w-full object-cover"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+                  }}
+                />
+              </motion.div>
+
+              <div className="lg:col-span-6 space-y-7 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
                 <motion.h2
                   variants={fadeUp}
-                  className="text-3xl md:text-4xl font-serif text-accent leading-tight lg:sticky lg:top-32"
+                  className="text-3xl md:text-4xl font-serif text-accent leading-tight mb-10"
                 >
                   I walked through fire to get here. I'm building the shortcut so she doesn't have to.
                 </motion.h2>
-
-                <motion.div
-                  variants={fadeUp}
-                  className="relative overflow-hidden"
-                >
-                  <img
-                    src={`${BASE}images/about-hero.png`}
-                    alt="Gabby Cole with family at a volleyball court"
-                    className="w-full object-cover"
-                    style={{
-                      maskImage: 'linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)',
-                    }}
-                  />
-                </motion.div>
-              </div>
-
-              <div className="lg:col-span-8 space-y-7 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
                 <motion.p variants={fadeUp} className="text-foreground font-medium text-xl md:text-2xl">
                   I am the most authentic version of myself that I have ever been. It took me until my forties to say that.
                 </motion.p>
