@@ -391,8 +391,19 @@ export default function MindSystemPage() {
       </section>
 
       {/* ── SECTION 5: WHERE TO START ────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        {/* Background photo */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${BASE}images/champions-bg.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 z-0 bg-background/85" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
