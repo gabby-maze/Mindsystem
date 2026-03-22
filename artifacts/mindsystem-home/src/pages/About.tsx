@@ -95,9 +95,9 @@ export default function About() {
               >
                 <div className="aspect-[3/4] relative">
                   <img
-                    src={`${BASE}images/gabby-portrait.png`}
+                    src={`${BASE}images/gabby-cal-23.png`}
                     alt="Gabby Cole"
-                    className="w-full h-full object-cover object-top relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover object-center relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
               </motion.div>
