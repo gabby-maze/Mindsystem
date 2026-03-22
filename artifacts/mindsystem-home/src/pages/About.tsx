@@ -32,7 +32,7 @@ export default function About() {
         {/* Gabby portrait as full-bleed background */}
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/about-hero-bg.jpg`}
+            src={`${BASE}images/about-hero-v2.png`}
             alt="Gabby Cole on the volleyball court"
             className="w-full h-full object-cover object-top"
           />
