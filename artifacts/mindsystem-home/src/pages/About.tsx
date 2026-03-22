@@ -29,23 +29,19 @@ export default function About() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Hero background photo */}
-        <div className="absolute inset-0 z-0 bg-background">
+        {/* Gabby portrait as full-bleed background */}
+        <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/about-hero.png`}
-            alt="Gabby Cole with family at volleyball court"
-            className="w-full h-full object-contain object-right"
-            style={{
-              maskImage: 'radial-gradient(ellipse 48% 60% at 82% 50%, black 20%, transparent 75%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 48% 60% at 82% 50%, black 20%, transparent 75%)',
-              opacity: 0.9,
-            }}
+            src={`${BASE}images/gabby-headshot.jpg`}
+            alt="Gabby Cole"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Reinforce left side darkness for text */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,1) 0%, rgba(10,10,14,0.95) 35%, rgba(10,10,14,0.4) 58%, transparent 72%)' }} />
-          {/* Bottom and top nav fades */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,14,1) 0%, rgba(10,10,14,0.7) 12%, transparent 30%)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,14,0.8) 0%, transparent 16%)' }} />
+          {/* Left text area fade */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.97) 0%, rgba(10,10,14,0.88) 28%, rgba(10,10,14,0.55) 50%, rgba(10,10,14,0.15) 68%, transparent 80%)' }} />
+          {/* Bottom fade */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,14,1) 0%, rgba(10,10,14,0.85) 18%, rgba(10,10,14,0.3) 35%, transparent 50%)' }} />
+          {/* Top nav vignette */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,14,0.6) 0%, transparent 20%)' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full pt-32 pb-28">
@@ -213,13 +209,28 @@ export default function About() {
             variants={staggerContainer}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-              <div className="lg:col-span-4">
+              <div className="lg:col-span-4 space-y-10">
                 <motion.h2
                   variants={fadeUp}
                   className="text-3xl md:text-4xl font-serif text-accent leading-tight lg:sticky lg:top-32"
                 >
                   I walked through fire to get here. I'm building the shortcut so she doesn't have to.
                 </motion.h2>
+
+                <motion.div
+                  variants={fadeUp}
+                  className="relative overflow-hidden"
+                >
+                  <img
+                    src={`${BASE}images/about-hero.png`}
+                    alt="Gabby Cole with family at a volleyball court"
+                    className="w-full object-cover"
+                    style={{
+                      maskImage: 'linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)',
+                    }}
+                  />
+                </motion.div>
               </div>
 
               <div className="lg:col-span-8 space-y-7 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
