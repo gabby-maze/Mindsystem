@@ -262,14 +262,14 @@ export default function About() {
                 transition={{ duration: 0.9 }}
                 className="lg:col-span-6 order-1 lg:order-1 lg:sticky lg:top-24 space-y-4"
               >
-                <div className="w-full h-72 overflow-hidden">
+                <div className="w-full overflow-hidden aspect-[4184/5392]">
                   <img
                     src={`${BASE}images/about-hero.png`}
                     alt="Gabby Cole with family at a volleyball court"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <div className="w-full h-72 overflow-hidden">
+                <div className="w-full overflow-hidden aspect-[4184/5392]">
                   <img
                     src={`${BASE}images/gabby-daughters-2.jpg`}
                     alt="Gabby with her daughters at volleyball practice"
