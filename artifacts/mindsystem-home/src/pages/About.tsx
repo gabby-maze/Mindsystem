@@ -53,7 +53,7 @@ export default function About() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-primary uppercase tracking-[0.3em] text-sm font-medium mb-6"
+              className="text-accent uppercase tracking-[0.3em] text-sm font-medium mb-6"
             >
               About Gabby Cole
             </motion.p>
@@ -62,7 +62,7 @@ export default function About() {
               variants={fadeUp}
               className="text-5xl md:text-7xl lg:text-8xl font-serif text-balance leading-[1.05] tracking-tight mb-10"
             >
-              I grew up <span className="italic text-primary">behind the curtain.</span>
+              I grew up <span className="italic text-accent">behind the curtain.</span>
             </motion.h1>
 
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light max-w-xl">
@@ -158,7 +158,7 @@ export default function About() {
               transition={{ delay: 0.4, duration: 0.9 }}
               className="text-3xl md:text-5xl font-serif text-center text-foreground leading-tight max-w-3xl"
             >
-              The system wasn't broken. <span className="italic text-primary">It was built for someone else.</span>
+              The system wasn't broken. <span className="italic text-accent">It was built for someone else.</span>
             </motion.h2>
           </div>
         </motion.div>
@@ -212,7 +212,7 @@ export default function About() {
               <div className="lg:col-span-4">
                 <motion.h2
                   variants={fadeUp}
-                  className="text-3xl md:text-4xl font-serif text-primary leading-tight lg:sticky lg:top-32"
+                  className="text-3xl md:text-4xl font-serif text-accent leading-tight lg:sticky lg:top-32"
                 >
                   I walked through fire to get here. I'm building the shortcut so she doesn't have to.
                 </motion.h2>
@@ -293,7 +293,7 @@ export default function About() {
               variants={fadeUp}
               className="text-4xl md:text-6xl font-serif mb-14 text-balance leading-tight"
             >
-              Everyone's been talking about it. <span className="italic text-primary">This is what you do about it.</span>
+              Everyone's been talking about it. <span className="italic text-accent">This is what you do about it.</span>
             </motion.h2>
 
             <div className="space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
@@ -325,7 +325,7 @@ export default function About() {
                 ].map(({ label, body }) => (
                   <div key={label} className="bg-card border border-border/60 p-8 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/60 to-transparent" />
-                    <h3 className="text-xl font-serif text-primary mb-4">{label}</h3>
+                    <h3 className="text-xl font-serif text-accent mb-4">{label}</h3>
                     <p className="text-muted-foreground text-base leading-relaxed font-light">{body}</p>
                   </div>
                 ))}
