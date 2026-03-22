@@ -23,6 +23,9 @@ export function Navigation({ onReserveClick }: NavigationProps) {
             <Link href="/" className="text-sm uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground transition-colors">
               Home
             </Link>
+            <Link href="/mindsystem" className="text-sm uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground transition-colors">
+              MindSystem
+            </Link>
             <Link href="/about" className="text-sm uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
