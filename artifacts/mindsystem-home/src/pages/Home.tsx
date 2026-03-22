@@ -37,9 +37,9 @@ export default function Home() {
             className="w-full h-full object-cover object-center"
           />
           {/* Left fade - gentle bleed so image fills left but text stays readable */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.95) 0%, rgba(10,10,14,0.80) 20%, rgba(10,10,14,0.40) 36%, rgba(10,10,14,0.08) 46%, transparent 52%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.95) 0%, rgba(10,10,14,0.82) 24%, rgba(10,10,14,0.45) 44%, rgba(10,10,14,0.08) 57%, transparent 65%)' }} />
           {/* Bottom fade - seamless transition into next section */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,14,1) 0%, rgba(10,10,14,0.35) 12%, transparent 28%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,14,1) 0%, rgba(10,10,14,0.90) 22%, rgba(10,10,14,0.55) 38%, rgba(10,10,14,0.1) 52%, transparent 62%)' }} />
           {/* Subtle top vignette for nav area */}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,14,0.5) 0%, transparent 18%)' }} />
         </div>
