@@ -176,6 +176,34 @@ export default function MindSystemPage() {
         </div>
       </section>
 
+      {/* ── BANNER: MAZE ─────────────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.03 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="relative w-full h-[45vh] md:h-[55vh] overflow-hidden"
+      >
+        <img
+          src={`${BASE}images/maze-banner.png`}
+          alt="Athletes studying"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-card/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.9 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-serif text-center text-foreground leading-tight max-w-4xl"
+          >
+            You've been in the maze this whole time. <span className="italic text-secondary">Now it has a name.</span>
+          </motion.h2>
+        </div>
+      </motion.div>
+
       {/* ── SECTION 2: THE FRAMEWORK — M.A.Z.E. ─────────────────── */}
       <section className="py-24 md:py-32 bg-card border-y border-border/40">
         <div className="max-w-7xl mx-auto px-6">
@@ -186,9 +214,6 @@ export default function MindSystemPage() {
             variants={staggerContainer}
           >
             <div className="max-w-3xl mb-20">
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
-                You've been in the maze this whole time. <span className="italic text-secondary">Now it has a name.</span>
-              </motion.h2>
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
                 Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap — between what everyone wants, what everyone experiences, and what nobody is naming — is the maze.
               </motion.p>
