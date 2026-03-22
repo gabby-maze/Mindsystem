@@ -201,9 +201,9 @@ export default function MindSystemPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.9 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-serif text-center text-foreground leading-tight max-w-4xl"
+            className="text-3xl md:text-5xl lg:text-6xl font-serif text-center text-white leading-tight max-w-4xl"
           >
-            You've been in the maze this whole time. <span className="italic text-secondary">Now it has a name.</span>
+            You've been in the <span className="text-secondary">maze</span> this whole time. <span className="italic text-white">Now it has a name.</span>
           </motion.h2>
         </div>
       </motion.div>
