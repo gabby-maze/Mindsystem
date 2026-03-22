@@ -184,11 +184,14 @@ export default function MindSystemPage() {
         transition={{ duration: 1.4, ease: "easeOut" }}
         className="relative w-full h-[45vh] md:h-[55vh] overflow-hidden"
       >
-        <img
-          src={`${BASE}images/maze-banner.png`}
-          alt="Athletes studying"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: '25% center' }}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${BASE}images/maze-banner.png)`,
+            backgroundSize: '140% auto',
+            backgroundPosition: '70% center',
+            backgroundRepeat: 'no-repeat',
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/70 via-transparent to-transparent" />
