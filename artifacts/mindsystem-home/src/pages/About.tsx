@@ -147,7 +147,7 @@ export default function About() {
             src={`${BASE}images/cal-team-banner.png`}
             alt="Female athlete"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 65%' }}
+            style={{ objectPosition: 'center 42%' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-card/70 via-transparent to-transparent" />
