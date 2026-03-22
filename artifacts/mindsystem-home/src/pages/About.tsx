@@ -254,29 +254,23 @@ export default function About() {
                 </motion.p>
               </div>
 
-              {/* ── LEFT: sticky photo stack ── */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9 }}
-                className="lg:col-span-6 order-1 lg:order-1 lg:sticky lg:top-24 space-y-4"
-              >
-                <div className="w-full overflow-hidden aspect-[4184/5392]">
+              {/* ── LEFT: sticky photo stack — plain div so sticky isn't broken by transforms ── */}
+              <div className="lg:col-span-6 order-1 lg:order-1 lg:sticky lg:top-24 space-y-4">
+                <div className="w-full overflow-hidden aspect-[3/4]">
                   <img
                     src={`${BASE}images/about-hero.png`}
                     alt="Gabby Cole with family at a volleyball court"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <div className="w-full overflow-hidden aspect-[4184/5392]">
+                <div className="w-full overflow-hidden aspect-[3/4]">
                   <img
-                    src={`${BASE}images/gabby-daughters-2.jpg`}
+                    src={`${BASE}images/gabby-daughters-3.png`}
                     alt="Gabby with her daughters at volleyball practice"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-              </motion.div>
+              </div>
             </div>
         </div>
       </section>
