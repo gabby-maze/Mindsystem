@@ -144,7 +144,7 @@ export default function About() {
           className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden mb-20 md:mb-28"
         >
           <img
-            src={`${BASE}images/athlete-blue.png`}
+            src={`${BASE}images/cal-team-banner.png`}
             alt="Female athlete"
             className="w-full h-full object-cover object-top"
           />
