@@ -91,7 +91,7 @@ export default function MindSystemPage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/mindsystem-hero-bg.png`}
+            src={`${BASE}images/mindsystem-hero-bg2.png`}
             alt="MindSystem"
             className="w-full h-full object-cover object-center"
           />
