@@ -93,7 +93,6 @@ export default function About() {
                 className="lg:sticky lg:top-32"
               >
                 <div className="aspect-[3/4] relative">
-                  <div className="absolute inset-4 border border-accent/25 translate-x-3 translate-y-3 z-0" />
                   <img
                     src={`${BASE}images/gabby-portrait.png`}
                     alt="Gabby Cole"
