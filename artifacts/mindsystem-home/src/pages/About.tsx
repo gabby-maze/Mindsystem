@@ -32,7 +32,7 @@ export default function About() {
         {/* Gabby portrait as full-bleed background */}
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/gabby-portrait.png`}
+            src={`${BASE}images/gabby-headshot.jpg`}
             alt="Gabby Cole"
             className="w-full h-full object-cover object-center"
           />
@@ -95,7 +95,7 @@ export default function About() {
                 <div className="aspect-[3/4] relative">
                   <div className="absolute inset-4 border border-primary/25 translate-x-3 translate-y-3 z-0" />
                   <img
-                    src={`${BASE}images/gabby-portrait.png`}
+                    src={`${BASE}images/gabby-headshot.jpg`}
                     alt="Gabby Cole"
                     className="w-full h-full object-cover relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                   />

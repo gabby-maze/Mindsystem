@@ -296,7 +296,7 @@ export default function Home() {
               <div className="aspect-[3/4] relative">
                 <div className="absolute inset-4 border border-primary/30 translate-x-4 translate-y-4 z-0" />
                 <img
-                  src={`${BASE}images/gabby-portrait.png`}
+                  src={`${BASE}images/gabby-headshot.jpg`}
                   alt="Gabby Cole"
                   className="w-full h-full object-cover relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
                 />
