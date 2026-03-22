@@ -34,7 +34,8 @@ export default function About() {
           <img
             src={`${BASE}images/about-hero-v2.png`}
             alt="Gabby Cole on the volleyball court"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-center"
+            style={{ transform: 'scale(0.85)', transformOrigin: 'center top' }}
           />
           {/* Left text area fade */}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.97) 0%, rgba(10,10,14,0.88) 28%, rgba(10,10,14,0.55) 50%, rgba(10,10,14,0.15) 68%, transparent 80%)' }} />
