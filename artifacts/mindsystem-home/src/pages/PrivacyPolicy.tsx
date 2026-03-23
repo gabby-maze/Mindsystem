@@ -19,16 +19,17 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">1. Introduction</h2>
-            <p>Maze Performance Inc. ("we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit www.gabbycole.com or register for our programs. Please read this policy carefully. By using our site, you consent to the practices described here.</p>
+            <p>Maze Performance Inc. is committed to protecting your privacy. This policy covers information collected at www.gabbycole.com.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">2. Information We Collect</h2>
-            <p className="mb-3">We may collect the following categories of personal information:</p>
             <ul className="list-disc list-inside space-y-2 pl-2">
-              <li><span className="text-foreground font-medium">Contact Information</span> — name, email address, and phone number provided when you reserve a spot or contact us.</li>
-              <li><span className="text-foreground font-medium">Usage Data</span> — browser type, IP address, pages visited, time on site, and referring URLs, collected automatically via cookies and similar technologies.</li>
-              <li><span className="text-foreground font-medium">Communications</span> — messages you send us via email, contact forms, or social media.</li>
+              <li>Contact form submissions (name, email, phone, message)</li>
+              <li>Email newsletter sign-ups</li>
+              <li>Payment and booking information (processed via third-party processors)</li>
+              <li>Coaching inquiry and athlete intake forms</li>
+              <li>Automatically collected data including IP address, browser type, pages visited, and cookies</li>
             </ul>
           </section>
 
