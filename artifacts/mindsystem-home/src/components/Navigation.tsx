@@ -22,7 +22,7 @@ export function Navigation({ onReserveClick }: NavigationProps) {
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="text-2xl font-serif tracking-wide font-semibold text-foreground hover:text-primary transition-colors">
-            MindSystem
+            Gabby Cole
           </Link>
 
           <div className="flex items-center gap-6">
