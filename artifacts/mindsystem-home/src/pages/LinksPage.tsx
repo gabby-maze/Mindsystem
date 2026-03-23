@@ -2,7 +2,10 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, Instagram, Mail, ExternalLink } from "lucide-react";
 
-const BASE = import.meta.env.BASE_URL;
+const PINK   = "#FF1F8F";
+const BLUE   = "#4FC3F7";
+const TEAL   = "#00C9B1";
+const PURPLE = "#9B59B6";
 
 export default function LinksPage() {
   useEffect(() => {
@@ -16,11 +19,16 @@ export default function LinksPage() {
         {/* ── AVATAR + BIO ──────────────────────────────────────── */}
         <div className="flex flex-col items-center text-center gap-3 pb-2">
           <div
-            className="w-24 h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center shadow-[0_0_30px_rgba(255,45,120,0.25)]"
+            className="w-24 h-24 rounded-full flex items-center justify-center"
+            style={{
+              backgroundColor: `${PINK}18`,
+              border: `2px solid ${PINK}`,
+              boxShadow: `0 0 30px ${PINK}40`,
+            }}
             aria-label="Gabby Cole avatar"
             role="img"
           >
-            <span className="text-3xl font-serif text-primary font-bold tracking-tight">GC</span>
+            <span className="text-3xl font-serif font-bold tracking-tight" style={{ color: PINK }}>GC</span>
           </div>
           <h1 className="text-2xl font-serif text-foreground tracking-tight">Gabby Cole</h1>
           <p className="text-muted-foreground text-sm font-light leading-snug max-w-[300px]">
@@ -28,16 +36,26 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* ── FEATURED CARD ─────────────────────────────────────── */}
+        {/* ── FEATURED CARD — hot pink ──────────────────────────── */}
         <a
           href="#webinar-placeholder"
-          className="block bg-card border border-primary/40 p-6 relative overflow-hidden shadow-[0_0_40px_rgba(255,45,120,0.15)] hover:shadow-[0_0_55px_rgba(255,45,120,0.3)] transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          style={{
+            border: `1px solid ${PINK}66`,
+            boxShadow: `0 0 40px ${PINK}25`,
+            ["--tw-ring-color" as string]: PINK,
+          }}
           aria-label="Featured event: The Missing Conversation in Youth Sports — Reserve your spot"
         >
-          {/* Top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
-
-          <span className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold text-primary mb-3">
+          <div
+            className="absolute top-0 left-0 right-0 h-[2px]"
+            style={{ background: `linear-gradient(to right, ${PINK}, ${PINK}60, transparent)` }}
+            aria-hidden="true"
+          />
+          <span
+            className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
+            style={{ color: PINK }}
+          >
             Featured · Free Event
           </span>
           <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
@@ -46,7 +64,10 @@ export default function LinksPage() {
           <p className="text-muted-foreground text-sm mb-5">
             Sunday, April 5 · 6PM Pacific
           </p>
-          <span className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground text-xs font-bold tracking-widest uppercase group-hover:bg-primary/90 transition-colors min-h-[44px]">
+          <span
+            className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
+            style={{ backgroundColor: PINK, color: "#fff" }}
+          >
             Reserve Your Spot — It's Free
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </span>
@@ -55,58 +76,72 @@ export default function LinksPage() {
         {/* ── LINK CARDS ────────────────────────────────────────── */}
         <div className="flex flex-col gap-3" role="list" aria-label="Links">
 
-          {/* Explore */}
+          {/* Explore — electric blue */}
           <a
             href="https://www.gabbycole.com"
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
-            className="flex items-center justify-between bg-card border border-border/60 px-5 py-4 hover:border-primary/50 hover:bg-card/80 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            style={{
+              border: `1px solid ${BLUE}40`,
+              ["--tw-ring-color" as string]: BLUE,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUE}90`)}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUE}40`)}
             aria-label="Explore the MindSystem — Visit the Website"
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-semibold mb-0.5">Explore</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: BLUE }}>Explore</p>
               <p className="text-foreground font-semibold text-sm">The MindSystem</p>
               <p className="text-muted-foreground text-xs">The compass for youth sports families</p>
             </div>
-            <span className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 ml-3" aria-hidden="true">
-              <ExternalLink className="w-4 h-4" />
-            </span>
+            <ExternalLink className="w-4 h-4 shrink-0 ml-3 transition-colors" style={{ color: BLUE }} aria-hidden="true" />
           </a>
 
-          {/* Community */}
+          {/* Community — teal */}
           <a
             href="https://community.gabbycole.com"
+            target="_blank"
+            rel="noopener noreferrer"
             role="listitem"
-            className="flex items-center justify-between bg-card border border-border/60 px-5 py-4 hover:border-primary/50 hover:bg-card/80 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            style={{
+              border: `1px solid ${TEAL}40`,
+              ["--tw-ring-color" as string]: TEAL,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = `${TEAL}90`)}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = `${TEAL}40`)}
             aria-label="Join the Community on Mighty Networks — $30 per month"
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-semibold mb-0.5">Community</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: TEAL }}>Community</p>
               <p className="text-foreground font-semibold text-sm">Join the Community</p>
               <p className="text-muted-foreground text-xs">Tools, frameworks &amp; resources · $30/month</p>
             </div>
-            <span className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 ml-3" aria-hidden="true">
-              <ArrowRight className="w-4 h-4" />
-            </span>
+            <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: TEAL }} aria-hidden="true" />
           </a>
 
-          {/* Coaches */}
-          <a
-            href="#waitlist-placeholder"
+          {/* Coaches — purple */}
+          <Link
+            href="/coaches"
             role="listitem"
-            className="flex items-center justify-between bg-card border border-border/60 px-5 py-4 hover:border-primary/50 hover:bg-card/80 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
+            style={{
+              border: `1px solid ${PURPLE}40`,
+              ["--tw-ring-color" as string]: PURPLE,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = `${PURPLE}90`)}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = `${PURPLE}40`)}
             aria-label="Coach Certification — Join the waitlist"
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-semibold mb-0.5">Coaches</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: PURPLE }}>Coaches</p>
               <p className="text-foreground font-semibold text-sm">Coach Certification</p>
               <p className="text-muted-foreground text-xs">Be the first to know when enrollment opens</p>
             </div>
-            <span className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 ml-3" aria-hidden="true">
-              <ArrowRight className="w-4 h-4" />
-            </span>
-          </a>
+            <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: PURPLE }} aria-hidden="true" />
+          </Link>
 
         </div>
 
@@ -116,7 +151,8 @@ export default function LinksPage() {
             © 2026 Gabby Cole ·{" "}
             <a
               href="https://www.gabbycole.com"
-              className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+              className="underline underline-offset-2 transition-colors"
+              style={{ color: PINK }}
             >
               gabbycole.com
             </a>
@@ -125,7 +161,7 @@ export default function LinksPage() {
           <nav aria-label="Social links" className="flex items-center gap-5">
             <Link
               href="/"
-              className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground hover:text-primary transition-colors"
+              className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground transition-colors"
             >
               MindSystem
             </Link>
@@ -133,14 +169,14 @@ export default function LinksPage() {
               href="https://www.instagram.com/gabbycole_maze"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Follow Gabby Cole on Instagram @gabbycole_maze"
             >
               <Instagram className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
               href="mailto:info@mazeperformance.ai"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email info@mazeperformance.ai"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
@@ -151,7 +187,7 @@ export default function LinksPage() {
       </div>
 
       <div className="mt-6 pb-8">
-        <Link href="/" className="text-xs text-muted-foreground/50 hover:text-muted-foreground/80 transition-colors tracking-wide">
+        <Link href="/" className="text-xs text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors tracking-wide">
           Visit our website →
         </Link>
       </div>
