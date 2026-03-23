@@ -46,6 +46,13 @@ export function Footer() {
             >
               Accessibility
             </Link>
+            <Link
+              href="/contact"
+              aria-current={location === "/contact" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
+              Contact
+            </Link>
           </nav>
         </div>
       </div>
