@@ -42,7 +42,7 @@ export default function Home() {
           <img
             src={`${BASE}images/home-hero-v2.jpg`}
             alt="Young female athlete"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
           />
           {/* Left fade - gentle bleed so image fills left but text stays readable */}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.95) 0%, rgba(10,10,14,0.82) 24%, rgba(10,10,14,0.45) 44%, rgba(10,10,14,0.08) 57%, transparent 65%)' }} />
