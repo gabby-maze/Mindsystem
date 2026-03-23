@@ -1,15 +1,26 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { ReservationModal } from "@/components/ReservationModal";
-import { useReservationModal } from "@/hooks/use-reservation";
 
 const TEAL = "#00C9B1";
 
+function WaitlistCTA() {
+  return (
+    <div className="mt-10">
+      <a
+        href="#waitlist-form"
+        className="inline-flex items-center gap-3 px-7 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
+        style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
+      >
+        I'm In — Add Me to the Waitlist
+        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+      </a>
+    </div>
+  );
+}
+
 export default function CoachesPage() {
-  const { isOpen, openModal, closeModal } = useReservationModal();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -30,9 +41,6 @@ export default function CoachesPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation onReserveClick={openModal} />
-      <ReservationModal isOpen={isOpen} onClose={closeModal} />
-
       <main id="main-content">
 
         {/* ── HERO ─────────────────────────────────────────────────── */}
@@ -42,7 +50,7 @@ export default function CoachesPage() {
             style={{ background: `radial-gradient(ellipse at 60% 50%, ${TEAL}12 0%, transparent 65%)` }}
             aria-hidden="true"
           />
-          <div className="relative z-10 max-w-4xl mx-auto px-6 pt-36 pb-24">
+          <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-24">
             <p
               className="text-xs uppercase tracking-[0.3em] font-semibold mb-6"
               style={{ color: TEAL }}
@@ -60,7 +68,7 @@ export default function CoachesPage() {
             </p>
             <a
               href="#waitlist-form"
-              className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-all min-h-[44px]"
+              className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
               style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
             >
               I'm In — Add Me to the Waitlist
@@ -89,6 +97,7 @@ export default function CoachesPage() {
                 That's not appreciation. That's a system that doesn't understand what you actually do.
               </p>
             </div>
+            <WaitlistCTA />
           </div>
         </section>
 
@@ -121,6 +130,7 @@ export default function CoachesPage() {
                 The missing piece isn't motivation. It isn't skill. It's a system.
               </p>
             </div>
+            <WaitlistCTA />
           </div>
         </section>
 
@@ -155,9 +165,10 @@ export default function CoachesPage() {
               ))}
             </ul>
 
-            <p className="text-muted-foreground text-sm italic">
+            <p className="text-muted-foreground text-sm italic mb-0">
               Details still being finalized. Waitlist members get first access — and first pricing.
             </p>
+            <WaitlistCTA />
           </div>
         </section>
 
@@ -168,7 +179,7 @@ export default function CoachesPage() {
               This is for you if —
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               {/* Yes */}
               <div className="bg-card border border-border/50 p-8 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-0.5" style={{ background: `linear-gradient(to right, ${TEAL}, transparent)` }} aria-hidden="true" />
@@ -208,6 +219,8 @@ export default function CoachesPage() {
                 </ul>
               </div>
             </div>
+
+            <WaitlistCTA />
           </div>
         </section>
 
@@ -294,7 +307,7 @@ export default function CoachesPage() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center px-6 py-4 font-bold tracking-widest uppercase text-sm transition-all min-h-[52px] shrink-0"
+                  className="inline-flex items-center justify-center px-6 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[52px] shrink-0"
                   style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
                 >
                   I'm In
