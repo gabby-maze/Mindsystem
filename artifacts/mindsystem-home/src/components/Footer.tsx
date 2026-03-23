@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <Link href="/" className="text-xl font-serif font-semibold text-foreground hover:text-primary transition-colors">
-              MindSystem
+              Gabby Cole
             </Link>
             <p className="text-muted-foreground text-sm mt-1">
               © {year} Maze Performance Inc. All rights reserved.
