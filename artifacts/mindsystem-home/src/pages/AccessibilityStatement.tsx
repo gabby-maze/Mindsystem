@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReservationModal } from "@/components/ReservationModal";
@@ -6,12 +6,16 @@ import { ReservationModal } from "@/components/ReservationModal";
 export default function AccessibilityStatement() {
   const [modalOpen, setModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = "Accessibility Statement | Maze Performance Inc.";
+  }, []);
+
   return (
     <div className="bg-background text-foreground min-h-screen font-sans">
       <Navigation onReserveClick={() => setModalOpen(true)} />
       <ReservationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
+      <main id="main-content" className="max-w-3xl mx-auto px-6 pt-36 pb-24">
         <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Accessibility Statement</h1>
         <p className="text-muted-foreground text-sm mb-12">Effective Date: March 22, 2026</p>
 
@@ -60,8 +64,8 @@ export default function AccessibilityStatement() {
             <h2 className="text-xl font-semibold text-foreground mb-3">Feedback and Contact</h2>
             <p className="mb-3">We welcome feedback on the accessibility of our website. If you experience any barriers or have suggestions for improvement, please contact us:</p>
             <ul className="list-none space-y-1 pl-0">
-              <li><span className="text-foreground font-medium">Email:</span> <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a></li>
-              <li><span className="text-foreground font-medium">Website:</span> <a href="https://www.gabbycole.com" className="text-primary hover:underline">www.gabbycole.com</a></li>
+              <li><span className="text-foreground font-medium">Email:</span> <a href="mailto:info@mazeperformance.ai" className="text-primary underline underline-offset-2 hover:text-primary/80">info@mazeperformance.ai</a></li>
+              <li><span className="text-foreground font-medium">Website:</span> <a href="https://www.gabbycole.com" className="text-primary underline underline-offset-2 hover:text-primary/80">www.gabbycole.com</a></li>
             </ul>
             <p className="mt-3">We aim to respond to accessibility inquiries within 2 business days and will work with you to provide information or content in an accessible format upon request.</p>
           </section>

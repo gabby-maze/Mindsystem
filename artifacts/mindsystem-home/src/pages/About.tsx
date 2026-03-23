@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -23,10 +24,16 @@ const BASE = import.meta.env.BASE_URL;
 export default function About() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
+  useEffect(() => {
+    document.title = "About Gabby Cole | MindSystem";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background selection:bg-accent/20">
       <Navigation onReserveClick={openModal} />
       <ReservationModal isOpen={isOpen} onClose={closeModal} />
+
+      <main id="main-content">
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -286,7 +293,7 @@ export default function About() {
       >
         <img
           src={`${BASE}images/gabby-bus-banner.png`}
-          alt="MindSystem"
+          alt="Gabby Cole on the team bus, reflecting on the journey"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 20%' }}
         />
@@ -362,12 +369,14 @@ export default function About() {
                 className="group inline-flex items-center justify-center px-10 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(0,212,200,0.2)] hover:shadow-[0_0_50px_rgba(0,212,200,0.45)] w-full sm:w-auto"
               >
                 Join The Missing Conversation in Youth Sports — Free
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
             </motion.div>
           </motion.div>
         </div>
       </section>
+
+      </main>
 
       <Footer />
     </div>

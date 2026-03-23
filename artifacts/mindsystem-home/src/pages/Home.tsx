@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -23,10 +24,16 @@ const BASE = import.meta.env.BASE_URL;
 export default function Home() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
+  useEffect(() => {
+    document.title = "MindSystem | Gabby Cole";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background selection:bg-primary/20">
       <Navigation onReserveClick={openModal} />
       <ReservationModal isOpen={isOpen} onClose={closeModal} />
+
+      <main id="main-content">
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -73,7 +80,7 @@ export default function Home() {
               className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
             >
               Reserve Your Spot - The Missing Conversation [FREE]
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.button>
           </motion.div>
         </div>
@@ -139,7 +146,7 @@ export default function Home() {
                     className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
                   >
                     Join The Missing Conversation - It's Free
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </button>
                 </motion.div>
               </div>
@@ -204,7 +211,7 @@ export default function Home() {
                     "You want to be the parent she needs - you're just not always sure what that looks like"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mr-4 mt-0.5" />
+                      <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mr-4 mt-0.5" aria-hidden="true" />
                       <span className="text-muted-foreground text-lg">{item}</span>
                     </li>
                   ))}
@@ -228,7 +235,7 @@ export default function Home() {
                     "You're not willing to be part of the process - just the audience for the results"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start">
-                      <XCircle className="w-6 h-6 text-muted-foreground shrink-0 mr-4 mt-0.5" />
+                      <XCircle className="w-6 h-6 text-muted-foreground shrink-0 mr-4 mt-0.5" aria-hidden="true" />
                       <span className="text-muted-foreground text-lg">{item}</span>
                     </li>
                   ))}
@@ -276,7 +283,7 @@ export default function Home() {
                 className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
               >
                 Learn More - Join The Missing Conversation
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
             </motion.div>
           </motion.div>
@@ -347,7 +354,7 @@ export default function Home() {
                   className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background hover:bg-primary transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
                 >
                   Hear the Full Story - Join The Missing Conversation
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
               </motion.div>
             </motion.div>
@@ -407,7 +414,7 @@ export default function Home() {
                     "You want this experience to build who she is - not just how she plays"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start bg-background/50 p-4 border border-border/30">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" aria-hidden="true" />
                       <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -472,13 +479,15 @@ export default function Home() {
                   className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_50px_rgba(255,45,120,0.45)] w-full sm:w-auto"
                 >
                   Reserve My Spot - It's Free
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      </main>
 
       <Footer />
     </div>

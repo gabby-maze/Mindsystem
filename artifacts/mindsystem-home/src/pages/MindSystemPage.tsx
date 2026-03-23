@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Lock } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -83,17 +84,23 @@ const tiers = [
 export default function MindSystemPage() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
+  useEffect(() => {
+    document.title = "MindSystem Program | Gabby Cole";
+  }, []);
+
   return (
     <div className="min-h-screen bg-background selection:bg-secondary/20">
       <Navigation onReserveClick={openModal} />
       <ReservationModal isOpen={isOpen} onClose={closeModal} />
+
+      <main id="main-content">
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={`${BASE}images/mindsystem-hero-bg2.png`}
-            alt="MindSystem"
+            alt="MindSystem youth sports family coaching program"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,10,14,0.97) 0%, rgba(10,10,14,0.88) 30%, rgba(10,10,14,0.60) 55%, rgba(10,10,14,0.2) 75%, transparent 88%)' }} />
@@ -136,7 +143,7 @@ export default function MindSystemPage() {
               className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.15)] hover:shadow-[0_0_40px_rgba(155,47,247,0.4)] w-full sm:w-auto"
             >
               Not sure where to start? Join The Missing Conversation — Free
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.button>
           </motion.div>
         </div>
@@ -262,7 +269,7 @@ export default function MindSystemPage() {
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
                   Reserve Your Spot — The Missing Conversation — Free
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
               </div>
             </motion.div>
@@ -306,7 +313,7 @@ export default function MindSystemPage() {
                 {/* Lock overlay */}
                 <div className="absolute inset-0 z-20 bg-background/70 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4">
                   <div className="w-14 h-14 rounded-full border border-secondary/40 flex items-center justify-center">
-                    <Lock className="w-6 h-6 text-secondary" />
+                    <Lock className="w-6 h-6 text-secondary" aria-hidden="true" />
                   </div>
                   <p className="text-sm uppercase tracking-widest text-secondary font-semibold">Locked</p>
                   <p className="text-xs text-muted-foreground text-center max-w-[180px]">
@@ -431,7 +438,7 @@ export default function MindSystemPage() {
                 className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
               >
                 Reserve My Spot — It's Free
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
             </motion.div>
           </motion.div>
@@ -459,11 +466,13 @@ export default function MindSystemPage() {
               className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
             >
               Reserve My Spot — The Missing Conversation [Free]
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.button>
           </motion.div>
         </div>
       </section>
+
+      </main>
 
       <Footer />
     </div>

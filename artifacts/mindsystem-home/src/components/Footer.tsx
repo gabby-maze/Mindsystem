@@ -1,10 +1,11 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const [location] = useLocation();
 
   return (
-    <footer className="bg-card border-t border-border/40 py-12 px-6">
+    <footer className="bg-card border-t border-border/40 py-12 px-6" role="contentinfo">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
@@ -12,21 +13,37 @@ export function Footer() {
               MindSystem
             </Link>
             <p className="text-muted-foreground text-sm mt-1">
-              © {year} MindSystem. All rights reserved.
+              © {year} Maze Performance Inc. All rights reserved.
             </p>
           </div>
 
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-widest font-semibold text-muted-foreground">
-            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-widest font-semibold text-muted-foreground">
+            <Link
+              href="/privacy-policy"
+              aria-current={location === "/privacy-policy" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-primary transition-colors">
+            <Link
+              href="/terms-of-service"
+              aria-current={location === "/terms-of-service" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
               Terms of Service
             </Link>
-            <Link href="/cookie-policy" className="hover:text-primary transition-colors">
+            <Link
+              href="/cookie-policy"
+              aria-current={location === "/cookie-policy" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
               Cookie Policy
             </Link>
-            <Link href="/accessibility" className="hover:text-primary transition-colors">
+            <Link
+              href="/accessibility"
+              aria-current={location === "/accessibility" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
               Accessibility
             </Link>
           </nav>

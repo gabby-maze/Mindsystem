@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReservationModal } from "@/components/ReservationModal";
@@ -6,12 +6,16 @@ import { ReservationModal } from "@/components/ReservationModal";
 export default function PrivacyPolicy() {
   const [modalOpen, setModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = "Privacy Policy | Maze Performance Inc.";
+  }, []);
+
   return (
     <div className="bg-background text-foreground min-h-screen font-sans">
       <Navigation onReserveClick={() => setModalOpen(true)} />
       <ReservationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
+      <main id="main-content" className="max-w-3xl mx-auto px-6 pt-36 pb-24">
         <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Privacy Policy</h1>
         <p className="text-muted-foreground text-sm mb-12">Effective Date: March 22, 2026</p>
 
@@ -65,7 +69,7 @@ export default function PrivacyPolicy() {
               <li>Opt out of marketing communications</li>
               <li>Lodge a complaint with your local data protection authority</li>
             </ul>
-            <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a>.</p>
+            <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:info@mazeperformance.ai" className="text-primary underline underline-offset-2 hover:text-primary/80">info@mazeperformance.ai</a>.</p>
           </section>
 
           <section>
@@ -87,8 +91,8 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-semibold text-foreground mb-3">10. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us at:<br />
               Maze Performance Inc.<br />
-              <a href="https://www.gabbycole.com" className="text-primary hover:underline">www.gabbycole.com</a><br />
-              <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a>
+              <a href="https://www.gabbycole.com" className="text-primary underline underline-offset-2 hover:text-primary/80">www.gabbycole.com</a><br />
+              <a href="mailto:info@mazeperformance.ai" className="text-primary underline underline-offset-2 hover:text-primary/80">info@mazeperformance.ai</a>
             </p>
           </section>
 
