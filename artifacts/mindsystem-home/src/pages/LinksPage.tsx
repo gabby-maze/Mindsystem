@@ -76,7 +76,7 @@ export default function LinksPage() {
 
           {/* Community */}
           <a
-            href="#mighty-networks-placeholder"
+            href="https://community.gabbycole.com"
             role="listitem"
             className="flex items-center justify-between bg-card border border-border/60 px-5 py-4 hover:border-primary/50 hover:bg-card/80 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
             aria-label="Join the Community on Mighty Networks — $30 per month"

@@ -56,6 +56,11 @@ export function Footer() {
           </nav>
         </div>
       </div>
+      <div className="max-w-7xl mx-auto mt-6 text-center">
+        <Link href="/links" className="text-xs text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors">
+          Links
+        </Link>
+      </div>
     </footer>
   );
 }
