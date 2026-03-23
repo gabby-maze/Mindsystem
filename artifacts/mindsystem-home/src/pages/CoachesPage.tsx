@@ -77,16 +77,16 @@ export default function CoachesPage() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
               <p>
-                Coaching in youth sports is one of the most undervalued professions in existence. You put in the hours that parents never see. You prepare the practices, run the film sessions, manage the personalities, hold the space after the hard losses, build the confidence that nobody else is building. You do the work that therapists and counselors and mentors get paid to do — and you do it in a gym, on a field, after school, on weekends, often for less than you'd make at a part-time job.
+                Coaching sits in the same category as two other roles in our culture — motherhood and teaching. Three roles that are historically undervalued and underpaid. Three roles that come with an enormous workload. And most of that workload is invisible.
               </p>
               <p>
-                Nobody talks about this. Because coaching is supposed to be a calling. Because if you love what you do, the money shouldn't matter. Because that's what we tell the people whose labor we want to keep extracting for free.
+                You spend hours building practice plans nobody sees. You rebuild those plans on the fly when three athletes cancel an hour before. You manage the emotions of 14 young humans while simultaneously managing their parents from the sideline. You carry the team culture home with you. You answer the messages after 10pm. You become the easiest person to blame when something goes wrong — even when you've been holding the entire system together.
               </p>
               <p className="text-foreground font-medium">
-                The end-of-season gift card. The handshake and the "thank you coach." The athletes who go on to great things and never look back. This is what we've been told to be grateful for.
+                And then someone hands you a gift card at the end of the season and calls it appreciation.
               </p>
               <p>
-                Most coaches accept it. Not because they don't deserve more. But because nobody has ever shown them that more is possible.
+                That's not appreciation. That's a system that doesn't understand what you actually do.
               </p>
             </div>
           </div>
