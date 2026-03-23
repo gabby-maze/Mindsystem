@@ -13,18 +13,18 @@ export default function AccessibilityStatement() {
 
       <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
         <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Accessibility Statement</h1>
-        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 23, 2026</p>
+        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 22, 2026</p>
 
         <div className="space-y-10 text-muted-foreground leading-relaxed">
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">Our Commitment</h2>
-            <p>MindSystem is committed to ensuring that our website and services are accessible to everyone, including people with disabilities. We strive to meet or exceed the standards set forth in the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA.</p>
+            <p>Maze Performance Inc. is committed to ensuring that www.gabbycole.com and our services are accessible to everyone, including people with disabilities. We strive to meet or exceed the standards set forth in the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">Measures We Take</h2>
-            <p className="mb-3">To support accessibility, MindSystem takes the following measures:</p>
+            <p className="mb-3">To support accessibility, Maze Performance Inc. takes the following measures:</p>
             <ul className="list-disc list-inside space-y-2 pl-2">
               <li>Include accessibility as part of our design and development process</li>
               <li>Use semantic HTML elements to convey proper structure and meaning</li>
@@ -60,7 +60,8 @@ export default function AccessibilityStatement() {
             <h2 className="text-xl font-semibold text-foreground mb-3">Feedback and Contact</h2>
             <p className="mb-3">We welcome feedback on the accessibility of our website. If you experience any barriers or have suggestions for improvement, please contact us:</p>
             <ul className="list-none space-y-1 pl-0">
-              <li><span className="text-foreground font-medium">Email:</span> <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a></li>
+              <li><span className="text-foreground font-medium">Email:</span> <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a></li>
+              <li><span className="text-foreground font-medium">Website:</span> <a href="https://www.gabbycole.com" className="text-primary hover:underline">www.gabbycole.com</a></li>
             </ul>
             <p className="mt-3">We aim to respond to accessibility inquiries within 2 business days and will work with you to provide information or content in an accessible format upon request.</p>
           </section>
@@ -72,7 +73,7 @@ export default function AccessibilityStatement() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">Updates to This Statement</h2>
-            <p>This statement is reviewed and updated regularly as we continue to improve our accessibility. Last reviewed: March 23, 2026.</p>
+            <p>This statement is reviewed and updated regularly as we continue to improve our accessibility. Last reviewed: March 22, 2026.</p>
           </section>
 
         </div>

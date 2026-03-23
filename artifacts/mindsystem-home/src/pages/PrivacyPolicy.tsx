@@ -13,13 +13,13 @@ export default function PrivacyPolicy() {
 
       <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
         <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Privacy Policy</h1>
-        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 23, 2026</p>
+        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 22, 2026</p>
 
         <div className="space-y-10 text-muted-foreground leading-relaxed">
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">1. Introduction</h2>
-            <p>MindSystem ("we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website or register for our programs. Please read this policy carefully. By using our site, you consent to the practices described here.</p>
+            <p>Maze Performance Inc. ("we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit www.gabbycole.com or register for our programs. Please read this policy carefully. By using our site, you consent to the practices described here.</p>
           </section>
 
           <section>
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside space-y-2 pl-2">
               <li>Respond to your inquiries and confirm registrations</li>
               <li>Deliver program content and communications you have requested</li>
-              <li>Send occasional marketing emails about MindSystem offerings (you may opt out at any time)</li>
+              <li>Send occasional marketing emails about Maze Performance Inc. offerings (you may opt out at any time)</li>
               <li>Analyze site traffic and improve our website and services</li>
               <li>Comply with applicable legal obligations</li>
             </ul>
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">4. Sharing Your Information</h2>
-            <p>We do not sell or rent your personal information to third parties. We may share information with trusted service providers who assist in operating our website and delivering our programs (e.g., email platforms, payment processors), under strict confidentiality agreements. We may also disclose information where required by law or to protect the rights and safety of MindSystem and its community.</p>
+            <p>We do not sell or rent your personal information to third parties. We may share information with trusted service providers who assist in operating our website and delivering our programs (e.g., email platforms, payment processors), under strict confidentiality agreements. We may also disclose information where required by law or to protect the rights and safety of Maze Performance Inc. and its community.</p>
           </section>
 
           <section>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
               <li>Opt out of marketing communications</li>
               <li>Lodge a complaint with your local data protection authority</li>
             </ul>
-            <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a>.</p>
+            <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a>.</p>
           </section>
 
           <section>
@@ -85,7 +85,9 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">10. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us at:<br />
-              <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a>
+              Maze Performance Inc.<br />
+              <a href="https://www.gabbycole.com" className="text-primary hover:underline">www.gabbycole.com</a><br />
+              <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a>
             </p>
           </section>
 

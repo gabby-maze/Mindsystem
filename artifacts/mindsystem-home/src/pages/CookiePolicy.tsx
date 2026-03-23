@@ -13,7 +13,7 @@ export default function CookiePolicy() {
 
       <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
         <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Cookie Policy</h1>
-        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 23, 2026</p>
+        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 22, 2026</p>
 
         <div className="space-y-10 text-muted-foreground leading-relaxed">
 
@@ -24,7 +24,7 @@ export default function CookiePolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">2. How We Use Cookies</h2>
-            <p className="mb-3">MindSystem uses cookies for the following purposes:</p>
+            <p className="mb-3">Maze Performance Inc. uses cookies on www.gabbycole.com for the following purposes:</p>
             <ul className="list-disc list-inside space-y-2 pl-2">
               <li><span className="text-foreground font-medium">Essential Cookies</span> — Required for the website to function correctly. These cannot be disabled.</li>
               <li><span className="text-foreground font-medium">Analytics Cookies</span> — Help us understand how visitors interact with the site (e.g., pages visited, time on page) so we can improve content and user experience.</li>
@@ -52,7 +52,7 @@ export default function CookiePolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">5. Cookie Consent</h2>
-            <p>By continuing to use our website, you consent to our use of cookies as described in this policy. You may withdraw your consent at any time by adjusting your browser settings or contacting us.</p>
+            <p>By continuing to use www.gabbycole.com, you consent to our use of cookies as described in this policy. You may withdraw your consent at any time by adjusting your browser settings or contacting us.</p>
           </section>
 
           <section>
@@ -63,7 +63,9 @@ export default function CookiePolicy() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">7. Contact Us</h2>
             <p>If you have questions about our use of cookies, contact us at:<br />
-              <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a>
+              Maze Performance Inc.<br />
+              <a href="https://www.gabbycole.com" className="text-primary hover:underline">www.gabbycole.com</a><br />
+              <a href="mailto:info@mazeperformance.ai" className="text-primary hover:underline">info@mazeperformance.ai</a>
             </p>
           </section>
 
