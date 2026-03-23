@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { ReservationModal } from "@/components/ReservationModal";
 import { useReservationModal } from "@/hooks/use-reservation";
 
@@ -368,18 +369,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── FOOTER ──────────────────────────────────────────────── */}
-      <footer className="py-12 border-t border-border/30 bg-background text-center">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-serif text-foreground mb-4">MindSystem</h2>
-          <p className="text-muted-foreground tracking-widest uppercase text-sm mb-8">
-            Built for the families behind the athlete.
-          </p>
-          <div className="text-xs text-muted-foreground/50">
-            &copy; {new Date().getFullYear()} MindSystem. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

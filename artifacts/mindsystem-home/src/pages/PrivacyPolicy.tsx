@@ -1,0 +1,98 @@
+import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { ReservationModal } from "@/components/ReservationModal";
+
+export default function PrivacyPolicy() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    <div className="bg-background text-foreground min-h-screen font-sans">
+      <Navigation onReserveClick={() => setModalOpen(true)} />
+      <ReservationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
+      <main className="max-w-3xl mx-auto px-6 pt-36 pb-24">
+        <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">Privacy Policy</h1>
+        <p className="text-muted-foreground text-sm mb-12">Effective Date: March 23, 2026</p>
+
+        <div className="space-y-10 text-muted-foreground leading-relaxed">
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">1. Introduction</h2>
+            <p>MindSystem ("we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website or register for our programs. Please read this policy carefully. By using our site, you consent to the practices described here.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">2. Information We Collect</h2>
+            <p className="mb-3">We may collect the following categories of personal information:</p>
+            <ul className="list-disc list-inside space-y-2 pl-2">
+              <li><span className="text-foreground font-medium">Contact Information</span> — name, email address, and phone number provided when you reserve a spot or contact us.</li>
+              <li><span className="text-foreground font-medium">Usage Data</span> — browser type, IP address, pages visited, time on site, and referring URLs, collected automatically via cookies and similar technologies.</li>
+              <li><span className="text-foreground font-medium">Communications</span> — messages you send us via email, contact forms, or social media.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">3. How We Use Your Information</h2>
+            <p className="mb-3">We use the information we collect to:</p>
+            <ul className="list-disc list-inside space-y-2 pl-2">
+              <li>Respond to your inquiries and confirm registrations</li>
+              <li>Deliver program content and communications you have requested</li>
+              <li>Send occasional marketing emails about MindSystem offerings (you may opt out at any time)</li>
+              <li>Analyze site traffic and improve our website and services</li>
+              <li>Comply with applicable legal obligations</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">4. Sharing Your Information</h2>
+            <p>We do not sell or rent your personal information to third parties. We may share information with trusted service providers who assist in operating our website and delivering our programs (e.g., email platforms, payment processors), under strict confidentiality agreements. We may also disclose information where required by law or to protect the rights and safety of MindSystem and its community.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">5. Data Retention</h2>
+            <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this policy, or as required by law. You may request deletion of your data at any time by contacting us.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">6. Your Rights</h2>
+            <p className="mb-3">Depending on your location, you may have the right to:</p>
+            <ul className="list-disc list-inside space-y-2 pl-2">
+              <li>Access the personal data we hold about you</li>
+              <li>Request correction of inaccurate data</li>
+              <li>Request deletion of your data</li>
+              <li>Opt out of marketing communications</li>
+              <li>Lodge a complaint with your local data protection authority</li>
+            </ul>
+            <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a>.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">7. Security</h2>
+            <p>We implement reasonable technical and organizational measures to protect your information from unauthorized access, loss, or misuse. However, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">8. Children's Privacy</h2>
+            <p>Our website is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us and we will delete it promptly.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date. Your continued use of our website after any changes constitutes your acceptance of the updated policy.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-foreground mb-3">10. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, please contact us at:<br />
+              <a href="mailto:hello@mindsystemcoach.com" className="text-primary hover:underline">hello@mindsystemcoach.com</a>
+            </p>
+          </section>
+
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

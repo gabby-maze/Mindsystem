@@ -6,6 +6,10 @@ import NotFound from "@/pages/not-found";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import MindSystemPage from "./pages/MindSystemPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
+import AccessibilityStatement from "./pages/AccessibilityStatement";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +19,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/mindsystem" component={MindSystemPage} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/cookie-policy" component={CookiePolicy} />
+      <Route path="/accessibility" component={AccessibilityStatement} />
       <Route component={NotFound} />
     </Switch>
   );
