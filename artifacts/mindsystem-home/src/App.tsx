@@ -11,6 +11,7 @@ import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import AccessibilityStatement from "./pages/AccessibilityStatement";
 import Contact from "./pages/Contact";
+import LinksPage from "./pages/LinksPage";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/cookie-policy" component={CookiePolicy} />
       <Route path="/accessibility" component={AccessibilityStatement} />
       <Route path="/contact" component={Contact} />
+      <Route path="/links" component={LinksPage} />
       <Route component={NotFound} />
     </Switch>
   );
