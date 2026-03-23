@@ -149,6 +149,13 @@ export default function LinksPage() {
         </footer>
 
       </div>
+
+      <div className="mt-6 pb-8">
+        <Link href="/" className="text-xs text-muted-foreground/50 hover:text-muted-foreground/80 transition-colors tracking-wide">
+          Visit our website →
+        </Link>
+      </div>
+
     </div>
   );
 }
