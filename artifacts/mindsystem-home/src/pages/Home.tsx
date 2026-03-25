@@ -75,14 +75,16 @@ export default function Home() {
               You already love watching her play. Now imagine loving the whole experience - not just the moments on the court but everything around them. The conversations. The car rides. The way your family moves through the hard parts together. That's not a fantasy. That's a system.
             </motion.p>
 
-            <motion.button
+            <motion.a
               variants={fadeUp}
-              onClick={openModal}
+              href="https://www.mazeperformance.ai/missing-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
             >
               Reserve Your Spot - The Missing Conversation [FREE]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -142,13 +144,15 @@ export default function Home() {
                   That's the missing conversation. And it's the one we're going to have.
                 </motion.p>
                 <motion.div variants={fadeUp} className="pt-4">
-                  <button
-                    onClick={openModal}
+                  <a
+                    href="https://www.mazeperformance.ai/missing-conversation"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
                   >
                     Join The Missing Conversation - It's Free
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </button>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>
@@ -279,13 +283,15 @@ export default function Home() {
             </div>
 
             <motion.div variants={fadeUp} className="mt-12">
-              <button
-                onClick={openModal}
+              <a
+                href="https://www.mazeperformance.ai/missing-conversation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
               >
                 Learn More - Join The Missing Conversation
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -350,13 +356,15 @@ export default function Home() {
               </div>
 
               <motion.div variants={fadeUp} className="mt-10">
-                <button
-                  onClick={openModal}
+                <a
+                  href="https://www.mazeperformance.ai/missing-conversation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background hover:bg-primary transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
                 >
                   Hear the Full Story - Join The Missing Conversation
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -475,13 +483,15 @@ export default function Home() {
                 <p className="text-xl font-serif mb-8 text-foreground">
                   <span className="text-primary">One rule before you join:</span> No blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better - not relitigate everything that came before. See you inside.
                 </p>
-                <button
-                  onClick={openModal}
+                <a
+                  href="https://www.mazeperformance.ai/missing-conversation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_50px_rgba(255,45,120,0.45)] w-full sm:w-auto"
                 >
                   Reserve My Spot - It's Free
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </button>
+                </a>
               </motion.div>
             </div>
           </motion.div>

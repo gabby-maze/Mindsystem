@@ -38,7 +38,9 @@ export default function LinksPage() {
 
         {/* ── FEATURED CARD — hot pink ──────────────────────────── */}
         <a
-          href="#webinar-placeholder"
+          href="https://www.mazeperformance.ai/missing-conversation"
+          target="_blank"
+          rel="noopener noreferrer"
           className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           style={{
             border: `1px solid ${PINK}66`,

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
 
 interface NavigationProps {
-  onReserveClick: () => void;
+  onReserveClick?: () => void;
 }
 
 export function Navigation({ onReserveClick }: NavigationProps) {
@@ -49,12 +49,14 @@ export function Navigation({ onReserveClick }: NavigationProps) {
                 About
               </Link>
             </div>
-            <button
-              onClick={onReserveClick}
+            <a
+              href="https://www.mazeperformance.ai/missing-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px]"
             >
               Reserve Your Spot
-            </button>
+            </a>
           </div>
         </div>
       </motion.nav>

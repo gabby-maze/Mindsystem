@@ -137,14 +137,16 @@ export default function MindSystemPage() {
               MindSystem is the compass that orients your whole family — so you stop reacting to the maze and start moving through it with intention.
             </motion.p>
 
-            <motion.button
+            <motion.a
               variants={fadeUp}
-              onClick={openModal}
+              href="https://www.mazeperformance.ai/missing-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.15)] hover:shadow-[0_0_40px_rgba(155,47,247,0.4)] w-full sm:w-auto"
             >
               Not sure where to start? Join The Missing Conversation — Free
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -264,13 +266,15 @@ export default function MindSystemPage() {
                 In The Missing Conversation in Youth Sports we pull back the curtain on all four walls of the maze — what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
               </p>
               <div className="pt-4">
-                <button
-                  onClick={openModal}
+                <a
+                  href="https://www.mazeperformance.ai/missing-conversation"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
                   Reserve Your Spot — The Missing Conversation — Free
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </button>
+                </a>
               </div>
             </motion.div>
           </motion.div>
@@ -433,13 +437,15 @@ export default function MindSystemPage() {
               <p className="text-foreground font-medium text-lg mb-10">
                 By the end of that session you won't be guessing which tier is right for you. You'll know.
               </p>
-              <button
-                onClick={openModal}
+              <a
+                href="https://www.mazeperformance.ai/missing-conversation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
               >
                 Reserve My Spot — It's Free
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -460,14 +466,16 @@ export default function MindSystemPage() {
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground font-light mb-12">
               The question is whether your family is moving through it — or just surviving it.
             </motion.p>
-            <motion.button
+            <motion.a
               variants={fadeUp}
-              onClick={openModal}
+              href="https://www.mazeperformance.ai/missing-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
             >
               Reserve My Spot — The Missing Conversation [Free]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
