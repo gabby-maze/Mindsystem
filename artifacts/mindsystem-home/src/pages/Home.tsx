@@ -40,7 +40,7 @@ export default function Home() {
         {/* Full-bleed hero image with seamless fade into dark bg */}
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/home-hero-v2.jpg`}
+            src={`${BASE}images/home-hero-v3.jpg`}
             alt="Young female athlete"
             className="w-full h-full object-cover"
             style={{ objectPosition: 'center 25%' }}
