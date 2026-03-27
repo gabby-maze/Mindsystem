@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -21,23 +21,9 @@ function WaitlistCTA() {
 }
 
 export default function CoachesPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState("");
-
   useEffect(() => {
     document.title = "Coach Certification | Gabby Cole";
   }, []);
-
-  const handleWaitlist = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-    setSubmitted(true);
-    setError("");
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -275,45 +261,14 @@ export default function CoachesPage() {
               Waitlist members get first access and first pricing when the certification opens.
             </p>
 
-            {submitted ? (
-              <div
-                className="border p-8 text-center"
-                style={{ borderColor: TEAL }}
-                role="alert"
-              >
-                <p className="text-xl font-serif mb-2" style={{ color: TEAL }}>You're on the list.</p>
-                <p className="text-muted-foreground">We'll be in touch when enrollment opens.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleWaitlist} className="flex flex-col sm:flex-row gap-3" noValidate>
-                <div className="flex-1">
-                  <label htmlFor="waitlist-email" className="sr-only">Email address</label>
-                  <input
-                    id="waitlist-email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    aria-required="true"
-                    aria-describedby={error ? "waitlist-error" : undefined}
-                    className="w-full bg-card border border-border px-4 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 transition-all min-h-[52px]"
-                    style={{ "--tw-ring-color": TEAL } as React.CSSProperties}
-                  />
-                  {error && (
-                    <p id="waitlist-error" role="alert" className="text-destructive text-sm mt-2 text-left">
-                      {error}
-                    </p>
-                  )}
-                </div>
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center px-6 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[52px] shrink-0"
-                  style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
-                >
-                  I'm In
-                </button>
-              </form>
-            )}
+            <a
+              href="mailto:info@mazeperformance.ai?subject=Coach Certification — Add Me to the Waitlist"
+              className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90"
+              style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
+            >
+              Add Me to the Waitlist
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
 
             <div className="mt-16">
               <Link
