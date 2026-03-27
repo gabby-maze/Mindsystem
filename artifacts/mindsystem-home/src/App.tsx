@@ -13,6 +13,7 @@ import AccessibilityStatement from "./pages/AccessibilityStatement";
 import Contact from "./pages/Contact";
 import LinksPage from "./pages/LinksPage";
 import CoachesPage from "./pages/CoachesPage";
+import CoachesThankYou from "./pages/CoachesThankYou";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/links" component={LinksPage} />
       <Route path="/coaches" component={CoachesPage} />
+      <Route path="/coaches/thank-you" component={CoachesThankYou} />
       <Route component={NotFound} />
     </Switch>
   );
