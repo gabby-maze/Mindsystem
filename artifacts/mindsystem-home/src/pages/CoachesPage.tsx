@@ -9,7 +9,7 @@ function WaitlistCTA() {
   return (
     <div className="mt-10">
       <a
-        href="https://www.mazeperformance.ai/live-registration"
+        href="https://api.leadconnectorhq.com/widget/form/lA7mrUxIYvAItRA4uliG"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-3 px-7 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
@@ -55,7 +55,7 @@ export default function CoachesPage() {
               The MindSystem Coach Certification is coming. It's built for coaches who are done being undervalued — and ready to build something that compensates them for the labor they've always given away for free.
             </p>
             <a
-              href="https://www.mazeperformance.ai/live-registration"
+              href="https://api.leadconnectorhq.com/widget/form/lA7mrUxIYvAItRA4uliG"
               className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
               style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
             >
@@ -264,7 +264,7 @@ export default function CoachesPage() {
             </p>
 
             <a
-              href="https://www.mazeperformance.ai/live-registration"
+              href="https://api.leadconnectorhq.com/widget/form/lA7mrUxIYvAItRA4uliG"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90"
