@@ -103,7 +103,7 @@ export default function LinksPage() {
 
           {/* Community — teal */}
           <a
-            href="https://community.gabbycole.com"
+            href="https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06"
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
