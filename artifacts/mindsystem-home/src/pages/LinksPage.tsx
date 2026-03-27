@@ -146,99 +146,105 @@ export default function LinksPage() {
             <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: PURPLE }} aria-hidden="true" />
           </Link>
 
-          {/* ── SURVEYS DIVIDER ───────────────────────────────────── */}
-          <div className="flex items-center gap-3 pt-2 pb-1" aria-hidden="true">
-            <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
-            <span className="text-[10px] uppercase tracking-[0.25em] font-semibold" style={{ color: ORANGE }}>Surveys</span>
-            <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
+          {/* ── SURVEYS CAROUSEL ──────────────────────────────────── */}
+          <div>
+            <div className="flex items-center gap-3 pt-2 pb-3" aria-hidden="true">
+              <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
+              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold" style={{ color: ORANGE }}>Surveys</span>
+              <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
+            </div>
+
+            <div
+              className="flex gap-3 overflow-x-auto pb-2"
+              style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", msOverflowStyle: "none", scrollbarWidth: "none" }}
+              role="list"
+              aria-label="Survey links"
+            >
+              {/* Anonymous Parent Survey */}
+              <a
+                href="#"
+                role="listitem"
+                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                style={{
+                  width: "140px",
+                  height: "210px",
+                  scrollSnapAlign: "start",
+                  border: `1px solid ${ORANGE}50`,
+                  ["--tw-ring-color" as string]: ORANGE,
+                }}
+                aria-label="Anonymous Parent Survey"
+              >
+                <img
+                  src="/images/survey-parent.png"
+                  alt="Anonymous Parent Survey"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
+                <div
+                  className="absolute inset-x-0 bottom-0 px-3 py-3"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
+                >
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Parents</p>
+                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Parent Survey</p>
+                </div>
+              </a>
+
+              {/* Anonymous Coach Survey */}
+              <a
+                href="#"
+                role="listitem"
+                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                style={{
+                  width: "140px",
+                  height: "210px",
+                  scrollSnapAlign: "start",
+                  border: `1px solid ${ORANGE}50`,
+                  ["--tw-ring-color" as string]: ORANGE,
+                }}
+                aria-label="Anonymous Coach Survey"
+              >
+                <img
+                  src="/images/survey-coach.png"
+                  alt="Anonymous Coach Survey"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
+                <div
+                  className="absolute inset-x-0 bottom-0 px-3 py-3"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
+                >
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Coaches</p>
+                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Coach Survey</p>
+                </div>
+              </a>
+
+              {/* Anonymous Athlete Survey */}
+              <a
+                href="#"
+                role="listitem"
+                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                style={{
+                  width: "140px",
+                  height: "210px",
+                  scrollSnapAlign: "start",
+                  border: `1px solid ${ORANGE}50`,
+                  ["--tw-ring-color" as string]: ORANGE,
+                }}
+                aria-label="Anonymous Athlete Survey"
+              >
+                <img
+                  src="/images/survey-athlete.png"
+                  alt="Anonymous Athlete Survey"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                />
+                <div
+                  className="absolute inset-x-0 bottom-0 px-3 py-3"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
+                >
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Athletes</p>
+                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Athlete Survey</p>
+                </div>
+              </a>
+            </div>
           </div>
-
-          {/* Anonymous Parent Survey */}
-          <a
-            href="#"
-            role="listitem"
-            className="flex items-center bg-card overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[80px]"
-            style={{
-              border: `1px solid ${ORANGE}40`,
-              ["--tw-ring-color" as string]: ORANGE,
-            }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = `${ORANGE}90`)}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = `${ORANGE}40`)}
-            aria-label="Anonymous Parent Survey — Ask the questions you are scared to ask the coach"
-          >
-            <div className="w-20 h-20 shrink-0 overflow-hidden">
-              <img
-                src="/images/survey-parent.png"
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div className="flex-1 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: ORANGE }}>Survey · Parents</p>
-              <p className="text-foreground font-semibold text-sm leading-snug">Anonymous Parent Survey</p>
-              <p className="text-muted-foreground text-xs leading-snug mt-0.5">Ask the questions you're scared to ask the coach</p>
-            </div>
-            <ArrowRight className="w-4 h-4 shrink-0 mr-4" style={{ color: ORANGE }} aria-hidden="true" />
-          </a>
-
-          {/* Anonymous Coach Survey */}
-          <a
-            href="#"
-            role="listitem"
-            className="flex items-center bg-card overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[80px]"
-            style={{
-              border: `1px solid ${ORANGE}40`,
-              ["--tw-ring-color" as string]: ORANGE,
-            }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = `${ORANGE}90`)}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = `${ORANGE}40`)}
-            aria-label="Anonymous Coach Survey — Tell us what nobody ever asks you about coaching"
-          >
-            <div className="w-20 h-20 shrink-0 overflow-hidden">
-              <img
-                src="/images/survey-coach.png"
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div className="flex-1 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: ORANGE }}>Survey · Coaches</p>
-              <p className="text-foreground font-semibold text-sm leading-snug">Anonymous Coach Survey</p>
-              <p className="text-muted-foreground text-xs leading-snug mt-0.5">Tell us what nobody ever asks you about coaching</p>
-            </div>
-            <ArrowRight className="w-4 h-4 shrink-0 mr-4" style={{ color: ORANGE }} aria-hidden="true" />
-          </a>
-
-          {/* Anonymous Athlete Survey */}
-          <a
-            href="#"
-            role="listitem"
-            className="flex items-center bg-card overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[80px]"
-            style={{
-              border: `1px solid ${ORANGE}40`,
-              ["--tw-ring-color" as string]: ORANGE,
-            }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = `${ORANGE}90`)}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = `${ORANGE}40`)}
-            aria-label="Anonymous Athlete Survey — Tell us what nobody ever asks you about playing"
-          >
-            <div className="w-20 h-20 shrink-0 overflow-hidden">
-              <img
-                src="/images/survey-athlete.png"
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div className="flex-1 px-4 py-3">
-              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: ORANGE }}>Survey · Athletes</p>
-              <p className="text-foreground font-semibold text-sm leading-snug">Anonymous Athlete Survey</p>
-              <p className="text-muted-foreground text-xs leading-snug mt-0.5">Tell us what nobody ever asks you about playing</p>
-            </div>
-            <ArrowRight className="w-4 h-4 shrink-0 mr-4" style={{ color: ORANGE }} aria-hidden="true" />
-          </a>
 
         </div>
 
