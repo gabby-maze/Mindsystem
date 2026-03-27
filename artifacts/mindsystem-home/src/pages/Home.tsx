@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { InstagramReels } from "@/components/InstagramReels";
 import { ReservationModal } from "@/components/ReservationModal";
 import { useReservationModal } from "@/hooks/use-reservation";
 
@@ -500,6 +501,7 @@ export default function Home() {
 
       </main>
 
+      <InstagramReels />
       <Footer />
     </div>
   );
