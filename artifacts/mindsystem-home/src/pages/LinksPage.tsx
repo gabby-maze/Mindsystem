@@ -38,7 +38,7 @@ export default function LinksPage() {
 
         {/* ── FEATURED CARD — hot pink ──────────────────────────── */}
         <a
-          href="https://www.mazeperformance.ai/missing-conversation"
+          href="https://www.mazeperformance.ai/live-registration"
           target="_blank"
           rel="noopener noreferrer"
           className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
