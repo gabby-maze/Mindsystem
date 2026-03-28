@@ -30,10 +30,10 @@ export default function CookiePolicy() {
             <h2 className="text-xl font-semibold text-foreground mb-3">2. How We Use Cookies</h2>
             <p className="mb-3">Maze Performance Inc. uses cookies on www.gabbycole.com for the following purposes:</p>
             <ul className="list-disc list-inside space-y-2 pl-2">
-              <li><span className="text-foreground font-medium">Essential Cookies</span> — Required for the website to function correctly. These cannot be disabled.</li>
-              <li><span className="text-foreground font-medium">Analytics Cookies</span> — Help us understand how visitors interact with the site (e.g., pages visited, time on page) so we can improve content and user experience.</li>
-              <li><span className="text-foreground font-medium">Preference Cookies</span> — Remember choices you make (such as language or display settings) to personalize your experience.</li>
-              <li><span className="text-foreground font-medium">Marketing Cookies</span> — Used to track visitors across websites to display relevant advertisements. We only use these if you have explicitly consented.</li>
+              <li><span className="text-foreground font-medium">Essential Cookies</span>, Required for the website to function correctly. These cannot be disabled.</li>
+              <li><span className="text-foreground font-medium">Analytics Cookies</span>, Help us understand how visitors interact with the site (e.g., pages visited, time on page) so we can improve content and user experience.</li>
+              <li><span className="text-foreground font-medium">Preference Cookies</span>, Remember choices you make (such as language or display settings) to personalize your experience.</li>
+              <li><span className="text-foreground font-medium">Marketing Cookies</span>, Used to track visitors across websites to display relevant advertisements. We only use these if you have explicitly consented.</li>
             </ul>
           </section>
 

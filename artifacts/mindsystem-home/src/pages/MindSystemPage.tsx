@@ -22,7 +22,7 @@ const mazeItems = [
   {
     letter: "M",
     title: "Mindset",
-    body: "Who is she becoming as a competitor? What does she stand for? What drives her? Most athletes move through entire seasons — entire careers — without ever being asked these questions. MindSystem starts here."
+    body: "Who is she becoming as a competitor? What does she stand for? What drives her? Most athletes move through entire seasons, entire careers, without ever being asked these questions. MindSystem starts here."
   },
   {
     letter: "A",
@@ -32,7 +32,7 @@ const mazeItems = [
   {
     letter: "Z",
     title: "Zero In",
-    body: "What are the three skills she is hyper focused on developing this season? Once identified, those three skills get turned into trackable habits — measurable metrics and milestones she can monitor at practice, in games, and off the court. When the athlete, the parent, and the environment are all focused on the same targets — everything aligns."
+    body: "What are the three skills she is hyper focused on developing this season? Once identified, those three skills get turned into trackable habits, measurable metrics and milestones she can monitor at practice, in games, and off the court. When the athlete, the parent, and the environment are all focused on the same targets, everything aligns."
   },
   {
     letter: "E",
@@ -45,37 +45,37 @@ const tiers = [
   {
     name: "MindSystem Independent",
     tag: "Self-Paced",
-    description: "This is for you if you're ready to stop winging it and start moving through this season with intention — on your own terms and at your own pace.",
+    description: "This is for you if you're ready to stop winging it and start moving through this season with intention, on your own terms and at your own pace.",
     items: [
-      "The MindSystem athlete journal — your athlete's physical compass for the full 6 months",
-      "The MindSystem digital family journal — a shared compass for the family unit",
+      "The MindSystem athlete journal, your athlete's physical compass for the full 6 months",
+      "The MindSystem digital family journal, a shared compass for the family unit",
       "Guided video instruction for navigating both journals",
       "A DIY family onboarding session to get everyone oriented and moving in the same direction",
       "6 months of access from the day you purchase"
     ],
-    note: "This is not a course you sit and watch. It's a process you move through — together."
+    note: "This is not a course you sit and watch. It's a process you move through, together."
   },
   {
     name: "MindSystem Supported",
     tag: "Group Experience",
-    description: "This is for you if you want the tools AND the reassurance that you're using them right — with a community of families navigating the exact same maze beside you.",
+    description: "This is for you if you want the tools AND the reassurance that you're using them right, with a community of families navigating the exact same maze beside you.",
     items: [
       "Everything in MindSystem Independent",
-      "The MindSystem physical family journal — your family's shared compass for the season",
-      "Biweekly live group athlete calls — where your athlete reflects, recalibrates, and connects with other athletes",
-      "Biweekly live group parent calls — where you get support, clarity, and confidence",
+      "The MindSystem physical family journal, your family's shared compass for the season",
+      "Biweekly live group athlete calls, where your athlete reflects, recalibrates, and connects with other athletes",
+      "Biweekly live group parent calls, where you get support, clarity, and confidence",
     ],
     note: "You're not being coached. You're being supported as you build."
   },
   {
     name: "MindSystem Inner Circle",
     tag: "Direct Access",
-    description: "This is for you if you want Gabby in your corner — not just the system, but the person who built it walking alongside your family for the full 12 weeks.",
+    description: "This is for you if you want Gabby in your corner, not just the system, but the person who built it walking alongside your family for the full 12 weeks.",
     items: [
       "Everything in MindSystem Supported",
-      "A private family onboarding call with Gabby — to get your family oriented, aligned, and moving in the same direction from day one",
-      "Direct Voxer access to Gabby for the full 12 weeks — voice and text",
-      "24 hour response time — for the moments that can't wait"
+      "A private family onboarding call with Gabby, to get your family oriented, aligned, and moving in the same direction from day one",
+      "Direct Voxer access to Gabby for the full 12 weeks, voice and text",
+      "24 hour response time, for the moments that can't wait"
     ],
     note: "This is not crisis management. This is having the person who built the compass beside you as you use it."
   }
@@ -134,7 +134,7 @@ export default function MindSystemPage() {
               variants={fadeUp}
               className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 font-light max-w-2xl"
             >
-              MindSystem is the compass that orients your whole family — so you stop reacting to the maze and start moving through it with intention.
+              MindSystem is the compass that orients your whole family, so you stop reacting to the maze and start moving through it with intention.
             </motion.p>
 
             <motion.a
@@ -144,7 +144,7 @@ export default function MindSystemPage() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.15)] hover:shadow-[0_0_40px_rgba(155,47,247,0.4)] w-full sm:w-auto"
             >
-              Not sure where to start? Join The Missing Conversation — Free
+              Not sure where to start? Join The Missing Conversation, Free
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>
@@ -164,7 +164,7 @@ export default function MindSystemPage() {
               {[
                 { label: "Surviving", desc: "White-knuckling every weekend. Absorbing every result. Making it to the end and calling that a win." },
                 { label: "vs.", desc: "" },
-                { label: "Moving Through", desc: "Clarity. Connection. A family that knows where they are, where they're going, and how they're getting there — together." }
+                { label: "Moving Through", desc: "Clarity. Connection. A family that knows where they are, where they're going, and how they're getting there, together." }
               ].map(({ label, desc }, i) => (
                 <div key={i} className={`p-8 md:p-10 ${i === 1 ? "flex items-center justify-center bg-secondary/10" : ""}`}>
                   {i === 1 ? (
@@ -218,7 +218,7 @@ export default function MindSystemPage() {
         </div>
       </motion.div>
 
-      {/* ── SECTION 2: THE FRAMEWORK — M.A.Z.E. ─────────────────── */}
+      {/* ── SECTION 2: THE FRAMEWORK, M.A.Z.E. ─────────────────── */}
       <section className="py-24 md:py-32 bg-card border-y border-border/40">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -229,7 +229,7 @@ export default function MindSystemPage() {
           >
             <div className="max-w-3xl mb-20">
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap — between what everyone wants, what everyone experiences, and what nobody is naming — is the maze.
+                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap, between what everyone wants, what everyone experiences, and what nobody is naming, is the maze.
               </motion.p>
             </div>
 
@@ -247,7 +247,7 @@ export default function MindSystemPage() {
                       {letter}
                     </span>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-serif text-secondary mb-4">{letter} — {title}</h3>
+                      <h3 className="text-xl md:text-2xl font-serif text-secondary mb-4">{letter}, {title}</h3>
                       <p className="text-muted-foreground font-light leading-relaxed">{body}</p>
                     </div>
                   </div>
@@ -263,7 +263,7 @@ export default function MindSystemPage() {
                 MindSystem is the compass.
               </p>
               <p className="text-muted-foreground font-light text-lg leading-relaxed">
-                In The Missing Conversation in Youth Sports we pull back the curtain on all four walls of the maze — what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
+                In The Missing Conversation in Youth Sports we pull back the curtain on all four walls of the maze, what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
               </p>
               <div className="pt-4">
                 <a
@@ -272,7 +272,7 @@ export default function MindSystemPage() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
-                  Reserve Your Spot — The Missing Conversation — Free
+                  Reserve Your Spot, The Missing Conversation, Free
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
@@ -371,7 +371,7 @@ export default function MindSystemPage() {
                     "Development matters more than outcomes",
                     "Your athlete is capable of more than she currently believes",
                     "The family environment is part of the performance equation",
-                    "You are willing to be part of the process — not just watch it from the stands"
+                    "You are willing to be part of the process, not just watch it from the stands"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2.5 shrink-0" />
@@ -432,7 +432,7 @@ export default function MindSystemPage() {
                 Start with <span className="italic text-secondary">The Missing Conversation in Youth Sports.</span>
               </p>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                This is our free live session where Gabby pulls back the curtain on the maze — what it actually looks like inside real families, why it creates the patterns you're already experiencing, and what becomes possible when your family has a compass.
+                This is our free live session where Gabby pulls back the curtain on the maze, what it actually looks like inside real families, why it creates the patterns you're already experiencing, and what becomes possible when your family has a compass.
               </p>
               <p className="text-foreground font-medium text-lg mb-10">
                 By the end of that session you won't be guessing which tier is right for you. You'll know.
@@ -443,7 +443,7 @@ export default function MindSystemPage() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
               >
-                Reserve My Spot — It's Free
+                Reserve My Spot, It's Free
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>
@@ -464,7 +464,7 @@ export default function MindSystemPage() {
               The season is already happening.
             </motion.p>
             <motion.p variants={fadeUp} className="text-xl text-muted-foreground font-light mb-12">
-              The question is whether your family is moving through it — or just surviving it.
+              The question is whether your family is moving through it, or just surviving it.
             </motion.p>
             <motion.a
               variants={fadeUp}
@@ -473,7 +473,7 @@ export default function MindSystemPage() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
             >
-              Reserve My Spot — The Missing Conversation [Free]
+              Reserve My Spot, The Missing Conversation [Free]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>

@@ -24,7 +24,7 @@ export default function Contact() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">Get in Touch</h2>
             <p>
-              For all inquiries — program questions, media requests, or general correspondence — reach us directly at:
+              For all inquiries, program questions, media requests, or general correspondence, reach us directly at:
             </p>
             <p className="mt-4 text-lg">
               <a

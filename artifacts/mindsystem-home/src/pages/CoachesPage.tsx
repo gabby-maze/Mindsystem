@@ -15,7 +15,7 @@ function WaitlistCTA() {
         className="inline-flex items-center gap-3 px-7 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
         style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
       >
-        I'm In — Add Me to the Waitlist
+        I'm In, Add Me to the Waitlist
         <ArrowRight className="w-4 h-4" aria-hidden="true" />
       </a>
     </div>
@@ -52,14 +52,14 @@ export default function CoachesPage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light max-w-2xl mb-12">
-              The MindSystem Coach Certification is coming. It's built for coaches who are done being undervalued — and ready to build something that compensates them for the labor they've always given away for free.
+              The MindSystem Coach Certification is coming. It's built for coaches who are done being undervalued, and ready to build something that compensates them for the labor they've always given away for free.
             </p>
             <a
               href="https://api.leadconnectorhq.com/widget/form/lA7mrUxIYvAItRA4uliG"
               className="inline-flex items-center gap-3 px-8 py-5 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 min-h-[44px]"
               style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
             >
-              I'm In — Add Me to the Waitlist
+              I'm In, Add Me to the Waitlist
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </a>
           </div>
@@ -73,10 +73,10 @@ export default function CoachesPage() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
               <p>
-                Coaching sits in the same category as two other roles in our culture — motherhood and teaching. Three roles that are historically undervalued and underpaid. Three roles that come with an enormous workload. And most of that workload is invisible.
+                Coaching sits in the same category as two other roles in our culture, motherhood and teaching. Three roles that are historically undervalued and underpaid. Three roles that come with an enormous workload. And most of that workload is invisible.
               </p>
               <p>
-                You spend hours building practice plans nobody sees. You rebuild those plans on the fly when three athletes cancel an hour before. You manage the emotions of 14 young humans while simultaneously managing their parents from the sideline. You carry the team culture home with you. You answer the messages after 10pm. You become the easiest person to blame when something goes wrong — even when you've been holding the entire system together.
+                You spend hours building practice plans nobody sees. You rebuild those plans on the fly when three athletes cancel an hour before. You manage the emotions of 14 young humans while simultaneously managing their parents from the sideline. You carry the team culture home with you. You answer the messages after 10pm. You become the easiest person to blame when something goes wrong, even when you've been holding the entire system together.
               </p>
               <p className="text-foreground font-medium">
                 And then someone hands you a gift card at the end of the season and calls it appreciation.
@@ -100,7 +100,7 @@ export default function CoachesPage() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
               <p>
-                Most coaches didn't get into this for the money. That's the truth. They got into it because they love the sport. Because they love watching a young athlete figure herself out on the court. Because they remember what it felt like to have a coach who changed their life — and they wanted to give that back.
+                Most coaches didn't get into this for the money. That's the truth. They got into it because they love the sport. Because they love watching a young athlete figure herself out on the court. Because they remember what it felt like to have a coach who changed their life, and they wanted to give that back.
               </p>
               <p className="text-foreground font-medium">
                 That is beautiful. And it has been used against you.
@@ -138,10 +138,10 @@ export default function CoachesPage() {
 
             <ul className="space-y-4 mb-10" aria-label="What the certification includes">
               {[
-                { label: "The Framework", desc: "The full MindSystem methodology — athlete identity, family alignment, season-long development — taught so you can deliver it." },
+                { label: "The Framework", desc: "The full MindSystem methodology, athlete identity, family alignment, season-long development, taught so you can deliver it." },
                 { label: "The Language", desc: "How to talk to athletes, parents, and programs in a way that creates buy-in, builds trust, and positions you as the expert you already are." },
                 { label: "The Business", desc: "How to package, price, and sell your coaching so that your skills are compensated at the level they deserve." },
-                { label: "The Community", desc: "A cohort of coaches building the same thing, led by Gabby — not a Facebook group you check once a month, but an active professional community." },
+                { label: "The Community", desc: "A cohort of coaches building the same thing, led by Gabby, not a Facebook group you check once a month, but an active professional community." },
               ].map(({ label, desc }) => (
                 <li key={label} className="flex items-start gap-4 bg-background border border-border/50 p-5 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-0.5 h-full" style={{ backgroundColor: TEAL }} aria-hidden="true" />
@@ -154,7 +154,7 @@ export default function CoachesPage() {
             </ul>
 
             <p className="text-muted-foreground text-sm italic mb-0">
-              Details still being finalized. Waitlist members get first access — and first pricing.
+              Details still being finalized. Waitlist members get first access, and first pricing.
             </p>
             <WaitlistCTA />
           </div>
@@ -164,7 +164,7 @@ export default function CoachesPage() {
         <section className="py-24 md:py-32 bg-background border-b border-border/30">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl md:text-5xl font-serif mb-12 leading-tight">
-              This is for you if —
+              This is for you if:
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -175,9 +175,9 @@ export default function CoachesPage() {
                 <ul className="space-y-4">
                   {[
                     "You're a youth sports coach who knows you're giving more than you're getting back",
-                    "You believe in developing the whole athlete — not just the player on the court",
+                    "You believe in developing the whole athlete, not just the player on the court",
                     "You've been looking for a framework that actually matches how you already think",
-                    "You want to build something sustainable — a practice, a business, a legacy",
+                    "You want to build something sustainable, a practice, a business, a legacy",
                     "You're done waiting for someone else to validate what you already know",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -220,13 +220,13 @@ export default function CoachesPage() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
               <p>
-                My mother coached volleyball for forty years. She gave everything to that gym. She poured herself into every athlete who walked through those doors — stayed late, showed up early, built programs from nothing, and changed more lives than she will ever know.
+                My mother coached volleyball for forty years. She gave everything to that gym. She poured herself into every athlete who walked through those doors, stayed late, showed up early, built programs from nothing, and changed more lives than she will ever know.
               </p>
               <p>
                 And for four decades, she was compensated the way youth sports coaches are always compensated: with gratitude. With gift cards. With the knowledge that she had made a difference. She built something extraordinary. She was never paid like it.
               </p>
               <p>
-                I watched that. And then I spent seventeen years in pharmaceutical, medical device, and technology sales — building a quarter-million dollar income by doing exactly what my mother had always done. Showing up. Reading the room. Developing relationships. Getting the people in front of me to believe in something they couldn't yet see.
+                I watched that. And then I spent seventeen years in pharmaceutical, medical device, and technology sales, building a quarter-million dollar income by doing exactly what my mother had always done. Showing up. Reading the room. Developing relationships. Getting the people in front of me to believe in something they couldn't yet see.
               </p>
               <p className="text-foreground font-medium">
                 The skills were identical. The compensation was not.
@@ -241,7 +241,7 @@ export default function CoachesPage() {
                 I built MindSystem because the system that youth sports runs on has always needed a refresh. I built the Coach Certification because the people who deliver that system deserve to be compensated like the professionals they are.
               </p>
               <p>
-                If that's you — if you've been doing this work and you know there's a better way to build a career around it — I want you on this waitlist.
+                If that's you, if you've been doing this work and you know there's a better way to build a career around it, I want you on this waitlist.
               </p>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function CoachesPage() {
               Waitlist
             </p>
             <h2 className="text-3xl md:text-4xl font-serif mb-4 leading-tight">
-              Add Me to the Waitlist — I'm Ready
+              Add Me to the Waitlist, I'm Ready
             </h2>
             <p className="text-muted-foreground text-lg mb-10 font-light">
               Waitlist members get first access and first pricing when the certification opens.

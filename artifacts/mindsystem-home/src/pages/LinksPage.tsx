@@ -37,7 +37,7 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* ── FEATURED CARD — hot pink ──────────────────────────── */}
+        {/* ── FEATURED CARD, hot pink ──────────────────────────── */}
         <a
           href="https://www.mazeperformance.ai/live-registration"
           target="_blank"
@@ -48,7 +48,7 @@ export default function LinksPage() {
             boxShadow: `0 0 40px ${PINK}25`,
             ["--tw-ring-color" as string]: PINK,
           }}
-          aria-label="Featured event: The Missing Conversation in Youth Sports — Reserve your spot"
+          aria-label="Featured event: The Missing Conversation in Youth Sports, Reserve your spot"
         >
           <div
             className="absolute top-0 left-0 right-0 h-[2px]"
@@ -71,7 +71,7 @@ export default function LinksPage() {
             className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
             style={{ backgroundColor: PINK, color: "#fff" }}
           >
-            Reserve Your Spot — It's Free
+            Reserve Your Spot, It's Free
             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </span>
         </a>
@@ -79,7 +79,7 @@ export default function LinksPage() {
         {/* ── LINK CARDS ────────────────────────────────────────── */}
         <div className="flex flex-col gap-3" role="list" aria-label="Links">
 
-          {/* Explore — electric blue */}
+          {/* Explore, electric blue */}
           <a
             href="https://www.gabbycole.com"
             target="_blank"
@@ -92,7 +92,7 @@ export default function LinksPage() {
             }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUE}40`)}
-            aria-label="Explore the MindSystem — Visit the Website"
+            aria-label="Explore the MindSystem, Visit the Website"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: BLUE }}>Explore</p>
@@ -102,7 +102,7 @@ export default function LinksPage() {
             <ExternalLink className="w-4 h-4 shrink-0 ml-3 transition-colors" style={{ color: BLUE }} aria-hidden="true" />
           </a>
 
-          {/* Community — teal */}
+          {/* Community, teal */}
           <a
             href="https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06"
             target="_blank"
@@ -115,7 +115,7 @@ export default function LinksPage() {
             }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${TEAL}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${TEAL}40`)}
-            aria-label="Join the Community on Mighty Networks — $30 per month"
+            aria-label="Join the Community on Mighty Networks, $30 per month"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: TEAL }}>Community</p>
@@ -125,7 +125,7 @@ export default function LinksPage() {
             <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: TEAL }} aria-hidden="true" />
           </a>
 
-          {/* Coaches — purple */}
+          {/* Coaches, purple */}
           <Link
             href="/coaches"
             role="listitem"
@@ -136,7 +136,7 @@ export default function LinksPage() {
             }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${PURPLE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${PURPLE}40`)}
-            aria-label="Coach Certification — Join the waitlist"
+            aria-label="Coach Certification, Join the waitlist"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: PURPLE }}>Coaches</p>
@@ -157,7 +157,7 @@ export default function LinksPage() {
               Help us build the missing system.
             </h2>
             <p className="text-muted-foreground text-xs leading-relaxed mb-5">
-              To align athletes, parents, and coaches we have to understand what each person in the ecosystem is actually experiencing. Your struggles, your questions, your wishes, and your vision for what youth sports could look like — that's the data that builds a shared language and a common path forward. Take two minutes. Tell us the truth. And as a thank you — you'll receive free lifetime access to The Inside Game Library — Gabby's most watched and most talked about content, curated and organized just for you.
+              To align athletes, parents, and coaches we have to understand what each person in the ecosystem is actually experiencing. Your struggles, your questions, your wishes, and your vision for what youth sports could look like, that's the data that builds a shared language and a common path forward. Take two minutes. Tell us the truth. And as a thank you, you'll receive free lifetime access to The Inside Game Library, Gabby's most watched and most talked about content, curated and organized just for you.
             </p>
 
             {/* 3-up grid */}
@@ -227,7 +227,7 @@ export default function LinksPage() {
 
             {/* Shared gift line */}
             <p className="text-xs leading-relaxed mt-4 pt-4" style={{ color: `${ORANGE}bb`, borderTop: `1px solid ${ORANGE}20` }}>
-              Complete any survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+              Complete any survey and receive free lifetime access to The Inside Game Library, no credit card, no expiration date, no catch.
             </p>
           </div>
 

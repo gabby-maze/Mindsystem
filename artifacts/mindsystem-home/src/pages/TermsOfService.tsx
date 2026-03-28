@@ -28,7 +28,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">2. Description of Services</h2>
-            <p>Maze Performance Inc. offers coaching programs, live sessions, and educational resources designed for youth sports families — including athletes, parents, and coaches. Specific program details, availability, and pricing are described on the website and are subject to change without notice.</p>
+            <p>Maze Performance Inc. offers coaching programs, live sessions, and educational resources designed for youth sports families, including athletes, parents, and coaches. Specific program details, availability, and pricing are described on the website and are subject to change without notice.</p>
           </section>
 
           <section>
@@ -48,7 +48,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">6. Intellectual Property</h2>
-            <p>All content on this website — including text, graphics, videos, frameworks, and program materials — is the exclusive property of Maze Performance Inc. and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from any content without express written permission.</p>
+            <p>All content on this website, including text, graphics, videos, frameworks, and program materials, is the exclusive property of Maze Performance Inc. and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from any content without express written permission.</p>
           </section>
 
           <section>

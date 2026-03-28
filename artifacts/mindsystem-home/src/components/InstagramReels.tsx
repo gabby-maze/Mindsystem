@@ -124,7 +124,7 @@ export function InstagramReels() {
           </div>
         )}
 
-        {/* Not configured — shown only to site owner; invisible to visitors */}
+        {/* Not configured, shown only to site owner; invisible to visitors */}
         {status === "unconfigured" && (
           <div className="border border-dashed border-border/50 p-10 text-center">
             <Instagram className="w-8 h-8 text-muted-foreground/30 mx-auto mb-3" aria-hidden="true" />

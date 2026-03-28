@@ -53,7 +53,7 @@ export default function CoachesThankYou() {
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light mb-6">
-            Waitlist members get first access and first pricing when enrollment opens — so you're already ahead.
+            Waitlist members get first access and first pricing when enrollment opens, so you're already ahead.
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light mb-14">
@@ -73,7 +73,7 @@ export default function CoachesThankYou() {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <ArrowRight className="w-4 h-4 mt-1 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
-                <span>Watch your inbox — we'll send updates as the certification comes together.</span>
+                <span>Watch your inbox, we'll send updates as the certification comes together.</span>
               </li>
               <li className="flex items-start gap-3">
                 <ArrowRight className="w-4 h-4 mt-1 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
@@ -81,7 +81,7 @@ export default function CoachesThankYou() {
               </li>
               <li className="flex items-start gap-3">
                 <ArrowRight className="w-4 h-4 mt-1 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
-                <span>You'll have access to founding pricing — available only to this group.</span>
+                <span>You'll have access to founding pricing, available only to this group.</span>
               </li>
             </ul>
           </div>

@@ -435,7 +435,7 @@ export default function Home() {
                 <h3 className="text-2xl font-serif mb-6">Here's what we're covering:</h3>
                 <ol className="space-y-6">
                   {[
-                    { title: "Why misalignment", desc: "— not pressure, not talent, not playing time - is the real reason families struggle in youth sports" },
+                    { title: "Why misalignment", desc: ", not pressure, not talent, not playing time - is the real reason families struggle in youth sports" },
                     { title: "What the ecosystem", desc: "around your athlete actually looks like - and what your role in it really is" },
                     { title: "Why everything you've tried", desc: "hasn't fully worked - and what's been missing" },
                     { title: "What a shared family", desc: "performance system looks like in practice" },
