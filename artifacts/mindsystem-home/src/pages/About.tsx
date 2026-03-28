@@ -370,7 +370,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-10 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(0,212,200,0.2)] hover:shadow-[0_0_50px_rgba(0,212,200,0.45)] w-full sm:w-auto"
               >
-                Join The Missing Conversation in Youth Sports, Free
+                Join The Missing Framework — A Live Training for Youth Sports Families, Free
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>

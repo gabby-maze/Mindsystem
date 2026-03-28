@@ -144,7 +144,7 @@ export default function MindSystemPage() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.15)] hover:shadow-[0_0_40px_rgba(155,47,247,0.4)] w-full sm:w-auto"
             >
-              Not sure where to start? Join The Missing Conversation, Free
+              Not sure where to start? Join The Missing Framework — A Live Training for Youth Sports Families, Free
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>
@@ -263,7 +263,7 @@ export default function MindSystemPage() {
                 MindSystem is the compass.
               </p>
               <p className="text-muted-foreground font-light text-lg leading-relaxed">
-                In The Missing Conversation in Youth Sports we pull back the curtain on all four walls of the maze, what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
+                In The Missing Framework — A Live Training for Youth Sports Families we pull back the curtain on all four walls of the maze, what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
               </p>
               <div className="pt-4">
                 <a
@@ -272,7 +272,7 @@ export default function MindSystemPage() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
-                  Reserve Your Spot, The Missing Conversation, Free
+                  Reserve Your Spot, The Missing Framework — A Live Training for Youth Sports Families, Free
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
@@ -297,7 +297,7 @@ export default function MindSystemPage() {
               Three ways to move through <span className="italic text-secondary">the maze.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
-              All three tiers open after The Missing Conversation. Reserve your spot to get access.
+              All three tiers open after The Missing Framework — A Live Training for Youth Sports Families. Reserve your spot to get access.
             </motion.p>
           </motion.div>
 
@@ -321,7 +321,7 @@ export default function MindSystemPage() {
                   </div>
                   <p className="text-sm uppercase tracking-widest text-secondary font-semibold">Locked</p>
                   <p className="text-xs text-muted-foreground text-center max-w-[180px]">
-                    Opens after The Missing Conversation
+                    Opens after The Missing Framework — A Live Training for Youth Sports Families
                   </p>
                 </div>
 
@@ -429,7 +429,7 @@ export default function MindSystemPage() {
             <motion.div variants={fadeUp} className="bg-card border border-secondary/20 p-10 md:p-16 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary via-secondary/50 to-transparent" />
               <p className="text-xl md:text-2xl font-serif text-foreground mb-6 leading-relaxed">
-                Start with <span className="italic text-secondary">The Missing Conversation in Youth Sports.</span>
+                Start with <span className="italic text-secondary">The Missing Framework — A Live Training for Youth Sports Families.</span>
               </p>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl mx-auto">
                 This is our free live session where Gabby pulls back the curtain on the maze, what it actually looks like inside real families, why it creates the patterns you're already experiencing, and what becomes possible when your family has a compass.
@@ -473,7 +473,7 @@ export default function MindSystemPage() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
             >
-              Reserve My Spot, The Missing Conversation [Free]
+              Reserve My Spot, The Missing Framework — A Live Training for Youth Sports Families [Free]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>

@@ -82,7 +82,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
             >
-              Reserve Your Spot, The Missing Conversation [FREE]
+              Reserve Your Spot, The Missing Framework — A Live Training for Youth Sports Families [FREE]
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>
@@ -141,7 +141,7 @@ export default function Home() {
                   They're operating without a shared system. And when there's no shared system, everyone absorbs everyone else's stress, and nobody can figure out why.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
-                  That's the missing conversation. And it's the one we're going to have.
+                  That's the missing framework. And it's the one we're going to have.
                 </motion.p>
                 <motion.div variants={fadeUp} className="pt-4">
                   <a
@@ -150,7 +150,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
                   >
-                    Join The Missing Conversation, It's Free
+                    Join The Missing Framework — A Live Training for Youth Sports Families, It's Free
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </motion.div>
@@ -289,7 +289,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
               >
-                Learn More, Join The Missing Conversation
+                Learn More, Join The Missing Framework — A Live Training for Youth Sports Families
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>
@@ -362,7 +362,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background hover:bg-primary transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
                 >
-                  Hear the Full Story, Join The Missing Conversation
+                  Hear the Full Story, Join The Missing Framework — A Live Training for Youth Sports Families
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </motion.div>
@@ -402,7 +402,7 @@ export default function Home() {
           >
             <div className="text-center mb-16">
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-4 text-primary">
-                The Missing Conversation in Youth Sports
+                The Missing Framework — A Live Training for Youth Sports Families
               </motion.h2>
               <motion.p variants={fadeUp} className="text-xl text-muted-foreground uppercase tracking-widest font-semibold">
                 A free live session with Gabby Cole

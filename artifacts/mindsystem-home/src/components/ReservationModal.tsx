@@ -137,7 +137,7 @@ export function ReservationModal({ isOpen, onClose }: ReservationModalProps) {
                 ) : (
                   <>
                     <h2 id="modal-title" className="text-3xl md:text-4xl font-serif mb-2">Reserve Your Spot</h2>
-                    <p className="text-muted-foreground mb-8 text-lg">Join The Missing Conversation for free.</p>
+                    <p className="text-muted-foreground mb-8 text-lg">Join The Missing Framework — A Live Training for Youth Sports Families for free.</p>
 
                     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                       <div className="grid grid-cols-2 gap-5">
