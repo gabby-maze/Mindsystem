@@ -141,7 +141,7 @@ export default function Home() {
                   They're operating without a shared system. And when there's no shared system, everyone absorbs everyone else's stress, and nobody can figure out why.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
-                  That's the missing framework. And it's the one we're going to have.
+                  That's the missing framework. We're putting it in your hands.
                 </motion.p>
                 <motion.div variants={fadeUp} className="pt-4">
                   <a
