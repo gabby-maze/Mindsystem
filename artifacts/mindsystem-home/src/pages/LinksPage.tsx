@@ -185,7 +185,9 @@ export default function LinksPage() {
 
               {/* Coach Survey */}
               <a
-                href="#"
+                href="https://www.videoask.com/fp373gpc5"
+                target="_blank"
+                rel="noopener noreferrer"
                 role="listitem"
                 className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
                 style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
