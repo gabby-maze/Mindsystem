@@ -1,0 +1,6 @@
+[build]
+  publish = "artifacts/mockup-sandbox/dist"
+  command = "pnpm --filter @workspace/mockup-sandbox... run build"
+
+[build.environment]
+  BASE_PATH = "/"
