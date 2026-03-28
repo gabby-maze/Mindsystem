@@ -146,101 +146,102 @@ export default function LinksPage() {
             <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: PURPLE }} aria-hidden="true" />
           </Link>
 
-          {/* ── SURVEYS CAROUSEL ──────────────────────────────────── */}
-          <div>
-            <div className="flex items-center gap-3 pt-2 pb-3" aria-hidden="true">
-              <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
-              <span className="text-[10px] uppercase tracking-[0.25em] font-semibold" style={{ color: ORANGE }}>Surveys</span>
-              <div className="flex-1 h-px" style={{ background: `${ORANGE}30` }} />
-            </div>
+          {/* ── SURVEYS SECTION ───────────────────────────────────── */}
+          <div
+            className="p-5"
+            style={{ border: `1px solid ${ORANGE}30`, background: `${ORANGE}06` }}
+          >
+            {/* Section header */}
+            <p className="text-[10px] uppercase tracking-[0.25em] font-semibold mb-3" style={{ color: ORANGE }}>Surveys</p>
+            <h2 className="text-lg font-serif text-foreground leading-snug mb-3">
+              Help us build the missing system.
+            </h2>
+            <p className="text-muted-foreground text-xs leading-relaxed mb-5">
+              To align athletes, parents, and coaches we have to understand what each person in the ecosystem is actually experiencing. Your struggles, your questions, your wishes, and your vision for what youth sports could look like — that's the data that builds a shared language and a common path forward. Take two minutes. Tell us the truth. And as a thank you — you'll receive free lifetime access to The Inside Game Library — Gabby's most watched and most talked about content, curated and organized just for you.
+            </p>
 
+            {/* Carousel */}
             <div
-              className="flex gap-3 overflow-x-auto pb-2"
+              className="flex gap-3 overflow-x-auto pb-1"
               style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", msOverflowStyle: "none", scrollbarWidth: "none" }}
               role="list"
               aria-label="Survey links"
             >
-              {/* Anonymous Parent Survey */}
+              {/* Parent Survey */}
               <a
                 href="#"
                 role="listitem"
-                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 style={{
-                  width: "140px",
-                  height: "210px",
+                  width: "220px",
                   scrollSnapAlign: "start",
                   border: `1px solid ${ORANGE}50`,
                   ["--tw-ring-color" as string]: ORANGE,
                 }}
-                aria-label="Anonymous Parent Survey"
+                aria-label="The Parent Survey"
               >
-                <img
-                  src="/images/survey-parent.png"
-                  alt="Anonymous Parent Survey"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 px-3 py-3"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
-                >
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Parents</p>
-                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Parent Survey</p>
+                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                  <img src="/images/survey-parent.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+                </div>
+                <div className="flex flex-col flex-1 p-3 bg-card">
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Parents</p>
+                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Parent Survey</p>
+                  <p className="text-muted-foreground text-xs leading-snug mb-2">Ask the questions you're too scared to ask the coach.</p>
+                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
+                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+                  </p>
                 </div>
               </a>
 
-              {/* Anonymous Coach Survey */}
+              {/* Coach Survey */}
               <a
                 href="#"
                 role="listitem"
-                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 style={{
-                  width: "140px",
-                  height: "210px",
+                  width: "220px",
                   scrollSnapAlign: "start",
                   border: `1px solid ${ORANGE}50`,
                   ["--tw-ring-color" as string]: ORANGE,
                 }}
-                aria-label="Anonymous Coach Survey"
+                aria-label="The Coach Survey"
               >
-                <img
-                  src="/images/survey-coach.png"
-                  alt="Anonymous Coach Survey"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 px-3 py-3"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
-                >
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Coaches</p>
-                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Coach Survey</p>
+                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                  <img src="/images/survey-coach.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+                </div>
+                <div className="flex flex-col flex-1 p-3 bg-card">
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Coaches</p>
+                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Coach Survey</p>
+                  <p className="text-muted-foreground text-xs leading-snug mb-2">Tell us what nobody ever asks you about coaching.</p>
+                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
+                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+                  </p>
                 </div>
               </a>
 
-              {/* Anonymous Athlete Survey */}
+              {/* Athlete Survey */}
               <a
                 href="#"
                 role="listitem"
-                className="relative shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 style={{
-                  width: "140px",
-                  height: "210px",
+                  width: "220px",
                   scrollSnapAlign: "start",
                   border: `1px solid ${ORANGE}50`,
                   ["--tw-ring-color" as string]: ORANGE,
                 }}
-                aria-label="Anonymous Athlete Survey"
+                aria-label="The Athlete Survey"
               >
-                <img
-                  src="/images/survey-athlete.png"
-                  alt="Anonymous Athlete Survey"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-                <div
-                  className="absolute inset-x-0 bottom-0 px-3 py-3"
-                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)" }}
-                >
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-0.5" style={{ color: ORANGE }}>Athletes</p>
-                  <p className="text-white font-semibold text-xs leading-snug">Anonymous Athlete Survey</p>
+                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                  <img src="/images/survey-athlete.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+                </div>
+                <div className="flex flex-col flex-1 p-3 bg-card">
+                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Athletes</p>
+                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Athlete Survey</p>
+                  <p className="text-muted-foreground text-xs leading-snug mb-2">Tell us what nobody ever asks you about playing.</p>
+                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
+                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+                  </p>
                 </div>
               </a>
             </div>
