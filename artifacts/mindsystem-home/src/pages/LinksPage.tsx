@@ -160,36 +160,24 @@ export default function LinksPage() {
               To align athletes, parents, and coaches we have to understand what each person in the ecosystem is actually experiencing. Your struggles, your questions, your wishes, and your vision for what youth sports could look like — that's the data that builds a shared language and a common path forward. Take two minutes. Tell us the truth. And as a thank you — you'll receive free lifetime access to The Inside Game Library — Gabby's most watched and most talked about content, curated and organized just for you.
             </p>
 
-            {/* Carousel */}
-            <div
-              className="flex gap-3 overflow-x-auto pb-1"
-              style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", msOverflowStyle: "none", scrollbarWidth: "none" }}
-              role="list"
-              aria-label="Survey links"
-            >
+            {/* 3-up grid */}
+            <div className="grid grid-cols-3 gap-2" role="list" aria-label="Survey links">
+
               {/* Parent Survey */}
               <a
                 href="#"
                 role="listitem"
-                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                style={{
-                  width: "220px",
-                  scrollSnapAlign: "start",
-                  border: `1px solid ${ORANGE}50`,
-                  ["--tw-ring-color" as string]: ORANGE,
-                }}
+                className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
+                style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
                 aria-label="The Parent Survey"
               >
-                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                <div className="relative w-full overflow-hidden" style={{ paddingBottom: "140%" }}>
                   <img src="/images/survey-parent.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
                 </div>
-                <div className="flex flex-col flex-1 p-3 bg-card">
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Parents</p>
-                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Parent Survey</p>
-                  <p className="text-muted-foreground text-xs leading-snug mb-2">Ask the questions you're too scared to ask the coach.</p>
-                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
-                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
-                  </p>
+                <div className="p-2 bg-card flex-1">
+                  <p className="text-[8px] uppercase tracking-[0.1em] font-semibold mb-0.5" style={{ color: ORANGE }}>Parents</p>
+                  <p className="text-foreground font-semibold text-[11px] leading-snug mb-1">The Parent Survey</p>
+                  <p className="text-muted-foreground leading-snug" style={{ fontSize: "10px" }}>Ask the questions you're too scared to ask the coach.</p>
                 </div>
               </a>
 
@@ -197,25 +185,17 @@ export default function LinksPage() {
               <a
                 href="#"
                 role="listitem"
-                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                style={{
-                  width: "220px",
-                  scrollSnapAlign: "start",
-                  border: `1px solid ${ORANGE}50`,
-                  ["--tw-ring-color" as string]: ORANGE,
-                }}
+                className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
+                style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
                 aria-label="The Coach Survey"
               >
-                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                <div className="relative w-full overflow-hidden" style={{ paddingBottom: "140%" }}>
                   <img src="/images/survey-coach.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
                 </div>
-                <div className="flex flex-col flex-1 p-3 bg-card">
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Coaches</p>
-                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Coach Survey</p>
-                  <p className="text-muted-foreground text-xs leading-snug mb-2">Tell us what nobody ever asks you about coaching.</p>
-                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
-                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
-                  </p>
+                <div className="p-2 bg-card flex-1">
+                  <p className="text-[8px] uppercase tracking-[0.1em] font-semibold mb-0.5" style={{ color: ORANGE }}>Coaches</p>
+                  <p className="text-foreground font-semibold text-[11px] leading-snug mb-1">The Coach Survey</p>
+                  <p className="text-muted-foreground leading-snug" style={{ fontSize: "10px" }}>Tell us what nobody ever asks you about coaching.</p>
                 </div>
               </a>
 
@@ -223,28 +203,26 @@ export default function LinksPage() {
               <a
                 href="#"
                 role="listitem"
-                className="shrink-0 overflow-hidden flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                style={{
-                  width: "220px",
-                  scrollSnapAlign: "start",
-                  border: `1px solid ${ORANGE}50`,
-                  ["--tw-ring-color" as string]: ORANGE,
-                }}
+                className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
+                style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
                 aria-label="The Athlete Survey"
               >
-                <div className="relative w-full overflow-hidden" style={{ height: "150px" }}>
+                <div className="relative w-full overflow-hidden" style={{ paddingBottom: "140%" }}>
                   <img src="/images/survey-athlete.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
                 </div>
-                <div className="flex flex-col flex-1 p-3 bg-card">
-                  <p className="text-[9px] uppercase tracking-[0.15em] font-semibold mb-1" style={{ color: ORANGE }}>For Athletes</p>
-                  <p className="text-foreground font-semibold text-sm leading-snug mb-1">The Athlete Survey</p>
-                  <p className="text-muted-foreground text-xs leading-snug mb-2">Tell us what nobody ever asks you about playing.</p>
-                  <p className="text-xs leading-snug mt-auto pt-2" style={{ color: `${ORANGE}cc`, borderTop: `1px solid ${ORANGE}20` }}>
-                    Complete this survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
-                  </p>
+                <div className="p-2 bg-card flex-1">
+                  <p className="text-[8px] uppercase tracking-[0.1em] font-semibold mb-0.5" style={{ color: ORANGE }}>Athletes</p>
+                  <p className="text-foreground font-semibold text-[11px] leading-snug mb-1">The Athlete Survey</p>
+                  <p className="text-muted-foreground leading-snug" style={{ fontSize: "10px" }}>Tell us what nobody ever asks you about playing.</p>
                 </div>
               </a>
+
             </div>
+
+            {/* Shared gift line */}
+            <p className="text-xs leading-relaxed mt-4 pt-4" style={{ color: `${ORANGE}bb`, borderTop: `1px solid ${ORANGE}20` }}>
+              Complete any survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+            </p>
           </div>
 
         </div>
