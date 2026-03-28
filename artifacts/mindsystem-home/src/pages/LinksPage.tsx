@@ -203,7 +203,9 @@ export default function LinksPage() {
 
               {/* Athlete Survey */}
               <a
-                href="#"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScvxMoiaBtWjhEyB6M8MbqNceiHp9ezILT5Rt0eIQQsqBFS4A/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
                 role="listitem"
                 className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
                 style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
