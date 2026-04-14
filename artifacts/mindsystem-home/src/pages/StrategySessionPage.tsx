@@ -3,45 +3,61 @@ import { Footer } from "@/components/Footer";
 
 const PURPLE = "#9B59B6";
 const BOOK_LINK = "https://link.fastpaydirect.com/payment-link/69dd9455557558e89e51f497";
+const BASE = import.meta.env.BASE_URL;
 
 export default function StrategySessionPage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#0a0a0a", color: "#fff" }}>
-      <Navigation />
+      <Navigation
+        ctaText="Book Your Session"
+        ctaHref={BOOK_LINK}
+      />
 
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24 max-w-3xl mx-auto w-full">
-        <p
-          className="text-xs uppercase tracking-[0.3em] font-semibold mb-4"
-          style={{ color: PURPLE }}
-        >
-          1:1 Session · $250
-        </p>
+      {/* Hero — split layout */}
+      <section className="min-h-screen flex flex-col md:flex-row">
+        {/* Left: copy */}
+        <div className="flex flex-col justify-center px-8 md:px-16 py-32 md:py-0 md:w-1/2 z-10">
+          <p
+            className="text-xs uppercase tracking-[0.3em] font-semibold mb-4"
+            style={{ color: PURPLE }}
+          >
+            1:1 Session · $250
+          </p>
+          <h1
+            className="text-4xl md:text-6xl leading-tight mb-6"
+            style={{ fontFamily: "'Permanent Marker', cursive" }}
+          >
+            MindSystem Strategy Session
+          </h1>
+          <p className="text-lg text-gray-300 mb-3 leading-relaxed max-w-md">
+            A private 60-minute strategy session with Gabby Cole. Designed for families who want direct guidance on navigating their youth sports situation — before committing to a full program.
+          </p>
+          <p className="text-sm text-gray-400 mb-10 leading-relaxed max-w-md">
+            If you move forward with any MindSystem tier, your $250 is applied in full toward your purchase.
+          </p>
+          <a
+            href={BOOK_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block self-start px-10 py-4 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-80"
+            style={{ backgroundColor: PURPLE, color: "#fff" }}
+          >
+            Book Your Session — $250
+          </a>
+        </div>
 
-        <h1
-          className="text-5xl md:text-7xl leading-none mb-6"
-          style={{ fontFamily: "'Permanent Marker', cursive" }}
-        >
-          MindSystem Strategy Session
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-3 leading-relaxed">
-          A private 60-minute strategy session with Gabby Cole. Designed for families who want direct guidance on navigating their youth sports situation — before committing to a full program.
-        </p>
-
-        <p className="text-base text-gray-400 max-w-xl mb-10 leading-relaxed">
-          If you move forward with any MindSystem tier, your $250 is applied in full toward your purchase.
-        </p>
-
-        <a
-          href={BOOK_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-10 py-4 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-80"
-          style={{ backgroundColor: PURPLE, color: "#fff" }}
-        >
-          Book Your Session — $250
-        </a>
+        {/* Right: image */}
+        <div className="md:w-1/2 relative min-h-[50vh] md:min-h-screen overflow-hidden">
+          <img
+            src={`${BASE}images/gabby-court.jpg`}
+            alt="Gabby Cole on the volleyball court"
+            className="w-full h-full object-cover object-top"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, #0a0a0a 0%, transparent 30%)" }}
+          />
+        </div>
       </section>
 
       {/* Full Description */}
