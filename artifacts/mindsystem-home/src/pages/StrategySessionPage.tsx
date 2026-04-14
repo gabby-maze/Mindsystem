@@ -15,8 +15,25 @@ export default function StrategySessionPage() {
 
       {/* Hero — split layout */}
       <section className="min-h-screen flex flex-col md:flex-row">
-        {/* Left: copy */}
-        <div className="flex flex-col justify-center px-8 md:px-16 py-32 md:py-0 md:w-1/2 z-10">
+        {/* Image — top on mobile, right on desktop */}
+        <div className="order-first md:order-last md:w-1/2 relative h-[55vw] md:h-auto md:min-h-screen overflow-hidden">
+          <img
+            src={`${BASE}images/gabby-court.jpg`}
+            alt="Gabby Cole on the volleyball court"
+            className="w-full h-full object-cover object-top"
+          />
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{ background: "linear-gradient(to bottom, transparent 60%, #0a0a0a 100%)" }}
+          />
+          <div
+            className="absolute inset-0 hidden md:block"
+            style={{ background: "linear-gradient(to right, #0a0a0a 0%, transparent 30%)" }}
+          />
+        </div>
+
+        {/* Copy — below image on mobile, left on desktop */}
+        <div className="order-last md:order-first flex flex-col justify-center px-8 md:px-16 py-10 md:py-0 md:w-1/2 z-10">
           <p
             className="text-xs uppercase tracking-[0.3em] font-semibold mb-4"
             style={{ color: PURPLE }}
@@ -44,19 +61,6 @@ export default function StrategySessionPage() {
           >
             Book Your Session — $250
           </a>
-        </div>
-
-        {/* Right: image */}
-        <div className="md:w-1/2 relative min-h-[50vh] md:min-h-screen overflow-hidden">
-          <img
-            src={`${BASE}images/gabby-court.jpg`}
-            alt="Gabby Cole on the volleyball court"
-            className="w-full h-full object-cover object-top"
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, #0a0a0a 0%, transparent 30%)" }}
-          />
         </div>
       </section>
 
