@@ -104,9 +104,7 @@ export default function LinksPage() {
 
           {/* Community, teal */}
           <a
-            href="https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/community"
             role="listitem"
             className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
             style={{
@@ -115,7 +113,7 @@ export default function LinksPage() {
             }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${TEAL}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${TEAL}40`)}
-            aria-label="Join the Community on Mighty Networks, $30 per month"
+            aria-label="Join the Community"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: TEAL }}>Community</p>
