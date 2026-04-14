@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import LinksPage from "./pages/LinksPage";
 import CoachesPage from "./pages/CoachesPage";
 import CoachesThankYou from "./pages/CoachesThankYou";
+import CommunityPage from "./pages/CommunityPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/links" component={LinksPage} />
       <Route path="/coaches" component={CoachesPage} />
       <Route path="/coaches/thank-you" component={CoachesThankYou} />
+      <Route path="/community" component={CommunityPage} />
       <Route component={NotFound} />
     </Switch>
   );
