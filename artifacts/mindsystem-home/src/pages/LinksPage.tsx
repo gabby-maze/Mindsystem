@@ -76,6 +76,45 @@ export default function LinksPage() {
           </span>
         </a>
 
+        {/* ── MINDSYSTEM STRATEGY SESSION ───────────────────────── */}
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          style={{
+            border: `1px solid ${PURPLE}66`,
+            boxShadow: `0 0 40px ${PURPLE}25`,
+            ["--tw-ring-color" as string]: PURPLE,
+          }}
+          aria-label="Mindsystem Strategy Session"
+        >
+          <div
+            className="absolute top-0 left-0 right-0 h-[2px]"
+            style={{ background: `linear-gradient(to right, ${PURPLE}, ${PURPLE}60, transparent)` }}
+            aria-hidden="true"
+          />
+          <span
+            className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
+            style={{ color: PURPLE }}
+          >
+            1:1 Session
+          </span>
+          <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
+            Mindsystem Strategy Session
+          </h2>
+          <p className="text-muted-foreground text-sm mb-5">
+            Book a private session with Gabby
+          </p>
+          <span
+            className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
+            style={{ backgroundColor: PURPLE, color: "#fff" }}
+          >
+            Book Now
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+          </span>
+        </a>
+
         {/* ── LINK CARDS ────────────────────────────────────────── */}
         <div className="flex flex-col gap-3" role="list" aria-label="Links">
 
