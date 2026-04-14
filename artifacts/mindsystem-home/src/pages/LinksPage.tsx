@@ -48,7 +48,7 @@ export default function LinksPage() {
             boxShadow: `0 0 40px ${PINK}25`,
             ["--tw-ring-color" as string]: PINK,
           }}
-          aria-label="Featured event: The Missing Framework — A Live Training for Youth Sports Families, Reserve your spot"
+          aria-label="Featured event: The Missing Framework, A Live Training for Youth Sports Families, Reserve your spot"
         >
           <div
             className="absolute top-0 left-0 right-0 h-[2px]"
@@ -62,7 +62,7 @@ export default function LinksPage() {
             Featured · Free Event
           </span>
           <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
-            The Missing Framework — A Live Training for Youth Sports Families
+            The Missing Framework, A Live Training for Youth Sports Families
           </h2>
           <p className="text-muted-foreground text-sm mb-5">
             Sunday, April 19th · 6PM Pacific
