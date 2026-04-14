@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
 const PURPLE = "#9B59B6";
-const BOOK_LINK = "#";
+const BOOK_LINK = "https://link.fastpaydirect.com/payment-link/69dd9455557558e89e51f497";
 
 export default function StrategySessionPage() {
   return (
