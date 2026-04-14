@@ -30,7 +30,7 @@ export default function CommunityPage() {
         </p>
 
         <p className="text-base text-gray-400 max-w-xl mb-12 leading-relaxed">
-          Additional supporting copy goes here — benefits, what's included, what they'll get access to.
+          Additional supporting copy goes here, benefits, what's included, what they'll get access to.
         </p>
 
         <a
@@ -40,7 +40,7 @@ export default function CommunityPage() {
           className="inline-block px-10 py-4 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-80"
           style={{ backgroundColor: TEAL, color: "#0a0a0a" }}
         >
-          Join Now — $30/month
+          Join Now · $30/month
         </a>
       </section>
 
@@ -78,7 +78,7 @@ export default function CommunityPage() {
             className="inline-block px-10 py-4 text-sm font-bold uppercase tracking-widest border-2 transition-all hover:opacity-80"
             style={{ borderColor: TEAL, color: TEAL }}
           >
-            Join Now — $30/month
+            Join Now · $30/month
           </a>
         </div>
       </section>

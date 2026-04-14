@@ -47,7 +47,7 @@ export default function StrategySessionPage() {
             MindSystem Strategy Session
           </h1>
           <p className="text-lg text-gray-300 mb-3 leading-relaxed max-w-md">
-            A private 60-minute strategy session with Gabby Cole. Designed for families who want direct guidance on navigating their youth sports situation — before committing to a full program.
+            A private 60-minute strategy session with Gabby Cole. Designed for families who want direct guidance on navigating their youth sports situation, before committing to a full program.
           </p>
           <p className="text-sm text-gray-400 mb-10 leading-relaxed max-w-md">
             If you move forward with any MindSystem tier, your $250 is applied in full toward your purchase.
@@ -59,7 +59,7 @@ export default function StrategySessionPage() {
             className="inline-block self-start px-10 py-4 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-80"
             style={{ backgroundColor: PURPLE, color: "#fff" }}
           >
-            Book Your Session — $250
+            Book Your Session · $250
           </a>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function StrategySessionPage() {
         </p>
 
         <p className="text-gray-300 mb-6 leading-relaxed">
-          The MindSystem Strategy Session is a private 60-minute call with Gabby Cole — former D1 athlete, daughter of a 40-year coach, performance professional, and volleyball mom of twin girls competing at the highest levels of club volleyball in their region.
+          The MindSystem Strategy Session is a private 60-minute call with Gabby Cole, former D1 athlete, daughter of a 40-year coach, performance professional, and volleyball mom of twin girls competing at the highest levels of club volleyball in their region.
         </p>
 
         <p className="text-gray-300 mb-6 leading-relaxed">
@@ -105,10 +105,10 @@ export default function StrategySessionPage() {
         </div>
 
         <p className="text-gray-300 mb-4 leading-relaxed">
-          If you decide to move forward with any MindSystem program — Independent, Supported, or Inner Circle — your $250 is applied in full toward your purchase.
+          If you decide to move forward with any MindSystem program, Independent, Supported, or Inner Circle, your $250 is applied in full toward your purchase.
         </p>
         <p className="text-gray-300 mb-4 leading-relaxed">
-          If you don't — you still walk away with an hour of direct guidance from someone who has been inside this world her entire life.
+          If you don't, you still walk away with an hour of direct guidance from someone who has been inside this world her entire life.
         </p>
         <p className="text-gray-200 font-semibold mb-12 leading-relaxed">
           Either way your time is not wasted.
@@ -214,7 +214,7 @@ export default function StrategySessionPage() {
             className="inline-block px-10 py-4 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-80"
             style={{ backgroundColor: PURPLE, color: "#fff" }}
           >
-            Book Your Session — $250
+            Book Your Session · $250
           </a>
         </div>
       </section>
