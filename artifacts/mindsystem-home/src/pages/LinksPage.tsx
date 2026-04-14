@@ -78,9 +78,7 @@ export default function LinksPage() {
 
         {/* ── MINDSYSTEM STRATEGY SESSION ───────────────────────── */}
         <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/strategy-session"
           className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           style={{
             border: `1px solid ${PURPLE}66`,
