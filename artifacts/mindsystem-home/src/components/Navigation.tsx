@@ -5,9 +5,11 @@ import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   onReserveClick?: () => void;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
-export function Navigation({ onReserveClick }: NavigationProps) {
+export function Navigation({ onReserveClick, ctaText = "Reserve Your Spot", ctaHref = "https://www.mazeperformance.ai/missing-conversation" }: NavigationProps) {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,12 +53,12 @@ export function Navigation({ onReserveClick }: NavigationProps) {
               </Link>
             ))}
             <a
-              href="https://www.mazeperformance.ai/missing-conversation"
+              href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px] inline-flex items-center"
             >
-              Reserve Your Spot
+              {ctaText}
             </a>
           </div>
 
@@ -96,13 +98,13 @@ export function Navigation({ onReserveClick }: NavigationProps) {
                   </Link>
                 ))}
                 <a
-                  href="https://www.mazeperformance.ai/missing-conversation"
+                  href={ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
                   className="mt-3 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px]"
                 >
-                  Reserve Your Spot
+                  {ctaText}
                 </a>
               </div>
             </motion.div>
