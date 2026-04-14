@@ -65,7 +65,7 @@ export default function LinksPage() {
             The Missing Framework — A Live Training for Youth Sports Families
           </h2>
           <p className="text-muted-foreground text-sm mb-5">
-            Sunday, April 12 · 6PM Pacific
+            Sunday, April 19 · 6PM Pacific
           </p>
           <span
             className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
