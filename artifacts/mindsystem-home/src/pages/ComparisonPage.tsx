@@ -50,18 +50,18 @@ interface Feature {
 }
 
 const FEATURES: Feature[] = [
-  { label: "Physical athlete journal, 6 months",            independent: true,  supported: true,  innerCircle: true  },
-  { label: "Digital family journal",                        independent: true,  supported: true,  innerCircle: true  },
-  { label: "Athlete Compass Training (video)",              independent: true,  supported: true,  innerCircle: true  },
-  { label: "Guided video instruction for both journals",    independent: true,  supported: true,  innerCircle: true  },
-  { label: "DIY family onboarding session",                 independent: true,  supported: true,  innerCircle: true  },
-  { label: "6 months community access",                     independent: true,  supported: true,  innerCircle: true  },
-  { label: "Physical family journal, shipped",              independent: false, supported: true,  innerCircle: true  },
-  { label: "Biweekly live group athlete calls",             independent: false, supported: true,  innerCircle: true  },
-  { label: "Biweekly live group parent calls",              independent: false, supported: true,  innerCircle: true  },
-  { label: "Private family onboarding call with Gabby",     independent: false, supported: false, innerCircle: true  },
-  { label: "Direct Voxer access to Gabby, 12 weeks",        independent: false, supported: false, innerCircle: true  },
-  { label: "24 hour response time",                         independent: false, supported: false, innerCircle: true  },
+  { label: "Physical athlete journal, 6 months",                              independent: true,  supported: true,  innerCircle: true  },
+  { label: "Digital family journal",                                           independent: true,  supported: true,  innerCircle: true  },
+  { label: "Athlete Compass Training (video)",                                 independent: true,  supported: true,  innerCircle: true  },
+  { label: "Guided video instruction for both journals",                       independent: true,  supported: true,  innerCircle: true  },
+  { label: "6 months community access",                                        independent: true,  supported: true,  innerCircle: true  },
+  { label: "Physical family journal, shipped",                                 independent: false, supported: true,  innerCircle: true  },
+  { label: "Live family onboarding session",                                   independent: false, supported: true,  innerCircle: true  },
+  { label: "Biweekly live group athlete calls",                                independent: false, supported: true,  innerCircle: true  },
+  { label: "Biweekly live group parent calls",                                 independent: false, supported: true,  innerCircle: true  },
+  { label: "Private athlete onboarding call with Gabby",                       independent: false, supported: false, innerCircle: true  },
+  { label: "Private parent onboarding call with Gabby",                        independent: false, supported: false, innerCircle: true  },
+  { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time", independent: false, supported: false, innerCircle: true  },
 ];
 
 function CheckIcon({ color }: { color: string }) {
@@ -364,32 +364,11 @@ export default function ComparisonPage() {
               style={{
                 color: "rgba(255,255,255,0.55)",
                 lineHeight: 1.75,
-                marginBottom: "1.75rem",
                 fontSize: "0.95rem",
               }}
             >
               Your payment links were included in your follow up email from Gabby. If you have questions before enrolling, just hit reply on that email and she'll get back to you directly.
             </p>
-            <a
-              href="mailto:gabby@gabbycole.com"
-              style={{
-                display: "inline-block",
-                backgroundColor: TEAL,
-                color: "#0a0a0a",
-                fontFamily: "'Oswald', sans-serif",
-                fontWeight: 700,
-                fontSize: "0.8rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.15em",
-                padding: "0.875rem 2.25rem",
-                textDecoration: "none",
-                transition: "opacity 0.2s",
-              }}
-              onMouseOver={e => (e.currentTarget.style.opacity = "0.8")}
-              onMouseOut={e => (e.currentTarget.style.opacity = "1")}
-            >
-              Reply to Gabby's Email
-            </a>
           </div>
         </section>
       </main>
