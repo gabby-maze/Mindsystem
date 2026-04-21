@@ -1,0 +1,36 @@
+FEATURE LIST — UPDATED
+Replace the entire features array with this:
+javascriptconst features = [
+  { label: "Physical athlete journal — 6 months", ind: true, sup: true, ic: true },
+  { label: "Digital family journal", ind: true, sup: true, ic: true },
+  { label: "Athlete Compass Training (video)", ind: true, sup: true, ic: true },
+  { label: "Guided video instruction for both journals", ind: true, sup: true, ic: true },
+  { label: "6 months community access", ind: true, sup: true, ic: true },
+  { label: "Physical family journal — shipped", ind: false, sup: true, ic: true },
+  { label: "Live family onboarding session", ind: false, sup: true, ic: true },
+  { label: "Biweekly live group athlete calls", ind: false, sup: true, ic: true },
+  { label: "Biweekly live group parent calls", ind: false, sup: true, ic: true },
+  { label: "Private athlete onboarding call with Gabby", ind: false, sup: false, ic: true },
+  { label: "Private parent onboarding call with Gabby", ind: false, sup: false, ic: true },
+  { label: "Direct Voxer access to Gabby — 12 weeks with 24 hour response time", ind: false, sup: false, ic: true },
+];
+
+BOTTOM CTA SECTION — UPDATED
+Replace the bottom CTA block with this:
+html<div style="text-align: center; padding: 2rem; border-radius: 12px; border: 1px solid var(--color-border-tertiary); background: var(--color-background-secondary);">
+  <p style="font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.75rem;">Still deciding which tier is right for you?</p>
+  <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; max-width: 500px; margin: 0 auto;">
+    Your payment links were included in your follow up email from Gabby. If you have questions before enrolling — just hit reply on that email and she'll get back to you directly.
+  </p>
+</div>
+
+SUMMARY OF ALL CHANGES:
+
+❌ Removed: DIY family onboarding session
+✅ Added: Live family onboarding session — Supported and Inner Circle only
+❌ Removed: Private family onboarding call with Gabby (single line)
+✅ Added: Private athlete onboarding call with Gabby — Inner Circle only
+✅ Added: Private parent onboarding call with Gabby — Inner Circle only
+✅ Combined: Direct Voxer access + 24 hour response time into one line
+❌ Removed: Reply to Gabby's Email button
+✅ Kept: Bottom CTA text only — no button
