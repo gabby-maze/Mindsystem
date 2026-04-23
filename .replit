@@ -30,3 +30,4 @@ timeoutMs = 20000
 [userenv.shared]
 VITE_SUPABASE_URL = "https://vtkyhptqglhvupbdrhuv.supabase.co"
 VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0a3locHRxZ2xodnVwYmRyaHV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MDg4MDAsImV4cCI6MjA5MjQ4NDgwMH0.P-4yb2rTvNIwOWDpY6vhgBUf7L-RhlodIi3_5fju43w"
+SUPABASE_URL = "https://vtkyhptqglhvupbdrhuv.supabase.co"
