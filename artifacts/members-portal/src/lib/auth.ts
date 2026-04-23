@@ -3,7 +3,7 @@ import type { Tier } from "./data";
 
 export interface Family {
   id: string;
-  email: string;
+  user_id: string;
   family_name: string;
   tier: Tier;
   created_at: string;
@@ -17,12 +17,9 @@ export async function signUp(email: string, password: string, familyName: string
 
   if (data.user) {
     const { error: insertError } = await supabase.from("families").insert({
-      id: data.user.id,
-      email,
+      user_id: data.user.id,
       family_name: familyName,
       tier: "free",
-      terms_agreed: true,
-      terms_agreed_at: new Date().toISOString(),
     });
     if (insertError) return { error: insertError.message };
   }
@@ -44,7 +41,7 @@ export async function getFamily(): Promise<Family | null> {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const { data } = await supabase.from("families").select("*").eq("id", user.id).single();
+  const { data } = await supabase.from("families").select("*").eq("user_id", user.id).single();
   return data as Family | null;
 }
 
