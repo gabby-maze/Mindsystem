@@ -3,7 +3,6 @@ import { createClient } from "@supabase/supabase-js";
 
 const router: IRouter = Router();
 
-// ─── Supabase admin client (service role key bypasses RLS) ───────────────────
 const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 const GHL_WEBHOOK_SECRET = process.env.GHL_WEBHOOK_SECRET ?? "";
@@ -15,111 +14,106 @@ function getSupabase() {
   return createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 }
 
-// ─── Map GoHighLevel plan/product names → member tiers ───────────────────────
-// Add your exact GoHighLevel product/plan names here
-const PLAN_TO_TIER: Record<string, string> = {
-  // Courtside Conversations
-  "courtside conversations": "courtside",
-  "courtside": "courtside",
+function verifySecret(req: any) {
+  if (!GHL_WEBHOOK_SECRET) return true;
+  const provided = req.headers["x-webhook-secret"] ?? req.headers["x-ghl-secret"] ?? "";
+  return provided === GHL_WEBHOOK_SECRET;
+}
 
-  // MindSystem — Independent
-  "mindsystem independent": "independent",
+// GoHighLevel sends contact data in various shapes — extract email from any of them
+function extractEmail(body: any): string {
+  return (
+    body?.email ??
+    body?.contact?.email ??
+    body?.Contact?.email ??
+    body?.contact_email ??
+    body?.Email ??
+    ""
+  ).toLowerCase().trim();
+}
+
+function extractName(body: any): string {
+  const first = body?.first_name ?? body?.firstName ?? body?.contact?.firstName ?? body?.contact?.first_name ?? "";
+  const last = body?.last_name ?? body?.lastName ?? body?.contact?.lastName ?? body?.contact?.last_name ?? "";
+  return [first, last].filter(Boolean).join(" ");
+}
+
+async function approveContact(email: string, tier: string, familyName: string) {
+  const supabase = getSupabase();
+  const { error } = await supabase.from("approved_members").upsert({
+    email,
+    tier,
+    family_name: familyName || null,
+    enrollment_date: new Date().toISOString().split("T")[0],
+  }, { onConflict: "email" });
+  if (error) throw new Error(error.message);
+}
+
+// ─── Tier-specific webhook routes ────────────────────────────────────────────
+// Use a different URL per plan in GoHighLevel — no body config needed
+
+const TIER_ROUTES: Record<string, string> = {
+  "courtside":   "courtside",
   "independent": "independent",
+  "supported":   "supported",
+  "inner-circle": "innerCircle",
+};
 
-  // MindSystem — Supported
-  "mindsystem supported": "supported",
+for (const [slug, tier] of Object.entries(TIER_ROUTES)) {
+  router.post(`/webhooks/ghl/${slug}`, async (req, res) => {
+    if (!verifySecret(req)) return res.status(401).json({ error: "Unauthorized" });
+
+    const email = extractEmail(req.body);
+    if (!email) return res.status(400).json({ error: "No email found in payload" });
+
+    const name = extractName(req.body);
+
+    try {
+      await approveContact(email, tier, name);
+      console.log(`[GHL Webhook /${slug}] Approved: ${email} → ${tier}`);
+      return res.json({ success: true, email, tier });
+    } catch (err: any) {
+      console.error(`[GHL Webhook /${slug}] Error:`, err.message);
+      return res.status(500).json({ error: err.message });
+    }
+  });
+}
+
+// ─── Generic fallback route (auto-detects tier from plan name in payload) ─────
+const PLAN_TO_TIER: Record<string, string> = {
+  "courtside": "courtside",
+  "independent": "independent",
   "supported": "supported",
-
-  // MindSystem — Inner Circle
-  "mindsystem inner circle": "innerCircle",
   "inner circle": "innerCircle",
   "innercircle": "innerCircle",
 };
 
-function planToTier(planName: string): string {
-  const key = planName.toLowerCase().trim();
-  for (const [k, tier] of Object.entries(PLAN_TO_TIER)) {
-    if (key.includes(k)) return tier;
+function planToTier(body: any): string {
+  const planRaw = (
+    body?.product?.name ?? body?.order?.title ?? body?.opportunity?.name ??
+    body?.plan ?? body?.tags?.[0] ?? ""
+  ).toLowerCase();
+  for (const [k, t] of Object.entries(PLAN_TO_TIER)) {
+    if (planRaw.includes(k)) return t;
   }
   return "free";
 }
 
-// ─── Extract contact info from different GoHighLevel webhook formats ──────────
-function extractContact(body: any): { email: string; firstName: string; lastName: string; planName: string } | null {
-  const contact = body.contact ?? body.Contact ?? {};
-  const email = contact.email ?? contact.Email ?? body.email ?? "";
-  if (!email) return null;
-
-  const firstName = contact.firstName ?? contact.first_name ?? contact.FirstName ?? "";
-  const lastName = contact.lastName ?? contact.last_name ?? contact.LastName ?? "";
-
-  // Look for plan/product name in various GoHighLevel payload shapes
-  const planName =
-    body.product?.name ??
-    body.order?.title ??
-    body.opportunity?.name ??
-    body.pipeline_stage?.name ??
-    body.customData?.plan ??
-    body.plan ??
-    body.tags?.[0] ??
-    "";
-
-  return { email, firstName, lastName, planName };
-}
-
-// ─── POST /api/webhooks/gohighlevel ──────────────────────────────────────────
 router.post("/webhooks/gohighlevel", async (req, res) => {
-  // Optional: verify shared secret header if configured in GoHighLevel
-  if (GHL_WEBHOOK_SECRET) {
-    const provided = req.headers["x-webhook-secret"] ?? req.headers["x-ghl-secret"] ?? "";
-    if (provided !== GHL_WEBHOOK_SECRET) {
-      return res.status(401).json({ error: "Invalid webhook secret" });
-    }
-  }
+  if (!verifySecret(req)) return res.status(401).json({ error: "Unauthorized" });
 
-  const body = req.body;
+  const email = extractEmail(req.body);
+  if (!email) return res.status(400).json({ error: "No email found in payload" });
 
-  // Only process purchase/payment events (ignore other GHL webhooks)
-  const eventType = (body.type ?? body.event ?? "").toLowerCase();
-  const isPurchaseEvent =
-    eventType === "" || // no type = assume purchase
-    eventType.includes("order") ||
-    eventType.includes("purchase") ||
-    eventType.includes("payment") ||
-    eventType.includes("subscription") ||
-    eventType.includes("opportunit"); // OpportunityStageChanged
-
-  if (!isPurchaseEvent) {
-    return res.json({ received: true, skipped: true, reason: "Not a purchase event" });
-  }
-
-  const contact = extractContact(body);
-  if (!contact) {
-    return res.status(400).json({ error: "Could not extract email from webhook payload" });
-  }
-
-  const tier = planToTier(contact.planName);
-  const familyName = [contact.firstName, contact.lastName].filter(Boolean).join(" ") || undefined;
+  const tier = planToTier(req.body);
+  const name = extractName(req.body);
 
   try {
-    const supabase = getSupabase();
-
-    const { error } = await supabase.from("approved_members").upsert({
-      email: contact.email.toLowerCase().trim(),
-      tier,
-      family_name: familyName ?? null,
-      enrollment_date: new Date().toISOString().split("T")[0],
-    }, { onConflict: "email" });
-
-    if (error) {
-      console.error("Supabase insert error:", error);
-      return res.status(500).json({ error: error.message });
-    }
-
-    console.log(`[GHL Webhook] Approved: ${contact.email} → tier: ${tier}`);
-    return res.json({ success: true, email: contact.email, tier });
+    await approveContact(email, tier, name);
+    console.log(`[GHL Webhook] Approved: ${email} → ${tier}`);
+    return res.json({ success: true, email, tier });
   } catch (err: any) {
-    console.error("Webhook handler error:", err.message);
+    console.error("[GHL Webhook] Error:", err.message);
     return res.status(500).json({ error: err.message });
   }
 });
