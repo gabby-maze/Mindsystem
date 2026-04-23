@@ -1,0 +1,1027 @@
+members.gabbycole.com
+Claude Cowork Build Instructions — Version 2
+Full Member Area — Maze Performance Inc.
+
+PROJECT OVERVIEW
+Build a password-protected member area at members.gabbycole.com that delivers course content, live sessions, community interaction, and family account management for five membership tiers.
+Stack: HTML + CSS + Vanilla JavaScript + Supabase (auth and database)
+Hosting: Replit → Netlify → members.gabbycole.com subdomain
+Design: Match gabbycole.com exactly — same fonts, updated brand colors
+Video hosting: YouTube embeds
+Authentication: Individual email + password per family account (Supabase auth)
+
+BRAND COLORS
+css:root {
+  --color-pink: #FF2D78;
+  --color-purple: #C42BEE;
+  --color-violet: #982FF7;
+  --color-blue: #2B8BF5;
+  --color-teal: #00D4C8;
+
+  /* Usage */
+  --color-primary: #982FF7;         /* main CTA buttons */
+  --color-primary-light: #F3E8FF;   /* light backgrounds */
+  --color-accent: #FF2D78;          /* highlights, badges */
+  --color-accent-2: #00D4C8;        /* progress bars, success states */
+  --color-info: #2B8BF5;            /* links, info states */
+
+  /* Tier colors */
+  --color-free: #888780;
+  --color-courtside: #00D4C8;
+  --color-independent: #2B8BF5;
+  --color-supported: #982FF7;
+  --color-inner-circle: #FF2D78;
+
+  /* Neutral */
+  --color-text-primary: #2C2C2A;
+  --color-text-secondary: #5F5E5A;
+  --color-text-tertiary: #888780;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F3;
+  --color-border: rgba(0,0,0,0.12);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --max-width: 1100px;
+}
+
+SUBDOMAIN SETUP
+Create as a separate Replit project:
+
+Project name: members-gabbycole
+Deploy to Netlify
+Point members.gabbycole.com to Netlify deployment
+Add CNAME record in DNS: members → [netlify-deploy-url]
+
+
+FILE STRUCTURE
+/members
+  index.html              — login + signup page
+  dashboard.html          — member home after login
+  course.html             — individual course view
+  lesson.html             — individual lesson view
+  live.html               — live sessions page
+  progress.html           — my progress + 12 week roadmap
+  ask.html                — question submission
+  tier-landing.html       — tier-specific landing page (dynamic)
+  mindsystem-info.html    — MindSystem info + book consultation
+  style.css               — brand design system
+  auth.js                 — Supabase authentication
+  progress.js             — progress tracking
+  notifications.js        — in-app notification system
+  data.js                 — course content and tier structure
+  supabase.js             — Supabase client setup
+
+AUTHENTICATION — SUPABASE SETUP
+Why Supabase
+
+Free tier supports up to 50,000 monthly active users
+Built-in email + password auth
+Real-time database for progress, comments, questions
+Will integrate directly with the app (Phase 2)
+Vince can extend this as the app backend
+
+Supabase setup instructions for Vince
+
+Create account at supabase.com
+Create new project: maze-performance-members
+Enable Email Auth in Authentication settings
+Create these tables:
+
+sql-- Family accounts
+CREATE TABLE families (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email TEXT UNIQUE NOT NULL,
+  family_name TEXT,
+  tier TEXT NOT NULL DEFAULT 'free',
+  created_at TIMESTAMP DEFAULT now(),
+  ghl_contact_id TEXT,
+  terms_agreed BOOLEAN DEFAULT false,
+  terms_agreed_at TIMESTAMP
+);
+
+-- Progress tracking
+CREATE TABLE progress (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  family_id UUID REFERENCES families(id),
+  course_id TEXT NOT NULL,
+  lesson_id INTEGER NOT NULL,
+  completed_at TIMESTAMP DEFAULT now(),
+  UNIQUE(family_id, course_id, lesson_id)
+);
+
+-- Comments
+CREATE TABLE comments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  family_id UUID REFERENCES families(id),
+  course_id TEXT NOT NULL,
+  lesson_id INTEGER NOT NULL,
+  comment_text TEXT NOT NULL,
+  is_gabby_reply BOOLEAN DEFAULT false,
+  created_at TIMESTAMP DEFAULT now()
+);
+
+-- Questions
+CREATE TABLE questions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  family_id UUID REFERENCES families(id),
+  course_id TEXT,
+  question_text TEXT NOT NULL,
+  is_answered BOOLEAN DEFAULT false,
+  created_at TIMESTAMP DEFAULT now()
+);
+
+-- Notifications
+CREATE TABLE notifications (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  tier TEXT, -- null means all tiers
+  title TEXT NOT NULL,
+  message TEXT NOT NULL,
+  link TEXT,
+  created_at TIMESTAMP DEFAULT now()
+);
+
+-- Notification reads
+CREATE TABLE notification_reads (
+  family_id UUID REFERENCES families(id),
+  notification_id UUID REFERENCES notifications(id),
+  read_at TIMESTAMP DEFAULT now(),
+  PRIMARY KEY (family_id, notification_id)
+);
+
+-- Maze model completion (for parent training unlock)
+CREATE TABLE maze_completions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  family_id UUID REFERENCES families(id),
+  completed_at TIMESTAMP DEFAULT now(),
+  week_completed INTEGER
+);
+Supabase client setup (supabase.js)
+javascriptimport { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+FAMILY ACCOUNT CREATION
+Signup flow
+Step 1 — Create account
+
+Family name (e.g. "The Smith Family")
+Email address
+Password
+Confirm password
+
+Step 2 — Terms and acknowledgment
+Show this acknowledgment before account is created:
+
+"By creating a MindSystem family account you acknowledge and agree to the following:
+This is a family-monitored account. As the account creator you are responsible for all activity on this account.
+This account may be accessed by up to 3 family members (recommended: parent/guardian + athlete). You agree not to share login credentials outside your immediate family.
+Young athletes using this platform are doing so under parental supervision. All content is designed for family use and parental oversight is encouraged.
+I have read and agree to the MindSystem Terms of Use and Privacy Policy.
+[Checkbox] I confirm this is a family account and will be monitored by a parent or guardian.
+[Checkbox] I agree to the Terms of Use and Privacy Policy."*
+
+Step 3 — Account created
+
+Welcome email sent via Supabase (or GHL webhook)
+Redirect to dashboard
+Show welcome modal with tier-specific next steps
+
+Device limit — 3 devices max
+javascript// Track active sessions in Supabase
+// On each login — check active session count
+// If 3 active sessions exist — show message:
+// "This family account is currently active on 3 devices.
+//  Please log out on another device to continue."
+// Log session on login, clear on logout
+GHL sync (silent — no notification email)
+On account creation and login — silently update GHL contact record:
+javascriptasync function syncToGHL(familyData) {
+  await fetch('[GHL-WEBHOOK-URL]', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event: 'member_activity',
+      email: familyData.email,
+      family_name: familyData.family_name,
+      tier: familyData.tier,
+      last_login: new Date().toISOString()
+    })
+  });
+}
+
+TIER ACCESS STRUCTURE
+javascriptconst TIER_ACCESS = {
+  free: {
+    courses: {
+      "video-game-library": { access: "partial", freeLessons: ["watch-first", 1] },
+      "breakthrough-track": { access: "partial", freeLessons: ["watch-first", 1] },
+      "pressure-practice": { access: "partial", freeLessons: ["watch-first", 1] },
+      "nutrition-library": { access: "partial", freeLessons: ["watch-first", 1] },
+      "book-club": { access: "partial", freeLessons: ["watch-first", 1] },
+      "bold-conversations": { access: "partial", freeLessons: ["watch-first", 1] },
+      "volleyball-game-iq": { access: "partial", freeLessons: ["watch-first", 1] },
+    },
+    seesLockedCourses: true,
+    liveCalendar: true,
+    liveAccess: false,
+    replaysAccess: false,
+    commentsAccess: true,
+    questionsAccess: true,
+    showMindSystemUpsell: true
+  },
+  courtside: {
+    courses: {
+      "video-game-library": { access: "full" },
+      "breakthrough-track": { access: "full" },
+      "pressure-practice": { access: "full" },
+      "nutrition-library": { access: "full" },
+      "book-club": { access: "full" },
+      "bold-conversations": { access: "full" },
+      "volleyball-game-iq": { access: "full" },
+    },
+    seesLockedCourses: true,
+    liveCalendar: true,
+    liveAccess: true, // Courtside monthly live only
+    replaysAccess: true,
+    commentsAccess: true,
+    questionsAccess: true,
+    showMindSystemUpsell: true // upsell at end of every course
+  },
+  independent: {
+    courses: {
+      // All Courtside courses — full access
+      "video-game-library": { access: "full" },
+      "breakthrough-track": { access: "full" },
+      "pressure-practice": { access: "full" },
+      "nutrition-library": { access: "full" },
+      "book-club": { access: "full" },
+      "bold-conversations": { access: "full" },
+      "volleyball-game-iq": { access: "full" },
+      // MindSystem Independent courses
+      "athlete-compass-training": { access: "full" },
+      "independent-onboarding": { access: "full" },
+      "parent-training-core": { access: "full" },
+    },
+    seesLockedCourses: true,
+    liveCalendar: true,
+    liveAccess: true,
+    replaysAccess: true,
+    commentsAccess: true,
+    questionsAccess: true,
+    showMindSystemUpsell: false
+  },
+  supported: {
+    courses: {
+      // All Independent courses
+      // Plus:
+      "supported-onboarding": { access: "full" },
+      "parent-training-supported": { access: "full" },
+      "group-call-replays": { access: "full" },
+      "maze-model-form": { access: "full" }, // physical family journal form
+    },
+    seesLockedCourses: true,
+    liveCalendar: true,
+    liveAccess: true,
+    replaysAccess: true,
+    commentsAccess: true,
+    questionsAccess: true,
+    showMindSystemUpsell: false
+  },
+  innerCircle: {
+    courses: "all",
+    seesLockedCourses: false,
+    liveCalendar: true,
+    liveAccess: true,
+    replaysAccess: true,
+    commentsAccess: true,
+    questionsAccess: true,
+    showMindSystemUpsell: false
+  }
+};
+
+COURSE CONTENT STRUCTURE
+Courtside Conversations courses
+Video Game Library (and all Courtside topic courses)
+Each course follows this structure:
+
+Topic 1...16+ (each topic is a sub-section)
+
+Watch First (Instagram video — free to all)
+Lesson 1: Deep Dive (free to all)
+Lesson 2 (Courtside paid)
+Lesson 3 (Courtside paid)
+Lesson 4 (Courtside paid)
+Lesson 5 (Courtside paid)
+
+
+
+Apply this structure to all 7 Courtside courses:
+javascriptconst COURTSIDE_COURSES = [
+  {
+    id: "video-game-library",
+    title: "Video Game Library",
+    description: "The full video game library — deep dives on the most important topics in youth sports",
+    tier: "courtside",
+    topics: [
+      {
+        id: "topic-1",
+        title: "Topic Title Here",
+        lessons: [
+          { id: "watch-first", title: "Watch This First", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
+          { id: 1, title: "Deep Dive", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
+          { id: 2, title: "Lesson 2", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+          { id: 3, title: "Lesson 3", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+          { id: 4, title: "Lesson 4", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+          { id: 5, title: "Lesson 5", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+        ]
+      },
+      // repeat for all 16 topics
+    ]
+  },
+  {
+    id: "breakthrough-track",
+    title: "Break Through Track",
+    description: "Breaking through performance barriers",
+    tier: "courtside",
+    topics: [] // same structure as above
+  },
+  {
+    id: "pressure-practice",
+    title: "Pressure Practice",
+    description: "Training under pressure",
+    tier: "courtside",
+    topics: []
+  },
+  {
+    id: "nutrition-library",
+    title: "Nutrition Library",
+    description: "Nutrition for youth athletes and families",
+    tier: "courtside",
+    topics: []
+  },
+  {
+    id: "book-club",
+    title: "Book Club",
+    description: "Curated reading for athletes and parents",
+    tier: "courtside",
+    topics: []
+  },
+  {
+    id: "bold-conversations",
+    title: "Bold Conversations",
+    description: "The conversations youth sports families need to have",
+    tier: "courtside",
+    topics: []
+  },
+  {
+    id: "volleyball-game-iq",
+    title: "Volleyball Game IQ",
+    description: "Understanding the game at a deeper level",
+    tier: "courtside",
+    topics: []
+  }
+];
+MindSystem courses
+javascriptconst MINDSYSTEM_COURSES = [
+  {
+    id: "athlete-compass-training",
+    title: "Athlete Compass Training",
+    description: "Complete athlete journal video training — MAZE model walkthrough",
+    tier: "independent",
+    lessons: [
+      { id: 1, title: "Getting Started", youtubeId: "PLACEHOLDER" },
+      { id: 2, title: "Bold Commitment", youtubeId: "PLACEHOLDER" },
+      { id: 3, title: "Mindset — Bold Dreams", youtubeId: "PLACEHOLDER" },
+      { id: 4, title: "Analyze — Bold Promises", youtubeId: "PLACEHOLDER" },
+      { id: 5, title: "Zero In — Bold Focus", youtubeId: "PLACEHOLDER" },
+      { id: 6, title: "Execute — Fear Break", youtubeId: "PLACEHOLDER" },
+      { id: 7, title: "Game Time", youtubeId: "PLACEHOLDER" },
+      { id: 8, title: "Practice Time", youtubeId: "PLACEHOLDER" },
+      { id: 9, title: "Reflection", youtubeId: "PLACEHOLDER" },
+    ]
+  },
+  {
+    id: "independent-onboarding",
+    title: "Independent Onboarding",
+    description: "Getting started with MindSystem Independent",
+    tier: "independent",
+    lessons: [
+      { id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }
+    ]
+  },
+  {
+    id: "parent-training-core",
+    title: "Parent Training — Core",
+    description: "Your role in the MindSystem ecosystem",
+    tier: "independent",
+    lessons: [
+      { id: 1, title: "Understanding Your Role", youtubeId: "PLACEHOLDER", free: true },
+      {
+        id: 2,
+        title: "Shared Language in Practice",
+        youtubeId: "PLACEHOLDER",
+        timeLocked: true,
+        unlockCondition: "maze_model_complete",
+        unlockWeek: 2,
+        lockMessage: "This lesson unlocks after your athlete completes the MAZE model section of their Compass Training (Week 2)"
+      }
+    ]
+  },
+  {
+    id: "supported-onboarding",
+    title: "Supported Onboarding",
+    description: "Getting started with MindSystem Supported",
+    tier: "supported",
+    lessons: [
+      { id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }
+    ]
+  },
+  {
+    id: "parent-training-supported",
+    title: "Parent Training — Supported",
+    description: "Advanced parent training for Supported families",
+    tier: "supported",
+    lessons: []
+  },
+  {
+    id: "group-call-replays",
+    title: "Group Call Replays",
+    description: "Replays of biweekly MindSystem Supported group calls",
+    tier: "supported",
+    lessons: []
+  },
+  {
+    id: "maze-model-form",
+    title: "Family MAZE Model",
+    description: "Submit your family's MAZE model responses",
+    tier: "supported",
+    type: "form", // not a video course — renders a form
+    formId: "MAZE-FORM-PLACEHOLDER"
+  },
+  {
+    id: "inner-circle-onboarding",
+    title: "Inner Circle Onboarding",
+    description: "Getting started with MindSystem Inner Circle",
+    tier: "innerCircle",
+    lessons: [
+      { id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }
+    ]
+  },
+  {
+    id: "inner-circle-exclusive",
+    title: "Inner Circle Exclusive Content",
+    description: "Exclusive resources for Inner Circle families",
+    tier: "innerCircle",
+    lessons: []
+  }
+];
+
+TIER LANDING PAGES
+Each paid tier gets a dedicated landing page at:
+
+/tier/courtside
+/tier/independent
+/tier/supported
+/tier/inner-circle
+
+What each landing page includes:
+Header:
+
+Tier name and badge
+"Welcome to [Tier Name]" headline
+Week X of 12 (for MindSystem tiers)
+
+Call schedule section (MindSystem tiers only):
+Supported tier example:
+YOUR CALL SCHEDULE
+
+Parent Onboarding Call — Book within Week 1
+- Wednesdays 9:00 - 10:00 AM PST / 12:00 PM EST
+- Sundays 10:00 - 11:00 AM PST / 12:00 - 1:00 PM EST
+→ [Book Parent Onboarding Call]
+
+Athlete Onboarding Call — Book within Week 1
+- Wednesdays 5:30 - 6:30 PM PST / 7:30 - 8:30 PM EST
+- Saturdays 11:00 AM - 12:00 PM PST / 1:00 - 2:00 PM EST
+→ [Book Athlete Onboarding Call]
+
+Parent Group Calls — Every two weeks starting Week 2
+- Wednesdays 9:00 - 10:00 AM PST / 12:00 PM EST
+  Zoom: [link]
+- Sundays 4:00 - 5:00 PM PST / 7:00 PM EST
+  Zoom: [link]
+
+Athlete Group Calls — Every two weeks starting Week 2
+- Wednesdays 5:30 - 6:30 PM PST / 8:30 PM EST
+  Zoom: [link]
+- Sundays 12:00 - 1:00 PM PST / 3:00 PM EST
+  Zoom: [link]
+12 week roadmap section (see Training Map below)
+What's included section:
+
+List of all courses and resources for their tier
+Quick links to each
+
+Need help section:
+
+Reply to your onboarding email
+Submit a question → links to ask.html
+
+
+12 WEEK TRAINING MAP
+Build as a visual roadmap — horizontal timeline on desktop, vertical on mobile. Shows where the family should be each week.
+javascriptconst TRAINING_MAP = {
+  supported: [
+    {
+      week: 1,
+      title: "Get Oriented",
+      tasks: [
+        "Complete Supported Onboarding",
+        "Book parent onboarding call",
+        "Book athlete onboarding call",
+        "Join the community",
+        "Submit shipping address for journals"
+      ]
+    },
+    {
+      week: 2,
+      title: "Start the Compass",
+      tasks: [
+        "Athlete begins Compass Training — Getting Started",
+        "Parent completes Parent Training Lesson 1",
+        "Attend first group calls",
+        "Athlete begins MAZE model — Mindset section"
+      ]
+    },
+    {
+      week: 3,
+      title: "Build the Foundation",
+      tasks: [
+        "Athlete completes MAZE model — Analyze section",
+        "Parent Training Lesson 2 unlocks after athlete completes MAZE model",
+        "Complete habit tracker setup"
+      ]
+    },
+    {
+      week: 4,
+      title: "Zero In",
+      tasks: [
+        "Athlete identifies 3 focus skills",
+        "Parent reviews three skill blueprint",
+        "Coach conversation — share three skills",
+        "Group call check in"
+      ]
+    },
+    {
+      week: 5,
+      title: "Execute",
+      tasks: [
+        "Athlete builds execution map",
+        "Habit tracker begins",
+        "Game and practice pages active"
+      ]
+    },
+    {
+      week: 6,
+      title: "Midpoint Check",
+      tasks: [
+        "Monthly reflection — parent and athlete",
+        "Group call — midpoint discussion",
+        "Review habit tracker data"
+      ]
+    },
+    {
+      week: 7,
+      title: "Deepen the Work",
+      tasks: [
+        "Skill milestone check — beginning vs now",
+        "Parent accountability checklist review",
+        "Curate a learning experience for your athlete"
+      ]
+    },
+    {
+      week: 8,
+      title: "Stay the Course",
+      tasks: [
+        "Group call",
+        "Review shared language usage",
+        "Coach communication check in"
+      ]
+    },
+    {
+      week: 9,
+      title: "Push Through",
+      tasks: [
+        "Identify the conversation you've been avoiding",
+        "Athlete post-game reflection review",
+        "Parent habit tracker month 2 reflection"
+      ]
+    },
+    {
+      week: 10,
+      title: "Two Weeks Left",
+      tasks: [
+        "Complete progress assessment on 3 focus skills",
+        "Prepare for end of 12 week milestone",
+        "Group call — final push"
+      ]
+    },
+    {
+      week: 11,
+      title: "Final Stretch",
+      tasks: [
+        "Athlete reflection — what worked, what didn't",
+        "Parent reflection — who were you at week 1 vs now",
+        "Prepare end of season conversation"
+      ]
+    },
+    {
+      week: 12,
+      title: "12 Week Milestone",
+      tasks: [
+        "Complete 12 week milestone worksheet",
+        "Have end of season conversation with athlete",
+        "Review access for months 4-6",
+        "Check in with digital studio"
+      ]
+    }
+  ]
+};
+Progress bar with 12 week countdown
+On the dashboard show:
+
+Week X of 12
+Days remaining in program
+Overall completion percentage
+Next task due this week
+
+javascriptfunction getWeekProgress(enrollmentDate) {
+  const now = new Date();
+  const start = new Date(enrollmentDate);
+  const daysDiff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+  const weekNumber = Math.min(Math.floor(daysDiff / 7) + 1, 12);
+  const daysRemaining = Math.max(84 - daysDiff, 0);
+  return { weekNumber, daysRemaining };
+}
+
+MINDSYSTEM INFO PAGE
+Replaces the compare page. Accessible to anyone — no access restriction needed.
+URL: members.gabbycole.com/mindsystem-info OR gabbycole.com/mindsystem
+Page structure:
+Hero:
+
+"The compass your family has been missing."
+Brief MindSystem description
+
+The three pillars:
+
+Shared language
+Shared definition of success
+Shared system for tracking progress
+
+Who it's for section
+What's inside section:
+
+Brief overview of the three tiers — no prices shown
+Emphasis on the process and transformation
+
+Book a consultation CTA:
+Ready to find out if MindSystem is right for your family?
+
+Book a $250 strategy session with Gabby.
+
+On this call Gabby will walk through your family's specific situation
+and tell you exactly what your family needs.
+
+If you decide to move forward with any MindSystem program —
+the $250 consultation fee is applied directly to your plan.
+
+→ [Book Your Strategy Session] — $250
+   [INSERT PAID CALENDLY LINK]
+Not a member yet — no compare page link anywhere.
+All "not a member" CTAs go to this page or directly to the strategy session booking link.
+
+DASHBOARD LAYOUT
+Header
+
+gabbycole.com logo — top left
+Navigation: Home | Courses | Live | My Progress | Ask a Question
+Notification bell with unread count badge — top right
+Tier badge — top right
+Logout button — top right
+
+Welcome section
+
+"Welcome, [Family Name]"
+Tier badge
+Week X of 12 countdown (MindSystem tiers only)
+Quick stats: lessons completed, next live session, next task this week
+
+12 week progress bar (MindSystem tiers only)
+
+Visual week-by-week progress bar
+Current week highlighted
+Days remaining shown
+Link to full training map
+
+Course grid
+
+Courtside courses section
+MindSystem courses section (paid MindSystem tiers only)
+All locked courses visible with upgrade CTA (Courtside and free tiers)
+Progress bar per course
+
+Upgrade CTA (Courtside and free tiers only)
+Persistent banner at bottom of dashboard:
+"Ready to go deeper? MindSystem gives your family a shared compass for the full season. Book a $250 strategy session to find out which plan is right for you."
+→ [Book a Strategy Session]
+
+INDIVIDUAL LESSON PAGE
+Layout
+
+Breadcrumb: Dashboard → Course → Lesson
+YouTube embed — 16:9 responsive
+Lesson title and description
+Mark as complete button — primary color
+Previous / Next lesson navigation
+Notes text area — saves to Supabase
+Download button (if lesson has PDF — add later)
+Comments section below
+
+Time-locked lesson display
+When a lesson is time-locked:
+🔒 This lesson unlocks in Week 2
+
+Your athlete needs to complete the MAZE model section
+of their Compass Training before this lesson becomes available.
+
+Once they mark it complete — this lesson will automatically unlock.
+
+Check the training map to see where you should be this week.
+MAZE model completion trigger
+When athlete marks Compass Training lessons 3-6 complete — check if all are done. If yes:
+
+Update maze_completions table in Supabase
+Unlock parent training lesson 2 automatically
+Send in-app notification to parent: "Your athlete completed the MAZE model — Parent Training Lesson 2 is now unlocked."
+
+
+MindSystem UPSELL — END OF COURTSIDE COURSES
+At the end of every Courtside Conversations course — show this card:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You've completed [Course Name].
+
+Ready to take this further?
+
+MindSystem gives your family the full compass —
+a shared system for the athlete, the parent,
+and everyone navigating this together.
+
+→ Book a $250 Strategy Session
+  (Applied to your plan if you enroll)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Show on: Courtside and free tiers only. Hide on all paid MindSystem tiers.
+
+LIVE SESSION PAGE
+Layout
+
+"Live Sessions" header
+Notification bell for new sessions
+Upcoming sessions by tier
+Live now detection
+Past replays by tier
+
+Session data
+javascriptconst LIVE_SESSIONS = [
+  {
+    id: "courtside-monthly",
+    title: "Courtside Conversations — Monthly Live",
+    schedule: "First Wednesday of every month",
+    time: "Time TBD",
+    zoomLink: "https://us06web.zoom.us/j/84822211832?pwd=AWt9vQuOBWRrJn2fW2zRn3dxA5mvB3.1",
+    tier: "courtside",
+    recurring: true
+  },
+  {
+    id: "supported-parent-wed",
+    title: "Parent Group Call",
+    schedule: "Every two weeks — Wednesdays",
+    time: "9:00 - 10:00 AM PST / 12:00 PM EST",
+    zoomLink: "https://us06web.zoom.us/j/89001209304?pwd=In8b1x1uFjeWcykIsdI7Y7bE8Ubu0b.1",
+    tier: "supported",
+    recurring: true
+  },
+  {
+    id: "supported-parent-sun",
+    title: "Parent Group Call",
+    schedule: "Every two weeks — Sundays",
+    time: "4:00 - 5:00 PM PST / 7:00 PM EST",
+    zoomLink: "https://us06web.zoom.us/j/88599501011?pwd=nHbIQAgo20V9R3wJmGAliz7fybxia7.1",
+    tier: "supported",
+    recurring: true
+  },
+  {
+    id: "supported-athlete-wed",
+    title: "Athlete Group Call",
+    schedule: "Every two weeks — Wednesdays",
+    time: "5:30 - 6:30 PM PST / 8:30 PM EST",
+    zoomLink: "https://us06web.zoom.us/j/81438893737",
+    tier: "supported",
+    recurring: true
+  },
+  {
+    id: "supported-athlete-sun",
+    title: "Athlete Group Call",
+    schedule: "Every two weeks — Sundays",
+    time: "12:00 - 1:00 PM PST / 3:00 PM EST",
+    zoomLink: "https://us06web.zoom.us/j/87177408803?pwd=zb5TZjoSxZUxraHvh6QhyLVUzOlI4x.1",
+    tier: "supported",
+    recurring: true
+  }
+];
+Free tier — live calendar access
+Free tier sees the full live session calendar but cannot join. Sessions show as locked with:
+"Live sessions are available on Courtside Conversations and above. Book a strategy session to learn more."
+Live now detection
+Check current time against session schedule. If within window:
+
+Show "LIVE NOW" pulsing banner at top of page
+Highlight active session card
+Show "Join Now" button in primary color
+
+
+COMMENTS SECTION
+Appears at bottom of every lesson page and live session page.
+Design
+
+"Comments" section header
+Comment textarea + Submit button
+Comments list — newest first
+Gabby replies show with "Gabby Cole" badge in accent pink #FF2D78
+Timestamps on all comments
+
+Comment submission → Supabase + GHL
+javascriptasync function submitComment(courseId, lessonId, commentText) {
+  // Save to Supabase
+  const { data } = await supabase
+    .from('comments')
+    .insert({
+      family_id: getCurrentFamilyId(),
+      course_id: courseId,
+      lesson_id: lessonId,
+      comment_text: commentText
+    });
+
+  // Notify GHL
+  await fetch('[GHL-WEBHOOK-URL]', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event: 'new_comment',
+      course_id: courseId,
+      lesson_id: lessonId,
+      comment: commentText,
+      tier: getCurrentTier(),
+      timestamp: new Date().toISOString()
+    })
+  });
+}
+
+QUESTION SUBMISSION
+URL: ask.html
+Form fields
+
+Question (textarea — required)
+Which course is this about? (dropdown)
+Submit button
+
+Submission → Supabase + GHL task
+javascriptasync function submitQuestion(question, courseId) {
+  // Save to Supabase
+  await supabase.from('questions').insert({
+    family_id: getCurrentFamilyId(),
+    course_id: courseId,
+    question_text: question
+  });
+
+  // Create GHL task
+  await fetch('[GHL-WEBHOOK-URL]', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event: 'member_question',
+      question: question,
+      course_id: courseId,
+      tier: getCurrentTier(),
+      timestamp: new Date().toISOString()
+    })
+  });
+
+  showConfirmation("Your question has been submitted. Gabby will respond within 48 hours.");
+}
+
+NOTIFICATION SYSTEM
+In-app notification bell
+
+Bell icon in header nav
+Red badge shows unread count
+Clicking opens notification dropdown
+
+Notification types
+
+New content — new lesson added to a course
+MAZE model unlock — athlete completed MAZE model, parent lesson 2 unlocked
+Upcoming live session — 24 hours before a session
+Reply from Gabby — Gabby replied to a comment or question
+Milestone — week milestone reached
+
+How Gabby sends notifications
+Gabby updates a simple JSON file in Replit OR uses a GHL workflow that triggers a Supabase insert:
+javascript// Gabby inserts a row into notifications table in Supabase
+// tier: null = all tiers, or specify tier name
+// All members of that tier see it on next login
+
+const newNotification = {
+  tier: "courtside",           // or null for all
+  title: "New lesson added",
+  message: "Break Through Track has a new lesson — check it out!",
+  link: "/course/breakthrough-track"
+};
+Member notification display
+javascriptasync function loadNotifications() {
+  const { data } = await supabase
+    .from('notifications')
+    .select('*, notification_reads(*)')
+    .or(`tier.eq.${getCurrentTier()},tier.is.null`)
+    .order('created_at', { ascending: false })
+    .limit(10);
+
+  const unread = data.filter(n => n.notification_reads.length === 0);
+  updateBellBadge(unread.length);
+  renderNotifications(data);
+}
+
+MY PROGRESS PAGE
+Layout
+
+Week X of 12 — large display (MindSystem tiers)
+Days remaining in program
+Training map — visual week by week roadmap
+Current week tasks checklist
+Per course progress bars
+Milestone badges earned
+
+Milestone badges
+BadgeTriggerGetting StartedFirst lesson completeIn the Maze25% of plan completeFinding Direction50% completeCompass Earned100% completeMAZE Model CompleteAthlete completes MAZE modelWeek 6 — HalfwayReaches week 6Week 12 — DoneCompletes week 12
+
+GHL WEBHOOKS NEEDED
+Create these in GHL → Settings → Integrations → Webhooks:
+Webhook nameTrigger eventAction in GHLmember_activityLoginUpdate contact last_login fieldlesson_completeLesson marked completeUpdate contact custom fieldnew_commentComment submittedCreate internal notification taskmember_questionQuestion submittedCreate task assigned to Gabbymaze_completeAthlete completes MAZE modelTag contact: maze-model-completedevice_limit3rd device attemptAlert gabby@mazeperformance.ai
+GHL backend domain: gabby@mazeperformance.ai
+
+RESPONSIVE DESIGN
+ElementDesktopTabletMobileCourse grid3 columns2 columns1 columnTraining mapHorizontal timelineHorizontal scrollVertical stackLesson layoutVideo + sidebarStackedStackedNavigationFull nav barFull nav barHamburger menuLive sessionsCard rowCard rowCard stackNotification dropdownRight-alignedRight-alignedFull width
+
+LAUNCH CHECKLIST
+
+ Supabase project created and tables built
+ Supabase URL and anon key added to supabase.js
+ Replace all placeholder YouTube IDs
+ Add GHL webhook URLs to all forms
+ Add paid strategy session Calendly link (Gabby to provide)
+ Test signup — all 5 tiers
+ Test family account creation and terms agreement
+ Test device limit — 3 device max
+ Test locked content on free tier
+ Test time-locked parent lesson 2
+ Test MAZE model completion → parent lesson unlock
+ Test 12 week countdown
+ Test training map — current week highlight
+ Test notification bell and unread count
+ Test comment submission → GHL
+ Test question submission → GHL task
+ Test Courtside upsell card at end of courses
+ Test MindSystem info page and strategy session CTA
+ Test tier landing pages — all tiers
+ Test on mobile
+ Point members.gabbycole.com to Netlify
+ Add member area link to gabbycole.com navigation
+ Update GHL enrollment workflow with member area link and login instructions
+
+
+PHASE 2 — ADD LATER
+
+ Inner Circle custom individual member portal
+ Gabby's admin dashboard — reply to comments, view questions, send notifications
+ Email notification to members when Gabby replies
+ Full community discussion threads
+ Mobile app wrapper (Vince — Phase 2)
+ Advanced analytics for Gabby
+ Form submissions inside lessons (add per lesson as needed)
+ Stripe/Square direct integration on member portal
