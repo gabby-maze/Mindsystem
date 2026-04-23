@@ -12,18 +12,18 @@ export interface Family {
 }
 
 export async function signUp(email: string, password: string, familyName: string): Promise<{ error: string | null }> {
-  const { data, error } = await supabase.auth.signUp({ email, password });
+  // Pass family_name in metadata so the database trigger can use it
+  // The trigger automatically creates the families record server-side,
+  // and sets the tier based on the approved_members table (GoHighLevel purchases)
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { family_name: familyName },
+    },
+  });
+
   if (error) return { error: error.message };
-
-  if (data.user) {
-    const { error: insertError } = await supabase.from("families").insert({
-      user_id: data.user.id,
-      family_name: familyName,
-      tier: "free",
-    });
-    if (insertError) return { error: insertError.message };
-  }
-
   return { error: null };
 }
 
