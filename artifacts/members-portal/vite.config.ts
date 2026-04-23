@@ -4,11 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const isProd = process.env.NODE_ENV === "production";
+const isReplit = !!process.env.REPL_ID;
 
-// In dev, PORT and BASE_PATH are required. In production builds (Netlify), they're not.
 const rawPort = process.env.PORT;
 const port = rawPort ? Number(rawPort) : 3000;
-
 const basePath = process.env.BASE_PATH ?? "/";
 
 export default defineConfig({
@@ -16,24 +15,19 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    ...(!isProd && process.env.REPL_ID !== undefined
+    ...(!isProd && isReplit
       ? [
           await import("@replit/vite-plugin-runtime-error-modal").then((m) => m.default()),
           await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer({
-              root: path.resolve(import.meta.dirname, ".."),
-            }),
+            m.cartographer({ root: path.resolve(import.meta.dirname, "..") }),
           ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
+          await import("@replit/vite-plugin-dev-banner").then((m) => m.devBanner()),
         ]
       : []),
   ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
     },
     dedupe: ["react", "react-dom"],
   },
@@ -47,9 +41,6 @@ export default defineConfig({
     strictPort: true,
     host: "0.0.0.0",
     allowedHosts: true,
-    fs: {
-      strict: true,
-    },
   },
   preview: {
     port,
