@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/members-portal/"
+title = "MindSystem Member Area"
+version = "1.0.0"
+id = "artifacts/members-portal"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/members-portal/" ]
+localPort = 23498
+
+[services.development]
+run = "pnpm --filter @workspace/members-portal run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/members-portal", "run", "build" ]
+publicDir = "artifacts/members-portal/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23498"
+BASE_PATH = "/members-portal/"

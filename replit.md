@@ -91,6 +91,24 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/mindsystem-home` (`@workspace/mindsystem-home`)
+
+Main gabbycole.com marketing site — React + Vite. Bold editorial design: dark `#0a0a0a`, Permanent Marker headlines, Oswald body text, brand colors Pink/Purple/Teal/Blue. Pages: Home, About, MindSystem, Contact, /links (link-in-bio), /coaches (hidden cert page), /community, /strategy-session, /compare (hidden). Deployed via GitHub → Netlify auto-deploy (`node github-push.mjs`).
+
+### `artifacts/members-portal` (`@workspace/members-portal`)
+
+Full member area for members.gabbycole.com — React + Vite + Supabase auth. Separate Netlify site.
+
+**Tiers**: free, courtside (`#00D4C8`), independent (`#2B8BF5`), supported (`#982FF7`), innerCircle (`#FF2D78`)
+
+**Pages**: Login, Signup (2-step + terms), Dashboard, Courses, CoursePage, LessonPage (YouTube embed, mark complete, comments), LivePage (Zoom links by tier), ProgressPage (12-week map, badges), AskPage (ask Gabby), NotificationsPage
+
+**Auth**: Supabase email/password. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` env vars. Run `supabase-schema.sql` in Supabase SQL Editor to create all tables with RLS.
+
+**Supabase tables**: `families`, `progress`, `comments`, `questions`, `notifications`, `notification_reads`
+
+**Strategy session link**: https://link.fastpaydirect.com/payment-link/69dd9455557558e89e51f497
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
