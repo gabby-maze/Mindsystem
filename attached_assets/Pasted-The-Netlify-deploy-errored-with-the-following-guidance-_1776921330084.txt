@@ -1,0 +1,100 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis  
+- The build fails because `tsconfig.json` attempts to extend `../../tsconfig.base.json`, but that file is not present in the repository. See [line 193](#L193) and [line 201](#L201).
+
+Solution  
+- Update `tsconfig.json` so it extends a configuration that actually exists in the repo.  
+  * If you intended to share settings from a `tsconfig.base.json`, add that file at the expected relative path and commit it.  
+  * Otherwise, remove or replace the `extends` entry with a valid path (e.g., `extends: "./tsconfig.app.json"` or similar) so Vite can load your TypeScript configuration.
+
+The relevant error logs are:
+
+Line 0: build-image version: ac6eb13fbf000e5c09ad677efd8b7c3c2d0142b6 (noble-new-builds)
+Line 1: buildbot version: 2f607cea361d04414b42606ef78a12bf932318b7
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/gabby-maze/maze-members-portal
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom build command detected. Proceeding with the specified command: 'pnpm install && pnpm run build'
+Line 9: The package manager we have detected (npm) through a lock file or the `packageManager` property inside your `package.json`, does
+Line 10: Installing dependencies
+Line 11: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 12: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+Line 13: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 110:  WARN  Moving zod that was installed by a different package manager to "node_modules/.ignored"
+Line 111:  WARN  Moving @supabase/supabase-js that was installed by a different package manager to "node_modules/.igno
+Line 112: Progress: resolved 1, reused 0, downloaded 0, added 0
+Line 113: Progress: resolved 57, reused 0, downloaded 42, added 0
+Line 114: Progress: resolved 90, reused 0, downloaded 85, added 0
+Line 115: Progress: resolved 162, reused 0, downloaded 148, added 0
+Line 116: Progress: resolved 305, reused 0, downloaded 222, added 0
+Line 117: Packages: +238
+Line 118: ++++++++++++
+Line 119: Progress: resolved 309, reused 0, downloaded 238, added 238, done
+Line 120: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 121: dependencies:
+Line 122: + @supabase/supabase-js 2.104.0
+Line 123: devDependencies:
+Line 124: + @hookform/resolvers 3.10.0 (5.2.2 is available)
+Line 125: + @radix-ui/react-accordion 1.2.12
+Line 126: + @radix-ui/react-alert-dialog 1.1.15
+Line 127: + @radix-ui/react-aspect-ratio 1.1.8
+Line 128: + @radix-ui/react-avatar 1.1.11
+Line 129: + @radix-ui/react-checkbox 1.3.3
+Line 130: + @radix-ui/react-collapsible 1.1.12
+Line 189: ╰──────────────────────────────────────────────────────────────────────────────╯
+Line 190: Done in 5.6s using pnpm v10.30.3
+Line 191: > maze-members-portal@0.0.0 build /opt/build/repo
+Line 192: > vite build --config vite.config.ts
+Line 193: ▲ [WARNING] Cannot find base config file "../../tsconfig.base.json" [tsconfig.json]
+Line 194:     tsconfig.json:2:13:
+Line 195:       2 │   "extends": "../../tsconfig.base.json",
+Line 196:         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Line 197: vite v7.3.2 building client environment for production...
+Line 198: ✓ 0 modules transformed.
+Line 199: ✗ Build failed in 36ms
+Line 200: error during build:
+Line 201: [vite:build-html] failed to resolve "extends":"../../tsconfig.base.json" in /opt/build/repo/tsconfig.json
+Line 202: file: /opt/build/repo/index.html
+Line 203:     at resolveExtends (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightningcss@1.32.0/no
+Line 204:     at parseExtends (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightningcss@1.32.0/node
+Line 205:     at parse$13 (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightningcss@1.32.0/node_mod
+Line 206:     at async loadTsconfigJsonForFile (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightni
+Line 207:     at async transformWithEsbuild (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightningc
+Line 208:     at async Object.transform (file:///opt/build/repo/node_modules/.pnpm/vite@7.3.2_@types+node@25.6.0_jiti@2.6.1_lightningcss@1
+Line 209:     at async transform (file:///opt/build/repo/node_modules/.pnpm/rollup@4.60.2/node_modules/rollup/dist/es/shared/node-entry.js
+Line 210:     at async ModuleLoader.addModuleSource (file:///opt/build/repo/node_modules/.pnpm/rollup@4.60.2/node_modules/rollup/dist/es/s
+Line 211:  ELIFECYCLE  Command failed with exit code 1.
+Line 212: ​
+Line 213: "build.command" failed                                        
+Line 214: ────────────────────────────────────────────────────────────────
+Line 215: ​
+Line 216:   Error message
+Line 217:   Command failed with exit code 1: pnpm install && pnpm run build
+Line 218: ​
+Line 219:   Error location
+Line 220:   In build.command from netlify.toml:
+Line 221:   pnpm install && pnpm run build
+Line 222: ​
+Line 223:   Resolved config
+Line 224:   build:
+Line 225:     command: pnpm install && pnpm run build
+Line 226:     commandOrigin: config
+Line 227:     environment:
+Line 228:       - VITE_SUPABASE_ANON_KEY
+Line 229:       - VITE_SUPABASE_URL
+Line 230:       - NETLIFY_USE_PNPM
+Line 231:       - NODE_VERSION
+Line 232:     publish: /opt/build/repo/dist
+Line 233:     publishOrigin: config
+Line 234:   redirects:
+Line 235:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+Line 236: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 237: Failing build: Failed to build site
+Line 238: Finished processing build request in 33.646s
