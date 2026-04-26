@@ -58,11 +58,10 @@ const FEATURES: Feature[] = [
   { label: "Guided video instruction for both journals",                       independent: true,  supported: true,  innerCircle: true  },
   { label: "6 months community access",                                        independent: true,  supported: true,  innerCircle: true  },
   { label: "Physical family journal, shipped",                                 independent: false, supported: true,  innerCircle: true  },
-  { label: "Live family onboarding session",                                   independent: false, supported: true,  innerCircle: true  },
   { label: "Biweekly live group athlete calls",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
   { label: "Biweekly live group parent calls",   independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Private athlete onboarding call with Gabby",                       independent: false, supported: false, innerCircle: true  },
-  { label: "Private parent onboarding call with Gabby",                        independent: false, supported: false, innerCircle: true  },
+  { label: "Athlete onboarding call with Gabby", independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
+  { label: "Parent onboarding call with Gabby",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
   { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time", independent: false, supported: false, innerCircle: true  },
 ];
 
