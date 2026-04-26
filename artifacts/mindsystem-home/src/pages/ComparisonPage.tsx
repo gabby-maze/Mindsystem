@@ -47,6 +47,8 @@ interface Feature {
   independent: Check;
   supported: Check;
   innerCircle: Check;
+  supportedDesc?: string;
+  innerCircleDesc?: string;
 }
 
 const FEATURES: Feature[] = [
@@ -57,8 +59,8 @@ const FEATURES: Feature[] = [
   { label: "6 months community access",                                        independent: true,  supported: true,  innerCircle: true  },
   { label: "Physical family journal, shipped",                                 independent: false, supported: true,  innerCircle: true  },
   { label: "Live family onboarding session",                                   independent: false, supported: true,  innerCircle: true  },
-  { label: "Biweekly live group athlete calls",                                independent: false, supported: true,  innerCircle: true  },
-  { label: "Biweekly live group parent calls",                                 independent: false, supported: true,  innerCircle: true  },
+  { label: "Biweekly live group athlete calls",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
+  { label: "Biweekly live group parent calls",   independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
   { label: "Private athlete onboarding call with Gabby",                       independent: false, supported: false, innerCircle: true  },
   { label: "Private parent onboarding call with Gabby",                        independent: false, supported: false, innerCircle: true  },
   { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time", independent: false, supported: false, innerCircle: true  },
@@ -326,10 +328,20 @@ export default function ComparisonPage() {
                       {f.independent ? <CheckIcon color={TEAL} /> : <XIcon />}
                     </td>
                     <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                      {f.supported ? <CheckIcon color={PURPLE} /> : <XIcon />}
+                      <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+                        {f.supported ? <CheckIcon color={PURPLE} /> : <XIcon />}
+                        {f.supportedDesc && (
+                          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", lineHeight: 1 }}>{f.supportedDesc}</span>
+                        )}
+                      </div>
                     </td>
                     <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                      {f.innerCircle ? <CheckIcon color={PINK} /> : <XIcon />}
+                      <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+                        {f.innerCircle ? <CheckIcon color={PINK} /> : <XIcon />}
+                        {f.innerCircleDesc && (
+                          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", lineHeight: 1 }}>{f.innerCircleDesc}</span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
