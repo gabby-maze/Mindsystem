@@ -12,42 +12,63 @@ export interface Family {
 }
 
 export async function signUp(email: string, password: string, familyName: string): Promise<{ error: string | null }> {
-  const { error: signUpError } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: { family_name: familyName },
-    },
-  });
+  try {
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { family_name: familyName },
+      },
+    });
 
-  if (signUpError) return { error: signUpError.message };
+    if (signUpError) return { error: signUpError.message };
 
-  // Explicitly sign in after signup so the session is always established
-  const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-  if (signInError) return { error: signInError.message };
+    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+    if (signInError) return { error: signInError.message };
 
-  return { error: null };
+    return { error: null };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
+    return { error: msg };
+  }
 }
 
 export async function signIn(email: string, password: string): Promise<{ error: string | null }> {
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) return { error: error.message };
-  return { error: null };
+  try {
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) return { error: error.message };
+    return { error: null };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
+    return { error: msg };
+  }
 }
 
 export async function signOut() {
-  await supabase.auth.signOut();
+  try {
+    await supabase.auth.signOut();
+  } catch {
+    // ignore sign-out errors
+  }
 }
 
 export async function getFamily(): Promise<Family | null> {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return null;
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return null;
 
-  const { data } = await supabase.from("families").select("*").eq("user_id", user.id).single();
-  return data as Family | null;
+    const { data } = await supabase.from("families").select("*").eq("user_id", user.id).single();
+    return data as Family | null;
+  } catch {
+    return null;
+  }
 }
 
 export async function getCurrentUser() {
-  const { data: { user } } = await supabase.auth.getUser();
-  return user;
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+    return user;
+  } catch {
+    return null;
+  }
 }
