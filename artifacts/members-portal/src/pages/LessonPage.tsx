@@ -2,11 +2,12 @@ import { useRoute, useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
-import { ALL_COURSES, type Lesson } from "@/lib/data";
+import { ALL_COURSES, STRATEGY_SESSION_LINK, type Lesson } from "@/lib/data";
 import { supabase } from "@/lib/supabase";
-import { CheckCircle, ArrowLeft, ArrowRight, Lock } from "lucide-react";
+import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink } from "lucide-react";
 
 const PURPLE = "#982FF7";
+const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK"; // replace when GHL page is built
 
 function YouTubeEmbed({ youtubeId }: { youtubeId: string }) {
   if (youtubeId === "PLACEHOLDER") {
@@ -128,6 +129,12 @@ export default function LessonPage() {
 
   const isTimeLocked = lesson.timeLocked && !family.maze_model_complete;
 
+  // Upgrade CTA logic
+  const isLastFreeLesson =
+    family.tier === "free" && lesson.free === true && (!nextLesson || nextLesson.free === false);
+  const isLastCourtsideLesson =
+    family.tier === "courtside" && !nextLesson && course.tier === "courtside";
+
   return (
     <Layout>
       <div className="max-w-3xl mx-auto px-4 md:px-8 py-10">
@@ -182,6 +189,86 @@ export default function LessonPage() {
               <CheckCircle size={16} />
               {completed ? "Completed" : "Mark as Complete"}
             </button>
+
+            {/* Upgrade CTA — Free tier at end of last free lesson */}
+            {isLastFreeLesson && (
+              <div
+                className="rounded-lg p-8 mb-8 text-center"
+                style={{
+                  background: "linear-gradient(135deg, rgba(0,212,200,0.1), rgba(43,139,245,0.07))",
+                  border: "1px solid rgba(0,212,200,0.25)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "rgba(0,212,200,0.7)" }}>
+                  The rest of this series is inside Courtside
+                </p>
+                <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "1.3rem", marginBottom: "0.5rem" }}>
+                  5 deep-dive video series + monthly live calls
+                </p>
+                <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  $30/month — cancel any time.
+                </p>
+                <a
+                  href={COURTSIDE_UPGRADE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                  style={{
+                    backgroundColor: "#00D4C8",
+                    color: "#0a0a0a",
+                    padding: "0.875rem 2rem",
+                    fontFamily: "'Oswald', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    textDecoration: "none",
+                  }}
+                >
+                  Join Courtside — $30/mo <ExternalLink size={12} />
+                </a>
+              </div>
+            )}
+
+            {/* Upgrade CTA — Courtside tier at end of last Courtside lesson */}
+            {isLastCourtsideLesson && (
+              <div
+                className="rounded-lg p-8 mb-8 text-center"
+                style={{
+                  background: "linear-gradient(135deg, rgba(152,47,247,0.12), rgba(255,45,120,0.07))",
+                  border: "1px solid rgba(152,47,247,0.25)",
+                }}
+              >
+                <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "rgba(152,47,247,0.7)" }}>
+                  Ready for the full framework?
+                </p>
+                <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "1.3rem", marginBottom: "0.5rem" }}>
+                  MindSystem gives your family a compass for the whole season
+                </p>
+                <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  Physical journals, cohort calls, and 12 weeks of live support from Gabby.
+                </p>
+                <a
+                  href={STRATEGY_SESSION_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                  style={{
+                    backgroundColor: "#982FF7",
+                    color: "#fff",
+                    padding: "0.875rem 2rem",
+                    fontFamily: "'Oswald', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    textDecoration: "none",
+                  }}
+                >
+                  Book a Strategy Session · $250 <ExternalLink size={12} />
+                </a>
+              </div>
+            )}
 
             {/* Prev / Next */}
             <div className="flex justify-between mb-12">
