@@ -4,6 +4,7 @@
 
 [build.environment]
   NETLIFY_USE_PNPM = "true"
+  PNPM_VERSION = "10.26.1"
   NODE_VERSION = "20"
 
 [[redirects]]
