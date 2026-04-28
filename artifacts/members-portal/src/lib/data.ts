@@ -39,25 +39,116 @@ export interface Course {
   title: string;
   description: string;
   tier: Tier;
+  gradientFrom?: string;
+  gradientTo?: string;
   topics?: Topic[];
   lessons?: Lesson[];
   type?: string;
   formId?: string;
 }
 
+// ── COURTSIDE COURSES (7 sections, all visible in grid) ──────────────────────
+
 export const COURTSIDE_COURSES: Course[] = [
+  {
+    id: "your-starting-point",
+    title: "Your Starting Point",
+    description: "Train for your season — wherever you are in the year.",
+    tier: "courtside",
+    gradientFrom: "#982FF7",
+    gradientTo: "#2B8BF5",
+    topics: [
+      {
+        id: "summer-camp-season",
+        title: "Summer Camp Season",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "tryouts",
+        title: "Tryouts",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "fall-ball-school-ball",
+        title: "Fall Ball / School Ball",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "beginning-of-season",
+        title: "Beginning of Season",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "mid-season",
+        title: "Mid Season",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "end-of-season",
+        title: "End of Season",
+        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+    ],
+  },
+  {
+    id: "pressure-practice",
+    title: "Pressure Practice",
+    description: "Training under pressure — mental reps that carry into games.",
+    tier: "courtside",
+    gradientFrom: "#FF2D78",
+    gradientTo: "#C42BEE",
+    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+  },
+  {
+    id: "nutrition-library",
+    title: "Nutrition Library",
+    description: "Nutrition for youth athletes and families.",
+    tier: "courtside",
+    gradientFrom: "#00D4C8",
+    gradientTo: "#2B8BF5",
+    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+  },
+  {
+    id: "book-club",
+    title: "Book Club",
+    description: "Curated reading for athletes and parents.",
+    tier: "courtside",
+    gradientFrom: "#C42BEE",
+    gradientTo: "#982FF7",
+    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+  },
+  {
+    id: "bold-conversations",
+    title: "Bold Conversations",
+    description: "The conversations youth sports families need to have.",
+    tier: "courtside",
+    gradientFrom: "#FF2D78",
+    gradientTo: "#982FF7",
+    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+  },
+  {
+    id: "volleyball-game-iq",
+    title: "Volleyball Game IQ",
+    description: "Understanding the game at a deeper level.",
+    tier: "courtside",
+    gradientFrom: "#2B8BF5",
+    gradientTo: "#00D4C8",
+    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+  },
   {
     id: "video-game-library",
     title: "Video Game Library",
-    description: "The full video game library — deep dives on the most important topics in youth sports",
+    description: "Deep dives on the most important topics in youth sports.",
     tier: "courtside",
+    gradientFrom: "#00D4C8",
+    gradientTo: "#982FF7",
     topics: [
       {
-        id: "topic-1",
+        id: "understanding-the-ecosystem",
         title: "Understanding the Ecosystem",
         lessons: [
           { id: "watch-first", title: "Watch This First", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
-          { id: 1, title: "Deep Dive", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
+          { id: 1, title: "Deep Dive", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
           { id: 2, title: "Lesson 2", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
           { id: 3, title: "Lesson 3", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
           { id: 4, title: "Lesson 4", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
@@ -66,49 +157,9 @@ export const COURTSIDE_COURSES: Course[] = [
       },
     ],
   },
-  {
-    id: "breakthrough-track",
-    title: "Break Through Track",
-    description: "Breaking through performance barriers",
-    tier: "courtside",
-    topics: [],
-  },
-  {
-    id: "pressure-practice",
-    title: "Pressure Practice",
-    description: "Training under pressure",
-    tier: "courtside",
-    topics: [],
-  },
-  {
-    id: "nutrition-library",
-    title: "Nutrition Library",
-    description: "Nutrition for youth athletes and families",
-    tier: "courtside",
-    topics: [],
-  },
-  {
-    id: "book-club",
-    title: "Book Club",
-    description: "Curated reading for athletes and parents",
-    tier: "courtside",
-    topics: [],
-  },
-  {
-    id: "bold-conversations",
-    title: "Bold Conversations",
-    description: "The conversations youth sports families need to have",
-    tier: "courtside",
-    topics: [],
-  },
-  {
-    id: "volleyball-game-iq",
-    title: "Volleyball Game IQ",
-    description: "Understanding the game at a deeper level",
-    tier: "courtside",
-    topics: [],
-  },
 ];
+
+// ── MINDSYSTEM COURSES ───────────────────────────────────────────────────────
 
 export const MINDSYSTEM_COURSES: Course[] = [
   {
@@ -116,6 +167,8 @@ export const MINDSYSTEM_COURSES: Course[] = [
     title: "Athlete Compass Training",
     description: "Complete athlete journal video training — MAZE model walkthrough",
     tier: "independent",
+    gradientFrom: "#2B8BF5",
+    gradientTo: "#982FF7",
     lessons: [
       { id: 1, title: "Getting Started", youtubeId: "PLACEHOLDER" },
       { id: 2, title: "Bold Commitment", youtubeId: "PLACEHOLDER" },
@@ -201,6 +254,8 @@ export const MINDSYSTEM_COURSES: Course[] = [
 
 export const ALL_COURSES = [...COURTSIDE_COURSES, ...MINDSYSTEM_COURSES];
 
+// ── LIVE SESSIONS ────────────────────────────────────────────────────────────
+
 export interface LiveSession {
   id: string;
   title: string;
@@ -259,6 +314,8 @@ export const LIVE_SESSIONS: LiveSession[] = [
   },
 ];
 
+// ── TIER ACCESS ──────────────────────────────────────────────────────────────
+
 export const TIER_ACCESS: Record<Tier, { minTier: number }> = {
   free: { minTier: 0 },
   courtside: { minTier: 1 },
@@ -278,6 +335,8 @@ const TIER_RANK: Record<Tier, number> = {
 export function hasTierAccess(userTier: Tier, requiredTier: Tier): boolean {
   return TIER_RANK[userTier] >= TIER_RANK[requiredTier];
 }
+
+// ── 12-WEEK TRAINING MAP ─────────────────────────────────────────────────────
 
 export const TRAINING_MAP = [
   { week: 1, title: "Get Oriented", tasks: ["Complete Supported Onboarding", "Book parent onboarding call", "Book athlete onboarding call", "Join the community", "Submit shipping address for journals"] },

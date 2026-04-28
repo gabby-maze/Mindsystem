@@ -1,81 +1,154 @@
+import { useState } from "react";
 import { useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
-import { TIER_COLORS, TIER_LABELS, COURTSIDE_COURSES, MINDSYSTEM_COURSES, hasTierAccess, type Tier } from "@/lib/data";
+import { UpgradeModal } from "@/components/UpgradeModal";
+import { COURTSIDE_COURSES, type Course } from "@/lib/data";
+import { canAccessSection } from "@/lib/access";
 import { Lock } from "lucide-react";
 
-function CourseRow({ course, userTier }: { course: any; userTier: Tier }) {
+function SectionCard({
+  course,
+  userTier,
+  onLockedClick,
+}: {
+  course: Course;
+  userTier: string;
+  onLockedClick: () => void;
+}) {
   const [, navigate] = useLocation();
-  const hasAccess = hasTierAccess(userTier, course.tier);
-  const tierColor = TIER_COLORS[course.tier as Tier];
+  const isVideoGame = course.id === "video-game-library";
+  const hasAccess = canAccessSection(userTier, course.id);
+
+  function handleClick() {
+    if (hasAccess) {
+      navigate(`/courses/${course.id}`);
+    } else {
+      onLockedClick();
+    }
+  }
 
   return (
     <div
-      onClick={() => hasAccess && navigate(`/courses/${course.id}`)}
-      className="flex items-center gap-5 p-5 rounded-lg transition-all"
+      onClick={handleClick}
+      className="relative rounded-lg overflow-hidden cursor-pointer group"
       style={{
-        backgroundColor: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.07)",
-        cursor: hasAccess ? "pointer" : "default",
-        opacity: hasAccess ? 1 : 0.55,
+        aspectRatio: "4/3",
+        background: `linear-gradient(135deg, ${course.gradientFrom}, ${course.gradientTo})`,
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLDivElement).style.transform = "scale(1.03)";
+        (e.currentTarget as HTMLDivElement).style.boxShadow = `0 8px 32px rgba(0,0,0,0.5)`;
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
+        (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
     >
-      <div style={{ width: 4, height: 44, backgroundColor: tierColor, borderRadius: 2, flexShrink: 0 }} />
-      <div className="flex-1 min-w-0">
-        <h3 className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: hasAccess ? "#fff" : "rgba(255,255,255,0.4)" }}>
-          {course.title}
-        </h3>
-        <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.45)" }}>{course.description}</p>
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75) 100%)",
+        }}
+      />
+
+      {/* Badge — top right */}
+      <div className="absolute top-3 right-3">
+        {!hasAccess && !isVideoGame && (
+          <div
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+            style={{ backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
+          >
+            <Lock size={11} style={{ color: "rgba(255,255,255,0.7)" }} />
+          </div>
+        )}
+        {userTier === "free" && isVideoGame && (
+          <div
+            className="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            style={{
+              backgroundColor: "#00D4C8",
+              color: "#0a0a0a",
+              fontSize: "0.65rem",
+            }}
+          >
+            1 Free Lesson
+          </div>
+        )}
       </div>
-      {!hasAccess ? (
-        <div className="flex items-center gap-2 shrink-0">
-          <Lock size={14} style={{ color: "rgba(255,255,255,0.3)" }} />
-          <span className="text-xs uppercase tracking-wider hidden md:block" style={{ color: tierColor }}>
-            {TIER_LABELS[course.tier as Tier]}
-          </span>
-        </div>
-      ) : (
-        <span className="text-xs uppercase tracking-wider shrink-0" style={{ color: "rgba(255,255,255,0.3)" }}>
-          Open →
-        </span>
-      )}
+
+      {/* Title — bottom left */}
+      <div className="absolute bottom-0 left-0 right-0 p-4">
+        <p
+          style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontWeight: 700,
+            fontSize: "1rem",
+            color: "#fff",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            textShadow: "0 1px 4px rgba(0,0,0,0.6)",
+          }}
+        >
+          {course.title}
+        </p>
+      </div>
     </div>
   );
 }
 
 export default function CoursesPage() {
   const { family } = useAuth();
+  const [showModal, setShowModal] = useState(false);
+
   if (!family) return null;
 
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto px-4 md:px-8 py-10">
-        <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.8rem,4vw,2.5rem)", marginBottom: "2.5rem" }}>
-          Courses
-        </h1>
-
-        <section className="mb-10">
-          <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>
-            Courtside Conversations
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-10">
+        {/* Header */}
+        <div className="mb-10">
+          <h1
+            style={{
+              fontFamily: "'Permanent Marker', cursive",
+              fontSize: "clamp(1.8rem,4vw,2.5rem)",
+              marginBottom: "0.5rem",
+            }}
+          >
+            Your Training Library
+          </h1>
+          <p
+            style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 400,
+              color: "rgba(255,255,255,0.45)",
+              fontSize: "0.95rem",
+            }}
+          >
+            Choose a section to begin.
           </p>
-          <div className="flex flex-col gap-3">
-            {COURTSIDE_COURSES.map(c => (
-              <CourseRow key={c.id} course={c} userTier={family.tier} />
-            ))}
-          </div>
-        </section>
+        </div>
 
-        <section>
-          <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>
-            MindSystem
-          </p>
-          <div className="flex flex-col gap-3">
-            {MINDSYSTEM_COURSES.map(c => (
-              <CourseRow key={c.id} course={c} userTier={family.tier} />
-            ))}
-          </div>
-        </section>
+        {/* 7-section grid */}
+        <div
+          className="grid gap-5"
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
+          }}
+        >
+          {COURTSIDE_COURSES.map((course) => (
+            <SectionCard
+              key={course.id}
+              course={course}
+              userTier={family.tier}
+              onLockedClick={() => setShowModal(true)}
+            />
+          ))}
+        </div>
       </div>
+
+      {showModal && <UpgradeModal onClose={() => setShowModal(false)} />}
     </Layout>
   );
 }
