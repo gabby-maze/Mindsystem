@@ -9,6 +9,7 @@ export interface Family {
   created_at: string;
   enrollment_date?: string;
   maze_model_complete?: boolean;
+  is_admin?: boolean;
 }
 
 export async function signUp(email: string, password: string, familyName: string): Promise<{ error: string | null }> {
