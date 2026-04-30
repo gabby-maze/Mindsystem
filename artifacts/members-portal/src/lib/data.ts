@@ -403,10 +403,33 @@ export interface MindSystemCourse {
   tracks: MSTrack[];
 }
 
+const EXECUTE_OVERVIEW_COPY = `Here is what each tool is for and when you use it.
+
+THE EXECUTION MAP
+Use it: Before the season starts and every time you need to remember what you are building. This page holds your season goal, team goal, individual contribution, three focus skills, and checkpoints. When things get hard this season — open this page first. Read it. Then decide what to do next.
+
+THE HABIT TRACKER
+Use it: Every single day. Thirty seconds before bed. Mark honestly. Completed, partial, or missed. No erasing. Review weekly to see patterns. Review monthly to adjust which habits you are tracking.
+
+THE ACCOUNTABILITY CHECKLIST
+Use it: Weekly. At the start of each week to set your intention and at the end to see how you did. This is your structure. Not your judge. It shows you what consistent commitment actually looks like in practice.
+
+GAME TIME PAGES
+Use it: Before and after every competition. Every single one. Before — three coach instructions, three one-word cues. After — three triumphs, three improvements, honest satisfaction check.
+
+PRACTICE TIME PAGES
+Use it: Before and after every practice session. Before — set three intentions. After — reflect on follow-through, write coach instructions, check in emotionally.
+
+CHECKPOINTS
+Use them: Early season to set your baseline. Mid-season to assess and adjust. End of season to close the loop and build forward. At each checkpoint — rescore your skills, look at what is working, identify one thing to change or carry forward. Great athletes do not start over every season. They build forward.
+
+THE RULE TO REMEMBER
+Practice is permission to learn. Games are responsibility to apply.
+Know which one you are in every time you walk into the gym. That one distinction will change how you compete.`;
+
 const EXECUTE_SUB_SECTIONS = (suffix: string): MSSubSection[] => [
   { id: `overview${suffix}`, title: "Overview", lessons: [
-    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
-    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+    { id: 1, title: "Overview", videoId: "WmWHdoWHqx0", description: EXECUTE_OVERVIEW_COPY },
   ]},
   { id: `execution-map${suffix}`, title: "Execution Map", lessons: [
     { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
