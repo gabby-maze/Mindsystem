@@ -533,8 +533,7 @@ Every row honest. Every answer yours.
 When this section is done you know something most athletes never know. You know exactly what is helping you and exactly what is getting in your way.
 That is your data. Now you get to use it.`;
 
-// TODO: replace with the real hosted workbook file URL
-const MINDSET_WORKBOOK_URL = "TODO_MINDSET_WORKBOOK_URL";
+const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   if (s.id === "mindset") {
