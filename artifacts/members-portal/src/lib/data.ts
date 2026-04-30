@@ -495,21 +495,69 @@ Your why. Your visualization. Your heroine. Your mantra. Your inner voice patter
 Every page complete. Every answer honest.
 When they are done — you have a foundation. Everything built in the rest of this program sits on top of what you just wrote here.`;
 
+const ANALYZE_HOW_TO_COPY = `Your journal is open. Here is exactly what to do with each page.
+
+YOUR SEASON GOALS PAGE
+This is the first page in your Analyze section. Write two or three goals for this season.
+If you wrote these in your workbook before your journal arrived — read them again. Have they changed? Are they still true? Write your final version here.
+These do not need to be perfect yet. You are choosing direction, not making a promise. Write what you actually want — not what sounds impressive.
+
+THE HABIT TABLE
+This is the main page of the Analyze section. It has four columns.
+Before you fill it in — read this.
+You are not judging yourself here. You are not making a list of everything wrong with you. You are connecting dots. Habit to emotion to outcome to goal. That's it.
+Start by choosing three to five habits that you know matter to your performance. Not ten. The honest three to five.
+Column one — write the habit exactly as it actually is. Not how you want it to be. What you actually do.
+Column two — write the emotion that habit creates. One word. Tired. Focused. Anxious. Sharp. Sluggish. Calm. Whatever is true.
+Column three — write the outcome you see on the court because of this habit. Be specific. Not just good or bad. What actually happens.
+Column four — yes or no. Does this habit support the goals you wrote on the previous page?
+Fill in every row completely before you move to the next habit.
+
+THE LANGUAGE RULE
+Once your table is complete — look at every row where you wrote No in column four.
+For each No habit — you are going to write a replacement. Not what you will stop doing. What you will start doing instead.
+Not — stop staying up late. Write — I go to sleep by 9:30pm.
+Not — stop eating junk before practice. Write — I eat a real meal two hours before practice.
+Your brain works better with a target than a restriction. Give it something to move toward.
+Write your positive replacement next to every No in the table.
+
+YOUR CARRY-FORWARD LINE
+At the bottom of the Analyze section you will see a carry-forward prompt.
+Write this — hold onto your No habits. They become your building blocks in the next section.
+You are not throwing them away. You are saving them. Zero In is where you decide which ones to work on first.
+
+COMPLETING THIS SECTION
+Before you move to Zero In — make sure both Analyze pages are complete.
+Your season goals. Your habit table with all four columns filled in. Your positive replacement for every No habit.
+Every row honest. Every answer yours.
+When this section is done you know something most athletes never know. You know exactly what is helping you and exactly what is getting in your way.
+That is your data. Now you get to use it.`;
+
 // TODO: replace with the real hosted workbook file URL
 const MINDSET_WORKBOOK_URL = "TODO_MINDSET_WORKBOOK_URL";
 
-const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) =>
-  s.id === "mindset"
-    ? {
-        ...s,
-        workbookUrl: MINDSET_WORKBOOK_URL,
-        lessons: [
-          { id: 1, title: "Overview", videoId: "sGaambx3JSs" },
-          { id: 2, title: "How to Fill In Your Journal", videoId: "hmCPXBHayZA", description: MINDSET_HOW_TO_COPY },
-        ],
-      }
-    : s
-);
+const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
+  if (s.id === "mindset") {
+    return {
+      ...s,
+      workbookUrl: MINDSET_WORKBOOK_URL,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "sGaambx3JSs" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "hmCPXBHayZA", description: MINDSET_HOW_TO_COPY },
+      ],
+    };
+  }
+  if (s.id === "analyze") {
+    return {
+      ...s,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "5fAZHN0ltZo" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "M-sAKRmuwuU", description: ANALYZE_HOW_TO_COPY },
+      ],
+    };
+  }
+  return s;
+});
 
 export const MINDSYSTEM_COURSE: MindSystemCourse = {
   id: "mindsystem",
