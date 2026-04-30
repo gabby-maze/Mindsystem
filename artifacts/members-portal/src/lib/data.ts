@@ -404,6 +404,10 @@ export interface MindSystemCourse {
 }
 
 const EXECUTE_SUB_SECTIONS = (suffix: string): MSSubSection[] => [
+  { id: `overview${suffix}`, title: "Overview", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
   { id: `execution-map${suffix}`, title: "Execution Map", lessons: [
     { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
     { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
