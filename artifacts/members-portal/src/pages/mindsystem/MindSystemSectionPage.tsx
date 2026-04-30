@@ -2,7 +2,7 @@ import { useParams, useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { MINDSYSTEM_COURSE, type MSSection, type MSSubSection } from "@/lib/data";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Download } from "lucide-react";
 
 const PINK = "#FF2D78";
 const PURPLE = "#982FF7";
@@ -153,6 +153,29 @@ function LessonList({
           <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.8rem,4vw,2.5rem)" }}>
             {subSection ? subSection.title : section.title}
           </h1>
+          {!subSection && section.workbookUrl && section.workbookUrl !== "TODO_MINDSET_WORKBOOK_URL" && (
+            <a
+              href={section.workbookUrl}
+              download
+              className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-lg"
+              style={{
+                background: `${PURPLE}22`,
+                border: `1px solid ${PURPLE}55`,
+                color: "#fff",
+                fontFamily: "'Oswald', sans-serif",
+                fontSize: "0.8rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = `${PURPLE}44`; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = `${PURPLE}22`; }}
+            >
+              <Download size={14} style={{ color: PURPLE }} />
+              Download Work Book
+            </a>
+          )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {lessons.map((lesson, i) => (

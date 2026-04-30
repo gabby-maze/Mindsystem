@@ -384,6 +384,7 @@ export interface MSSection {
   title: string;
   lessons?: MSLesson[];
   subSections?: MSSubSection[];
+  workbookUrl?: string;
 }
 
 export interface MSTrack {
@@ -494,10 +495,14 @@ Your why. Your visualization. Your heroine. Your mantra. Your inner voice patter
 Every page complete. Every answer honest.
 When they are done — you have a foundation. Everything built in the rest of this program sits on top of what you just wrote here.`;
 
+// TODO: replace with the real hosted workbook file URL
+const MINDSET_WORKBOOK_URL = "TODO_MINDSET_WORKBOOK_URL";
+
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) =>
   s.id === "mindset"
     ? {
         ...s,
+        workbookUrl: MINDSET_WORKBOOK_URL,
         lessons: [
           { id: 1, title: "Overview", videoId: "sGaambx3JSs" },
           { id: 2, title: "How to Fill In Your Journal", videoId: "hmCPXBHayZA", description: MINDSET_HOW_TO_COPY },
