@@ -94,7 +94,7 @@ export default function MindSystemSectionPage() {
                     {ss.title}
                   </p>
                   <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.4)", marginTop: "0.2rem" }}>
-                    2 lessons
+                    {ss.lessons.length} {ss.lessons.length === 1 ? "lesson" : "lessons"}
                   </p>
                 </div>
                 <ChevronRight size={16} style={{ color: PURPLE, flexShrink: 0 }} />
