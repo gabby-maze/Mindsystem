@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import Layout from "@/components/Layout";
-import { UpgradeModal } from "@/components/UpgradeModal";
-import { COURTSIDE_COURSES } from "@/lib/data";
+import { UpgradeModal, MINDSYSTEM_MODAL_PROPS } from "@/components/UpgradeModal";
+import { COURTSIDE_COURSES, MINDSYSTEM_COURSE } from "@/lib/data";
 import { canAccessSection } from "@/lib/access";
 import { CheckCircle, Lock } from "lucide-react";
+
+type ModalContext = "courtside" | "mindsystem" | null;
 
 // TODO: replace with GHL Courtside payment link
 const COURTSIDE_LINK = "TODO_COURTSIDE_GHL_LINK";
@@ -20,7 +22,7 @@ const UNLOCKS = [
 
 export default function FreeDashboard() {
   const [, navigate] = useLocation();
-  const [showModal, setShowModal] = useState(false);
+  const [modalContext, setModalContext] = useState<ModalContext>(null);
 
   return (
     <Layout>
@@ -197,7 +199,7 @@ export default function FreeDashboard() {
               return (
                 <div
                   key={course.id}
-                  onClick={() => accessible ? navigate(`/courses/${course.id}`) : setShowModal(true)}
+                  onClick={() => accessible ? navigate(`/courses/${course.id}`) : setModalContext("courtside")}
                   className="relative rounded-lg overflow-hidden cursor-pointer"
                   style={{
                     aspectRatio: "4/3",
@@ -208,13 +210,10 @@ export default function FreeDashboard() {
                   onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1)"; }}
                 >
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75))" }} />
-                  {/* Badge */}
                   <div className="absolute top-3 right-3">
                     {isVideoGame ? (
-                      <span
-                        className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                        style={{ backgroundColor: "#00D4C8", color: "#0a0a0a", fontSize: "0.65rem" }}
-                      >
+                      <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                        style={{ backgroundColor: "#00D4C8", color: "#0a0a0a", fontSize: "0.65rem" }}>
                         1 Free Lesson Available
                       </span>
                     ) : (
@@ -232,6 +231,35 @@ export default function FreeDashboard() {
                 </div>
               );
             })}
+
+            {/* MindSystem tile — locked for free */}
+            <div
+              onClick={() => setModalContext("mindsystem")}
+              className="relative rounded-lg overflow-hidden cursor-pointer"
+              style={{
+                aspectRatio: "4/3",
+                background: `linear-gradient(135deg, ${MINDSYSTEM_COURSE.gradientFrom}, ${MINDSYSTEM_COURSE.gradientTo})`,
+                transition: "transform 0.2s",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1.03)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1)"; }}
+            >
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75))" }} />
+              <div className="absolute top-3 right-3">
+                <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
+                  <Lock size={11} style={{ color: "rgba(255,255,255,0.7)" }} />
+                  <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.7)", textTransform: "uppercase", letterSpacing: "0.08em" }}>MindSystem</span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  MindSystem
+                </p>
+                <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>
+                  Athlete + Parent journal training
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -247,7 +275,12 @@ export default function FreeDashboard() {
         </section>
       </div>
 
-      {showModal && <UpgradeModal onClose={() => setShowModal(false)} />}
+      {modalContext === "courtside" && (
+        <UpgradeModal onClose={() => setModalContext(null)} />
+      )}
+      {modalContext === "mindsystem" && (
+        <UpgradeModal onClose={() => setModalContext(null)} {...MINDSYSTEM_MODAL_PROPS} />
+      )}
     </Layout>
   );
 }

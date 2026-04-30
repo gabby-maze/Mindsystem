@@ -3,7 +3,9 @@ import { useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { AnnouncementBoard } from "@/components/AnnouncementBoard";
-import { COURTSIDE_COURSES } from "@/lib/data";
+import { UpgradeModal, MINDSYSTEM_MODAL_PROPS } from "@/components/UpgradeModal";
+import { COURTSIDE_COURSES, MINDSYSTEM_COURSE } from "@/lib/data";
+import { Lock } from "lucide-react";
 
 // TODO: replace with live session link
 const LIVE_SESSION_LINK = "TODO_LIVE_SESSION_GHL_LINK";
@@ -15,10 +17,12 @@ const TEAL = "#00D4C8";
 export default function CoursesideDashboard() {
   const { family } = useAuth();
   const [, navigate] = useLocation();
+  const [showMindSystemModal, setShowMindSystemModal] = useState(false);
 
   if (!family) return null;
 
   return (
+    <>
     <Layout>
       <div style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
 
@@ -144,6 +148,35 @@ export default function CoursesideDashboard() {
                 </div>
               );
             })}
+
+            {/* MindSystem tile — locked for Courtside */}
+            <div
+              onClick={() => setShowMindSystemModal(true)}
+              className="relative rounded-lg overflow-hidden cursor-pointer"
+              style={{
+                aspectRatio: "4/3",
+                background: `linear-gradient(135deg, ${MINDSYSTEM_COURSE.gradientFrom}, ${MINDSYSTEM_COURSE.gradientTo})`,
+                transition: "transform 0.2s",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1.03)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "scale(1)"; }}
+            >
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75))" }} />
+              <div className="absolute top-3 right-3">
+                <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
+                  <Lock size={11} style={{ color: "rgba(255,255,255,0.7)" }} />
+                  <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.7)", textTransform: "uppercase", letterSpacing: "0.08em" }}>MindSystem Only</span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  MindSystem
+                </p>
+                <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem" }}>
+                  Athlete + Parent journal training
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -256,5 +289,13 @@ export default function CoursesideDashboard() {
 
       </div>
     </Layout>
+
+    {showMindSystemModal && (
+      <UpgradeModal
+        onClose={() => setShowMindSystemModal(false)}
+        {...MINDSYSTEM_MODAL_PROPS}
+      />
+    )}
+  </>
   );
 }
