@@ -83,6 +83,9 @@ export default function MindSystemSectionsPage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.transform = "translateX(0)"; }}
               >
                 <div>
+                  <p className="text-xs uppercase tracking-wider mb-1" style={{ color: colors.from }}>
+                    Step {i + 1}
+                  </p>
                   <p className="font-bold uppercase tracking-wide" style={{ fontSize: "0.95rem", color: "#fff" }}>
                     {section.title}
                   </p>
