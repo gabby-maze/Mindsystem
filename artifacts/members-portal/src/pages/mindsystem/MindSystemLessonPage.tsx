@@ -110,7 +110,42 @@ export default function MindSystemLessonPage() {
           </div>
         )}
 
-        {/* No comments section for MindSystem — instructional content */}
+        {/* Description copy */}
+        {lesson.description && (
+          <div className="mt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "2rem" }}>
+            {lesson.description.split("\n").map((line, i) => {
+              const trimmed = line.trim();
+              if (trimmed === "") return <div key={i} style={{ height: "0.75rem" }} />;
+              const isHeading = trimmed === trimmed.toUpperCase() && trimmed.length > 0 && /[A-Z]/.test(trimmed);
+              return isHeading ? (
+                <p key={i} style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.75rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.18em",
+                  color: PURPLE,
+                  marginTop: "1.5rem",
+                  marginBottom: "0.5rem",
+                }}>
+                  {trimmed}
+                </p>
+              ) : (
+                <p key={i} style={{
+                  fontFamily: "system-ui, sans-serif",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.75,
+                  color: "rgba(255,255,255,0.75)",
+                  marginBottom: "0.35rem",
+                }}>
+                  {trimmed}
+                </p>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Back link */}
         <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
           <button
             onClick={() => navigate(backPath)}
