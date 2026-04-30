@@ -2,12 +2,24 @@ import { X } from "lucide-react";
 
 // TODO: replace with GHL Courtside landing page URL
 const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK";
+// TODO: replace with GHL MindSystem info page link
+const MINDSYSTEM_INFO_LINK = "TODO_MINDSYSTEM_INFO_GHL_LINK";
 
 interface UpgradeModalProps {
   onClose: () => void;
+  headline?: string;
+  body?: string;
+  ctaText?: string;
+  ctaLink?: string;
 }
 
-export function UpgradeModal({ onClose }: UpgradeModalProps) {
+export function UpgradeModal({
+  onClose,
+  headline = "This section is part of Courtside Conversations.",
+  body = "Upgrade to Courtside Conversations to unlock all 7 training sections, plus new content added every month.",
+  ctaText = "Upgrade to Courtside →",
+  ctaLink = COURTSIDE_UPGRADE_LINK,
+}: UpgradeModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -36,10 +48,8 @@ export function UpgradeModal({ onClose }: UpgradeModalProps) {
           <X size={18} />
         </button>
 
-        {/* Content */}
-        <div
-          style={{ width: 36, height: 3, backgroundColor: "#00D4C8", marginBottom: "1.5rem" }}
-        />
+        {/* Accent bar */}
+        <div style={{ width: 36, height: 3, backgroundColor: "#FF2D78", marginBottom: "1.5rem" }} />
 
         <h2
           style={{
@@ -50,20 +60,19 @@ export function UpgradeModal({ onClose }: UpgradeModalProps) {
             lineHeight: 1.3,
           }}
         >
-          This section is part of Courtside Conversations.
+          {headline}
         </h2>
 
         <p
           className="mb-8"
           style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9rem", lineHeight: 1.7 }}
         >
-          Upgrade to Courtside Conversations to unlock all 7 training sections,
-          plus new content added every month.
+          {body}
         </p>
 
         <div className="flex flex-col gap-3">
           <a
-            href={COURTSIDE_UPGRADE_LINK}
+            href={ctaLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center"
@@ -79,7 +88,7 @@ export function UpgradeModal({ onClose }: UpgradeModalProps) {
               textDecoration: "none",
             }}
           >
-            Upgrade to Courtside →
+            {ctaText}
           </a>
 
           <button
@@ -104,3 +113,11 @@ export function UpgradeModal({ onClose }: UpgradeModalProps) {
     </div>
   );
 }
+
+// Preset: MindSystem locked modal
+export const MINDSYSTEM_MODAL_PROPS = {
+  headline: "This is MindSystem territory.",
+  body: "The MindSystem video library is available to MindSystem Independent, Supported, and Inner Circle members. This is where you learn to use your journals and navigate the full MAZE model.",
+  ctaText: "Learn More About MindSystem →",
+  ctaLink: MINDSYSTEM_INFO_LINK,
+};

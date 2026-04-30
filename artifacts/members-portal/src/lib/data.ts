@@ -363,3 +363,108 @@ export function getWeekProgress(enrollmentDate: string) {
 }
 
 export const STRATEGY_SESSION_LINK = "https://link.fastpaydirect.com/payment-link/69dd9455557558e89e51f497";
+
+// ── MINDSYSTEM COURSE ─────────────────────────────────────────────────────────
+
+export interface MSLesson {
+  id: number;
+  title: string;
+  videoId: string;
+}
+
+export interface MSSubSection {
+  id: string;
+  title: string;
+  lessons: MSLesson[];
+}
+
+export interface MSSection {
+  id: string;
+  title: string;
+  lessons?: MSLesson[];
+  subSections?: MSSubSection[];
+}
+
+export interface MSTrack {
+  id: string;
+  title: string;
+  sections: MSSection[];
+}
+
+export interface MindSystemCourse {
+  id: "mindsystem";
+  title: string;
+  description: string;
+  gradientFrom: string;
+  gradientTo: string;
+  lockedTiers: string[];
+  tracks: MSTrack[];
+}
+
+const EXECUTE_SUB_SECTIONS = (suffix: string): MSSubSection[] => [
+  { id: `execution-map${suffix}`, title: "Execution Map", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `habit-tracker${suffix}`, title: "Habit Tracker", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `accountability-checklist${suffix}`, title: "Accountability Checklist", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `game-time${suffix}`, title: "Game Time", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `practice-time${suffix}`, title: "Practice Time", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `check-points${suffix}`, title: "Check Points", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+];
+
+const makeSections = (suffix: string): MSSection[] => [
+  { id: `onboarding${suffix}`, title: "Onboarding", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `bold-commitment${suffix}`, title: "Bold Commitment", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `mindset${suffix}`, title: "Mindset", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `analyze${suffix}`, title: "Analyze", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `zero-in${suffix}`, title: "Zero In", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+  { id: `execute${suffix}`, title: "Execute", subSections: EXECUTE_SUB_SECTIONS(suffix === "" ? "" : suffix.replace("execute", "")) },
+  { id: `reflection${suffix}`, title: "Reflection", lessons: [
+    { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+    { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER" },
+  ]},
+];
+
+export const MINDSYSTEM_COURSE: MindSystemCourse = {
+  id: "mindsystem",
+  title: "MindSystem",
+  description: "Video instructions for using your MindSystem journals and MAZE model.",
+  gradientFrom: "#982FF7",
+  gradientTo: "#FF2D78",
+  lockedTiers: ["free", "courtside"],
+  tracks: [
+    { id: "athlete", title: "Athlete", sections: makeSections("") },
+    { id: "parent",  title: "Parent",  sections: makeSections("-parent") },
+  ],
+};

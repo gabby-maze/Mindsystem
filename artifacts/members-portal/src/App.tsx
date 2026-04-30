@@ -12,6 +12,10 @@ import LivePage from "@/pages/LivePage";
 import ProgressPage from "@/pages/ProgressPage";
 import AskPage from "@/pages/AskPage";
 import NotificationsPage from "@/pages/NotificationsPage";
+import MindSystemTrackPage from "@/pages/mindsystem/MindSystemTrackPage";
+import MindSystemSectionsPage from "@/pages/mindsystem/MindSystemSectionsPage";
+import MindSystemSectionPage from "@/pages/mindsystem/MindSystemSectionPage";
+import MindSystemLessonPage from "@/pages/mindsystem/MindSystemLessonPage";
 
 const queryClient = new QueryClient();
 
@@ -44,8 +48,25 @@ function Router() {
       <Route path="/signup" component={SignupPage} />
       <Route path="/dashboard" component={() => <ProtectedRoute component={DashboardPage} />} />
       <Route path="/courses" component={() => <ProtectedRoute component={CoursesPage} />} />
+
+      {/* MindSystem routes — most specific first */}
+      <Route path="/courses/mindsystem/:track/:section/:subsection/lessons/:lessonId"
+        component={() => <ProtectedRoute component={MindSystemLessonPage} />} />
+      <Route path="/courses/mindsystem/:track/:section/lessons/:lessonId"
+        component={() => <ProtectedRoute component={MindSystemLessonPage} />} />
+      <Route path="/courses/mindsystem/:track/:section/:subsection"
+        component={() => <ProtectedRoute component={MindSystemSectionPage} />} />
+      <Route path="/courses/mindsystem/:track/:section"
+        component={() => <ProtectedRoute component={MindSystemSectionPage} />} />
+      <Route path="/courses/mindsystem/:track"
+        component={() => <ProtectedRoute component={MindSystemSectionsPage} />} />
+      <Route path="/courses/mindsystem"
+        component={() => <ProtectedRoute component={MindSystemTrackPage} />} />
+
+      {/* Standard course routes */}
       <Route path="/courses/:courseId/lessons/:lessonId" component={() => <ProtectedRoute component={LessonPage} />} />
       <Route path="/courses/:courseId" component={() => <ProtectedRoute component={CoursePage} />} />
+
       <Route path="/live" component={() => <ProtectedRoute component={LivePage} />} />
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
