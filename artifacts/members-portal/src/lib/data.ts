@@ -702,6 +702,37 @@ Games are not for fixing. They are for applying.
 Trust your preparation. Compete with what you have. Learn from what happens.
 One game is one data point. The pattern of how you compete all season is who you are becoming.`;
 
+const PRACTICE_TIME_HOW_TO_COPY = `Your journal is open to a Practice Time page. Here is exactly what to do before and after every session.
+
+BEFORE PRACTICE — THREE INTENTIONS
+Write three intentions before warmup starts. Not one. Three.
+They need to be active from the very first rep. Warmup is your first measuring stick — not a formality. If composure is an intention, your first missed pass in warmup is where it starts.
+One breath before you step on the court. That is the transition from the person who walked in to the athlete who is about to train.
+If you cannot think of three — look at your Execution Map. Your three focus skills are always a valid source.
+
+AFTER PRACTICE — TWO QUESTIONS
+Question one — What did my coach tell me today?
+Write three individual instructions. Their exact words. Not team instruction — what they told you specifically.
+These are your cue candidates. If your coach keeps repeating the same thing — turn it into a one-word cue before your next game.
+
+Question two — Did I achieve my pre-practice intentions?
+Yes or no for each of your three intentions.
+Not kind of. Not mostly. Yes or no.
+This is the accountability habit. You said you were going to do something before you stepped on the court. Did you?
+
+THE HONEST REFLECTION
+Did I do what I said I was going to do?
+If yes — how hard was it and what made it possible?
+Easy means the habit is forming. Hard but yes means you are building mental strength. Write down what conditions helped so you can recreate them.
+If no — how hard was it and what got in the way?
+Was it the drill? The energy in the gym? Something internal?
+Whatever the answer — that is exactly what you practice next time to make it easier.
+You are not grading yourself. You are training yourself to be more intentional every session until showing up with purpose is just who you are.
+
+THE RULE TO REMEMBER
+Practice is permission to learn. Urgency starts at rep one.
+The rep that stays with you is the one you actually paid attention to.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -761,6 +792,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
             lessons: [
               { id: 1, title: "Overview", videoId: "dgMyec-nDrI" },
               { id: 2, title: "How to Fill In Your Journal", videoId: "_eK1cQxc_zY", description: GAME_TIME_HOW_TO_COPY },
+            ],
+          };
+        }
+        if (ss.id === "practice-time") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "EWQoIwfG_-g" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "_eK1cQxc_zY", description: PRACTICE_TIME_HOW_TO_COPY },
             ],
           };
         }
