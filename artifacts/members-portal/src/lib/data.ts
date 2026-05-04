@@ -669,6 +669,39 @@ THE RULE THAT MAKES THIS WORK
 Progress does not come from being perfect. It comes from being honest.
 Mark what happened. See what the data says. Adjust. Repeat.`;
 
+const GAME_TIME_HOW_TO_COPY = `Your journal is open to a Game Time page. Here is exactly what to do before and after every competition.
+
+BEFORE THE GAME — COMPLETE BEFORE YOU ARRIVE
+Three coach instructions. Write the specific things your coach told you this week. Their exact words. Not general advice. What they specifically said to you.
+Three one-word cues. Turn each instruction into one word. The word that puts that instruction in your body instantly. One word per instruction. That is all your brain needs under pressure.
+Visualization. Two to three minutes. Eyes closed. See yourself walking into the gym. See yourself executing your three focus skills the way you have been training. Not perfectly — the way you have trained. Trust what you have built.
+
+DURING THE GAME — THE MID-GAME RESET
+When something goes wrong mid-competition — three steps.
+Step one — Breathe. One intentional breath. That is the gap between what just happened and what comes next.
+Step two — Your one-word cue. The word you wrote before the game. Say it. It moves you from emotional to analytical instantly.
+Step three — Next play. Let go. Move forward.
+The standard: your teammates should not be able to tell what play caused the panic.
+Feel it. Reset. Move. That is composure in action.
+
+AFTER THE GAME — SIXTY MINUTES FIRST
+Before you open your journal — give yourself sixty minutes of nothing.
+No group text. No replaying mistakes. No film. No opinions from anyone else.
+Eat. Hydrate. Walk. Shower. Rest.
+Let the emotion move through you without trying to analyze it. When you feel reset — not perfect, just reset — then open the journal.
+Reacting is not reflecting. Give your brain the space to know the difference.
+
+AFTER THE GAME — BEFORE YOU SLEEP
+Three triumphs. Three things you did well today. Physical and mental both count. Resetting after an error is a triumph. Communicating in a hard moment is a triumph. Find three. Every game. No matter how it went.
+Three areas to improve. Specific. Name the moment. Name the adjustment. Not I need to play better — what specifically happened and what would you do differently.
+Satisfaction check. Am I satisfied with how I competed today? Not the score. How you competed.
+If yes — what specifically contributed to that? If no — what one thing would you change?
+
+THE RULE TO REMEMBER
+Games are not for fixing. They are for applying.
+Trust your preparation. Compete with what you have. Learn from what happens.
+One game is one data point. The pattern of how you compete all season is who you are becoming.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -719,6 +752,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
             lessons: [
               { id: 1, title: "Overview", videoId: "26iIiDpAT7w" },
               { id: 2, title: "How to Fill In Your Journal", videoId: "DSh7w9SXfmM", description: HABIT_TRACKER_HOW_TO_COPY },
+            ],
+          };
+        }
+        if (ss.id === "game-time") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "dgMyec-nDrI" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "_eK1cQxc_zY", description: GAME_TIME_HOW_TO_COPY },
             ],
           };
         }
