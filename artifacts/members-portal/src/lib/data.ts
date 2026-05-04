@@ -733,6 +733,45 @@ THE RULE TO REMEMBER
 Practice is permission to learn. Urgency starts at rep one.
 The rep that stays with you is the one you actually paid attention to.`;
 
+const CHECK_POINTS_HOW_TO_COPY = `Use this page every time you do a checkpoint — weekly, monthly, mid-season, and end of season. Same three questions every time.
+
+AM I ON TRACK?
+Before anything else — look at your habit tracker and your practice and game pages. Use that data to answer honestly. Not a feeling. Not a hope. What does the data actually show?
+
+CHECK IN WITH YOUR PEOPLE
+These are conversations — not pages you fill in alone.
+Talk to your accountability buddy. Talk to your parent. Talk to your coach. Check in with yourself.
+The checkpoint only works when your ecosystem is in it with you.
+
+THE THREE QUESTIONS — ASK THEM EVERY TIME
+What got better?
+Look at your data. Name one specific thing that is actually improving.
+
+What got harder?
+Name what is struggling. A habit falling off. An intention not showing up. No judgment — just honest.
+
+What is the one change I will make next week?
+Not five. One. The adjustment that directly addresses what got harder.
+
+THE AUDIT — THREE AREAS
+Your habits.
+Is a habit getting easy? It may be time to swap it for something you are still building.
+Is a habit consistently falling off? Adjust the approach — not the standard.
+
+Your cues.
+Is your mantra still landing? Is it still your voice?
+Are your one-word cues still the right words for where your skills are right now?
+Update anything that has gone flat.
+
+Your ecosystem.
+How are conversations going with your coach, your parent, your teammates, and yourself?
+Is your coach still giving you individual feedback you are capturing?
+Is your inner voice getting quieter or louder?
+Tighten what has loosened. Adjust what has drifted.
+
+THE RULE TO REMEMBER
+Adjust what is not working. Keep doing what is. Then go back to work.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -801,6 +840,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
             lessons: [
               { id: 1, title: "Overview", videoId: "EWQoIwfG_-g" },
               { id: 2, title: "How to Fill In Your Journal", videoId: "_eK1cQxc_zY", description: PRACTICE_TIME_HOW_TO_COPY },
+            ],
+          };
+        }
+        if (ss.id === "check-points") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "GhNYORwl1is" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "vIKmevNXd-o", description: CHECK_POINTS_HOW_TO_COPY },
             ],
           };
         }
