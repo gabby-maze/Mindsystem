@@ -644,6 +644,31 @@ YOUR WHY
 This is your why. The real one. The one you wrote on page one of this workbook. When everything feels hard — your why is the thing that reminds you why you started.
 This page does not expire. Come back here all season long.`;
 
+const HABIT_TRACKER_HOW_TO_COPY = `Your journal is open to the Habit Tracker page. Here is exactly how to set it up and use it every day.
+
+SETUP — DO THIS ONCE PER MONTH
+Write the month at the top of the page.
+Choose your three colors — one for Completed, one for Partial, one for Missed. Write the key at the top so you do not forget which is which.
+Choose no more than seven habits. Write each one in positive language — what you will do, not what you will stop doing.
+Your habits should connect directly to your Zero In focus skills and intangibles. These are not random improvements. They are the daily behaviors that build what you are working on this season.
+
+DAILY USE — THIRTY SECONDS BEFORE BED
+Look at each habit. Mark the color that matches what actually happened today.
+Completed — you did the full thing. Partial — you did some of it. Missed — you did not do it.
+No erasing. No lying. The honest marks are the valuable ones.
+
+WEEKLY REVIEW — TWO MINUTES
+Look at the week. Which habits are consistent? Which keep falling off? Is there a pattern in when or why you miss?
+No emotion. Just information.
+
+MONTHLY REVIEW — FIVE MINUTES
+Look at the full month. What is working? What keeps not sticking? Do any habits need to be rewritten to be more realistic? Do any need to be swapped for something more relevant right now?
+The tracker is allowed to evolve. Your honesty is not.
+
+THE RULE THAT MAKES THIS WORK
+Progress does not come from being perfect. It comes from being honest.
+Mark what happened. See what the data says. Adjust. Repeat.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -678,17 +703,27 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   if (s.id === "execute") {
     return {
       ...s,
-      subSections: s.subSections!.map((ss) =>
-        ss.id === "execution-map"
-          ? {
-              ...ss,
-              lessons: [
-                { id: 1, title: "Overview", videoId: "nIJwk7R1oyI" },
-                { id: 2, title: "How to Fill In Your Journal", videoId: "KPftH1h-S20", description: EXECUTION_MAP_HOW_TO_COPY },
-              ],
-            }
-          : ss
-      ),
+      subSections: s.subSections!.map((ss) => {
+        if (ss.id === "execution-map") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "nIJwk7R1oyI" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "KPftH1h-S20", description: EXECUTION_MAP_HOW_TO_COPY },
+            ],
+          };
+        }
+        if (ss.id === "habit-tracker") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "26iIiDpAT7w" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "DSh7w9SXfmM", description: HABIT_TRACKER_HOW_TO_COPY },
+            ],
+          };
+        }
+        return ss;
+      }),
     };
   }
   return s;
