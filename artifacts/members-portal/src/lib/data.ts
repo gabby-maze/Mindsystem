@@ -47,6 +47,32 @@ export interface Course {
   formId?: string;
 }
 
+// ── VIDEO GAME LIBRARY helpers ────────────────────────────────────────────────
+
+export const VGL_TOPIC_TITLES: Record<string, string> = {
+  "emotional-rollercoaster": "Emotional Rollercoaster",
+  "favoritism": "Favoritism",
+  "rewired-for-dopamine": "Rewired for Dopamine",
+  "perceived-coachability": "Perceived Coachability",
+  "sports-as-developmental-program": "Sports as a Developmental Program",
+  "anatomy-of-teachable-moments": "The Anatomy of Teachable Moments",
+  "coaching-from-sidelines": "Coaching From the Sidelines",
+  "landscape-2": "Landscape 2",
+  "landscape-3": "Landscape 3",
+  "tournament-fuel": "Tournament Fuel",
+  "safety-space-repetition": "Safety Space and Repetition",
+  "aligning-parents-athletes-coaches": "Aligning Parents, Athletes and Coaches",
+};
+
+export const VGL_STANDARD_LESSONS: Lesson[] = [
+  { id: "watch-first", title: "Watch This First", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
+  { id: "deep-dive", title: "Deep Dive", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
+  { id: 2, title: "Lesson 2", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+  { id: 3, title: "Lesson 3", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+  { id: 4, title: "Lesson 4", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+  { id: 5, title: "Lesson 5", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
+];
+
 // ── COURTSIDE COURSES (7 sections, all visible in grid) ──────────────────────
 
 export const COURTSIDE_COURSES: Course[] = [
@@ -143,19 +169,23 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientFrom: "#00D4C8",
     gradientTo: "#982FF7",
     topics: [
-      {
-        id: "understanding-the-ecosystem",
-        title: "Understanding the Ecosystem",
-        lessons: [
-          { id: "watch-first", title: "Watch This First", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
-          { id: 1, title: "Deep Dive", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
-          { id: 2, title: "Lesson 2", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
-          { id: 3, title: "Lesson 3", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
-          { id: 4, title: "Lesson 4", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
-          { id: 5, title: "Lesson 5", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
-        ],
-      },
-    ],
+      "emotional-rollercoaster",
+      "favoritism",
+      "rewired-for-dopamine",
+      "perceived-coachability",
+      "sports-as-developmental-program",
+      "anatomy-of-teachable-moments",
+      "coaching-from-sidelines",
+      "landscape-2",
+      "landscape-3",
+      "tournament-fuel",
+      "safety-space-repetition",
+      "aligning-parents-athletes-coaches",
+    ].map((slug) => ({
+      id: slug,
+      title: VGL_TOPIC_TITLES[slug] ?? slug,
+      lessons: VGL_STANDARD_LESSONS,
+    })),
   },
 ];
 

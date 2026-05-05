@@ -16,6 +16,9 @@ import MindSystemTrackPage from "@/pages/mindsystem/MindSystemTrackPage";
 import MindSystemSectionsPage from "@/pages/mindsystem/MindSystemSectionsPage";
 import MindSystemSectionPage from "@/pages/mindsystem/MindSystemSectionPage";
 import MindSystemLessonPage from "@/pages/mindsystem/MindSystemLessonPage";
+import VGLTopicsPage from "@/pages/vgl/VGLTopicsPage";
+import VGLTopicPage from "@/pages/vgl/VGLTopicPage";
+import VGLLessonPage from "@/pages/vgl/VGLLessonPage";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +65,14 @@ function Router() {
         component={() => <ProtectedRoute component={MindSystemSectionsPage} />} />
       <Route path="/courses/mindsystem"
         component={() => <ProtectedRoute component={MindSystemTrackPage} />} />
+
+      {/* VGL routes — most specific first, before generic course routes */}
+      <Route path="/courses/video-game-library/:topicId/lessons/:lessonId"
+        component={() => <ProtectedRoute component={VGLLessonPage} />} />
+      <Route path="/courses/video-game-library/:topicId"
+        component={() => <ProtectedRoute component={VGLTopicPage} />} />
+      <Route path="/courses/video-game-library"
+        component={() => <ProtectedRoute component={VGLTopicsPage} />} />
 
       {/* Standard course routes */}
       <Route path="/courses/:courseId/lessons/:lessonId" component={() => <ProtectedRoute component={LessonPage} />} />

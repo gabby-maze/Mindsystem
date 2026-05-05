@@ -22,3 +22,12 @@ export function canAccessLesson(
   if (tier === "free" && courseId === "video-game-library") return lessonIndex === 0;
   return true;
 }
+
+// VGL lesson access: free lessons open to all; locked lessons require courtside+
+export function canAccessVGLLesson(
+  tier: string,
+  lesson: { free?: boolean }
+): boolean {
+  if (lesson.free) return true;
+  return tier === "courtside" || tier === "independent" || tier === "supported" || tier === "innerCircle";
+}
