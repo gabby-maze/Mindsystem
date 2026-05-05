@@ -851,6 +851,44 @@ THE RULE TO REMEMBER
 Practice is permission to learn. Urgency starts at rep one.
 The rep that stays with you is the one you actually paid attention to.`;
 
+const ACCOUNTABILITY_CHECKLIST_COPY = `Accountability does not mean pressure.
+
+It means structure.
+
+And here is the difference. Pressure comes from outside from expectations, from judgment, from the fear of what happens if you do not measure up. Structure comes from inside from a clear agreement you made with yourself about what showing up actually looks like.
+
+The accountability checklist is structure. Nothing more.
+
+It shows you what honoring your commitment to this journal looks like in practice. Not in theory. In the actual daily and weekly pattern of your life during a season.
+
+HERE IS WHAT IS ON IT
+
+Journal before and after practice. Not a long entry. Three intentions before. Three reflections after. Five to ten minutes total. This is the habit that turns practice from something you just show up to into something you actually develop from.
+
+Reflect after games. Before you go to sleep on game nights open your journal. Three things you did well. Three areas to improve. Your honest answer to how you competed. This keeps you in a learning relationship with your own performance instead of just reacting to results.
+
+Communicate with your coaches. This means using your focus skills in conversations with your coach not just waiting for feedback to come to you. Proactive. Intentional. Ongoing.
+
+Use your habit tracker daily. Thirty seconds. Every day. This is the one that most athletes let slip first. And it is the one that shows you the most about your patterns over time.
+
+HERE IS WHAT I WANT YOU TO UNDERSTAND ABOUT THIS CHECKLIST
+
+When athletes say this system worked for them when they come back at the end of a season and say something real changed this year it is almost always because they followed this list. Consistently. Even on the days they did not feel like it. Even on the weeks when everything was hard.
+
+Not perfectly. Consistently.
+
+The checklist is not asking you to be perfect. It is asking you to keep showing up.
+
+Miss a day start the next one. Have a week where everything falls apart come back to the checklist on Monday. The athletes who benefit from this program most are not the ones with the best talent or the clearest goals. They are the ones who keep coming back.
+
+Use this checklist as a support. Not as a scorecard. It is there to make showing up easier not to give you one more thing to feel bad about when you miss.
+
+At the end of each week take two minutes with this checklist. Not to grade yourself. To see what you followed through on and what needs attention next week.
+
+Then pick one thing to tighten up. Not four things. One.
+
+That is how this stays sustainable across a whole season.`;
+
 const CHECK_POINTS_HOW_TO_COPY = `Use this page every time you do a checkpoint weekly, monthly, mid-season, and end of season. Same three questions every time.
 
 AM I ON TRACK?
@@ -1071,6 +1109,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
             lessons: [
               { id: 1, title: "Overview", videoId: "EWQoIwfG_-g" },
               { id: 2, title: "How to Fill In Your Journal", videoId: "_eK1cQxc_zY", description: PRACTICE_TIME_HOW_TO_COPY },
+            ],
+          };
+        }
+        if (ss.id === "accountability-checklist") {
+          return {
+            ...ss,
+            lessons: [
+              { id: 1, title: "Overview", videoId: "PLACEHOLDER" },
+              { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER", description: ACCOUNTABILITY_CHECKLIST_COPY },
             ],
           };
         }
