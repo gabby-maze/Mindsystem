@@ -813,6 +813,51 @@ Your mantra. Your one-word cues. Your understanding of your inner voice. Your he
 The compass does not stop pointing when the season ends.
 You completed the MAZE. That is real. Take a breath and let that land.`;
 
+const BOLD_COMMITMENT_HOW_TO_COPY = `Before you write a single word in this journal, there is something you need to decide.
+
+Not whether you want to get better. I already know you do. Not whether you care about your sport. I can see that you do.
+
+The question is simpler than that. Are you choosing this for yourself?
+
+Not because your parents signed you up. Not because your coach suggested it. Not because you are trying to fix something someone else identified as a problem.
+
+This is about you deciding, right now, whether you want to take responsibility for your own journey. Because this system only works for athletes who choose it. And it is completely okay if today is not that day. That is not failure. That is honesty.
+
+HERE IS WHAT COMPASS ATHLETES CHOOSE — THREE THINGS
+Responsibility over excuses.
+Not perfection. Not always getting it right. Responsibility. When something goes wrong, you look at your part in it before you look anywhere else.
+
+Process over emotion.
+Your emotions are real. They matter. But Compass athletes learn to run their emotions, not be run by them. You feel it. Then you examine it. Then you decide.
+
+Control over drift.
+Drift is what happens when you just react to everything around you. The outcome. The coach's mood. Your parents' energy. The scoreboard. Drift takes athletes out of their own story and makes them passengers in someone else's.
+Compass athletes choose to be the driver.
+Responsibility. Process. Control. That is the choice.
+
+If that is what you want — keep going. If you are not ready, that is okay. Come back when you are.
+
+NOW OPEN YOUR WORKBOOK TO THE BOLD COMMITMENT PAGE
+You are going to write three things by hand. Not typed. Not in your head.
+
+One — why are you choosing to do this? Not why someone wants you to. Why are you choosing it? In your own words.
+
+Two — what you are tired of feeling. The specific thing that made you open this journal. The frustration. The inconsistency. The feeling of being out of control. Name it.
+
+Three — what you are taking responsibility for. One specific thing in your athletic journey that you are choosing to own from this point forward.
+
+Write those three things. Then sign your name.
+
+This is not a homework assignment. This is initiation. The signature matters. It changes the relationship between you and this journal from something someone gave you to something you chose. Do not skip it.
+
+YOUR ACCOUNTABILITY BUDDY
+Choose an accountability buddy. Not someone who will fix you. Not someone who is going to lecture you. Someone who is doing hard things themselves and who will ask you one question every week.
+Did you do the work?
+That is it. One question. It could be a parent. A teammate. A friend.
+Write their name in your workbook right now, below your signature. Then go tell them. Tell them what you just committed to and ask them to check in with you.
+
+When you have done that, you are ready for the MAZE. See you in Mindset.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -841,6 +886,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
       lessons: [
         { id: 1, title: "Overview", videoId: "BCbvKpzq_ZE" },
         { id: 2, title: "How to Fill In Your Journal", videoId: "_Qb-2Ux---s", description: ZERO_IN_HOW_TO_COPY },
+      ],
+    };
+  }
+  if (s.id === "bold-commitment") {
+    return {
+      ...s,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "cETyRfHBSp0" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "8uzOVHKeLgI", description: BOLD_COMMITMENT_HOW_TO_COPY },
       ],
     };
   }
