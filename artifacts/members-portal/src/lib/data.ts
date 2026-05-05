@@ -82,7 +82,7 @@ export const VGL_WATCH_FIRST_IDS: Record<string, string> = {
   "favoritism":                           "rVfiRnkh9rM",
   "rewired-for-dopamine":                 "XaLaYHEKJ_w",
   "perceived-coachability":               "-pDwOZZOcUQ",
-  "sports-as-developmental-program":      "-pDwOZZOcUQ",
+  "sports-as-developmental-program":      "YgsNmE9TD7E",
   "anatomy-of-teachable-moments":         "u4qvL6Um1BI",
   "coaching-from-sidelines":              "j1J98ygI6uU",
   "landscape-2":                          "M3kq-3QQ96Q",
