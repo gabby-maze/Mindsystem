@@ -100,7 +100,7 @@ export const VGL_WATCH_FIRST_IDS: Record<string, string> = {
   "the-long-game":                        "cWEN4Q4LMt4",
   "why-coaches-have-teams-play-up":       "4KJKTrXva5c",
   "visualization":                        "KLhTgyHtpeo",
-  "the-utility-player":                   "KLhTgyHtpeo",
+  "the-utility-player":                   "04tCZmWCNJI",
   "silent-processing":                    "p7IT9r3jJ6s",
   "athlete-archetypes":                   "sTqD4uOIpzM",
 };
