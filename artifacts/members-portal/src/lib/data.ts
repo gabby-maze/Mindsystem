@@ -77,6 +77,34 @@ export const VGL_TOPIC_TITLES: Record<string, string> = {
   "athlete-archetypes": "Athlete Archetypes",
 };
 
+export const VGL_WATCH_FIRST_IDS: Record<string, string> = {
+  "emotional-rollercoaster":              "rVDplW3kvPE",
+  "favoritism":                           "rVfiRnkh9rM",
+  "rewired-for-dopamine":                 "XaLaYHEKJ_w",
+  "perceived-coachability":               "-pDwOZZOcUQ",
+  "sports-as-developmental-program":      "-pDwOZZOcUQ",
+  "anatomy-of-teachable-moments":         "u4qvL6Um1BI",
+  "coaching-from-sidelines":              "j1J98ygI6uU",
+  "landscape-2":                          "M3kq-3QQ96Q",
+  "landscape-3":                          "AWIECTeaWPA",
+  "tournament-fuel":                      "Xtjszx4vxrs",
+  "safety-space-repetition":              "o5ta44SvMLs",
+  "aligning-parents-athletes-coaches":    "WJ-R9Fm0Vsk",
+  "the-coaches-kid":                      "g8sqNK1z0GE",
+  "coaches-are-people":                   "d8tZ1xUkhms",
+  "ownership":                            "LTk81zSrV74",
+  "them-problem-1":                       "iTMrnnLu4uA",
+  "how-does-the-coach-choose-the-lineup-1": "4N1q7pDKjsA",
+  "perception-1":                         "4Eno0OfimlE",
+  "pressure-is-a-privilege":              "aphDXpC5hc4",
+  "the-long-game":                        "cWEN4Q4LMt4",
+  "why-coaches-have-teams-play-up":       "4KJKTrXva5c",
+  "visualization":                        "KLhTgyHtpeo",
+  "the-utility-player":                   "KLhTgyHtpeo",
+  "silent-processing":                    "p7IT9r3jJ6s",
+  "athlete-archetypes":                   "sTqD4uOIpzM",
+};
+
 export const VGL_STANDARD_LESSONS: Lesson[] = [
   { id: "watch-first", title: "Watch This First", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
   { id: "deep-dive", title: "Deep Dive", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
@@ -210,7 +238,11 @@ export const COURTSIDE_COURSES: Course[] = [
     ].map((slug) => ({
       id: slug,
       title: VGL_TOPIC_TITLES[slug] ?? slug,
-      lessons: VGL_STANDARD_LESSONS,
+      lessons: VGL_STANDARD_LESSONS.map((l) =>
+        l.id === "watch-first"
+          ? { ...l, youtubeId: VGL_WATCH_FIRST_IDS[slug] ?? "PLACEHOLDER" }
+          : l
+      ),
     })),
   },
 ];
