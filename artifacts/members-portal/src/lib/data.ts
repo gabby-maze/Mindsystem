@@ -573,6 +573,36 @@ const makeSections = (suffix: string): MSSection[] => [
   ]},
 ];
 
+const ONBOARDING_HOW_TO_COPY = `The athletes who grow the most are not the most talented.
+
+They are the most intentional.
+
+That is the whole premise of this program. And it is the reason you are here.
+
+Not because something is wrong with you. Not because you are behind. Because you are choosing to be intentional about your development and that choice, made consistently over a full season, is what separates athletes who plateau from athletes who build.
+
+Now here is what you need to know before you open your journal for the first time.
+
+I am going to tell you exactly what this system is, what it is not, and how it works. Not to overwhelm you. To give you the clearest possible starting point.
+
+Because Compass athletes do not show up and figure it out as they go. They understand the system before they start using it.
+
+So let us go.
+
+This journal is your gateway to taking charge of your own development. Not your coach's development plan for you. Not your parent's vision for your season. Yours.
+
+When you work through this system when you actually do the work, not just read through it three things happen.
+
+You get clear on what you are actually working toward and why it matters to you specifically.
+
+You learn to make better decisions. In practice. In games. Under pressure. When nobody is watching and when everyone is.
+
+And you develop the ability to use feedback instead of fearing it. To see a hard conversation with your coach as information rather than criticism. To look at a bad game as data rather than identity.
+
+That is what this journal builds. Not just a better athlete. A more self-aware, more intentional, more resilient person. And that person shows up everywhere not just on the court.
+
+Here is the system. Four phases. The MAZE model.`;
+
 const MINDSET_HOW_TO_COPY = `Your journal is open. Here is exactly what to do with each page.
 
 THE WHY PAGE
@@ -949,6 +979,15 @@ When you have done that, you are ready for the MAZE. See you in Mindset.`;
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
+  if (s.id === "onboarding") {
+    return {
+      ...s,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "6sSWsLJkML0" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "iY2Sw26vJtc", description: ONBOARDING_HOW_TO_COPY },
+      ],
+    };
+  }
   if (s.id === "mindset") {
     return {
       ...s,
