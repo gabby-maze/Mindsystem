@@ -53,7 +53,7 @@ export const COURTSIDE_COURSES: Course[] = [
   {
     id: "your-starting-point",
     title: "Your Starting Point",
-    description: "Train for your season — wherever you are in the year.",
+    description: "Train for your season wherever you are in the year.",
     tier: "courtside",
     gradientFrom: "#982FF7",
     gradientTo: "#2B8BF5",
@@ -93,7 +93,7 @@ export const COURTSIDE_COURSES: Course[] = [
   {
     id: "pressure-practice",
     title: "Pressure Practice",
-    description: "Training under pressure — mental reps that carry into games.",
+    description: "Training under pressure mental reps that carry into games.",
     tier: "courtside",
     gradientFrom: "#FF2D78",
     gradientTo: "#C42BEE",
@@ -165,17 +165,17 @@ export const MINDSYSTEM_COURSES: Course[] = [
   {
     id: "athlete-compass-training",
     title: "Athlete Compass Training",
-    description: "Complete athlete journal video training — MAZE model walkthrough",
+    description: "Complete athlete journal video training MAZE model walkthrough",
     tier: "independent",
     gradientFrom: "#2B8BF5",
     gradientTo: "#982FF7",
     lessons: [
       { id: 1, title: "Getting Started", youtubeId: "PLACEHOLDER" },
       { id: 2, title: "Bold Commitment", youtubeId: "PLACEHOLDER" },
-      { id: 3, title: "Mindset — Bold Dreams", youtubeId: "PLACEHOLDER" },
-      { id: 4, title: "Analyze — Bold Promises", youtubeId: "PLACEHOLDER" },
-      { id: 5, title: "Zero In — Bold Focus", youtubeId: "PLACEHOLDER" },
-      { id: 6, title: "Execute — Fear Break", youtubeId: "PLACEHOLDER" },
+      { id: 3, title: "Mindset Bold Dreams", youtubeId: "PLACEHOLDER" },
+      { id: 4, title: "Analyze Bold Promises", youtubeId: "PLACEHOLDER" },
+      { id: 5, title: "Zero In Bold Focus", youtubeId: "PLACEHOLDER" },
+      { id: 6, title: "Execute Fear Break", youtubeId: "PLACEHOLDER" },
       { id: 7, title: "Game Time", youtubeId: "PLACEHOLDER" },
       { id: 8, title: "Practice Time", youtubeId: "PLACEHOLDER" },
       { id: 9, title: "Reflection", youtubeId: "PLACEHOLDER" },
@@ -186,11 +186,11 @@ export const MINDSYSTEM_COURSES: Course[] = [
     title: "Independent Onboarding",
     description: "Getting started with MindSystem Independent",
     tier: "independent",
-    lessons: [{ id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }],
+    lessons: [{ id: 1, title: "Welcome Start Here", youtubeId: "PLACEHOLDER" }],
   },
   {
     id: "parent-training-core",
-    title: "Parent Training — Core",
+    title: "Parent Training Core",
     description: "Your role in the MindSystem ecosystem",
     tier: "independent",
     lessons: [
@@ -212,11 +212,11 @@ export const MINDSYSTEM_COURSES: Course[] = [
     title: "Supported Onboarding",
     description: "Getting started with MindSystem Supported",
     tier: "supported",
-    lessons: [{ id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }],
+    lessons: [{ id: 1, title: "Welcome Start Here", youtubeId: "PLACEHOLDER" }],
   },
   {
     id: "parent-training-supported",
-    title: "Parent Training — Supported",
+    title: "Parent Training Supported",
     description: "Advanced parent training for Supported families",
     tier: "supported",
     lessons: [],
@@ -241,7 +241,7 @@ export const MINDSYSTEM_COURSES: Course[] = [
     title: "Inner Circle Onboarding",
     description: "Getting started with MindSystem Inner Circle",
     tier: "innerCircle",
-    lessons: [{ id: 1, title: "Welcome — Start Here", youtubeId: "PLACEHOLDER" }],
+    lessons: [{ id: 1, title: "Welcome Start Here", youtubeId: "PLACEHOLDER" }],
   },
   {
     id: "inner-circle-exclusive",
@@ -269,7 +269,7 @@ export interface LiveSession {
 export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "courtside-monthly",
-    title: "Courtside Conversations — Monthly Live",
+    title: "Courtside Conversations Monthly Live",
     schedule: "First Wednesday of every month",
     time: "Time TBD",
     zoomLink: "https://us06web.zoom.us/j/84822211832?pwd=AWt9vQuOBWRrJn2fW2zRn3dxA5mvB3.1",
@@ -279,7 +279,7 @@ export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "supported-parent-wed",
     title: "Parent Group Call",
-    schedule: "Every two weeks — Wednesdays",
+    schedule: "Every two weeks Wednesdays",
     time: "9:00 - 10:00 AM PST / 12:00 PM EST",
     zoomLink: "https://us06web.zoom.us/j/89001209304?pwd=In8b1x1uFjeWcykIsdI7Y7bE8Ubu0b.1",
     tier: "supported",
@@ -288,7 +288,7 @@ export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "supported-parent-sun",
     title: "Parent Group Call",
-    schedule: "Every two weeks — Sundays",
+    schedule: "Every two weeks Sundays",
     time: "4:00 - 5:00 PM PST / 7:00 PM EST",
     zoomLink: "https://us06web.zoom.us/j/88599501011?pwd=nHbIQAgo20V9R3wJmGAliz7fybxia7.1",
     tier: "supported",
@@ -297,7 +297,7 @@ export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "supported-athlete-wed",
     title: "Athlete Group Call",
-    schedule: "Every two weeks — Wednesdays",
+    schedule: "Every two weeks Wednesdays",
     time: "5:30 - 6:30 PM PST / 8:30 PM EST",
     zoomLink: "https://us06web.zoom.us/j/81438893737",
     tier: "supported",
@@ -306,7 +306,7 @@ export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "supported-athlete-sun",
     title: "Athlete Group Call",
-    schedule: "Every two weeks — Sundays",
+    schedule: "Every two weeks Sundays",
     time: "12:00 - 1:00 PM PST / 3:00 PM EST",
     zoomLink: "https://us06web.zoom.us/j/87177408803?pwd=zb5TZjoSxZUxraHvh6QhyLVUzOlI4x.1",
     tier: "supported",
@@ -341,15 +341,15 @@ export function hasTierAccess(userTier: Tier, requiredTier: Tier): boolean {
 export const TRAINING_MAP = [
   { week: 1, title: "Get Oriented", tasks: ["Complete Supported Onboarding", "Book parent onboarding call", "Book athlete onboarding call", "Join the community", "Submit shipping address for journals"] },
   { week: 2, title: "Start the Compass", tasks: ["Athlete begins Compass Training", "Parent completes Parent Training Lesson 1", "Attend first group calls", "Athlete begins MAZE model"] },
-  { week: 3, title: "Build the Foundation", tasks: ["Athlete completes MAZE model — Analyze section", "Parent Training Lesson 2 unlocks", "Complete habit tracker setup"] },
+  { week: 3, title: "Build the Foundation", tasks: ["Athlete completes MAZE model Analyze section", "Parent Training Lesson 2 unlocks", "Complete habit tracker setup"] },
   { week: 4, title: "Zero In", tasks: ["Athlete identifies 3 focus skills", "Parent reviews three skill blueprint", "Coach conversation", "Group call check in"] },
   { week: 5, title: "Execute", tasks: ["Athlete builds execution map", "Habit tracker begins", "Game and practice pages active"] },
-  { week: 6, title: "Midpoint Check", tasks: ["Monthly reflection", "Group call — midpoint discussion", "Review habit tracker data"] },
+  { week: 6, title: "Midpoint Check", tasks: ["Monthly reflection", "Group call midpoint discussion", "Review habit tracker data"] },
   { week: 7, title: "Deepen the Work", tasks: ["Skill milestone check", "Parent accountability checklist review", "Curate a learning experience"] },
   { week: 8, title: "Stay the Course", tasks: ["Group call", "Review shared language usage", "Coach communication check in"] },
   { week: 9, title: "Push Through", tasks: ["Identify the conversation you've been avoiding", "Athlete post-game reflection review", "Parent habit tracker reflection"] },
-  { week: 10, title: "Two Weeks Left", tasks: ["Complete progress assessment on 3 focus skills", "Prepare for end of 12 week milestone", "Group call — final push"] },
-  { week: 11, title: "Final Stretch", tasks: ["Athlete reflection — what worked, what didn't", "Parent reflection", "Prepare end of season conversation"] },
+  { week: 10, title: "Two Weeks Left", tasks: ["Complete progress assessment on 3 focus skills", "Prepare for end of 12 week milestone", "Group call final push"] },
+  { week: 11, title: "Final Stretch", tasks: ["Athlete reflection what worked, what didn't", "Parent reflection", "Prepare end of season conversation"] },
   { week: 12, title: "12 Week Milestone", tasks: ["Complete 12 week milestone worksheet", "Have end of season conversation", "Review access for months 4-6", "Check in with digital studio"] },
 ];
 
@@ -406,7 +406,7 @@ export interface MindSystemCourse {
 const EXECUTE_OVERVIEW_COPY = `Here is what each tool is for and when you use it.
 
 THE EXECUTION MAP
-Use it: Before the season starts and every time you need to remember what you are building. This page holds your season goal, team goal, individual contribution, three focus skills, and checkpoints. When things get hard this season — open this page first. Read it. Then decide what to do next.
+Use it: Before the season starts and every time you need to remember what you are building. This page holds your season goal, team goal, individual contribution, three focus skills, and checkpoints. When things get hard this season open this page first. Read it. Then decide what to do next.
 
 THE HABIT TRACKER
 Use it: Every single day. Thirty seconds before bed. Mark honestly. Completed, partial, or missed. No erasing. Review weekly to see patterns. Review monthly to adjust which habits you are tracking.
@@ -415,13 +415,13 @@ THE ACCOUNTABILITY CHECKLIST
 Use it: Weekly. At the start of each week to set your intention and at the end to see how you did. This is your structure. Not your judge. It shows you what consistent commitment actually looks like in practice.
 
 GAME TIME PAGES
-Use it: Before and after every competition. Every single one. Before — three coach instructions, three one-word cues. After — three triumphs, three improvements, honest satisfaction check.
+Use it: Before and after every competition. Every single one. Before three coach instructions, three one-word cues. After three triumphs, three improvements, honest satisfaction check.
 
 PRACTICE TIME PAGES
-Use it: Before and after every practice session. Before — set three intentions. After — reflect on follow-through, write coach instructions, check in emotionally.
+Use it: Before and after every practice session. Before set three intentions. After reflect on follow-through, write coach instructions, check in emotionally.
 
 CHECKPOINTS
-Use them: Early season to set your baseline. Mid-season to assess and adjust. End of season to close the loop and build forward. At each checkpoint — rescore your skills, look at what is working, identify one thing to change or carry forward. Great athletes do not start over every season. They build forward.
+Use them: Early season to set your baseline. Mid-season to assess and adjust. End of season to close the loop and build forward. At each checkpoint rescore your skills, look at what is working, identify one thing to change or carry forward. Great athletes do not start over every season. They build forward.
 
 THE RULE TO REMEMBER
 Practice is permission to learn. Games are responsibility to apply.
@@ -489,72 +489,72 @@ const MINDSET_HOW_TO_COPY = `Your journal is open. Here is exactly what to do wi
 
 THE WHY PAGE
 This is the first page in your Mindset section. It asks what you love about the game and what you bring to your team.
-Do not write what sounds impressive. Do not write what you think you should say. Write what is actually true — even if nobody else ever sees it.
-The more honest this page is, the stronger everything built after it becomes. If you wrote your answers in your workbook before your journal arrived — read them, adjust anything that has changed, and write your final version here.
+Do not write what sounds impressive. Do not write what you think you should say. Write what is actually true even if nobody else ever sees it.
+The more honest this page is, the stronger everything built after it becomes. If you wrote your answers in your workbook before your journal arrived read them, adjust anything that has changed, and write your final version here.
 
 THE VISUALIZATION PAGE
 This page asks you to imagine yourself at the peak of your volleyball career.
 This is not fantasy. You are not picturing everything going perfectly. You are picturing how you compete. How you respond under pressure. How you carry yourself when things do not go your way.
 Write that athlete. Be specific. What does she do in the two seconds after a mistake? How does she walk onto the court before a big game? What does she say to herself when things get hard?
-This page is about standards — not outcomes.
+This page is about standards not outcomes.
 
 YOUR HEROINE
 You already chose her in your workbook. Now write her here permanently.
 Three things on this page. Who she is. Why you chose her. And one quality she has that you are actively building in yourself right now.
-Keep this page visible. When pressure hits and you do not know what to do — come back here and ask: what would she do in this moment?
+Keep this page visible. When pressure hits and you do not know what to do come back here and ask: what would she do in this moment?
 
 YOUR MANTRA
 You drafted this in your workbook. Now write your final version here.
-Five words or less. Your voice. A decision — not a wish.
+Five words or less. Your voice. A decision not a wish.
 Use I am, I will, or I can. No negative words. You are not arguing with doubt. You are replacing it.
 Write it large. This is the most-used page in the entire journal. You will come back to it all season.
-Once it is written — share it with your parent and your accountability buddy. Not for approval. So they know what to say when you need to hear it most.
+Once it is written share it with your parent and your accountability buddy. Not for approval. So they know what to say when you need to hear it most.
 
 YOUR INNER VOICE PATTERN
 This page asks you to name the pattern. When does your inner voice get the loudest? What does it say?
 Write it down exactly. The specific moment. The specific words it uses.
-Then below that — write your mantra. Right next to the voice that tries to take you down. That is the replacement. That is the work.
+Then below that write your mantra. Right next to the voice that tries to take you down. That is the replacement. That is the work.
 You do not have to believe every thought you think. This page proves it.
 
 COMPLETING THIS SECTION
-Before you move to Analyze — make sure all five Mindset pages are filled in.
+Before you move to Analyze make sure all five Mindset pages are filled in.
 Your why. Your visualization. Your heroine. Your mantra. Your inner voice pattern.
 Every page complete. Every answer honest.
-When they are done — you have a foundation. Everything built in the rest of this program sits on top of what you just wrote here.`;
+When they are done you have a foundation. Everything built in the rest of this program sits on top of what you just wrote here.`;
 
 const ANALYZE_HOW_TO_COPY = `Your journal is open. Here is exactly what to do with each page.
 
 YOUR SEASON GOALS PAGE
 This is the first page in your Analyze section. Write two or three goals for this season.
-If you wrote these in your workbook before your journal arrived — read them again. Have they changed? Are they still true? Write your final version here.
-These do not need to be perfect yet. You are choosing direction, not making a promise. Write what you actually want — not what sounds impressive.
+If you wrote these in your workbook before your journal arrived read them again. Have they changed? Are they still true? Write your final version here.
+These do not need to be perfect yet. You are choosing direction, not making a promise. Write what you actually want not what sounds impressive.
 
 THE HABIT TABLE
 This is the main page of the Analyze section. It has four columns.
-Before you fill it in — read this.
+Before you fill it in read this.
 You are not judging yourself here. You are not making a list of everything wrong with you. You are connecting dots. Habit to emotion to outcome to goal. That's it.
 Start by choosing three to five habits that you know matter to your performance. Not ten. The honest three to five.
-Column one — write the habit exactly as it actually is. Not how you want it to be. What you actually do.
-Column two — write the emotion that habit creates. One word. Tired. Focused. Anxious. Sharp. Sluggish. Calm. Whatever is true.
-Column three — write the outcome you see on the court because of this habit. Be specific. Not just good or bad. What actually happens.
-Column four — yes or no. Does this habit support the goals you wrote on the previous page?
+Column one write the habit exactly as it actually is. Not how you want it to be. What you actually do.
+Column two write the emotion that habit creates. One word. Tired. Focused. Anxious. Sharp. Sluggish. Calm. Whatever is true.
+Column three write the outcome you see on the court because of this habit. Be specific. Not just good or bad. What actually happens.
+Column four yes or no. Does this habit support the goals you wrote on the previous page?
 Fill in every row completely before you move to the next habit.
 
 THE LANGUAGE RULE
-Once your table is complete — look at every row where you wrote No in column four.
-For each No habit — you are going to write a replacement. Not what you will stop doing. What you will start doing instead.
-Not — stop staying up late. Write — I go to sleep by 9:30pm.
-Not — stop eating junk before practice. Write — I eat a real meal two hours before practice.
+Once your table is complete look at every row where you wrote No in column four.
+For each No habit you are going to write a replacement. Not what you will stop doing. What you will start doing instead.
+Not stop staying up late. Write I go to sleep by 9:30pm.
+Not stop eating junk before practice. Write I eat a real meal two hours before practice.
 Your brain works better with a target than a restriction. Give it something to move toward.
 Write your positive replacement next to every No in the table.
 
 YOUR CARRY-FORWARD LINE
 At the bottom of the Analyze section you will see a carry-forward prompt.
-Write this — hold onto your No habits. They become your building blocks in the next section.
+Write this hold onto your No habits. They become your building blocks in the next section.
 You are not throwing them away. You are saving them. Zero In is where you decide which ones to work on first.
 
 COMPLETING THIS SECTION
-Before you move to Zero In — make sure both Analyze pages are complete.
+Before you move to Zero In make sure both Analyze pages are complete.
 Your season goals. Your habit table with all four columns filled in. Your positive replacement for every No habit.
 Every row honest. Every answer yours.
 When this section is done you know something most athletes never know. You know exactly what is helping you and exactly what is getting in your way.
@@ -564,44 +564,44 @@ const ZERO_IN_HOW_TO_COPY = `Your journal is open. Here is exactly what to do wi
 
 THE SATISFACTION WHEEL
 This is the first page in your Zero In section. You will see a wheel with performance categories around the outside.
-Rate your satisfaction in each category from one to ten. Not your talent level. Your satisfaction — how confident and consistent you feel in that area right now.
+Rate your satisfaction in each category from one to ten. Not your talent level. Your satisfaction how confident and consistent you feel in that area right now.
 Use a different color from any previous ratings so you can see the contrast clearly at mid-season and end of season.
-When every category is rated — shade in the wheel from the center outward. Low scores get a little shading. High scores get more. Step back and look at the full picture.
-Where is the wheel full? Where is it empty? Which empty areas — if filled in — would move you closest to your season goal?
+When every category is rated shade in the wheel from the center outward. Low scores get a little shading. High scores get more. Step back and look at the full picture.
+Where is the wheel full? Where is it empty? Which empty areas if filled in would move you closest to your season goal?
 That question is your filter for the next page.
 
 YOUR THREE FOCUS AREAS
 Look at your season goal from the Analyze section. Read it again before you write anything here.
 Now choose three categories from your wheel. Not the three lowest scores. The three that matter most for your specific goal.
 Write them here. These are your focus areas for this season.
-Below each one — write one sentence about why this area matters for your goal. Not a long explanation. One honest sentence.
+Below each one write one sentence about why this area matters for your goal. Not a long explanation. One honest sentence.
 
 SKILLS AND ACTIONS
-For each of your three focus areas — fill in two things.
-First — your skill. The specific technical thing you are working to improve in practice. Be precise. Not just passing. What specifically about passing. The more specific you are here the more useful your practice time becomes.
-Second — your actions. What you will do outside of practice to support this skill. Write only actions you can actually do. Vague does not count. Specific counts.
+For each of your three focus areas fill in two things.
+First your skill. The specific technical thing you are working to improve in practice. Be precise. Not just passing. What specifically about passing. The more specific you are here the more useful your practice time becomes.
+Second your actions. What you will do outside of practice to support this skill. Write only actions you can actually do. Vague does not count. Specific counts.
 One to two skills per focus area. One to two actions per focus area. That is enough.
 
 THE COACH CONVERSATION PAGE
 This page has the script you will use to share your focus areas with your coach.
 Fill in the blanks with your actual goal and your three actual focus areas.
-Then practice saying it out loud before you have the conversation. Not reading it. Saying it. Your coach needs to hear it from you directly — not read it off a page.
+Then practice saying it out loud before you have the conversation. Not reading it. Saying it. Your coach needs to hear it from you directly not read it off a page.
 Write the date when you had the conversation. That date matters. It is the moment your coach becomes a partner in your development instead of just the person running practice.
 
 YOU VERSUS YOU
 At the bottom of the Zero In section you will find the You vs. You reminder.
-Write your beginning-of-season satisfaction scores for your three focus areas. These are your baseline. Everything from here is measured against this — not against anyone else in the gym.
+Write your beginning-of-season satisfaction scores for your three focus areas. These are your baseline. Everything from here is measured against this not against anyone else in the gym.
 At mid-season and at the end of the season you will come back to this page and re-rate the same three areas. The distance between where you started and where you are is your progress.
 Nobody else's wheel. Nobody else's baseline. Yours.
 
 COMPLETING THIS SECTION
-Before you move to Execute — make sure all Zero In pages are complete.
+Before you move to Execute make sure all Zero In pages are complete.
 Your wheel rated and shaded. Your three focus areas chosen and connected to your goal. Skills and actions written for each one. Coach conversation prepared. Beginning scores recorded.
 When this is done you have a plan. Not a hope. A specific plan built around your specific goals with your specific coach aligned to it.
 That is what Execute builds on.`;
 
 const EXECUTION_MAP_HOW_TO_COPY = `SEASON GOAL
-Write the goal you defined in Analyze. If it has become clearer or shifted since then — write the most current version. One sentence. Honest.
+Write the goal you defined in Analyze. If it has become clearer or shifted since then write the most current version. One sentence. Honest.
 
 TEAM GOAL
 Ask your coach if you do not know this yet. Write it here once you do. This is not optional. Your individual work needs to connect to something larger than your own stats.
@@ -610,58 +610,58 @@ YOUR INDIVIDUAL CONTRIBUTION
 What does your team specifically need from you this season? Not just your position. Your actual contribution to the team reaching its goal. Write that.
 
 YOUR THREE FOCUS SKILLS
-Transfer from your Zero In section. For each one — the skill category, the specific technical focus inside it, and the intangible behind it. All three levels.
+Transfer from your Zero In section. For each one the skill category, the specific technical focus inside it, and the intangible behind it. All three levels.
 
 CHECKPOINTS
-Three moments across the season — beginning, mid-season, and end. Each time you return to this page and rate your progress on each of your three focus skills from one to ten.
+Three moments across the season beginning, mid-season, and end. Each time you return to this page and rate your progress on each of your three focus skills from one to ten.
 Where you started. Where you are. Where you finished. That distance is your growth.
 Not to judge yourself. To see how far you came.
 
-IF YOU ARE DOING THESE — YOU ARE BUILDING
+IF YOU ARE DOING THESE YOU ARE BUILDING
 This is the last section of the page. Return to it whenever you need to know if you are on track.
 
 YOUR DAILY RECORD
 Journal before and after every practice and game day. Set intentions before. Reflect after. Every session.
 
 YOUR INNER VOICE
-Say your mantra three times a day. Morning. Before practice. Before bed. Three reps. Every day. This is how you train the inner voice — the same way you train any skill.
+Say your mantra three times a day. Morning. Before practice. Before bed. Three reps. Every day. This is how you train the inner voice the same way you train any skill.
 
 YOUR TRIANGLE
 Communicate with your ecosystem. Your parents. Your coach. Your teammates. Keep the lines open. Ask for feedback. Share what you are working on.
 
 TRACK WHAT MATTERS
 Use your habit tracker every single day. Thirty seconds before bed. Honest marks. No erasing.
-If you are doing these four things — you are making progress. Even when it does not feel like it.
-On the days nothing is working — come back to these four. That is enough.
+If you are doing these four things you are making progress. Even when it does not feel like it.
+On the days nothing is working come back to these four. That is enough.
 
 HOW TO USE THIS PAGE ALL SEASON
-Before games — read your mantra, team goal, and three skills. Thirty seconds.
+Before games read your mantra, team goal, and three skills. Thirty seconds.
 Your mantra is your pause button. Your inner voice will show up after mistakes and in pressure moments. Your mantra is what you say back to it in those two seconds. It lives here so you never have to go looking for it.
-After hard stretches — open this page before you open anything else. Read what you decided to build. Then get back to work.
-At each checkpoint — rate yourself honestly. Update anything that has shifted.
+After hard stretches open this page before you open anything else. Read what you decided to build. Then get back to work.
+At each checkpoint rate yourself honestly. Update anything that has shifted.
 
 YOUR WHY
-This is your why. The real one. The one you wrote on page one of this workbook. When everything feels hard — your why is the thing that reminds you why you started.
+This is your why. The real one. The one you wrote on page one of this workbook. When everything feels hard your why is the thing that reminds you why you started.
 This page does not expire. Come back here all season long.`;
 
 const HABIT_TRACKER_HOW_TO_COPY = `Your journal is open to the Habit Tracker page. Here is exactly how to set it up and use it every day.
 
-SETUP — DO THIS ONCE PER MONTH
+SETUP DO THIS ONCE PER MONTH
 Write the month at the top of the page.
-Choose your three colors — one for Completed, one for Partial, one for Missed. Write the key at the top so you do not forget which is which.
-Choose no more than seven habits. Write each one in positive language — what you will do, not what you will stop doing.
+Choose your three colors one for Completed, one for Partial, one for Missed. Write the key at the top so you do not forget which is which.
+Choose no more than seven habits. Write each one in positive language what you will do, not what you will stop doing.
 Your habits should connect directly to your Zero In focus skills and intangibles. These are not random improvements. They are the daily behaviors that build what you are working on this season.
 
-DAILY USE — THIRTY SECONDS BEFORE BED
+DAILY USE THIRTY SECONDS BEFORE BED
 Look at each habit. Mark the color that matches what actually happened today.
-Completed — you did the full thing. Partial — you did some of it. Missed — you did not do it.
+Completed you did the full thing. Partial you did some of it. Missed you did not do it.
 No erasing. No lying. The honest marks are the valuable ones.
 
-WEEKLY REVIEW — TWO MINUTES
+WEEKLY REVIEW TWO MINUTES
 Look at the week. Which habits are consistent? Which keep falling off? Is there a pattern in when or why you miss?
 No emotion. Just information.
 
-MONTHLY REVIEW — FIVE MINUTES
+MONTHLY REVIEW FIVE MINUTES
 Look at the full month. What is working? What keeps not sticking? Do any habits need to be rewritten to be more realistic? Do any need to be swapped for something more relevant right now?
 The tracker is allowed to evolve. Your honesty is not.
 
@@ -671,31 +671,31 @@ Mark what happened. See what the data says. Adjust. Repeat.`;
 
 const GAME_TIME_HOW_TO_COPY = `Your journal is open to a Game Time page. Here is exactly what to do before and after every competition.
 
-BEFORE THE GAME — COMPLETE BEFORE YOU ARRIVE
+BEFORE THE GAME COMPLETE BEFORE YOU ARRIVE
 Three coach instructions. Write the specific things your coach told you this week. Their exact words. Not general advice. What they specifically said to you.
 Three one-word cues. Turn each instruction into one word. The word that puts that instruction in your body instantly. One word per instruction. That is all your brain needs under pressure.
-Visualization. Two to three minutes. Eyes closed. See yourself walking into the gym. See yourself executing your three focus skills the way you have been training. Not perfectly — the way you have trained. Trust what you have built.
+Visualization. Two to three minutes. Eyes closed. See yourself walking into the gym. See yourself executing your three focus skills the way you have been training. Not perfectly the way you have trained. Trust what you have built.
 
-DURING THE GAME — THE MID-GAME RESET
-When something goes wrong mid-competition — three steps.
-Step one — Breathe. One intentional breath. That is the gap between what just happened and what comes next.
-Step two — Your one-word cue. The word you wrote before the game. Say it. It moves you from emotional to analytical instantly.
-Step three — Next play. Let go. Move forward.
+DURING THE GAME THE MID-GAME RESET
+When something goes wrong mid-competition three steps.
+Step one Breathe. One intentional breath. That is the gap between what just happened and what comes next.
+Step two Your one-word cue. The word you wrote before the game. Say it. It moves you from emotional to analytical instantly.
+Step three Next play. Let go. Move forward.
 The standard: your teammates should not be able to tell what play caused the panic.
 Feel it. Reset. Move. That is composure in action.
 
-AFTER THE GAME — SIXTY MINUTES FIRST
-Before you open your journal — give yourself sixty minutes of nothing.
+AFTER THE GAME SIXTY MINUTES FIRST
+Before you open your journal give yourself sixty minutes of nothing.
 No group text. No replaying mistakes. No film. No opinions from anyone else.
 Eat. Hydrate. Walk. Shower. Rest.
-Let the emotion move through you without trying to analyze it. When you feel reset — not perfect, just reset — then open the journal.
+Let the emotion move through you without trying to analyze it. When you feel reset not perfect, just reset then open the journal.
 Reacting is not reflecting. Give your brain the space to know the difference.
 
-AFTER THE GAME — BEFORE YOU SLEEP
+AFTER THE GAME BEFORE YOU SLEEP
 Three triumphs. Three things you did well today. Physical and mental both count. Resetting after an error is a triumph. Communicating in a hard moment is a triumph. Find three. Every game. No matter how it went.
-Three areas to improve. Specific. Name the moment. Name the adjustment. Not I need to play better — what specifically happened and what would you do differently.
+Three areas to improve. Specific. Name the moment. Name the adjustment. Not I need to play better what specifically happened and what would you do differently.
 Satisfaction check. Am I satisfied with how I competed today? Not the score. How you competed.
-If yes — what specifically contributed to that? If no — what one thing would you change?
+If yes what specifically contributed to that? If no what one thing would you change?
 
 THE RULE TO REMEMBER
 Games are not for fixing. They are for applying.
@@ -704,59 +704,59 @@ One game is one data point. The pattern of how you compete all season is who you
 
 const PRACTICE_TIME_HOW_TO_COPY = `Your journal is open to a Practice Time page. Here is exactly what to do before and after every session.
 
-BEFORE PRACTICE — THREE INTENTIONS
+BEFORE PRACTICE THREE INTENTIONS
 Write three intentions before warmup starts. Not one. Three.
-They need to be active from the very first rep. Warmup is your first measuring stick — not a formality. If composure is an intention, your first missed pass in warmup is where it starts.
+They need to be active from the very first rep. Warmup is your first measuring stick not a formality. If composure is an intention, your first missed pass in warmup is where it starts.
 One breath before you step on the court. That is the transition from the person who walked in to the athlete who is about to train.
-If you cannot think of three — look at your Execution Map. Your three focus skills are always a valid source.
+If you cannot think of three look at your Execution Map. Your three focus skills are always a valid source.
 
-AFTER PRACTICE — TWO QUESTIONS
-Question one — What did my coach tell me today?
-Write three individual instructions. Their exact words. Not team instruction — what they told you specifically.
-These are your cue candidates. If your coach keeps repeating the same thing — turn it into a one-word cue before your next game.
+AFTER PRACTICE TWO QUESTIONS
+Question one What did my coach tell me today?
+Write three individual instructions. Their exact words. Not team instruction what they told you specifically.
+These are your cue candidates. If your coach keeps repeating the same thing turn it into a one-word cue before your next game.
 
-Question two — Did I achieve my pre-practice intentions?
+Question two Did I achieve my pre-practice intentions?
 Yes or no for each of your three intentions.
 Not kind of. Not mostly. Yes or no.
 This is the accountability habit. You said you were going to do something before you stepped on the court. Did you?
 
 THE HONEST REFLECTION
 Did I do what I said I was going to do?
-If yes — how hard was it and what made it possible?
+If yes how hard was it and what made it possible?
 Easy means the habit is forming. Hard but yes means you are building mental strength. Write down what conditions helped so you can recreate them.
-If no — how hard was it and what got in the way?
+If no how hard was it and what got in the way?
 Was it the drill? The energy in the gym? Something internal?
-Whatever the answer — that is exactly what you practice next time to make it easier.
+Whatever the answer that is exactly what you practice next time to make it easier.
 You are not grading yourself. You are training yourself to be more intentional every session until showing up with purpose is just who you are.
 
 THE RULE TO REMEMBER
 Practice is permission to learn. Urgency starts at rep one.
 The rep that stays with you is the one you actually paid attention to.`;
 
-const CHECK_POINTS_HOW_TO_COPY = `Use this page every time you do a checkpoint — weekly, monthly, mid-season, and end of season. Same three questions every time.
+const CHECK_POINTS_HOW_TO_COPY = `Use this page every time you do a checkpoint weekly, monthly, mid-season, and end of season. Same three questions every time.
 
 AM I ON TRACK?
-Before anything else — look at your habit tracker and your practice and game pages. Use that data to answer honestly. Not a feeling. Not a hope. What does the data actually show?
+Before anything else look at your habit tracker and your practice and game pages. Use that data to answer honestly. Not a feeling. Not a hope. What does the data actually show?
 
 CHECK IN WITH YOUR PEOPLE
-These are conversations — not pages you fill in alone.
+These are conversations not pages you fill in alone.
 Talk to your accountability buddy. Talk to your parent. Talk to your coach. Check in with yourself.
 The checkpoint only works when your ecosystem is in it with you.
 
-THE THREE QUESTIONS — ASK THEM EVERY TIME
+THE THREE QUESTIONS ASK THEM EVERY TIME
 What got better?
 Look at your data. Name one specific thing that is actually improving.
 
 What got harder?
-Name what is struggling. A habit falling off. An intention not showing up. No judgment — just honest.
+Name what is struggling. A habit falling off. An intention not showing up. No judgment just honest.
 
 What is the one change I will make next week?
 Not five. One. The adjustment that directly addresses what got harder.
 
-THE AUDIT — THREE AREAS
+THE AUDIT THREE AREAS
 Your habits.
 Is a habit getting easy? It may be time to swap it for something you are still building.
-Is a habit consistently falling off? Adjust the approach — not the standard.
+Is a habit consistently falling off? Adjust the approach not the standard.
 
 Your cues.
 Is your mantra still landing? Is it still your voice?
@@ -772,42 +772,42 @@ Tighten what has loosened. Adjust what has drifted.
 THE RULE TO REMEMBER
 Adjust what is not working. Keep doing what is. Then go back to work.`;
 
-const REFLECTION_HOW_TO_COPY = `Your season is coming to an end. And before you close this journal and move on to whatever comes next — stop and actually look at what you built. Not quickly. Not with the pressure to feel a certain way about it. With honest eyes and a full breath.
+const REFLECTION_HOW_TO_COPY = `Your season is coming to an end. And before you close this journal and move on to whatever comes next stop and actually look at what you built. Not quickly. Not with the pressure to feel a certain way about it. With honest eyes and a full breath.
 
 Because here is the truth about progress. You have been in it every single day. You cannot always see progress when you are standing inside it. You need to step back. That is what the reflection section is for.
 
 This is not about judging the season. It is about acknowledging it. Celebrating what grew. Understanding what did not. And carrying everything you learned into the next chapter of your journey.
 
-That is what great athletes do. They do not start over. They build forward. And they trust that the work they put in — even when the results were not what they hoped — was never wasted.
+That is what great athletes do. They do not start over. They build forward. And they trust that the work they put in even when the results were not what they hoped was never wasted.
 
 YOUR THREE FOCUS SKILLS
 Go back to your three focus skills. You chose these at the beginning of the season in Zero In. You built your whole Execution Map around them. Now you are looking at them one final time.
-For each skill — circle the percentage that honestly reflects how much you feel you accomplished or progressed. Twenty percent. Forty. Sixty. Eighty. A hundred.
+For each skill circle the percentage that honestly reflects how much you feel you accomplished or progressed. Twenty percent. Forty. Sixty. Eighty. A hundred.
 This is not a grade. It is a snapshot. An honest picture of where each skill landed at the end of this season.
-Then for each skill — put a plus sign next to what worked. The specific habit, the approach, the mental tool, the conversation that actually moved that skill forward. Write it down. Because that plus is something you take into next season. It is part of your foundation.
+Then for each skill put a plus sign next to what worked. The specific habit, the approach, the mental tool, the conversation that actually moved that skill forward. Write it down. Because that plus is something you take into next season. It is part of your foundation.
 Then a negative sign next to what did not work. The thing that kept getting in the way. The habit that kept falling off. The moment that kept derailing you. Not to feel bad about it. To acknowledge it clearly so you do not repeat it next season without understanding why.
 
 THE SATISFACTION WHEEL
 Go back to the satisfaction wheel. When you started this program you rated yourself in each of the eight categories. Now you rescore.
-For each category — give yourself a new satisfaction rating from one to ten. Write it next to your original score. Look at the distance between where you started and where you are now.
+For each category give yourself a new satisfaction rating from one to ten. Write it next to your original score. Look at the distance between where you started and where you are now.
 That distance is your growth. It belongs to you. Own it.
-For each category — not just the three you focused on, all eight — write three insights you gained this season. Something you learned about that area of your game. Something you noticed. Something a coach told you that changed how you see it. Something that surprised you.
+For each category not just the three you focused on, all eight write three insights you gained this season. Something you learned about that area of your game. Something you noticed. Something a coach told you that changed how you see it. Something that surprised you.
 Three insights per category. Some of them will be small. Some of them will change how you train next season. Write them all.
-This is the most valuable page in your entire journal. Not because of the scores. Because of the insights. They are your personal development data — built from a full season of showing up.
+This is the most valuable page in your entire journal. Not because of the scores. Because of the insights. They are your personal development data built from a full season of showing up.
 
-KEY LESSONS — FOUR QUESTIONS
+KEY LESSONS FOUR QUESTIONS
 Answer them honestly.
 Who was helpful during this journey? Name the people. Your coach. Your parent. A teammate. Your accountability buddy. Whoever showed up for you. Write their name and one sentence about the role they played and why it mattered.
 What will you keep doing next season? The habits, the mental tools, the approaches that worked. Write them here.
 What will you improve upon? The skills and habits that showed promise but are not there yet.
 What will you start doing? Something you know you need but did not build this season. Name it.
 What will you stop doing? The habit, the behavior, the pattern that you now know is costing you. Name it specifically. Because naming it is the first step to actually leaving it behind.
-When you have answered all four — share this with your ecosystem. Your parent. Your coach. Your accountability buddy. Not because you need their approval. Because the people who supported your journey deserve to know what you learned from it.
+When you have answered all four share this with your ecosystem. Your parent. Your coach. Your accountability buddy. Not because you need their approval. Because the people who supported your journey deserve to know what you learned from it.
 
 WHAT YOU ARE TAKING WITH YOU
 Not just memories of the season. The actual tools. The actual system.
 New pages. Same compass. Your journal starts fresh next season. The foundation underneath it does not. You know how to use it now. You know what to write before practice and after games. You know what the pre-game protocol feels like. You know how to reflect instead of react. The pages are blank. You are not.
-What you tracked this season becomes your baseline for next. Every habit you built, every pattern you identified — that is your starting point. You are not guessing where to begin next season. You have data. Use it.
+What you tracked this season becomes your baseline for next. Every habit you built, every pattern you identified that is your starting point. You are not guessing where to begin next season. You have data. Use it.
 Your wheel resets. Your insights don't. The things you actually learned about each area of your game travel with you.
 Your mantra. Your one-word cues. Your understanding of your inner voice. Your heroine. Your three focus skills and the intangibles behind them. Nobody can take any of that. It is yours.
 The compass does not stop pointing when the season ends.
@@ -823,7 +823,7 @@ Not because your parents signed you up. Not because your coach suggested it. Not
 
 This is about you deciding, right now, whether you want to take responsibility for your own journey. Because this system only works for athletes who choose it. And it is completely okay if today is not that day. That is not failure. That is honesty.
 
-HERE IS WHAT COMPASS ATHLETES CHOOSE — THREE THINGS
+HERE IS WHAT COMPASS ATHLETES CHOOSE THREE THINGS
 Responsibility over excuses.
 Not perfection. Not always getting it right. Responsibility. When something goes wrong, you look at your part in it before you look anywhere else.
 
@@ -835,16 +835,16 @@ Drift is what happens when you just react to everything around you. The outcome.
 Compass athletes choose to be the driver.
 Responsibility. Process. Control. That is the choice.
 
-If that is what you want — keep going. If you are not ready, that is okay. Come back when you are.
+If that is what you want keep going. If you are not ready, that is okay. Come back when you are.
 
 NOW OPEN YOUR WORKBOOK TO THE BOLD COMMITMENT PAGE
 You are going to write three things by hand. Not typed. Not in your head.
 
-One — why are you choosing to do this? Not why someone wants you to. Why are you choosing it? In your own words.
+One why are you choosing to do this? Not why someone wants you to. Why are you choosing it? In your own words.
 
-Two — what you are tired of feeling. The specific thing that made you open this journal. The frustration. The inconsistency. The feeling of being out of control. Name it.
+Two what you are tired of feeling. The specific thing that made you open this journal. The frustration. The inconsistency. The feeling of being out of control. Name it.
 
-Three — what you are taking responsibility for. One specific thing in your athletic journey that you are choosing to own from this point forward.
+Three what you are taking responsibility for. One specific thing in your athletic journey that you are choosing to own from this point forward.
 
 Write those three things. Then sign your name.
 
