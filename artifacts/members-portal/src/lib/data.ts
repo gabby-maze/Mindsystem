@@ -772,6 +772,47 @@ Tighten what has loosened. Adjust what has drifted.
 THE RULE TO REMEMBER
 Adjust what is not working. Keep doing what is. Then go back to work.`;
 
+const REFLECTION_HOW_TO_COPY = `Your season is coming to an end. And before you close this journal and move on to whatever comes next — stop and actually look at what you built. Not quickly. Not with the pressure to feel a certain way about it. With honest eyes and a full breath.
+
+Because here is the truth about progress. You have been in it every single day. You cannot always see progress when you are standing inside it. You need to step back. That is what the reflection section is for.
+
+This is not about judging the season. It is about acknowledging it. Celebrating what grew. Understanding what did not. And carrying everything you learned into the next chapter of your journey.
+
+That is what great athletes do. They do not start over. They build forward. And they trust that the work they put in — even when the results were not what they hoped — was never wasted.
+
+YOUR THREE FOCUS SKILLS
+Go back to your three focus skills. You chose these at the beginning of the season in Zero In. You built your whole Execution Map around them. Now you are looking at them one final time.
+For each skill — circle the percentage that honestly reflects how much you feel you accomplished or progressed. Twenty percent. Forty. Sixty. Eighty. A hundred.
+This is not a grade. It is a snapshot. An honest picture of where each skill landed at the end of this season.
+Then for each skill — put a plus sign next to what worked. The specific habit, the approach, the mental tool, the conversation that actually moved that skill forward. Write it down. Because that plus is something you take into next season. It is part of your foundation.
+Then a negative sign next to what did not work. The thing that kept getting in the way. The habit that kept falling off. The moment that kept derailing you. Not to feel bad about it. To acknowledge it clearly so you do not repeat it next season without understanding why.
+
+THE SATISFACTION WHEEL
+Go back to the satisfaction wheel. When you started this program you rated yourself in each of the eight categories. Now you rescore.
+For each category — give yourself a new satisfaction rating from one to ten. Write it next to your original score. Look at the distance between where you started and where you are now.
+That distance is your growth. It belongs to you. Own it.
+For each category — not just the three you focused on, all eight — write three insights you gained this season. Something you learned about that area of your game. Something you noticed. Something a coach told you that changed how you see it. Something that surprised you.
+Three insights per category. Some of them will be small. Some of them will change how you train next season. Write them all.
+This is the most valuable page in your entire journal. Not because of the scores. Because of the insights. They are your personal development data — built from a full season of showing up.
+
+KEY LESSONS — FOUR QUESTIONS
+Answer them honestly.
+Who was helpful during this journey? Name the people. Your coach. Your parent. A teammate. Your accountability buddy. Whoever showed up for you. Write their name and one sentence about the role they played and why it mattered.
+What will you keep doing next season? The habits, the mental tools, the approaches that worked. Write them here.
+What will you improve upon? The skills and habits that showed promise but are not there yet.
+What will you start doing? Something you know you need but did not build this season. Name it.
+What will you stop doing? The habit, the behavior, the pattern that you now know is costing you. Name it specifically. Because naming it is the first step to actually leaving it behind.
+When you have answered all four — share this with your ecosystem. Your parent. Your coach. Your accountability buddy. Not because you need their approval. Because the people who supported your journey deserve to know what you learned from it.
+
+WHAT YOU ARE TAKING WITH YOU
+Not just memories of the season. The actual tools. The actual system.
+New pages. Same compass. Your journal starts fresh next season. The foundation underneath it does not. You know how to use it now. You know what to write before practice and after games. You know what the pre-game protocol feels like. You know how to reflect instead of react. The pages are blank. You are not.
+What you tracked this season becomes your baseline for next. Every habit you built, every pattern you identified — that is your starting point. You are not guessing where to begin next season. You have data. Use it.
+Your wheel resets. Your insights don't. The things you actually learned about each area of your game travel with you.
+Your mantra. Your one-word cues. Your understanding of your inner voice. Your heroine. Your three focus skills and the intangibles behind them. Nobody can take any of that. It is yours.
+The compass does not stop pointing when the season ends.
+You completed the MAZE. That is real. Take a breath and let that land.`;
+
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
@@ -800,6 +841,15 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
       lessons: [
         { id: 1, title: "Overview", videoId: "BCbvKpzq_ZE" },
         { id: 2, title: "How to Fill In Your Journal", videoId: "_Qb-2Ux---s", description: ZERO_IN_HOW_TO_COPY },
+      ],
+    };
+  }
+  if (s.id === "reflection") {
+    return {
+      ...s,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "z3-BlvXUFgY" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "DWYXZ4mogPE", description: REFLECTION_HOW_TO_COPY },
       ],
     };
   }
