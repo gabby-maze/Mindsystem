@@ -4,8 +4,7 @@ import Layout from "@/components/Layout";
 import { AnnouncementBoard } from "@/components/AnnouncementBoard";
 import { STRATEGY_SESSION_LINK, LIVE_SESSIONS, getWeekProgress } from "@/lib/data";
 
-// TODO: replace with GHL shipping address form link
-const SHIPPING_LINK = "TODO_SHIPPING_GHL_LINK";
+const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
 // TODO: replace with GHL parent onboarding call booking link
 const PARENT_ONBOARDING_LINK = "TODO_PARENT_ONBOARDING_BOOKING_LINK";
 // TODO: replace with GHL athlete onboarding call booking link

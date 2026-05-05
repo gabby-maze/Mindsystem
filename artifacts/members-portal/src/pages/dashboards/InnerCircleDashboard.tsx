@@ -3,8 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { STRATEGY_SESSION_LINK, getWeekProgress } from "@/lib/data";
 
-// TODO: replace with GHL shipping address form link
-const SHIPPING_LINK = "TODO_SHIPPING_GHL_LINK";
+const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
 // TODO: replace with GHL private parent onboarding call booking link
 const PRIVATE_PARENT_CALL_LINK = "TODO_PRIVATE_PARENT_ONBOARDING_LINK";
 // TODO: replace with GHL private athlete onboarding call booking link

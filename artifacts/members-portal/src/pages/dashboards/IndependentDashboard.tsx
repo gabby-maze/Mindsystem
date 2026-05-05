@@ -3,8 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { STRATEGY_SESSION_LINK, getWeekProgress } from "@/lib/data";
 
-// TODO: replace with GHL shipping address form link
-const SHIPPING_LINK = "TODO_SHIPPING_GHL_LINK";
+const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
 // TODO: replace with GHL MindSystem Supported payment link
 const UPGRADE_SUPPORTED_LINK = "TODO_MINDSYSTEM_SUPPORTED_GHL_LINK";
 
