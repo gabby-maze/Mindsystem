@@ -179,7 +179,7 @@ export default function SupportedDashboard() {
             <div className="p-5 rounded-lg" style={{ border: `1px solid ${PURPLE}30`, backgroundColor: `${PURPLE}08` }}>
               <p className="font-bold text-xs uppercase tracking-wider mb-3" style={{ color: PURPLE }}>Athlete Track</p>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                Your athlete moves through Compass Training sections 1–6 within the first 2 weeks.
+                Weeks 1-2: Your athlete completes the MAZE. Mindset. Analyze. Zero In. Execute. When she is done - she submits her MAZE Completion Form. Nothing moves forward without it.
               </p>
             </div>
             <div className="p-5 rounded-lg" style={{ border: `1px solid ${TEAL}30`, backgroundColor: `${TEAL}08` }}>
@@ -191,7 +191,7 @@ export default function SupportedDashboard() {
           </div>
           <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-block", backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
-            Submit Parent MAZE Model Responses →
+            Submit Athlete MAZE Completion Form →
           </a>
         </section>
 
