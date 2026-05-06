@@ -11,22 +11,132 @@ const ATHLETE_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supp
 const PURPLE = "#982FF7";
 const TEAL = "#00D4C8";
 
-// Weeks where group calls happen
-const GROUP_CALL_WEEKS = new Set([2, 3, 5, 6, 8, 10]);
+interface RoadmapBlock {
+  label: string;
+  theme: string;
+  athlete: string[];
+  parent: string[];
+  hardGate?: boolean;
+  groupCall?: boolean;
+  isReflection?: boolean;
+  weekStart: number;
+  weekEnd: number;
+}
 
-const SUPPORTED_ROADMAP = [
-  { week: 1, athlete: "Onboarding call booked, workbook begins, Compass Training - Getting Started + Bold Commitment", parent: "Onboarding call booked, Parent Training Lesson 1, Courtside Conversations - Your Starting Point" },
-  { week: 2, athlete: "Compass Training - Mindset, Analyze, Zero In, Execute. Submit completed MAZE model.", parent: "Continue Courtside Conversations, parent workbook, submit parent MAZE model responses, first group calls" },
-  { week: 3, athlete: "Execution map, habit tracker begins, game and practice pages active", parent: "Parent Training Lesson 2 unlocks. Begin parent journal. Group call." },
-  { week: 4, athlete: "3 focus skills being tracked", parent: "Coach conversation - share athlete's 3 focus skills. Continue parent journal." },
-  { week: 5, athlete: "Habit tracker in full swing", parent: "Review shared language framework. Group call." },
-  { week: 6, athlete: "Monthly reflection", parent: "Monthly reflection, review habit tracker, group call." },
-  { week: 7, athlete: "Skill milestone check", parent: "Dot connector - curate a learning experience" },
-  { week: 8, athlete: "Game + practice pages active", parent: "Shared language check in. Group call." },
-  { week: 9, athlete: "Post-game reflection review", parent: "Conversation you've been avoiding" },
-  { week: 10, athlete: "Progress assessment on 3 focus skills", parent: "Prepare for 12 week milestone. Group call." },
-  { week: 11, athlete: "Athlete reflection", parent: "Parent reflection, end of season conversation prep" },
-  { week: 12, athlete: "12 week milestone worksheet", parent: "Complete together, review months 4-6" },
+const ROADMAP_BLOCKS: RoadmapBlock[] = [
+  {
+    label: "Weeks 1–2",
+    theme: "The MAZE",
+    weekStart: 1, weekEnd: 2,
+    hardGate: true,
+    groupCall: true,
+    athlete: [
+      "Complete all four phases of the MAZE — Mindset, Analyze, Zero In, Execute.",
+      "Submit the MAZE Completion Form when all four phases are done.",
+      "Nothing moves forward without it.",
+    ],
+    parent: [
+      "Work through the MAZE Mirror workbook alongside your athlete's progress.",
+      "Submit your ecosystem responses after your athlete submits hers.",
+      "Both forms go to Gabby before journals ship.",
+    ],
+  },
+  {
+    label: "Week 3",
+    theme: "The season begins",
+    weekStart: 3, weekEnd: 3,
+    groupCall: true,
+    athlete: [
+      "Both journals arrive.",
+      "Execution map, habit tracker, game pages, and practice pages all go live this week.",
+      "The system is now running.",
+    ],
+    parent: [
+      "Both journals arrive.",
+      "Your Parent Compass is in hand. The daily practice begins.",
+      "Open the parent track and start the daily loop.",
+    ],
+  },
+  {
+    label: "Weeks 4–5",
+    theme: "Building the habit",
+    weekStart: 4, weekEnd: 5,
+    groupCall: true,
+    athlete: [
+      "Tracking all three focus skills consistently.",
+      "Mantra running three times a day — morning, before practice, before bed.",
+      "Accountability buddy active and checking in weekly.",
+    ],
+    parent: [
+      "Coach conversation done — athlete's three focus skills shared.",
+      "Language swap in effect — manager language replaced with collaborator language.",
+      "All four daily commitments running.",
+    ],
+  },
+  {
+    label: "Weeks 6–7",
+    theme: "The middle",
+    weekStart: 6, weekEnd: 7,
+    groupCall: true,
+    athlete: [
+      "This is the hardest stretch. Expect resistance. Stay in it.",
+      "Mid-season checkpoint — rescore your three focus skills and name what shifted.",
+      "Check in with your full ecosystem.",
+    ],
+    parent: [
+      "Mid-season support audit — honest review of your four commitments.",
+      "Where have you held the line? Where have you slipped back?",
+      "Check in with your ecosystem and name one adjustment for the second half.",
+    ],
+  },
+  {
+    label: "Weeks 8–9",
+    theme: "Staying in it",
+    weekStart: 8, weekEnd: 9,
+    groupCall: true,
+    athlete: [
+      "Pull your game and practice page data — look at the pattern, not just individual sessions.",
+      "Pattern recognition first. Honest adjustment second.",
+      "What is the data actually telling you?",
+    ],
+    parent: [
+      "Post-game protocol check — are you giving the sixty minutes before reacting?",
+      "Review your language patterns over the past four weeks.",
+      "Name one honest adjustment and make it before Week 10.",
+    ],
+  },
+  {
+    label: "Weeks 10–11",
+    theme: "The final push",
+    weekStart: 10, weekEnd: 11,
+    groupCall: true,
+    athlete: [
+      "Look back at your three focus skills from Zero In.",
+      "Score each one honestly. Name what moved. Name what didn't.",
+      "Begin preparing for the closing conversation.",
+    ],
+    parent: [
+      "Prepare the closing conversation — this one is about you, not just the season.",
+      "Honestly review your two season goals.",
+      "What did you actually do? What will you carry forward?",
+    ],
+  },
+  {
+    label: "Week 12",
+    theme: "Reflection",
+    weekStart: 12, weekEnd: 12,
+    isReflection: true,
+    athlete: [
+      "Rescore the satisfaction wheel — all eight categories.",
+      "Write three insights per category.",
+      "Name four things you are carrying forward into next season.",
+    ],
+    parent: [
+      "Rescore your own support wheel.",
+      "Write three insights from your season as a parent.",
+      "Name four things you are carrying forward.",
+    ],
+  },
 ];
 
 export default function SupportedDashboard() {
@@ -216,48 +326,103 @@ export default function SupportedDashboard() {
 
         {/* Section 5 - 12 Week Roadmap */}
         <section className="px-4 md:px-16 pb-16 max-w-5xl mx-auto">
-          <h2 className="font-bold mb-6 uppercase tracking-wider text-center" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
+          <h2 className="font-bold mb-2 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             12 Week Roadmap
           </h2>
-          <div className="overflow-x-auto rounded-lg" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
-            <table className="w-full" style={{ borderCollapse: "collapse", minWidth: 600 }}>
-              <thead>
-                <tr style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-                  {["Week", "Athlete", "Parent"].map((h) => (
-                    <th key={h} className="text-left px-4 py-3 text-xs uppercase tracking-wider"
-                      style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Oswald', sans-serif", fontWeight: 400 }}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {SUPPORTED_ROADMAP.map((row) => {
-                  const isCurrent = row.week === currentWeek;
-                  const isPast = row.week < currentWeek;
-                  const isGroupCall = GROUP_CALL_WEEKS.has(row.week);
-                  return (
-                    <tr key={row.week} style={{
-                      backgroundColor: isCurrent ? `${PURPLE}15` : "transparent",
-                      borderLeft: isCurrent ? `3px solid ${PURPLE}` : isGroupCall ? `3px solid ${TEAL}50` : "3px solid transparent",
-                      borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      opacity: isPast ? 0.5 : 1,
-                    }}>
-                      <td className="px-4 py-3" style={{ whiteSpace: "nowrap" }}>
-                        <p className="text-xs font-bold" style={{ color: isCurrent ? PURPLE : "rgba(255,255,255,0.4)", fontFamily: "'Oswald', sans-serif" }}>
-                          Wk {row.week}
-                        </p>
-                        {isGroupCall && (
-                          <span className="text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: `${TEAL}20`, color: TEAL, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                            Group Call
-                          </span>
+          <p className="mb-8 text-xs" style={{ color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            Your current block is highlighted
+          </p>
+          <div className="flex flex-col gap-4">
+            {ROADMAP_BLOCKS.map((block) => {
+              const isCurrent = currentWeek >= block.weekStart && currentWeek <= block.weekEnd;
+              const isPast = currentWeek > block.weekEnd;
+              return (
+                <div key={block.label}
+                  style={{
+                    borderRadius: 10,
+                    border: isCurrent ? `1.5px solid ${PURPLE}60` : "1px solid rgba(255,255,255,0.07)",
+                    backgroundColor: isCurrent ? `${PURPLE}10` : isPast ? "rgba(255,255,255,0.015)" : "rgba(255,255,255,0.03)",
+                    opacity: isPast ? 0.55 : 1,
+                    overflow: "hidden",
+                  }}>
+                  {/* Block header */}
+                  <div className="flex items-center gap-3 px-5 py-3"
+                    style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", backgroundColor: isCurrent ? `${PURPLE}18` : "rgba(255,255,255,0.025)" }}>
+                    <span className="text-xs font-bold uppercase tracking-widest"
+                      style={{ color: isCurrent ? PURPLE : "rgba(255,255,255,0.35)", minWidth: 80 }}>{block.label}</span>
+                    <span style={{ width: 1, height: 14, backgroundColor: "rgba(255,255,255,0.15)", display: "inline-block" }} />
+                    <span className="font-bold uppercase tracking-wide"
+                      style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.9rem", color: isCurrent ? "#fff" : "rgba(255,255,255,0.6)" }}>
+                      {block.theme}
+                    </span>
+                    {block.hardGate && (
+                      <span className="ml-auto text-xs px-2 py-0.5 rounded"
+                        style={{ backgroundColor: "#FF2D7820", color: "#FF2D78", border: "1px solid #FF2D7840", fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap" }}>
+                        Hard gate
+                      </span>
+                    )}
+                    {isCurrent && !block.hardGate && (
+                      <span className="ml-auto text-xs px-2 py-0.5 rounded"
+                        style={{ backgroundColor: `${PURPLE}25`, color: PURPLE, border: `1px solid ${PURPLE}40`, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                        You are here
+                      </span>
+                    )}
+                  </div>
+                  {/* Athlete + Parent columns */}
+                  <div className="grid grid-cols-1 md:grid-cols-2">
+                    {[
+                      { label: "Athlete", color: PURPLE, items: block.athlete },
+                      { label: "Parent", color: "#FF2D78", items: block.parent },
+                    ].map(({ label, color, items }, ci) => (
+                      <div key={label} className="px-5 py-4"
+                        style={{ borderRight: ci === 0 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color }}>{label}</p>
+                        <ul className="flex flex-col gap-1.5">
+                          {items.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-xs" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.65 }}>
+                              <span style={{ color, marginTop: 3, flexShrink: 0 }}>—</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        {block.isReflection && (
+                          <div className="mt-4 flex flex-col gap-2">
+                            {["Go to MindSystem", "Download your reflection pages", "Book a closing call with Gabby"].map((btn) => (
+                              <button key={btn}
+                                onClick={() => btn.includes("MindSystem") ? navigate("/courses/mindsystem") : btn.includes("closing") ? window.open(STRATEGY_SESSION_LINK, "_blank") : undefined}
+                                style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)", padding: "0.45rem 1rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", textAlign: "left" }}>
+                                {btn} →
+                              </button>
+                            ))}
+                          </div>
                         )}
-                      </td>
-                      <td className="px-4 py-3 text-xs" style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>{row.athlete}</td>
-                      <td className="px-4 py-3 text-xs" style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>{row.parent}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Group call footer */}
+                  {block.groupCall && (
+                    <div className="px-5 py-3 flex flex-col sm:flex-row sm:items-center gap-2"
+                      style={{ borderTop: `1px solid ${TEAL}20`, backgroundColor: `${TEAL}06` }}>
+                      <span className="text-xs px-2 py-0.5 rounded shrink-0"
+                        style={{ backgroundColor: `${TEAL}18`, color: TEAL, border: `1px solid ${TEAL}35`, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                        Bimonthly Group Call
+                      </span>
+                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                        Your group call lands somewhere in this window — check the call calendar above for your exact date. Complete the pre-call check-in form before you join.
+                      </p>
+                    </div>
+                  )}
+                  {/* Week 12 closing conversation note */}
+                  {block.isReflection && (
+                    <div className="px-5 py-3" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", backgroundColor: "rgba(255,255,255,0.02)" }}>
+                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>
+                        The closing conversation is not about the season. It is about who you both became during it.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 
