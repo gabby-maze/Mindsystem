@@ -1165,17 +1165,28 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   return s;
 });
 
+const removeHowTo = (lessons: MSLesson[] | undefined) =>
+  lessons?.filter((l) => l.title !== "How to Fill In Your Journal");
+
 const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
   if (s.id === "onboarding-parent") {
     return {
       ...s,
       lessons: [
         { id: 1, title: "Overview", videoId: "AWZQfiMrrhk" },
-        { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER", description: PARENT_ONBOARDING_HOW_TO_COPY },
       ],
     };
   }
-  return s;
+  if (s.subSections) {
+    return {
+      ...s,
+      subSections: s.subSections.map((ss) => ({
+        ...ss,
+        lessons: removeHowTo(ss.lessons) ?? ss.lessons,
+      })),
+    };
+  }
+  return { ...s, lessons: removeHowTo(s.lessons) };
 });
 
 export const MINDSYSTEM_COURSE: MindSystemCourse = {
