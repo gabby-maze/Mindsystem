@@ -124,7 +124,7 @@ export default function SupportedDashboard() {
                     {item.downloadUrl && (
                       <a href={item.downloadUrl} download
                         style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${PURPLE}60`, color: PURPLE, padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
-                        Download Workbook ↓
+                        Download Athlete Workbook ↓
                       </a>
                     )}
                   </div>
@@ -185,14 +185,20 @@ export default function SupportedDashboard() {
             <div className="p-5 rounded-lg" style={{ border: `1px solid ${TEAL}30`, backgroundColor: `${TEAL}08` }}>
               <p className="font-bold text-xs uppercase tracking-wider mb-3" style={{ color: TEAL }}>Parent Track</p>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                Your job in the early weeks is NOT to follow along with what your athlete is doing. Your track runs parallel - not behind her.
+                While your athlete completes the MAZE - browse her trainings, complete your Parent Onboarding, and work through the MAZE Mirror in your workbook. You are not behind. You are preparing. When she is done, she submits her form. Then you submit yours. Both go to Gabby. Your personalized Parent Compass ships after that.
               </p>
             </div>
           </div>
-          <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
-            style={{ display: "inline-block", backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
-            Submit Athlete MAZE Completion Form →
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-block", backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
+              Submit Athlete MAZE Completion Form →
+            </a>
+            <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
+              Submit Your Ecosystem Responses →
+            </a>
+          </div>
         </section>
 
         {/* Section 5 - 12 Week Roadmap */}
