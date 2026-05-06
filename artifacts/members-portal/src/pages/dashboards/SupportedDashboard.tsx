@@ -175,29 +175,27 @@ export default function SupportedDashboard() {
           <h2 className="font-bold mb-6 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             Content Roadmap
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
-            <div className="p-5 rounded-lg" style={{ border: `1px solid ${PURPLE}30`, backgroundColor: `${PURPLE}08` }}>
-              <p className="font-bold text-xs uppercase tracking-wider mb-3" style={{ color: PURPLE }}>Athlete Track</p>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="p-5 rounded-lg flex flex-col gap-4" style={{ border: `1px solid ${PURPLE}30`, backgroundColor: `${PURPLE}08` }}>
+              <p className="font-bold text-xs uppercase tracking-wider" style={{ color: PURPLE }}>Athlete Track</p>
+              <p className="text-sm flex-1" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
                 Weeks 1-2: Your athlete completes the MAZE. Mindset. Analyze. Zero In. Execute. When she is done - she submits her MAZE Completion Form. Nothing moves forward without it.
               </p>
+              <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
+                Submit Athlete MAZE Completion Form →
+              </a>
             </div>
-            <div className="p-5 rounded-lg" style={{ border: `1px solid ${TEAL}30`, backgroundColor: `${TEAL}08` }}>
-              <p className="font-bold text-xs uppercase tracking-wider mb-3" style={{ color: TEAL }}>Parent Track</p>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
+            <div className="p-5 rounded-lg flex flex-col gap-4" style={{ border: `1px solid ${TEAL}30`, backgroundColor: `${TEAL}08` }}>
+              <p className="font-bold text-xs uppercase tracking-wider" style={{ color: TEAL }}>Parent Track</p>
+              <p className="text-sm flex-1" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
                 While your athlete completes the MAZE - browse her trainings, complete your Parent Onboarding, and work through the MAZE Mirror in your workbook. You are not behind. You are preparing. When she is done, she submits her form. Then you submit yours. Both go to Gabby. Your personalized Parent Compass ships after that.
               </p>
+              <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
+                Submit Your Ecosystem Responses →
+              </a>
             </div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
-              Submit Athlete MAZE Completion Form →
-            </a>
-            <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
-              Submit Your Ecosystem Responses →
-            </a>
           </div>
         </section>
 
