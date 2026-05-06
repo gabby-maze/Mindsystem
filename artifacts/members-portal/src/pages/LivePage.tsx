@@ -77,7 +77,7 @@ export default function LivePage() {
         {/* MindSystem supported+ sessions */}
         <section>
           <p className="text-xs uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>
-            MindSystem — Supported & Above
+            MindSystem - Supported & Above
           </p>
 
           {/* Call booking schedule */}

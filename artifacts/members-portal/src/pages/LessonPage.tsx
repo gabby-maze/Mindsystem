@@ -17,7 +17,7 @@ function YouTubeEmbed({ youtubeId }: { youtubeId: string }) {
         style={{ aspectRatio: "16/9", backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
       >
         <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem", textAlign: "center", padding: "2rem" }}>
-          Video coming soon — YouTube ID will be added here
+          Video coming soon - YouTube ID will be added here
         </p>
       </div>
     );
@@ -190,7 +190,7 @@ export default function LessonPage() {
               {completed ? "Completed" : "Mark as Complete"}
             </button>
 
-            {/* Upgrade CTA — Free tier at end of last free lesson */}
+            {/* Upgrade CTA - Free tier at end of last free lesson */}
             {isLastFreeLesson && (
               <div
                 className="rounded-lg p-8 mb-8 text-center"
@@ -206,7 +206,7 @@ export default function LessonPage() {
                   5 deep-dive video series + monthly live calls
                 </p>
                 <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  $30/month — cancel any time.
+                  $30/month - cancel any time.
                 </p>
                 <a
                   href={COURTSIDE_UPGRADE_LINK}
@@ -225,12 +225,12 @@ export default function LessonPage() {
                     textDecoration: "none",
                   }}
                 >
-                  Join Courtside — $30/mo <ExternalLink size={12} />
+                  Join Courtside - $30/mo <ExternalLink size={12} />
                 </a>
               </div>
             )}
 
-            {/* Upgrade CTA — Courtside tier at end of last Courtside lesson */}
+            {/* Upgrade CTA - Courtside tier at end of last Courtside lesson */}
             {isLastCourtsideLesson && (
               <div
                 className="rounded-lg p-8 mb-8 text-center"

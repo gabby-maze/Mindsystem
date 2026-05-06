@@ -26,7 +26,7 @@ export default function CoursesideDashboard() {
     <Layout>
       <div style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
 
-        {/* Section 1 — Hero */}
+        {/* Section 1 - Hero */}
         <section className="w-full px-6 md:px-16 py-20 relative" style={{ backgroundColor: "#2C2C2A" }}>
           {/* Tier badge */}
           <div className="absolute top-6 right-6 md:top-8 md:right-8">
@@ -67,7 +67,7 @@ export default function CoursesideDashboard() {
           </div>
         </section>
 
-        {/* Section 2 — Three Step Visual */}
+        {/* Section 2 - Three Step Visual */}
         <section className="px-6 md:px-16 py-14 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
@@ -96,7 +96,7 @@ export default function CoursesideDashboard() {
           </div>
         </section>
 
-        {/* Section 3 — Full Course Grid */}
+        {/* Section 3 - Full Course Grid */}
         <section className="px-6 md:px-16 pb-16 max-w-6xl mx-auto">
           <h2 className="mb-2" style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.6rem,4vw,2.2rem)" }}>
             Your Training Library
@@ -149,7 +149,7 @@ export default function CoursesideDashboard() {
               );
             })}
 
-            {/* MindSystem tile — locked for Courtside */}
+            {/* MindSystem tile - locked for Courtside */}
             <div
               onClick={() => setShowMindSystemModal(true)}
               className="relative rounded-lg overflow-hidden cursor-pointer"
@@ -180,7 +180,7 @@ export default function CoursesideDashboard() {
           </div>
         </section>
 
-        {/* Section 4 — Monthly Live */}
+        {/* Section 4 - Monthly Live */}
         <section
           className="px-6 md:px-16 py-14"
           style={{ backgroundColor: "rgba(0,212,200,0.04)", borderTop: "1px solid rgba(0,212,200,0.1)", borderBottom: "1px solid rgba(0,212,200,0.1)" }}
@@ -191,7 +191,7 @@ export default function CoursesideDashboard() {
             </h2>
             <p className="mb-6" style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 560 }}>
               Every month Gabby goes live inside Courtside Conversations. You bring what's on your
-              mind. Gabby brings the framework. Miss it live — the replay is always there.
+              mind. Gabby brings the framework. Miss it live - the replay is always there.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -232,7 +232,7 @@ export default function CoursesideDashboard() {
           </div>
         </section>
 
-        {/* Section 5 — Community Board */}
+        {/* Section 5 - Community Board */}
         <section className="px-6 md:px-16 py-14 max-w-4xl mx-auto">
           <h2 className="font-bold mb-2" style={{ fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
             The Community
@@ -243,7 +243,7 @@ export default function CoursesideDashboard() {
           <AnnouncementBoard family={family} />
         </section>
 
-        {/* Section 6 — MindSystem Upgrade Banner */}
+        {/* Section 6 - MindSystem Upgrade Banner */}
         <section
           className="w-full px-6 md:px-16 py-14 text-center"
           style={{ backgroundColor: "rgba(152,47,247,0.12)", borderTop: "1px solid rgba(152,47,247,0.2)" }}
@@ -259,7 +259,7 @@ export default function CoursesideDashboard() {
               MindSystem Supported is now open.
             </h3>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
-              This is not a program. This is the full family performance framework — the compass,
+              This is not a program. This is the full family performance framework - the compass,
               the journals, the shared system for the season.
             </p>
             <a

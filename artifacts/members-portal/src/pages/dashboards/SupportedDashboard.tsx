@@ -17,13 +17,13 @@ const TEAL = "#00D4C8";
 const GROUP_CALL_WEEKS = new Set([2, 3, 5, 6, 8, 10]);
 
 const SUPPORTED_ROADMAP = [
-  { week: 1, athlete: "Onboarding call booked, workbook begins, Compass Training — Getting Started + Bold Commitment", parent: "Onboarding call booked, Parent Training Lesson 1, Courtside Conversations — Your Starting Point" },
-  { week: 2, athlete: "Compass Training — Mindset, Analyze, Zero In, Execute. Submit completed MAZE model.", parent: "Continue Courtside Conversations, parent workbook, submit parent MAZE model responses, first group calls" },
+  { week: 1, athlete: "Onboarding call booked, workbook begins, Compass Training - Getting Started + Bold Commitment", parent: "Onboarding call booked, Parent Training Lesson 1, Courtside Conversations - Your Starting Point" },
+  { week: 2, athlete: "Compass Training - Mindset, Analyze, Zero In, Execute. Submit completed MAZE model.", parent: "Continue Courtside Conversations, parent workbook, submit parent MAZE model responses, first group calls" },
   { week: 3, athlete: "Execution map, habit tracker begins, game and practice pages active", parent: "Parent Training Lesson 2 unlocks. Begin parent journal. Group call." },
-  { week: 4, athlete: "3 focus skills being tracked", parent: "Coach conversation — share athlete's 3 focus skills. Continue parent journal." },
+  { week: 4, athlete: "3 focus skills being tracked", parent: "Coach conversation - share athlete's 3 focus skills. Continue parent journal." },
   { week: 5, athlete: "Habit tracker in full swing", parent: "Review shared language framework. Group call." },
   { week: 6, athlete: "Monthly reflection", parent: "Monthly reflection, review habit tracker, group call." },
-  { week: 7, athlete: "Skill milestone check", parent: "Dot connector — curate a learning experience" },
+  { week: 7, athlete: "Skill milestone check", parent: "Dot connector - curate a learning experience" },
   { week: 8, athlete: "Game + practice pages active", parent: "Shared language check in. Group call." },
   { week: 9, athlete: "Post-game reflection review", parent: "Conversation you've been avoiding" },
   { week: 10, athlete: "Progress assessment on 3 focus skills", parent: "Prepare for 12 week milestone. Group call." },
@@ -46,7 +46,7 @@ export default function SupportedDashboard() {
     <Layout>
       <div style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
 
-        {/* Section 1 — Hero */}
+        {/* Section 1 - Hero */}
         <section className="w-full px-6 md:px-16 py-20 relative" style={{ backgroundColor: "#2C2C2A" }}>
           <div className="absolute top-6 right-6">
             <span className="text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
@@ -62,15 +62,32 @@ export default function SupportedDashboard() {
               You have the compass and the community. Here's how to use both.
             </h1>
             <p className="mb-6" style={{ fontWeight: 400, fontSize: "1.05rem", color: "rgba(255,255,255,0.55)", maxWidth: 580, lineHeight: 1.7 }}>
-              Everything you need for the next 12 weeks — your schedule, your roadmap, and your next step — all in one place.
+              Everything you need for the next 12 weeks - your schedule, your roadmap, and your next step - all in one place.
             </p>
             <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", maxWidth: 560, lineHeight: 1.8 }}>
-              You didn't just invest in a program. You invested in a system — for your athlete, for yourself, and for the way your whole family moves through this season. Nothing falls through the cracks when you know where to look.
+              You didn't just invest in a program. You invested in a system - for your athlete, for yourself, and for the way your whole family moves through this season. Nothing falls through the cracks when you know where to look.
             </p>
           </div>
         </section>
 
-        {/* Section 2 — First Week Checklist */}
+        {/* Waypoints Banner */}
+        <section className="px-6 md:px-16 py-10" style={{ backgroundColor: `${PURPLE}12`, borderTop: `1px solid ${PURPLE}30`, borderBottom: `1px solid ${PURPLE}30` }}>
+          <div className="max-w-3xl mx-auto flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex-1">
+              <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
+                This program is built on 12 beliefs about how confidence is built, how families navigate pressure, and what it actually means to support an athlete. Download the Waypoints before you begin. They are the whole reason this works.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <a href="/MP_12_WAYPOINTS_v1.pdf" download
+                style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.75rem 1.6rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none", whiteSpace: "nowrap" }}>
+                Download the 12 Waypoints →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2 - First Week Checklist */}
         <section className="px-6 md:px-16 py-14 max-w-3xl mx-auto">
           <h2 className="font-bold mb-6 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             First Week Checklist
@@ -117,7 +134,7 @@ export default function SupportedDashboard() {
           </div>
         </section>
 
-        {/* Section 3 — Group Call Schedule */}
+        {/* Section 3 - Group Call Schedule */}
         <section className="px-6 md:px-16 py-14" style={{ backgroundColor: "rgba(255,255,255,0.025)" }}>
           <div className="max-w-3xl mx-auto">
             <h2 className="font-bold mb-3 uppercase tracking-wider" style={{ fontSize: "1.1rem" }}>Your Group Call Schedule</h2>
@@ -153,7 +170,7 @@ export default function SupportedDashboard() {
           </div>
         </section>
 
-        {/* Section 4 — Content Roadmap Summary */}
+        {/* Section 4 - Content Roadmap Summary */}
         <section className="px-6 md:px-16 py-14 max-w-4xl mx-auto">
           <h2 className="font-bold mb-6 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             Content Roadmap
@@ -168,7 +185,7 @@ export default function SupportedDashboard() {
             <div className="p-5 rounded-lg" style={{ border: `1px solid ${TEAL}30`, backgroundColor: `${TEAL}08` }}>
               <p className="font-bold text-xs uppercase tracking-wider mb-3" style={{ color: TEAL }}>Parent Track</p>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
-                Your job in the early weeks is NOT to follow along with what your athlete is doing. Your track runs parallel — not behind her.
+                Your job in the early weeks is NOT to follow along with what your athlete is doing. Your track runs parallel - not behind her.
               </p>
             </div>
           </div>
@@ -178,7 +195,7 @@ export default function SupportedDashboard() {
           </a>
         </section>
 
-        {/* Section 5 — 12 Week Roadmap */}
+        {/* Section 5 - 12 Week Roadmap */}
         <section className="px-4 md:px-16 pb-16 max-w-5xl mx-auto">
           <h2 className="font-bold mb-6 uppercase tracking-wider text-center" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             12 Week Roadmap
@@ -225,14 +242,14 @@ export default function SupportedDashboard() {
           </div>
         </section>
 
-        {/* Section 6 — Community Board */}
+        {/* Section 6 - Community Board */}
         <section className="px-6 md:px-16 py-14 max-w-4xl mx-auto">
           <h2 className="font-bold mb-2 uppercase tracking-wider" style={{ fontSize: "1.1rem" }}>Your Cohort Community</h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.9rem" }}>You're not doing this alone. This is your group.</p>
           <AnnouncementBoard family={family} />
         </section>
 
-        {/* Section 7 — Strategy Session + Help */}
+        {/* Section 7 - Strategy Session + Help */}
         <section className="px-6 md:px-16 py-14 max-w-3xl mx-auto">
           <div className="p-7 rounded-lg mb-8" style={{ border: `1px solid ${PURPLE}40`, backgroundColor: `${PURPLE}08` }}>
             <h3 className="font-bold mb-2 uppercase tracking-wide text-sm" style={{ color: PURPLE }}>Want a 1:1 touchpoint with Gabby?</h3>
@@ -241,7 +258,7 @@ export default function SupportedDashboard() {
             </p>
             <a href={STRATEGY_SESSION_LINK} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.7rem 1.5rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
-              Book a Strategy Session — $250
+              Book a Strategy Session - $250
             </a>
           </div>
           <div>

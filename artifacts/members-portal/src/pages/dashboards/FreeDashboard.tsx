@@ -14,7 +14,7 @@ const COURTSIDE_LINK = "TODO_COURTSIDE_GHL_LINK";
 const UNLOCKS = [
   "Lessons 2 through 5 on every topic",
   "Access to all 7 course libraries",
-  "Your Starting Point — the seasonal guide",
+  "Your Starting Point - the seasonal guide",
   "Monthly live session with Gabby",
   "Full replay library",
   "Community comments and Q&A with Gabby",
@@ -28,7 +28,7 @@ export default function FreeDashboard() {
     <Layout>
       <div style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
 
-        {/* Section 1 — Hero */}
+        {/* Section 1 - Hero */}
         <section
           className="w-full px-6 md:px-16 py-20"
           style={{ backgroundColor: "#2C2C2A" }}
@@ -55,7 +55,7 @@ export default function FreeDashboard() {
                 lineHeight: 1.7,
               }}
             >
-              The Video Game Library is where the conversation keeps going — past
+              The Video Game Library is where the conversation keeps going - past
               the reel, past the caption, and into the work that actually changes things.
             </p>
             <button
@@ -78,7 +78,7 @@ export default function FreeDashboard() {
           </div>
         </section>
 
-        {/* Section 2 — What's Free Today */}
+        {/* Section 2 - What's Free Today */}
         <section className="px-6 md:px-16 py-14 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
@@ -88,7 +88,7 @@ export default function FreeDashboard() {
               },
               {
                 label: "Lesson 1",
-                desc: "The deep dive on every topic — yours right now, no payment required",
+                desc: "The deep dive on every topic - yours right now, no payment required",
               },
             ].map((item) => (
               <div
@@ -113,7 +113,7 @@ export default function FreeDashboard() {
           </div>
         </section>
 
-        {/* Section 3 — What Unlocks */}
+        {/* Section 3 - What Unlocks */}
         <section
           className="px-6 md:px-16 py-16"
           style={{ backgroundColor: "rgba(255,255,255,0.025)" }}
@@ -178,7 +178,7 @@ export default function FreeDashboard() {
           </div>
         </section>
 
-        {/* Section 4 — Course Grid */}
+        {/* Section 4 - Course Grid */}
         <section className="px-6 md:px-16 py-16 max-w-6xl mx-auto">
           <h2
             className="mb-2"
@@ -187,7 +187,7 @@ export default function FreeDashboard() {
             Your Training Library
           </h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.9rem" }}>
-            Unlock everything with Courtside Conversations — $30/month.
+            Unlock everything with Courtside Conversations - $30/month.
           </p>
           <div
             className="grid gap-5"
@@ -232,7 +232,7 @@ export default function FreeDashboard() {
               );
             })}
 
-            {/* MindSystem tile — locked for free */}
+            {/* MindSystem tile - locked for free */}
             <div
               onClick={() => setModalContext("mindsystem")}
               className="relative rounded-lg overflow-hidden cursor-pointer"
@@ -263,14 +263,14 @@ export default function FreeDashboard() {
           </div>
         </section>
 
-        {/* Section 5 — Reassurance */}
+        {/* Section 5 - Reassurance */}
         <section className="px-6 md:px-16 py-16 text-center" style={{ backgroundColor: "#2C2C2A" }}>
           <p
             className="max-w-2xl mx-auto"
             style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1rem,2.5vw,1.3rem)", color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}
           >
             No pressure. No pitch. Just the conversation the youth sports industry hasn't been
-            willing to have — and the tools to actually do something about it.
+            willing to have - and the tools to actually do something about it.
           </p>
         </section>
       </div>

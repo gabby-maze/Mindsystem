@@ -52,7 +52,7 @@ function Router() {
       <Route path="/dashboard" component={() => <ProtectedRoute component={DashboardPage} />} />
       <Route path="/courses" component={() => <ProtectedRoute component={CoursesPage} />} />
 
-      {/* MindSystem routes — most specific first */}
+      {/* MindSystem routes - most specific first */}
       <Route path="/courses/mindsystem/:track/:section/:subsection/lessons/:lessonId"
         component={() => <ProtectedRoute component={MindSystemLessonPage} />} />
       <Route path="/courses/mindsystem/:track/:section/lessons/:lessonId"
@@ -66,7 +66,7 @@ function Router() {
       <Route path="/courses/mindsystem"
         component={() => <ProtectedRoute component={MindSystemTrackPage} />} />
 
-      {/* VGL routes — most specific first, before generic course routes */}
+      {/* VGL routes - most specific first, before generic course routes */}
       <Route path="/courses/video-game-library/:topicId/lessons/:lessonId"
         component={() => <ProtectedRoute component={VGLLessonPage} />} />
       <Route path="/courses/video-game-library/:topicId"

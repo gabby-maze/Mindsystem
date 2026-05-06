@@ -10,13 +10,13 @@ const UPGRADE_SUPPORTED_LINK = "TODO_MINDSYSTEM_SUPPORTED_GHL_LINK";
 const BLUE = "#2B8BF5";
 
 const INDIE_ROADMAP = [
-  { week: 1, athlete: "Onboarding video, workbook begins, Compass Training — Getting Started + Bold Commitment", parent: "Onboarding video, Parent Training Lesson 1, start Courtside Conversations — Your Starting Point" },
-  { week: 2, athlete: "Compass Training — Mindset, Analyze, Zero In, Execute. Submit completed MAZE model.", parent: "Continue Courtside Conversations, parent workbook, submit parent workbook responses" },
+  { week: 1, athlete: "Onboarding video, workbook begins, Compass Training - Getting Started + Bold Commitment", parent: "Onboarding video, Parent Training Lesson 1, start Courtside Conversations - Your Starting Point" },
+  { week: 2, athlete: "Compass Training - Mindset, Analyze, Zero In, Execute. Submit completed MAZE model.", parent: "Continue Courtside Conversations, parent workbook, submit parent workbook responses" },
   { week: 3, athlete: "Execution map built, habit tracker begins, game and practice pages active", parent: "Parent Training Lesson 2 unlocks after Gabby receives MAZE model. Begin parent journal." },
-  { week: 4, athlete: "Game and practice pages active, 3 focus skills being tracked", parent: "Coach conversation — share athlete's 3 focus skills. Continue parent journal." },
+  { week: 4, athlete: "Game and practice pages active, 3 focus skills being tracked", parent: "Coach conversation - share athlete's 3 focus skills. Continue parent journal." },
   { week: 5, athlete: "Habit tracker in full swing", parent: "Review shared language framework" },
   { week: 6, athlete: "Monthly reflection", parent: "Monthly reflection, review habit tracker data" },
-  { week: 7, athlete: "Skill milestone check — beginning vs now", parent: "Dot connector — curate a learning experience for your athlete" },
+  { week: 7, athlete: "Skill milestone check - beginning vs now", parent: "Dot connector - curate a learning experience for your athlete" },
   { week: 8, athlete: "Game + practice pages active", parent: "Shared language check in" },
   { week: 9, athlete: "Post-game reflection review", parent: "Conversation you've been avoiding" },
   { week: 10, athlete: "Progress assessment on 3 focus skills", parent: "Prepare for 12 week milestone" },
@@ -36,7 +36,7 @@ export default function IndependentDashboard() {
     <Layout>
       <div style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
 
-        {/* Section 1 — Hero */}
+        {/* Section 1 - Hero */}
         <section className="w-full px-6 md:px-16 py-20 relative" style={{ backgroundColor: "#2C2C2A" }}>
           <div className="absolute top-6 right-6">
             <span className="text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full"
@@ -52,17 +52,17 @@ export default function IndependentDashboard() {
               You have the compass. Here's how to use it.
             </h1>
             <p className="mb-6" style={{ fontWeight: 400, fontSize: "1.05rem", color: "rgba(255,255,255,0.55)", maxWidth: 580, lineHeight: 1.7 }}>
-              Everything you need to navigate the next 6 months — in one place.
+              Everything you need to navigate the next 6 months - in one place.
             </p>
             <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", maxWidth: 560, lineHeight: 1.8 }}>
               Welcome to MindSystem Independent. You made a decision to stop winging it. This is
               what that looks like now. This page is your home base. Bookmark it. Come back to it.
-              Every time you feel lost — start here.
+              Every time you feel lost - start here.
             </p>
           </div>
         </section>
 
-        {/* Section 2 — Four Step Visual */}
+        {/* Section 2 - Four Step Visual */}
         <section className="px-6 md:px-16 py-14 max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -82,18 +82,18 @@ export default function IndependentDashboard() {
           </div>
         </section>
 
-        {/* Section 3 — Action Steps */}
+        {/* Section 3 - Action Steps */}
         <section className="px-6 md:px-16 pb-16 max-w-3xl mx-auto">
           <h2 className="font-bold mb-8 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             Your Action Steps
           </h2>
           <div className="flex flex-col gap-4">
             {[
-              { label: "Step 1 — Journals", desc: "Submit shipping address → journal arrives within 48 hours.", btn: "Submit Shipping Address →", href: SHIPPING_LINK, external: true },
-              { label: "Step 2 — Onboarding", desc: "Watch your onboarding video.", btn: "Go to Independent Onboarding →", href: null, nav: "/courses/independent-onboarding" },
-              { label: "Step 3 — Athlete Compass", desc: "Athlete moves through Compass Training sections 1–6 within first 2 weeks.", btn: "Go to Athlete Compass Training →", href: null, nav: "/courses/athlete-compass-training", downloadUrl: "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf" },
-              { label: "Step 4 — Parent Track", desc: "Parent starts Courtside Conversations → Your Starting Point + fills parent workbook.", btn: "Start Your Starting Point →", href: null, nav: "/courses/your-starting-point" },
-              { label: "Step 5 — Parent Training", desc: "Lesson 1 available now. Lesson 2 unlocks after Gabby receives athlete MAZE model.", btn: "Go to Parent Training →", href: null, nav: "/courses/parent-training-core" },
+              { label: "Step 1 - Journals", desc: "Submit shipping address → journal arrives within 48 hours.", btn: "Submit Shipping Address →", href: SHIPPING_LINK, external: true },
+              { label: "Step 2 - Onboarding", desc: "Watch your onboarding video.", btn: "Go to Independent Onboarding →", href: null, nav: "/courses/independent-onboarding" },
+              { label: "Step 3 - Athlete Compass", desc: "Athlete moves through Compass Training sections 1–6 within first 2 weeks.", btn: "Go to Athlete Compass Training →", href: null, nav: "/courses/athlete-compass-training", downloadUrl: "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf" },
+              { label: "Step 4 - Parent Track", desc: "Parent starts Courtside Conversations → Your Starting Point + fills parent workbook.", btn: "Start Your Starting Point →", href: null, nav: "/courses/your-starting-point" },
+              { label: "Step 5 - Parent Training", desc: "Lesson 1 available now. Lesson 2 unlocks after Gabby receives athlete MAZE model.", btn: "Go to Parent Training →", href: null, nav: "/courses/parent-training-core" },
             ].map((step, i) => (
               <div key={i} className="p-5 rounded-lg" style={{ backgroundColor: "rgba(255,255,255,0.03)", border: `1px solid rgba(43,139,245,0.2)` }}>
                 <p className="font-bold text-sm uppercase tracking-wide mb-1" style={{ color: BLUE }}>{step.label}</p>
@@ -122,7 +122,7 @@ export default function IndependentDashboard() {
           </div>
         </section>
 
-        {/* Section 4 — 12 Week Roadmap */}
+        {/* Section 4 - 12 Week Roadmap */}
         <section className="px-4 md:px-16 pb-16 max-w-5xl mx-auto">
           <h2 className="font-bold mb-6 uppercase tracking-wider text-center" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             12 Week Roadmap
@@ -160,10 +160,10 @@ export default function IndependentDashboard() {
           </div>
         </section>
 
-        {/* Section 5 — Months 4-6 */}
+        {/* Section 5 - Months 4-6 */}
         <section className="px-6 md:px-16 py-14" style={{ backgroundColor: "rgba(255,255,255,0.025)" }}>
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-bold mb-3 uppercase tracking-wider" style={{ fontSize: "1.1rem" }}>Months 4–6 — What Happens After Week 12</h2>
+            <h2 className="font-bold mb-3 uppercase tracking-wider" style={{ fontSize: "1.1rem" }}>Months 4–6 - What Happens After Week 12</h2>
             <p className="mb-5" style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
               Your 12 week guided program is complete but your access continues for 6 full months from your start date.
             </p>
@@ -177,21 +177,21 @@ export default function IndependentDashboard() {
           </div>
         </section>
 
-        {/* Section 6 — Strategy Session */}
+        {/* Section 6 - Strategy Session */}
         <section className="px-6 md:px-16 py-14 max-w-3xl mx-auto">
           <div className="p-7 rounded-lg" style={{ border: `1px solid ${BLUE}40`, backgroundColor: `${BLUE}08` }}>
             <h3 className="font-bold mb-2 uppercase tracking-wide" style={{ fontSize: "0.95rem", color: BLUE }}>Want a 1:1 touchpoint with Gabby?</h3>
             <p className="mb-6 text-sm" style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>
-              MindSystem Independent is self-led — but that doesn't mean you have to figure everything out alone. If you want Gabby's eyes on your specific situation — book a $250 strategy session. The $250 applies to any MindSystem plan if you decide to upgrade.
+              MindSystem Independent is self-led - but that doesn't mean you have to figure everything out alone. If you want Gabby's eyes on your specific situation - book a $250 strategy session. The $250 applies to any MindSystem plan if you decide to upgrade.
             </p>
             <a href={STRATEGY_SESSION_LINK} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-block", backgroundColor: BLUE, color: "#fff", padding: "0.75rem 1.75rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
-              Book a Strategy Session — $250
+              Book a Strategy Session - $250
             </a>
           </div>
         </section>
 
-        {/* Section 7 — Upgrade Banner */}
+        {/* Section 7 - Upgrade Banner */}
         <section className="w-full px-6 md:px-16 py-12 text-center"
           style={{ backgroundColor: "rgba(152,47,247,0.1)", borderTop: "1px solid rgba(152,47,247,0.2)" }}>
           <div className="max-w-2xl mx-auto">
@@ -205,10 +205,10 @@ export default function IndependentDashboard() {
           </div>
         </section>
 
-        {/* Section 8 — Help */}
+        {/* Section 8 - Help */}
         <section className="px-6 md:px-16 py-14 max-w-3xl mx-auto">
           <p className="font-bold mb-5 uppercase tracking-wide text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-            If something feels unclear — start here before reaching out.
+            If something feels unclear - start here before reaching out.
           </p>
           <div className="flex flex-col gap-3 mb-6">
             <button onClick={() => navigate("/courses/independent-onboarding")}

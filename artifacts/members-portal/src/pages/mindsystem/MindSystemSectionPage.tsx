@@ -30,7 +30,7 @@ export default function MindSystemSectionPage() {
     );
   }
 
-  // If subsection param provided — show that sub-section's lessons
+  // If subsection param provided - show that sub-section's lessons
   if (subSectionId) {
     const subSection = sectionData.subSections?.find((ss) => ss.id === subSectionId);
     if (!subSection) {
@@ -52,7 +52,7 @@ export default function MindSystemSectionPage() {
     />;
   }
 
-  // Section has sub-sections (Execute) — show sub-section cards
+  // Section has sub-sections (Execute) - show sub-section cards
   if (sectionData.subSections) {
     return (
       <Layout>
@@ -106,7 +106,7 @@ export default function MindSystemSectionPage() {
     );
   }
 
-  // Regular section — show lesson cards
+  // Regular section - show lesson cards
   return <LessonList
     track={track}
     section={sectionData}

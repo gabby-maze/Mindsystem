@@ -18,7 +18,7 @@ const STEPS = [
     key: "onboarding_call",
     when: "Week 1",
     action: "Book onboarding call",
-    detail: "Within 7 days of purchase — opens program orientation",
+    detail: "Within 7 days of purchase - opens program orientation",
     unlocks: "Program orientation",
   },
   {

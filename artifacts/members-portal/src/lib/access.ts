@@ -1,5 +1,5 @@
 export function canAccessSection(tier: string, courseId: string): boolean {
-  // MindSystem tile — independent, supported, inner-circle only (camelCase in app)
+  // MindSystem tile - independent, supported, inner-circle only (camelCase in app)
   if (courseId === "mindsystem") {
     return tier === "independent" || tier === "supported" || tier === "innerCircle";
   }
@@ -7,7 +7,7 @@ export function canAccessSection(tier: string, courseId: string): boolean {
   if (tier === "courtside" || tier === "independent" || tier === "supported" || tier === "innerCircle") {
     return true;
   }
-  // Free tier — video-game-library only
+  // Free tier - video-game-library only
   if (tier === "free") return courseId === "video-game-library";
   return false;
 }
@@ -18,7 +18,7 @@ export function canAccessLesson(
   lessonIndex: number
 ): boolean {
   if (!canAccessSection(tier, courseId)) return false;
-  // Free tier on video-game-library — first lesson only
+  // Free tier on video-game-library - first lesson only
   if (tier === "free" && courseId === "video-game-library") return lessonIndex === 0;
   return true;
 }

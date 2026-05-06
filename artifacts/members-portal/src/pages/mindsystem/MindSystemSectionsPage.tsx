@@ -53,7 +53,7 @@ export default function MindSystemSectionsPage() {
         {/* Header */}
         <div className="mb-10">
           <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "rgba(255,255,255,0.35)" }}>
-            MindSystem — {trackData.title} Track
+            MindSystem - {trackData.title} Track
           </p>
           <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.8rem,4vw,2.5rem)" }}>
             Choose a section.

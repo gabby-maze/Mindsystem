@@ -29,7 +29,7 @@ export async function signUp(email: string, password: string, familyName: string
 
     return { error: null };
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
+    const msg = err instanceof Error ? err.message : "Network error - please check your connection and try again.";
     return { error: msg };
   }
 }
@@ -40,7 +40,7 @@ export async function signIn(email: string, password: string): Promise<{ error: 
     if (error) return { error: error.message };
     return { error: null };
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
+    const msg = err instanceof Error ? err.message : "Network error - please check your connection and try again.";
     return { error: msg };
   }
 }

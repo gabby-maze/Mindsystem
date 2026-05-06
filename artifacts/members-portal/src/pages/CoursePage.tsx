@@ -270,7 +270,7 @@ export default function CoursePage() {
           {course.description}
         </p>
 
-        {/* "Your Starting Point" — sub-topic selector */}
+        {/* "Your Starting Point" - sub-topic selector */}
         {isYourStartingPoint && course.topics && (
           <SubTopicGrid
             topics={course.topics}
@@ -280,7 +280,7 @@ export default function CoursePage() {
           />
         )}
 
-        {/* Video Game Library — flat topic + lesson list */}
+        {/* Video Game Library - flat topic + lesson list */}
         {!isYourStartingPoint && course.topics && course.topics.map((topic) => (
           <div key={topic.id} className="mb-8">
             <h2
@@ -333,7 +333,7 @@ export default function CoursePage() {
               className="text-sm mb-6"
               style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}
             >
-              MindSystem gives your family the full compass — a shared system for the
+              MindSystem gives your family the full compass - a shared system for the
               athlete, the parent, and everyone navigating this together.
             </p>
             <a

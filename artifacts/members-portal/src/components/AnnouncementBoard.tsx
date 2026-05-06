@@ -80,7 +80,7 @@ export function AnnouncementBoard({ family }: { family: Family }) {
     return (
       <div className="py-12 text-center rounded-lg" style={{ border: "1px solid rgba(255,255,255,0.07)", backgroundColor: "rgba(255,255,255,0.02)" }}>
         <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem", fontFamily: "'Oswald', sans-serif" }}>
-          No announcements yet — check back soon.
+          No announcements yet - check back soon.
         </p>
       </div>
     );

@@ -22,8 +22,8 @@ export default function ProgressPage() {
     { label: "Finding Direction", desc: "50% complete", earned: false },
     { label: "Compass Earned", desc: "100% complete", earned: false },
     { label: "MAZE Model Complete", desc: "Athlete completes MAZE model", earned: !!family.maze_model_complete },
-    { label: "Week 6 — Halfway", desc: "Reaches week 6", earned: isMindSystem && currentWeek >= 6 },
-    { label: "Week 12 — Done", desc: "Completes week 12", earned: isMindSystem && currentWeek >= 12 },
+    { label: "Week 6 - Halfway", desc: "Reaches week 6", earned: isMindSystem && currentWeek >= 6 },
+    { label: "Week 12 - Done", desc: "Completes week 12", earned: isMindSystem && currentWeek >= 12 },
   ];
 
   return (

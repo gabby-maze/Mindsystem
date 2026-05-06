@@ -39,7 +39,7 @@ export default function MindSystemTrackPage() {
             Choose your track.
           </h1>
           <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.95rem" }}>
-            Each track has the same 7 sections — Athlete content for your player, Parent content for you.
+            Each track has the same 7 sections - Athlete content for your player, Parent content for you.
           </p>
         </div>
 
