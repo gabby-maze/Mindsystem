@@ -177,7 +177,7 @@ export default function SupportedDashboard() {
             <iframe
               src="/may-2026-calendar.html"
               width="100%"
-              height="620"
+              height="780"
               frameBorder="0"
               style={{ display: "block", border: "none" }}
               title="May 2026 Group Call Schedule"
