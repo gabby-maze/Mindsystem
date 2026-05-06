@@ -385,17 +385,6 @@ export default function SupportedDashboard() {
                             </li>
                           ))}
                         </ul>
-                        {block.isReflection && (
-                          <div className="mt-4 flex flex-col gap-2">
-                            {["Go to MindSystem", "Download your reflection pages", "Book a closing call with Gabby"].map((btn) => (
-                              <button key={btn}
-                                onClick={() => btn.includes("MindSystem") ? navigate("/courses/mindsystem") : btn.includes("closing") ? window.open(STRATEGY_SESSION_LINK, "_blank") : undefined}
-                                style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)", padding: "0.45rem 1rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", textAlign: "left" }}>
-                                {btn} →
-                              </button>
-                            ))}
-                          </div>
-                        )}
                       </div>
                     ))}
                   </div>
