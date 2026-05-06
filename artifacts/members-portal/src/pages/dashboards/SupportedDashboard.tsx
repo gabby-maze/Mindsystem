@@ -189,13 +189,13 @@ export default function SupportedDashboard() {
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-block", backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
+              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
               Submit Athlete MAZE Completion Form →
             </a>
             <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
+              style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
               Submit Your Ecosystem Responses →
             </a>
           </div>
