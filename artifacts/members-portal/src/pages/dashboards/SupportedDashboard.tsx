@@ -283,13 +283,13 @@ export default function SupportedDashboard() {
           <h2 className="font-bold mb-5 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
             May 2026 Call Calendar
           </h2>
-          <div style={{ borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
+          <div style={{ borderRadius: 8, border: "1px solid rgba(255,255,255,0.07)", overflowX: "auto" }}>
             <iframe
               src="/may-2026-calendar.html"
               width="100%"
-              height="780"
+              height="820"
               frameBorder="0"
-              style={{ display: "block", border: "none" }}
+              style={{ display: "block", border: "none", minWidth: 620 }}
               title="May 2026 Group Call Schedule"
             />
           </div>
