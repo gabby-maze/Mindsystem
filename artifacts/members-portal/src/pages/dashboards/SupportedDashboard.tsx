@@ -5,10 +5,8 @@ import { AnnouncementBoard } from "@/components/AnnouncementBoard";
 import { STRATEGY_SESSION_LINK, LIVE_SESSIONS, getWeekProgress } from "@/lib/data";
 
 const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
-// TODO: replace with GHL parent onboarding call booking link
-const PARENT_ONBOARDING_LINK = "TODO_PARENT_ONBOARDING_BOOKING_LINK";
-// TODO: replace with GHL athlete onboarding call booking link
-const ATHLETE_ONBOARDING_LINK = "TODO_ATHLETE_ONBOARDING_BOOKING_LINK";
+const PARENT_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-parent";
+const ATHLETE_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-athlete";
 
 const PURPLE = "#982FF7";
 const TEAL = "#00D4C8";
