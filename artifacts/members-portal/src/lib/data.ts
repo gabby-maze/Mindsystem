@@ -1016,6 +1016,34 @@ When you have done that, you are ready for the MAZE. See you in Mindset.`;
 
 const MINDSET_WORKBOOK_URL = "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf";
 
+const PARENT_ONBOARDING_HOW_TO_COPY = `THE MOST INTENTIONAL PARENTS RAISE THE MOST INTENTIONAL ATHLETES.
+
+That is what you are building toward. Not perfection. Intentionality.
+
+WHAT THIS SYSTEM IS FOR YOU
+
+This is not a curriculum for your athlete. She has one. This is your framework for showing up alongside her process.
+
+It is a training system — it only works if you do the work. It is data — your habits, your patterns, your behavior tracked honestly over a season. It is a daily practice — not something you open after hard games and close when things are fine. It is yours if you choose it.
+
+YOUR FOUR OBJECTIVES THIS SEASON
+
+Understand what your athlete is building so you can support it without duplicating it. Identify your own patterns and how they affect her performance environment. Build the shared language that makes your ecosystem conversations useful. Prepare your responses for the ecosystem form you will submit when she completes the MAZE.
+
+THE TWO KINDS OF SPORTS PARENTS
+
+The manager fills the gap. The collaborator creates conditions for her to fill it herself.
+
+The manager produces an athlete who performs well when the parent is present. The collaborator produces an athlete who performs when no one is watching.
+
+Which one are you choosing to be this season?
+
+[JOURNAL PAGE NEEDED] — Manager vs. Collaborator self-assessment page. Visual: Two-column checklist. Parent circles which behaviors they recognize in themselves. Add visual to training when parent compass page is confirmed.
+
+THE DAILY LOOP — YOUR SIDE
+
+Show up with intention — know what she is working on before you arrive. Let her lead — observe, don't evaluate. Reflect with her — one experience question, then listen. Adjust and go again — one honest change per week.`;
+
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   if (s.id === "onboarding") {
     return {
@@ -1137,6 +1165,19 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   return s;
 });
 
+const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
+  if (s.id === "onboarding-parent") {
+    return {
+      ...s,
+      lessons: [
+        { id: 1, title: "Overview", videoId: "AWZQfiMrrhk" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "PLACEHOLDER", description: PARENT_ONBOARDING_HOW_TO_COPY },
+      ],
+    };
+  }
+  return s;
+});
+
 export const MINDSYSTEM_COURSE: MindSystemCourse = {
   id: "mindsystem",
   title: "MindSystem",
@@ -1146,6 +1187,6 @@ export const MINDSYSTEM_COURSE: MindSystemCourse = {
   lockedTiers: ["free", "courtside"],
   tracks: [
     { id: "athlete", title: "Athlete", sections: ATHLETE_SECTIONS },
-    { id: "parent",  title: "Parent",  sections: makeSections("-parent") },
+    { id: "parent",  title: "Parent",  sections: PARENT_SECTIONS },
   ],
 };
