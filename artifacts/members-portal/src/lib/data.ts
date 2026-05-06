@@ -1177,6 +1177,15 @@ const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
       ],
     };
   }
+  if (s.id === "analyze-parent") {
+    return { ...s, lessons: [{ id: 1, title: "Overview", videoId: "0sIycpdgF2g" }] };
+  }
+  if (s.id === "mindset-parent") {
+    return { ...s, lessons: [{ id: 1, title: "Overview", videoId: "oBVbkQDYCaU" }] };
+  }
+  if (s.id === "bold-commitment-parent") {
+    return { ...s, lessons: [{ id: 1, title: "Overview", videoId: "LrFHZSqjkAc" }] };
+  }
   if (s.subSections) {
     return {
       ...s,
