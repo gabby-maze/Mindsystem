@@ -80,7 +80,7 @@ export default function SupportedDashboard() {
               { num: 1, label: "Shipping address", btn: "Submit Shipping Address →", href: SHIPPING_LINK, external: true },
               { num: 2, label: "Parent onboarding call", sub: "Wed 9–10am PST / Sun 10–11am PST", btn: "Book Parent Onboarding Call →", href: PARENT_ONBOARDING_LINK, external: true },
               { num: 3, label: "Athlete onboarding call", sub: "Wed 5:30–6:30pm PST / Sat 11am–12pm PST", btn: "Book Athlete Onboarding Call →", href: ATHLETE_ONBOARDING_LINK, external: true },
-              { num: 4, label: "Onboarding video", btn: "Watch Onboarding Video →", nav: "/courses/supported-onboarding" },
+              { num: 4, label: "Onboarding video", btn: "Watch Onboarding Video →", nav: "/courses/supported-onboarding", downloadUrl: "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf" },
             ].map((item) => (
               <div key={item.num} className="flex items-start gap-4 p-5 rounded-lg"
                 style={{ backgroundColor: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
@@ -92,17 +92,25 @@ export default function SupportedDashboard() {
                   <p className="font-bold text-sm mb-1" style={{ color: "#fff" }}>{item.label}</p>
                   {item.sub && <p className="text-xs mb-3" style={{ color: "rgba(255,255,255,0.4)" }}>{item.sub}</p>}
                   {!item.sub && <div className="mb-3" />}
-                  {item.external ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer"
-                      style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
-                      {item.btn}
-                    </a>
-                  ) : (
-                    <button onClick={() => navigate(item.nav!)}
-                      style={{ backgroundColor: PURPLE, color: "#fff", border: "none", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}>
-                      {item.btn}
-                    </button>
-                  )}
+                  <div className="flex flex-wrap gap-3">
+                    {item.external ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer"
+                        style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                        {item.btn}
+                      </a>
+                    ) : (
+                      <button onClick={() => navigate(item.nav!)}
+                        style={{ backgroundColor: PURPLE, color: "#fff", border: "none", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}>
+                        {item.btn}
+                      </button>
+                    )}
+                    {item.downloadUrl && (
+                      <a href={item.downloadUrl} download
+                        style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${PURPLE}60`, color: PURPLE, padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                        Download Workbook ↓
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
