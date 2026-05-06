@@ -300,7 +300,7 @@ export const MINDSYSTEM_COURSES: Course[] = [
     title: "Supported Onboarding",
     description: "Getting started with MindSystem Supported",
     tier: "supported",
-    lessons: [{ id: 1, title: "Welcome Start Here", youtubeId: "PLACEHOLDER" }],
+    lessons: [{ id: 1, title: "Welcome Start Here", youtubeId: "6sSWsLJkML0" }],
   },
   {
     id: "parent-training-supported",
