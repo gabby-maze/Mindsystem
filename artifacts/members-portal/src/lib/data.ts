@@ -107,7 +107,7 @@ export const VGL_WATCH_FIRST_IDS: Record<string, string> = {
 
 export const VGL_STANDARD_LESSONS: Lesson[] = [
   { id: "watch-first", title: "This Is Where It Starts — The Instagram Video", type: "watch-first", free: true, youtubeId: "PLACEHOLDER" },
-  { id: "deep-dive", title: "Deep Dive", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
+  { id: "deep-dive", title: "Let's Break That Down", type: "lesson", free: true, youtubeId: "PLACEHOLDER" },
   { id: 2, title: "Lesson 2", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
   { id: 3, title: "Lesson 3", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
   { id: 4, title: "Lesson 4", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
