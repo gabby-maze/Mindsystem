@@ -473,6 +473,7 @@ export interface MSSection {
   lessons?: MSLesson[];
   subSections?: MSSubSection[];
   workbookUrl?: string;
+  benchGuideUrl?: string;
 }
 
 export interface MSTrack {
@@ -1185,6 +1186,13 @@ const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
   }
   if (s.id === "bold-commitment-parent") {
     return { ...s, lessons: [{ id: 1, title: "Overview", videoId: "LrFHZSqjkAc" }] };
+  }
+  if (s.id === "zero-in-parent") {
+    return {
+      ...s,
+      lessons: [{ id: 1, title: "Overview", videoId: "w-xP2NDGtk8" }],
+      benchGuideUrl: "bench-athlete-guide.pdf",
+    };
   }
   if (s.subSections) {
     return {

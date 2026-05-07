@@ -176,6 +176,29 @@ function LessonList({
               Download Work Book
             </a>
           )}
+          {!subSection && section.benchGuideUrl && (
+            <a
+              href={`${import.meta.env.BASE_URL}${section.benchGuideUrl}`}
+              download
+              className="inline-flex items-center gap-2 mt-3 px-5 py-2.5 rounded-lg"
+              style={{
+                background: `${PINK}15`,
+                border: `1px solid ${PINK}50`,
+                color: "#fff",
+                fontFamily: "'Oswald', sans-serif",
+                fontSize: "0.8rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = `${PINK}30`; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = `${PINK}15`; }}
+            >
+              <Download size={14} style={{ color: PINK }} />
+              Bench Athlete Guide — Download PDF
+            </a>
+          )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {lessons.map((lesson, i) => (
