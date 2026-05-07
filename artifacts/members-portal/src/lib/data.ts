@@ -45,6 +45,7 @@ export interface Course {
   lessons?: Lesson[];
   type?: string;
   formId?: string;
+  linkTo?: string;
 }
 
 // ── VIDEO GAME LIBRARY helpers ────────────────────────────────────────────────
@@ -174,6 +175,7 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientFrom: "#00D4C8",
     gradientTo: "#2B8BF5",
     lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+    linkTo: "/nutrition",
   },
   {
     id: "book-club",

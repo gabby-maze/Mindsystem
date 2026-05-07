@@ -114,7 +114,7 @@ export default function CoursesideDashboard() {
               return (
                 <div
                   key={course.id}
-                  onClick={() => navigate(`/courses/${course.id}`)}
+                  onClick={() => navigate(course.linkTo ?? `/courses/${course.id}`)}
                   className="relative rounded-lg overflow-hidden cursor-pointer"
                   style={{
                     aspectRatio: "4/3",

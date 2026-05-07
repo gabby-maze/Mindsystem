@@ -24,7 +24,7 @@ function SectionCard({
 
   function handleClick() {
     if (hasAccess) {
-      navigate(`/courses/${course.id}`);
+      navigate(course.linkTo ?? `/courses/${course.id}`);
     } else {
       onLockedClick();
     }
