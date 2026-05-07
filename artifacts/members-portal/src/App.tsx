@@ -19,6 +19,7 @@ import MindSystemLessonPage from "@/pages/mindsystem/MindSystemLessonPage";
 import VGLTopicsPage from "@/pages/vgl/VGLTopicsPage";
 import VGLTopicPage from "@/pages/vgl/VGLTopicPage";
 import VGLLessonPage from "@/pages/vgl/VGLLessonPage";
+import NutritionPage from "@/pages/nutrition/NutritionPage";
 
 const queryClient = new QueryClient();
 
@@ -79,6 +80,7 @@ function Router() {
       <Route path="/courses/:courseId" component={() => <ProtectedRoute component={CoursePage} />} />
 
       <Route path="/live" component={() => <ProtectedRoute component={LivePage} />} />
+      <Route path="/nutrition" component={() => <ProtectedRoute component={NutritionPage} />} />
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />

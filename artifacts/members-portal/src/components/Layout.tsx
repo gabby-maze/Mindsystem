@@ -3,12 +3,13 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import { signOut } from "@/lib/auth";
 import { TIER_COLORS, TIER_LABELS } from "@/lib/data";
-import { Bell, Menu, X, LogOut, Home, BookOpen, Radio, TrendingUp, HelpCircle } from "lucide-react";
+import { Bell, Menu, X, LogOut, Home, BookOpen, Radio, TrendingUp, HelpCircle, Salad } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/dashboard", label: "Home", icon: Home },
   { href: "/courses", label: "Courses", icon: BookOpen },
   { href: "/live", label: "Live", icon: Radio },
+  { href: "/nutrition", label: "Nutrition", icon: Salad },
   { href: "/progress", label: "My Progress", icon: TrendingUp },
   { href: "/ask", label: "Ask a Question", icon: HelpCircle },
 ];
