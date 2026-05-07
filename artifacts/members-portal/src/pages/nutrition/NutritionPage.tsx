@@ -54,29 +54,6 @@ export default function NutritionPage() {
           </h1>
         </div>
 
-        {/* Nutrition Guide main tab */}
-        <div className="flex justify-center mb-6">
-          <button
-            onClick={() => setActiveTab("guide")}
-            style={{
-              fontFamily: "'Oswald', sans-serif",
-              fontWeight: 700,
-              fontSize: "0.85rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              padding: "0.65rem 2rem",
-              borderRadius: "100px",
-              backgroundColor: activeTab === "guide" ? PINK : "#1A1A1A",
-              color: "#fff",
-              border: activeTab === "guide" ? `1px solid ${PINK}` : "1px solid #2A2A2A",
-              cursor: "pointer",
-              transition: "all 0.15s",
-            }}
-          >
-            Nutrition Guide
-          </button>
-        </div>
-
         {/* Fuel category buttons */}
         <div
           className="flex justify-center flex-wrap gap-2 mb-10"
