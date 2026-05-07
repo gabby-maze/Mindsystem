@@ -50,32 +50,6 @@ export default function NutritionGuide() {
         </p>
       </div>
 
-      {/* Section 03 */}
-      <div className="mb-8 rounded-lg p-6" style={{ backgroundColor: "#141414", border: "1px solid #2A2A2A" }}>
-        <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: PINK, textTransform: "uppercase", marginBottom: "0.75rem" }}>
-          03
-        </p>
-        <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: "1.2rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#fff", marginBottom: "1rem" }}>
-          How Nutrition Fits Into the Athlete's Journey
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[
-            { phase: "Pre-Season", desc: "This is where the foundation gets built. Higher training volume means higher calorie and protein needs. This is the time to develop habits — not try to be perfect, but build a system that works. Experiment with meal timing and find what works for your athlete's schedule and body." },
-            { phase: "In-Season", desc: "In-season is not the time to restrict. Competition schedules, travel, and high training loads require more fuel, not less. Many athletes eat less during the season because schedules get tighter — this is the exact wrong direction. Recovery fuel and consistent meal timing become non-negotiable." },
-            { phase: "Post-Season", desc: "Post-season is not the time to stop caring. The body does a significant amount of repair and adaptation in the weeks after a season ends. This is when real physical growth happens — and it requires fuel to support it. Scale back to maintenance, not deprivation." },
-          ].map(({ phase, desc }) => (
-            <div key={phase} className="rounded p-4" style={{ backgroundColor: "#1A1A1A", border: "1px solid #2A2A2A" }}>
-              <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", color: PINK, textTransform: "uppercase", marginBottom: "0.5rem" }}>
-                {phase}
-              </p>
-              <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.9rem", color: MUTED, lineHeight: 1.7 }}>
-                {desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Section 04 */}
       <div className="mb-8 rounded-lg p-6" style={{ backgroundColor: "#141414", border: "1px solid #2A2A2A" }}>
         <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: PINK, textTransform: "uppercase", marginBottom: "0.75rem" }}>
