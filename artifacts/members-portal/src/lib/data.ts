@@ -1027,7 +1027,7 @@ WHAT THIS SYSTEM IS FOR YOU
 
 This is not a curriculum for your athlete. She has one. This is your framework for showing up alongside her process.
 
-It is a training system — it only works if you do the work. It is data — your habits, your patterns, your behavior tracked honestly over a season. It is a daily practice — not something you open after hard games and close when things are fine. It is yours if you choose it.
+It is a training system. It only works if you do the work. It is data. Your habits, your patterns, your behavior tracked honestly over a season. It is a daily practice. Not something you open after hard games and close when things are fine. It is yours if you choose it.
 
 YOUR FOUR OBJECTIVES THIS SEASON
 
@@ -1041,11 +1041,11 @@ The manager produces an athlete who performs well when the parent is present. Th
 
 Which one are you choosing to be this season?
 
-[JOURNAL PAGE NEEDED] — Manager vs. Collaborator self-assessment page. Visual: Two-column checklist. Parent circles which behaviors they recognize in themselves. Add visual to training when parent compass page is confirmed.
+[JOURNAL PAGE NEEDED] Manager vs. Collaborator self-assessment page. Visual: Two-column checklist. Parent circles which behaviors they recognize in themselves. Add visual to training when parent compass page is confirmed.
 
-THE DAILY LOOP — YOUR SIDE
+THE DAILY LOOP YOUR SIDE
 
-Show up with intention — know what she is working on before you arrive. Let her lead — observe, don't evaluate. Reflect with her — one experience question, then listen. Adjust and go again — one honest change per week.`;
+Show up with intention. Know what she is working on before you arrive. Let her lead. Observe, don't evaluate. Reflect with her. One experience question, then listen. Adjust and go again. One honest change per week.`;
 
 const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
   if (s.id === "onboarding") {
