@@ -1196,6 +1196,34 @@ const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
       benchGuideUrl: "bench-athlete-guide.pdf",
     };
   }
+  if (s.id === "execute-parent") {
+    return {
+      ...s,
+      subSections: s.subSections!
+        .filter((ss) => ss.id !== "accountability-checklist-parent")
+        .map((ss) => {
+          if (ss.id === "overview-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "dfw1Km6x4JE" }] };
+          }
+          if (ss.id === "execution-map-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "M0eJr4637ms" }] };
+          }
+          if (ss.id === "habit-tracker-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "3svcRxtE5fc" }] };
+          }
+          if (ss.id === "check-points-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "w0oA6ZmbQpc" }] };
+          }
+          if (ss.id === "game-time-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "x40_2m6doMY" }] };
+          }
+          if (ss.id === "practice-time-parent") {
+            return { ...ss, lessons: [{ id: 1, title: "Overview", videoId: "QfJVM4NEflg" }] };
+          }
+          return { ...ss, lessons: removeHowTo(ss.lessons) ?? ss.lessons };
+        }),
+    };
+  }
   if (s.subSections) {
     return {
       ...s,
