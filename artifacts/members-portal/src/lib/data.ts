@@ -1196,6 +1196,9 @@ const PARENT_SECTIONS: MSSection[] = makeSections("-parent").map((s) => {
       benchGuideUrl: "bench-athlete-guide.pdf",
     };
   }
+  if (s.id === "reflection-parent") {
+    return { ...s, lessons: [{ id: 1, title: "Overview", videoId: "ISz8hQuvwR0" }] };
+  }
   if (s.id === "execute-parent") {
     return {
       ...s,
