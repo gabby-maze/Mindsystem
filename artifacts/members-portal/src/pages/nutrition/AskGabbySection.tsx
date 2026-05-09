@@ -165,7 +165,7 @@ export default function AskGabbySection() {
         )}
         {submitSuccess && (
           <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.85rem", color: "#00D4C8", marginBottom: "0.5rem" }}>
-            Question submitted — Gabby will answer soon.
+            Question submitted. Gabby will answer soon.
           </p>
         )}
         <button
