@@ -219,7 +219,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
     recipes: makeRecipes(
       "focus",
       [
-        "Blueberry Brain Smoothie",
+        "Berry-Spinach Recovery Smoothie",
         "Salmon Avocado Toast",
         "Walnut & Dark Chocolate Trail Mix",
         "Chia Seed Pudding",
@@ -231,7 +231,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Rainbow Veggie Hummus Plate",
       ],
       [
-        "Blueberries are one of the most researched brain foods available. This smoothie delivers omega-3s, antioxidants, and steady energy in 5 minutes.",
+        "30g of protein plus antioxidants from berries, iron from spinach, calcium from yogurt, and omega-3s from walnuts and flaxseed. Drink within 45 minutes of training for best recovery.",
         "Omega-3s from salmon plus healthy fat from avocado one of the most powerful focus-support meals in the library.",
         "Walnuts are shaped like a brain for a reason. Their omega-3 content supports neural function and reduces cognitive inflammation.",
         "Chia seeds deliver omega-3s, fiber, and slow-release energy made the night before for zero-effort focus fuel.",
@@ -243,7 +243,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Hydrating vegetables with hummus delivers fiber, protein, and healthy fat steady energy without a spike.",
       ],
       [
-        "Freeze extra smoothie packs pre-portioned bags of frozen ingredients. Just dump and blend.",
+        "Best after intense practices or games and on strength-training days. Not ideal right before competition as high fiber may slow digestion.",
         "Use leftover salmon from dinner the night before. Keep a ripe avocado on the counter always.",
         "Make a big bag at the beginning of the week. Grab a handful before every practice.",
         "Make 5 jars on Sunday night. A week of focus fuel ready in the fridge.",
@@ -254,7 +254,30 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Make a batch, break it into pieces, and keep it in an airtight container. Lasts 2 weeks.",
         "Prep the veggies on Sunday. A full plate ready to grab in the fridge all week.",
       ],
-    ),
+    ).map((r, i) => i !== 0 ? r : {
+      ...r,
+      prepTime: "3 min",
+      cookTime: "0 min",
+      servings: "1",
+      protein: "30g",
+      carbs: "35g",
+      fat: "8g",
+      pdfUrl: "berry-spinach-smoothie.pdf",
+      ingredients: [
+        "12 oz water",
+        "1 cup spinach",
+        "2 cups frozen mixed berries",
+        "½ cup plain low-fat yogurt",
+        "2 scoops vanilla protein powder",
+        "1 tbsp walnuts",
+        "1 tbsp ground flaxseed",
+      ],
+      instructions: [
+        "Add all ingredients to a blender.",
+        "Blend until smooth and creamy.",
+        "Serve cold and drink within 45 minutes of training for best recovery.",
+      ],
+    }),
   },
   {
     id: "build",
