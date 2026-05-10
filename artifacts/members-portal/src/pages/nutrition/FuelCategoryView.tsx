@@ -256,7 +256,7 @@ export default function FuelCategoryView({ category }: Props) {
                   textAlign: "left",
                 }}
               >
-                {recipe.pdfUrl ? recipe.name : `Recipe ${recipe.number}`}
+                {recipe.name}
               </button>
             );
           })}
