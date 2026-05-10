@@ -14,6 +14,7 @@ export interface Recipe {
   protein: string;
   carbs: string;
   fat: string;
+  pdfUrl?: string;
 }
 
 export interface FuelCategory {
@@ -327,6 +328,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
       protein: "32g",
       carbs: "3g",
       fat: "7g",
+      pdfUrl: "buffalo-chicken-dip.pdf",
       ingredients: [
         "3 cups cooked, shredded chicken breast",
         "1½ cups whipped cheese (blend cottage cheese until smooth and creamy)",

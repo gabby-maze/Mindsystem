@@ -161,7 +161,7 @@ function RecipePage({ recipe, accentColor }: { recipe: Recipe; accentColor: stri
       </div>
 
       {/* Athlete tip */}
-      <div className="rounded-lg p-5" style={{ backgroundColor: "#141414", borderLeft: `3px solid ${PINK}`, border: "1px solid #2A2A2A", borderLeftWidth: "3px", borderLeftColor: PINK }}>
+      <div className="rounded-lg p-5 mb-5" style={{ backgroundColor: "#141414", borderLeft: `3px solid ${PINK}`, border: "1px solid #2A2A2A", borderLeftWidth: "3px", borderLeftColor: PINK }}>
         <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.7rem", letterSpacing: "0.15em", color: PINK, textTransform: "uppercase", marginBottom: "0.4rem" }}>
           Athlete Tip
         </p>
@@ -169,6 +169,31 @@ function RecipePage({ recipe, accentColor }: { recipe: Recipe; accentColor: stri
           {recipe.athleteTip}
         </p>
       </div>
+
+      {/* PDF download */}
+      {recipe.pdfUrl && (
+        <a
+          href={recipe.pdfUrl}
+          download
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            backgroundColor: accentColor,
+            color: "#0a0a0a",
+            padding: "0.875rem 2rem",
+            fontFamily: "'Oswald', sans-serif",
+            fontWeight: 700,
+            fontSize: "0.85rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+            textDecoration: "none",
+            borderRadius: "3px",
+          }}
+        >
+          ↓ Download Recipe Card
+        </a>
+      )}
     </div>
   );
 }
@@ -231,7 +256,7 @@ export default function FuelCategoryView({ category }: Props) {
                   textAlign: "left",
                 }}
               >
-                Recipe {recipe.number}
+                {recipe.pdfUrl ? recipe.name : `Recipe ${recipe.number}`}
               </button>
             );
           })}
