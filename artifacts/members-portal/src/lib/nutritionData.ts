@@ -374,7 +374,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
     recipes: makeRecipes(
       "quick",
       [
-        "Athlete Snack Pack",
+        "Acai Bowl",
         "PB & Banana Rice Cakes",
         "Power Trail Mix",
         "Prep & Freeze Smoothie Pouches",
@@ -386,7 +386,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "No-Bake Energy Date Balls",
       ],
       [
-        "A balanced snack box with protein, carbs, and healthy fat built for backpacks and tournament bags.",
+        "Natural sugars and carbohydrates from frozen acai and fruit give a clean energy base without heaviness. No baking, no cooking, ready in 5 minutes.",
         "The most portable 2-minute snack in the library. Delivers steady energy and is easy on the stomach.",
         "A customizable mix that travels anywhere, lasts for weeks, and delivers real fuel in minutes.",
         "Pre-blend, freeze flat in bags, and blend or thaw on the go. Tournament smoothies without the blender.",
@@ -398,7 +398,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "No baking required. Make 20 in 20 minutes on Sunday. Lasts all week.",
       ],
       [
-        "Build 5 snack packs on Sunday night. One per day in the school bag, done for the week.",
+        "Keep toppings bite-sized for easier eating. Not right before intense activity as the liquid base and fruit sugars can cause GI discomfort mid-competition if eaten too close to game time.",
         "Keep a bag of rice cakes and a jar of PB at school or in your tournament bag permanently.",
         "Make a big batch with 1 cup each of walnuts, almonds, pumpkin seeds, dark chocolate chips, and dried cherries.",
         "Use zip-lock bags. Freeze flat so they stack. Thaw in a cooler on tournament days.",
@@ -409,7 +409,32 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Pack the box the night before a tournament. Lay out everything needed so morning is automatic.",
         "Use Medjool dates they're softer and sweeter. Roll in shredded coconut to keep them from sticking.",
       ],
-    ),
+    ).map((r, i) => i !== 0 ? r : {
+      ...r,
+      prepTime: "5 min",
+      cookTime: "0 min",
+      servings: "2",
+      protein: "5g",
+      carbs: "45g",
+      fat: "6g",
+      pdfUrl: "acai-bowl.pdf",
+      ingredients: [
+        "2 frozen acai packets",
+        "1 cup frozen berries (strawberries, blueberries, raspberries) or mango/pineapple",
+        "½–¾ cup liquid (water, milk alternative, or fruit juice)",
+        "Toppings: granola (about ½ cup per bowl)",
+        "Toppings: coconut flakes",
+        "Toppings: fresh fruit (banana, strawberries, kiwi, blueberries)",
+        "Toppings: drizzle of nut butter (1–2 tbsp)",
+        "Toppings: honey or agave (1 tsp–1 tbsp)",
+        "Toppings: chia seeds",
+      ],
+      instructions: [
+        "Blend acai packets, frozen fruit, and liquid until thick and creamy. Start with less liquid and add as needed.",
+        "Scoop into bowls.",
+        "Add toppings in colorful rows or fun patterns.",
+      ],
+    }),
   },
 ];
 
