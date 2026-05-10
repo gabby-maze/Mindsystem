@@ -284,7 +284,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
     recipes: makeRecipes(
       "build",
       [
-        "High-Protein Chicken Bowl",
+        "Buffalo Chicken Dip",
         "Ground Beef & Veggie Stir Fry",
         "Triple-Source Protein Bowl",
         "Egg White Power Scramble",
@@ -296,7 +296,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Baked Chicken & Quinoa",
       ],
       [
-        "A foundational build meal 40g+ protein, complete amino acids, steady carbs, and healthy fat in one bowl.",
+        "32g of protein per serving with zero cooking required. Shredded chicken and whipped cottage cheese deliver complete amino acids in a format that works as a snack, post-practice fuel, or tournament day staple.",
         "Ground beef delivers complete protein plus zinc and iron two minerals female athletes commonly run low on.",
         "Layering Greek yogurt, cottage cheese, and protein powder creates a 50g+ protein meal that doesn't feel like a supplement.",
         "Egg whites are pure protein. Pairing with a whole egg adds essential fat-soluble vitamins.",
@@ -308,7 +308,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "The simplest high-protein meal prep recipe in the library. Four ingredients, one pan, done for 4 days.",
       ],
       [
-        "Season the chicken the night before. Cook a double batch while it's on. Protein for 4 days.",
+        "Best after practice or games and as a high-protein afternoon snack. Avoid right before intense activity as spice and dairy may upset some stomachs.",
         "Add eggs to the last minute of cooking for extra protein. Serve over rice or eat straight from the pan.",
         "Use full-fat Greek yogurt and full-fat cottage cheese. Dietary fat is not the enemy in a build phase.",
         "A 4-egg-white to 1-whole-egg ratio is the standard. Don't skip the whole egg the yolk has choline.",
@@ -319,7 +319,29 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Add a tablespoon of nut butter and a scoop of protein powder to amp up the calorie and protein content.",
         "Use chicken thighs instead of breast for more calories and flavor during high-training-volume weeks.",
       ],
-    ),
+    ).map((r, i) => i !== 0 ? r : {
+      ...r,
+      prepTime: "10 min",
+      cookTime: "0 min",
+      servings: "6",
+      protein: "32g",
+      carbs: "3g",
+      fat: "7g",
+      ingredients: [
+        "3 cups cooked, shredded chicken breast",
+        "1½ cups whipped cheese (blend cottage cheese until smooth and creamy)",
+        "¼–½ cup buffalo sauce (adjust for spice tolerance)",
+        "¼ cup plain Greek yogurt (optional, for extra creaminess)",
+        "Optional: chopped green onions, garlic powder, or onion powder",
+        "Dippers: carrot sticks, celery sticks, whole wheat or seeded crackers (2–3g fiber per serving)",
+      ],
+      instructions: [
+        "Add cottage cheese to a blender and blend until completely smooth. This is your whipped cheese.",
+        "In a large bowl, mix whipped cheese, buffalo sauce, and Greek yogurt if using.",
+        "Fold in shredded chicken until evenly coated.",
+        "Chill or serve immediately. No baking required.",
+      ],
+    }),
   },
   {
     id: "quick",
