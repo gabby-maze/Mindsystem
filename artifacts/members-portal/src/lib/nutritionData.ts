@@ -87,7 +87,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
     recipes: makeRecipes(
       "recovery",
       [
-        "Chocolate Milk Protein Shake",
+        "Hamburger Pasta",
         "Chicken & Brown Rice Bowl",
         "Greek Yogurt Berry Parfait",
         "Turkey & Avocado Wrap",
@@ -99,7 +99,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Tuna Quinoa Bowl",
       ],
       [
-        "Chocolate milk has an ideal carb-to-protein ratio for post-training recovery and it's fast.",
+        "One-pan family-style meal with ground beef and pasta delivering the protein and carbohydrate combination ideal for muscle repair and glycogen restoration after practice or competition.",
         "A classic combination lean protein from chicken plus complex carbs from brown rice rebuilds muscle and restores energy.",
         "Greek yogurt delivers 15–20g protein per cup with live cultures that support gut health and recovery.",
         "A portable recovery option that travels well to tournaments and away games.",
@@ -111,7 +111,7 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "High protein, complete amino acids, and anti-inflammatory omega-3s in one bowl.",
       ],
       [
-        "Keep a bottle of chocolate milk in your bag on game days. It's the fastest recovery fuel that actually works.",
+        "Best as a post-practice dinner or post-competition recovery meal. Also works the night before a competition eaten 3–4 hours before bed to load glycogen overnight. Avoid within 2–3 hours before competition.",
         "Double the recipe and keep it in containers for 3 days of post-practice meals.",
         "Use full-fat Greek yogurt the extra fat keeps you fuller longer and improves nutrient absorption.",
         "Make 5 wraps on Sunday night and grab one after every practice this week.",
@@ -122,7 +122,35 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
         "Make 5 jars on Sunday. Breakfast and recovery fuel handled for the whole week.",
         "Mix canned tuna, cooked quinoa, diced cucumber, lemon juice, and olive oil. 10 minutes flat.",
       ],
-    ),
+    ).map((r, i) => i !== 0 ? r : {
+      ...r,
+      prepTime: "10 min",
+      cookTime: "25 min",
+      servings: "6",
+      protein: "38g",
+      carbs: "52g",
+      fat: "16g",
+      pdfUrl: "hamburger-pasta.pdf",
+      ingredients: [
+        "1 lb elbow macaroni (dry)",
+        "1 lb ground beef",
+        "1 tbsp avocado oil",
+        "1 cup chopped onions",
+        "1 cup shredded lettuce",
+        "½ cup chopped pickles",
+        "2 tbsp steak seasoning (such as Montreal Steak Seasoning)",
+        "8 oz block cheddar cheese, shredded",
+        "3 tbsp flour",
+        "2 tbsp butter",
+        "3 cups milk",
+      ],
+      instructions: [
+        "Cook pasta in salted water until al dente. Drain and set aside.",
+        "In a large pan, heat avocado oil. Brown the ground beef with steak seasoning.",
+        "In a separate saucepan, melt butter. Whisk in flour to form a roux. Slowly add milk, stirring until smooth. Add shredded cheddar and stir until melted.",
+        "Combine pasta, beef mixture, and cheese sauce. Top with onions, lettuce, and pickles. Mix well and serve.",
+      ],
+    }),
   },
   {
     id: "energy",
