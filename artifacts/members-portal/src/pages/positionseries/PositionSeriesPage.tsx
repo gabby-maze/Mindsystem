@@ -146,7 +146,7 @@ export default function PositionSeriesPage() {
                   }}
                 >
                   <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${position.youtubeId}?rel=0&modestbranding=1`}
+                    src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(position.youtubeId)}?rel=0&modestbranding=1`}
                     title={position.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

@@ -141,7 +141,7 @@ export const POSITIONS: Position[] = [
     coreSkill: "Presence",
     coreSkillDesc:
       "The middle blocker's most valuable contribution to the game often happens when the ball never touches her. She closes space, influences hitters, and shapes offensive decisions — before contact is even made. Her decision window is the smallest of any position on the court. She reads the setter, reads the hitter, and moves — all in under a second. There is no time to think. There is only time to react. Which means her game depends almost entirely on what happens before conscious thought kicks in. The middle who is carrying the last play is always late — not because she doesn't know what to do, but because the mental noise got there first. Presence is the skill that separates a good middle from a great one.",
-    youtubeId: null,
+    youtubeId: "nKuE02Yw5NQ",
     athlete: {
       summary:
         "Your game lives in this moment — not the last one, not the next one. The fastest path to becoming a better middle blocker is not more reps on your footwork. It is learning to clear your mind completely between plays so your instincts can work without interference. The middle who is fully present on every rally — even when the ball isn't coming to her — is the one the offense has to plan around.",
@@ -171,7 +171,7 @@ export const POSITIONS: Position[] = [
     coreSkill: "Failure Tolerance",
     coreSkillDesc:
       "The outside hitter is the primary attacker — which means she is also the most visible when things go wrong. She is set the most, targeted the most, and scrutinized the most. The mental demand of this position is not just confidence — it is failure tolerance. The deep, practiced ability to let go of the last ball completely and bring full aggression to the next one. An outside hitter who has not built this skill starts managing how she looks instead of competing. She tips when she should swing. She protects herself instead of attacking. The best outside hitters are not the ones who never make errors — they are the ones who make errors and come back harder.",
-    youtubeId: null,
+    youtubeId: "-H82IGQqNPg",
     athlete: {
       summary:
         "Your job is to be aggressive. Every single time. The error does not change that. The block does not change that. The score does not change that. Your value on this team is not measured play by play — it is measured by your willingness to keep competing when it would be easier to shrink. The outside hitter who stays aggressive through a rough stretch is worth more to her team than a perfect hitter who disappears under pressure.",
