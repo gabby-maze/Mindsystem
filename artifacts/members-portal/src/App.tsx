@@ -27,6 +27,7 @@ import TournamentPage from "@/pages/tournament/TournamentPage";
 import TryoutsPage from "@/pages/tryouts/TryoutsPage";
 import InSeasonPage from "@/pages/inseason/InSeasonPage";
 import PositionSeriesPage from "@/pages/positionseries/PositionSeriesPage";
+import GameIQPage from "@/pages/gameiq/GameIQPage";
 
 const queryClient = new QueryClient();
 
@@ -73,6 +74,10 @@ function Router() {
         component={() => <ProtectedRoute component={MindSystemSectionsPage} />} />
       <Route path="/courses/mindsystem"
         component={() => <ProtectedRoute component={MindSystemTrackPage} />} />
+
+      {/* Game IQ route */}
+      <Route path="/courses/volleyball-game-iq"
+        component={() => <ProtectedRoute component={GameIQPage} />} />
 
       {/* VGL routes - most specific first, before generic course routes */}
       <Route path="/courses/video-game-library/:topicId/lessons/:lessonId"

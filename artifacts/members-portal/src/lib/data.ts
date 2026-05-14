@@ -210,7 +210,6 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientFrom: "#2B8BF5",
     gradientTo: "#00D4C8",
     lessons: [],
-    linkTo: "/position-series",
   },
   {
     id: "video-game-library",
