@@ -146,9 +146,10 @@ export const COURTSIDE_COURSES: Course[] = [
         linkTo: "/preseason",
       },
       {
-        id: "beginning-of-season",
-        title: "Beginning of Season",
-        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+        id: "in-season",
+        title: "In Season",
+        lessons: [],
+        linkTo: "/in-season",
       },
       {
         id: "tournament-season",
