@@ -138,18 +138,14 @@ export const COURTSIDE_COURSES: Course[] = [
         lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
       },
       {
-        id: "fall-ball-school-ball",
-        title: "Fall Ball / School Ball",
-        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+        id: "preseason",
+        title: "Preseason",
+        lessons: [],
+        linkTo: "/preseason",
       },
       {
         id: "beginning-of-season",
         title: "Beginning of Season",
-        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
-      },
-      {
-        id: "mid-season",
-        title: "Mid Season",
         lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
       },
       {
