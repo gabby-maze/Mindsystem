@@ -130,7 +130,8 @@ export const COURTSIDE_COURSES: Course[] = [
       {
         id: "summer-camp-season",
         title: "Summer Camp Season",
-        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+        lessons: [],
+        linkTo: "/summer",
       },
       {
         id: "tryouts",

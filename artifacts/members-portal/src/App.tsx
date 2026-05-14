@@ -22,6 +22,7 @@ import VGLLessonPage from "@/pages/vgl/VGLLessonPage";
 import NutritionPage from "@/pages/nutrition/NutritionPage";
 import PostseasonPage from "@/pages/postseason/PostseasonPage";
 import PreseasonPage from "@/pages/preseason/PreseasonPage";
+import SummerPage from "@/pages/summer/SummerPage";
 
 const queryClient = new QueryClient();
 
@@ -85,6 +86,7 @@ function Router() {
       <Route path="/nutrition" component={() => <ProtectedRoute component={NutritionPage} />} />
       <Route path="/postseason" component={() => <ProtectedRoute component={PostseasonPage} />} />
       <Route path="/preseason" component={() => <ProtectedRoute component={PreseasonPage} />} />
+      <Route path="/summer" component={() => <ProtectedRoute component={SummerPage} />} />
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />
