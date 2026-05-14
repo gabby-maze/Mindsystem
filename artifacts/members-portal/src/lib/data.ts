@@ -136,7 +136,8 @@ export const COURTSIDE_COURSES: Course[] = [
       {
         id: "tryouts",
         title: "Tryouts",
-        lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+        lessons: [],
+        linkTo: "/tryouts",
       },
       {
         id: "preseason",

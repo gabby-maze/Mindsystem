@@ -24,6 +24,7 @@ import PostseasonPage from "@/pages/postseason/PostseasonPage";
 import PreseasonPage from "@/pages/preseason/PreseasonPage";
 import SummerPage from "@/pages/summer/SummerPage";
 import TournamentPage from "@/pages/tournament/TournamentPage";
+import TryoutsPage from "@/pages/tryouts/TryoutsPage";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +90,7 @@ function Router() {
       <Route path="/preseason" component={() => <ProtectedRoute component={PreseasonPage} />} />
       <Route path="/summer" component={() => <ProtectedRoute component={SummerPage} />} />
       <Route path="/tournament-season" component={() => <ProtectedRoute component={TournamentPage} />} />
+      <Route path="/tryouts" component={() => <ProtectedRoute component={TryoutsPage} />} />
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />
