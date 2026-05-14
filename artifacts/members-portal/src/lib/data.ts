@@ -32,6 +32,7 @@ export interface Topic {
   id: string;
   title: string;
   lessons: Lesson[];
+  linkTo?: string;
 }
 
 export interface Course {
@@ -155,6 +156,12 @@ export const COURTSIDE_COURSES: Course[] = [
         id: "end-of-season",
         title: "End of Season",
         lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+      },
+      {
+        id: "postseason",
+        title: "Postseason",
+        lessons: [],
+        linkTo: "/postseason",
       },
     ],
   },

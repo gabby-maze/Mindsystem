@@ -20,10 +20,12 @@ function SubTopicGrid({
   onLockedClick: () => void;
 }) {
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
+  const [, navigate] = useLocation();
   const hasAccess = canAccessSection(userTier, course.id);
 
   function handleTopicClick(topic: Topic) {
     if (!hasAccess) { onLockedClick(); return; }
+    if (topic.linkTo) { navigate(topic.linkTo); return; }
     setSelectedTopic(topic);
   }
 
