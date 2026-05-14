@@ -26,6 +26,7 @@ import SummerPage from "@/pages/summer/SummerPage";
 import TournamentPage from "@/pages/tournament/TournamentPage";
 import TryoutsPage from "@/pages/tryouts/TryoutsPage";
 import InSeasonPage from "@/pages/inseason/InSeasonPage";
+import PositionSeriesPage from "@/pages/positionseries/PositionSeriesPage";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,7 @@ function Router() {
       <Route path="/tournament-season" component={() => <ProtectedRoute component={TournamentPage} />} />
       <Route path="/tryouts" component={() => <ProtectedRoute component={TryoutsPage} />} />
       <Route path="/in-season" component={() => <ProtectedRoute component={InSeasonPage} />} />
+      <Route path="/position-series" component={() => <ProtectedRoute component={PositionSeriesPage} />} />
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />

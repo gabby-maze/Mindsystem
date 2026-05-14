@@ -209,7 +209,8 @@ export const COURTSIDE_COURSES: Course[] = [
     tier: "courtside",
     gradientFrom: "#2B8BF5",
     gradientTo: "#00D4C8",
-    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+    lessons: [],
+    linkTo: "/position-series",
   },
   {
     id: "video-game-library",
