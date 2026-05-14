@@ -9,7 +9,7 @@ import { CheckCircle, Lock } from "lucide-react";
 type ModalContext = "courtside" | "mindsystem" | null;
 
 // TODO: replace with GHL Courtside payment link
-const COURTSIDE_LINK = "TODO_COURTSIDE_GHL_LINK";
+const COURTSIDE_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06";
 
 const UNLOCKS = [
   "Lessons 2 through 5 on every topic",
