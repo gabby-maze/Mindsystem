@@ -55,11 +55,8 @@ export default function PositionSeriesPage() {
           </p>
         </div>
 
-        {/* Position pills — horizontal scroll */}
-        <div
-          className="flex gap-2 mb-8 pb-1"
-          style={{ overflowX: "auto", scrollbarWidth: "none" }}
-        >
+        {/* Position pills — wrapping grid so all are always visible */}
+        <div className="flex flex-wrap gap-2 mb-8">
           {POSITIONS.map((p) => {
             const active = p.id === activeId;
             return (
@@ -67,7 +64,6 @@ export default function PositionSeriesPage() {
                 key={p.id}
                 onClick={() => { setActiveId(p.id); setAthleteOpen(true); setParentOpen(false); }}
                 style={{
-                  flexShrink: 0,
                   padding: "0.45rem 1rem",
                   borderRadius: "999px",
                   border: active ? `1px solid ${TEAL}` : "1px solid rgba(255,255,255,0.12)",
