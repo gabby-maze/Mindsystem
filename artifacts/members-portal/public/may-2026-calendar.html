@@ -11,12 +11,11 @@
     color: #FFFFFF;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 20px 16px 28px;
-    min-height: 100vh;
     min-width: 620px;
   }
   .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .header-brand {
     font-size: 10px;
@@ -33,11 +32,13 @@
     text-transform: uppercase;
     color: #FFFFFF;
   }
+
+  /* ── Legend ── */
   .legend {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin-bottom: 16px;
+    gap: 18px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
   }
   .legend-item {
@@ -45,17 +46,19 @@
     align-items: center;
     gap: 7px;
     font-size: 11px;
-    color: #888;
+    color: #999;
   }
-  .legend-dot {
-    width: 10px;
+  .legend-swatch {
+    width: 28px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: 20px;
     flex-shrink: 0;
   }
-  .dot-parent  { background: #00D4C8; }
-  .dot-athlete { background: rgba(0,212,200,0.4); border: 1.5px solid #00D4C8; }
+  .swatch-onboarding { background: #00D4C8; }
+  .swatch-parent     { background: #FF1C84; }
+  .swatch-athlete    { background: #2B8BF5; }
 
+  /* ── Grid ── */
   .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -72,61 +75,59 @@
     padding: 8px 2px;
   }
   .day-cell {
-    background: #1A1A1A;
+    background: #161616;
     border: 1px solid #222;
     border-radius: 6px;
-    min-height: 54px;
-    padding: 6px 5px;
+    padding: 6px 5px 7px;
     border-left: 3px solid #222;
+    vertical-align: top;
   }
   .day-cell.empty {
     background: transparent;
     border-color: transparent;
   }
-  .day-cell.has-calls {
-    min-height: 108px;
-    border-left: 3px solid #00D4C8;
-  }
   .day-number {
     font-size: 11px;
     font-weight: 600;
-    color: #555;
+    color: #444;
     margin-bottom: 4px;
     line-height: 1;
   }
   .day-cell.has-calls .day-number { color: #fff; }
 
+  /* ── Call pills ── */
   .call-entry { margin-top: 4px; }
-  .call-divider {
-    height: 1px;
-    background: #2A2A2A;
-    margin: 5px 0;
-  }
+  .call-divider { height: 1px; background: #222; margin: 4px 0; }
+
   .call-pill {
     display: inline-block;
     font-size: 7px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 2px 6px;
+    letter-spacing: 0.07em;
+    padding: 2px 5px;
     border-radius: 20px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
+  }
+  .pill-onboarding {
+    background: rgba(0,212,200,0.18);
+    color: #00D4C8;
+    border: 1px solid rgba(0,212,200,0.4);
   }
   .pill-parent {
-    background: rgba(0,212,200,0.2);
-    color: #00D4C8;
-    border: 1px solid rgba(0,212,200,0.45);
+    background: rgba(255,28,132,0.18);
+    color: #FF1C84;
+    border: 1px solid rgba(255,28,132,0.4);
   }
   .pill-athlete {
-    background: rgba(0,212,200,0.08);
-    color: rgba(0,212,200,0.75);
-    border: 1px solid rgba(0,212,200,0.22);
+    background: rgba(43,139,245,0.18);
+    color: #2B8BF5;
+    border: 1px solid rgba(43,139,245,0.4);
   }
   .call-time {
-    font-size: 8.5px;
-    color: #ccc;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 8px;
+    color: #bbb;
+    line-height: 1.35;
   }
 
   .footer-note {
@@ -134,18 +135,18 @@
     font-size: 10px;
     color: #444;
     line-height: 1.7;
-    border-top: 1px solid #1E1E1E;
+    border-top: 1px solid #1a1a1a;
     padding-top: 14px;
   }
 
   @media (max-width: 480px) {
-    body { padding: 14px 10px 20px; }
-    .day-header { font-size: 7.5px; padding: 6px 1px; }
-    .day-cell { min-height: 44px; padding: 4px 3px; border-radius: 4px; }
-    .day-cell.has-calls { min-height: 96px; }
+    body { padding: 12px 8px 20px; }
+    .day-header { font-size: 7px; padding: 5px 1px; }
+    .day-cell { padding: 4px 3px 5px; border-radius: 4px; }
     .call-pill { font-size: 6px; padding: 1.5px 4px; }
-    .call-time { font-size: 7.5px; }
+    .call-time { font-size: 7px; }
     .day-number { font-size: 10px; }
+    .legend-item { font-size: 10px; }
   }
 </style>
 </head>
@@ -158,12 +159,16 @@
 
 <div class="legend">
   <div class="legend-item">
-    <div class="legend-dot dot-parent"></div>
-    <span>Parent Session</span>
+    <div class="legend-swatch swatch-onboarding"></div>
+    <span>Onboarding</span>
   </div>
   <div class="legend-item">
-    <div class="legend-dot dot-athlete"></div>
-    <span>Athlete Session</span>
+    <div class="legend-swatch swatch-parent"></div>
+    <span>Parent Group Call</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch swatch-athlete"></div>
+    <span>Athlete Group Call</span>
   </div>
 </div>
 
@@ -176,54 +181,96 @@
 <script>
   const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-  // May 2026: May 1 = Friday (day-of-week index 5), 31 days total
+  // May 2026: May 1 = Friday (index 5)
   const START_DOW = 5;
   const TOTAL_DAYS = 31;
 
-  // Wednesdays in May: 6, 13, 20, 27  — Parent 9–10am PST | Athlete 5:30–6:30pm PST
-  // Saturdays in May:  2, 9, 16, 23, 30 — Parent 10–11am PST | Athlete 11am–12pm PST
+  // call types: 'onboarding-parent' | 'onboarding-athlete' | 'parent-group' | 'athlete-group'
   const CALLS = {
+    // Saturdays — onboarding
     2:  [
-      { type: 'parent',  time: '10:00 – 11:00 AM PST' },
-      { type: 'athlete', time: '11:00 AM – 12:00 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
     ],
+    // Wednesday — onboarding
     6:  [
-      { type: 'parent',  time: '9:00 – 10:00 AM PST' },
-      { type: 'athlete', time: '5:30 – 6:30 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST' },
     ],
+    // Saturday — onboarding
     9:  [
-      { type: 'parent',  time: '10:00 – 11:00 AM PST' },
-      { type: 'athlete', time: '11:00 AM – 12:00 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
     ],
+    // Wednesday — onboarding
     13: [
-      { type: 'parent',  time: '9:00 – 10:00 AM PST' },
-      { type: 'athlete', time: '5:30 – 6:30 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST' },
     ],
+    // Saturday — onboarding
     16: [
-      { type: 'parent',  time: '10:00 – 11:00 AM PST' },
-      { type: 'athlete', time: '11:00 AM – 12:00 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
     ],
+    // Sunday — group calls
+    17: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST' },
+    ],
+    // Wednesday — onboarding
     20: [
-      { type: 'parent',  time: '9:00 – 10:00 AM PST' },
-      { type: 'athlete', time: '5:30 – 6:30 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST' },
     ],
+    // Saturday — onboarding
     23: [
-      { type: 'parent',  time: '10:00 – 11:00 AM PST' },
-      { type: 'athlete', time: '11:00 AM – 12:00 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
     ],
+    // Wednesday — onboarding + group calls
     27: [
-      { type: 'parent',  time: '9:00 – 10:00 AM PST' },
-      { type: 'athlete', time: '5:30 – 6:30 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST' },
+      { type: 'parent-group',       label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
+      { type: 'athlete-group',      label: 'Athlete Group Call', time: '5:30 – 6:30 PM PST' },
     ],
+    // Saturday — onboarding
     30: [
-      { type: 'parent',  time: '10:00 – 11:00 AM PST' },
-      { type: 'athlete', time: '11:00 AM – 12:00 PM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
+    ],
+    // Sunday — group calls
+    31: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST' },
     ],
   };
 
+  function pillClass(type) {
+    if (type.startsWith('onboarding')) return 'pill-onboarding';
+    if (type === 'parent-group')       return 'pill-parent';
+    if (type === 'athlete-group')      return 'pill-athlete';
+    return '';
+  }
+
+  function borderColor(calls) {
+    if (!calls.length) return '#222';
+    const types = calls.map(c => c.type);
+    const hasGroup = types.some(t => t.includes('group'));
+    const hasOnboard = types.some(t => t.includes('onboarding'));
+    if (hasGroup && hasOnboard) return '#982FF7'; // mixed — purple accent
+    if (hasGroup) {
+      const hasParent = types.includes('parent-group');
+      const hasAthlete = types.includes('athlete-group');
+      if (hasParent && hasAthlete) return '#982FF7';
+      if (hasParent) return '#FF1C84';
+      return '#2B8BF5';
+    }
+    return '#00D4C8'; // onboarding only
+  }
+
   const cal = document.getElementById('calendar');
 
-  // Day-of-week headers
   DAYS.forEach(d => {
     const el = document.createElement('div');
     el.className = 'day-header';
@@ -231,27 +278,26 @@
     cal.appendChild(el);
   });
 
-  // Empty cells before May 1
   for (let i = 0; i < START_DOW; i++) {
     const el = document.createElement('div');
     el.className = 'day-cell empty';
     cal.appendChild(el);
   }
 
-  // Day cells
   for (let day = 1; day <= TOTAL_DAYS; day++) {
     const calls = CALLS[day] || [];
     const el = document.createElement('div');
     el.className = 'day-cell' + (calls.length ? ' has-calls' : '');
+    if (calls.length) {
+      el.style.borderLeftColor = borderColor(calls);
+    }
 
     let html = `<div class="day-number">${day}</div>`;
     calls.forEach((c, i) => {
       if (i > 0) html += '<div class="call-divider"></div>';
-      const label = c.type === 'parent' ? 'Parent' : 'Athlete';
-      const pillClass = c.type === 'parent' ? 'pill-parent' : 'pill-athlete';
       html += `
         <div class="call-entry">
-          <span class="call-pill ${pillClass}">${label}</span>
+          <span class="call-pill ${pillClass(c.type)}">${c.label}</span>
           <div class="call-time">${c.time}</div>
         </div>`;
     });
@@ -260,7 +306,6 @@
     cal.appendChild(el);
   }
 
-  // Fill remainder of last row
   const totalCells = START_DOW + TOTAL_DAYS;
   const remainder = totalCells % 7;
   if (remainder !== 0) {
