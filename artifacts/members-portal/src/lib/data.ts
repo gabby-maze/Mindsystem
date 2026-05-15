@@ -1080,8 +1080,8 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
     return {
       ...s,
       lessons: [
-        { id: 1, title: "Overview", videoId: "5fAZHN0ltZo" },
-        { id: 2, title: "How to Fill In Your Journal", videoId: "M-sAKRmuwuU", description: ANALYZE_HOW_TO_COPY, downloadUrl: "/MP_ATHLETE_GOALS_WORKSHEET_Final.pdf", downloadLabel: "Download Athlete Goals Worksheet" },
+        { id: 1, title: "Overview", videoId: "5fAZHN0ltZo", downloadUrl: "/MP_ATHLETE_GOALS_WORKSHEET_Final.pdf", downloadLabel: "Download Athlete Goals Worksheet" },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "M-sAKRmuwuU", description: ANALYZE_HOW_TO_COPY },
       ],
     };
   }
