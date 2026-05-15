@@ -6,32 +6,36 @@ const PAY_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c90
 
 const WHATS_INSIDE = [
   {
-    title: "The Inside Game Library",
-    body: "Every long format video. Every lesson. Every takeaway. The social media content you love, expanded, deepened, and organized so you can actually apply it. This is where the reels become a roadmap.",
+    title: "Video Game Library",
+    body: "Full access to every deep-dive lesson on the topics that matter most — emotional regulation, favoritism, perceived coachability, teachable moments, coaching from the sideline, and more. The content you see on social, expanded into a roadmap you can actually use.",
   },
   {
-    title: "Tournament Day Nutrition",
-    body: "Recipes and fueling strategies built specifically for tournament days, pre-practice days, and recovery days. Because what she eats is part of how she performs, and nobody is talking about that either.",
+    title: "Your Starting Point",
+    body: "Season-specific training guides for every phase of the year — Summer Camp Season, Tryouts, Preseason, In Season, Tournament Season, and Postseason. Wherever you are in the year, there is a guide built for that exact moment.",
   },
   {
-    title: "Visualization Techniques",
-    body: "Simple, practical tools your athlete can use before practice, before games, and in the moments when the pressure is highest. Not theory. Techniques she can actually use.",
+    title: "Volleyball Game IQ + Position Series",
+    body: "Position-by-position breakdowns for every role on the court — Setter, Libero, Outside Hitter, Middle Blocker, Opposite, Defensive Specialist, and Serving Specialist. For athletes and parents. Watch together.",
   },
   {
-    title: "The Reading List",
-    body: "A curated book club built for sports parents. The books Gabby recommends to understand your role in the ecosystem, and how to show up in it better. Every recommendation comes with context for why it matters and what to look for as you read.",
+    title: "Nutrition Library",
+    body: "Athlete fuel plans and recipe cards built for tournament days, practice days, and recovery. Because what she eats is part of how she performs — and nobody else is covering it in this space.",
   },
   {
-    title: "Parent Education Sessions",
-    body: "Deep dives into the topics that matter most to the families navigating youth sports right now. Built around the real questions parents are asking, and the answers most programs aren't giving.",
+    title: "Pressure Practice",
+    body: "Mental reps designed to carry from practice into games. Simple, specific techniques your athlete can use before practice, before games, and in the moments when the pressure is highest.",
   },
   {
-    title: "Coaches Corner",
-    body: "Gabby in conversation with coaches and relevant voices from across the country. Real conversations about what's happening inside the ecosystem, from the people who are living it every day. This is the perspective most parents never get access to.",
+    title: "Bold Conversations",
+    body: "The conversations every youth sports family needs to have — but most never do. The coach conversation. The bench conversation. The comparison conversation. Frameworks for all of it.",
   },
   {
-    title: "MindSystem Programs",
-    body: "This is home base for all MindSystem content. Everything lives here, organized, accessible, and always updated as the program grows.",
+    title: "Book Club",
+    body: "A curated reading list for athletes and parents. Every recommendation comes with context for why it matters and what to look for as you read. Built around the ecosystem, not the highlight reel.",
+  },
+  {
+    title: "Monthly Live with Gabby + Full Replay Library",
+    body: "Every month Gabby goes live for an open Q&A. Submit your questions in advance or bring them live. Miss it — the replay is always there. The library never stops growing.",
   },
 ];
 
