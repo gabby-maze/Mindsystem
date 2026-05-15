@@ -62,7 +62,7 @@ const COLUMNS: Column[] = [
     headline: "Courtside Conversations",
     subhead: "Program-wide education. One price per athlete.",
     price: "$8.25 / family / month",
-    priceNote: "Individual equivalent: $360/year per family",
+    priceNote: "Individual equivalent: $99/year per family",
     included: [
       "Everything in Individual Courtside Conversations",
       "Program-wide access distributed to all enrolled families",
