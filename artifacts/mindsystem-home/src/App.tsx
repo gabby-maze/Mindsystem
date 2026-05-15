@@ -17,6 +17,7 @@ import CoachesThankYou from "./pages/CoachesThankYou";
 import CommunityPage from "./pages/CommunityPage";
 import StrategySessionPage from "./pages/StrategySessionPage";
 import ComparisonPage from "./pages/ComparisonPage";
+import B2BComparePage from "./pages/B2BComparePage";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ function Router() {
       <Route path="/community" component={CommunityPage} />
       <Route path="/strategy-session" component={StrategySessionPage} />
       <Route path="/compare" component={ComparisonPage} />
+      <Route path="/compare-clubs" component={B2BComparePage} />
       <Route component={NotFound} />
     </Switch>
   );
