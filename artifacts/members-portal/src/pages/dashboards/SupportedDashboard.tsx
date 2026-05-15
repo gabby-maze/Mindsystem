@@ -7,6 +7,8 @@ import { STRATEGY_SESSION_LINK, LIVE_SESSIONS, getWeekProgress } from "@/lib/dat
 const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
 const PARENT_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-parent";
 const ATHLETE_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-athlete";
+const ATHLETE_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/jW4QG8NWlfyi3FRqLQEk";
+const PARENT_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/vx5VByITGITwn9iLDQ93";
 
 const PURPLE = "#982FF7";
 const TEAL = "#00D4C8";
@@ -203,8 +205,8 @@ export default function SupportedDashboard() {
           <div className="flex flex-col gap-4">
             {[
               { num: 1, label: "Shipping address", btn: "Submit Shipping Address →", href: SHIPPING_LINK, external: true },
-              { num: 2, label: "Parent onboarding call", sub: "Wed 9–10am PST / Sun 10–11am PST", btn: "Book Parent Onboarding Call →", href: PARENT_ONBOARDING_LINK, external: true },
-              { num: 3, label: "Athlete onboarding call", sub: "Wed 5:30–6:30pm PST / Sat 11am–12pm PST", btn: "Book Athlete Onboarding Call →", href: ATHLETE_ONBOARDING_LINK, external: true },
+              { num: 2, label: "Parent onboarding call", sub: "Wed 9–10am PST / Sun 10–11am PST", btn: "Book Parent Onboarding Call →", href: PARENT_ONBOARDING_LINK, external: true, surveyBtn: "Complete Parent Pre-Call Survey →", surveyHref: PARENT_PRECALL_SURVEY },
+              { num: 3, label: "Athlete onboarding call", sub: "Wed 5:30–6:30pm PST / Sat 11am–12pm PST", btn: "Book Athlete Onboarding Call →", href: ATHLETE_ONBOARDING_LINK, external: true, surveyBtn: "Complete Athlete Pre-Call Survey →", surveyHref: ATHLETE_PRECALL_SURVEY },
               { num: 4, label: "Onboarding video", btn: "Watch Onboarding Video →", nav: "/courses/supported-onboarding", downloadUrl: "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf", parentDownloadUrl: "/MP_PARENT_COMPASS_WORKBOOK_v1.pdf" },
             ].map((item) => (
               <div key={item.num} className="flex items-start gap-4 p-5 rounded-lg"
@@ -228,6 +230,12 @@ export default function SupportedDashboard() {
                         style={{ backgroundColor: PURPLE, color: "#fff", border: "none", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}>
                         {item.btn}
                       </button>
+                    )}
+                    {(item as any).surveyHref && (
+                      <a href={(item as any).surveyHref} target="_blank" rel="noopener noreferrer"
+                        style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${PURPLE}60`, color: PURPLE, padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                        {(item as any).surveyBtn}
+                      </a>
                     )}
                     {item.downloadUrl && (
                       <a href={item.downloadUrl} download
@@ -396,15 +404,27 @@ export default function SupportedDashboard() {
                   </div>
                   {/* Group call footer */}
                   {block.groupCall && (
-                    <div className="px-5 py-3 flex flex-col sm:flex-row sm:items-center gap-2"
+                    <div className="px-5 py-3 flex flex-col gap-2"
                       style={{ borderTop: `1px solid ${TEAL}20`, backgroundColor: `${TEAL}06` }}>
-                      <span className="text-xs px-2 py-0.5 rounded shrink-0"
-                        style={{ backgroundColor: `${TEAL}18`, color: TEAL, border: `1px solid ${TEAL}35`, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                        Bimonthly Group Call
-                      </span>
-                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                        Your group call lands somewhere in this window — check the call calendar above for your exact date. Complete the pre-call check-in form before you join.
-                      </p>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span className="text-xs px-2 py-0.5 rounded shrink-0"
+                          style={{ backgroundColor: `${TEAL}18`, color: TEAL, border: `1px solid ${TEAL}35`, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                          Bimonthly Group Call
+                        </span>
+                        <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                          Your group call lands somewhere in this window — check the call calendar above for your exact date. Complete your pre-call survey before you join.
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <a href={ATHLETE_PRECALL_SURVEY} target="_blank" rel="noopener noreferrer"
+                          style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: TEAL, textDecoration: "none", border: `1px solid ${TEAL}50`, padding: "0.3rem 0.75rem", fontFamily: "'Oswald', sans-serif" }}>
+                          Athlete Pre-Call Survey →
+                        </a>
+                        <a href={PARENT_PRECALL_SURVEY} target="_blank" rel="noopener noreferrer"
+                          style={{ fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: TEAL, textDecoration: "none", border: `1px solid ${TEAL}50`, padding: "0.3rem 0.75rem", fontFamily: "'Oswald', sans-serif" }}>
+                          Parent Pre-Call Survey →
+                        </a>
+                      </div>
                     </div>
                   )}
                   {/* Week 12 closing conversation note */}

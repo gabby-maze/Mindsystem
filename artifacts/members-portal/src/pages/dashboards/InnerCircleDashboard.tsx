@@ -4,6 +4,8 @@ import Layout from "@/components/Layout";
 import { STRATEGY_SESSION_LINK, getWeekProgress } from "@/lib/data";
 
 const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
+const ATHLETE_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/jW4QG8NWlfyi3FRqLQEk";
+const PARENT_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/vx5VByITGITwn9iLDQ93";
 // TODO: replace with GHL private parent onboarding call booking link
 const PRIVATE_PARENT_CALL_LINK = "TODO_PRIVATE_PARENT_ONBOARDING_LINK";
 // TODO: replace with GHL private athlete onboarding call booking link
@@ -74,8 +76,8 @@ export default function InnerCircleDashboard() {
           <div className="flex flex-col gap-4">
             {[
               { num: 1, label: "Shipping address", btn: "Submit Shipping Address →", href: SHIPPING_LINK },
-              { num: 2, label: "Private parent onboarding call", sub: "Available Sun / Mon / Tue / Wed / Thu / Sat", btn: "Book Private Parent Onboarding Call →", href: PRIVATE_PARENT_CALL_LINK },
-              { num: 3, label: "Private athlete onboarding call", btn: "Book Private Athlete Onboarding Call →", href: PRIVATE_ATHLETE_CALL_LINK },
+              { num: 2, label: "Private parent onboarding call", sub: "Available Sun / Mon / Tue / Wed / Thu / Sat", btn: "Book Private Parent Onboarding Call →", href: PRIVATE_PARENT_CALL_LINK, surveyBtn: "Complete Parent Pre-Call Survey →", surveyHref: PARENT_PRECALL_SURVEY },
+              { num: 3, label: "Private athlete onboarding call", btn: "Book Private Athlete Onboarding Call →", href: PRIVATE_ATHLETE_CALL_LINK, surveyBtn: "Complete Athlete Pre-Call Survey →", surveyHref: ATHLETE_PRECALL_SURVEY },
               { num: 4, label: "Connect on Voxer", sub: "Download Voxer at voxer.com. Voice gets faster responses - 24hr response time.", btn: "Open Voxer →", href: VOXER_LINK, voxer: true },
               { num: 5, label: "Watch onboarding video", btn: "Inner Circle Onboarding - Watch Now →", nav: "/courses/inner-circle-onboarding" },
             ].map((item) => (
@@ -92,17 +94,25 @@ export default function InnerCircleDashboard() {
                   <p className="font-bold text-sm mb-1" style={{ color: "#fff" }}>{item.label}</p>
                   {item.sub && <p className="text-xs mb-3" style={{ color: "rgba(255,255,255,0.4)" }}>{item.sub}</p>}
                   {!item.sub && <div className="mb-3" />}
-                  {item.nav ? (
-                    <button onClick={() => navigate(item.nav!)}
-                      style={{ backgroundColor: PINK, color: "#fff", border: "none", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}>
-                      {item.btn}
-                    </button>
-                  ) : (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer"
-                      style={{ display: "inline-block", backgroundColor: PINK, color: "#fff", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
-                      {item.btn}
-                    </a>
-                  )}
+                  <div className="flex flex-wrap gap-3">
+                    {item.nav ? (
+                      <button onClick={() => navigate(item.nav!)}
+                        style={{ backgroundColor: PINK, color: "#fff", border: "none", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}>
+                        {item.btn}
+                      </button>
+                    ) : (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer"
+                        style={{ display: "inline-block", backgroundColor: PINK, color: "#fff", padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                        {item.btn}
+                      </a>
+                    )}
+                    {(item as any).surveyHref && (
+                      <a href={(item as any).surveyHref} target="_blank" rel="noopener noreferrer"
+                        style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${PINK}60`, color: PINK, padding: "0.5rem 1.25rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                        {(item as any).surveyBtn}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
