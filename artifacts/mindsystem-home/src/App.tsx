@@ -38,7 +38,7 @@ function Router() {
       <Route path="/community" component={CommunityPage} />
       <Route path="/strategy-session" component={StrategySessionPage} />
       <Route path="/compare" component={ComparisonPage} />
-      <Route path="/compare-clubs" component={B2BComparePage} />
+      <Route path="/compare-teams" component={B2BComparePage} />
       <Route component={NotFound} />
     </Switch>
   );

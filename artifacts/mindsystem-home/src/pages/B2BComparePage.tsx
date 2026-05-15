@@ -3,9 +3,7 @@ import { useState } from "react";
 const TEAL = "#00d4c8";
 const PINK  = "#ff2d78";
 
-const COURTSIDE_LINK   = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06";
-const STRATEGY_LINK    = "TODO_STRATEGY_SESSION_LINK";
-const MINDSYSTEM_LINK  = "TODO_MINDSYSTEM_ENROLL_LINK";
+const COURTSIDE_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06";
 
 interface Column {
   id: string;
@@ -20,8 +18,8 @@ interface Column {
   notIncluded: string[];
   costOptions: { letter: string; text: string }[] | null;
   note: string | null;
-  cta: string;
-  ctaHref: string;
+  cta: string | null;
+  ctaHref: string | null;
   minimum: string | null;
 }
 
@@ -57,19 +55,19 @@ const COLUMNS: Column[] = [
     minimum: null,
   },
   {
-    id: "club-courtside",
-    label: "CLUB PARTNER",
+    id: "team-courtside",
+    label: "TEAM PARTNER",
     color: TEAL,
-    badge: "CLUB PARTNER PRICE",
+    badge: "TEAM PARTNER PRICE",
     headline: "Courtside Conversations",
-    subhead: "Club-wide education. One price per athlete.",
+    subhead: "Program-wide education. One price per athlete.",
     price: "$99 / athlete / year",
     priceNote: "Individual equivalent: $360/year per family",
     included: [
       "Everything in Individual Courtside Conversations",
-      "Club-wide access distributed to all enrolled families",
+      "Program-wide access distributed to all enrolled families",
       "One live community session per month with Gabby — longer format, questions submitted in advance",
-      "Access distribution handled by Gabby or by the club — your choice",
+      "Access distribution handled by Gabby or by your program — your choice",
     ],
     notIncluded: [
       "Athlete journal",
@@ -80,11 +78,11 @@ const COLUMNS: Column[] = [
     costOptions: [
       { letter: "A", text: "Add $99 to annual dues. Families cover it." },
       { letter: "B", text: "Split the cost with families." },
-      { letter: "C", text: "Club covers the full cost." },
+      { letter: "C", text: "Program covers the full cost." },
     ],
     note: "Families who want to go further can upgrade to MindSystem Supported at any time.",
-    cta: "BECOME A CLUB PARTNER",
-    ctaHref: STRATEGY_LINK,
+    cta: null,
+    ctaHref: null,
     minimum: null,
   },
   {
@@ -109,13 +107,13 @@ const COLUMNS: Column[] = [
     ],
     costOptions: null,
     note: "This builds a shared language between athlete, parent, and coach — a behavior modification system that compounds season over season.",
-    cta: "ENROLL IN MINDSYSTEM",
-    ctaHref: MINDSYSTEM_LINK,
+    cta: null,
+    ctaHref: null,
     minimum: null,
   },
   {
-    id: "club-mindsystem",
-    label: "CLUB PARTNER",
+    id: "team-mindsystem",
+    label: "TEAM PARTNER",
     color: TEAL,
     badge: "80% BULK DISCOUNT",
     headline: "MindSystem Supported",
@@ -124,22 +122,22 @@ const COLUMNS: Column[] = [
     priceNote: "Individual equivalent: $3,500 per family",
     included: [
       "Everything in Individual MindSystem Supported for every enrolled family",
-      "Gabby acting as parent liaison for your club — families bring questions, concerns, and situations to Gabby first",
+      "Gabby acting as parent liaison for your program — families bring questions, concerns, and situations to Gabby first",
       "Role plays, hard conversations, sideline behavior — handled in the digital space",
       "Coaching staff protected from parent management",
-      "Custom athlete journals branded to your club",
-      "Custom parent journals branded to your club",
-      "Club-specific coach orientation page — living resource with Q&A",
+      "Custom athlete journals branded to your program",
+      "Custom parent journals branded to your program",
+      "Program-specific coach orientation page — living resource with Q&A",
     ],
     notIncluded: [],
     costOptions: [
       { letter: "A", text: "Add $700 to annual dues. Families cover it." },
-      { letter: "B", text: "Split $350 club / $350 family." },
-      { letter: "C", text: "Club covers the full cost." },
+      { letter: "B", text: "Split $350 program / $350 family." },
+      { letter: "C", text: "Program covers the full cost." },
     ],
     note: null,
-    cta: "BECOME A CLUB PARTNER",
-    ctaHref: STRATEGY_LINK,
+    cta: null,
+    ctaHref: null,
     minimum: "150 families minimum",
   },
 ];
@@ -150,27 +148,25 @@ const FAQS = [
     a: "Courtside Conversations is education — tools, content, and monthly live sessions your families can use at their own pace. MindSystem is a guided behavior modification program — 12 weeks of structured work with custom journals, live group calls, and Gabby actively managing your parent ecosystem. Education gives families information. MindSystem changes behavior.",
   },
   {
-    q: "What does club partner pricing require?",
-    a: "A minimum enrollment of 150 families for MindSystem Supported. Courtside Conversations club partner pricing has no minimum — clubs can enroll any number of athletes.",
+    q: "What does team partner pricing require?",
+    a: "A minimum enrollment of 150 families for MindSystem Supported. Courtside Conversations team partner pricing has no minimum — programs can enroll any number of athletes.",
   },
   {
     q: "Can families upgrade from Courtside Conversations to MindSystem?",
     a: "Yes. Families who start with Courtside Conversations can move into MindSystem Supported at any time at the individual family rate.",
   },
   {
-    q: "How are club partner journals customized?",
-    a: "MindSystem club partner journals are custom designed with your club logo, colors, and team photos on the cover. Each journal is also personalized to the individual athlete or parent based on their program responses.",
+    q: "How are team partner journals customized?",
+    a: "MindSystem team partner journals are custom designed with your program logo, colors, and team photos on the cover. Each journal is also personalized to the individual athlete or parent based on their program responses.",
   },
   {
     q: "Who handles access distribution for Courtside Conversations?",
-    a: "Either Gabby or the club — your choice. Provide your family email list and Gabby distributes access, or Gabby provides the access links and the club distributes them directly.",
+    a: "Either Gabby or your program — your choice. Provide your family email list and Gabby distributes access, or Gabby provides the access links and your program distributes them directly.",
   },
 ];
 
 function CheckIcon({ color }: { color: string }) {
-  return (
-    <span style={{ color, fontSize: "0.85rem", lineHeight: 1.5 }}>✓</span>
-  );
+  return <span style={{ color, fontSize: "0.85rem", lineHeight: 1.5 }}>✓</span>;
 }
 
 function XItem({ text }: { text: string }) {
@@ -200,13 +196,13 @@ export default function B2BComparePage() {
         {/* ── Hero ── */}
         <section className="text-center pt-20 pb-16">
           <p className="text-xs uppercase tracking-[0.3em] font-semibold mb-5" style={{ color: TEAL }}>
-            Club Partnership Pricing
+            Team Partnership Pricing
           </p>
           <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.8rem, 5vw, 3rem)", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-            Two programs. Two ways to bring them to your club.
+            Two programs. Two ways to bring them to your team.
           </h1>
           <p style={{ color: "rgba(255,255,255,0.6)", maxWidth: 600, margin: "0 auto", lineHeight: 1.75, fontSize: "1rem" }}>
-            Individual pricing is available to any family. Club partner pricing is available to clubs enrolling 150+ families.
+            Individual pricing is available to any family. Team partner pricing is available to programs enrolling 150+ families.
           </p>
         </section>
 
@@ -290,7 +286,7 @@ export default function B2BComparePage() {
                   {col.costOptions && (
                     <div style={{ backgroundColor: `${col.color}08`, border: `1px solid ${col.color}20`, borderRadius: 8, padding: "1rem", marginTop: "1rem", marginBottom: "0.75rem" }}>
                       <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: col.color }}>
-                        How clubs structure the cost
+                        How programs structure the cost
                       </p>
                       <ul className="flex flex-col gap-2">
                         {col.costOptions.map((opt) => (
@@ -310,30 +306,32 @@ export default function B2BComparePage() {
                   )}
                 </div>
 
-                {/* CTA */}
-                <div style={{ padding: "1.25rem 1.5rem", borderTop: `1px solid rgba(255,255,255,0.06)` }}>
-                  <a
-                    href={col.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: "block",
-                      textAlign: "center",
-                      backgroundColor: col.color,
-                      color: "#0a0a0a",
-                      padding: "0.75rem 1rem",
-                      fontFamily: "'Oswald', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "0.72rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.15em",
-                      textDecoration: "none",
-                      borderRadius: 4,
-                    }}
-                  >
-                    {col.cta}
-                  </a>
-                </div>
+                {/* CTA — only shown for Individual Courtside */}
+                {col.ctaHref && (
+                  <div style={{ padding: "1.25rem 1.5rem", borderTop: `1px solid rgba(255,255,255,0.06)` }}>
+                    <a
+                      href={col.ctaHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: "block",
+                        textAlign: "center",
+                        backgroundColor: col.color,
+                        color: "#0a0a0a",
+                        padding: "0.75rem 1rem",
+                        fontFamily: "'Oswald', sans-serif",
+                        fontWeight: 700,
+                        fontSize: "0.72rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.15em",
+                        textDecoration: "none",
+                        borderRadius: 4,
+                      }}
+                    >
+                      {col.cta}
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -360,14 +358,7 @@ export default function B2BComparePage() {
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                     className="w-full text-left flex items-center justify-between gap-4"
-                    style={{
-                      padding: "1.1rem 1.4rem",
-                      background: "none",
-                      border: "none",
-                      cursor: "pointer",
-                      color: "#fff",
-                      fontFamily: "'Oswald', sans-serif",
-                    }}
+                    style={{ padding: "1.1rem 1.4rem", background: "none", border: "none", cursor: "pointer", color: "#fff", fontFamily: "'Oswald', sans-serif" }}
                   >
                     <span className="font-bold text-sm uppercase tracking-wide" style={{ lineHeight: 1.5 }}>{faq.q}</span>
                     <span style={{ color: TEAL, fontSize: "1.1rem", flexShrink: 0, lineHeight: 1 }}>
@@ -385,7 +376,7 @@ export default function B2BComparePage() {
           </div>
         </section>
 
-        {/* ── Footer CTA ── */}
+        {/* ── Footer note ── */}
         <section className="pb-8">
           <div
             style={{
@@ -399,28 +390,14 @@ export default function B2BComparePage() {
             }}
           >
             <h2 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.3rem,3.5vw,1.9rem)", marginBottom: "1rem" }}>
-              Not sure which is right for your club? Let's talk.
+              Questions? Just reply.
             </h2>
-            <a
-              href={STRATEGY_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                backgroundColor: TEAL,
-                color: "#0a0a0a",
-                padding: "0.85rem 2.25rem",
-                fontFamily: "'Oswald', sans-serif",
-                fontWeight: 700,
-                fontSize: "0.8rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                textDecoration: "none",
-                borderRadius: 4,
-              }}
-            >
-              BOOK A STRATEGY SESSION
-            </a>
+            <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.75, fontSize: "0.95rem" }}>
+              Reach out directly and Gabby will send everything you need to move forward.
+            </p>
+            <p style={{ color: TEAL, fontSize: "0.9rem", marginTop: "0.75rem", letterSpacing: "0.05em" }}>
+              gabby@mazeperformance.ai
+            </p>
           </div>
         </section>
       </main>
