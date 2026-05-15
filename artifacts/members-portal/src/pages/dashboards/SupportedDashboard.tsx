@@ -20,6 +20,7 @@ interface RoadmapBlock {
   parent: string[];
   hardGate?: boolean;
   groupCall?: boolean;
+  callLabel?: string;
   isReflection?: boolean;
   weekStart: number;
   weekEnd: number;
@@ -32,6 +33,7 @@ const ROADMAP_BLOCKS: RoadmapBlock[] = [
     weekStart: 1, weekEnd: 2,
     hardGate: true,
     groupCall: true,
+    callLabel: "Onboarding Call",
     athlete: [
       "Complete all four MAZE phases in your workbook.",
       "Submit the MAZE Completion Form when done.",
@@ -282,6 +284,22 @@ export default function SupportedDashboard() {
                 </div>
               ))}
             </div>
+            <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: `${TEAL}08`, border: `1px solid ${TEAL}25` }}>
+              <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: TEAL }}>Pre-Call Surveys</p>
+              <p className="text-xs mb-3" style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>
+                Complete your survey before each group call so Gabby can make the most of your time together.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href={ATHLETE_PRECALL_SURVEY} target="_blank" rel="noopener noreferrer"
+                  style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${TEAL}60`, color: TEAL, padding: "0.45rem 1rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                  Athlete Pre-Call Survey →
+                </a>
+                <a href={PARENT_PRECALL_SURVEY} target="_blank" rel="noopener noreferrer"
+                  style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${TEAL}60`, color: TEAL, padding: "0.45rem 1rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none" }}>
+                  Parent Pre-Call Survey →
+                </a>
+              </div>
+            </div>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
               Can't make it? Every session is recorded. Replays available inside Group Call Replays within 24 hours.{" "}
               <button onClick={() => navigate("/live")}
@@ -415,7 +433,7 @@ export default function SupportedDashboard() {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                         <span className="text-xs px-2 py-0.5 rounded shrink-0"
                           style={{ backgroundColor: `${TEAL}18`, color: TEAL, border: `1px solid ${TEAL}35`, fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                          Bimonthly Group Call
+                          {block.callLabel ?? "Bimonthly Group Call"}
                         </span>
                         <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
                           Your group call lands somewhere in this window — check the call calendar above for your exact date. Complete your pre-call survey before you join.
