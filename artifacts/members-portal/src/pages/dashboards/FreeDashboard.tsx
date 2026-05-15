@@ -12,12 +12,15 @@ type ModalContext = "courtside" | "mindsystem" | null;
 const COURTSIDE_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06";
 
 const UNLOCKS = [
-  "Lessons 2 through 5 on every topic",
-  "Access to all 7 course libraries",
-  "Your Starting Point - the seasonal guide",
-  "Monthly live session with Gabby",
-  "Full replay library",
-  "Community comments and Q&A with Gabby",
+  "Video Game Library — full access to all deep-dive lessons on the topics that matter most",
+  "Your Starting Point — season-specific training guides for Summer, Tryouts, Preseason, In Season, Tournament, and Postseason",
+  "Volleyball Game IQ — position-by-position breakdowns + the full 7-position Position Series (Shorts)",
+  "Nutrition Library — athlete fuel plans and recipe cards",
+  "Pressure Practice — mental reps designed to carry from practice into games",
+  "Bold Conversations — the conversations every youth sports family needs to have",
+  "Book Club — curated reads for athletes and parents",
+  "Monthly live session with Gabby + full replay library",
+  "Community board — post questions and get answers from Gabby",
 ];
 
 export default function FreeDashboard() {
