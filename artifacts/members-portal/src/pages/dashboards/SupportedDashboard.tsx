@@ -33,94 +33,94 @@ const ROADMAP_BLOCKS: RoadmapBlock[] = [
     hardGate: true,
     groupCall: true,
     athlete: [
-      "Complete all four phases of the MAZE — Mindset, Analyze, Zero In, Execute.",
-      "Submit the MAZE Completion Form when all four phases are done.",
+      "Complete all four MAZE phases in your workbook.",
+      "Submit the MAZE Completion Form when done.",
       "Nothing moves forward without it.",
     ],
     parent: [
-      "Work through the MAZE Mirror workbook alongside your athlete's progress.",
-      "Submit your ecosystem responses after your athlete submits hers.",
+      "Complete onboarding call + MAZE Mirror sections in your workbook.",
+      "Submit Ecosystem Responses after her form.",
       "Both forms go to Gabby before journals ship.",
     ],
   },
   {
-    label: "Week 3",
-    theme: "The season begins",
-    weekStart: 3, weekEnd: 3,
+    label: "Weeks 3–4",
+    theme: "The MAZE",
+    weekStart: 3, weekEnd: 4,
     groupCall: true,
     athlete: [
-      "Both journals arrive.",
-      "Execution map, habit tracker, game pages, and practice pages all go live this week.",
+      "Transfer workbook answers to your journal.",
+      "Execution map + habit tracker go live.",
       "The system is now running.",
     ],
     parent: [
-      "Both journals arrive.",
-      "Your Parent Compass is in hand. The daily practice begins.",
-      "Open the parent track and start the daily loop.",
+      "Parent Compass enters production.",
+      "Built from her MAZE Completion Form responses.",
+      "Your journal is being prepared while she does the work.",
     ],
   },
   {
     label: "Weeks 4–5",
-    theme: "Building the habit",
+    theme: "Build the Habit",
     weekStart: 4, weekEnd: 5,
     groupCall: true,
     athlete: [
-      "Tracking all three focus skills consistently.",
-      "Mantra running three times a day — morning, before practice, before bed.",
-      "Accountability buddy active and checking in weekly.",
+      "Track your three focus skills daily.",
+      "Mantra three times a day. Every day.",
+      "No exceptions. This is where the habit forms.",
     ],
     parent: [
-      "Coach conversation done — athlete's three focus skills shared.",
-      "Language swap in effect — manager language replaced with collaborator language.",
-      "All four daily commitments running.",
+      "Your Parent Compass arrives this week.",
+      "Have the coach conversation.",
+      "Habits go live. The daily loop starts now.",
     ],
   },
   {
     label: "Weeks 6–7",
-    theme: "The middle",
+    theme: "The Middle",
     weekStart: 6, weekEnd: 7,
     groupCall: true,
     athlete: [
+      "Run your mid-season checkpoint.",
+      "Rescore your focus areas honestly.",
       "This is the hardest stretch. Expect resistance. Stay in it.",
-      "Mid-season checkpoint — rescore your three focus skills and name what shifted.",
-      "Check in with your full ecosystem.",
     ],
     parent: [
-      "Mid-season support audit — honest review of your four commitments.",
+      "Run your mid-season support audit.",
+      "Are you still the parent she asked for?",
       "Where have you held the line? Where have you slipped back?",
-      "Check in with your ecosystem and name one adjustment for the second half.",
     ],
   },
   {
     label: "Weeks 8–9",
-    theme: "Staying in it",
+    theme: "The Pattern",
     weekStart: 8, weekEnd: 9,
     groupCall: true,
     athlete: [
-      "Pull your game and practice page data — look at the pattern, not just individual sessions.",
-      "Pattern recognition first. Honest adjustment second.",
+      "Eight weeks of data. Look at the pattern.",
+      "Adjust the habit, not the standard.",
       "What is the data actually telling you?",
     ],
     parent: [
-      "Post-game protocol check — are you giving the sixty minutes before reacting?",
-      "Review your language patterns over the past four weeks.",
-      "Name one honest adjustment and make it before Week 10.",
+      "Advocate FOR her, not for yourself.",
+      "Listen for what her coach is building.",
+      "Your job right now is to support the process, not redirect it.",
     ],
   },
   {
     label: "Weeks 10–11",
-    theme: "The final push",
+    theme: "Final Push",
     weekStart: 10, weekEnd: 11,
     groupCall: true,
     athlete: [
-      "Look back at your three focus skills from Zero In.",
-      "Score each one honestly. Name what moved. Name what didn't.",
-      "Begin preparing for the closing conversation.",
+      "Two weeks left. Trust the system.",
+      "Mantra before every game. Not optional.",
+      "Everything you've built gets tested here.",
     ],
     parent: [
-      "Prepare the closing conversation — this one is about you, not just the season.",
-      "Honestly review your two season goals.",
-      "What did you actually do? What will you carry forward?",
+      "Did she see you regulate this week?",
+      "Tell her one thing unrelated to performance.",
+      "The finish line is hers. Your job is to hold the space.",
     ],
   },
   {
@@ -129,14 +129,14 @@ const ROADMAP_BLOCKS: RoadmapBlock[] = [
     weekStart: 12, weekEnd: 12,
     isReflection: true,
     athlete: [
-      "Rescore the satisfaction wheel — all eight categories.",
-      "Write three insights per category.",
-      "Name four things you are carrying forward into next season.",
+      "Rescore your satisfaction wheel.",
+      "Reflection: who did you become?",
+      "Name what you are carrying forward into next season.",
     ],
     parent: [
-      "Rescore your own support wheel.",
-      "Write three insights from your season as a parent.",
-      "Name four things you are carrying forward.",
+      "W12 question: did my behavior help her?",
+      "Program ends. Practice does not.",
+      "What you built here does not reset when the season does.",
     ],
   },
 ];
@@ -340,9 +340,15 @@ export default function SupportedDashboard() {
 
         {/* Section 5 - 12 Week Roadmap */}
         <section className="px-4 md:px-16 pb-16 max-w-5xl mx-auto">
-          <h2 className="font-bold mb-2 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
-            12 Week Roadmap
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-2">
+            <h2 className="font-bold uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
+              12 Week Roadmap
+            </h2>
+            <a href="/MP_MINDSYSTEM_ROADMAP_12WEEK_v1.pdf" download
+              style={{ display: "inline-block", backgroundColor: "transparent", border: `1px solid ${PURPLE}60`, color: PURPLE, padding: "0.45rem 1.1rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.12em", textDecoration: "none", whiteSpace: "nowrap" }}>
+              Download Roadmap PDF ↓
+            </a>
+          </div>
           <p className="mb-8 text-xs" style={{ color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
             Your current block is highlighted
           </p>
