@@ -61,7 +61,7 @@ const COLUMNS: Column[] = [
     badge: "TEAM PARTNER PRICE",
     headline: "Courtside Conversations",
     subhead: "Program-wide education. One price per athlete.",
-    price: "$99 / athlete / year",
+    price: "$8.25 / family / month",
     priceNote: "Individual equivalent: $360/year per family",
     included: [
       "Everything in Individual Courtside Conversations",
@@ -76,7 +76,7 @@ const COLUMNS: Column[] = [
       "Parent liaison support",
     ],
     costOptions: [
-      { letter: "A", text: "Add $99 to annual dues. Families cover it." },
+      { letter: "A", text: "Add $8.25/month to dues. Families cover it." },
       { letter: "B", text: "Split the cost with families." },
       { letter: "C", text: "Program covers the full cost." },
     ],
