@@ -26,6 +26,8 @@ export interface Lesson {
   unlockCondition?: string;
   unlockWeek?: number;
   lockMessage?: string;
+  downloadUrl?: string;
+  downloadLabel?: string;
 }
 
 export interface Topic {
@@ -1079,7 +1081,7 @@ const ATHLETE_SECTIONS: MSSection[] = makeSections("").map((s) => {
       ...s,
       lessons: [
         { id: 1, title: "Overview", videoId: "5fAZHN0ltZo" },
-        { id: 2, title: "How to Fill In Your Journal", videoId: "M-sAKRmuwuU", description: ANALYZE_HOW_TO_COPY },
+        { id: 2, title: "How to Fill In Your Journal", videoId: "M-sAKRmuwuU", description: ANALYZE_HOW_TO_COPY, downloadUrl: "/MP_ATHLETE_GOALS_WORKSHEET_Final.pdf", downloadLabel: "Download Athlete Goals Worksheet" },
       ],
     };
   }

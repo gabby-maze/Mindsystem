@@ -4,7 +4,7 @@ import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { ALL_COURSES, STRATEGY_SESSION_LINK, type Lesson } from "@/lib/data";
 import { supabase } from "@/lib/supabase";
-import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink } from "lucide-react";
+import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink, Download } from "lucide-react";
 
 const PURPLE = "#982FF7";
 const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK"; // replace when GHL page is built
@@ -164,6 +164,33 @@ export default function LessonPage() {
             <div className="mb-8">
               <YouTubeEmbed youtubeId={lesson.youtubeId ?? "PLACEHOLDER"} />
             </div>
+
+            {/* Worksheet download — shown when the lesson has an attached PDF */}
+            {lesson.downloadUrl && (
+              <div className="mb-8">
+                <a
+                  href={lesson.downloadUrl}
+                  download
+                  className="inline-flex items-center gap-3"
+                  style={{
+                    backgroundColor: "rgba(0,212,200,0.1)",
+                    border: "1px solid rgba(0,212,200,0.35)",
+                    color: "#00D4C8",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "6px",
+                    fontFamily: "'Oswald', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.78rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    textDecoration: "none",
+                  }}
+                >
+                  <Download size={15} />
+                  {lesson.downloadLabel ?? "Download Worksheet"}
+                </a>
+              </div>
+            )}
 
             <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.3rem,3vw,1.8rem)", marginBottom: "1rem" }}>
               {lesson.title}
