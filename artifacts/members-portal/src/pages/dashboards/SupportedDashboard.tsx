@@ -285,7 +285,7 @@ export default function SupportedDashboard() {
           </h2>
           <div style={{ borderRadius: 8, border: "1px solid rgba(255,255,255,0.07)", overflowX: "auto" }}>
             <iframe
-              src="/may-2026-calendar.html"
+              src={`${import.meta.env.BASE_URL}may-2026-calendar.html`}
               width="100%"
               height="820"
               frameBorder="0"
