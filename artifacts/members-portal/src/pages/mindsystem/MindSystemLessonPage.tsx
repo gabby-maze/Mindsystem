@@ -2,7 +2,7 @@ import { useParams, useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { MINDSYSTEM_COURSE } from "@/lib/data";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Download } from "lucide-react";
 
 const PURPLE = "#982FF7";
 
@@ -107,6 +107,33 @@ export default function MindSystemLessonPage() {
               allowFullScreen
               style={{ width: "100%", height: "100%", border: "none" }}
             />
+          </div>
+        )}
+
+        {/* Worksheet download */}
+        {lesson.downloadUrl && (
+          <div className="mt-6">
+            <a
+              href={lesson.downloadUrl}
+              download
+              className="inline-flex items-center gap-3"
+              style={{
+                backgroundColor: "rgba(0,212,200,0.1)",
+                border: "1px solid rgba(0,212,200,0.35)",
+                color: "#00D4C8",
+                padding: "0.75rem 1.5rem",
+                borderRadius: "6px",
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                textDecoration: "none",
+              }}
+            >
+              <Download size={15} />
+              {lesson.downloadLabel ?? "Download Worksheet"}
+            </a>
           </div>
         )}
 
