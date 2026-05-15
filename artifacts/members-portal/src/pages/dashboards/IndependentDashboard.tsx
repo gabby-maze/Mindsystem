@@ -92,7 +92,7 @@ export default function IndependentDashboard() {
               { label: "Step 1 - Journals", desc: "Submit shipping address → journal arrives within 48 hours.", btn: "Submit Shipping Address →", href: SHIPPING_LINK, external: true },
               { label: "Step 2 - Onboarding", desc: "Watch your onboarding video.", btn: "Go to Independent Onboarding →", href: null, nav: "/courses/independent-onboarding" },
               { label: "Step 3 - Athlete Compass", desc: "Athlete moves through Compass Training sections 1–6 within first 2 weeks.", btn: "Go to Athlete Compass Training →", href: null, nav: "/courses/athlete-compass-training", downloadUrl: "/MP_ATHLETE_COMPASS_WORKBOOK_v1.pdf" },
-              { label: "Step 4 - Parent Track", desc: "Parent starts Courtside Conversations → Your Starting Point + fills parent workbook.", btn: "Start Your Starting Point →", href: null, nav: "/courses/your-starting-point" },
+              { label: "Step 4 - Parent Track", desc: "Parent starts Courtside Conversations → Your Starting Point + fills parent workbook.", btn: "Start Your Starting Point →", href: null, nav: "/courses/your-starting-point", downloadUrl: "/MP_PARENT_COMPASS_WORKBOOK_v1.pdf" },
               { label: "Step 5 - Parent Training", desc: "Lesson 1 available now. Lesson 2 unlocks after Gabby receives athlete MAZE model.", btn: "Go to Parent Training →", href: null, nav: "/courses/parent-training-core" },
             ].map((step, i) => (
               <div key={i} className="p-5 rounded-lg" style={{ backgroundColor: "rgba(255,255,255,0.03)", border: `1px solid rgba(43,139,245,0.2)` }}>
