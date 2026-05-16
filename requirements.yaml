@@ -1,0 +1,15 @@
+packages:
+  "framer-motion": "For premium smooth scroll and entry animations"
+  "lucide-react": "For UI icons in checklists and buttons"
+
+images:
+  - path: "artifacts/mindsystem-home/public/images/gabby-portrait.png"
+    description: "A professional, sophisticated black and white or moody dramatic portrait of a confident female former athlete turned executive coach, dark background, premium editorial photography"
+    aspect_ratio: "3:4"
+  - path: "artifacts/mindsystem-home/public/images/hero-texture.png"
+    description: "Abstract subtle dark navy and charcoal gradient mesh with very faint warm gold light leak, minimalist, premium, elegant background"
+    aspect_ratio: "16:9"
+
+notes:
+  - Frontend-only landing page for MindSystem
+  - Theme is bold editorial premium dark
