@@ -16,6 +16,58 @@ const headers = {
   'X-GitHub-Api-Version': '2022-11-28'
 };
 
+// Resolved versions from pnpm catalog + real pinned versions
+const CATALOG = {
+  '@replit/vite-plugin-cartographer':     '^0.5.1',
+  '@replit/vite-plugin-dev-banner':       '^0.1.1',
+  '@replit/vite-plugin-runtime-error-modal': '^0.0.6',
+  '@tailwindcss/vite':     '^4.1.14',
+  '@tanstack/react-query': '^5.90.21',
+  '@types/node':           '^20.0.0',
+  '@types/react':          '^19.2.0',
+  '@types/react-dom':      '^19.2.0',
+  '@vitejs/plugin-react':  '^5.0.4',
+  'class-variance-authority': '^0.7.1',
+  'clsx':           '^2.1.1',
+  'framer-motion':  '12.35.1',
+  'lucide-react':   '0.545.0',
+  'react':          '19.1.0',
+  'react-dom':      '19.1.0',
+  'tailwind-merge': '^3.3.1',
+  'tailwindcss':    '^4.1.14',
+  'vite':           '^6.3.5',
+  'zod':            '^3.25.76',
+};
+
+// Transform package.json for standalone npm install on Netlify
+function transformPackageJson(raw) {
+  const pkg = JSON.parse(raw);
+  pkg.name = 'mindsystem-home';
+
+  for (const section of ['dependencies', 'devDependencies', 'peerDependencies']) {
+    if (!pkg[section]) continue;
+    const next = {};
+    for (const [name, ver] of Object.entries(pkg[section])) {
+      // Drop workspace-local packages entirely
+      if (typeof ver === 'string' && ver.startsWith('workspace:')) continue;
+      // Resolve catalog: aliases to real semver
+      if (ver === 'catalog:') {
+        const resolved = CATALOG[name];
+        if (!resolved) {
+          console.warn(`  WARNING: no catalog entry for ${name}, skipping`);
+          continue;
+        }
+        next[name] = resolved;
+      } else {
+        next[name] = ver;
+      }
+    }
+    pkg[section] = next;
+  }
+
+  return Buffer.from(JSON.stringify(pkg, null, 2) + '\n');
+}
+
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function api(path, method = 'GET', body, retries = 3) {
@@ -100,7 +152,6 @@ async function pushBlob(content) {
 async function run() {
   await ensureRepo();
 
-  // Try main, fall back to master
   let headSha, treeSha, existingTree = {};
   let usedBranch = BRANCH;
 
@@ -126,7 +177,11 @@ async function run() {
   let uploaded = 0;
 
   for (const { full, rel } of files) {
-    const content  = readFileSync(full);
+    // Transform package.json for standalone deployment
+    const content = rel === 'package.json'
+      ? transformPackageJson(readFileSync(full, 'utf8'))
+      : readFileSync(full);
+
     const localSha = gitBlobSha(content);
     if (existingTree[rel] === localSha) continue;
 
