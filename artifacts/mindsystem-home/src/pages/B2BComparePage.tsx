@@ -160,7 +160,7 @@ const FAQS = [
     a: "MindSystem team partner journals feature your program logo, colors, and team photos on the cover. Inside, athletes and parents work through the same proven MindSystem framework, in a journal that looks and feels like it belongs to your program.",
   },
   {
-    q: "Who handles access distribution for Courtside Conversations?",
+    q: "Who Handles Distribution and Registration?",
     a: "Either Gabby or your program — your choice. Provide your family email list and Gabby distributes access, or Gabby provides the access links and your program distributes them directly.",
   },
 ];
