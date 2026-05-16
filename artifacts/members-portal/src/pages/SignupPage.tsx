@@ -166,26 +166,7 @@ export default function SignupPage() {
             {error && <p style={{ color: "#FF2D78", fontSize: "0.85rem" }}>{error}</p>}
 
             <button type="submit" disabled={loading} style={{ ...btnStyle, opacity: loading ? 0.7 : 1 }}>
-              {loading ? "Creating account..." : "Create Account"}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setStep(1)}
-              style={{
-                background: "none",
-                border: "none",
-                color: "rgba(255,255,255,0.4)",
-                fontFamily: "'Oswald', sans-serif",
-                fontSize: "0.8rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                cursor: "pointer",
-                textAlign: "center",
-                padding: "0.25rem",
-              }}
-            >
-              ← Back
+              {loading ? "Creating account..." : "Continue"}
             </button>
           </form>
         )}
