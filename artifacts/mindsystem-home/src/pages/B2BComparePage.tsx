@@ -206,8 +206,43 @@ export default function B2BComparePage() {
           </p>
         </section>
 
+        {/* ── Pricing Type Descriptions ── */}
+        <section className="pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Individual */}
+            <div style={{ backgroundColor: `${PINK}08`, border: `1.5px solid ${PINK}25`, borderRadius: 12, padding: "1.5rem 1.75rem" }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: PINK }}>Individual Pricing</p>
+              <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontSize: "0.9rem" }}>
+                Individual pricing is for families who enroll directly — one athlete, one parent, one family moving through the program on their own. No club involvement required.
+              </p>
+            </div>
+            {/* Club Partner */}
+            <div style={{ backgroundColor: `${TEAL}08`, border: `1.5px solid ${TEAL}25`, borderRadius: 12, padding: "1.5rem 1.75rem" }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL }}>Club Partner Pricing</p>
+              <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontSize: "0.9rem" }}>
+                Club partner pricing is for clubs that bring MazePerformance into their program as an organization. The club coordinates enrollment for their families, and in return every enrolled family gets access at a significantly reduced rate. Club partner pricing requires a minimum of 150 families for MindSystem Supported. There is no minimum for Courtside Conversations club partner access.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── Four Columns ── */}
         <section className="pb-20">
+          {/* Column group labels */}
+          <div className="hidden xl:grid grid-cols-4 gap-5 mb-3">
+            <div className="text-center">
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${PINK}20`, color: PINK }}>Individual Pricing</span>
+            </div>
+            <div className="text-center">
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Club Partner Pricing</span>
+            </div>
+            <div className="text-center">
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${PINK}20`, color: PINK }}>Individual Pricing</span>
+            </div>
+            <div className="text-center">
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Club Partner Pricing</span>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
             {COLUMNS.map((col) => (
               <div
