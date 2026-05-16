@@ -39,6 +39,47 @@ const CATALOG = {
   'zod':            '^3.25.76',
 };
 
+// Transform tsconfig.json — inline base settings, drop workspace references
+function transformTsConfig(raw) {
+  const cfg = JSON.parse(raw);
+
+  // Inline settings from tsconfig.base.json
+  delete cfg.extends;
+  delete cfg.references;
+
+  cfg.compilerOptions = {
+    // from tsconfig.base.json
+    isolatedModules: true,
+    lib: ['es2022', 'dom', 'dom.iterable'],
+    module: 'esnext',
+    moduleResolution: 'bundler',
+    noEmitOnError: true,
+    noFallthroughCasesInSwitch: true,
+    noImplicitOverride: false,
+    noImplicitReturns: true,
+    noUnusedLocals: false,
+    noImplicitAny: true,
+    noImplicitThis: true,
+    strictNullChecks: true,
+    strictFunctionTypes: false,
+    strictBindCallApply: true,
+    strictPropertyInitialization: true,
+    useUnknownInCatchVariables: true,
+    alwaysStrict: true,
+    skipLibCheck: true,
+    target: 'es2022',
+    // from local tsconfig.json overrides
+    noEmit: true,
+    jsx: 'preserve',
+    resolveJsonModule: true,
+    allowImportingTsExtensions: true,
+    types: ['node', 'vite/client'],
+    paths: { '@/*': ['./src/*'] },
+  };
+
+  return Buffer.from(JSON.stringify(cfg, null, 2) + '\n');
+}
+
 // Transform package.json for standalone npm install on Netlify
 function transformPackageJson(raw) {
   const pkg = JSON.parse(raw);
@@ -177,10 +218,15 @@ async function run() {
   let uploaded = 0;
 
   for (const { full, rel } of files) {
-    // Transform package.json for standalone deployment
-    const content = rel === 'package.json'
-      ? transformPackageJson(readFileSync(full, 'utf8'))
-      : readFileSync(full);
+    // Transform files for standalone deployment
+    let content;
+    if (rel === 'package.json') {
+      content = transformPackageJson(readFileSync(full, 'utf8'));
+    } else if (rel === 'tsconfig.json') {
+      content = transformTsConfig(readFileSync(full, 'utf8'));
+    } else {
+      content = readFileSync(full);
+    }
 
     const localSha = gitBlobSha(content);
     if (existingTree[rel] === localSha) continue;
