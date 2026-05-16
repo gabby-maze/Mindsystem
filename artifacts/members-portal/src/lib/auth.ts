@@ -12,35 +12,48 @@ export interface Family {
   is_admin?: boolean;
 }
 
+function withTimeout<T>(promise: Promise<T>, ms = 12000): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error("Request timed out — please check your connection and try again.")), ms)
+    ),
+  ]);
+}
+
 export async function signUp(email: string, password: string, familyName: string): Promise<{ error: string | null }> {
   try {
-    const { error: signUpError } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { family_name: familyName },
-      },
-    });
+    const { error: signUpError } = await withTimeout(
+      supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { family_name: familyName } },
+      })
+    );
 
     if (signUpError) return { error: signUpError.message };
 
-    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+    const { error: signInError } = await withTimeout(
+      supabase.auth.signInWithPassword({ email, password })
+    );
     if (signInError) return { error: signInError.message };
 
     return { error: null };
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Network error - please check your connection and try again.";
+    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
     return { error: msg };
   }
 }
 
 export async function signIn(email: string, password: string): Promise<{ error: string | null }> {
   try {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await withTimeout(
+      supabase.auth.signInWithPassword({ email, password })
+    );
     if (error) return { error: error.message };
     return { error: null };
   } catch (err) {
-    const msg = err instanceof Error ? err.message : "Network error - please check your connection and try again.";
+    const msg = err instanceof Error ? err.message : "Network error — please check your connection and try again.";
     return { error: msg };
   }
 }
@@ -55,10 +68,12 @@ export async function signOut() {
 
 export async function getFamily(): Promise<Family | null> {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user } } = await withTimeout(supabase.auth.getUser());
     if (!user) return null;
 
-    const { data } = await supabase.from("families").select("*").eq("user_id", user.id).single();
+    const { data } = await withTimeout(
+      supabase.from("families").select("*").eq("user_id", user.id).single()
+    );
     return data as Family | null;
   } catch {
     return null;
@@ -67,7 +82,7 @@ export async function getFamily(): Promise<Family | null> {
 
 export async function getCurrentUser() {
   try {
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user } } = await withTimeout(supabase.auth.getUser());
     return user;
   } catch {
     return null;
