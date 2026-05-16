@@ -161,7 +161,7 @@ const FAQS = [
   },
   {
     q: "Who Handles Distribution and Registration?",
-    a: "Either Gabby or your program — your choice. Provide your family email list and Gabby distributes access, or Gabby provides the access links and your program distributes them directly.",
+    a: "Registration is part of your beginning of season team documents, athletes and parents fill it out alongside everything else your program sends home at the start of the season. By the time the first practice hits, everyone is already set up and ready to go.",
   },
 ];
 
