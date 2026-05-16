@@ -37,8 +37,8 @@ function Router() {
       <Route path="/coaches/thank-you" component={CoachesThankYou} />
       <Route path="/community" component={CommunityPage} />
       <Route path="/strategy-session" component={StrategySessionPage} />
-      <Route path="/compare" component={ComparisonPage} />
       <Route path="/compare-teams" component={B2BComparePage} />
+      <Route path="/compare" component={ComparisonPage} />
       <Route component={NotFound} />
     </Switch>
   );
