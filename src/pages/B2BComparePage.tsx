@@ -157,7 +157,7 @@ const FAQS = [
   },
   {
     q: "How are team partner journals customized?",
-    a: "MindSystem team partner journals are custom designed with your program logo, colors, and team photos on the cover. Each journal is also personalized to the individual athlete or parent based on their program responses.",
+    a: "MindSystem team partner journals feature your program logo, colors, and team photos on the cover. Inside, athletes and parents work through the same proven MindSystem framework, in a journal that looks and feels like it belongs to your program.",
   },
   {
     q: "Who handles access distribution for Courtside Conversations?",
