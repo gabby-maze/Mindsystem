@@ -97,11 +97,21 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6">
+          <a
+            href="#"
+            style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem", textDecoration: "none" }}
+            onClick={e => { e.preventDefault(); navigate("/forgot-password"); }}
+          >
+            Forgot your password?
+          </a>
+        </div>
+
+        <div className="text-center mt-4">
           <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
             Don't have an account?{" "}
             <a
-              href="/members-portal/signup"
+              href="#"
               style={{ color: PURPLE, textDecoration: "none" }}
               onClick={e => { e.preventDefault(); navigate("/signup"); }}
             >
