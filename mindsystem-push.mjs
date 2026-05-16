@@ -5,7 +5,7 @@ import { createHash } from 'crypto';
 const TOKEN = process.env.GITHUB_TOKEN;
 const OWNER = 'gabby-maze';
 const REPO  = 'Mindsystem';
-const BRANCH = 'main';
+const BRANCH = 'master'; // Netlify watches master; main is kept in sync separately
 const BASE  = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const ROOT  = './artifacts/mindsystem-home';
 
