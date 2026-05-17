@@ -117,7 +117,7 @@ export default function VGLLessonPage() {
   return (
     <Layout>
       <div
-        className="max-w-4xl mx-auto px-4 md:px-8 py-10"
+        className={`mx-auto py-10 ${hasPdf ? "max-w-6xl px-2 md:px-4" : "max-w-4xl px-4 md:px-8"}`}
         style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}
       >
         <button
