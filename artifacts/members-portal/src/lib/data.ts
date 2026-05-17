@@ -200,6 +200,18 @@ const VGL_PDF_TOPICS: Record<string, { pdf: string; lessons: [string, string, st
     pdf: "/pdfs/silent-processing.pdf",
     lessons: ["Silence Is Not Disconnection", "What Not to Do in the Post-Match Window", "Building Her Processing System", "Your Body Language During the Match", "The Conversation She Can Have"],
   },
+  "tournament-fuel": {
+    pdf: "/pdfs/tournament-fuel.pdf",
+    lessons: ["Why 'I'm Not Hungry' Isn't the Real Issue", "Tournament Day Nutrition Basics", "Hydration: The Underrated Performance Variable", "Teaching Athletes to Own Their Fuel", "The Long-Game Lesson of Fuel"],
+  },
+  "the-utility-player": {
+    pdf: "/pdfs/utility-player.pdf",
+    lessons: ["The Utility Player IS a Position", "The Mental Shift: From Extra to Essential", "Training for Multiple Positions", "When She Wants a Fixed Position", "Utility Is Leadership: The Long Game"],
+  },
+  "visualization": {
+    pdf: "/pdfs/visualization.pdf",
+    lessons: ["What Visualization Actually Is", "Who Are You Becoming?", "Building the Visualization Habit", "Watch With Intention: Visualization Through Film", "Confidence Is Built, Not Given"],
+  },
 };
 
 function makePdfTopic(slug: string) {
@@ -324,10 +336,7 @@ export const COURTSIDE_COURSES: Course[] = [
     topics: [
       // Topics without slide decks yet — rendered with YouTube placeholder
       "perceived-coachability",
-      "tournament-fuel",
       "aligning-parents-athletes-coaches",
-      "visualization",
-      "the-utility-player",
       "athlete-archetypes",
     ].map((slug) => ({
       id: slug,
