@@ -22,6 +22,9 @@ export interface Lesson {
   type?: string;
   free?: boolean;
   youtubeId?: string;
+  pdfUrl?: string;
+  pdfStartPage?: number;
+  pdfEndPage?: number;
   timeLocked?: boolean;
   unlockCondition?: string;
   unlockWeek?: number;
@@ -227,7 +230,7 @@ export const COURTSIDE_COURSES: Course[] = [
       "perceived-coachability",
       "sports-as-developmental-program",
       "anatomy-of-teachable-moments",
-      "coaching-from-sidelines",
+      // coaching-from-sidelines is handled separately below (PDF lessons)
       "landscape-2",
       "landscape-3",
       "tournament-fuel",
@@ -254,7 +257,66 @@ export const COURTSIDE_COURSES: Course[] = [
           ? { ...l, youtubeId: VGL_WATCH_FIRST_IDS[slug] ?? "PLACEHOLDER" }
           : l
       ),
-    })),
+    })).concat([
+      {
+        id: "coaching-from-sidelines",
+        title: "Coaching From the Sidelines",
+        lessons: [
+          {
+            id: "watch-first",
+            title: "This Is Where It Starts - The Instagram Video",
+            type: "watch-first",
+            free: true,
+            youtubeId: VGL_WATCH_FIRST_IDS["coaching-from-sidelines"] ?? "PLACEHOLDER",
+          },
+          {
+            id: "deep-dive",
+            title: "What Sideline Coaching Really Looks Like",
+            type: "lesson",
+            free: true,
+            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
+            pdfStartPage: 1,
+            pdfEndPage: 8,
+          },
+          {
+            id: 2,
+            title: "The Problem Isn't Authority",
+            type: "lesson",
+            free: false,
+            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
+            pdfStartPage: 9,
+            pdfEndPage: 16,
+          },
+          {
+            id: 3,
+            title: "How It Affects Playing Time and Trust",
+            type: "lesson",
+            free: false,
+            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
+            pdfStartPage: 17,
+            pdfEndPage: 24,
+          },
+          {
+            id: 4,
+            title: "What Coaches See From the Bench",
+            type: "lesson",
+            free: false,
+            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
+            pdfStartPage: 25,
+            pdfEndPage: 32,
+          },
+          {
+            id: 5,
+            title: "Presence Without Interference",
+            type: "lesson",
+            free: false,
+            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
+            pdfStartPage: 33,
+            pdfEndPage: 40,
+          },
+        ],
+      },
+    ]),
   },
 ];
 

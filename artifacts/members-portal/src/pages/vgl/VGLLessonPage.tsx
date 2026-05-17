@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { COURTSIDE_COURSES } from "@/lib/data";
 import { canAccessVGLLesson } from "@/lib/access";
 import { ChevronLeft, Lock } from "lucide-react";
+import PdfSlideViewer from "@/pages/nutrition/PdfSlideViewer";
 
 const TEAL = "#00D4C8";
 const BLUE = "#2B8BF5";
@@ -34,7 +35,8 @@ export default function VGLLessonPage() {
   }
 
   const accessible = canAccessVGLLesson(family.tier, lesson);
-  const isPlaceholder = lesson.youtubeId === "PLACEHOLDER" || !lesson.youtubeId;
+  const hasPdf = !!lesson.pdfUrl;
+  const isPlaceholder = !hasPdf && (lesson.youtubeId === "PLACEHOLDER" || !lesson.youtubeId);
 
   if (!accessible) {
     return (
@@ -169,7 +171,13 @@ export default function VGLLessonPage() {
           </div>
         )}
 
-        {isPlaceholder ? (
+        {hasPdf ? (
+          <PdfSlideViewer
+            pdfUrl={lesson.pdfUrl!}
+            startPage={lesson.pdfStartPage}
+            endPage={lesson.pdfEndPage}
+          />
+        ) : isPlaceholder ? (
           <div
             className="w-full flex flex-col items-center justify-center rounded-xl"
             style={{

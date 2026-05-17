@@ -10,11 +10,13 @@ const MUTED = "#A0A0A0";
 
 interface Props {
   pdfUrl: string;
+  startPage?: number;
+  endPage?: number;
 }
 
-export default function PdfSlideViewer({ pdfUrl }: Props) {
+export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage }: Props) {
   const [numPages, setNumPages] = useState<number>(0);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(startPage);
   const [loading, setLoading] = useState(true);
   const [containerWidth, setContainerWidth] = useState<number>(800);
 
@@ -33,12 +35,17 @@ export default function PdfSlideViewer({ pdfUrl }: Props) {
     setLoading(false);
   }
 
+  const firstPage = startPage;
+  const lastPage = endPage ? Math.min(endPage, numPages) : numPages;
+  const visibleCount = numPages > 0 ? lastPage - firstPage + 1 : 0;
+  const relativeIndex = currentPage - firstPage + 1;
+
   function prev() {
-    setCurrentPage(p => Math.max(1, p - 1));
+    setCurrentPage(p => Math.max(firstPage, p - 1));
   }
 
   function next() {
-    setCurrentPage(p => Math.min(numPages, p + 1));
+    setCurrentPage(p => Math.min(lastPage, p + 1));
   }
 
   function handleKey(e: React.KeyboardEvent) {
@@ -112,20 +119,20 @@ export default function PdfSlideViewer({ pdfUrl }: Props) {
           {/* Slide counter + dot strip */}
           <div className="flex flex-col items-center gap-2">
             <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.8rem", color: MUTED, letterSpacing: "0.1em" }}>
-              {currentPage} / {numPages}
+              {relativeIndex} / {visibleCount}
             </p>
             {/* Dot indicators — only show up to 20 dots */}
-            {numPages <= 20 && (
+            {visibleCount <= 20 && (
               <div className="flex gap-1 flex-wrap justify-center" style={{ maxWidth: "200px" }}>
-                {Array.from({ length: numPages }).map((_, i) => (
+                {Array.from({ length: visibleCount }).map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrentPage(i + 1)}
+                    onClick={() => setCurrentPage(firstPage + i)}
                     style={{
                       width: "6px",
                       height: "6px",
                       borderRadius: "50%",
-                      backgroundColor: i + 1 === currentPage ? PINK : "#2A2A2A",
+                      backgroundColor: firstPage + i === currentPage ? PINK : "#2A2A2A",
                       border: "none",
                       padding: 0,
                       cursor: "pointer",
