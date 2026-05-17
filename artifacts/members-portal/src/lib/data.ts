@@ -121,6 +121,104 @@ export const VGL_STANDARD_LESSONS: Lesson[] = [
   { id: 5, title: "Lesson 5", type: "lesson", free: false, youtubeId: "PLACEHOLDER" },
 ];
 
+// ── VGL PDF TOPIC CONFIG ──────────────────────────────────────────────────────
+
+const VGL_PDF_TOPICS: Record<string, { pdf: string; lessons: [string, string, string, string, string] }> = {
+  "emotional-rollercoaster": {
+    pdf: "/pdfs/emotional-rollercoaster.pdf",
+    lessons: ["Why She Won't Talk After the Game", "Your Nervous System Is on the Court", "Reading Your Own Behavior Patterns", "From Roller Coaster to Anchor", "The Regulation Practice"],
+  },
+  "favoritism": {
+    pdf: "/pdfs/favoritism.pdf",
+    lessons: ["What Favoritism Actually Is", "The Hard Truths", "What the Coach Is Actually Seeing", "The Athlete's Blind Spot", "The Solution You Can Control"],
+  },
+  "rewired-for-dopamine": {
+    pdf: "/pdfs/rewired-dopamine.pdf",
+    lessons: ["Why Our Kids' Brains Are Different", "The 12-Week Checkpoint Model", "Old-School Coaching vs. Modern Athletes", "From Obligation to Investment", "Gamification for the Long Game"],
+  },
+  "sports-as-developmental-program": {
+    pdf: "/pdfs/sports-as-development.pdf",
+    lessons: ["From Extracurricular to Enrichment", "The Family Operating System", "Preparing Intentionally, Not Perfectly", "Connecting Choices to Outcomes", "When the System Breaks Down"],
+  },
+  "anatomy-of-teachable-moments": {
+    pdf: "/pdfs/teachable-moments.pdf",
+    lessons: ["Why Most Learning Opportunities Are Missed", "What a Teachable Moment Actually Is", "Why Kids Struggle to Connect the Dots", "The Parent's Role in the Room", "Putting It Into Practice"],
+  },
+  "coaching-from-sidelines": {
+    pdf: "/pdfs/coaching-from-sidelines.pdf",
+    lessons: ["What Sideline Coaching Really Looks Like", "The Problem Isn't Authority", "How It Affects Playing Time and Trust", "What Coaches See From the Bench", "Presence Without Interference"],
+  },
+  "landscape-2": {
+    pdf: "/pdfs/landscape-2.pdf",
+    lessons: ["What Your Volunteer Coach Is Actually Doing", "Parent-Coach Boundaries That Work", "When You Disagree With a Coaching Decision", "The Difference Between Private and Independent Training", "The Season Is Long. Sustain It."],
+  },
+  "landscape-3": {
+    pdf: "/pdfs/landscape-3.pdf",
+    lessons: ["Stop Thinking About Recruiting. Start Thinking About Reps.", "What College Coaches Bring to a Camp", "Private Training and Independent Facilities: The Same Standard", "The Environment Matters: Training Meets Life", "Building the High-Quality Rep Habit For Life"],
+  },
+  "safety-space-repetition": {
+    pdf: "/pdfs/safety-space-repetition.pdf",
+    lessons: ["When Shutdown Isn't Attitude", "Why 'Just Get Over It' Doesn't Work", "Building Safety in Feedback Environments", "The Pause Instead of the Spiral", "Separating Then From Now"],
+  },
+  "the-coaches-kid": {
+    pdf: "/pdfs/coaches-kid.pdf",
+    lessons: ["Three Perspectives Inside One Dynamic", "The Coach-Parent: Wearing Two Hats", "The Daughter: Performing for Your Parent", "The Teammates: Watching How Fairness Works", "The Advantages No One Talks About"],
+  },
+  "coaches-are-people": {
+    pdf: "/pdfs/coaches-are-people.pdf",
+    lessons: ["Why Coaches Do What They Do", "The Coachability Equation", "What Coaches Actually See", "The Athlete's Role in the Dynamic", "How to Change the Dynamic"],
+  },
+  "ownership": {
+    pdf: "/pdfs/ownership.pdf",
+    lessons: ["Growth Begins With Ownership", "The Benchmark Athletes Never Set", "When Ownership Gets Hard", "Ownership for Parents", "Ownership as a Daily Practice"],
+  },
+  "them-problem-1": {
+    pdf: "/pdfs/them-problem.pdf",
+    lessons: ["Respond vs. React: The Choice That Changes Everything", "The Coach's Yell: What It Means and What It Doesn't", "Teammates and the Noise They Carry", "The Parent Sideline: Your Noise Is Her Input", "Off The Court: Carrying Clarity Into Life"],
+  },
+  "how-does-the-coach-choose-the-lineup-1": {
+    pdf: "/pdfs/lineup-decisions.pdf",
+    lessons: ["Why 80% Is Mental", "What Coaches Actually Watch For", "The Pressure Performance Gap", "Training the Mental Game", "Showing Up When It Counts"],
+  },
+  "perception-1": {
+    pdf: "/pdfs/perception.pdf",
+    lessons: ["Every Lens Is Different", "Your Daughter Performs Through Her Lens", "The Home Conversation She Can Hear", "What's Actually In Your Control", "Responding vs. Reacting to Perception"],
+  },
+  "pressure-is-a-privilege": {
+    pdf: "/pdfs/pressure-privilege.pdf",
+    lessons: ["Pressure Only Shows Up Outside Your Comfort Zone", "Teaching Athletes to Welcome the Feeling", "Tryout Pressure: The Real Training", "What Pressure Teaches Every Time", "Pressure as a Lifelong Skill"],
+  },
+  "the-long-game": {
+    pdf: "/pdfs/the-long-game.pdf",
+    lessons: ["Why Club Volleyball Isn't a Season", "The Year-to-Year Trap", "What You're Actually Building", "Stay the Course or Make the Switch", "The Season Review Framework"],
+  },
+  "why-coaches-have-teams-play-up": {
+    pdf: "/pdfs/playing-up.pdf",
+    lessons: ["Playing Up Is Not a Punishment", "What Playing Up Actually Teaches", "The Mental Side of Playing Up", "When Playing Up Is Used Strategically", "Preparing Your Athlete for Challenges Before They Arrive"],
+  },
+  "silent-processing": {
+    pdf: "/pdfs/silent-processing.pdf",
+    lessons: ["Silence Is Not Disconnection", "What Not to Do in the Post-Match Window", "Building Her Processing System", "Your Body Language During the Match", "The Conversation She Can Have"],
+  },
+};
+
+function makePdfTopic(slug: string) {
+  const cfg = VGL_PDF_TOPICS[slug];
+  const [l1, l2, l3, l4, l5] = cfg.lessons;
+  return {
+    id: slug,
+    title: VGL_TOPIC_TITLES[slug] ?? slug,
+    lessons: [
+      { id: "watch-first", title: "This Is Where It Starts - The Instagram Video", type: "watch-first", free: true, youtubeId: VGL_WATCH_FIRST_IDS[slug] ?? "PLACEHOLDER" },
+      { id: "deep-dive", title: l1, type: "lesson", free: true,  pdfUrl: cfg.pdf, pdfStartPage: 1,  pdfEndPage: 8  },
+      { id: 2,           title: l2, type: "lesson", free: false, pdfUrl: cfg.pdf, pdfStartPage: 9,  pdfEndPage: 16 },
+      { id: 3,           title: l3, type: "lesson", free: false, pdfUrl: cfg.pdf, pdfStartPage: 17, pdfEndPage: 24 },
+      { id: 4,           title: l4, type: "lesson", free: false, pdfUrl: cfg.pdf, pdfStartPage: 25, pdfEndPage: 32 },
+      { id: 5,           title: l5, type: "lesson", free: false, pdfUrl: cfg.pdf, pdfStartPage: 33, pdfEndPage: 40 },
+    ],
+  };
+}
+
 // ── COURTSIDE COURSES (7 sections, all visible in grid) ──────────────────────
 
 export const COURTSIDE_COURSES: Course[] = [
@@ -224,30 +322,12 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientFrom: "#00D4C8",
     gradientTo: "#982FF7",
     topics: [
-      "emotional-rollercoaster",
-      "favoritism",
-      "rewired-for-dopamine",
+      // Topics without slide decks yet — rendered with YouTube placeholder
       "perceived-coachability",
-      "sports-as-developmental-program",
-      "anatomy-of-teachable-moments",
-      // coaching-from-sidelines is handled separately below (PDF lessons)
-      "landscape-2",
-      "landscape-3",
       "tournament-fuel",
-      "safety-space-repetition",
       "aligning-parents-athletes-coaches",
-      "the-coaches-kid",
-      "coaches-are-people",
-      "ownership",
-      "them-problem-1",
-      "how-does-the-coach-choose-the-lineup-1",
-      "perception-1",
-      "pressure-is-a-privilege",
-      "the-long-game",
-      "why-coaches-have-teams-play-up",
       "visualization",
       "the-utility-player",
-      "silent-processing",
       "athlete-archetypes",
     ].map((slug) => ({
       id: slug,
@@ -257,66 +337,7 @@ export const COURTSIDE_COURSES: Course[] = [
           ? { ...l, youtubeId: VGL_WATCH_FIRST_IDS[slug] ?? "PLACEHOLDER" }
           : l
       ),
-    })).concat([
-      {
-        id: "coaching-from-sidelines",
-        title: "Coaching From the Sidelines",
-        lessons: [
-          {
-            id: "watch-first",
-            title: "This Is Where It Starts - The Instagram Video",
-            type: "watch-first",
-            free: true,
-            youtubeId: VGL_WATCH_FIRST_IDS["coaching-from-sidelines"] ?? "PLACEHOLDER",
-          },
-          {
-            id: "deep-dive",
-            title: "What Sideline Coaching Really Looks Like",
-            type: "lesson",
-            free: true,
-            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
-            pdfStartPage: 1,
-            pdfEndPage: 8,
-          },
-          {
-            id: 2,
-            title: "The Problem Isn't Authority",
-            type: "lesson",
-            free: false,
-            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
-            pdfStartPage: 9,
-            pdfEndPage: 16,
-          },
-          {
-            id: 3,
-            title: "How It Affects Playing Time and Trust",
-            type: "lesson",
-            free: false,
-            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
-            pdfStartPage: 17,
-            pdfEndPage: 24,
-          },
-          {
-            id: 4,
-            title: "What Coaches See From the Bench",
-            type: "lesson",
-            free: false,
-            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
-            pdfStartPage: 25,
-            pdfEndPage: 32,
-          },
-          {
-            id: 5,
-            title: "Presence Without Interference",
-            type: "lesson",
-            free: false,
-            pdfUrl: "/pdfs/coaching-from-sidelines.pdf",
-            pdfStartPage: 33,
-            pdfEndPage: 40,
-          },
-        ],
-      },
-    ]),
+    })).concat(Object.keys(VGL_PDF_TOPICS).map(makePdfTopic)),
   },
 ];
 
