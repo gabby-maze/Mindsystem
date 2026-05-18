@@ -71,9 +71,23 @@ export default function CommunityPage() {
           Courtside Conversations is where we answer that question.
         </p>
 
-        <p className="text-base text-gray-400 max-w-2xl mb-12 leading-relaxed">
+        <p className="text-base text-gray-400 max-w-2xl mb-10 leading-relaxed">
           This is Gabby's digital studio, a living, growing resource built for the parent who is ready to stop scrolling and start understanding. The how behind the what. The depth behind the content. The community behind the conversation.
         </p>
+
+        {/* ── VIDEO EMBED ───────────────────────────────────────── */}
+        <div className="w-full max-w-2xl mb-12">
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src="https://www.youtube.com/embed/Hyt-h0cuHwE"
+              title="Courtside Conversations — Gabby Cole"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              style={{ border: `1px solid ${TEAL}30` }}
+            />
+          </div>
+        </div>
 
         <a
           href={PAY_LINK}
