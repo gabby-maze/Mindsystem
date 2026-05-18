@@ -51,7 +51,7 @@ export default function LinksPage() {
               boxShadow: `0 0 40px ${PINK}25`,
               ["--tw-ring-color" as string]: PINK,
             }}
-            aria-label="The Missing Framework — Free Live Training"
+            aria-label="The Missing Framework, Free Live Training"
           >
             <div
               className="absolute top-0 left-0 right-0 h-[2px]"
@@ -74,7 +74,7 @@ export default function LinksPage() {
               className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
               style={{ backgroundColor: PINK, color: "#fff" }}
             >
-              Reserve Your Spot — It's Free
+              Reserve Your Spot, It's Free
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
             </span>
           </a>
@@ -88,7 +88,7 @@ export default function LinksPage() {
               boxShadow: `0 0 40px ${PURPLE}25`,
               ["--tw-ring-color" as string]: PURPLE,
             }}
-            aria-label="MindSystem Strategy Session — Book a private session"
+            aria-label="MindSystem Strategy Session, Book a private session"
           >
             <div
               className="absolute top-0 left-0 right-0 h-[2px]"
@@ -125,7 +125,7 @@ export default function LinksPage() {
               boxShadow: `0 0 40px ${TEAL}25`,
               ["--tw-ring-color" as string]: TEAL,
             }}
-            aria-label="Courtside Conversation — Join the community"
+            aria-label="Courtside Conversation, Join the community"
           >
             <div
               className="absolute top-0 left-0 right-0 h-[2px]"
@@ -168,7 +168,7 @@ export default function LinksPage() {
             style={{ border: `1px solid ${BLUE}40`, ["--tw-ring-color" as string]: BLUE }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUE}40`)}
-            aria-label="Explore the MindSystem — Visit the Website"
+            aria-label="Explore the MindSystem, Visit the Website"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: BLUE }}>Explore</p>
@@ -185,7 +185,7 @@ export default function LinksPage() {
             style={{ border: `1px solid ${PURPLE}40`, ["--tw-ring-color" as string]: PURPLE }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${PURPLE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${PURPLE}40`)}
-            aria-label="Coach Certification — Join the waitlist"
+            aria-label="Coach Certification, Join the waitlist"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: PURPLE }}>Coaches</p>
@@ -204,7 +204,7 @@ export default function LinksPage() {
               Help us build the missing system.
             </h2>
             <p className="text-muted-foreground text-xs leading-relaxed mb-5">
-              Your struggles, questions, and vision for what youth sports could look like — that's the data that builds a shared language. Take two minutes. Tell us the truth. You'll receive free lifetime access to The Inside Game Library as a thank you.
+              Your struggles, questions, and vision for what youth sports could look like. That's the data that builds a shared language. Take two minutes. Tell us the truth. You'll receive free lifetime access to The Inside Game Library as a thank you.
             </p>
 
             <div className="grid grid-cols-3 gap-2" role="list" aria-label="Survey links">
@@ -264,7 +264,7 @@ export default function LinksPage() {
             </div>
 
             <p className="text-xs leading-relaxed mt-4 pt-4" style={{ color: `${ORANGE}bb`, borderTop: `1px solid ${ORANGE}20` }}>
-              Complete any survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
+              Complete any survey and receive free lifetime access to The Inside Game Library. No credit card, no expiration date, no catch.
             </p>
           </div>
 

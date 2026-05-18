@@ -7,19 +7,19 @@ const PAY_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c90
 const WHATS_INSIDE = [
   {
     title: "Video Game Library",
-    body: "Full access to every deep-dive lesson on the topics that matter most — emotional regulation, favoritism, perceived coachability, teachable moments, coaching from the sideline, and more. The content you see on social, expanded into a roadmap you can actually use.",
+    body: "Full access to every deep-dive lesson on the topics that matter most: emotional regulation, favoritism, perceived coachability, teachable moments, coaching from the sideline, and more. The content you see on social, expanded into a roadmap you can actually use.",
   },
   {
     title: "Your Starting Point",
-    body: "Season-specific training guides for every phase of the year — Summer Camp Season, Tryouts, Preseason, In Season, Tournament Season, and Postseason. Wherever you are in the year, there is a guide built for that exact moment.",
+    body: "Season-specific training guides for every phase of the year: Summer Camp Season, Tryouts, Preseason, In Season, Tournament Season, and Postseason. Wherever you are in the year, there is a guide built for that exact moment.",
   },
   {
     title: "Volleyball Game IQ + Position Series",
-    body: "Position-by-position breakdowns for every role on the court — Setter, Libero, Outside Hitter, Middle Blocker, Opposite, Defensive Specialist, and Serving Specialist. For athletes and parents. Watch together.",
+    body: "Position-by-position breakdowns for every role on the court: Setter, Libero, Outside Hitter, Middle Blocker, Opposite, Defensive Specialist, and Serving Specialist. For athletes and parents. Watch together.",
   },
   {
     title: "Nutrition Library",
-    body: "Athlete fuel plans and recipe cards built for tournament days, practice days, and recovery. Because what she eats is part of how she performs — and nobody else is covering it in this space.",
+    body: "Athlete fuel plans and recipe cards built for tournament days, practice days, and recovery. Because what she eats is part of how she performs, and nobody else is covering it in this space.",
   },
   {
     title: "Pressure Practice",
@@ -27,7 +27,7 @@ const WHATS_INSIDE = [
   },
   {
     title: "Bold Conversations",
-    body: "The conversations every youth sports family needs to have — but most never do. The coach conversation. The bench conversation. The comparison conversation. Frameworks for all of it.",
+    body: "The conversations every youth sports family needs to have, but most never do. The coach conversation. The bench conversation. The comparison conversation. Frameworks for all of it.",
   },
   {
     title: "Book Club",
@@ -35,7 +35,7 @@ const WHATS_INSIDE = [
   },
   {
     title: "Monthly Live with Gabby + Full Replay Library",
-    body: "Every month Gabby goes live for an open Q&A. Submit your questions in advance or bring them live. Miss it — the replay is always there. The library never stops growing.",
+    body: "Every month Gabby goes live for an open Q&A. Submit your questions in advance or bring them live. Miss it, the replay is always there. The library never stops growing.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function CommunityPage() {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src="https://www.youtube.com/embed/Hyt-h0cuHwE"
-              title="Courtside Conversations — Gabby Cole"
+              title="Courtside Conversations, Gabby Cole"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
