@@ -245,29 +245,6 @@ export default function CoursesideDashboard() {
           </div>
         </section>
 
-        {/* ── SECTION 7: WHAT YOU GET ──────────────────────────────── */}
-        <section className="px-6 py-16 border-t border-white/10 max-w-3xl mx-auto w-full">
-          <div className="border p-10" style={{ borderColor: `${TEAL}40` }}>
-            <p className="text-xs uppercase tracking-[0.3em] font-semibold mb-4" style={{ color: TEAL }}>
-              $30 / month
-            </p>
-            <div className="flex flex-col gap-4 mb-8">
-              {[
-                "Full access to the entire digital library, all series, all deep dives, all frameworks",
-                "New content added every week directly from what we are building in real time on Instagram and beyond",
-                "The position series in full, every position, both the parent and athlete takeaway documents",
-                "Access to the Inside Game Library as it grows, this is a living resource, not a static course",
-              ].map(item => (
-                <div key={item} className="flex gap-4 items-start">
-                  <span className="shrink-0 mt-1 font-bold" style={{ color: TEAL }}>+</span>
-                  <p className="text-gray-300 leading-relaxed text-sm">{item}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-500 text-sm">No contracts. Cancel anytime.</p>
-          </div>
-        </section>
-
         {/* ── SECTION 8: THE QUESTION ──────────────────────────────── */}
         <section className="px-6 py-16 border-t border-white/10 text-center max-w-3xl mx-auto w-full pb-24">
           <h2
