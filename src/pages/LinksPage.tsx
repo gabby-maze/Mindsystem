@@ -37,172 +37,180 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* ── FEATURED CARD, hot pink ──────────────────────────── */}
-        <a
-          href="https://www.mazeperformance.ai/live-registration"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          style={{
-            border: `1px solid ${PINK}66`,
-            boxShadow: `0 0 40px ${PINK}25`,
-            ["--tw-ring-color" as string]: PINK,
-          }}
-          aria-label="Featured event: The Missing Framework, A Live Training for Youth Sports Families, Reserve your spot"
-        >
-          <div
-            className="absolute top-0 left-0 right-0 h-[2px]"
-            style={{ background: `linear-gradient(to right, ${PINK}, ${PINK}60, transparent)` }}
-            aria-hidden="true"
-          />
-          <span
-            className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
-            style={{ color: PINK }}
-          >
-            Featured · Free Event
-          </span>
-          <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
-            The Missing Framework, A Live Training for Youth Sports Families
-          </h2>
-          <p className="text-muted-foreground text-sm mb-5">
-            Sunday, May 17th · 6PM PST
-          </p>
-          <span
-            className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
-            style={{ backgroundColor: PINK, color: "#fff" }}
-          >
-            Reserve Your Spot, It's Free
-            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-          </span>
-        </a>
+        {/* ── THREE FEATURED TILES ──────────────────────────────── */}
+        <div className="flex flex-col gap-4">
 
-        {/* ── MINDSYSTEM STRATEGY SESSION ───────────────────────── */}
-        <a
-          href="/strategy-session"
-          className="block bg-card p-6 relative overflow-hidden transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          style={{
-            border: `1px solid ${PURPLE}66`,
-            boxShadow: `0 0 40px ${PURPLE}25`,
-            ["--tw-ring-color" as string]: PURPLE,
-          }}
-          aria-label="Mindsystem Strategy Session"
-        >
-          <div
-            className="absolute top-0 left-0 right-0 h-[2px]"
-            style={{ background: `linear-gradient(to right, ${PURPLE}, ${PURPLE}60, transparent)` }}
-            aria-hidden="true"
-          />
-          <span
-            className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
-            style={{ color: PURPLE }}
+          {/* 1 · The Missing Framework */}
+          <a
+            href="https://www.mazeperformance.ai/live-registration"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-card p-6 relative overflow-hidden transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            style={{
+              border: `1px solid ${PINK}66`,
+              boxShadow: `0 0 40px ${PINK}25`,
+              ["--tw-ring-color" as string]: PINK,
+            }}
+            aria-label="The Missing Framework — Free Live Training"
           >
-            1:1 Session
-          </span>
-          <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
-            Mindsystem Strategy Session
-          </h2>
-          <p className="text-muted-foreground text-sm mb-5">
-            Book a private session with Gabby
-          </p>
-          <span
-            className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
-            style={{ backgroundColor: PURPLE, color: "#fff" }}
-          >
-            Book Now
-            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-          </span>
-        </a>
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px]"
+              style={{ background: `linear-gradient(to right, ${PINK}, ${PINK}60, transparent)` }}
+              aria-hidden="true"
+            />
+            <span
+              className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
+              style={{ color: PINK }}
+            >
+              Featured · Free Event
+            </span>
+            <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
+              The Missing Framework
+            </h2>
+            <p className="text-muted-foreground text-sm mb-5">
+              A Live Training for Youth Sports Families
+            </p>
+            <span
+              className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
+              style={{ backgroundColor: PINK, color: "#fff" }}
+            >
+              Reserve Your Spot — It's Free
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </span>
+          </a>
 
-        {/* ── LINK CARDS ────────────────────────────────────────── */}
+          {/* 2 · MindSystem Strategy Session */}
+          <a
+            href="/strategy-session"
+            className="block bg-card p-6 relative overflow-hidden transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            style={{
+              border: `1px solid ${PURPLE}66`,
+              boxShadow: `0 0 40px ${PURPLE}25`,
+              ["--tw-ring-color" as string]: PURPLE,
+            }}
+            aria-label="MindSystem Strategy Session — Book a private session"
+          >
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px]"
+              style={{ background: `linear-gradient(to right, ${PURPLE}, ${PURPLE}60, transparent)` }}
+              aria-hidden="true"
+            />
+            <span
+              className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
+              style={{ color: PURPLE }}
+            >
+              1:1 Session
+            </span>
+            <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
+              MindSystem Strategy Session
+            </h2>
+            <p className="text-muted-foreground text-sm mb-5">
+              Book a private session with Gabby
+            </p>
+            <span
+              className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
+              style={{ backgroundColor: PURPLE, color: "#fff" }}
+            >
+              Book Now
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </span>
+          </a>
+
+          {/* 3 · Courtside Conversation */}
+          <a
+            href="/community"
+            className="block bg-card p-6 relative overflow-hidden transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            style={{
+              border: `1px solid ${TEAL}66`,
+              boxShadow: `0 0 40px ${TEAL}25`,
+              ["--tw-ring-color" as string]: TEAL,
+            }}
+            aria-label="Courtside Conversation — Join the community"
+          >
+            <div
+              className="absolute top-0 left-0 right-0 h-[2px]"
+              style={{ background: `linear-gradient(to right, ${TEAL}, ${TEAL}60, transparent)` }}
+              aria-hidden="true"
+            />
+            <span
+              className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold mb-3"
+              style={{ color: TEAL }}
+            >
+              Community · $30/month
+            </span>
+            <h2 className="text-xl font-serif text-foreground leading-snug mb-1">
+              Courtside Conversation
+            </h2>
+            <p className="text-muted-foreground text-sm mb-5">
+              Tools, frameworks &amp; resources for youth sports families
+            </p>
+            <span
+              className="inline-flex items-center gap-2 px-5 py-3 text-xs font-bold tracking-widest uppercase transition-colors min-h-[44px]"
+              style={{ backgroundColor: TEAL, color: "#fff" }}
+            >
+              Join the Community
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </span>
+          </a>
+
+        </div>
+
+        {/* ── SMALLER LINK TILES ────────────────────────────────── */}
         <div className="flex flex-col gap-3" role="list" aria-label="Links">
 
-          {/* Explore, electric blue */}
+          {/* Explore the MindSystem */}
           <a
             href="https://www.gabbycole.com"
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
-            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
-            style={{
-              border: `1px solid ${BLUE}40`,
-              ["--tw-ring-color" as string]: BLUE,
-            }}
+            className="flex items-center justify-between bg-card px-5 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[64px]"
+            style={{ border: `1px solid ${BLUE}40`, ["--tw-ring-color" as string]: BLUE }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${BLUE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${BLUE}40`)}
-            aria-label="Explore the MindSystem, Visit the Website"
+            aria-label="Explore the MindSystem — Visit the Website"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: BLUE }}>Explore</p>
               <p className="text-foreground font-semibold text-sm">The MindSystem</p>
-              <p className="text-muted-foreground text-xs">The compass for youth sports families</p>
             </div>
-            <ExternalLink className="w-4 h-4 shrink-0 ml-3 transition-colors" style={{ color: BLUE }} aria-hidden="true" />
+            <ExternalLink className="w-4 h-4 shrink-0 ml-3" style={{ color: BLUE }} aria-hidden="true" />
           </a>
 
-          {/* Community, teal */}
-          <a
-            href="/community"
-            role="listitem"
-            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
-            style={{
-              border: `1px solid ${TEAL}40`,
-              ["--tw-ring-color" as string]: TEAL,
-            }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = `${TEAL}90`)}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = `${TEAL}40`)}
-            aria-label="Join the Community"
-          >
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: TEAL }}>Community</p>
-              <p className="text-foreground font-semibold text-sm">Join the Community</p>
-              <p className="text-muted-foreground text-xs">Tools, frameworks &amp; resources · $30/month</p>
-            </div>
-            <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: TEAL }} aria-hidden="true" />
-          </a>
-
-          {/* Coaches, purple */}
+          {/* Coach Certification */}
           <Link
             href="/coaches"
             role="listitem"
-            className="flex items-center justify-between bg-card px-5 py-4 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[72px]"
-            style={{
-              border: `1px solid ${PURPLE}40`,
-              ["--tw-ring-color" as string]: PURPLE,
-            }}
+            className="flex items-center justify-between bg-card px-5 py-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background min-h-[64px]"
+            style={{ border: `1px solid ${PURPLE}40`, ["--tw-ring-color" as string]: PURPLE }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = `${PURPLE}90`)}
             onMouseLeave={e => (e.currentTarget.style.borderColor = `${PURPLE}40`)}
-            aria-label="Coach Certification, Join the waitlist"
+            aria-label="Coach Certification — Join the waitlist"
           >
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-semibold mb-0.5" style={{ color: PURPLE }}>Coaches</p>
               <p className="text-foreground font-semibold text-sm">Coach Certification</p>
-              <p className="text-muted-foreground text-xs">Be the first to know when enrollment opens</p>
             </div>
             <ArrowRight className="w-4 h-4 shrink-0 ml-3" style={{ color: PURPLE }} aria-hidden="true" />
           </Link>
 
-          {/* ── SURVEYS SECTION ───────────────────────────────────── */}
+          {/* ── SURVEYS ───────────────────────────────────────────── */}
           <div
             className="p-5"
             style={{ border: `1px solid ${ORANGE}30`, background: `${ORANGE}06` }}
           >
-            {/* Section header */}
             <p className="text-[10px] uppercase tracking-[0.25em] font-semibold mb-3" style={{ color: ORANGE }}>Surveys</p>
             <h2 className="text-lg font-serif text-foreground leading-snug mb-3">
               Help us build the missing system.
             </h2>
             <p className="text-muted-foreground text-xs leading-relaxed mb-5">
-              To align athletes, parents, and coaches we have to understand what each person in the ecosystem is actually experiencing. Your struggles, your questions, your wishes, and your vision for what youth sports could look like, that's the data that builds a shared language and a common path forward. Take two minutes. Tell us the truth. And as a thank you, you'll receive free lifetime access to The Inside Game Library, Gabby's most watched and most talked about content, curated and organized just for you.
+              Your struggles, questions, and vision for what youth sports could look like — that's the data that builds a shared language. Take two minutes. Tell us the truth. You'll receive free lifetime access to The Inside Game Library as a thank you.
             </p>
 
-            {/* 3-up grid */}
             <div className="grid grid-cols-3 gap-2" role="list" aria-label="Survey links">
-
-              {/* Parent Survey */}
               <a
                 href="https://www.videoask.com/fg4ocxw4e"
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 role="listitem"
                 className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
                 style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
@@ -218,11 +226,9 @@ export default function LinksPage() {
                 </div>
               </a>
 
-              {/* Coach Survey */}
               <a
                 href="https://www.videoask.com/fp373gpc5"
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 role="listitem"
                 className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
                 style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
@@ -238,11 +244,9 @@ export default function LinksPage() {
                 </div>
               </a>
 
-              {/* Athlete Survey */}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScvxMoiaBtWjhEyB6M8MbqNceiHp9ezILT5Rt0eIQQsqBFS4A/viewform?usp=header"
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 role="listitem"
                 className="flex flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-offset-background"
                 style={{ border: `1px solid ${ORANGE}50`, ["--tw-ring-color" as string]: ORANGE }}
@@ -257,12 +261,10 @@ export default function LinksPage() {
                   <p className="text-muted-foreground leading-snug" style={{ fontSize: "10px" }}>Tell us what nobody ever asks you about playing.</p>
                 </div>
               </a>
-
             </div>
 
-            {/* Shared gift line */}
             <p className="text-xs leading-relaxed mt-4 pt-4" style={{ color: `${ORANGE}bb`, borderTop: `1px solid ${ORANGE}20` }}>
-              Complete any survey and receive free lifetime access to The Inside Game Library, no credit card, no expiration date, no catch.
+              Complete any survey and receive free lifetime access to The Inside Game Library — no credit card, no expiration date, no catch.
             </p>
           </div>
 
@@ -280,7 +282,6 @@ export default function LinksPage() {
               gabbycole.com
             </a>
           </p>
-
           <nav aria-label="Social links" className="flex items-center gap-5">
             <Link
               href="/"
@@ -290,8 +291,7 @@ export default function LinksPage() {
             </Link>
             <a
               href="https://www.instagram.com/gabbycole_maze"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="_blank" rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Follow Gabby Cole on Instagram @gabbycole_maze"
             >
