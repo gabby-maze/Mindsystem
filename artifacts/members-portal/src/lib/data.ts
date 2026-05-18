@@ -212,6 +212,14 @@ const VGL_PDF_TOPICS: Record<string, { pdf: string; lessons: [string, string, st
     pdf: "/pdfs/visualization.pdf",
     lessons: ["What Visualization Actually Is", "Who Are You Becoming?", "Building the Visualization Habit", "Watch With Intention: Visualization Through Film", "Confidence Is Built, Not Given"],
   },
+  "perceived-coachability": {
+    pdf: "/pdfs/perceived-coachability.pdf",
+    lessons: ["Why Some Athletes Get More Chances", "The Gen Z Stare and What It Costs", "When Feedback Feels Like Attack", "Teaching Athletes to Ask for Feedback", "Coachability as Character"],
+  },
+  "athlete-archetypes": {
+    pdf: "/pdfs/athlete-archetypes.pdf",
+    lessons: ["The Archetype", "Your Gap Work", "The Mental Game", "The Starter's Trap", "The Upgrade"],
+  },
 };
 
 function makePdfTopic(slug: string) {
@@ -335,9 +343,7 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientTo: "#982FF7",
     topics: [
       // Topics without slide decks yet — rendered with YouTube placeholder
-      "perceived-coachability",
       "aligning-parents-athletes-coaches",
-      "athlete-archetypes",
     ].map((slug) => ({
       id: slug,
       title: VGL_TOPIC_TITLES[slug] ?? slug,
