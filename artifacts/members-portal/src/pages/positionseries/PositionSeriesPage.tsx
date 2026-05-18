@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LessonQuestionBox from "@/components/LessonQuestionBox";
 import { useLocation } from "wouter";
 import Layout from "@/components/Layout";
 import { useAuth } from "@/context/AuthContext";
@@ -269,6 +270,15 @@ export default function PositionSeriesPage() {
                   </div>
                 )}
               </div>
+            </div>
+
+            <div className="mt-10">
+              <LessonQuestionBox
+                courseId="position-series"
+                lessonId={activeId}
+                lessonTitle={`Position Series — ${position.title}`}
+                accentColor={TEAL}
+              />
             </div>
           </div>
         )}

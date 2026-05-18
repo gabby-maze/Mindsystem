@@ -5,6 +5,7 @@ import { COURTSIDE_COURSES } from "@/lib/data";
 import { canAccessVGLLesson } from "@/lib/access";
 import { ChevronLeft, Lock } from "lucide-react";
 import PdfSlideViewer from "@/pages/nutrition/PdfSlideViewer";
+import LessonQuestionBox from "@/components/LessonQuestionBox";
 
 const TEAL = "#00D4C8";
 const BLUE = "#2B8BF5";
@@ -197,7 +198,16 @@ export default function VGLLessonPage() {
           </div>
         )}
 
-        <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="mt-10">
+          <LessonQuestionBox
+            courseId="video-game-library"
+            lessonId={`${topicId}/${lessonId}`}
+            lessonTitle={`${topic.title} — ${lesson.title}`}
+            accentColor={TEAL}
+          />
+        </div>
+
+        <div className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
           <button
             onClick={() => navigate(backPath)}
             className="flex items-center gap-2"

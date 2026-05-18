@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import { ALL_COURSES, STRATEGY_SESSION_LINK, type Lesson } from "@/lib/data";
 import { supabase } from "@/lib/supabase";
 import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink, Download } from "lucide-react";
+import LessonQuestionBox from "@/components/LessonQuestionBox";
 
 const PURPLE = "#982FF7";
 const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK"; // replace when GHL page is built
@@ -314,6 +315,16 @@ export default function LessonPage() {
                   Next <ArrowRight size={14} />
                 </button>
               )}
+            </div>
+
+            {/* Ask Gabby */}
+            <div className="mb-10">
+              <LessonQuestionBox
+                courseId={courseId}
+                lessonId={lessonId}
+                lessonTitle={lesson.title}
+                accentColor={PURPLE}
+              />
             </div>
 
             {/* Comments */}

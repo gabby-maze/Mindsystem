@@ -3,6 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { MINDSYSTEM_COURSE } from "@/lib/data";
 import { ChevronLeft, Download } from "lucide-react";
+import LessonQuestionBox from "@/components/LessonQuestionBox";
 
 const PURPLE = "#982FF7";
 
@@ -166,8 +167,17 @@ export default function MindSystemLessonPage() {
           </div>
         )}
 
+        <div className="mt-10">
+          <LessonQuestionBox
+            courseId="mindsystem"
+            lessonId={lessonId}
+            lessonTitle={lesson.title}
+            accentColor={PURPLE}
+          />
+        </div>
+
         {/* Back link */}
-        <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
           <button
             onClick={() => navigate(backPath)}
             className="flex items-center gap-2"

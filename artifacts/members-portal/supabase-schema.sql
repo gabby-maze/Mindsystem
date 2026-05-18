@@ -38,11 +38,15 @@ create table if not exists questions (
   id uuid primary key default gen_random_uuid(),
   family_id uuid references families(id) on delete cascade not null,
   course_id text,
+  lesson_id text,
   question_text text not null,
   answer_text text,
   answered_at timestamptz,
   created_at timestamptz default now()
 );
+
+-- Add lesson_id if upgrading an existing questions table
+alter table questions add column if not exists lesson_id text;
 
 -- NOTIFICATIONS TABLE
 create table if not exists notifications (
