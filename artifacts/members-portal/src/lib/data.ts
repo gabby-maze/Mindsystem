@@ -342,8 +342,6 @@ export const COURTSIDE_COURSES: Course[] = [
     gradientFrom: "#00D4C8",
     gradientTo: "#982FF7",
     topics: [
-      // Topics without slide decks yet — rendered with YouTube placeholder
-      "aligning-parents-athletes-coaches",
     ].map((slug) => ({
       id: slug,
       title: VGL_TOPIC_TITLES[slug] ?? slug,
@@ -352,7 +350,20 @@ export const COURTSIDE_COURSES: Course[] = [
           ? { ...l, youtubeId: VGL_WATCH_FIRST_IDS[slug] ?? "PLACEHOLDER" }
           : l
       ),
-    })).concat(Object.keys(VGL_PDF_TOPICS).map(makePdfTopic)),
+    })).concat(Object.keys(VGL_PDF_TOPICS).map(makePdfTopic)).concat([
+      {
+        id: "aligning-parents-athletes-coaches",
+        title: "Aligning Parents, Athletes & Coaches",
+        lessons: [
+          { id: "watch-first", title: "This Is Where It Starts - The Instagram Video", type: "watch-first", free: true, youtubeId: VGL_WATCH_FIRST_IDS["aligning-parents-athletes-coaches"] ?? "PLACEHOLDER" },
+          { id: "deep-dive", title: "Why Youth Sports Feels Out of Control",   type: "lesson", free: true,  pdfUrl: "/pdfs/pac-lesson-1.pdf" },
+          { id: 2,           title: "The Athlete Goals Session",                type: "lesson", free: false, pdfUrl: "/pdfs/pac-lesson-2.pdf" },
+          { id: 3,           title: "The Parent Mirror",                        type: "lesson", free: false, pdfUrl: "/pdfs/pac-lesson-3.pdf" },
+          { id: 4,           title: "The Coach Conversation",                   type: "lesson", free: false, pdfUrl: "/pdfs/pac-lesson-4.pdf" },
+          { id: 5,           title: "Walking the Maze",                         type: "lesson", free: false, pdfUrl: "/pdfs/pac-lesson-5.pdf" },
+        ],
+      },
+    ]),
   },
 ];
 
