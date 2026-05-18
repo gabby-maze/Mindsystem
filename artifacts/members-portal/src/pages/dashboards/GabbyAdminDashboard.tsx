@@ -83,13 +83,49 @@ export default function GabbyAdminDashboard() {
     setSending(null);
   }
 
+  const TIERS = [
+    { id: "courtside",   label: "Courtside",   color: "#00D4C8" },
+    { id: "independent", label: "Independent", color: "#2B8BF5" },
+    { id: "supported",   label: "Supported",   color: "#982FF7" },
+    { id: "innerCircle", label: "Inner Circle", color: "#FF2D78" },
+    { id: "free",        label: "Free",         color: "#888780" },
+  ];
+
   return (
     <Layout>
       <div className="max-w-3xl mx-auto px-4 md:px-8 py-10" style={{ color: "#fff", fontFamily: "'Oswald', sans-serif" }}>
         {/* Header */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-4 mb-6">
           <div style={{ width: 36, height: 3, backgroundColor: PINK }} />
           <h1 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "1.8rem" }}>Gabby Admin</h1>
+        </div>
+
+        {/* Preview tier row */}
+        <div className="mb-10 p-4 rounded-lg" style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "rgba(255,255,255,0.4)" }}>Preview member view</p>
+          <div className="flex flex-wrap gap-2">
+            {TIERS.map(t => (
+              <a
+                key={t.id}
+                href={`?preview=${t.id}`}
+                style={{
+                  backgroundColor: `${t.color}22`,
+                  border: `1px solid ${t.color}55`,
+                  color: t.color,
+                  padding: "0.4rem 1rem",
+                  fontSize: "0.75rem",
+                  fontFamily: "'Oswald', sans-serif",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  textDecoration: "none",
+                  borderRadius: "2px",
+                }}
+              >
+                {t.label} →
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Tabs */}
