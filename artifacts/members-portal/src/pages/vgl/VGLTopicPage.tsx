@@ -153,11 +153,6 @@ export default function VGLTopicPage() {
                       >
                         {lesson.title}
                       </p>
-                      {isPlaceholder && (
-                        <p style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.3)", marginTop: "0.15rem" }}>
-                          Coming soon
-                        </p>
-                      )}
                     </div>
                   </div>
                   <ChevronRight size={15} style={{ color: colors.from, flexShrink: 0 }} />

@@ -169,9 +169,6 @@ export default function PositionSeriesPage() {
                   >
                     <Play size={20} style={{ color: BLUE }} />
                   </div>
-                  <p className="text-sm uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.3)" }}>
-                    Video Coming Soon
-                  </p>
                 </div>
               </div>
             )}

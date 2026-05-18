@@ -179,31 +179,9 @@ export default function VGLLessonPage() {
           />
         ) : isPlaceholder ? (
           <div
-            className="w-full flex flex-col items-center justify-center rounded-xl"
-            style={{
-              aspectRatio: "16/9",
-              backgroundColor: "#111",
-              border: `2px dashed ${BLUE}40`,
-            }}
-          >
-            <div
-              className="flex items-center justify-center rounded-full mb-4"
-              style={{
-                width: 64,
-                height: 64,
-                backgroundColor: `${BLUE}20`,
-                border: `2px solid ${BLUE}50`,
-              }}
-            >
-              <span style={{ fontSize: "1.5rem" }}>▶</span>
-            </div>
-            <p
-              className="text-sm uppercase tracking-wider"
-              style={{ color: "rgba(255,255,255,0.3)" }}
-            >
-              Video coming soon
-            </p>
-          </div>
+            className="w-full rounded-xl"
+            style={{ aspectRatio: "16/9", backgroundColor: "#111" }}
+          />
         ) : (
           <div
             className="w-full rounded-xl overflow-hidden"

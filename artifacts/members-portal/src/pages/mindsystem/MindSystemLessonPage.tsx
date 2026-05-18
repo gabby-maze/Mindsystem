@@ -88,12 +88,6 @@ export default function MindSystemLessonPage() {
             >
               <span style={{ fontSize: "1.5rem" }}>▶</span>
             </div>
-            <p className="text-sm uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.3)" }}>
-              Video coming soon
-            </p>
-            <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.2)" }}>
-              YouTube ID will be added when content is ready
-            </p>
           </div>
         ) : (
           <div

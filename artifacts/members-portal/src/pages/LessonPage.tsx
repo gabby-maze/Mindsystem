@@ -16,9 +16,6 @@ function YouTubeEmbed({ youtubeId }: { youtubeId: string }) {
         className="w-full flex items-center justify-center rounded-lg"
         style={{ aspectRatio: "16/9", backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
       >
-        <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.85rem", textAlign: "center", padding: "2rem" }}>
-          Video coming soon - YouTube ID will be added here
-        </p>
       </div>
     );
   }
