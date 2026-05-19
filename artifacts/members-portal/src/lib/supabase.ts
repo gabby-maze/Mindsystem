@@ -7,6 +7,9 @@ const isConfigured = SUPABASE_URL.startsWith("https://") && SUPABASE_ANON_KEY.le
 
 const clientOptions = {
   auth: {
+    persistSession: true,
+    autoRefreshToken: true,
+    storageKey: "maze-members-auth",
     lock: async <T>(_name: string, _acquireTimeout: number, fn: () => Promise<T>): Promise<T> => fn(),
   },
 };
