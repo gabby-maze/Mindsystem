@@ -67,17 +67,13 @@ export async function signOut() {
 }
 
 export async function getFamily(): Promise<Family | null> {
-  try {
-    const { data: { user } } = await withTimeout(supabase.auth.getUser());
-    if (!user) return null;
+  const { data: { user } } = await withTimeout(supabase.auth.getUser());
+  if (!user) return null;
 
-    const { data } = await withTimeout(
-      supabase.from("families").select("*").eq("user_id", user.id).single()
-    );
-    return data as Family | null;
-  } catch {
-    return null;
-  }
+  const { data } = await withTimeout(
+    supabase.from("families").select("*").eq("user_id", user.id).single()
+  );
+  return data as Family | null;
 }
 
 export async function getCurrentUser() {

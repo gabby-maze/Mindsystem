@@ -27,11 +27,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      if (session) {
-        await refresh();
-      } else {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event === "SIGNED_OUT") {
         setFamily(null);
+        setLoading(false);
+        return;
+      }
+      if (session) {
+        const f = await getFamily();
+        if (f !== null) setFamily(f);
       }
       setLoading(false);
     });
