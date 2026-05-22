@@ -323,7 +323,15 @@ export const COURTSIDE_COURSES: Course[] = [
     tier: "courtside",
     gradientFrom: "#FF2D78",
     gradientTo: "#982FF7",
-    lessons: [{ id: 1, title: "Placeholder", youtubeId: "PLACEHOLDER" }],
+    lessons: [
+      {
+        id: 1,
+        title: "Rec vs. Competitive — Gabby Cole × Coach Nev",
+        youtubeId: "PLACEHOLDER",
+        downloadUrl: "/pdfs/bold-conversations-rec-vs-comp.pdf",
+        downloadLabel: "Download Slide Deck",
+      },
+    ],
   },
   {
     id: "volleyball-game-iq",
