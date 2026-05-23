@@ -14,6 +14,7 @@ export default function PositionSeriesPage() {
   const { family } = useAuth();
   const [, navigate] = useLocation();
   const [activeId, setActiveId] = useState(POSITIONS[0].id);
+  const [activePart, setActivePart] = useState(0);
   const [athleteOpen, setAthleteOpen] = useState(true);
   const [parentOpen, setParentOpen] = useState(false);
 
@@ -63,7 +64,7 @@ export default function PositionSeriesPage() {
             return (
               <button
                 key={p.id}
-                onClick={() => { setActiveId(p.id); setAthleteOpen(true); setParentOpen(false); }}
+                onClick={() => { setActiveId(p.id); setActivePart(0); setAthleteOpen(true); setParentOpen(false); }}
                 style={{
                   padding: "0.45rem 1rem",
                   borderRadius: "999px",
@@ -101,176 +102,143 @@ export default function PositionSeriesPage() {
           <div>
             {/* Core Skill label */}
             <div className="mb-5">
-              <span
-                className="text-xs uppercase tracking-widest"
-                style={{ color: "rgba(255,255,255,0.3)" }}
-              >
+              <span className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.3)" }}>
                 Core Skill
               </span>
-              <p style={{
-                fontFamily: "'Permanent Marker', cursive",
-                fontSize: "clamp(1.1rem,3vw,1.5rem)",
-                color: TEAL,
-                marginTop: "0.2rem",
-              }}>
+              <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(1.1rem,3vw,1.5rem)", color: TEAL, marginTop: "0.2rem" }}>
                 {position.coreSkill}
               </p>
             </div>
 
             {/* Core skill description */}
-            <p style={{
-              fontSize: "0.9rem",
-              color: "rgba(255,255,255,0.55)",
-              lineHeight: 1.75,
-              marginBottom: "2rem",
-              maxWidth: "680px",
-            }}>
+            <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: "2rem", maxWidth: "680px" }}>
               {position.coreSkillDesc}
             </p>
 
-            {/* Video embed */}
-            {position.youtubeId ? (
-              <div className="flex justify-center mb-8">
-                <div
-                  style={{
-                    width: "100%",
-                    maxWidth: "360px",
-                    aspectRatio: "9/16",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    backgroundColor: "#000",
-                    border: `1px solid ${TEAL}30`,
-                  }}
-                >
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(position.youtubeId)}?rel=0&modestbranding=1`}
-                    title={position.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ width: "100%", height: "100%", border: "none" }}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div className="flex justify-center mb-8">
-                <div
-                  className="flex flex-col items-center justify-center"
-                  style={{
-                    width: "100%",
-                    maxWidth: "360px",
-                    aspectRatio: "9/16",
-                    borderRadius: "16px",
-                    backgroundColor: "#111",
-                    border: `2px dashed ${BLUE}40`,
-                  }}
-                >
-                  <div
-                    className="flex items-center justify-center rounded-full mb-4"
-                    style={{ width: 56, height: 56, backgroundColor: `${BLUE}20`, border: `2px solid ${BLUE}50` }}
+            {/* Part tabs — only shown when position has multiple parts */}
+            {position.parts && position.parts.length > 1 && (
+              <div className="flex gap-2 mb-6">
+                {position.parts.map((part, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setActivePart(i); setAthleteOpen(true); setParentOpen(false); }}
+                    style={{
+                      padding: "0.4rem 1.1rem",
+                      borderRadius: "6px",
+                      border: activePart === i ? `1px solid ${TEAL}` : "1px solid rgba(255,255,255,0.12)",
+                      background: activePart === i ? `${TEAL}18` : "rgba(255,255,255,0.03)",
+                      color: activePart === i ? TEAL : "rgba(255,255,255,0.4)",
+                      fontFamily: "'Oswald', sans-serif",
+                      fontSize: "0.78rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      cursor: "pointer",
+                      transition: "all 0.15s",
+                    }}
                   >
-                    <Play size={20} style={{ color: BLUE }} />
-                  </div>
-                </div>
+                    {part.label}
+                  </button>
+                ))}
               </div>
             )}
 
-            {/* Script accordion */}
-            <div className="flex flex-col gap-3">
+            {/* Resolve which content to display */}
+            {(() => {
+              const part = position.parts ? position.parts[activePart] : null;
+              const youtubeId = part ? part.youtubeId : position.youtubeId;
+              const athlete = part ? part.athlete : position.athlete;
+              const parent = part ? part.parent : position.parent;
 
-              {/* For the Athlete */}
-              <div
-                style={{
-                  borderRadius: "12px",
-                  border: `1px solid ${TEAL}30`,
-                  background: `${TEAL}08`,
-                  overflow: "hidden",
-                }}
-              >
-                <button
-                  onClick={() => setAthleteOpen((v) => !v)}
-                  className="w-full flex items-center justify-between px-5 py-4"
-                  style={{
-                    background: "none", border: "none", cursor: "pointer",
-                    fontFamily: "'Oswald', sans-serif",
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div style={{ width: 3, height: 20, background: TEAL, borderRadius: 2 }} />
-                    <span style={{ fontSize: "0.8rem", letterSpacing: "0.15em", color: TEAL, textTransform: "uppercase" }}>
-                      For the Athlete
-                    </span>
-                  </div>
-                  <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.1rem", transition: "transform 0.2s", display: "inline-block", transform: athleteOpen ? "rotate(180deg)" : "rotate(0)" }}>
-                    ▾
-                  </span>
-                </button>
-                {athleteOpen && (
-                  <div className="px-5 pb-5">
-                    <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-                      {position.athlete.summary}
-                    </p>
-                    <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem" }}>
-                      Key Takeaways
-                    </p>
-                    <ul className="flex flex-col gap-3">
-                      {position.athlete.takeaways.map((t, i) => (
-                        <li key={i} className="flex gap-3">
-                          <span style={{ color: TEAL, flexShrink: 0, fontSize: "0.75rem", marginTop: "0.22rem" }}>▸</span>
-                          <p style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{t}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+              return (
+                <>
+                  {/* Video embed */}
+                  {youtubeId ? (
+                    <div className="flex justify-center mb-8">
+                      <div style={{ width: "100%", maxWidth: "360px", aspectRatio: "9/16", borderRadius: "16px", overflow: "hidden", backgroundColor: "#000", border: `1px solid ${TEAL}30` }}>
+                        <iframe
+                          key={youtubeId}
+                          src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?rel=0&modestbranding=1`}
+                          title={position.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          style={{ width: "100%", height: "100%", border: "none" }}
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex justify-center mb-8">
+                      <div className="flex flex-col items-center justify-center" style={{ width: "100%", maxWidth: "360px", aspectRatio: "9/16", borderRadius: "16px", backgroundColor: "#111", border: `2px dashed ${BLUE}40` }}>
+                        <div className="flex items-center justify-center rounded-full mb-4" style={{ width: 56, height: 56, backgroundColor: `${BLUE}20`, border: `2px solid ${BLUE}50` }}>
+                          <Play size={20} style={{ color: BLUE }} />
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
-              {/* For the Parent */}
-              <div
-                style={{
-                  borderRadius: "12px",
-                  border: `1px solid ${BLUE}30`,
-                  background: `${BLUE}08`,
-                  overflow: "hidden",
-                }}
-              >
-                <button
-                  onClick={() => setParentOpen((v) => !v)}
-                  className="w-full flex items-center justify-between px-5 py-4"
-                  style={{
-                    background: "none", border: "none", cursor: "pointer",
-                    fontFamily: "'Oswald', sans-serif",
-                  }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div style={{ width: 3, height: 20, background: BLUE, borderRadius: 2 }} />
-                    <span style={{ fontSize: "0.8rem", letterSpacing: "0.15em", color: BLUE, textTransform: "uppercase" }}>
-                      For the Parent
-                    </span>
+                  {/* Script accordion */}
+                  <div className="flex flex-col gap-3">
+
+                    {/* For the Athlete */}
+                    <div style={{ borderRadius: "12px", border: `1px solid ${TEAL}30`, background: `${TEAL}08`, overflow: "hidden" }}>
+                      <button
+                        onClick={() => setAthleteOpen((v) => !v)}
+                        className="w-full flex items-center justify-between px-5 py-4"
+                        style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Oswald', sans-serif" }}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div style={{ width: 3, height: 20, background: TEAL, borderRadius: 2 }} />
+                          <span style={{ fontSize: "0.8rem", letterSpacing: "0.15em", color: TEAL, textTransform: "uppercase" }}>For the Athlete</span>
+                        </div>
+                        <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.1rem", transition: "transform 0.2s", display: "inline-block", transform: athleteOpen ? "rotate(180deg)" : "rotate(0)" }}>▾</span>
+                      </button>
+                      {athleteOpen && (
+                        <div className="px-5 pb-5">
+                          <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, marginBottom: "1.25rem" }}>{athlete.summary}</p>
+                          <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem" }}>Key Takeaways</p>
+                          <ul className="flex flex-col gap-3">
+                            {athlete.takeaways.map((t, i) => (
+                              <li key={i} className="flex gap-3">
+                                <span style={{ color: TEAL, flexShrink: 0, fontSize: "0.75rem", marginTop: "0.22rem" }}>▸</span>
+                                <p style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{t}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* For the Parent */}
+                    <div style={{ borderRadius: "12px", border: `1px solid ${BLUE}30`, background: `${BLUE}08`, overflow: "hidden" }}>
+                      <button
+                        onClick={() => setParentOpen((v) => !v)}
+                        className="w-full flex items-center justify-between px-5 py-4"
+                        style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Oswald', sans-serif" }}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div style={{ width: 3, height: 20, background: BLUE, borderRadius: 2 }} />
+                          <span style={{ fontSize: "0.8rem", letterSpacing: "0.15em", color: BLUE, textTransform: "uppercase" }}>For the Parent</span>
+                        </div>
+                        <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.1rem", transition: "transform 0.2s", display: "inline-block", transform: parentOpen ? "rotate(180deg)" : "rotate(0)" }}>▾</span>
+                      </button>
+                      {parentOpen && (
+                        <div className="px-5 pb-5">
+                          <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, marginBottom: "1.25rem" }}>{parent.summary}</p>
+                          <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem" }}>Key Takeaways</p>
+                          <ul className="flex flex-col gap-3">
+                            {parent.takeaways.map((t, i) => (
+                              <li key={i} className="flex gap-3">
+                                <span style={{ color: BLUE, flexShrink: 0, fontSize: "0.75rem", marginTop: "0.22rem" }}>▸</span>
+                                <p style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{t}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.1rem", transition: "transform 0.2s", display: "inline-block", transform: parentOpen ? "rotate(180deg)" : "rotate(0)" }}>
-                    ▾
-                  </span>
-                </button>
-                {parentOpen && (
-                  <div className="px-5 pb-5">
-                    <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-                      {position.parent.summary}
-                    </p>
-                    <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem" }}>
-                      Key Takeaways
-                    </p>
-                    <ul className="flex flex-col gap-3">
-                      {position.parent.takeaways.map((t, i) => (
-                        <li key={i} className="flex gap-3">
-                          <span style={{ color: BLUE, flexShrink: 0, fontSize: "0.75rem", marginTop: "0.22rem" }}>▸</span>
-                          <p style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{t}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
+                </>
+              );
+            })()}
 
             <div className="mt-10">
               <LessonQuestionBox

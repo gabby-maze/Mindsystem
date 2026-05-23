@@ -1,9 +1,23 @@
+export interface PositionPart {
+  label: string;
+  youtubeId: string | null;
+  athlete: {
+    summary: string;
+    takeaways: string[];
+  };
+  parent: {
+    summary: string;
+    takeaways: string[];
+  };
+}
+
 export interface Position {
   id: string;
   title: string;
   coreSkill: string;
   coreSkillDesc: string;
   youtubeId: string | null;
+  parts?: PositionPart[];
   athlete: {
     summary: string;
     takeaways: string[];
@@ -112,6 +126,60 @@ export const POSITIONS: Position[] = [
     coreSkillDesc:
       "The opposite hitter is called upon most often when the system breaks down — when the pass is off, the setter is scrambling, and the ball arriving is not clean or ideal. She is the player her team turns to in the hardest moments. That requires more than confidence — it requires identity. The deep internal belief that this moment belongs to her regardless of the circumstances around it. An opposite who has not built that identity hesitates in exactly the moments her team needs her most.",
     youtubeId: "psGUXvJGfrk",
+    parts: [
+      {
+        label: "Part 1",
+        youtubeId: "psGUXvJGfrk",
+        athlete: {
+          summary:
+            "Your position asks you to be ready for the moment nobody else wants — cold, under pressure, with an imperfect ball. That is not a burden. That is the honor of your role. The opposite who walks to her approach knowing she was built for this moment — regardless of the score, regardless of the last play — is the player coaches trust with the game on the line. Build that belief deliberately. It does not come from skill alone.",
+          takeaways: [
+            "You do not pass — which means you watch a lot before you are called on. Use that time. Study the block. Study the setter's tendencies. Arrive at every opportunity already calibrated.",
+            "Your most dangerous quality as a hitter is your angle of attack. You have access to shots most hitters cannot make from the right side. Know your toolbox and use it.",
+            "The opposite who drifts mentally between her opportunities trains her brain to be absent when it matters most. Stay in every rally — physically, mentally, visibly.",
+            "When you get the ugly ball in a high pressure moment — that is your resume. How you handle it determines whether your coach trusts you with the next one.",
+            "Identity is built through the accumulation of small decisions to stay aggressive, stay present, and stay committed — even when the result is not what you wanted.",
+          ],
+        },
+        parent: {
+          summary:
+            "The opposite hitter's value on the court is often invisible until the moment it isn't. She may have fewer obvious touches than the outside hitter — but what she does between those touches, and what she does when her moment arrives, is what defines her. Your job is to help her stay mentally present and engaged during the waiting — and to understand that her role is a position of trust, not limitation.",
+          takeaways: [
+            "Do not measure your right side by attempts or kills. Watch what she does when the ball is not coming to her. Is she engaged and ready — or has she checked out?",
+            "The opposite who disengages between her opportunities trains herself to be slow when the moment arrives. Help her understand that the bench and the waiting are part of the performance.",
+            "Her most common set arrives in broken situations — out of system, under pressure, imperfect. Celebrate the swing, not just the outcome. Aggressive in a hard moment is the job done right.",
+            "Ask after matches: \"Were you ready every time your number was called?\" — not \"Why didn't you get set more?\"",
+            "Build the habit of full engagement at home — in moments where she is not the center of attention but still has a role to play. That habit transfers directly to the court.",
+          ],
+        },
+      },
+      {
+        label: "Part 2",
+        youtubeId: "OUvsksTd4as",
+        athlete: {
+          summary:
+            "Your position asks you to be ready for the moment nobody else wants — cold, under pressure, with an imperfect ball. That is not a burden. That is the honor of your role. The opposite who walks to her approach knowing she was built for this moment — regardless of the score, regardless of the last play — is the player coaches trust with the game on the line. Build that belief deliberately. It does not come from skill alone.",
+          takeaways: [
+            "You do not pass — which means you watch a lot before you are called on. Use that time. Study the block. Study the setter's tendencies. Arrive at every opportunity already calibrated.",
+            "Your most dangerous quality as a hitter is your angle of attack. You have access to shots most hitters cannot make from the right side. Know your toolbox and use it.",
+            "The opposite who drifts mentally between her opportunities trains her brain to be absent when it matters most. Stay in every rally — physically, mentally, visibly.",
+            "When you get the ugly ball in a high pressure moment — that is your resume. How you handle it determines whether your coach trusts you with the next one.",
+            "Identity is built through the accumulation of small decisions to stay aggressive, stay present, and stay committed — even when the result is not what you wanted.",
+          ],
+        },
+        parent: {
+          summary:
+            "The opposite hitter's value on the court is often invisible until the moment it isn't. She may have fewer obvious touches than the outside hitter — but what she does between those touches, and what she does when her moment arrives, is what defines her. Your job is to help her stay mentally present and engaged during the waiting — and to understand that her role is a position of trust, not limitation.",
+          takeaways: [
+            "Do not measure your right side by attempts or kills. Watch what she does when the ball is not coming to her. Is she engaged and ready — or has she checked out?",
+            "The opposite who disengages between her opportunities trains herself to be slow when the moment arrives. Help her understand that the bench and the waiting are part of the performance.",
+            "Her most common set arrives in broken situations — out of system, under pressure, imperfect. Celebrate the swing, not just the outcome. Aggressive in a hard moment is the job done right.",
+            "Ask after matches: \"Were you ready every time your number was called?\" — not \"Why didn't you get set more?\"",
+            "Build the habit of full engagement at home — in moments where she is not the center of attention but still has a role to play. That habit transfers directly to the court.",
+          ],
+        },
+      },
+    ],
     athlete: {
       summary:
         "Your position asks you to be ready for the moment nobody else wants — cold, under pressure, with an imperfect ball. That is not a burden. That is the honor of your role. The opposite who walks to her approach knowing she was built for this moment — regardless of the score, regardless of the last play — is the player coaches trust with the game on the line. Build that belief deliberately. It does not come from skill alone.",
