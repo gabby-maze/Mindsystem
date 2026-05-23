@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import { useAuth } from "@/context/AuthContext";
 import { hasTierAccess } from "@/lib/data";
 import { POSITIONS } from "@/lib/positionSeriesData";
-import { ChevronLeft, Lock, Play, Download } from "lucide-react";
+import { ChevronLeft, Lock, Play } from "lucide-react";
 
 const TEAL = "#00D4C8";
 const BLUE = "#2B8BF5";
@@ -147,7 +147,6 @@ export default function PositionSeriesPage() {
               const part = position.parts ? position.parts[activePart] : null;
               const youtubeId = part ? part.youtubeId : position.youtubeId;
               const downloadUrl = part?.downloadUrl;
-              const downloadLabel = part?.downloadLabel ?? "Download Slide Deck";
               const athlete = part ? part.athlete : position.athlete;
               const parent = part ? part.parent : position.parent;
 
@@ -177,30 +176,19 @@ export default function PositionSeriesPage() {
                     </div>
                   )}
 
-                  {/* Slide deck download */}
+                  {/* Inline slide deck viewer */}
                   {downloadUrl && (
-                    <div className="mb-6">
-                      <a
-                        href={downloadUrl}
-                        download
-                        className="inline-flex items-center gap-3"
-                        style={{
-                          backgroundColor: `${TEAL}12`,
-                          border: `1px solid ${TEAL}40`,
-                          color: TEAL,
-                          padding: "0.7rem 1.4rem",
-                          borderRadius: "6px",
-                          fontFamily: "'Oswald', sans-serif",
-                          fontWeight: 700,
-                          fontSize: "0.78rem",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.12em",
-                          textDecoration: "none",
-                        }}
-                      >
-                        <Download size={14} />
-                        {downloadLabel}
-                      </a>
+                    <div className="mb-8">
+                      <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'Oswald', sans-serif" }}>
+                        Slide Deck
+                      </p>
+                      <div style={{ width: "100%", aspectRatio: "16/9", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", backgroundColor: "#111" }}>
+                        <iframe
+                          src={`${downloadUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                          style={{ width: "100%", height: "100%", border: "none" }}
+                          title="Slide Deck"
+                        />
+                      </div>
                     </div>
                   )}
 
