@@ -6,6 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { hasTierAccess } from "@/lib/data";
 import { POSITIONS } from "@/lib/positionSeriesData";
 import { ChevronLeft, Lock, Play } from "lucide-react";
+import PdfSlideViewer from "@/pages/nutrition/PdfSlideViewer";
 
 const TEAL = "#00D4C8";
 const BLUE = "#2B8BF5";
@@ -182,13 +183,7 @@ export default function PositionSeriesPage() {
                       <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'Oswald', sans-serif" }}>
                         Slide Deck
                       </p>
-                      <div style={{ width: "100%", aspectRatio: "16/9", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", backgroundColor: "#111" }}>
-                        <iframe
-                          src={`${downloadUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                          style={{ width: "100%", height: "100%", border: "none" }}
-                          title="Slide Deck"
-                        />
-                      </div>
+                      <PdfSlideViewer pdfUrl={downloadUrl} accentColor={TEAL} />
                     </div>
                   )}
 

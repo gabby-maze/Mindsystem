@@ -12,9 +12,10 @@ interface Props {
   pdfUrl: string;
   startPage?: number;
   endPage?: number;
+  accentColor?: string;
 }
 
-export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage }: Props) {
+export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage, accentColor = PINK }: Props) {
   const [numPages, setNumPages] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(startPage);
   const [loading, setLoading] = useState(true);
@@ -105,9 +106,9 @@ export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage }: Props
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               padding: "0.5rem 1.25rem",
-              backgroundColor: currentPage === 1 ? "#1A1A1A" : PINK,
+              backgroundColor: currentPage === 1 ? "#1A1A1A" : accentColor,
               color: currentPage === 1 ? "rgba(255,255,255,0.25)" : "#fff",
-              border: "1px solid " + (currentPage === 1 ? "#2A2A2A" : PINK),
+              border: "1px solid " + (currentPage === 1 ? "#2A2A2A" : accentColor),
               borderRadius: "4px",
               cursor: currentPage === 1 ? "not-allowed" : "pointer",
               transition: "all 0.15s",
@@ -132,7 +133,7 @@ export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage }: Props
                       width: "6px",
                       height: "6px",
                       borderRadius: "50%",
-                      backgroundColor: firstPage + i === currentPage ? PINK : "#2A2A2A",
+                      backgroundColor: firstPage + i === currentPage ? accentColor : "#2A2A2A",
                       border: "none",
                       padding: 0,
                       cursor: "pointer",
@@ -155,9 +156,9 @@ export default function PdfSlideViewer({ pdfUrl, startPage = 1, endPage }: Props
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               padding: "0.5rem 1.25rem",
-              backgroundColor: currentPage === numPages ? "#1A1A1A" : PINK,
+              backgroundColor: currentPage === numPages ? "#1A1A1A" : accentColor,
               color: currentPage === numPages ? "rgba(255,255,255,0.25)" : "#fff",
-              border: "1px solid " + (currentPage === numPages ? "#2A2A2A" : PINK),
+              border: "1px solid " + (currentPage === numPages ? "#2A2A2A" : accentColor),
               borderRadius: "4px",
               cursor: currentPage === numPages ? "not-allowed" : "pointer",
               transition: "all 0.15s",
