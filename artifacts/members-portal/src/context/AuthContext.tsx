@@ -28,16 +28,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event === "SIGNED_OUT") {
-        setFamily(null);
+      try {
+        if (event === "SIGNED_OUT") {
+          setFamily(null);
+          return;
+        }
+        if (session) {
+          const f = await getFamily();
+          if (f !== null) setFamily(f);
+        }
+      } catch (err) {
+        console.error("AuthContext onAuthStateChange error:", err);
+      } finally {
         setLoading(false);
-        return;
       }
-      if (session) {
-        const f = await getFamily();
-        if (f !== null) setFamily(f);
-      }
-      setLoading(false);
     });
 
     return () => {
