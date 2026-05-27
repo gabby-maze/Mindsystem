@@ -327,9 +327,8 @@ export const COURTSIDE_COURSES: Course[] = [
       {
         id: 1,
         title: "Rec vs. Competitive — Gabby Cole × Coach Nev",
-        youtubeId: "PLACEHOLDER",
+        youtubeId: "mlKvWGNV92g",
         downloadUrl: "/pdfs/bold-conversations-rec-vs-comp.pdf",
-        downloadLabel: "Download Slide Deck",
       },
     ],
   },

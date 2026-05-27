@@ -4,8 +4,9 @@ import { useAuth } from "@/context/AuthContext";
 import Layout from "@/components/Layout";
 import { ALL_COURSES, STRATEGY_SESSION_LINK, type Lesson } from "@/lib/data";
 import { supabase } from "@/lib/supabase";
-import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink, Download } from "lucide-react";
+import { CheckCircle, ArrowLeft, ArrowRight, Lock, ExternalLink } from "lucide-react";
 import LessonQuestionBox from "@/components/LessonQuestionBox";
+import PdfSlideViewer from "@/pages/nutrition/PdfSlideViewer";
 
 const PURPLE = "#982FF7";
 const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK"; // replace when GHL page is built
@@ -163,30 +164,13 @@ export default function LessonPage() {
               <YouTubeEmbed youtubeId={lesson.youtubeId ?? "PLACEHOLDER"} />
             </div>
 
-            {/* Worksheet download — shown when the lesson has an attached PDF */}
+            {/* Slide deck viewer — shown when the lesson has an attached PDF */}
             {lesson.downloadUrl && (
               <div className="mb-8">
-                <a
-                  href={lesson.downloadUrl}
-                  download
-                  className="inline-flex items-center gap-3"
-                  style={{
-                    backgroundColor: "rgba(0,212,200,0.1)",
-                    border: "1px solid rgba(0,212,200,0.35)",
-                    color: "#00D4C8",
-                    padding: "0.75rem 1.5rem",
-                    borderRadius: "6px",
-                    fontFamily: "'Oswald', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "0.78rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.12em",
-                    textDecoration: "none",
-                  }}
-                >
-                  <Download size={15} />
-                  {lesson.downloadLabel ?? "Download Worksheet"}
-                </a>
+                <p style={{ fontSize: "0.7rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: "0.75rem", fontFamily: "'Oswald', sans-serif" }}>
+                  Slide Deck
+                </p>
+                <PdfSlideViewer pdfUrl={lesson.downloadUrl} accentColor="#FF2D78" />
               </div>
             )}
 
