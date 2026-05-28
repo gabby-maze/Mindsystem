@@ -61,8 +61,8 @@ const COLUMNS: Column[] = [
     badge: "TEAM PARTNER PRICE",
     headline: "Courtside Conversations",
     subhead: "Program-wide education. One price per athlete.",
-    price: "$8.25 / family / month",
-    priceNote: "Individual equivalent: $99/year per family",
+    price: "$99 / family / year",
+    priceNote: "Individual equivalent: $360/year per family",
     included: [
       "Everything in Individual Courtside Conversations",
       "Program-wide access distributed to all enrolled families",
@@ -76,14 +76,14 @@ const COLUMNS: Column[] = [
       "Parent liaison support",
     ],
     costOptions: [
-      { letter: "A", text: "Add $8.25/month to dues. Families cover it." },
+      { letter: "A", text: "Add $99/year to dues. Families cover it." },
       { letter: "B", text: "Split the cost with families." },
       { letter: "C", text: "Program covers the full cost." },
     ],
     note: "Families who want to go further can upgrade to MindSystem Supported at any time.",
     cta: null,
     ctaHref: null,
-    minimum: null,
+    minimum: "150 families minimum",
   },
   {
     id: "individual-mindsystem",
@@ -149,7 +149,7 @@ const FAQS = [
   },
   {
     q: "What does team partner pricing require?",
-    a: "A minimum enrollment of 150 families for MindSystem Supported. Courtside Conversations team partner pricing has no minimum — programs can enroll any number of athletes.",
+    a: "A minimum enrollment of 150 families for both Courtside Conversations and MindSystem Supported team partner pricing.",
   },
   {
     q: "Can families upgrade from Courtside Conversations to MindSystem?",
@@ -216,11 +216,11 @@ export default function B2BComparePage() {
                 Individual pricing is for families who enroll directly — one athlete, one parent, one family moving through the program on their own. No club involvement required.
               </p>
             </div>
-            {/* Club Partner */}
+            {/* Program Partner */}
             <div style={{ backgroundColor: `${TEAL}08`, border: `1.5px solid ${TEAL}25`, borderRadius: 12, padding: "1.5rem 1.75rem" }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL }}>Club Partner Pricing</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL }}>Program Partner Pricing</p>
               <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontSize: "0.9rem" }}>
-                Club partner pricing is for clubs that bring MazePerformance into their program as an organization. The club coordinates enrollment for their families, and in return every enrolled family gets access at a significantly reduced rate. Club partner pricing requires a minimum of 150 families for MindSystem Supported. There is no minimum for Courtside Conversations club partner access.
+                Program partner pricing is for programs that bring MazePerformance into their organization. The program coordinates enrollment for their families, and in return every enrolled family gets access at a significantly reduced rate. Program partner pricing requires a minimum of 150 families for both Courtside Conversations and MindSystem Supported.
               </p>
             </div>
           </div>
@@ -234,13 +234,13 @@ export default function B2BComparePage() {
               <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${PINK}20`, color: PINK }}>Individual Pricing</span>
             </div>
             <div className="text-center">
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Club Partner Pricing</span>
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Program Partner Pricing</span>
             </div>
             <div className="text-center">
               <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${PINK}20`, color: PINK }}>Individual Pricing</span>
             </div>
             <div className="text-center">
-              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Club Partner Pricing</span>
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${TEAL}20`, color: TEAL }}>Program Partner Pricing</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
