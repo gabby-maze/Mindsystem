@@ -38,6 +38,7 @@ function Router() {
       <Route path="/community" component={CommunityPage} />
       <Route path="/strategy-session" component={StrategySessionPage} />
       <Route path="/compare-teams" component={B2BComparePage} />
+      <Route path="/teams" component={B2BComparePage} />
       <Route path="/compare" component={ComparisonPage} />
       <Route component={NotFound} />
     </Switch>
