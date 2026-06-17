@@ -6,6 +6,7 @@ import { STRATEGY_SESSION_LINK, LIVE_SESSIONS, getWeekProgress } from "@/lib/dat
 
 const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
 const PARENT_ECOSYSTEM_SURVEY = "https://api.leadconnectorhq.com/widget/form/3BDaO0XP03QgfocArSbh";
+const ATHLETE_MAZE_FORM = "https://api.leadconnectorhq.com/widget/form/eVGokFRUY3xj5PAeApOq";
 const PARENT_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-parent";
 const ATHLETE_ONBOARDING_LINK = "https://calendly.com/gabby-mazeperformance/supported-onboarding-call-athlete";
 const ATHLETE_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/jW4QG8NWlfyi3FRqLQEk";
@@ -339,7 +340,7 @@ export default function SupportedDashboard() {
               <p className="text-sm flex-1" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.7 }}>
                 Weeks 1-2: Your athlete completes the MAZE. Mindset. Analyze. Zero In. Execute. When she is done - she submits her MAZE Completion Form. Nothing moves forward without it.
               </p>
-              <a href={SHIPPING_LINK} target="_blank" rel="noopener noreferrer"
+              <a href={ATHLETE_MAZE_FORM} target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", backgroundColor: PURPLE, color: "#fff", padding: "0.65rem 1.4rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none", textAlign: "center" }}>
                 Submit Athlete MAZE Completion Form →
               </a>
