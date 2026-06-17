@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>July 2026 Call Schedule</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0A0A0A;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 20px 16px 28px;
+    min-width: 620px;
+  }
+  .header { text-align: center; margin-bottom: 18px; }
+  .header-brand {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #00D4C8; margin-bottom: 6px; font-weight: 600;
+  }
+  .header-title {
+    font-size: clamp(18px, 4vw, 26px); font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;
+  }
+  .makeup-banner {
+    background: rgba(255,179,0,0.08); border: 1px solid rgba(255,179,0,0.3);
+    padding: 10px 16px; text-align: center; margin-bottom: 16px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #FFB300;
+  }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex; justify-content: center; gap: 18px;
+    margin-bottom: 18px; flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #999; }
+  .legend-swatch { width: 28px; height: 10px; border-radius: 20px; flex-shrink: 0; }
+  .swatch-onboarding { background: #00D4C8; }
+  .swatch-parent     { background: #FF1C84; }
+  .swatch-athlete    { background: #2B8BF5; }
+  .swatch-makeup     { background: #FFB300; }
+
+  /* ── Grid ── */
+  .calendar {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 4px; margin-bottom: 20px;
+  }
+  .day-header {
+    text-align: center; font-size: 9px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: #555; padding: 8px 2px;
+  }
+  .day-cell {
+    background: #161616; border: 1px solid #222;
+    border-radius: 6px; padding: 6px 5px 7px;
+    border-left: 3px solid #222;
+  }
+  .day-cell.empty { background: transparent; border-color: transparent; }
+  .day-cell.makeup { background: #1a1500; }
+  .day-number { font-size: 11px; font-weight: 600; color: #444; margin-bottom: 4px; line-height: 1; }
+  .day-cell.has-calls .day-number { color: #fff; }
+  .day-cell.makeup .day-number { color: #FFB300; }
+
+  /* ── Call pills ── */
+  .call-entry { margin-top: 4px; }
+  .call-divider { height: 1px; background: #222; margin: 4px 0; }
+  .call-pill {
+    display: inline-block; font-size: 7px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    padding: 2px 5px; border-radius: 20px; margin-bottom: 2px;
+  }
+  .pill-onboarding  { background: rgba(0,212,200,0.18); color: #00D4C8; border: 1px solid rgba(0,212,200,0.4); }
+  .pill-parent      { background: rgba(255,28,132,0.18); color: #FF1C84; border: 1px solid rgba(255,28,132,0.4); }
+  .pill-athlete     { background: rgba(43,139,245,0.18); color: #2B8BF5; border: 1px solid rgba(43,139,245,0.4); }
+  .pill-makeup      { background: rgba(255,179,0,0.18); color: #FFB300; border: 1px solid rgba(255,179,0,0.4); }
+  .call-time { font-size: 8px; color: #bbb; line-height: 1.35; }
+
+  .footer-note {
+    text-align: center; font-size: 10px; color: #444;
+    line-height: 1.7; border-top: 1px solid #1a1a1a; padding-top: 14px;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 12px 8px 20px; }
+    .day-header { font-size: 7px; padding: 5px 1px; }
+    .day-cell { padding: 4px 3px 5px; border-radius: 4px; }
+    .call-pill { font-size: 6px; padding: 1.5px 4px; }
+    .call-time { font-size: 7px; }
+    .day-number { font-size: 10px; }
+    .legend-item { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-brand">Maze Performance · MindSystem</p>
+  <h1 class="header-title">July 2026 Call Schedule</h1>
+</div>
+
+<div class="makeup-banner">
+  ★ July 1 — Makeup calls for week of June 22–28 (Junior Nationals) · Parent Group moved to 10AM
+</div>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-swatch swatch-makeup"></div>
+    <span>Makeup Call</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch swatch-onboarding"></div>
+    <span>Onboarding</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch swatch-parent"></div>
+    <span>Parent Group Call</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch swatch-athlete"></div>
+    <span>Athlete Group Call</span>
+  </div>
+</div>
+
+<div class="calendar" id="calendar"></div>
+
+<div class="footer-note">
+  All times listed in PST &nbsp;·&nbsp; Replays available within 24 hours of each session
+</div>
+
+<script>
+  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // July 2026: July 1 = Wednesday (index 3)
+  const START_DOW = 3;
+  const TOTAL_DAYS = 31;
+
+  const CALLS = {
+    // July 1 (Wed) — Makeup day: parent group shifted to 10AM, evening same
+    1: [
+      { type: 'onboarding-parent', label: 'Parent Onboarding',        time: '9:00 – 10:00 AM PST',   makeup: false },
+      { type: 'parent-makeup',     label: 'Parent Group (Makeup)',     time: '10:00 – 11:00 AM PST',  makeup: true  },
+      { type: 'onboarding-athlete',label: 'Athlete Onboarding',        time: '5:30 – 6:30 PM PST',    makeup: false },
+      { type: 'athlete-makeup',    label: 'Athlete Group (Makeup)',    time: '5:30 – 6:30 PM PST',    makeup: true  },
+    ],
+    // July 4 (Sat) — Onboarding
+    4: [
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
+    ],
+    // July 5 (Sun) — Group calls
+    5: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
+    ],
+    // July 8 (Wed) — Group + Onboarding
+    8: [
+      { type: 'parent-group',       label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'athlete-group',      label: 'Athlete Group Call', time: '5:30 – 6:30 PM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'  },
+    ],
+    // July 11 (Sat) — Onboarding
+    11: [
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
+    ],
+    // July 12 (Sun) — Group calls
+    12: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
+    ],
+    // July 15 (Wed) — Group + Onboarding
+    15: [
+      { type: 'parent-group',       label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'athlete-group',      label: 'Athlete Group Call', time: '5:30 – 6:30 PM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'  },
+    ],
+    // July 18 (Sat) — Onboarding
+    18: [
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
+    ],
+    // July 19 (Sun) — Group calls
+    19: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
+    ],
+    // July 22 (Wed) — Group + Onboarding
+    22: [
+      { type: 'parent-group',       label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'athlete-group',      label: 'Athlete Group Call', time: '5:30 – 6:30 PM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'  },
+    ],
+    // July 25 (Sat) — Onboarding
+    25: [
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
+    ],
+    // July 26 (Sun) — Group calls
+    26: [
+      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
+      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
+    ],
+    // July 29 (Wed) — Group + Onboarding
+    29: [
+      { type: 'parent-group',       label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST' },
+      { type: 'athlete-group',      label: 'Athlete Group Call', time: '5:30 – 6:30 PM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'  },
+    ],
+  };
+
+  function pillClass(type) {
+    if (type === 'parent-makeup' || type === 'athlete-makeup') return 'pill-makeup';
+    if (type.startsWith('onboarding')) return 'pill-onboarding';
+    if (type === 'parent-group')       return 'pill-parent';
+    if (type === 'athlete-group')      return 'pill-athlete';
+    return '';
+  }
+
+  function borderColor(calls) {
+    if (!calls.length) return '#222';
+    const types = calls.map(c => c.type);
+    const hasMakeup  = types.some(t => t.includes('makeup'));
+    const hasGroup   = types.some(t => t.includes('group') && !t.includes('makeup'));
+    const hasOnboard = types.some(t => t.includes('onboarding'));
+    if (hasMakeup && (hasGroup || hasOnboard)) return '#982FF7';
+    if (hasMakeup) return '#FFB300';
+    if (hasGroup && hasOnboard) return '#982FF7';
+    if (hasGroup) {
+      const hasParent  = types.includes('parent-group');
+      const hasAthlete = types.includes('athlete-group');
+      if (hasParent && hasAthlete) return '#982FF7';
+      if (hasParent) return '#FF1C84';
+      return '#2B8BF5';
+    }
+    return '#00D4C8';
+  }
+
+  const cal = document.getElementById('calendar');
+
+  DAYS.forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'day-header';
+    el.textContent = d;
+    cal.appendChild(el);
+  });
+
+  for (let i = 0; i < START_DOW; i++) {
+    const el = document.createElement('div');
+    el.className = 'day-cell empty';
+    cal.appendChild(el);
+  }
+
+  for (let day = 1; day <= TOTAL_DAYS; day++) {
+    const calls = CALLS[day] || [];
+    const isMakeup = day === 1;
+    const el = document.createElement('div');
+    el.className = 'day-cell' + (calls.length ? ' has-calls' : '') + (isMakeup ? ' makeup' : '');
+    if (calls.length) el.style.borderLeftColor = borderColor(calls);
+
+    let html = `<div class="day-number">${day}</div>`;
+    calls.forEach((c, i) => {
+      if (i > 0) html += '<div class="call-divider"></div>';
+      html += `
+        <div class="call-entry">
+          <span class="call-pill ${pillClass(c.type)}">${c.label}</span>
+          <div class="call-time">${c.time}</div>
+        </div>`;
+    });
+
+    el.innerHTML = html;
+    cal.appendChild(el);
+  }
+
+  const totalCells = START_DOW + TOTAL_DAYS;
+  const remainder = totalCells % 7;
+  if (remainder !== 0) {
+    for (let i = 0; i < (7 - remainder); i++) {
+      const el = document.createElement('div');
+      el.className = 'day-cell empty';
+      cal.appendChild(el);
+    }
+  }
+</script>
+</body>
+</html>

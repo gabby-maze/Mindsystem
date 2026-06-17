@@ -329,6 +329,23 @@ export default function SupportedDashboard() {
           </div>
         </section>
 
+        {/* July 2026 Calendar */}
+        <section className="px-6 md:px-16 py-10 max-w-4xl mx-auto w-full">
+          <h2 className="font-bold mb-5 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
+            July 2026 Call Calendar
+          </h2>
+          <div style={{ borderRadius: 8, border: "1px solid rgba(255,255,255,0.07)", overflowX: "auto" }}>
+            <iframe
+              src={`${import.meta.env.BASE_URL}july-2026-calendar.html`}
+              width="100%"
+              height="940"
+              frameBorder="0"
+              style={{ display: "block", border: "none", minWidth: 620 }}
+              title="July 2026 Group Call Schedule"
+            />
+          </div>
+        </section>
+
         {/* Section 4 - Content Roadmap Summary */}
         <section className="px-6 md:px-16 py-14 max-w-4xl mx-auto">
           <h2 className="font-bold mb-6 uppercase tracking-wider" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)" }}>
