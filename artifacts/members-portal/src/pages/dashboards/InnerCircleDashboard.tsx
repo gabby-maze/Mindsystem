@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { STRATEGY_SESSION_LINK, getWeekProgress } from "@/lib/data";
 
 const SHIPPING_LINK = "https://api.leadconnectorhq.com/widget/form/nRhdYIoU5zdbBdoUyBDb";
+const PARENT_ECOSYSTEM_SURVEY = "https://api.leadconnectorhq.com/widget/form/3BDaO0XP03QgfocArSbh";
 const ATHLETE_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/jW4QG8NWlfyi3FRqLQEk";
 const PARENT_PRECALL_SURVEY = "https://api.leadconnectorhq.com/widget/form/vx5VByITGITwn9iLDQ93";
 // TODO: replace with GHL private parent onboarding call booking link
@@ -80,6 +81,7 @@ export default function InnerCircleDashboard() {
               { num: 3, label: "Private athlete onboarding call", btn: "Book Private Athlete Onboarding Call →", href: PRIVATE_ATHLETE_CALL_LINK, surveyBtn: "Complete Athlete Pre-Call Survey →", surveyHref: ATHLETE_PRECALL_SURVEY },
               { num: 4, label: "Connect on Voxer", sub: "Download Voxer at voxer.com. Voice gets faster responses - 24hr response time.", btn: "Open Voxer →", href: VOXER_LINK, voxer: true },
               { num: 5, label: "Watch onboarding video", btn: "Inner Circle Onboarding - Watch Now →", nav: "/courses/inner-circle-onboarding" },
+              { num: 6, label: "Submit Parent Ecosystem Responses", sub: "Complete after your parent onboarding call — both athlete and parent forms go to Gabby.", btn: "Submit Parent Ecosystem Responses →", href: PARENT_ECOSYSTEM_SURVEY },
             ].map((item) => (
               <div key={item.num} className="flex items-start gap-4 p-5 rounded-lg"
                 style={{
