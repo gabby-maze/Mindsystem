@@ -140,6 +140,7 @@
     1: [
       { type: 'onboarding-parent', label: 'Parent Onboarding',        time: '9:00 – 10:00 AM PST',   makeup: false },
       { type: 'parent-makeup',     label: 'Parent Group (Makeup)',     time: '10:00 – 11:00 AM PST',  makeup: true  },
+      { type: 'courtside',         label: 'Courtside Conversation',    time: '12:00 – 1:00 PM PST'                 },
       { type: 'onboarding-athlete',label: 'Athlete Onboarding',        time: '5:30 – 6:30 PM PST',    makeup: false },
       { type: 'athlete-makeup',    label: 'Athlete Group (Makeup)',    time: '4:30 – 5:30 PM PST',    makeup: true  },
     ],
@@ -163,10 +164,10 @@
       { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '10:00 – 11:00 AM PST' },
       { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '11:00 AM – 12:00 PM PST' },
     ],
-    // July 12 (Sun) — Group calls
+    // July 12 (Sat) — Makeup calls (staggered week off)
     12: [
-      { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
-      { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
+      { type: 'athlete-makeup', label: 'Athlete Group (Makeup)', time: '12:00 – 1:00 PM PST', makeup: true },
+      { type: 'parent-makeup',  label: 'Parent Group (Makeup)',  time: '4:00 – 5:00 PM PST',  makeup: true },
     ],
     // July 15 (Wed) — Onboarding only
     15: [
