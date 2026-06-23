@@ -458,20 +458,68 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  section { padding: 56px 0; }
-  .hero { padding: 72px 0 56px; }
+  /* Spacing */
+  section { padding: 48px 0; }
+  .hero   { padding: 56px 0 48px; }
 
+  /* Typography */
+  h1 {
+    font-size: clamp(32px, 9vw, 48px);
+    line-height: 1.12;
+    word-break: break-word;
+  }
+  h2 {
+    font-size: clamp(24px, 7vw, 34px);
+    word-break: break-word;
+  }
+  p { font-size: 15px; }
+
+  .hero-sub          { font-size: 16px; margin-bottom: 28px; }
+  .eyebrow           { font-size: 9px; }
+  .contrast-footer   { font-size: 18px; }
+  .closing-text      { font-size: clamp(20px, 5.5vw, 28px); }
+
+  /* Button: full width on mobile */
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+    font-size: 13px;
+  }
+
+  /* Contrast grid: stack vertically */
   .contrast-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
-  .vs { order: 1; }
+  .vs                       { order: 1; font-size: 14px; padding: 4px 0; }
   .contrast-col:first-child { order: 0; }
   .contrast-col:last-child  { order: 2; }
+  .contrast-col             { padding: 24px 20px; }
+  .contrast-col h3          { font-size: 18px !important; }
 
-  .maze-grid    { grid-template-columns: 1fr; }
-  .library-grid { grid-template-columns: 1fr; }
-  .belief-grid  { grid-template-columns: 1fr; }
+  /* MAZE cards */
+  .maze-grid    { grid-template-columns: 1fr; gap: 14px; }
+  .maze-card    { padding: 22px 20px; }
+  .maze-letter  { font-size: 32px; }
+  .maze-card::before { font-size: 72px; top: -6px; }
+
+  /* Steps */
+  .steps-list   { margin: 24px 0 28px; }
+  .step-num     { width: 28px; height: 28px; font-size: 11px; }
+  .step-text    { font-size: 14px; }
+
+  /* Library */
+  .library-grid { grid-template-columns: 1fr; gap: 12px; }
+  .lib-card     { padding: 20px; }
+
+  /* Belief */
+  .belief-grid  { grid-template-columns: 1fr; gap: 32px; }
+  .belief-list li { font-size: 14px; }
+
+  /* Footer */
+  .footer-links { gap: 10px; }
+  .footer-links a { font-size: 10px; }
 }
 </style>
 </head>
