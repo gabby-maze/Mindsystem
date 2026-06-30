@@ -1,0 +1,120 @@
+# Clarity Call Homework Page — Copy
+### gabbycole.com | Dark mode | Permanent Marker headlines | Oswald body | Teal accent (#00D4C8)
+
+---
+
+## SECTION 1 — Confirmation Banner
+
+**YOUR CLARITY CALL IS BOOKED**
+
+---
+
+## SECTION 2 — Hero Headline + Subtext
+
+**Headline:**
+> Watch this *before* we talk.
+
+**Subtext:**
+> Take 10 minutes to watch this video before our call. It's not a welcome message — it's the diagnostic. By the time it's done, you'll understand exactly what's happening in your daughter's performance ecosystem, and why nothing you've tried so far has fully fixed it.
+>
+> Watch it now so when we get on the call, we skip the explaining and go straight to building your plan.
+
+---
+
+## SECTION 3 — Video Caption
+
+> Please take 10 minutes to watch this before our call — it's required, and it's going to make our 45 minutes together count.
+
+---
+
+## SECTION 4 — Social Proof / Testimonials Section
+
+**Headline:**
+> Hear it from the *families themselves.*
+
+**Intro:**
+> Real parents. Real athletes. The same ecosystem work you'll hear about on our call.
+
+**Testimonials:**
+
+> *"The thing that shifted the most is the mental aspect of the game. We were putting all our energy into skill development — private coaches, camps, clinics. What we didn't appreciate is how truly mental this game is."*
+> — Troy, Club Volleyball Dad
+
+> *"As a parent who didn't grow up playing volleyball, I really rely on Gabby to walk us through the game and get inside the mind of our athletes — so we understand what they're going through."*
+> — Lauren, Club Volleyball Mom
+
+> *"I gained a lot of confidence in myself — not just volleyball skills, but mindset training. How to manage my emotions in tough game situations."*
+> — Brielle, Club Athlete
+
+> *"Gabby called me while my daughter was in surgery. I was an anxious mom pacing the waiting room — and that conversation made me feel so much better. I knew I'd be signing up."*
+> — Stacey, Volleyball Mom
+
+> *"She meets the athlete at their level, on their terms, based on their learning style. No individual's the same, and she gets that."*
+> — Troy, Club Volleyball Dad
+
+---
+
+## SECTION 5 — What to Expect on the Call
+
+**Headline:**
+> What to expect on the *call.*
+
+**Card 1 — A real diagnosis, not a pitch**
+> This call is about what's actually happening in your family's performance ecosystem — your daughter's mindset, your role, the system around her. We map it together before we talk about anything else.
+
+**Card 2 — Come as you are**
+> You don't need to have it all figured out. You don't need the right words for what's going on. Show up honest about where things stand right now — that's all this call needs from you.
+
+**Card 3 — Mutual fit, both ways**
+> This call works both directions. You'll leave with clarity on what's missing in your family's ecosystem — and we'll both know if MindSystem is the right next step. No pressure either way.
+
+---
+
+## SECTION 6 — About Gabby
+
+**Eyebrow:**
+> ABOUT YOUR COACH
+
+**Headline:**
+> Hi. I'm *Gabby.*
+
+**Bio:**
+> I'm a former Division One volleyball player, a volleyball mom, and the founder of MazePerformance. My twin daughters are both in elite club ball right now — so I'm living this from both sides, in real time, alongside the families I work with.
+>
+> I didn't build MindSystem from a textbook. I built it because I spent years as the athlete in the gym, and I know exactly what your daughter is experiencing but can't always find the words to tell you. I was her once.
+>
+> My approach isn't about fixing your daughter's serve or her swing. It's about the ecosystem around her — the conversations at home, the habits, the mindset, the relationship with her coach — because that system matters more than her talent ever will. I work with the whole family, not just the athlete, because that's the only way the work actually holds.
+>
+> Outside of all this, I'm not just a mom watching from the stands wondering what to do. I built this system because I was her daughter once — I lived it on the front end as the athlete, and now I live it on the back end as the parent. I did the work the hard way so your family doesn't have to. This isn't theory. I'm practicing what I preach because I know it works.
+
+---
+
+## SECTION 7 — How to Prepare (3 Steps)
+
+**Headline:**
+> How to prepare for *our call.*
+
+**Step 1 — Know where she's at right now**
+> Not just her stats or her standing on the team. Where is she mentally? Is she playing with confidence or playing scared? Be honest with yourself about what you're actually seeing right now — not what you wish you were seeing.
+
+**Step 2 — Name what you've already tried**
+> Private coaches, club changes, conversations with the coach, books, podcasts — what have you done so far to try to fix this? Come ready to talk about what's worked, what hasn't, and what's still missing.
+
+**Step 3 — Get honest about your role**
+> This call isn't just about her. It's about the ecosystem around her — and you're part of that ecosystem. Come ready to look at your own part in this, not from a place of guilt, but from a place of readiness to do something about it.
+
+---
+
+## SECTION 8 — Closing Confirmation Block
+
+> Your call is confirmed.
+>
+> Make sure you watch the homework video above before we meet — it's required, and it's going to make our time together so much more useful.
+>
+> Looking forward to speaking with you.
+>
+> — Gabby
+
+---
+
+*This copy is built to sit directly beneath the homework video on the booking confirmation page. Tone is consistent with the video script and DM flow — authoritative, direct, ecosystem-first framing throughout. Confirmation that the video was watched happens via DM reply, not a page action — no button or prompt needed on the page itself.*
