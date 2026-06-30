@@ -31,14 +31,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Layout ── */
 .container       { max-width: 780px;  margin: 0 auto; padding: 0 24px; }
 .container--wide { max-width: 960px;  margin: 0 auto; padding: 0 24px; }
 .container--full { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
 section { padding: 72px 0; border-top: 1px solid var(--border); }
 
-/* ── Confirmation Banner ── */
+/* Banner */
 .banner {
   background: var(--teal);
   color: #000;
@@ -50,7 +49,7 @@ section { padding: 72px 0; border-top: 1px solid var(--border); }
   text-transform: uppercase;
 }
 
-/* ── Type ── */
+/* Type */
 .eyebrow {
   font-size: 10px;
   font-weight: 600;
@@ -97,11 +96,8 @@ p {
 p:last-child { margin-bottom: 0; }
 p strong { color: #fff; font-weight: 600; }
 
-/* ── Hero ── */
-.hero {
-  padding: 72px 0 56px;
-  border-top: none;
-}
+/* Hero */
+.hero { padding: 72px 0 56px; border-top: none; }
 
 .hero-sub {
   max-width: 600px;
@@ -109,7 +105,7 @@ p strong { color: #fff; font-weight: 600; }
   color: #B0B0CC;
 }
 
-/* ── Homework Video ── */
+/* Homework Video */
 .video-section { padding: 0 0 72px; border-top: none; }
 
 .video-wrap {
@@ -131,32 +127,6 @@ p strong { color: #fff; font-weight: 600; }
   border: none;
 }
 
-/* Placeholder shown when no video ID is set */
-.video-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  background: #0A0A12;
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.video-placeholder .play-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .video-caption {
   font-size: 14px;
   color: var(--muted);
@@ -165,7 +135,7 @@ p strong { color: #fff; font-weight: 600; }
   margin-bottom: 0;
 }
 
-/* ── Testimonials ── */
+/* Testimonials */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -251,9 +221,7 @@ p strong { color: #fff; font-weight: 600; }
   color: #fff;
 }
 
-.t-body {
-  padding: 14px 16px 16px;
-}
+.t-body { padding: 14px 16px 16px; }
 
 .t-quote {
   font-size: 13px;
@@ -273,7 +241,7 @@ p strong { color: #fff; font-weight: 600; }
   margin-top: 14px;
 }
 
-/* ── What to Expect ── */
+/* What to Expect */
 .expect-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -297,7 +265,7 @@ p strong { color: #fff; font-weight: 600; }
   margin-bottom: 0;
 }
 
-/* ── About Gabby ── */
+/* About Gabby */
 .about-section { background: #0D0D14; }
 
 .about-inner {
@@ -316,25 +284,40 @@ p strong { color: #fff; font-weight: 600; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 28px 24px;
+  overflow: hidden;
   text-align: center;
 }
 
-.about-initial {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 72px;
-  color: var(--teal);
-  line-height: 1;
-  margin-bottom: 12px;
+.about-photo-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #000;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.about-photo:hover { filter: grayscale(0%); }
+
+.about-badge-body {
+  padding: 20px;
 }
 
 .about-title {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .about-name {
@@ -342,17 +325,17 @@ p strong { color: #fff; font-weight: 600; }
   font-size: 22px;
   color: #fff;
   line-height: 1.2;
+  margin-bottom: 16px;
 }
 
 .about-tags {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 20px;
 }
 
 .about-tag {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--teal);
   background: rgba(0, 212, 200, 0.08);
   border: 1px solid rgba(0, 212, 200, 0.2);
@@ -372,7 +355,7 @@ p strong { color: #fff; font-weight: 600; }
 
 .about-bio p:last-child { margin-bottom: 0; }
 
-/* ── How to Prepare ── */
+/* How to Prepare */
 .steps-list {
   display: flex;
   flex-direction: column;
@@ -399,10 +382,7 @@ p strong { color: #fff; font-weight: 600; }
   text-align: center;
 }
 
-.step-content h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
+.step-content h3 { font-size: 18px; margin-bottom: 10px; }
 
 .step-content p {
   font-size: 15px;
@@ -411,7 +391,7 @@ p strong { color: #fff; font-weight: 600; }
   margin-bottom: 0;
 }
 
-/* ── Closing ── */
+/* Closing */
 .closing-section {
   background: #0A1A1A;
   border-top: 1px solid rgba(0, 212, 200, 0.15) !important;
@@ -452,11 +432,8 @@ p strong { color: #fff; font-weight: 600; }
   margin: 24px auto;
 }
 
-/* ── Footer ── */
-footer {
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-}
+/* Footer */
+footer { padding: 40px 0; border-top: 1px solid var(--border); }
 
 .footer-inner {
   display: flex;
@@ -466,20 +443,10 @@ footer {
   text-align: center;
 }
 
-.footer-name {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 18px;
-  color: #fff;
-}
-
+.footer-name { font-family: 'Permanent Marker', cursive; font-size: 18px; color: #fff; }
 .footer-copy { font-size: 12px; color: var(--muted); }
 
-.footer-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
 .footer-links a {
   font-size: 11px;
@@ -490,7 +457,7 @@ footer {
 
 .footer-links a:hover { color: var(--teal); }
 
-/* ── Mobile ── */
+/* Mobile */
 @media (max-width: 700px) {
   section { padding: 52px 0; }
   .hero   { padding: 52px 0 40px; }
@@ -500,35 +467,19 @@ footer {
   p  { font-size: 15px; }
   .hero-sub { font-size: 16px; }
 
-  .testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .t-thumb { padding-bottom: 140%; }
-
   .t-swipe-hint { display: block; }
 
   .expect-grid { grid-template-columns: 1fr; gap: 14px; }
 
-  .about-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+  .about-inner { grid-template-columns: 1fr; gap: 32px; }
+  .about-left  { position: static; }
+  .about-badge { display: grid; grid-template-columns: 140px 1fr; border-radius: 8px; }
+  .about-photo-wrap { aspect-ratio: unset; height: 100%; min-height: 180px; border-radius: 8px 0 0 8px; }
+  .about-badge-body { text-align: left; }
 
-  .about-left { position: static; }
-
-  .about-badge {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0 20px;
-    text-align: left;
-    align-items: center;
-  }
-
-  .about-tags { display: none; }
-
-  .step-item { grid-template-columns: 48px 1fr; gap: 0 16px; }
+  .step-item  { grid-template-columns: 48px 1fr; gap: 0 16px; }
   .step-number { font-size: 38px; }
 
   .closing-box p { font-size: 16px; }
@@ -536,50 +487,42 @@ footer {
 
 @media (max-width: 440px) {
   .testimonial-grid { grid-template-columns: 1fr; }
+  .about-badge { grid-template-columns: 1fr; }
+  .about-photo-wrap { height: 260px; border-radius: 8px 8px 0 0; }
+  .about-badge-body { text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- ── CONFIRMATION BANNER ─────────────────────────────────────────── -->
+<!-- CONFIRMATION BANNER -->
 <div class="banner">Your Clarity Call is Booked</div>
 
-<!-- ── HERO ──────────────────────────────────────────────────────────── -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="eyebrow">Watch This First</div>
     <h1>Watch this <em>before</em> we talk.</h1>
-    <p class="hero-sub">Take 10 minutes to watch this video before our call. It's not a welcome message — it's the diagnostic. By the time it's done, you'll understand exactly what's happening in your daughter's performance ecosystem, and why nothing you've tried so far has fully fixed it.</p>
+    <p class="hero-sub">Take 10 minutes to watch this video before our call. It's not a welcome message. It's the diagnostic. By the time it's done, you'll understand exactly what's happening in your daughter's performance ecosystem, and why nothing you've tried so far has fully fixed it.</p>
     <p class="hero-sub" style="margin-top:12px;">Watch it now so when we get on the call, we skip the explaining and go straight to building your plan.</p>
   </div>
 </section>
 
-<!-- ── HOMEWORK VIDEO ─────────────────────────────────────────────────── -->
+<!-- HOMEWORK VIDEO -->
 <section class="video-section">
   <div class="container">
-
     <div class="video-wrap">
-      <!-- ╔══════════════════════════════════════════════════════════════╗
-           ║  TODO: Replace HOMEWORK_VIDEO_ID with the actual YouTube   ║
-           ║  video ID for the pre-call homework video, then delete the ║
-           ║  .video-placeholder div below.                             ║
-           ╚══════════════════════════════════════════════════════════════╝ -->
-      <!-- <iframe src="https://www.youtube.com/embed/HOMEWORK_VIDEO_ID?rel=0&modestbranding=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
-
-      <div class="video-placeholder">
-        <div class="play-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="5,3 15,9 5,15" fill="#666680"/></svg>
-        </div>
-        <span>Homework Video — Coming Soon</span>
-      </div>
+      <iframe
+        src="https://www.youtube.com/embed/MLpmrX3mtfk?rel=0&modestbranding=1"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
     </div>
-
-    <p class="video-caption">Please take 10 minutes to watch this before our call — it's required, and it's going to make our 45 minutes together count.</p>
-
+    <p class="video-caption">Please take 10 minutes to watch this before our call. It's required, and it's going to make our 45 minutes together count.</p>
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ────────────────────────────────────────────────────── -->
+<!-- TESTIMONIALS -->
 <section>
   <div class="container--full">
     <div class="eyebrow">Real Families</div>
@@ -588,7 +531,6 @@ footer {
 
     <div class="testimonial-grid">
 
-      <!-- Troy -->
       <a class="t-card" href="https://youtu.be/KyJwOTGtGLo" target="_blank" rel="noopener">
         <div class="t-thumb">
           <img src="/troy.png" alt="Troy" loading="lazy">
@@ -599,11 +541,10 @@ footer {
           <div class="t-name">Troy — Club Volleyball Dad</div>
         </div>
         <div class="t-body">
-          <p class="t-quote">"The thing that shifted the most is the mental aspect of the game. We were putting all our energy into skill development — what we didn't appreciate is how truly mental this game is."</p>
+          <p class="t-quote">"The thing that shifted the most is the mental aspect of the game. We were putting all our energy into skill development. What we didn't appreciate is how truly mental this game is."</p>
         </div>
       </a>
 
-      <!-- Lauren -->
       <a class="t-card" href="https://youtube.com/shorts/C7zwruNsIhY" target="_blank" rel="noopener">
         <div class="t-thumb">
           <img src="/lauren.png" alt="Lauren" loading="lazy">
@@ -614,11 +555,10 @@ footer {
           <div class="t-name">Lauren — Club Volleyball Mom</div>
         </div>
         <div class="t-body">
-          <p class="t-quote">"As a parent who didn't grow up playing volleyball, I really rely on Gabby to walk us through the game and get inside the mind of our athletes — so we understand what they're going through."</p>
+          <p class="t-quote">"As a parent who didn't grow up playing volleyball, I really rely on Gabby to walk us through the game and get inside the mind of our athletes, so we understand what they're going through."</p>
         </div>
       </a>
 
-      <!-- Stacey -->
       <a class="t-card" href="https://youtube.com/shorts/ESWv-soW-PA" target="_blank" rel="noopener">
         <div class="t-thumb">
           <img src="/stacey.png" alt="Stacey" loading="lazy">
@@ -629,11 +569,10 @@ footer {
           <div class="t-name">Stacey — Volleyball Mom</div>
         </div>
         <div class="t-body">
-          <p class="t-quote">"Gabby called me while my daughter was in surgery. I was an anxious mom pacing the waiting room — and that conversation made me feel so much better. I knew I'd be signing up."</p>
+          <p class="t-quote">"Gabby called me while my daughter was in surgery. I was an anxious mom pacing the waiting room, and that conversation made me feel so much better. I knew I'd be signing up."</p>
         </div>
       </a>
 
-      <!-- Brielle -->
       <a class="t-card" href="https://youtube.com/shorts/rS1XPNw7S_k" target="_blank" rel="noopener">
         <div class="t-thumb">
           <img src="/brielle.png" alt="Brielle" loading="lazy">
@@ -644,7 +583,7 @@ footer {
           <div class="t-name">Brielle — Club Athlete</div>
         </div>
         <div class="t-body">
-          <p class="t-quote">"I gained a lot of confidence in myself — not just volleyball skills, but mindset training. How to manage my emotions in tough game situations."</p>
+          <p class="t-quote">"I gained a lot of confidence in myself. Not just volleyball skills, but mindset training. How to manage my emotions in tough game situations."</p>
         </div>
       </a>
 
@@ -653,7 +592,7 @@ footer {
   </div>
 </section>
 
-<!-- ── WHAT TO EXPECT ──────────────────────────────────────────────────── -->
+<!-- WHAT TO EXPECT -->
 <section>
   <div class="container--wide">
     <div class="eyebrow">The Call</div>
@@ -663,39 +602,42 @@ footer {
 
       <div class="expect-card">
         <h3>A real diagnosis, not a pitch</h3>
-        <p>This call is about what's actually happening in your family's performance ecosystem — your daughter's mindset, your role, the system around her. We map it together before we talk about anything else.</p>
+        <p>This call is about what's actually happening in your family's performance ecosystem: your daughter's mindset, your role, the system around her. We map it together before we talk about anything else.</p>
       </div>
 
       <div class="expect-card">
         <h3>Come as you are</h3>
-        <p>You don't need to have it all figured out. You don't need the right words for what's going on. Show up honest about where things stand right now — that's all this call needs from you.</p>
+        <p>You don't need to have it all figured out. You don't need the right words for what's going on. Show up honest about where things stand right now. That's all this call needs from you.</p>
       </div>
 
       <div class="expect-card">
         <h3>Mutual fit, both ways</h3>
-        <p>This call works both directions. You'll leave with clarity on what's missing in your family's ecosystem — and we'll both know if MindSystem is the right next step. No pressure either way.</p>
+        <p>This call works both directions. You'll leave with clarity on what's missing in your family's ecosystem, and we'll both know if MindSystem is the right next step. No pressure either way.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT GABBY ────────────────────────────────────────────────────── -->
+<!-- ABOUT GABBY -->
 <section class="about-section">
   <div class="container--wide">
     <div class="about-inner">
 
       <div class="about-left">
         <div class="about-badge">
-          <div class="about-initial">G</div>
-          <div>
+          <div class="about-photo-wrap">
+            <img src="/gabby-court.png" alt="Gabby Cole on the volleyball court" class="about-photo">
+          </div>
+          <div class="about-badge-body">
             <div class="about-title">About Your Coach</div>
             <div class="about-name">Gabby Cole</div>
-          </div>
-          <div class="about-tags">
-            <span class="about-tag">D1 Volleyball Alum</span>
-            <span class="about-tag">Volleyball Mom</span>
-            <span class="about-tag">Founder, MazePerformance</span>
+            <div class="about-tags">
+              <span class="about-tag">D1 Volleyball Alum</span>
+              <span class="about-tag">Volleyball Mom</span>
+              <span class="about-tag">Founder, MazePerformance</span>
+              <span class="about-tag">Grew Up Behind the Curtain</span>
+            </div>
           </div>
         </div>
       </div>
@@ -703,17 +645,18 @@ footer {
       <div class="about-bio">
         <div class="eyebrow">About Your Coach</div>
         <h2>Hi. I'm <em>Gabby.</em></h2>
-        <p>I'm a former Division One volleyball player, a volleyball mom, and the founder of MazePerformance. My twin daughters are both in elite club ball right now — so I'm living this from both sides, in real time, alongside the families I work with.</p>
+        <p>I'm a former Division One volleyball player, a volleyball mom, and the founder of MazePerformance. My twin daughters are both in elite club ball right now, so I'm living this from both sides, in real time, alongside the families I work with.</p>
+        <p>I grew up behind the curtain. My mom coached volleyball for 40 years. I was on the court before I could read, in gyms before I understood the game, watching from the inside out. I didn't just play this sport. I grew up inside it.</p>
         <p>I didn't build MindSystem from a textbook. I built it because I spent years as the athlete in the gym, and I know exactly what your daughter is experiencing but can't always find the words to tell you. I was her once.</p>
-        <p>My approach isn't about fixing your daughter's serve or her swing. It's about the ecosystem around her — the conversations at home, the habits, the mindset, the relationship with her coach — because that system matters more than her talent ever will. I work with the whole family, not just the athlete, because that's the only way the work actually holds.</p>
-        <p>I'm not just a mom watching from the stands wondering what to do. I built this system because I was her daughter once — I lived it on the front end as the athlete, and now I live it on the back end as the parent. I did the work the hard way so your family doesn't have to. This isn't theory. I'm practicing what I preach because I know it works.</p>
+        <p>My approach isn't about fixing your daughter's serve or her swing. It's about the ecosystem around her: the conversations at home, the habits, the mindset, the relationship with her coach, because that system matters more than her talent ever will. I work with the whole family, not just the athlete, because that's the only way the work actually holds.</p>
+        <p>I'm not just a mom watching from the stands wondering what to do. I built this system because I was her daughter once. I lived it on the front end as the athlete, and now I live it on the back end as the parent. I did the work the hard way so your family doesn't have to. This isn't theory. I'm practicing what I preach because I know it works.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── HOW TO PREPARE ─────────────────────────────────────────────────── -->
+<!-- HOW TO PREPARE -->
 <section>
   <div class="container">
     <div class="eyebrow">Before We Talk</div>
@@ -726,7 +669,7 @@ footer {
         <div class="step-number">1</div>
         <div class="step-content">
           <h3>Know where she's at right now</h3>
-          <p>Not just her stats or her standing on the team. Where is she mentally? Is she playing with confidence or playing scared? Be honest with yourself about what you're actually seeing right now — not what you wish you were seeing.</p>
+          <p>Not just her stats or her standing on the team. Where is she mentally? Is she playing with confidence or playing scared? Be honest with yourself about what you're actually seeing right now. Not what you wish you were seeing.</p>
         </div>
       </div>
 
@@ -734,7 +677,7 @@ footer {
         <div class="step-number">2</div>
         <div class="step-content">
           <h3>Name what you've already tried</h3>
-          <p>Private coaches, club changes, conversations with the coach, books, podcasts — what have you done so far to try to fix this? Come ready to talk about what's worked, what hasn't, and what's still missing.</p>
+          <p>Private coaches, club changes, conversations with the coach, books, podcasts. What have you done so far to try to fix this? Come ready to talk about what's worked, what hasn't, and what's still missing.</p>
         </div>
       </div>
 
@@ -742,7 +685,7 @@ footer {
         <div class="step-number">3</div>
         <div class="step-content">
           <h3>Get honest about your role</h3>
-          <p>This call isn't just about her. It's about the ecosystem around her — and you're part of that ecosystem. Come ready to look at your own part in this, not from a place of guilt, but from a place of readiness to do something about it.</p>
+          <p>This call isn't just about her. It's about the ecosystem around her, and you're part of that ecosystem. Come ready to look at your own part in this, not from a place of guilt, but from a place of readiness to do something about it.</p>
         </div>
       </div>
 
@@ -750,22 +693,22 @@ footer {
   </div>
 </section>
 
-<!-- ── CLOSING ────────────────────────────────────────────────────────── -->
+<!-- CLOSING -->
 <section class="closing-section">
   <div class="container">
     <div class="closing-box">
       <div class="eyebrow" style="text-align:center;">See You Soon</div>
       <p>Your call is confirmed.</p>
-      <p>Make sure you watch the homework video above before we meet — it's required, and it's going to make our time together so much more useful.</p>
+      <p>Make sure you watch the homework video above before we meet. It's required, and it's going to make our time together so much more useful.</p>
       <p>Looking forward to speaking with you.</p>
       <div class="teal-rule"></div>
-      <p class="closing-sig">— Gabby</p>
+      <p class="closing-sig">Gabby</p>
       <p class="closing-note">Watch the video. Come ready to be honest. That's all you need.</p>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
