@@ -11,11 +11,11 @@ const PINK_BG   = "rgba(255,45,120,0.08)";
 const TIERS = [
   {
     id: "independent",
-    tag: "Self-led",
+    tag: "Start Here",
     name: "Independent",
-    description: "Everything your family needs to run the MindSystem framework on your own, at your own pace.",
+    description: "Not ready to commit to the full program yet? Start with the journal. We ship the physical journal to your door and Gabby walks your daughter through setting it up in a private 1-hour session. If you enroll in Supported or Inner Circle within 48 hours of that call, your full payment is credited toward whichever tier you choose.",
     price: "$899",
-    plan: "or 2 payments of $449",
+    plan: "Full credit toward any MindSystem tier within 48 hrs",
     color: TEAL,
     bg: TEAL_BG,
   },
@@ -47,22 +47,23 @@ interface Feature {
   independent: Check;
   supported: Check;
   innerCircle: Check;
+  independentDesc?: string;
   supportedDesc?: string;
   innerCircleDesc?: string;
 }
 
 const FEATURES: Feature[] = [
-  { label: "Physical athlete journal, 6 months",                              independent: true,  supported: true,  innerCircle: true  },
-  { label: "Digital family journal",                                           independent: true,  supported: true,  innerCircle: true  },
-  { label: "Athlete Compass Training (video)",                                 independent: true,  supported: true,  innerCircle: true  },
-  { label: "Guided video instruction for both journals",                       independent: true,  supported: true,  innerCircle: true  },
-  { label: "6 months community access",                                        independent: true,  supported: true,  innerCircle: true  },
-  { label: "Physical family journal, shipped",                                 independent: false, supported: true,  innerCircle: true  },
+  { label: "Physical athlete journal, shipped",                                  independent: true,  supported: true,  innerCircle: true  },
+  { label: "Journal setup session with Gabby",  independent: true, supported: true, innerCircle: true, independentDesc: "1-hr private", supportedDesc: "Group onboarding", innerCircleDesc: "1-on-1 private" },
+  { label: "Credit applied if you upgrade within 48 hrs of your call",           independent: true,  supported: false, innerCircle: false  },
+  { label: "Digital family journal",                                              independent: false, supported: true,  innerCircle: true  },
+  { label: "Athlete Compass Training (video library)",                            independent: false, supported: true,  innerCircle: true  },
+  { label: "Guided video instruction for both journals",                          independent: false, supported: true,  innerCircle: true  },
+  { label: "6 months community access",                                           independent: false, supported: true,  innerCircle: true  },
+  { label: "Physical family journal, shipped",                                    independent: false, supported: true,  innerCircle: true  },
   { label: "Biweekly live group athlete calls",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
   { label: "Biweekly live group parent calls",   independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Athlete onboarding call with Gabby", independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Parent onboarding call with Gabby",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time", independent: false, supported: false, innerCircle: true  },
+  { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time",  independent: false, supported: false, innerCircle: true  },
 ];
 
 function CheckIcon({ color }: { color: string }) {
@@ -324,7 +325,12 @@ export default function ComparisonPage() {
                       {f.label}
                     </td>
                     <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                      {f.independent ? <CheckIcon color={TEAL} /> : <XIcon />}
+                      <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+                        {f.independent ? <CheckIcon color={TEAL} /> : <XIcon />}
+                        {f.independentDesc && (
+                          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", lineHeight: 1 }}>{f.independentDesc}</span>
+                        )}
+                      </div>
                     </td>
                     <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                       <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
