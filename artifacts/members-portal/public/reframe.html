@@ -525,6 +525,12 @@ footer {
         </div>
 
         <div class="field-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="lastName" placeholder="Your last name" autocomplete="family-name">
+          <span class="field-error" id="last-name-error">Please enter your last name.</span>
+        </div>
+
+        <div class="field-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
           <span class="field-error" id="email-error">Please enter a valid email address.</span>
@@ -575,18 +581,20 @@ const submitBtn   = document.getElementById('submit-btn');
 const formState   = document.getElementById('form-state');
 const thankyou    = document.getElementById('thankyou-state');
 const submitError = document.getElementById('submit-error');
-const nameInput   = document.getElementById('first-name');
-const emailInput  = document.getElementById('email');
-const nameError   = document.getElementById('name-error');
-const emailError  = document.getElementById('email-error');
+const nameInput      = document.getElementById('first-name');
+const lastNameInput  = document.getElementById('last-name');
+const emailInput     = document.getElementById('email');
+const nameError      = document.getElementById('name-error');
+const lastNameError  = document.getElementById('last-name-error');
+const emailError     = document.getElementById('email-error');
 
 function isValidEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 }
 
 function clearErrors() {
-  [nameInput, emailInput].forEach(el => el.classList.remove('error'));
-  [nameError, emailError].forEach(el => el.classList.remove('visible'));
+  [nameInput, lastNameInput, emailInput].forEach(el => el.classList.remove('error'));
+  [nameError, lastNameError, emailError].forEach(el => el.classList.remove('visible'));
   submitError.classList.remove('visible');
 }
 
@@ -595,12 +603,19 @@ form.addEventListener('submit', async (e) => {
   clearErrors();
 
   const firstName = nameInput.value.trim();
+  const lastName  = lastNameInput.value.trim();
   const email     = emailInput.value.trim();
   let valid = true;
 
   if (!firstName) {
     nameInput.classList.add('error');
     nameError.classList.add('visible');
+    valid = false;
+  }
+
+  if (!lastName) {
+    lastNameInput.classList.add('error');
+    lastNameError.classList.add('visible');
     valid = false;
   }
 
@@ -616,7 +631,7 @@ form.addEventListener('submit', async (e) => {
   submitBtn.textContent = 'Sending...';
 
   try {
-    const payload = { firstName, email, source: 'reframe-landing-page', submittedAt: new Date().toISOString() };
+    const payload = { firstName, lastName, email, source: 'reframe-landing-page', submittedAt: new Date().toISOString() };
 
     const res = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
@@ -639,10 +654,11 @@ form.addEventListener('submit', async (e) => {
 });
 
 // Clear field error on input
-[nameInput, emailInput].forEach(input => {
+const errorMap = { 'first-name': 'name-error', 'last-name': 'last-name-error', 'email': 'email-error' };
+[nameInput, lastNameInput, emailInput].forEach(input => {
   input.addEventListener('input', () => {
     input.classList.remove('error');
-    document.getElementById(input.id === 'first-name' ? 'name-error' : 'email-error').classList.remove('visible');
+    document.getElementById(errorMap[input.id]).classList.remove('visible');
   });
 });
 </script>
