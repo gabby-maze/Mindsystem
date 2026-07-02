@@ -536,6 +536,12 @@ footer {
           <span class="field-error" id="email-error">Please enter a valid email address.</span>
         </div>
 
+        <div class="field-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+          <span class="field-error" id="phone-error">Please enter a valid phone number.</span>
+        </div>
+
         <div class="submit-error" id="submit-error">
           Something went wrong. Please try again or email gabby@mazeperformance.ai directly.
         </div>
@@ -584,17 +590,19 @@ const submitError = document.getElementById('submit-error');
 const nameInput      = document.getElementById('first-name');
 const lastNameInput  = document.getElementById('last-name');
 const emailInput     = document.getElementById('email');
+const phoneInput     = document.getElementById('phone');
 const nameError      = document.getElementById('name-error');
 const lastNameError  = document.getElementById('last-name-error');
 const emailError     = document.getElementById('email-error');
+const phoneError     = document.getElementById('phone-error');
 
 function isValidEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 }
 
 function clearErrors() {
-  [nameInput, lastNameInput, emailInput].forEach(el => el.classList.remove('error'));
-  [nameError, lastNameError, emailError].forEach(el => el.classList.remove('visible'));
+  [nameInput, lastNameInput, emailInput, phoneInput].forEach(el => el.classList.remove('error'));
+  [nameError, lastNameError, emailError, phoneError].forEach(el => el.classList.remove('visible'));
   submitError.classList.remove('visible');
 }
 
@@ -605,6 +613,7 @@ form.addEventListener('submit', async (e) => {
   const firstName = nameInput.value.trim();
   const lastName  = lastNameInput.value.trim();
   const email     = emailInput.value.trim();
+  const phone     = phoneInput.value.trim();
   let valid = true;
 
   if (!firstName) {
@@ -625,13 +634,19 @@ form.addEventListener('submit', async (e) => {
     valid = false;
   }
 
+  if (phone.replace(/\D/g, '').length < 10) {
+    phoneInput.classList.add('error');
+    phoneError.classList.add('visible');
+    valid = false;
+  }
+
   if (!valid) return;
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
 
   try {
-    const payload = { firstName, lastName, email, source: 'reframe-landing-page', submittedAt: new Date().toISOString() };
+    const payload = { firstName, lastName, email, phone, source: 'reframe-landing-page', submittedAt: new Date().toISOString() };
 
     const res = await fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
@@ -654,8 +669,8 @@ form.addEventListener('submit', async (e) => {
 });
 
 // Clear field error on input
-const errorMap = { 'first-name': 'name-error', 'last-name': 'last-name-error', 'email': 'email-error' };
-[nameInput, lastNameInput, emailInput].forEach(input => {
+const errorMap = { 'first-name': 'name-error', 'last-name': 'last-name-error', 'email': 'email-error', 'phone': 'phone-error' };
+[nameInput, lastNameInput, emailInput, phoneInput].forEach(input => {
   input.addEventListener('input', () => {
     input.classList.remove('error');
     document.getElementById(errorMap[input.id]).classList.remove('visible');
