@@ -18,26 +18,18 @@ const staggerContainer = {
 
 const BASE = import.meta.env.BASE_URL;
 
-const mazeItems = [
+const compassItems = [
   {
-    letter: "M",
-    title: "Mindset",
-    body: "Who is she becoming as a competitor? What does she stand for? What drives her? Most athletes move through entire seasons, entire careers, without ever being asked these questions. MindSystem starts here."
+    title: "A Shared Language",
+    body: "Most families are speaking two different languages about the same sport. When your athlete can tell you exactly how she's feeling and you actually understand what she means — something shifts. That's where the real conversation starts."
   },
   {
-    letter: "A",
-    title: "Analyze",
-    body: "What habits and behaviors are shaping her outcomes? Sleep. Nutrition. Focus. Emotional patterns. The things nobody tracks until they become problems. MindSystem makes them visible before they do."
+    title: "A Shared Definition of Success",
+    body: "If your daughter thinks success means improvement and you think it means a roster spot — you're both working hard toward different finish lines. MindSystem aligns your family around one definition before the season starts so everyone is measuring the same thing."
   },
   {
-    letter: "Z",
-    title: "Zero In",
-    body: "What are the three skills she is hyper focused on developing this season? Once identified, those three skills get turned into trackable habits, measurable metrics and milestones she can monitor at practice, in games, and off the court. When the athlete, the parent, and the environment are all focused on the same targets, everything aligns."
-  },
-  {
-    letter: "E",
-    title: "Execute",
-    body: "How does she reflect on real performance? What worked. What didn't. How did she respond emotionally. This is where the process becomes a habit. And habits become identity."
+    title: "A Shared Way to Track It",
+    body: "Knowing what success looks like isn't enough if nobody is tracking whether it's happening. We build a simple, consistent system for marking progress — milestones your athlete owns, wins your family recognizes together, momentum you can both see in real time."
   }
 ];
 
@@ -227,48 +219,49 @@ export default function MindSystemPage() {
           >
             <div className="max-w-3xl mb-20">
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap, between what everyone wants, what everyone experiences, and what nobody is naming, is the maze.
+                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap — between what everyone wants, what everyone experiences, and what nobody is naming — is the maze.
               </motion.p>
             </div>
 
-            {/* M.A.Z.E. Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-              {mazeItems.map(({ letter, title, body }, i) => (
+            {/* Compass Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+              {compassItems.map(({ title, body }) => (
                 <motion.div
-                  key={letter}
+                  key={title}
                   variants={fadeUp}
                   className="bg-background border border-border/50 p-8 md:p-10 relative overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary/70 to-transparent" />
-                  <div className="flex items-start gap-6">
-                    <span className="text-7xl md:text-8xl font-serif text-secondary/20 leading-none select-none shrink-0">
-                      {letter}
-                    </span>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-serif text-secondary mb-4">{letter}, {title}</h3>
-                      <p className="text-muted-foreground font-light leading-relaxed">{body}</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl md:text-2xl font-serif text-secondary mb-4">{title}</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">{body}</p>
                 </motion.div>
               ))}
             </div>
 
             <motion.div variants={fadeUp} className="space-y-6 max-w-4xl mx-auto text-center">
-              <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed">
-                Most families are reacting to all four of these territories every single weekend without a shared framework for any of them. That's not a failure. That's what happens when you're in a maze without a compass.
-              </p>
               <p className="text-2xl md:text-3xl font-serif text-secondary italic">
                 MindSystem is the compass.
               </p>
               <p className="text-muted-foreground font-light text-lg leading-relaxed">
-                In The Missing Framework — A Live Training for Youth Sports Families we pull back the curtain on all four walls of the maze, what they look like in real families, why they create the patterns you're already experiencing, and what becomes possible when your family has a compass.
+                We have two free trainings that pull back the curtain on what these patterns look like in real families, why they create the friction you're already experiencing, and what becomes possible when your family has a framework.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/free-trainings"
-                  className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
+                  href="https://www.mazeperformance.ai/missing-conversation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)]"
                 >
-                  Browse Free Trainings
+                  Watch The Missing Framework
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://members.gabbycole.com/reframe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase"
+                >
+                  Get The Reframe Exercise
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
