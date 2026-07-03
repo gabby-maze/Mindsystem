@@ -15,7 +15,6 @@ export function Navigation({ onReserveClick, ctaText = "Free Trainings", ctaHref
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/free-trainings", label: "Free Trainings" },
     { href: "/about", label: "About" },
   ];
 
