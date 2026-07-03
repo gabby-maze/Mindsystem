@@ -118,11 +118,11 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/70 to-transparent" />
                 <div className="p-8 flex flex-col flex-1">
                   <span className="text-xs uppercase tracking-widest font-semibold border border-primary/40 text-primary px-3 py-1 self-start mb-6">
-                    Live Training
+                    Training Replay
                   </span>
                   <h3 className="text-2xl font-serif text-foreground mb-3">The Missing Framework</h3>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
-                    A free live session where Gabby pulls back the curtain on why misalignment, not talent, not effort, not playing time, is the real issue inside youth sports families. And what to do about it.
+                    A free replay of Gabby's training session pulling back the curtain on why misalignment, not talent, not effort, not playing time, is the real issue inside youth sports families. And what to do about it.
                   </p>
                   <a
                     href="https://www.mazeperformance.ai/missing-conversation"
@@ -130,7 +130,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-xs font-bold tracking-widest uppercase w-full"
                   >
-                    Reserve Your Spot, It's Free
+                    Watch the Replay, It's Free
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </div>
@@ -165,16 +165,25 @@ export default function Home() {
               {/* Training 3: Coming Soon */}
               <motion.div
                 variants={fadeUp}
-                className="bg-background border border-dashed border-border/30 relative overflow-hidden flex flex-col opacity-50"
+                className="bg-background border border-dashed border-border/30 relative overflow-hidden flex flex-col"
               >
                 <div className="p-8 flex flex-col flex-1 items-center justify-center text-center">
                   <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground px-3 py-1 border border-border/30 self-center mb-6">
                     Coming Soon
                   </span>
                   <h3 className="text-2xl font-serif text-muted-foreground mb-3">More Trainings</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8">
                     Additional free trainings are in development. Check back soon.
                   </p>
+                  <a
+                    href="https://www.videoask.com/fg4ocxw4e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-border/40 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Do you have a suggestion?
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
                 </div>
               </motion.div>
 
