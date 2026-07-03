@@ -75,14 +75,6 @@ export default function Home() {
               You already love watching her play. Now imagine loving the whole experience, not just the moments on the court but everything around them. The conversations. The car rides. The way your family moves through the hard parts together. That's not a fantasy. That's a system.
             </motion.p>
 
-            <motion.a
-              variants={fadeUp}
-              href="#trainings"
-              className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
-            >
-              Browse Free Trainings
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -121,9 +113,18 @@ export default function Home() {
                     Training Replay
                   </span>
                   <h3 className="text-2xl font-serif text-foreground mb-3">The Missing Framework</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed text-sm flex-1">
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
                     A free replay of Gabby's training session pulling back the curtain on why misalignment, not talent, not effort, not playing time, is the real issue inside youth sports families. And what to do about it.
                   </p>
+                  <a
+                    href="https://www.mazeperformance.ai/missing-conversation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Watch the Replay, It's Free
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
                 </div>
               </motion.div>
 
