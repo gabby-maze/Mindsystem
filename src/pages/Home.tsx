@@ -179,9 +179,9 @@ export default function Home() {
                     href="https://www.videoask.com/fg4ocxw4e"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-border/40 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all text-xs font-bold tracking-widest uppercase w-full"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-border/40 text-muted-foreground hover:bg-muted/30 transition-all text-xs font-bold tracking-widest uppercase w-full"
                   >
-                    Do you have a suggestion?
+                    Fill Out the Parent Survey
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </div>
