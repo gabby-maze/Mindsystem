@@ -268,7 +268,7 @@ export default function MindSystemPage() {
                   href="/free-trainings"
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
-                  Reserve Your Spot — Browse Free Trainings
+                  Browse Free Trainings
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
@@ -293,7 +293,7 @@ export default function MindSystemPage() {
               Three ways to move through <span className="italic text-secondary">the maze.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
-              All three tiers open after The Missing Framework — A Live Training for Youth Sports Families. Reserve your spot to get access.
+              All three tiers are available to families who start with a free training. Browse our free trainings to get access.
             </motion.p>
           </motion.div>
 
