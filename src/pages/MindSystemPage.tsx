@@ -139,12 +139,10 @@ export default function MindSystemPage() {
 
             <motion.a
               variants={fadeUp}
-              href="https://www.mazeperformance.ai/missing-conversation"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-trainings"
               className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.15)] hover:shadow-[0_0_40px_rgba(155,47,247,0.4)] w-full sm:w-auto"
             >
-              Not sure where to start? Join The Missing Framework — A Live Training for Youth Sports Families, Free
+              Not sure where to start? Browse our free trainings
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>
@@ -267,12 +265,10 @@ export default function MindSystemPage() {
               </p>
               <div className="pt-4">
                 <a
-                  href="https://www.mazeperformance.ai/missing-conversation"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/free-trainings"
                   className="group inline-flex items-center justify-center px-8 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
                 >
-                  Reserve Your Spot, The Missing Framework — A Live Training for Youth Sports Families, Free
+                  Reserve Your Spot — Browse Free Trainings
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
@@ -438,12 +434,10 @@ export default function MindSystemPage() {
                 By the end of that session you won't be guessing which tier is right for you. You'll know.
               </p>
               <a
-                href="https://www.mazeperformance.ai/missing-conversation"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/free-trainings"
                 className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
               >
-                Reserve My Spot, It's Free
+                Browse Free Trainings
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>
@@ -468,12 +462,10 @@ export default function MindSystemPage() {
             </motion.p>
             <motion.a
               variants={fadeUp}
-              href="https://www.mazeperformance.ai/missing-conversation"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-trainings"
               className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
             >
-              Reserve My Spot, The Missing Framework — A Live Training for Youth Sports Families [Free]
+              Browse Free Trainings
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
           </motion.div>

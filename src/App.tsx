@@ -24,7 +24,8 @@ const queryClient = new QueryClient();
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={MindSystemPage} />
+      <Route path="/free-trainings" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/mindsystem" component={MindSystemPage} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
