@@ -121,18 +121,9 @@ export default function Home() {
                     Training Replay
                   </span>
                   <h3 className="text-2xl font-serif text-foreground mb-3">The Missing Framework</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm flex-1">
                     A free replay of Gabby's training session pulling back the curtain on why misalignment, not talent, not effort, not playing time, is the real issue inside youth sports families. And what to do about it.
                   </p>
-                  <a
-                    href="https://www.mazeperformance.ai/missing-conversation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-xs font-bold tracking-widest uppercase w-full"
-                  >
-                    Watch the Replay, It's Free
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </a>
                 </div>
               </motion.div>
 
