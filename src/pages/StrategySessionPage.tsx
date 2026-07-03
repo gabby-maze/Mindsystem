@@ -13,9 +13,9 @@ export default function StrategySessionPage() {
         ctaHref={BOOK_LINK}
       />
 
-      {/* Hero — split layout */}
+      {/* Hero, split layout */}
       <section className="min-h-screen flex flex-col md:flex-row">
-        {/* Image — top on mobile, right on desktop */}
+        {/* Image, top on mobile, right on desktop */}
         <div className="order-first md:order-last md:w-1/2 relative h-[55vw] md:h-auto md:min-h-screen overflow-hidden">
           <img
             src={`${BASE}images/gabby-court.jpg`}
@@ -32,7 +32,7 @@ export default function StrategySessionPage() {
           />
         </div>
 
-        {/* Copy — below image on mobile, left on desktop */}
+        {/* Copy, below image on mobile, left on desktop */}
         <div className="order-last md:order-first flex flex-col justify-center px-8 md:px-16 py-10 md:py-0 md:w-1/2 z-10">
           <p
             className="text-xs uppercase tracking-[0.3em] font-semibold mb-4"

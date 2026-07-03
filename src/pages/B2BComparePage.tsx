@@ -36,7 +36,7 @@ const COLUMNS: Column[] = [
     included: [
       "Full access to the Courtside Conversations digital library",
       "Position breakdowns for parents",
-      "Breakthrough Track — season-specific guidance for every phase",
+      "Breakthrough Track, season-specific guidance for every phase",
       "Athlete performance tools and resources",
       "Nutrition and pressure practice content",
       "Courtside Reads and Collaborative Conversations podcast",
@@ -66,8 +66,8 @@ const COLUMNS: Column[] = [
     included: [
       "Everything in Individual Courtside Conversations",
       "Program-wide access distributed to all enrolled families",
-      "One live community session per month with Gabby — longer format, questions submitted in advance",
-      "Access distribution handled by Gabby or by your program — your choice",
+      "One live community session per month with Gabby, longer format, questions submitted in advance",
+      "Access distribution handled by Gabby or by your program, your choice",
     ],
     notIncluded: [
       "Athlete journal",
@@ -95,18 +95,18 @@ const COLUMNS: Column[] = [
     price: "$3,500 / family",
     priceNote: "12 weeks guided + 12 months digital studio access",
     included: [
-      "12 weeks of guided behavior modification — the foundation",
-      "Custom athlete journal — personalized to her season",
-      "Custom parent journal — personalized to her ecosystem",
-      "Biweekly live group calls — athlete track and parent track",
+      "12 weeks of guided behavior modification, the foundation",
+      "Custom athlete journal, personalized to her season",
+      "Custom parent journal, personalized to her ecosystem",
+      "Biweekly live group calls, athlete track and parent track",
       "Full access to MindSystem digital studio for 12 months after the guided program",
       "After the 12 weeks: ongoing digital studio access equivalent to Courtside Conversations",
     ],
     notIncluded: [
-      "Private 1:1 calls (available as add-on — 4-pack at $1,000)",
+      "Private 1:1 calls (available as add-on, 4-pack at $1,000)",
     ],
     costOptions: null,
-    note: "This builds a shared language between athlete, parent, and coach — a behavior modification system that compounds season over season.",
+    note: "This builds a shared language between athlete, parent, and coach, a behavior modification system that compounds season over season.",
     cta: null,
     ctaHref: null,
     minimum: null,
@@ -122,12 +122,12 @@ const COLUMNS: Column[] = [
     priceNote: "Individual equivalent: $3,500 per family",
     included: [
       "Everything in Individual MindSystem Supported for every enrolled family",
-      "Gabby acting as parent liaison for your program — families bring questions, concerns, and situations to Gabby first",
-      "Role plays, hard conversations, sideline behavior — handled in the digital space",
+      "Gabby acting as parent liaison for your program, families bring questions, concerns, and situations to Gabby first",
+      "Role plays, hard conversations, sideline behavior, handled in the digital space",
       "Coaching staff protected from parent management",
       "Custom athlete journals branded to your program",
       "Custom parent journals branded to your program",
-      "Program-specific coach orientation page — living resource with Q&A",
+      "Program-specific coach orientation page, living resource with Q&A",
     ],
     notIncluded: [],
     costOptions: [
@@ -145,7 +145,7 @@ const COLUMNS: Column[] = [
 const FAQS = [
   {
     q: "What is the difference between education and MindSystem?",
-    a: "Courtside Conversations is education — tools, content, and monthly live sessions your families can use at their own pace. MindSystem is a guided behavior modification program — 12 weeks of structured work with custom journals, live group calls, and Gabby actively managing your parent ecosystem. Education gives families information. MindSystem changes behavior.",
+    a: "Courtside Conversations is education, tools, content, and monthly live sessions your families can use at their own pace. MindSystem is a guided behavior modification program, 12 weeks of structured work with custom journals, live group calls, and Gabby actively managing your parent ecosystem. Education gives families information. MindSystem changes behavior.",
   },
   {
     q: "What does team partner pricing require?",
@@ -213,7 +213,7 @@ export default function B2BComparePage() {
             <div style={{ backgroundColor: `${PINK}08`, border: `1.5px solid ${PINK}25`, borderRadius: 12, padding: "1.5rem 1.75rem" }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: PINK }}>Individual Pricing</p>
               <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontSize: "0.9rem" }}>
-                Individual pricing is for families who enroll directly — one athlete, one parent, one family moving through the program on their own. No club involvement required.
+                Individual pricing is for families who enroll directly, one athlete, one parent, one family moving through the program on their own. No club involvement required.
               </p>
             </div>
             {/* Program Partner */}
@@ -326,7 +326,7 @@ export default function B2BComparePage() {
                       <ul className="flex flex-col gap-2">
                         {col.costOptions.map((opt) => (
                           <li key={opt.letter} className="flex items-start gap-2 text-xs" style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>
-                            <span className="font-bold shrink-0" style={{ color: col.color }}>Option {opt.letter} —</span>
+                            <span className="font-bold shrink-0" style={{ color: col.color }}>Option {opt.letter},</span>
                             {opt.text}
                           </li>
                         ))}
@@ -341,7 +341,7 @@ export default function B2BComparePage() {
                   )}
                 </div>
 
-                {/* CTA — only shown for Individual Courtside */}
+                {/* CTA, only shown for Individual Courtside */}
                 {col.ctaHref && (
                   <div style={{ padding: "1.25rem 1.5rem", borderTop: `1px solid rgba(255,255,255,0.06)` }}>
                     <a

@@ -21,15 +21,15 @@ const BASE = import.meta.env.BASE_URL;
 const compassItems = [
   {
     title: "A Shared Language",
-    body: "Most families are speaking two different languages about the same sport. When your athlete can tell you exactly how she's feeling and you actually understand what she means — something shifts. That's where the real conversation starts."
+    body: "Most families are speaking two different languages about the same sport. When your athlete can tell you exactly how she's feeling and you actually understand what she means, something shifts. That's where the real conversation starts."
   },
   {
     title: "A Shared Definition of Success",
-    body: "If your daughter thinks success means improvement and you think it means a roster spot — you're both working hard toward different finish lines. MindSystem aligns your family around one definition before the season starts so everyone is measuring the same thing."
+    body: "If your daughter thinks success means improvement and you think it means a roster spot, you're both working hard toward different finish lines. MindSystem aligns your family around one definition before the season starts so everyone is measuring the same thing."
   },
   {
     title: "A Shared Way to Track It",
-    body: "Knowing what success looks like isn't enough if nobody is tracking whether it's happening. We build a simple, consistent system for marking progress — milestones your athlete owns, wins your family recognizes together, momentum you can both see in real time."
+    body: "Knowing what success looks like isn't enough if nobody is tracking whether it's happening. We build a simple, consistent system for marking progress, milestones your athlete owns, wins your family recognizes together, momentum you can both see in real time."
   }
 ];
 
@@ -219,7 +219,7 @@ export default function MindSystemPage() {
           >
             <div className="max-w-3xl mb-20">
               <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap — between what everyone wants, what everyone experiences, and what nobody is naming — is the maze.
+                Every family in youth sports is caught inside the same ecosystem. Three roles. Three sets of expectations. Almost no shared language between them. That gap, between what everyone wants, what everyone experiences, and what nobody is naming, is the maze.
               </motion.p>
             </div>
 
@@ -310,7 +310,7 @@ export default function MindSystemPage() {
                   </div>
                   <p className="text-sm uppercase tracking-widest text-secondary font-semibold">Locked</p>
                   <p className="text-xs text-muted-foreground text-center max-w-[180px]">
-                    Opens after The Missing Framework — A Live Training for Youth Sports Families
+                    Opens after The Missing Framework, A Live Training for Youth Sports Families
                   </p>
                 </div>
 
@@ -418,7 +418,7 @@ export default function MindSystemPage() {
             <motion.div variants={fadeUp} className="bg-card border border-secondary/20 p-10 md:p-16 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary via-secondary/50 to-transparent" />
               <p className="text-xl md:text-2xl font-serif text-foreground mb-6 leading-relaxed">
-                Start with <span className="italic text-secondary">The Missing Framework — A Live Training for Youth Sports Families.</span>
+                Start with <span className="italic text-secondary">The Missing Framework, A Live Training for Youth Sports Families.</span>
               </p>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl mx-auto">
                 This is our free live session where Gabby pulls back the curtain on the maze, what it actually looks like inside real families, why it creates the patterns you're already experiencing, and what becomes possible when your family has a compass.
