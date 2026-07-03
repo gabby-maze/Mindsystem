@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ReservationModal } from "@/components/ReservationModal";
@@ -33,45 +33,6 @@ const compassItems = [
   }
 ];
 
-const tiers = [
-  {
-    name: "MindSystem Independent",
-    tag: "Self-Paced",
-    description: "This is for you if you're ready to stop winging it and start moving through this season with intention, on your own terms and at your own pace.",
-    items: [
-      "The MindSystem athlete journal, your athlete's physical compass for the full 6 months",
-      "The MindSystem digital family journal, a shared compass for the family unit",
-      "Guided video instruction for navigating both journals",
-      "A DIY family onboarding session to get everyone oriented and moving in the same direction",
-      "6 months of access from the day you purchase"
-    ],
-    note: "This is not a course you sit and watch. It's a process you move through, together."
-  },
-  {
-    name: "MindSystem Supported",
-    tag: "Group Experience",
-    description: "This is for you if you want the tools AND the reassurance that you're using them right, with a community of families navigating the exact same maze beside you.",
-    items: [
-      "Everything in MindSystem Independent",
-      "The MindSystem physical family journal, your family's shared compass for the season",
-      "Biweekly live group athlete calls, where your athlete reflects, recalibrates, and connects with other athletes",
-      "Biweekly live group parent calls, where you get support, clarity, and confidence",
-    ],
-    note: "You're not being coached. You're being supported as you build."
-  },
-  {
-    name: "MindSystem Inner Circle",
-    tag: "Direct Access",
-    description: "This is for you if you want Gabby in your corner, not just the system, but the person who built it walking alongside your family for the full 12 weeks.",
-    items: [
-      "Everything in MindSystem Supported",
-      "A private family onboarding call with Gabby, to get your family oriented, aligned, and moving in the same direction from day one",
-      "Direct Voxer access to Gabby for the full 12 weeks, voice and text",
-      "24 hour response time, for the moments that can't wait"
-    ],
-    note: "This is not crisis management. This is having the person who built the compass beside you as you use it."
-  }
-];
 
 export default function MindSystemPage() {
   const { isOpen, openModal, closeModal } = useReservationModal();
@@ -263,65 +224,49 @@ export default function MindSystemPage() {
       <section className="py-24 md:py-32 bg-background relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/5 via-background to-background z-0" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
-            className="text-center mb-16"
           >
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-serif mb-6 leading-tight">
-              Three ways to move through <span className="italic text-secondary">the maze.</span>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+              Ready to move through the maze with a <span className="italic text-secondary">compass?</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
-              All three tiers are available to families who start with a free training. Browse our free trainings to get access.
+            <motion.p variants={fadeUp} className="text-lg text-muted-foreground font-light mb-10 leading-relaxed">
+              There are different ways to work with Gabby depending on where your family is right now and how much support you're looking for.
             </motion.p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {tiers.map(({ name, tag, description, items, note }, i) => (
-              <motion.div
-                key={name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                variants={fadeUp}
-                className="bg-card border border-border/60 relative overflow-hidden flex flex-col"
+            <motion.div variants={fadeUp} className="bg-card border border-secondary/20 p-10 md:p-14 relative overflow-hidden mb-6">
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary via-secondary/50 to-transparent" />
+              <p className="text-xl font-serif text-foreground mb-8 leading-relaxed">
+                The best place to start is a conversation.
+              </p>
+              <a
+                href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)]"
               >
-                {/* Purple top stripe */}
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary to-transparent" />
+                Book a Clarity Call
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </a>
+            </motion.div>
 
-                {/* Lock overlay */}
-                <div className="absolute inset-0 z-20 bg-background/70 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4">
-                  <div className="w-14 h-14 rounded-full border border-secondary/40 flex items-center justify-center">
-                    <Lock className="w-6 h-6 text-secondary" aria-hidden="true" />
-                  </div>
-                  <p className="text-sm uppercase tracking-widest text-secondary font-semibold">Locked</p>
-                  <p className="text-xs text-muted-foreground text-center max-w-[180px]">
-                    Opens after The Missing Framework, A Live Training for Youth Sports Families
-                  </p>
-                </div>
-
-                <div className="p-8 md:p-10 flex flex-col flex-1">
-                  <div className="mb-6 opacity-40">
-                    <span className="text-xs uppercase tracking-widest text-secondary font-semibold border border-secondary/40 px-3 py-1">{tag}</span>
-                  </div>
-                  <h3 className="text-2xl font-serif text-foreground mb-4">{name}</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed mb-8 opacity-40">{description}</p>
-                  <ul className="space-y-3 mb-8 flex-1 opacity-40">
-                    {items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-sm text-muted-foreground font-light">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-sm text-foreground/60 italic font-serif border-t border-border/30 pt-6 opacity-40">{note}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            <motion.div variants={fadeUp} className="flex flex-col items-center gap-4">
+              <p className="text-muted-foreground font-light">
+                Want to learn more about Gabby and how she works first?
+              </p>
+              <a
+                href="/about"
+                className="group inline-flex items-center justify-center px-8 py-4 bg-transparent border border-secondary/50 text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase"
+              >
+                Meet Gabby
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
