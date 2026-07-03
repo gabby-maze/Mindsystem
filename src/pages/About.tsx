@@ -355,7 +355,7 @@ export default function About() {
               </motion.div>
 
               <motion.p variants={fadeUp} className="text-foreground font-medium text-xl md:text-2xl text-center py-4">
-                That is what MindSystem does. That is what nothing else has done.
+                That is what Mindsystem does which no other program has been able to do.
               </motion.p>
             </div>
 
