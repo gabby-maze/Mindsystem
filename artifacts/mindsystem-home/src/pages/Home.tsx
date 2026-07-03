@@ -122,7 +122,7 @@ export default function Home() {
                   </span>
                   <h3 className="text-2xl font-serif text-foreground mb-3">The Missing Framework</h3>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
-                    A free live session where Gabby pulls back the curtain on why misalignment — not talent, not effort, not playing time — is the real issue inside youth sports families. And what to do about it.
+                    A free live session where Gabby pulls back the curtain on why misalignment, not talent, not effort, not playing time, is the real issue inside youth sports families. And what to do about it.
                   </p>
                   <a
                     href="https://www.mazeperformance.ai/missing-conversation"
@@ -130,7 +130,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-xs font-bold tracking-widest uppercase w-full"
                   >
-                    Reserve Your Spot — It's Free
+                    Reserve Your Spot, It's Free
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </div>
@@ -148,7 +148,7 @@ export default function Home() {
                   </span>
                   <h3 className="text-2xl font-serif text-foreground mb-3">The Reframe</h3>
                   <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
-                    The season just ended. Before you switch clubs, email the coach, or lock in next year's schedule — get the exact process to reframe before you respond. Not react.
+                    The season just ended. Before you switch clubs, email the coach, or lock in next year's schedule, get the exact process to reframe before you respond. Not react.
                   </p>
                   <a
                     href="https://members.gabbycole.com/reframe"
@@ -244,7 +244,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
                   >
-                    Join The Missing Framework — A Live Training for Youth Sports Families, It's Free
+                    Join The Missing Framework, A Live Training for Youth Sports Families, It's Free
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </motion.div>
@@ -383,7 +383,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-8 py-5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
               >
-                Learn More, Join The Missing Framework — A Live Training for Youth Sports Families
+                Learn More, Join The Missing Framework, A Live Training for Youth Sports Families
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>
@@ -456,7 +456,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-4 bg-foreground text-background hover:bg-primary transition-all text-sm font-bold tracking-widest uppercase w-full sm:w-auto"
                 >
-                  Hear the Full Story, Join The Missing Framework — A Live Training for Youth Sports Families
+                  Hear the Full Story, Join The Missing Framework, A Live Training for Youth Sports Families
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </motion.div>
@@ -496,7 +496,7 @@ export default function Home() {
           >
             <div className="text-center mb-16">
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-4 text-primary">
-                The Missing Framework — A Live Training for Youth Sports Families
+                The Missing Framework, A Live Training for Youth Sports Families
               </motion.h2>
               <motion.p variants={fadeUp} className="text-xl text-muted-foreground uppercase tracking-widest font-semibold">
                 A free live session with Gabby Cole
