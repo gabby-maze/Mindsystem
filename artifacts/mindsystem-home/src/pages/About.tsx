@@ -362,15 +362,15 @@ export default function About() {
             {/* CTA */}
             <motion.div variants={fadeUp} className="mt-16 text-center">
               <p className="text-muted-foreground text-lg mb-8">
-                Ready to see it in action?
+                Ready to stop guessing?
               </p>
               <a
-                href="https://www.mazeperformance.ai/missing-conversation"
+                href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center px-10 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(0,212,200,0.2)] hover:shadow-[0_0_50px_rgba(0,212,200,0.45)] w-full sm:w-auto"
+                className="group inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_50px_rgba(255,45,120,0.45)] w-full sm:w-auto"
               >
-                Join The Missing Framework, A Live Training for Youth Sports Families, Free
+                Book a Clarity Call
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </motion.div>
