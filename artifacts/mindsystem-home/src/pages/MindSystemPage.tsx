@@ -245,23 +245,12 @@ export default function MindSystemPage() {
               <p className="text-muted-foreground font-light text-lg leading-relaxed">
                 We have two free trainings that pull back the curtain on what these patterns look like in real families, why they create the friction you're already experiencing, and what becomes possible when your family has a framework.
               </p>
-              <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="pt-4">
                 <a
-                  href="https://www.mazeperformance.ai/missing-conversation"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/free-trainings"
                   className="group inline-flex items-center justify-center px-8 py-4 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)]"
                 >
-                  Watch The Missing Framework
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://members.gabbycole.com/reframe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center px-8 py-4 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all text-sm font-bold tracking-widest uppercase"
-                >
-                  Get The Reframe Exercise
+                  Browse Free Trainings
                   <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
