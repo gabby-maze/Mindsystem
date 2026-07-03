@@ -227,26 +227,27 @@ export default function Home() {
                   Everyone's focused on skill development. Playing time. College pathways. The next tournament. The next level.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-foreground font-normal text-xl md:text-2xl">
-                  Nobody's talking about misalignment.
+                  Nobody's talking about the process.
                 </motion.p>
                 <motion.p variants={fadeUp}>
                   The athlete who's losing confidence isn't failing because she lacks talent. The parent who doesn't know what to say on the car ride home isn't failing because they don't care. The family that shows up every single weekend and still leaves feeling like something is off isn't failing because they're not committed enough.
                 </motion.p>
                 <motion.p variants={fadeUp}>
-                  They're operating without a shared system. And when there's no shared system, everyone absorbs everyone else's stress, and nobody can figure out why.
+                  They're measuring the wrong thing. When every conversation, every decision, and every weekend is organized around outcomes nobody can control — the athlete stops trusting the process. The parent stops trusting themselves. And the family stops trusting each other.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
-                  That's the missing framework. We're putting it in your hands.
+                  The process is the point. The outcome is the byproduct.
+                </motion.p>
+                <motion.p variants={fadeUp}>
+                  That's what our free trainings are built around. Pick your entry point below and start moving through the maze with something most families never have — a compass.
                 </motion.p>
                 <motion.div variants={fadeUp} className="pt-4">
                   <a
-                    href="https://www.mazeperformance.ai/missing-conversation"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary hover:text-primary/80 font-bold tracking-widest uppercase text-sm group"
+                    href="#trainings"
+                    className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)]"
                   >
-                    Join The Missing Framework, A Live Training for Youth Sports Families, It's Free
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    Browse Free Trainings
+                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </motion.div>
               </div>
