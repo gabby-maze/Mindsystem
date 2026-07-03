@@ -104,9 +104,9 @@ export default function Home() {
             <motion.ul variants={fadeUp} className="space-y-5 mb-12">
               {[
                 "You don't know what to say on the car ride home after a bad game",
-                "You're not sure whether to push or give her space — and you're exhausted from guessing",
+                "You're not sure whether to push or give her space, and you're exhausted from guessing",
                 "You've invested in privates, camps, and club fees and something still feels off",
-                "When she's struggling, you're struggling — and you can't always explain why",
+                "When she's struggling, you're struggling, and you can't always explain why",
                 "You love watching her compete and you have no idea what to do with everything around it",
                 "You want this experience to build who she is, not just how she plays"
               ].map((item, i) => (
@@ -124,7 +124,7 @@ export default function Home() {
               It is. And you're in the right place.
             </motion.p>
             <motion.p variants={fadeUp} className="text-muted-foreground text-lg font-light leading-relaxed mb-12 border-l-2 border-primary pl-6 py-2">
-              One rule before you dive in: no blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better — not relitigate everything that came before.
+              One rule before you dive in: no blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better, not relitigate everything that came before.
             </motion.p>
 
             <motion.div variants={fadeUp}>
@@ -182,13 +182,13 @@ export default function Home() {
                   The athlete who's losing confidence isn't failing because she lacks talent. The parent who doesn't know what to say on the car ride home isn't failing because they don't care. The family that shows up every single weekend and still leaves feeling like something is off isn't failing because they're not committed enough.
                 </motion.p>
                 <motion.p variants={fadeUp}>
-                  They're measuring the wrong thing. When every conversation, every decision, and every weekend is organized around outcomes nobody can control — the athlete stops trusting the process. The parent stops trusting themselves. And the family stops trusting each other.
+                  They're measuring the wrong thing. When every conversation, every decision, and every weekend is organized around outcomes nobody can control, the athlete stops trusting the process. The parent stops trusting themselves. And the family stops trusting each other.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-foreground italic font-serif text-2xl md:text-3xl border-l-2 border-primary pl-6 py-2 my-12">
                   The process is the point. The outcome is the byproduct.
                 </motion.p>
                 <motion.p variants={fadeUp}>
-                  That's what our free trainings are built around. Pick your entry point below and start moving through the maze with something most families never have — a compass.
+                  That's what our free trainings are built around. Pick your entry point below and start moving through the maze with something most families never have: a compass.
                 </motion.p>
                 <motion.div variants={fadeUp} className="pt-4">
                   <BrowseButton />
