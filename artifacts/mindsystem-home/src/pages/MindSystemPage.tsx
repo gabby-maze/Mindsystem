@@ -366,33 +366,6 @@ export default function MindSystemPage() {
         </div>
       </section>
 
-      {/* ── FOOTER CTA ───────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-card border-t border-border/40 text-center">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.p variants={fadeUp} className="text-3xl md:text-4xl font-serif text-foreground mb-4 leading-tight">
-              The season is already happening.
-            </motion.p>
-            <motion.p variants={fadeUp} className="text-xl text-muted-foreground font-light mb-12">
-              The question is whether your family is moving through it, or just surviving it.
-            </motion.p>
-            <motion.a
-              variants={fadeUp}
-              href="/free-trainings"
-              className="group inline-flex items-center justify-center px-10 py-5 bg-secondary text-white hover:bg-secondary/90 transition-all text-sm font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(155,47,247,0.2)] hover:shadow-[0_0_50px_rgba(155,47,247,0.45)] w-full sm:w-auto"
-            >
-              Browse Free Trainings
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
-
       </main>
 
       <Footer />
