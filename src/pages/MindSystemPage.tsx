@@ -345,20 +345,14 @@ export default function MindSystemPage() {
             viewport={{ once: true, margin: "-80px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-              Not sure which tier is right for you?
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+              Not sure where to start?
             </motion.h2>
 
             <motion.div variants={fadeUp} className="bg-card border border-secondary/20 p-10 md:p-16 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary via-secondary/50 to-transparent" />
-              <p className="text-xl md:text-2xl font-serif text-foreground mb-6 leading-relaxed">
-                Start with <span className="italic text-secondary">The Missing Framework, A Live Training for Youth Sports Families.</span>
-              </p>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                This is our free live session where Gabby pulls back the curtain on the maze, what it actually looks like inside real families, why it creates the patterns you're already experiencing, and what becomes possible when your family has a compass.
-              </p>
-              <p className="text-foreground font-medium text-lg mb-10">
-                By the end of that session you won't be guessing which tier is right for you. You'll know.
+                Browse our free trainings and find your entry point into the maze.
               </p>
               <a
                 href="/free-trainings"
