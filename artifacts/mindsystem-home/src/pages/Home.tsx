@@ -88,6 +88,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── THIS IS FOR YOU ─────────────────────────────────────── */}
+      <section className="bg-card border-t border-border/30 py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-10 leading-tight">
+              This is for you if:
+            </motion.h2>
+
+            <motion.ul variants={fadeUp} className="space-y-5 mb-12">
+              {[
+                "You don't know what to say on the car ride home after a bad game",
+                "You're not sure whether to push or give her space — and you're exhausted from guessing",
+                "You've invested in privates, camps, and club fees and something still feels off",
+                "When she's struggling, you're struggling — and you can't always explain why",
+                "You love watching her compete and you have no idea what to do with everything around it",
+                "You want this experience to build who she is, not just how she plays"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mr-4 mt-0.5" aria-hidden="true" />
+                  <span className="text-muted-foreground text-lg leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </motion.ul>
+
+            <motion.p variants={fadeUp} className="text-muted-foreground text-lg font-light leading-relaxed mb-6">
+              This is also for you if you've been in club sports for years and still feel lost. If your athlete is thriving on the court and struggling everywhere else. If you've tried everything and nothing has fully landed. If you're not even sure this is your problem to solve.
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-foreground text-lg font-medium leading-relaxed mb-10">
+              It is. And you're in the right place.
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-muted-foreground text-lg font-light leading-relaxed mb-12 border-l-2 border-primary pl-6 py-2">
+              One rule before you dive in: no blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better — not relitigate everything that came before.
+            </motion.p>
+
+            <motion.div variants={fadeUp}>
+              <BrowseButton />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── THE PROBLEM ─────────────────────────────────────────── */}
       <section className="bg-background border-t border-border/30">
         <motion.div
@@ -249,108 +295,6 @@ export default function Home() {
               <BrowseButton />
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* ── WHAT TO EXPECT ──────────────────────────────────────── */}
-      <section className="pb-24 md:pb-32 bg-background relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/8 via-background to-background z-0" />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="bg-card/80 backdrop-blur-md border border-border/60 p-8 md:p-16 shadow-2xl"
-          >
-            <div className="text-center mb-16">
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-4 text-primary">
-                The Missing Framework, A Live Training for Youth Sports Families
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-xl text-muted-foreground uppercase tracking-widest font-semibold">
-                A free live session with Gabby Cole
-              </motion.p>
-            </div>
-
-            <div className="space-y-16">
-              {/* Part 1 */}
-              <motion.div variants={fadeUp}>
-                <h3 className="text-2xl font-serif mb-6">Stop me when this resonates:</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    "You don't know what to say on the car ride home after a bad game",
-                    "You're not sure whether to push or give her space, and you're exhausted from guessing",
-                    "You've invested in privates, camps, and club fees and something still feels off",
-                    "When she's struggling, you're struggling, and you can't always explain why",
-                    "You love watching her compete and you have no idea what to do with everything around it",
-                    "You want this experience to build who she is, not just how she plays"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start bg-background/50 p-4 border border-border/30">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" aria-hidden="true" />
-                      <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Part 2 */}
-              <motion.div variants={fadeUp}>
-                <h3 className="text-2xl font-serif mb-6">Here's what we're covering:</h3>
-                <ol className="space-y-6">
-                  {[
-                    { title: "Why misalignment", desc: ", not pressure, not talent, not playing time, is the real reason families struggle in youth sports" },
-                    { title: "What the ecosystem", desc: "around your athlete actually looks like, and what your role in it really is" },
-                    { title: "Why everything you've tried", desc: "hasn't fully worked, and what's been missing" },
-                    { title: "What a shared family", desc: "performance system looks like in practice" },
-                    { title: "How to walk away", desc: "from this season with more than a tournament record" }
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-primary font-serif italic text-2xl mr-4 leading-none">{i + 1}.</span>
-                      <span className="text-muted-foreground text-lg">
-                        <strong className="text-foreground font-medium">{item.title}</strong> {item.desc}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </motion.div>
-
-              {/* Callout */}
-              <motion.div variants={fadeUp} className="bg-primary/5 border border-primary/20 p-8 text-center">
-                <p className="text-lg md:text-xl font-serif text-foreground/90 leading-relaxed">
-                  "This is not a webinar. It's the conversation the youth sports industry hasn't been willing to have. And when you stay to the end, there's an opportunity to take the next step with Gabby directly."
-                </p>
-              </motion.div>
-
-              {/* Part 3 */}
-              <motion.div variants={fadeUp}>
-                <h3 className="text-2xl font-serif mb-6">This works even if:</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    "You're in your first club season and have no idea what you're doing",
-                    "You've been in club sports for years and still feel lost",
-                    "Your athlete is thriving on the court and struggling everywhere else",
-                    "Your athlete is struggling on the court and you don't know how to help",
-                    "You've tried everything and nothing has fully landed",
-                    "You're not sure this is even your problem to solve"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center text-muted-foreground text-sm">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Final Callout + CTA */}
-              <motion.div variants={fadeUp} className="text-center pt-8 border-t border-border/50">
-                <p className="text-xl font-serif mb-8 text-foreground">
-                  <span className="text-primary">One rule before you join:</span> No blame allowed. Not at the coach. Not at the club. Not at yourself. We're here to build something better, not relitigate everything that came before. See you inside.
-                </p>
-                <BrowseButton className="w-full sm:w-auto" />
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
