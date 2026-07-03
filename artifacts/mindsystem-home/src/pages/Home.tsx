@@ -25,7 +25,7 @@ export default function Home() {
   const { isOpen, openModal, closeModal } = useReservationModal();
 
   useEffect(() => {
-    document.title = "MindSystem | Gabby Cole";
+    document.title = "Free Trainings | Gabby Cole";
   }, []);
 
   return (
@@ -77,14 +77,108 @@ export default function Home() {
 
             <motion.a
               variants={fadeUp}
-              href="https://www.mazeperformance.ai/missing-conversation"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#trainings"
               className="group inline-flex items-center justify-center px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-sm md:text-base font-bold tracking-widest uppercase shadow-[0_0_30px_rgba(255,45,120,0.2)] hover:shadow-[0_0_40px_rgba(255,45,120,0.45)] w-full sm:w-auto"
             >
-              Reserve Your Spot, The Missing Framework — A Live Training for Youth Sports Families [FREE]
+              Browse Free Trainings
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── FREE TRAININGS HUB ──────────────────────────────────── */}
+      <section id="trainings" className="bg-card border-t border-border/30 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUp} className="text-center mb-14">
+              <p className="text-xs uppercase tracking-[0.3em] font-semibold mb-4" style={{ color: "#ff2d78" }}>
+                Free Trainings
+              </p>
+              <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-4">
+                Pick where you want to start.
+              </h2>
+              <p className="text-muted-foreground font-light text-lg max-w-xl mx-auto">
+                All of these are free. Each one is built for youth sports families who are ready to stop reacting and start moving with intention.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              {/* Training 1: The Missing Framework */}
+              <motion.div
+                variants={fadeUp}
+                className="bg-background border border-border/50 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary/70 to-transparent" />
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest font-semibold border border-primary/40 text-primary px-3 py-1 self-start mb-6">
+                    Live Training
+                  </span>
+                  <h3 className="text-2xl font-serif text-foreground mb-3">The Missing Framework</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                    A free live session where Gabby pulls back the curtain on why misalignment — not talent, not effort, not playing time — is the real issue inside youth sports families. And what to do about it.
+                  </p>
+                  <a
+                    href="https://www.mazeperformance.ai/missing-conversation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Reserve Your Spot — It's Free
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Training 2: The Reframe */}
+              <motion.div
+                variants={fadeUp}
+                className="bg-background border border-border/50 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00d4c8]/70 to-transparent" />
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest font-semibold border border-[#00d4c8]/40 text-[#00d4c8] px-3 py-1 self-start mb-6">
+                    Video + Worksheet
+                  </span>
+                  <h3 className="text-2xl font-serif text-foreground mb-3">The Reframe</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                    The season just ended. Before you switch clubs, email the coach, or lock in next year's schedule — get the exact process to reframe before you respond. Not react.
+                  </p>
+                  <a
+                    href="https://members.gabbycole.com/reframe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-[#00d4c8] text-[#00d4c8] hover:bg-[#00d4c8] hover:text-black transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Get the Free Training
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Training 3: Coming Soon */}
+              <motion.div
+                variants={fadeUp}
+                className="bg-background border border-dashed border-border/30 relative overflow-hidden flex flex-col opacity-50"
+              >
+                <div className="p-8 flex flex-col flex-1 items-center justify-center text-center">
+                  <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground px-3 py-1 border border-border/30 self-center mb-6">
+                    Coming Soon
+                  </span>
+                  <h3 className="text-2xl font-serif text-muted-foreground mb-3">More Trainings</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
+                    Additional free trainings are in development. Check back soon.
+                  </p>
+                </div>
+              </motion.div>
+
+            </div>
           </motion.div>
         </div>
       </section>

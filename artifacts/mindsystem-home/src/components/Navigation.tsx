@@ -9,13 +9,13 @@ interface NavigationProps {
   ctaHref?: string;
 }
 
-export function Navigation({ onReserveClick, ctaText = "Reserve Your Spot", ctaHref = "https://www.mazeperformance.ai/missing-conversation" }: NavigationProps) {
+export function Navigation({ onReserveClick, ctaText = "Free Trainings", ctaHref = "/free-trainings" }: NavigationProps) {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/mindsystem", label: "MindSystem" },
+    { href: "/free-trainings", label: "Free Trainings" },
     { href: "/about", label: "About" },
   ];
 
@@ -52,14 +52,23 @@ export function Navigation({ onReserveClick, ctaText = "Reserve Your Spot", ctaH
                 {label}
               </Link>
             ))}
-            <a
-              href={ctaHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px] inline-flex items-center"
-            >
-              {ctaText}
-            </a>
+            {ctaHref.startsWith('http') ? (
+              <a
+                href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px] inline-flex items-center"
+              >
+                {ctaText}
+              </a>
+            ) : (
+              <Link
+                href={ctaHref}
+                className="px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px] inline-flex items-center"
+              >
+                {ctaText}
+              </Link>
+            )}
           </div>
 
           {/* Mobile hamburger */}
@@ -97,15 +106,25 @@ export function Navigation({ onReserveClick, ctaText = "Reserve Your Spot", ctaH
                     {label}
                   </Link>
                 ))}
-                <a
-                  href={ctaHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                  className="mt-3 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px]"
-                >
-                  {ctaText}
-                </a>
+                {ctaHref.startsWith('http') ? (
+                  <a
+                    href={ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="mt-3 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px]"
+                  >
+                    {ctaText}
+                  </a>
+                ) : (
+                  <Link
+                    href={ctaHref}
+                    onClick={() => setMenuOpen(false)}
+                    className="mt-3 inline-flex items-center justify-center px-6 py-3 bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest text-xs font-semibold min-h-[44px]"
+                  >
+                    {ctaText}
+                  </Link>
+                )}
               </div>
             </motion.div>
           )}
