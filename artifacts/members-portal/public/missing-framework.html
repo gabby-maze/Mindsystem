@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Missing Framework | Free Training for Volleyball Families | Gabby Cole</title>
+<meta name="description" content="Free training for volleyball families. The reason your family keeps hitting the same wall, season after season, and what to do about it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── Constants ──────────────────────────────────────── */
+:root {
+  --pink:    #FF2D78;
+  --purple:  #982FF7;
+  --teal:    #00D4C8;
+  --bg:      #080808;
+  --surface: #101010;
+  --border:  #1E1E1E;
+  --muted:   #555566;
+  --text:    #EFEFEF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Layout ───────────────────────────────────────── */
+.container { max-width: 620px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Header ───────────────────────────────────────── */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero {
+  padding: 56px 0 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 212, 200, 0.3);
+  border-radius: 2px;
+}
+
+.hero h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(28px, 6vw, 46px);
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 .accent-pink   { color: var(--pink); }
+.hero h1 .accent-purple { color: var(--purple); }
+.hero h1 .accent-teal   { color: var(--teal); }
+
+.hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: #9090A8;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+}
+
+/* ── Watch CTA link ───────────────────────────────── */
+.watch-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  padding: 14px 28px;
+  background: var(--pink);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.watch-link:hover {
+  background: #e02268;
+  transform: translateY(-1px);
+}
+
+/* ── Video ────────────────────────────────────────── */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Bullets ──────────────────────────────────────── */
+.learn-section { padding: 56px 0 48px; }
+
+.learn-section h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 28px);
+  color: #fff;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.bullets { display: flex; flex-direction: column; gap: 20px; }
+
+.bullet-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 14px;
+  align-items: start;
+}
+
+.bullet-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 212, 200, 0.12);
+  border: 1px solid rgba(0, 212, 200, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bullet-icon svg { display: block; }
+
+.bullet-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: #ABABC0;
+  line-height: 1.6;
+}
+
+.bullet-text strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Clarity Call CTA ─────────────────────────────── */
+.cta-block {
+  margin: 0 0 48px;
+  padding: 28px 28px 32px;
+  background: linear-gradient(135deg, rgba(152,47,247,0.12) 0%, rgba(255,45,120,0.10) 100%);
+  border: 1px solid rgba(152, 47, 247, 0.25);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.cta-block h3 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(18px, 4vw, 24px);
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.cta-block p {
+  font-size: 15px;
+  font-weight: 300;
+  color: #8080A0;
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+
+.btn-calendly {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--pink);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-calendly:hover {
+  background: #e02268;
+  transform: translateY(-1px);
+}
+
+/* ── Form Section ─────────────────────────────────── */
+.form-section {
+  padding: 48px 0 56px;
+  border-top: 1px solid var(--border);
+}
+
+.form-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 28px);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.25;
+}
+
+.opt-form { display: flex; flex-direction: column; gap: 14px; }
+
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+
+.field-group label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.field-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+
+.field-group input::placeholder { color: #333; }
+
+.field-group input:focus {
+  border-color: var(--teal);
+  background: #111;
+}
+
+.field-group input.error { border-color: var(--pink); }
+
+.field-error {
+  font-size: 12px;
+  color: var(--pink);
+  display: none;
+}
+
+.field-error.visible { display: block; }
+
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-top: 4px;
+}
+
+.btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.microcopy {
+  text-align: center;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+.submit-error {
+  font-size: 13px;
+  color: var(--pink);
+  text-align: center;
+  padding: 10px 14px;
+  background: rgba(255,45,120,0.08);
+  border: 1px solid rgba(255,45,120,0.2);
+  border-radius: 4px;
+  display: none;
+}
+
+.submit-error.visible { display: block; }
+
+/* ── Thank You State ──────────────────────────────── */
+.thankyou-state {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.thankyou-state.visible { display: block; }
+
+.ty-check {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 212, 200, 0.12);
+  border: 1px solid rgba(0, 212, 200, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.ty-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(22px, 5vw, 32px);
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.ty-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: #8080A0;
+  margin-bottom: 24px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  text-align: center;
+}
+
+.footer-cred {
+  font-size: 13px;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer-cred strong { color: #666; font-weight: 400; }
+
+/* ── Divider ──────────────────────────────────────── */
+.divider {
+  width: 40px;
+  height: 2px;
+  margin: 0 auto 40px;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero { padding: 40px 0 36px; }
+  .learn-section { padding: 40px 0 36px; }
+  .form-section { padding: 36px 0 48px; }
+  .cta-block { padding: 24px 20px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="/gc-logo.png" alt="Gabby Cole" height="48">
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Free Training for Volleyball Families</div>
+    <h1>The Reason Your Family Keeps Hitting the Same Wall, <span class="accent-pink">Season After Season.</span></h1>
+    <p class="hero-sub">You've invested in the clubs, the privates, the camps. You show up every weekend. You care more than you know how to say. And something still feels off. This free training pulls back the curtain on why, and what your family can do about it.</p>
+
+    <a href="#video" class="watch-link">Watch the Training &rarr;</a>
+
+    <!-- VIDEO -->
+    <div class="video-wrap" id="video">
+      <iframe src="https://www.youtube.com/embed/W3nftL6kbsM?rel=0&modestbranding=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn-section">
+  <div class="container">
+    <h2>What You'll <span style="color:var(--teal)">Learn</span></h2>
+    <div class="bullets">
+
+      <div class="bullet-item">
+        <div class="bullet-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="bullet-text"><strong>Why misalignment,</strong> not talent, not playing time, not the coach, is the real reason families struggle in youth sports</div>
+      </div>
+
+      <div class="bullet-item">
+        <div class="bullet-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="bullet-text"><strong>What the ecosystem</strong> around your athlete actually looks like and what your role in it really is</div>
+      </div>
+
+      <div class="bullet-item">
+        <div class="bullet-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="bullet-text"><strong>Why everything you've tried</strong> hasn't fully worked and what's been missing</div>
+      </div>
+
+      <div class="bullet-item">
+        <div class="bullet-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="bullet-text"><strong>What a shared family performance system</strong> looks like in practice</div>
+      </div>
+
+      <div class="bullet-item">
+        <div class="bullet-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="bullet-text"><strong>How to walk away</strong> from this season with more than a tournament record</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLARITY CALL CTA (mid-page) -->
+<div style="padding: 0 0 48px;">
+  <div class="container">
+    <div class="cta-block">
+      <h3>Already know you want help walking through this?</h3>
+      <p>If this hit close to home, you don't have to wait. Book a free Clarity Call and we'll look at exactly where your family is right now.</p>
+      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+    </div>
+  </div>
+</div>
+
+<!-- OPT-IN FORM -->
+<section class="form-section" id="get-training">
+  <div class="container">
+    <div class="divider"></div>
+
+    <!-- FORM STATE -->
+    <div id="form-state">
+      <div class="form-headline">Get the free training<br>sent to your inbox</div>
+
+      <form class="opt-form" id="opt-form" novalidate>
+
+        <div class="field-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="firstName" placeholder="Your first name" autocomplete="given-name">
+          <span class="field-error" id="name-error">Please enter your first name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="lastName" placeholder="Your last name" autocomplete="family-name">
+          <span class="field-error" id="last-name-error">Please enter your last name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="field-error" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+          <span class="field-error" id="phone-error">Please enter a valid phone number.</span>
+        </div>
+
+        <div class="submit-error" id="submit-error">
+          Something went wrong. Please try again or email gabby@mazeperformance.ai directly.
+        </div>
+
+        <button class="btn-submit" type="submit" id="submit-btn">Send Me The Training</button>
+
+        <p class="microcopy">No spam. Just the training and occasional emails from Gabby. Unsubscribe anytime.</p>
+
+      </form>
+    </div>
+
+    <!-- THANK YOU STATE -->
+    <div class="thankyou-state" id="thankyou-state">
+      <div class="ty-check">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1.5 7L8 13.5L20.5 1" stroke="#00D4C8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ty-headline">You're in! Check your email<br>for the training.</div>
+      <p class="ty-body">While it's on its way, if you already know you want a plan for your family instead of figuring this out alone, grab a spot on my calendar now.</p>
+      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-cred">
+      <strong>Gabby Cole</strong>, Former D1 outside hitter, UC Berkeley.<br>
+      Daughter of a lifelong volleyball coach. Founder of MindSystem.
+    </p>
+  </div>
+</footer>
+
+<script>
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/0MA6xJ1bECwmqZBI5uvI/webhook-trigger/09ecb4da-85a4-44cd-9b49-48e55c4822cb';
+
+const form        = document.getElementById('opt-form');
+const submitBtn   = document.getElementById('submit-btn');
+const formState   = document.getElementById('form-state');
+const thankyou    = document.getElementById('thankyou-state');
+const submitError = document.getElementById('submit-error');
+const nameInput      = document.getElementById('first-name');
+const lastNameInput  = document.getElementById('last-name');
+const emailInput     = document.getElementById('email');
+const phoneInput     = document.getElementById('phone');
+const nameError      = document.getElementById('name-error');
+const lastNameError  = document.getElementById('last-name-error');
+const emailError     = document.getElementById('email-error');
+const phoneError     = document.getElementById('phone-error');
+
+function isValidEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+}
+
+function clearErrors() {
+  [nameInput, lastNameInput, emailInput, phoneInput].forEach(el => el.classList.remove('error'));
+  [nameError, lastNameError, emailError, phoneError].forEach(el => el.classList.remove('visible'));
+  submitError.classList.remove('visible');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearErrors();
+
+  const firstName = nameInput.value.trim();
+  const lastName  = lastNameInput.value.trim();
+  const email     = emailInput.value.trim();
+  const phone     = phoneInput.value.trim();
+  let valid = true;
+
+  if (!firstName) {
+    nameInput.classList.add('error');
+    nameError.classList.add('visible');
+    valid = false;
+  }
+
+  if (!lastName) {
+    lastNameInput.classList.add('error');
+    lastNameError.classList.add('visible');
+    valid = false;
+  }
+
+  if (!isValidEmail(email)) {
+    emailInput.classList.add('error');
+    emailError.classList.add('visible');
+    valid = false;
+  }
+
+  if (phone.replace(/\D/g, '').length < 10) {
+    phoneInput.classList.add('error');
+    phoneError.classList.add('visible');
+    valid = false;
+  }
+
+  if (!valid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const payload = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      source: 'missing-framework-landing-page',
+      submittedAt: new Date().toISOString()
+    };
+
+    const res = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    formState.style.display = 'none';
+    thankyou.classList.add('visible');
+    window.scrollTo({ top: document.getElementById('get-training').offsetTop - 20, behavior: 'smooth' });
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Me The Training';
+    submitError.classList.add('visible');
+  }
+});
+
+const errorMap = { 'first-name': 'name-error', 'last-name': 'last-name-error', 'email': 'email-error', 'phone': 'phone-error' };
+[nameInput, lastNameInput, emailInput, phoneInput].forEach(input => {
+  input.addEventListener('input', () => {
+    input.classList.remove('error');
+    document.getElementById(errorMap[input.id]).classList.remove('visible');
+  });
+});
+</script>
+
+</body>
+</html>
