@@ -105,6 +105,8 @@ function Router() {
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />
+      <Route path="/reframe" component={() => { window.location.replace('/reframe.html'); return null; }} />
+      <Route path="/missing-framework" component={() => { window.location.replace('/missing-framework.html'); return null; }} />
       <Route path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>
