@@ -1,5 +1,52 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "9Hk_KhOETEljT3QdzQHGz"
+uri = "file://artifacts/members-portal/public/415-action-spike.png"
+type = "image"
+title = "415 volleyball spike action"
+
+[[generated]]
+id = "7T5iWP0tjXFmngai_s7Uq"
+uri = "file://artifacts/members-portal/public/415-action-team.png"
+type = "image"
+title = "415 volleyball team huddle"
+
+[[generated]]
+id = "VD4zTlWrn26e5U0a3C9x4"
+uri = "file://artifacts/members-portal/public/415-action-set.png"
+type = "image"
+title = "415 volleyball setting action"
+
+[[generated]]
+id = "mjHiI5-0z9NYdjjww4Ub1"
+uri = "file://artifacts/members-portal/public/415-action-dig.png"
+type = "image"
+title = "415 volleyball dig defense"
+
+[[generated]]
+id = "JpSgO5xx9kZpqsSqkAJ7l"
+uri = "file://artifacts/members-portal/public/415-action-block.png"
+type = "image"
+title = "415 volleyball block at net"
+
+[[generated]]
+id = "zoxu0iNwXm7uLe0bmKZp5"
+uri = "file://artifacts/members-portal/public/415-action-coach.png"
+type = "image"
+title = "415 volleyball coaching moment"
+
+[[generated]]
+id = "bswbc9yGa1yTGGvINGuHY"
+uri = "file://artifacts/members-portal/public/415-action-portrait.png"
+type = "image"
+title = "415 volleyball athlete portrait"
+
+[[generated]]
+id = "EBlfVTKIaK8cgpM0rKnPM"
+uri = "file://artifacts/members-portal/public/415-action-drill.png"
+type = "image"
+title = "415 volleyball team drill"
 
 [[outputs]]
 id = "Ew-RQZqRBQZhiaDN5Oqhw"
