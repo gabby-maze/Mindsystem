@@ -107,6 +107,8 @@ function Router() {
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />
       <Route path="/reframe" component={() => { window.location.replace('/reframe.html'); return null; }} />
       <Route path="/missing-framework" component={() => { window.location.replace('/missing-framework.html'); return null; }} />
+      <Route path="/415-partnership" component={() => { window.location.replace('/415-partnership.html'); return null; }} />
+      <Route path="/omni-partnership" component={() => { window.location.replace('/omni-partnership.html'); return null; }} />
       <Route path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>
