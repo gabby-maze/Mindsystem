@@ -224,13 +224,10 @@ export default function ComparisonPage() {
                     {tier.description}
                   </p>
                   <p
-                    className="text-3xl font-bold mb-1"
+                    className="text-3xl font-bold"
                     style={{ color: tier.color }}
                   >
                     {tier.price}
-                  </p>
-                  <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem" }}>
-                    {tier.plan}
                   </p>
                 </button>
               );
