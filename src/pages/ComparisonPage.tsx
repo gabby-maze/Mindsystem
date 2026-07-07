@@ -1,24 +1,13 @@
 import { useState } from "react";
 
-const TEAL   = "#00d4c8";
 const PURPLE = "#9b2ff7";
 const PINK   = "#ff2d78";
+const TEAL   = "#00d4c8";
 
-const TEAL_BG   = "rgba(0,212,200,0.08)";
 const PURPLE_BG = "rgba(155,47,247,0.08)";
 const PINK_BG   = "rgba(255,45,120,0.08)";
 
 const TIERS = [
-  {
-    id: "independent",
-    tag: "Start Here",
-    name: "Independent",
-    description: "Not ready to commit to the full program yet? Start with the journal. We ship the physical journal to your door and Gabby walks your daughter through setting it up in a private 1-hour session. If you enroll in Supported or Inner Circle within 48 hours of that call, your full payment is credited toward whichever tier you choose.",
-    price: "$899",
-    plan: "Full credit toward any MindSystem tier within 48 hrs",
-    color: TEAL,
-    bg: TEAL_BG,
-  },
   {
     id: "supported",
     tag: "Most popular",
@@ -44,26 +33,23 @@ const TIERS = [
 type Check = true | false;
 interface Feature {
   label: string;
-  independent: Check;
   supported: Check;
   innerCircle: Check;
-  independentDesc?: string;
   supportedDesc?: string;
   innerCircleDesc?: string;
 }
 
 const FEATURES: Feature[] = [
-  { label: "Physical athlete journal, shipped",                                  independent: true,  supported: true,  innerCircle: true  },
-  { label: "Journal setup session with Gabby",  independent: true, supported: true, innerCircle: true, independentDesc: "1-hr private", supportedDesc: "Group onboarding", innerCircleDesc: "1-on-1 private" },
-  { label: "Credit applied if you upgrade within 48 hrs of your call",           independent: true,  supported: false, innerCircle: false  },
-  { label: "Digital family journal",                                              independent: false, supported: true,  innerCircle: true  },
-  { label: "Athlete Compass Training (video library)",                            independent: false, supported: true,  innerCircle: true  },
-  { label: "Guided video instruction for both journals",                          independent: false, supported: true,  innerCircle: true  },
-  { label: "6 months community access",                                           independent: false, supported: true,  innerCircle: true  },
-  { label: "Physical family journal, shipped",                                    independent: false, supported: true,  innerCircle: true  },
-  { label: "Biweekly live group athlete calls",  independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Biweekly live group parent calls",   independent: false, supported: true, innerCircle: true, supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
-  { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time",  independent: false, supported: false, innerCircle: true  },
+  { label: "Physical athlete journal, shipped",                                  supported: true,  innerCircle: true  },
+  { label: "Journal setup session with Gabby",                                   supported: true,  innerCircle: true,  supportedDesc: "Group onboarding", innerCircleDesc: "1-on-1 private" },
+  { label: "Digital family journal",                                              supported: true,  innerCircle: true  },
+  { label: "Athlete Compass Training (video library)",                            supported: true,  innerCircle: true  },
+  { label: "Guided video instruction for both journals",                          supported: true,  innerCircle: true  },
+  { label: "6 months community access",                                           supported: true,  innerCircle: true  },
+  { label: "Physical family journal, shipped",                                    supported: true,  innerCircle: true  },
+  { label: "Biweekly live group athlete calls",                                   supported: true,  innerCircle: true,  supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
+  { label: "Biweekly live group parent calls",                                    supported: true,  innerCircle: true,  supportedDesc: "Group", innerCircleDesc: "1-on-1 only" },
+  { label: "Direct Voxer access to Gabby, 12 weeks with 24 hour response time",  supported: false, innerCircle: true  },
 ];
 
 function CheckIcon({ color }: { color: string }) {
@@ -116,7 +102,7 @@ export default function ComparisonPage() {
         </span>
       </header>
 
-      <main className="px-4 md:px-8 pb-24" style={{ maxWidth: 960, margin: "0 auto" }}>
+      <main className="px-4 md:px-8 pb-24" style={{ maxWidth: 860, margin: "0 auto" }}>
 
         {/* ── SECTION 1: Page Header ── */}
         <section className="text-center pt-20 pb-16">
@@ -151,9 +137,7 @@ export default function ComparisonPage() {
 
         {/* ── SECTION 2: Three Pillars ── */}
         <section className="pb-20">
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { num: "01", title: "Shared Language",               body: "Everyone in the family learns to talk about performance the same way, so no one is speaking a different dialect under pressure." },
               { num: "02", title: "Shared Definition of Success",  body: "You stop measuring success against other families and start measuring it against your own family's compass." },
@@ -197,7 +181,7 @@ export default function ComparisonPage() {
             Choose Your Tier
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ maxWidth: 680, margin: "0 auto" }}>
             {TIERS.map(tier => {
               const isSelected = selected === tier.id;
               return (
@@ -268,7 +252,7 @@ export default function ComparisonPage() {
               style={{
                 width: "100%",
                 borderCollapse: "collapse",
-                minWidth: 560,
+                minWidth: 480,
               }}
             >
               <thead>
@@ -282,7 +266,7 @@ export default function ComparisonPage() {
                       letterSpacing: "0.15em",
                       color: "rgba(255,255,255,0.3)",
                       borderBottom: "1px solid rgba(255,255,255,0.08)",
-                      width: "46%",
+                      width: "58%",
                     }}
                   >
                     Feature
@@ -298,7 +282,7 @@ export default function ComparisonPage() {
                         letterSpacing: "0.12em",
                         color: t.color,
                         borderBottom: "1px solid rgba(255,255,255,0.08)",
-                        width: "18%",
+                        width: "21%",
                       }}
                     >
                       {t.name}
@@ -323,14 +307,6 @@ export default function ComparisonPage() {
                       }}
                     >
                       {f.label}
-                    </td>
-                    <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                      <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
-                        {f.independent ? <CheckIcon color={TEAL} /> : <XIcon />}
-                        {f.independentDesc && (
-                          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", lineHeight: 1 }}>{f.independentDesc}</span>
-                        )}
-                      </div>
                     </td>
                     <td style={{ textAlign: "center", padding: "0.9rem 0.5rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                       <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
