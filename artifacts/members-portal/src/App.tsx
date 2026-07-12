@@ -105,10 +105,10 @@ function Router() {
       <Route path="/progress" component={() => <ProtectedRoute component={ProgressPage} />} />
       <Route path="/ask" component={() => <ProtectedRoute component={AskPage} />} />
       <Route path="/notifications" component={() => <ProtectedRoute component={NotificationsPage} />} />
-      <Route path="/reframe" component={() => { window.location.replace('/reframe.html'); return null; }} />
-      <Route path="/missing-framework" component={() => { window.location.replace('/missing-framework.html'); return null; }} />
-      <Route path="/415-partnership" component={() => { window.location.replace('/415-partnership.html'); return null; }} />
-      <Route path="/omni-partnership" component={() => { window.location.replace('/omni-partnership.html'); return null; }} />
+      <Route path="/reframe" component={() => { window.location.replace(import.meta.env.BASE_URL + 'reframe.html'); return null; }} />
+      <Route path="/missing-framework" component={() => { window.location.replace(import.meta.env.BASE_URL + 'missing-framework.html'); return null; }} />
+      <Route path="/415-partnership" component={() => { window.location.replace(import.meta.env.BASE_URL + '415-partnership.html'); return null; }} />
+      <Route path="/omni-partnership" component={() => { window.location.replace(import.meta.env.BASE_URL + 'omni-partnership.html'); return null; }} />
       <Route path="/" component={LoginPage} />
       <Route component={LoginPage} />
     </Switch>
