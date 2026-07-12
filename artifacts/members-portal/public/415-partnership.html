@@ -484,14 +484,16 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVide
 #athlete-stage { position:absolute; top:0; left:0; right:0; bottom:56px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .aslide { display:none; position:absolute; inset:0; align-items:center; justify-content:center; padding:16px; box-sizing:border-box; }
 .aslide.active { display:flex; }
-.bb-page-img { max-height:100%; max-width:100%; object-fit:contain; box-shadow:0 6px 40px rgba(0,0,0,0.7); border-radius:2px; }
 #athlete-navbar { position:absolute; bottom:0; left:0; right:0; height:56px; background:#000; border-top:1px solid #1a1a1a; display:flex; align-items:center; justify-content:center; gap:16px; z-index:100; }
 #abtn-next { background:#7B35C0; border-color:#7B35C0; color:#fff; }
 #abtn-next:hover { background:#5A28A0 !important; }
 #abtn-next:disabled { background:none !important; border-color:#333 !important; color:#333 !important; }
-#adots { display:flex; gap:5px; align-items:center; flex-wrap:wrap; max-width:220px; justify-content:center; }
+#adots { display:flex; gap:6px; align-items:center; }
 .adot { width:5px; height:5px; border-radius:50%; background:#333; cursor:pointer; transition:background .2s; }
 .adot.active { background:#7B35C0; }
+.bb-pg { height:648px; width:auto; display:block; }
+.spread .bb-pg { box-shadow:none; }
+.bb-pg.spread-left { border-right:1px solid #333; }
 </style>
 
 <!-- ── ATHLETE JOURNAL FLIPBOOK ── -->
@@ -499,94 +501,119 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVide
 <div id="athlete-stage">
 
 <div class="aslide active" id="aslide-0">
-  <img src="/bb-journal/page-001.jpg" alt="Cover" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-001.jpg" alt="Getting Started left">
+      <img class="bb-pg" src="/bb-journal/page-002.jpg" alt="Getting Started right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-1">
-  <img src="/bb-journal/page-002.jpg" alt="Getting Started" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-003.jpg" alt="Bold Commitment left">
+      <img class="bb-pg" src="/bb-journal/page-004.jpg" alt="Bold Commitment right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-2">
-  <img src="/bb-journal/page-003.jpg" alt="Bold Dreams" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-005.jpg" alt="Mindset left">
+      <img class="bb-pg" src="/bb-journal/page-006.jpg" alt="Mindset right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-3">
-  <img src="/bb-journal/page-004.jpg" alt="Bold Commitment" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-007.jpg" alt="Analyze left">
+      <img class="bb-pg bb-pg-land" src="/bb-journal/page-008-land.jpg" alt="Analyze right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-4">
-  <img src="/bb-journal/page-005.jpg" alt="Motivation" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-009.jpg" alt="Zero In left">
+      <img class="bb-pg" src="/bb-journal/page-010.jpg" alt="Zero In right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-5">
-  <img src="/bb-journal/page-006.jpg" alt="Mindset" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-011.jpg" alt="Execution left">
+      <img class="bb-pg" src="/bb-journal/page-012.jpg" alt="Execution right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-6">
-  <img src="/bb-journal/page-007.jpg" alt="Awareness" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-013.jpg" alt="Habit Tracker left">
+      <img class="bb-pg bb-pg-land" src="/bb-journal/page-014-land.jpg" alt="Habit Tracker right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-7">
-  <img src="/bb-journal/page-008.jpg" alt="Analyze" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-023.jpg" alt="Practice left">
+      <img class="bb-pg" src="/bb-journal/page-024.jpg" alt="Practice right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-8">
-  <img src="/bb-journal/page-009.jpg" alt="Zero Excuses" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-055.jpg" alt="Game Day left">
+      <img class="bb-pg" src="/bb-journal/page-056.jpg" alt="Game Day right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-9">
-  <img src="/bb-journal/page-010.jpg" alt="Zero In" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg spread-left" src="/bb-journal/page-151.jpg" alt="Reflection left">
+      <img class="bb-pg" src="/bb-journal/page-152.jpg" alt="Reflection right">
+    </div>
+  </div>
 </div>
 
 <div class="aslide" id="aslide-10">
-  <img src="/bb-journal/page-011.jpg" alt="Execution" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-11">
-  <img src="/bb-journal/page-012.jpg" alt="Habit Tracker Setup" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-12">
-  <img src="/bb-journal/page-013.jpg" alt="Execution Map" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-13">
-  <img src="/bb-journal/page-014.jpg" alt="Habit Tracker" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-14">
-  <img src="/bb-journal/page-023.jpg" alt="Practice Intro" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-15">
-  <img src="/bb-journal/page-024.jpg" alt="Practice Page" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-16">
-  <img src="/bb-journal/page-055.jpg" alt="Game Day Intro" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-17">
-  <img src="/bb-journal/page-056.jpg" alt="Game Day Page" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-18">
-  <img src="/bb-journal/page-151.jpg" alt="Reflection Intro" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-19">
-  <img src="/bb-journal/page-152.jpg" alt="Reflection (1)" class="bb-page-img">
-</div>
-
-<div class="aslide" id="aslide-20">
-  <img src="/bb-journal/page-153.jpg" alt="Reflection (2)" class="bb-page-img">
+  <div class="slide-inner">
+    <div class="spread">
+      <img class="bb-pg" src="/bb-journal/page-153.jpg" alt="Reflection (2)">
+    </div>
+  </div>
 </div>
 
 </div><!-- /#athlete-stage -->
 <div id="athlete-navbar">
   <button class="nav-btn" id="abtn-prev">← Prev</button>
   <div id="adots">
-    <div class="adot active" onclick="aGoTo(0)" title="Cover"></div>
+    <div class="adot active" onclick="aGoTo(0)" title="Getting Started"></div>
+    <div class="adot" onclick="aGoTo(1)" title="Bold Commitment"></div>
+    <div class="adot" onclick="aGoTo(2)" title="Mindset"></div>
+    <div class="adot" onclick="aGoTo(3)" title="Analyze"></div>
+    <div class="adot" onclick="aGoTo(4)" title="Zero In"></div>
+    <div class="adot" onclick="aGoTo(5)" title="Execution"></div>
+    <div class="adot" onclick="aGoTo(6)" title="Habit Tracker"></div>
+    <div class="adot" onclick="aGoTo(7)" title="Practice"></div>
+    <div class="adot" onclick="aGoTo(8)" title="Game Day"></div>
+    <div class="adot" onclick="aGoTo(9)" title="Reflection"></div>
+    <div class="adot" onclick="aGoTo(10)" title="Reflection (2)"></div>
+  </div>
     <div class="adot" onclick="aGoTo(1)" title="Getting Started"></div>
     <div class="adot" onclick="aGoTo(2)" title="Bold Dreams"></div>
     <div class="adot" onclick="aGoTo(3)" title="Bold Commitment"></div>
@@ -609,7 +636,7 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVide
     <div class="adot" onclick="aGoTo(20)" title="Reflection (2)"></div>
   </div>
   <button class="nav-btn" id="abtn-next">Next →</button>
-  <span class="sctr" id="asctr" style="margin-left:8px;">1 / 21</span>
+  <span class="sctr" id="asctr" style="margin-left:8px;">1 / 11</span>
 </div>
 </div><!-- /#athlete-flipbook-section -->
 
@@ -1653,6 +1680,15 @@ const aPrev  = document.getElementById('abtn-prev');
 const aNext  = document.getElementById('abtn-next');
 const aCtr   = document.getElementById('asctr');
 
+function aScale(slide) {
+  var inner = slide.querySelector('.slide-inner');
+  if (!inner) return;
+  inner.style.transform = 'scale(1)';
+  var w = inner.offsetWidth, h = inner.offsetHeight;
+  if (!w || !h) { setTimeout(function(){ aScale(slide); }, 100); return; }
+  var s = Math.min((aStage.clientWidth - 40) / w, (aStage.clientHeight - 40) / h, 1);
+  inner.style.transform = 'scale(' + s + ')';
+}
 function aGoTo(idx) {
   if (idx < 0 || idx >= aAllS.length) return;
   aAllS[aCur].classList.remove('active'); aDots[aCur].classList.remove('active');
@@ -1660,10 +1696,13 @@ function aGoTo(idx) {
   aAllS[aCur].classList.add('active'); aDots[aCur].classList.add('active');
   if (aCtr) aCtr.textContent = (aCur + 1) + ' / ' + aAllS.length;
   aPrev.disabled = aCur === 0; aNext.disabled = aCur === aAllS.length - 1;
+  setTimeout(function(){ aScale(aAllS[aCur]); }, 30);
 }
 aPrev.addEventListener('click', function(){ aGoTo(aCur - 1); });
 aNext.addEventListener('click', function(){ aGoTo(aCur + 1); });
 aGoTo(0);
+window.addEventListener('resize', function(){ aScale(aAllS[aCur]); });
+window.addEventListener('load', function(){ setTimeout(function(){ aScale(aAllS[aCur]); }, 600); });
 </script>
 
 <script>
