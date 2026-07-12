@@ -99,11 +99,13 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
 #hero          { order:1; }
 #video-section { order:2; }
 #download-section { order:3; }
-#journal-intro { order:4; }
-#flipbook-section { order:5; }
-#testimonials  { order:6; }
-#reference     { order:7; }
-#faqs          { order:8; }
+#athlete-journal-intro { order:4; }
+#athlete-flipbook-section { order:5; }
+#family-journal-label { order:6; }
+#flipbook-section { order:7; }
+#testimonials  { order:8; }
+#reference     { order:9; }
+#faqs          { order:10; }
 
 /* ── HERO ── */
 #hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 24px 60px; background:#0a0a0a; }
@@ -469,15 +471,633 @@ function closeVideo() {
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideo(); });
 </script>
 
-<!-- ── JOURNAL INTRO ── -->
-<section id="journal-intro" style="background:#000;padding:80px 24px;display:flex;flex-direction:column;align-items:center;border-top:1px solid #1a1a1a;">
-  <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:16px;">Inside the Journal</div>
-  <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(22px,4vw,38px);color:#fff;margin-bottom:12px;text-align:center;">See What's Inside.</h2>
-  <p style="font-size:14px;font-weight:300;color:#555;letter-spacing:0.06em;margin-bottom:40px;text-align:center;max-width:480px;">A quick walkthrough — then flip through every spread below.</p>
-  <div style="width:100%;max-width:400px;aspect-ratio:9/16;background:#111;box-shadow:0 0 0 1px #222,0 32px 80px rgba(0,0,0,0.8);">
-    <iframe src="https://www.youtube.com/embed/QQECw78jCzs?rel=0&modestbranding=1" style="width:100%;height:100%;border:none;display:block;" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+<!-- ── ATHLETE JOURNAL INTRO ── -->
+<section id="athlete-journal-intro" style="background:#000;padding:80px 24px;display:flex;flex-direction:column;align-items:center;border-top:1px solid #1a1a1a;text-align:center;">
+  <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:16px;">The Athlete Journal</div>
+  <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(22px,4vw,38px);color:#fff;margin-bottom:12px;">The Bold Break.</h2>
+  <p style="font-size:14px;font-weight:300;color:#555;letter-spacing:0.06em;margin-bottom:32px;max-width:520px;">Every Club 415 athlete receives this. Flip through the intro pages, instruction spreads, habit tracker, practice entries, and game day pages below.</p>
+  <div style="font-size:9px;color:#333;letter-spacing:0.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;">Athlete Journal<span style="display:block;width:1px;height:32px;background:linear-gradient(to bottom,#7B35C0,transparent);"></span></div>
+</section>
+
+<style>
+#athlete-flipbook-section { position:relative; height:100vh; overflow:hidden; background:#0a0a0a; border-top:1px solid #1a1a1a; }
+#athlete-stage { position:absolute; top:0; left:0; right:0; bottom:56px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.aslide { display:none; position:absolute; inset:0; align-items:center; justify-content:center; }
+.aslide.active { display:flex; }
+#athlete-navbar { position:absolute; bottom:0; left:0; right:0; height:56px; background:#000; border-top:1px solid #1a1a1a; display:flex; align-items:center; justify-content:center; gap:16px; z-index:100; }
+#abtn-next { background:#7B35C0; border-color:#7B35C0; color:#fff; }
+#abtn-next:hover { background:#5A28A0 !important; }
+#abtn-next:disabled { background:none !important; border-color:#333 !important; color:#333 !important; }
+#adots { display:flex; gap:6px; align-items:center; }
+.adot { width:5px; height:5px; border-radius:50%; background:#333; cursor:pointer; transition:background .2s; }
+.adot.active { background:#7B35C0; }
+</style>
+
+<!-- ── ATHLETE JOURNAL FLIPBOOK ── -->
+<div id="athlete-flipbook-section">
+<div id="athlete-stage">
+
+<!-- ASLIDE 0: Cover -->
+<div class="aslide active" id="aslide-0">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#7B35C0;">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;">
+          <div style="font-size:8px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px;">Athlete Journal</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:52px;color:#fff;line-height:0.9;text-align:center;margin-bottom:18px;">THE<br>BOLD<br>BREAK</div>
+          <div style="width:48px;height:1.5px;background:rgba(255,255,255,0.35);margin:10px 0;"></div>
+          <div style="font-size:8px;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;line-height:2;">BREAK THROUGH · ELEVATE · EXCEL</div>
+        </div>
+        <div style="position:absolute;bottom:22px;left:0;right:0;text-align:center;">
+          <div style="font-size:6.5px;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);">MazePerformance.ai</div>
+        </div>
+      </div>
+      <div class="page" style="background:#000;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7B35C0;"></div>
+        <div class="ca">
+          <div class="s32"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:22px;">Club 415 Edition</div>
+          <div style="font-size:9px;font-weight:300;letter-spacing:0.08em;color:#555;line-height:1.9;margin-bottom:36px;">A personal growth and development<br>system built for Club 415 athletes.</div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#333;margin-bottom:18px;">Your 4-Phase Journey</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:28px;height:28px;background:#7B35C0;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Permanent Marker',cursive;font-size:14px;color:#fff;">M</span></div>
+              <div><div style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Mindset</div><div style="font-size:7px;font-weight:300;color:#555;margin-top:1px;">Bold Dreams — your why, heroine & mantra</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:28px;height:28px;background:#7B35C0;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Permanent Marker',cursive;font-size:14px;color:#fff;">A</span></div>
+              <div><div style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Analyze</div><div style="font-size:7px;font-weight:300;color:#555;margin-top:1px;">Bold Promises — habits &amp; their outcomes</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:28px;height:28px;background:#7B35C0;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Permanent Marker',cursive;font-size:14px;color:#fff;">Z</span></div>
+              <div><div style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Zero In</div><div style="font-size:7px;font-weight:300;color:#555;margin-top:1px;">Bold Focus — 3 skills, satisfaction wheel</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div style="width:28px;height:28px;background:#7B35C0;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:'Permanent Marker',cursive;font-size:14px;color:#fff;">E</span></div>
+              <div><div style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;">Execute</div><div style="font-size:7px;font-weight:300;color:#555;margin-top:1px;">Fear Break — map, tracker, game &amp; practice pages</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div style="margin-top:32px;font-size:9px;color:#333;letter-spacing:0.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;">Flip through below<span style="display:block;width:1px;height:32px;background:linear-gradient(to bottom,#7B35C0,transparent);"></span></div>
+  </div>
+</div>
+
+<!-- ASLIDE 1: Getting Started -->
+<div class="aslide" id="aslide-1">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:8px;">Welcome</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:24px;color:#000;line-height:1.1;margin-bottom:14px;">Getting<br>Started</div>
+          <div style="height:1.5px;background:#7B35C0;margin-bottom:14px;"></div>
+          <div style="font-size:7.5px;font-weight:300;color:#444;line-height:1.75;margin-bottom:18px;">Welcome to the Bold Break — your path to becoming a true champion. This journal is your gateway to taking charge of your team role. When every individual excels, the team becomes unstoppable.</div>
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#000;margin-bottom:12px;">Your Objective</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:5px;height:5px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:4px;"></div><div style="font-size:7.5px;font-weight:300;color:#333;line-height:1.5;">Define individual goals and the motivation to pursue them.</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:5px;height:5px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:4px;"></div><div style="font-size:7.5px;font-weight:300;color:#333;line-height:1.5;">Differentiate between practice time and game time decisions.</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:5px;height:5px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:4px;"></div><div style="font-size:7.5px;font-weight:300;color:#333;line-height:1.5;">Learn to embrace feedback and reject fear.</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:5px;height:5px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:4px;"></div><div style="font-size:7.5px;font-weight:300;color:#333;line-height:1.5;">Understand the power of laser focus and intentional action.</div></div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#e0e0e0;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#aaa;">MazePerformance.ai · The Bold Break Athlete Journal</div></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:8px;">Your Strategy</div>
+          <div style="font-size:7.5px;font-weight:300;color:#444;line-height:1.75;margin-bottom:18px;">A 4-step preseason process tailored to your individual goals — crafting a personalized plan, setting you up for success from the start.</div>
+          <div style="height:0.5px;background:#e8e8e8;margin-bottom:18px;"></div>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div style="border-left:2.5px solid #7B35C0;padding-left:12px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Phase 1 · Mindset</div>
+              <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:#000;margin-bottom:3px;">Bold Dreams</div>
+              <div style="font-size:7px;font-weight:300;color:#666;line-height:1.5;">Discover your purpose, find your inspiration, and create a powerful personal mantra.</div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:12px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Phase 2 · Analyze</div>
+              <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:#000;margin-bottom:3px;">Bold Promises</div>
+              <div style="font-size:7px;font-weight:300;color:#666;line-height:1.5;">Explore your actions, notice how they make you feel, and see how they affect outcomes.</div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:12px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Phase 3 · Zero In</div>
+              <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:#000;margin-bottom:3px;">Bold Focus</div>
+              <div style="font-size:7px;font-weight:300;color:#666;line-height:1.5;">Laser focus on your goals and zero in on three specific skills for the season.</div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:12px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Phase 4 · Execute</div>
+              <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:#000;margin-bottom:3px;">Fear Break</div>
+              <div style="font-size:7px;font-weight:300;color:#666;line-height:1.5;">Knowledge empowers you to break away from fear and confidently embrace challenges.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 2: Bold Commitment + Phase 1 Intro -->
+<div class="aslide" id="aslide-2">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Commitment</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:20px;color:#000;margin-bottom:10px;">Bold Commitment</div>
+          <div style="height:1.5px;background:#7B35C0;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:300;color:#444;line-height:1.7;margin-bottom:18px;">As an athlete, I wholeheartedly commit to embracing The Bold Break Journal as a personal growth and development tool. I will engage consistently, applying its principles to enhance my mental game, build self-confidence, and take ownership of my role on the team.</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div>
+              <div style="font-size:6.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#aaa;margin-bottom:8px;">Athlete</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">NAME</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;margin-top:10px;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">SIGNATURE</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;margin-top:10px;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">DATE</div>
+            </div>
+            <div style="height:0.5px;background:#f0f0f0;"></div>
+            <div>
+              <div style="font-size:6.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#aaa;margin-bottom:8px;">Accountability Partner</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">NAME</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;margin-top:10px;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">SIGNATURE</div>
+              <div style="height:20px;border-bottom:0.5px solid #ddd;margin-top:10px;"></div><div style="font-size:6px;color:#ccc;letter-spacing:0.1em;margin-top:2px;">DATE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" style="background:#000;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7B35C0;"></div>
+        <div class="ca">
+          <div class="s32"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Phase 1 · Mindset</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1.0;margin-bottom:4px;">Bold</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#7B35C0;line-height:1.0;margin-bottom:16px;">Dreams</div>
+          <div style="height:0.5px;background:#222;margin-bottom:16px;"></div>
+          <div style="font-size:8px;font-weight:300;color:#666;line-height:1.7;margin-bottom:20px;font-style:italic;">"Perspective shapes mindset. Mindset informs action. Continuous action is fueled by motivation."</div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:12px;">Your Objective</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Define your why</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Choose your heroine guide</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Build your mantra</div></div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#222;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#333;">MazePerformance.ai</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 3: Mindset Working Pages -->
+<div class="aslide" id="aslide-3">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:8px;">Mindset</div>
+          <div style="height:1.5px;background:#7B35C0;margin-bottom:12px;width:36px;"></div>
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:7px;">What do you love most about the game of volleyball?</div>
+          <div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div>
+          <div class="s16"></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:12px;"></div>
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:7px;">Imagine yourself at the peak of your volleyball career. Paint a vivid picture of your success.</div>
+          <div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div>
+          <div class="s12"></div>
+          <div style="background:#f7f3ff;border-left:2px solid #7B35C0;padding:7px 10px;">
+            <div style="font-size:6px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Hint</div>
+            <div style="font-size:6.5px;font-weight:300;color:#666;line-height:1.55;">Use "I" language: "I am," "I will," "I can." Remove negative words. Your declarative statement is now your mantra.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:8px;">Mindset</div>
+          <div style="height:1.5px;background:#7B35C0;margin-bottom:12px;width:36px;"></div>
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#000;margin-bottom:8px;">Turn that vision into a declarative statement.</div>
+          <div style="background:#7B35C0;padding:2px 8px;display:inline-block;margin-bottom:8px;"><div style="font-size:6px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;">Your Mantra</div></div>
+          <div style="border:1px solid #7B35C0;height:52px;margin-bottom:18px;"></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#000;margin-bottom:6px;">Your Heroine</div>
+          <div class="wl" style="margin-bottom:18px;"></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#555;margin-bottom:10px;">Action Items</div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;gap:8px;align-items:flex-start;"><div style="width:13px;height:13px;border:0.75px solid #7B35C0;flex-shrink:0;margin-top:1px;"></div><div style="font-size:7px;font-weight:300;color:#444;line-height:1.45;">Choose a volleyball heroine — someone already where you want to be</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;"><div style="width:13px;height:13px;border:0.75px solid #7B35C0;flex-shrink:0;margin-top:1px;"></div><div style="font-size:7px;font-weight:300;color:#444;line-height:1.45;">Place your mantra somewhere you will see it frequently</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;"><div style="width:13px;height:13px;border:0.75px solid #7B35C0;flex-shrink:0;margin-top:1px;"></div><div style="font-size:7px;font-weight:300;color:#444;line-height:1.45;">Text your coach a copy of your mantra and who your heroine is</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 4: Phase 2 Intro + Analyze -->
+<div class="aslide" id="aslide-4">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#000;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7B35C0;"></div>
+        <div class="ca">
+          <div class="s32"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Phase 2 · Analyze</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1.0;margin-bottom:4px;">Bold</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#7B35C0;line-height:1.0;margin-bottom:16px;">Promises</div>
+          <div style="height:0.5px;background:#222;margin-bottom:16px;"></div>
+          <div style="font-size:8px;font-weight:300;color:#666;line-height:1.7;margin-bottom:20px;">By reverse-engineering your current performance, you gain understanding of the habits that have contributed to it — and identify what is helping vs. hindering your progress.</div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:12px;">Your Objective</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Identify your behavior patterns on and off the court</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Understand the emotions connected to your patterns</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Associate your behavior with the outcome</div></div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#222;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#333;">MazePerformance.ai</div></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Analyze</div>
+          <div style="height:1.5px;background:#7B35C0;width:36px;margin-bottom:10px;"></div>
+          <div style="font-size:6.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#aaa;margin-bottom:5px;">Season Goals</div>
+          <div class="wl"></div><div class="wl" style="margin-bottom:12px;"></div>
+          <div style="font-size:6.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#aaa;margin-bottom:6px;">Habit Table</div>
+          <div style="border:0.5px solid #ddd;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;background:#7B35C0;">
+              <div style="font-size:5.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:5px 5px;">Daily Habit</div>
+              <div style="font-size:5.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:5px 4px;">Emotion</div>
+              <div style="font-size:5.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:5px 4px;">Outcome</div>
+              <div style="font-size:5.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:5px 4px;">Goals?</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;background:#f9f6ff;border-top:0.5px solid #eee;">
+              <div style="font-size:6px;font-weight:300;color:#7B35C0;padding:5px 5px;font-style:italic;">Ex: Sleep by 9pm</div>
+              <div style="font-size:6px;font-weight:300;color:#999;padding:5px 4px;font-style:italic;">Rested</div>
+              <div style="font-size:6px;font-weight:300;color:#999;padding:5px 4px;font-style:italic;">Sharp in drills</div>
+              <div style="font-size:6px;font-weight:600;color:#7B35C0;padding:5px 4px;font-style:italic;">Yes</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;border-top:0.5px solid #eee;"><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;border-top:0.5px solid #eee;"><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;border-top:0.5px solid #eee;"><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;border-top:0.5px solid #eee;"><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.8fr 0.9fr 1fr 0.85fr;border-top:0.5px solid #eee;"><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;border-right:0.5px solid #eee;"></div><div style="height:26px;"></div></div>
+          </div>
+          <div style="margin-top:10px;background:#f7f3ff;border-left:2px solid #7B35C0;padding:6px 10px;">
+            <div style="font-size:6px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Hint</div>
+            <div style="font-size:6px;font-weight:300;color:#666;line-height:1.5;">Use positive language. "Go to sleep by 9pm each day" — not "stop staying up late."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 5: Phase 3 + Zero In -->
+<div class="aslide" id="aslide-5">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#000;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7B35C0;"></div>
+        <div class="ca">
+          <div class="s32"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Phase 3 · Zero In</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1.0;margin-bottom:4px;">Bold</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#7B35C0;line-height:1.0;margin-bottom:16px;">Focus</div>
+          <div style="height:0.5px;background:#222;margin-bottom:16px;"></div>
+          <div style="font-size:8px;font-weight:300;color:#666;line-height:1.7;margin-bottom:20px;">Harness the power of laser focus on specific skills. With intentional action, you'll achieve consistent progress and conquer burnout and overwhelm.</div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:12px;">Your Objective</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Zero in on three specific skills to focus on during the season</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Text your coach a copy of your 3 skills to focus on</div></div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#222;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#333;">MazePerformance.ai</div></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Zero In</div>
+          <div style="height:1.5px;background:#7B35C0;width:36px;margin-bottom:10px;"></div>
+          <div style="display:flex;justify-content:center;margin-bottom:12px;">
+            <svg width="164" height="164" viewBox="-88 -88 176 176" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="0" cy="0" r="72" fill="none" stroke="#e8e8e8" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="54" fill="none" stroke="#e8e8e8" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="36" fill="none" stroke="#e8e8e8" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="18" fill="none" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="0" y2="-72" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="51" y2="-51" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="72" y2="0" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="51" y2="51" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="0" y2="72" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="-51" y2="51" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="-72" y2="0" stroke="#e8e8e8" stroke-width="0.5"/>
+              <line x1="0" y1="0" x2="-51" y2="-51" stroke="#e8e8e8" stroke-width="0.5"/>
+              <text x="0" y="-78" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#7B35C0">PASSING</text>
+              <text x="60" y="-56" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#555">SERVING</text>
+              <text x="82" y="3" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="start" fill="#555">SETTING</text>
+              <text x="58" y="63" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#555">HITTING</text>
+              <text x="0" y="85" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#555">DEFENSE</text>
+              <text x="-58" y="63" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#555">COND.</text>
+              <text x="-84" y="3" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="end" fill="#555">MENTAL</text>
+              <text x="-58" y="-56" font-family="Oswald" font-size="5.5" font-weight="600" text-anchor="middle" fill="#555">POSITION</text>
+              <text x="2" y="-19" font-family="Oswald" font-size="3.5" fill="#ccc">2</text>
+              <text x="2" y="-37" font-family="Oswald" font-size="3.5" fill="#ccc">4</text>
+              <text x="2" y="-55" font-family="Oswald" font-size="3.5" fill="#ccc">6</text>
+              <text x="2" y="-73" font-family="Oswald" font-size="3.5" fill="#ccc">10</text>
+            </svg>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div style="font-size:6px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7B35C0;">Skills</div>
+            <div style="font-size:6px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7B35C0;">Actions</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;"><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#1</div><div class="wl"></div></div><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#1</div><div class="wl"></div></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;"><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#2</div><div class="wl"></div></div><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#2</div><div class="wl"></div></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#3</div><div class="wl"></div></div><div><div style="font-size:6px;font-weight:700;color:#444;margin-bottom:3px;">#3</div><div class="wl"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 6: Phase 4 + Execution Map -->
+<div class="aslide" id="aslide-6">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#000;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7B35C0;"></div>
+        <div class="ca">
+          <div class="s32"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Phase 4 · Execute</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1.0;margin-bottom:4px;">Fear</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:28px;color:#7B35C0;line-height:1.0;margin-bottom:16px;">Break</div>
+          <div style="height:0.5px;background:#222;margin-bottom:16px;"></div>
+          <div style="font-size:8px;font-weight:300;color:#666;line-height:1.7;margin-bottom:20px;">With a clear understanding of your position and the path that led you here, your newfound knowledge becomes your motivation to confidently embrace challenges.</div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:12px;">Your Objective</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Build a habit tracker to measure progress throughout the season</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Build a map to reference throughout the season</div></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:4px;height:4px;border-radius:50%;background:#7B35C0;flex-shrink:0;margin-top:5px;"></div><div style="font-size:7.5px;font-weight:300;color:#666;line-height:1.5;">Text your coach a copy of your execution map</div></div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#222;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#333;">MazePerformance.ai</div></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:4px;">Execute</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:15px;color:#000;margin-bottom:8px;">Execution Map</div>
+          <div style="height:1.5px;background:#7B35C0;width:36px;margin-bottom:10px;"></div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:10px;">
+            <div style="font-size:6px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;">Desired Outcome</div>
+            <div style="height:18px;border-bottom:0.5px solid #ddd;"></div>
+            <div style="font-size:6px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;">Team Goal</div>
+            <div style="height:18px;border-bottom:0.5px solid #ddd;"></div>
+            <div style="font-size:6px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;">Individual Contribution</div>
+            <div style="height:18px;border-bottom:0.5px solid #ddd;"></div>
+          </div>
+          <div style="font-size:6px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:5px;">Milestones</div>
+          <div style="border:0.5px solid #ddd;overflow:hidden;margin-bottom:10px;">
+            <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;background:#7B35C0;">
+              <div style="font-size:5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;padding:4px 4px;"></div>
+              <div style="font-size:5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;padding:4px 4px;">Beginning</div>
+              <div style="font-size:5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;padding:4px 4px;">Mid Season</div>
+              <div style="font-size:5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;padding:4px 4px;">Ending</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;border-top:0.5px solid #eee;"><div style="font-size:5.5px;font-weight:600;color:#444;padding:4px;border-right:0.5px solid #eee;">Skill #1</div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;border-top:0.5px solid #eee;"><div style="font-size:5.5px;font-weight:600;color:#444;padding:4px;border-right:0.5px solid #eee;">Skill #2</div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;"></div></div>
+            <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;border-top:0.5px solid #eee;"><div style="font-size:5.5px;font-weight:600;color:#444;padding:4px;border-right:0.5px solid #eee;">Skill #3</div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;border-right:0.5px solid #eee;"></div><div style="height:22px;"></div></div>
+          </div>
+          <div style="font-size:6px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:6px;">Accountability</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Journal 15 min before &amp; after practice</div></div>
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Journal 15 min before &amp; after game days</div></div>
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Recite your mantra at least 3x a day</div></div>
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Communicate with coaches</div></div>
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Collaborate with teammates</div></div>
+            <div style="display:flex;gap:6px;align-items:center;"><div style="width:9px;height:9px;border:0.5px solid #7B35C0;flex-shrink:0;"></div><div style="font-size:6px;font-weight:300;color:#444;">Use your habit tracker daily</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 7: Habit Tracker -->
+<div class="aslide" id="aslide-7">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:6px;">Execute</div>
+          <div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#000;margin-bottom:8px;">Monthly<br>Habit Tracker</div>
+          <div style="height:1.5px;background:#7B35C0;width:36px;margin-bottom:12px;"></div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="border-left:2.5px solid #7B35C0;padding-left:10px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:3px;">Setup — do this once per month</div>
+              <div style="font-size:6.5px;font-weight:300;color:#555;line-height:1.6;">Copy the goals from Analyze. Choose only positive habits (3–7 max). Write the month at the top.</div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:10px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:6px;">Choose 3 Colors</div>
+              <div style="display:flex;gap:10px;">
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:13px;height:13px;background:#7B35C0;border-radius:2px;"></div><div style="font-size:6px;color:#555;">Completed</div></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:13px;height:13px;background:#c4a0e8;border-radius:2px;"></div><div style="font-size:6px;color:#555;">Partial</div></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:13px;height:13px;background:#f0f0f0;border:0.5px solid #ccc;border-radius:2px;"></div><div style="font-size:6px;color:#555;">Missed</div></div>
+              </div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:10px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:3px;">Daily — 30 seconds before bed</div>
+              <div style="font-size:6.5px;font-weight:300;color:#555;line-height:1.6;">Mark the color that matches what actually happened. No erasing. Honest marks are the valuable ones.</div>
+            </div>
+            <div style="border-left:2.5px solid #7B35C0;padding-left:10px;">
+              <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:3px;">Weekly — 2 minutes</div>
+              <div style="font-size:6.5px;font-weight:300;color:#555;line-height:1.6;">Which habits are consistent? Which keep falling off? Is there a pattern?</div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;"><div style="height:0.5px;background:#ebebeb;margin-bottom:8px;"></div><div style="font-size:6.5px;font-weight:300;letter-spacing:0.1em;color:#aaa;">MazePerformance.ai · The Bold Break Athlete Journal</div></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">
+            <div style="font-family:'Permanent Marker',cursive;font-size:15px;color:#000;">Habit Tracker</div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="font-size:6px;color:#aaa;">Month</div><div style="width:70px;height:16px;border-bottom:0.5px solid #ddd;"></div></div>
+          </div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:8px;height:8px;background:#7B35C0;"></div><div style="font-size:5.5px;color:#888;">Done</div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:8px;height:8px;background:#c4a0e8;"></div><div style="font-size:5.5px;color:#888;">Partial</div></div>
+            <div style="display:flex;align-items:center;gap:3px;"><div style="width:8px;height:8px;background:#f0f0f0;border:0.5px solid #ccc;"></div><div style="font-size:5.5px;color:#888;">Missed</div></div>
+          </div>
+          <div style="overflow:hidden;border:0.5px solid #e0e0e0;">
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);background:#7B35C0;">
+              <div style="font-size:4.5px;font-weight:700;color:#fff;padding:3px 4px;letter-spacing:0.08em;">HABIT</div>
+              <div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">1</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">2</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">3</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">4</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">5</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">6</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">7</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">8</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">9</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">10</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">11</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">12</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">13</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">14</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">15</div><div style="font-size:4px;font-weight:600;color:#fff;padding:2px 0;text-align:center;">16</div>
+            </div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+            <div style="display:grid;grid-template-columns:64px repeat(16,1fr);border-top:0.5px solid #eee;"><div style="height:30px;border-right:0.5px solid #eee;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;border-right:0.5px solid #f5f5f5;"></div><div style="height:30px;"></div></div>
+          </div>
+          <div style="margin-top:8px;text-align:center;font-size:6px;color:#ccc;letter-spacing:0.15em;">Days 1–16 shown · continues to Day 31</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 8: Practice Page -->
+<div class="aslide" id="aslide-8">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:4px;">Practice</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">
+            <div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#000;">Practice Day</div>
+            <div style="display:flex;align-items:center;gap:5px;"><div style="font-size:6.5px;color:#aaa;">Date</div><div style="width:58px;border-bottom:0.5px solid #ddd;height:16px;"></div></div>
+          </div>
+          <div style="height:2px;background:#7B35C0;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:8px;">Before Practice</div>
+          <div style="font-size:6.5px;font-weight:300;color:#666;margin-bottom:10px;line-height:1.5;">Write three intentions before warmup starts. They need to be active from rep one.</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+            <div><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:3px;">1.</div><div class="wl"></div></div>
+            <div><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:3px;">2.</div><div class="wl"></div></div>
+            <div><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:3px;">3.</div><div class="wl"></div></div>
+          </div>
+          <div style="background:#f7f3ff;border-left:2px solid #7B35C0;padding:8px 10px;margin-bottom:12px;">
+            <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Before you step on the court</div>
+            <div style="font-size:6.5px;font-weight:300;color:#666;line-height:1.5;">One intentional breath — the transition from the person who walked in to the athlete who is about to train.</div>
+          </div>
+          <div style="font-size:6.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;margin-bottom:4px;">Pre-Practice Mantra</div>
+          <div class="wl"></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:10px;margin-top:4px;">After Practice</div>
+          <div style="height:2px;background:#7B35C0;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:5px;">What did my coach tell me today?</div>
+          <div style="font-size:6.5px;font-weight:300;color:#777;margin-bottom:8px;">Write 3 specific instructions. Their exact words.</div>
+          <div style="margin-bottom:7px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">1.</div><div class="wl"></div></div>
+          <div style="margin-bottom:7px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">2.</div><div class="wl"></div></div>
+          <div style="margin-bottom:12px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">3.</div><div class="wl"></div></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:10px;"></div>
+          <div style="font-size:7px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:8px;">Did I achieve my intentions?</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;"><div style="font-size:6.5px;font-weight:300;color:#666;">Intention 1</div><div style="display:flex;gap:8px;"><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #7B35C0;"></div><div style="font-size:6px;color:#aaa;">Yes</div></div><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #ccc;"></div><div style="font-size:6px;color:#aaa;">No</div></div></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;"><div style="font-size:6.5px;font-weight:300;color:#666;">Intention 2</div><div style="display:flex;gap:8px;"><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #7B35C0;"></div><div style="font-size:6px;color:#aaa;">Yes</div></div><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #ccc;"></div><div style="font-size:6px;color:#aaa;">No</div></div></div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><div style="font-size:6.5px;font-weight:300;color:#666;">Intention 3</div><div style="display:flex;gap:8px;"><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #7B35C0;"></div><div style="font-size:6px;color:#aaa;">Yes</div></div><div style="display:flex;align-items:center;gap:3px;"><div style="width:10px;height:10px;border:0.5px solid #ccc;"></div><div style="font-size:6px;color:#aaa;">No</div></div></div></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:8px;"></div>
+          <div style="font-size:6.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:6px;">Honest Reflection</div>
+          <div class="wl"></div><div class="wl"></div><div class="wl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ASLIDE 9: Game Day Page -->
+<div class="aslide" id="aslide-9">
+  <div class="slide-inner">
+  <div class="page-wrap">
+    <div class="spread">
+      <div class="page spread-left" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:4px;">Game Day</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">
+            <div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#000;">Game Day</div>
+            <div style="display:flex;align-items:center;gap:5px;"><div style="font-size:6.5px;color:#aaa;">Date</div><div style="width:58px;border-bottom:0.5px solid #ddd;height:16px;"></div></div>
+          </div>
+          <div style="height:2px;background:#7B35C0;margin-bottom:12px;"></div>
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:6px;">Before the Game</div>
+          <div style="font-size:6.5px;font-weight:300;color:#666;margin-bottom:8px;line-height:1.5;">Complete before you arrive. Write each coach instruction + its one-word cue.</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:5px;margin-bottom:12px;">
+            <div style="font-size:5.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#aaa;">Coach Instruction</div>
+            <div style="font-size:5.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7B35C0;">1-Word Cue</div>
+            <div style="border-bottom:0.5px solid #ddd;height:20px;"></div><div style="border-bottom:0.5px solid #7B35C0;height:20px;width:48px;"></div>
+            <div style="border-bottom:0.5px solid #ddd;height:20px;"></div><div style="border-bottom:0.5px solid #7B35C0;height:20px;width:48px;"></div>
+            <div style="border-bottom:0.5px solid #ddd;height:20px;"></div><div style="border-bottom:0.5px solid #7B35C0;height:20px;width:48px;"></div>
+          </div>
+          <div style="background:#f7f3ff;border-left:2px solid #7B35C0;padding:8px 10px;margin-bottom:12px;">
+            <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7B35C0;margin-bottom:3px;">Visualization — 2-3 minutes</div>
+            <div style="font-size:6.5px;font-weight:300;color:#666;line-height:1.5;">Eyes closed. See yourself executing your three focus skills the way you have trained. Trust what you have built.</div>
+          </div>
+          <div style="font-size:6.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;margin-bottom:4px;">Today's Mantra</div>
+          <div class="wl"></div>
+        </div>
+      </div>
+      <div class="page" style="background:#fff;">
+        <div class="ca">
+          <div style="font-size:7px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:8px;margin-top:4px;">After the Game</div>
+          <div style="height:2px;background:#7B35C0;margin-bottom:10px;"></div>
+          <div style="background:#f7f3ff;border-left:2px solid #7B35C0;padding:7px 10px;margin-bottom:10px;">
+            <div style="font-size:6.5px;font-weight:700;color:#7B35C0;margin-bottom:2px;">60 Minutes First</div>
+            <div style="font-size:6.5px;font-weight:300;color:#666;line-height:1.5;">No group text. No replaying mistakes. Eat, hydrate, walk, shower, rest. Then open your journal.</div>
+          </div>
+          <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:5px;">3 Triumphs</div>
+          <div style="font-size:6px;font-weight:300;color:#777;margin-bottom:6px;">Physical and mental both count.</div>
+          <div style="margin-bottom:5px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">1.</div><div class="wl"></div></div>
+          <div style="margin-bottom:5px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">2.</div><div class="wl"></div></div>
+          <div style="margin-bottom:10px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">3.</div><div class="wl"></div></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:8px;"></div>
+          <div style="font-size:6.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#000;margin-bottom:5px;">3 Areas to Improve</div>
+          <div style="font-size:6px;font-weight:300;color:#777;margin-bottom:6px;">Name the moment. Name the adjustment.</div>
+          <div style="margin-bottom:5px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">1.</div><div class="wl"></div></div>
+          <div style="margin-bottom:5px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">2.</div><div class="wl"></div></div>
+          <div style="margin-bottom:10px;"><div style="font-size:6.5px;font-weight:600;color:#7B35C0;margin-bottom:2px;">3.</div><div class="wl"></div></div>
+          <div style="height:0.5px;background:#ebebeb;margin-bottom:8px;"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:6.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#000;">Satisfied with how I competed?</div>
+            <div style="display:flex;gap:10px;">
+              <div style="display:flex;align-items:center;gap:3px;"><div style="width:11px;height:11px;border:0.5px solid #7B35C0;"></div><div style="font-size:6px;color:#aaa;">Yes</div></div>
+              <div style="display:flex;align-items:center;gap:3px;"><div style="width:11px;height:11px;border:0.5px solid #ccc;"></div><div style="font-size:6px;color:#aaa;">No</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+</div><!-- /#athlete-stage -->
+<div id="athlete-navbar">
+  <button class="nav-btn" id="abtn-prev">← Prev</button>
+  <div id="adots">
+    <div class="adot active" onclick="aGoTo(0)" title="Cover"></div>
+    <div class="adot" onclick="aGoTo(1)" title="Getting Started"></div>
+    <div class="adot" onclick="aGoTo(2)" title="Bold Commitment"></div>
+    <div class="adot" onclick="aGoTo(3)" title="Mindset Pages"></div>
+    <div class="adot" onclick="aGoTo(4)" title="Analyze"></div>
+    <div class="adot" onclick="aGoTo(5)" title="Zero In"></div>
+    <div class="adot" onclick="aGoTo(6)" title="Execution Map"></div>
+    <div class="adot" onclick="aGoTo(7)" title="Habit Tracker"></div>
+    <div class="adot" onclick="aGoTo(8)" title="Practice Page"></div>
+    <div class="adot" onclick="aGoTo(9)" title="Game Day"></div>
+  </div>
+  <button class="nav-btn" id="abtn-next">Next →</button>
+  <span class="sctr" id="asctr" style="margin-left:8px;">1 / 10</span>
+</div>
+</div><!-- /#athlete-flipbook-section -->
+
+<!-- ── FAMILY JOURNAL LABEL ── -->
+<section id="family-journal-label" style="background:#000;padding:64px 24px;display:flex;flex-direction:column;align-items:center;border-top:1px solid #1a1a1a;text-align:center;">
+  <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:16px;">The Family Journal</div>
+  <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(22px,4vw,38px);color:#fff;margin-bottom:12px;">What Parents Receive.</h2>
+  <p style="font-size:14px;font-weight:300;color:#555;letter-spacing:0.06em;margin-bottom:32px;max-width:520px;">Every Club 415 family also receives this parent-facing journal — the Parent Alignment Guide — to keep the whole family moving in the same direction.</p>
+  <div style="font-size:9px;color:#333;letter-spacing:0.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;">Family Journal<span style="display:block;width:1px;height:32px;background:linear-gradient(to bottom,#7B35C0,transparent);"></span></div>
 </section>
 
 <!-- ── JOURNAL FLIPBOOK ── -->
@@ -1501,6 +2121,41 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVide
 </div>
 </div><!-- /#flipbook-section -->
 </div><!-- /#page-content -->
+
+<script>
+// ── ATHLETE FLIPBOOK ──
+let aCur = 0;
+const aStage = document.getElementById('athlete-stage');
+const aAllS  = document.querySelectorAll('.aslide');
+const aDots  = document.querySelectorAll('.adot');
+const aPrev  = document.getElementById('abtn-prev');
+const aNext  = document.getElementById('abtn-next');
+const aCtr   = document.getElementById('asctr');
+
+function aScale(slide) {
+  var inner = slide.querySelector('.slide-inner');
+  if (!inner) return;
+  inner.style.transform = 'scale(1)';
+  var w = inner.offsetWidth, h = inner.offsetHeight;
+  if (!w || !h) { setTimeout(function(){ aScale(slide); }, 100); return; }
+  var s = Math.min((aStage.clientWidth - 40) / w, (aStage.clientHeight - 40) / h, 1);
+  inner.style.transform = 'scale(' + s + ')';
+}
+function aGoTo(idx) {
+  if (idx < 0 || idx >= aAllS.length) return;
+  aAllS[aCur].classList.remove('active'); aDots[aCur].classList.remove('active');
+  aCur = idx;
+  aAllS[aCur].classList.add('active'); aDots[aCur].classList.add('active');
+  if (aCtr) aCtr.textContent = (aCur + 1) + ' / ' + aAllS.length;
+  aPrev.disabled = aCur === 0; aNext.disabled = aCur === aAllS.length - 1;
+  setTimeout(function(){ aScale(aAllS[aCur]); }, 30);
+}
+aPrev.addEventListener('click', function(){ aGoTo(aCur - 1); });
+aNext.addEventListener('click', function(){ aGoTo(aCur + 1); });
+aGoTo(0);
+window.addEventListener('resize', function(){ aScale(aAllS[aCur]); });
+window.addEventListener('load', function(){ setTimeout(function(){ aScale(aAllS[aCur]); }, 600); });
+</script>
 
 <script>
 
