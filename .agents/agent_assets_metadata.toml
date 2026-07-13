@@ -59,3 +59,9 @@ id = "ZM8_7hp_gy1X0-JD2k2Ud"
 uri = "file://415-journal-spreads.zip"
 type = "unspecified"
 title = "415 Journal Spreads (11 JPEGs)"
+
+[[outputs]]
+id = "Chzawjh1FvzYm-EosObrY"
+uri = "file://artifacts/members-portal/public/415-habit-tracker.pdf"
+type = "pdf"
+title = "415 Habit Tracker — Bold Break Journal Pages 13–14"
