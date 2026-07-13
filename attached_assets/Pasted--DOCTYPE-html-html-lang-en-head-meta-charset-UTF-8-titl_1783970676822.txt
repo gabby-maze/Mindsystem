@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>415 Volleyball Club — Deal Structure & Pricing Breakdown</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+  :root{
+    --bg:#0a0a0a;
+    --card:#161616;
+    --card2:#1c1c1c;
+    --pink:#ff2e93;
+    --purple:#8b2fe8;
+    --teal:#2ee6c8;
+    --orange:#ff9f1c;
+    --white:#ffffff;
+    --gray:#9a9a9a;
+    --lgray:#cfcfcf;
+  }
+
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Oswald',sans-serif;
+    margin:0;
+    padding:0;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:64px 24px 100px;}
+
+  .brand{font-size:15px;letter-spacing:1px;font-weight:700;margin-bottom:36px;}
+  .brand .m{color:var(--pink);}
+
+  h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:40px;
+    line-height:1.25;
+    margin:0 0 8px;
+  }
+  h1 .accent{color:var(--purple);}
+  .sub{color:var(--gray);font-size:15px;margin:0 0 48px;}
+
+  .section-label{
+    color:var(--teal);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:56px 0 6px;
+  }
+  .section-label:first-of-type{margin-top:0;}
+  .section-title{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:24px;
+    margin:0 0 22px;
+  }
+
+  .line{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    background:var(--card);
+    border-radius:4px;
+    padding:20px 24px;
+    margin-bottom:10px;
+  }
+  .line .label{font-size:16px;font-weight:500;}
+  .line .desc{color:var(--gray);font-size:13px;margin-top:4px;line-height:1.5;}
+  .line .amount{
+    font-family:'Permanent Marker',cursive;
+    font-size:24px;
+    white-space:nowrap;
+    padding-left:16px;
+  }
+  .amount.pink{color:var(--pink);}
+  .amount.teal{color:var(--teal);}
+  .amount.orange{color:var(--orange);}
+  .amount.purple{color:var(--purple);}
+  .amount.gray{color:var(--gray);font-size:16px;font-family:'Oswald',sans-serif;font-style:italic;}
+
+  .accent-bar{
+    border-left:3px solid var(--purple);
+    padding-left:20px;
+  }
+
+  .total-box{
+    margin-top:14px;
+    background:#000;
+    border:1.5px solid var(--pink);
+    border-radius:4px;
+    padding:24px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .total-box .label{font-size:15px;letter-spacing:1px;color:var(--lgray);}
+  .total-box .amount{font-family:'Permanent Marker',cursive;font-size:32px;color:var(--white);}
+
+  .note{
+    font-size:13px;
+    color:var(--gray);
+    line-height:1.6;
+    margin-top:14px;
+    padding-left:2px;
+  }
+  .note strong{color:var(--lgray);}
+
+  .divider{
+    border:none;
+    border-top:1px solid #262626;
+    margin:56px 0;
+  }
+
+  .footer-quote{
+    font-style:italic;
+    font-size:15px;
+    color:var(--lgray);
+    text-align:center;
+    line-height:1.7;
+    margin-top:64px;
+    padding:28px;
+    border:1.5px solid var(--pink);
+    border-radius:4px;
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px;}
+    h1{font-size:30px;}
+    .line{flex-direction:column;}
+    .line .amount{padding-left:0;padding-top:10px;}
+    .total-box{flex-direction:column;align-items:flex-start;gap:10px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><span class="m">MAZE</span>PERFORMANCE</div>
+
+  <h1>Deal Structure &amp;<br>Pricing <span class="accent">Breakdown.</span></h1>
+  <p class="sub">MindSystem × 415 Volleyball Club — Year One Implementation</p>
+
+  <!-- STANDARD FAMILY COST -->
+  <div class="section-label">Standard Program Cost</div>
+  <div class="section-title">What Each 415 Family Pays</div>
+
+  <div class="line">
+    <div>
+      <div class="label">MindSystem — Full Family Access</div>
+      <div class="desc">Athlete Compass + Family Alignment Guide, guided video instruction, DIY family onboarding, 6 months of full access, Courtside Conversations included.</div>
+    </div>
+    <div class="amount pink">$700</div>
+  </div>
+  <div class="note">This is the standard per-family rate used across all MindSystem club partnerships.</div>
+
+  <div class="total-box" style="margin-top:18px;">
+    <div class="label">TOTAL PROGRAM VALUE — 240 FAMILIES</div>
+    <div class="amount pink" style="font-size:32px;">$168,000</div>
+  </div>
+  <div class="note">$700 × 240 families. This is the final number for the full cost of the program at 415 — the number every other figure on this page measures against.</div>
+
+  <hr class="divider">
+
+  <!-- HARD COSTS -->
+  <div class="section-label">Hard Costs</div>
+  <div class="section-title">Journal Production</div>
+
+  <div class="line">
+    <div>
+      <div class="label">Custom Family Alignment Guide — per family</div>
+      <div class="desc">The Athlete Compass is also a custom journal — it's just already printed and paid for upfront, so there's no new out-of-pocket cost tied to bringing it into this deal. The Family Alignment Guide is a new custom print run specific to 415, which is why it's treated as its own hard cost here. It can be custom designed with 415 if you want that.</div>
+    </div>
+    <div class="amount teal">~$25</div>
+  </div>
+
+  <div class="total-box" style="margin-top:18px;">
+    <div class="label">TOTAL JOURNAL HARD COST — 240 JOURNALS</div>
+    <div class="amount teal" style="font-size:32px;">$6,000</div>
+  </div>
+  <div class="note"><strong>415 covers this cost directly.</strong> This $6,000 is normally already baked into the $168,000 program value — Gabby would typically absorb it. Because this is a trade-out, Gabby isn't paying it out of pocket, so it's carved out of the $168,000 rather than added on top. See the Year One Investment math below.</div>
+
+  <hr class="divider">
+
+  <!-- FOUNDER TRADE-IN -->
+  <div class="section-label accent-bar">Founder's Family — Trade-In Value</div>
+  <div class="section-title">Morgan &amp; McKenna's Tuition</div>
+
+  <div class="line">
+    <div>
+      <div class="label">415 Club Tuition — 2 Athletes</div>
+      <div class="desc">$7,500 per athlete × 2 (Morgan and McKenna). This is the value being credited against the total year-one investment, not a cash payment either direction.</div>
+    </div>
+    <div class="amount purple">$15,000</div>
+  </div>
+  <div class="note">
+    See the Year One Investment math below for how this credit fits against the full picture, including the journal hard cost.
+  </div>
+
+  <hr class="divider">
+
+  <!-- YEAR ONE INVESTMENT -->
+  <div class="section-label">Year One Investment</div>
+  <div class="section-title">Why Gabby Is Willing to Carry This Gap</div>
+  <div class="note" style="margin-bottom:18px;">Gabby is willing to take on the year-one gap below. This isn't a discount and it isn't being treated as free — it's a deliberate investment toward a multi-year goal: full implementation, built in true partnership with 415, over the next several years. Year one is about getting it right and proving it out together. The items below are what that partnership looks like in practice this year.</div>
+
+  <div class="line">
+    <div>
+      <div class="label">Maggie's Sister — Club Implementation Support</div>
+      <div class="desc">Sports psychology background. Supports the on-the-ground rollout at 415 during year one, at no cost. Part of building the partnership that gets this fully embedded in club culture.</div>
+    </div>
+    <div class="amount gray">No Cost</div>
+  </div>
+
+  <div class="line">
+    <div>
+      <div class="label">Path to MindSystem — Commission-Based</div>
+      <div class="desc">Once she understands the implementation model through the 415 work, she has the option to move into Gabby's business on a commission basis. Structural opportunity, not a year-one cost line.</div>
+    </div>
+    <div class="amount gray">N/A</div>
+  </div>
+
+  <div class="line">
+    <div>
+      <div class="label">1–2 Coach Partners — Journal Pilot</div>
+      <div class="desc">Coaches interested in social media, building their own following, or establishing authority in the space. Not full coach implementation — Gabby is running parent/family ecosystem work only in year one. Instead, these coaches pilot the journal process directly with their own team.</div>
+    </div>
+    <div class="amount gray">In-Kind</div>
+  </div>
+
+  <div class="line">
+    <div>
+      <div class="label">Social Media Content Partnership</div>
+      <div class="desc">Working with 415's outsourced social media contact to produce weekly content built around the rollout: case studies, best practices, mental hurdles, real conversations from the season.</div>
+    </div>
+    <div class="amount gray">In-Kind</div>
+  </div>
+  <div class="note">Together, these build the case study and content trail that makes the case for full implementation in years two through four — the actual return on the investment Gabby is carrying now.</div>
+
+  <hr class="divider">
+
+  <!-- SUMMARY -->
+  <div class="section-label">The Picture, Together</div>
+  <div class="section-title">Year One Investment, Multi-Year Goal</div>
+
+  <div class="total-box">
+    <div class="label">TOTAL PROGRAM VALUE — 240 FAMILIES</div>
+    <div class="amount pink" style="font-size:28px;">$168,000</div>
+  </div>
+  <div class="total-box" style="margin-top:12px;">
+    <div class="label">– CUSTOM FAMILY JOURNAL HARD COST (415 PAYS DIRECTLY)</div>
+    <div class="amount teal" style="font-size:28px;">$6,000</div>
+  </div>
+  <div class="total-box" style="margin-top:12px;border-color:var(--lgray);">
+    <div class="label">ADJUSTED PROGRAM VALUE</div>
+    <div class="amount" style="font-size:28px;color:var(--white);">$162,000</div>
+  </div>
+  <div class="total-box" style="margin-top:12px;">
+    <div class="label">– TUITION TRADE-IN CREDIT</div>
+    <div class="amount purple" style="font-size:28px;">$15,000</div>
+  </div>
+  <div class="total-box" style="margin-top:12px;border-color:var(--orange);">
+    <div class="label">BALANCE</div>
+    <div class="amount" style="font-size:28px;color:var(--orange);text-decoration:line-through;text-decoration-thickness:3px;">$147,000</div>
+  </div>
+
+  <div class="note" style="margin:18px 0 8px;"><strong>Covered in year one by:</strong></div>
+  <div class="line" style="padding:14px 24px;">
+    <div class="label" style="font-size:14px;">✓ Maggie's Sister — Club Implementation Support</div>
+    <div class="amount gray" style="font-size:14px;">No Cost</div>
+  </div>
+  <div class="line" style="padding:14px 24px;">
+    <div class="label" style="font-size:14px;">✓ 1–2 Coach Partners — Journal Pilot</div>
+    <div class="amount gray" style="font-size:14px;">In-Kind</div>
+  </div>
+  <div class="line" style="padding:14px 24px;">
+    <div class="label" style="font-size:14px;">✓ Social Media Content Partnership</div>
+    <div class="amount gray" style="font-size:14px;">In-Kind</div>
+  </div>
+
+  <div class="total-box" style="margin-top:18px;border-color:var(--teal);">
+    <div class="label">NET YEAR-ONE BALANCE</div>
+    <div class="amount" style="font-size:32px;color:var(--teal);">$0</div>
+  </div>
+  <div class="note" style="margin-top:14px;">The dollar figures above are real. The balance they leave isn't erased by assigning it a made-up cash value — it's covered by the specific, named contributions above, in year one, in exchange for building toward full implementation together over the next several years.</div>
+
+  <div class="footer-quote">
+    "If you're looking for someone to fundamentally improve how athletes, parents, and coaches operate together — this is one of the highest ROI investments your club can make." Gabby is putting real dollars behind that belief in year one. The ask of 415 is to build the partnership that makes the next several years worth it.
+  </div>
+
+</div>
+</body>
+</html>
