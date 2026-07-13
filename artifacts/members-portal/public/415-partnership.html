@@ -105,7 +105,7 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
 #flipbook-section { order:7; }
 #testimonials  { order:8; }
 #reference     { order:9; }
-#faqs          { order:10; }
+#case-study    { order:10; }
 
 /* ── HERO ── */
 #hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 24px 60px; background:#0a0a0a; }
@@ -323,90 +323,94 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
   </div>
 </section>
 
-<!-- ── FAQs ── -->
-<section id="faqs" style="background:#0a0a0a;padding:90px 24px 100px;border-top:1px solid #111;">
+<!-- ── CASE STUDY ── -->
+<section id="case-study" style="background:#0a0a0a;padding:90px 24px 100px;border-top:1px solid #111;">
   <div style="max-width:860px;margin:0 auto;">
 
+    <!-- Header -->
     <div style="text-align:center;margin-bottom:72px;">
-      <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:16px;">Common Questions</div>
-      <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(26px,5vw,44px);color:#fff;line-height:1.1;">FAQ's</h2>
+      <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:16px;">Case Study</div>
+      <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(24px,4.5vw,42px);color:#fff;line-height:1.1;margin-bottom:20px;">From Walking Away to a Real Development Plan.</h2>
+      <p style="font-size:13px;font-weight:300;color:#555;letter-spacing:0.06em;max-width:560px;margin:0 auto;">A first-year club athlete. A tryout that went wrong. A family hours away from switching clubs. This is what happened next.</p>
     </div>
 
-    <!-- FAQ 1: Different Learning Styles -->
-    <div class="faq-item">
-      <div class="faq-number">01</div>
-      <div class="faq-body">
-        <div class="faq-q">What about athletes with different learning styles?</div>
-        <div class="faq-divider"></div>
-        <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
-          <!-- Video button -->
-          <div style="flex-shrink:0;">
-            <button class="faq-watch-btn" onclick="openVideo('Ej4adcL3jF8','9/16')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Watch the Answer
-            </button>
-            <div style="font-size:8px;color:#333;letter-spacing:0.15em;text-transform:uppercase;margin-top:8px;text-align:center;">Short Video</div>
-          </div>
-          <!-- Email screenshot -->
-          <div style="flex:1;min-width:220px;">
-            <div style="font-size:8px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:10px;">Referenced in the video — parent email</div>
-            <img src="faq-email-meredith.png" alt="Parent email referenced in video" style="width:100%;max-width:480px;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.6);border:1px solid #1e1e1e;cursor:pointer;" onclick="openImg(this.src)">
-          </div>
-        </div>
-      </div>
+    <!-- Trigger Email -->
+    <div style="margin-bottom:72px;">
+      <div style="font-size:8px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#444;margin-bottom:14px;">The message that started it</div>
+      <img src="case-study-email.png" alt="Parent email — the message that triggered the intervention" style="width:100%;max-width:680px;display:block;box-shadow:0 12px 48px rgba(0,0,0,0.7);border:1px solid #1e1e1e;cursor:pointer;" onclick="openImg(this.src)">
+      <div style="font-size:8px;color:#2a2a2a;letter-spacing:0.15em;text-transform:uppercase;margin-top:10px;">Actual parent message · identifying details removed</div>
     </div>
 
-    <!-- FAQ 2: People who don't want to do it -->
-    <div class="faq-item">
-      <div class="faq-number">02</div>
-      <div class="faq-body">
-        <div class="faq-q">What do you do with the people who don't want to do it?</div>
-        <div class="faq-divider"></div>
-        <div style="font-size:13px;font-weight:300;color:#555;letter-spacing:0.06em;font-style:italic;margin-bottom:24px;">What do you do with the players who don't want to practice or team strength train?</div>
-        <button class="faq-watch-btn" onclick="openVideo('O989nmHfNCA','16/9')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Watch the Answer
-        </button>
+    <!-- Narrative -->
+    <div class="cs-blocks">
+
+      <!-- The Situation -->
+      <div class="cs-block">
+        <div class="cs-label">The Situation</div>
+        <div class="cs-divider"></div>
+        <p class="cs-body">A first-year club athlete, 13U, came out of rec ball into a competitive club environment. Tryouts happened. She didn't make a single travel team — offered only the developmental, non-travel roster. She was on the third-level team the year before.</p>
       </div>
+
+      <!-- The Spiral -->
+      <div class="cs-block">
+        <div class="cs-label">The Spiral — Day 1</div>
+        <div class="cs-divider"></div>
+        <p class="cs-body">Within hours, the family was ready to leave the club entirely. The read: the coach didn't care, favoritism decided the rosters, their daughter was clearly better than the girls who moved up. A decision to switch clubs was days away from being made — based entirely on the emotion of the moment.</p>
+      </div>
+
+      <!-- The Intervention -->
+      <div class="cs-block">
+        <div class="cs-label">The Intervention</div>
+        <div class="cs-divider"></div>
+        <ul class="cs-list">
+          <li>Paused the family before any decision was made — one week, no exceptions.</li>
+          <li>Had them reach out directly to the former coach for real feedback, not assumptions. They resisted. They did it anyway.</li>
+          <li>Ran the athlete through a guided emotional processing exercise to get past the surface reaction to the real one.</li>
+          <li>Reviewed film with the family to separate what they felt from what was actually happening technically.</li>
+        </ul>
+      </div>
+
+      <!-- The Turn -->
+      <div class="cs-block">
+        <div class="cs-label">The Turn</div>
+        <div class="cs-divider"></div>
+        <p class="cs-body">The coach responded in five minutes with real insight the family didn't have — and information that reframed the entire tryout result. Film review surfaced the actual development gap: strong ball control, but a game-IQ gap consistent with a first-year club athlete.</p>
+        <p class="cs-body cs-pull">Not a favoritism story. A development story.</p>
+      </div>
+
+      <!-- The Outcome -->
+      <div class="cs-block">
+        <div class="cs-label">The Outcome</div>
+        <div class="cs-divider"></div>
+        <p class="cs-body">The follow-up call was built around game film, not just conversation. Body language everyone had been reading as low effort turned out to be something else entirely — positional confusion. She didn't know where she was supposed to be, so she was watching her feet instead of tracking the ball. That single reframe changed everything downstream.</p>
+        <p class="cs-body">A real development list came out of the session: footwork and stance, ball tracking, serve-receive timing, the mechanical difference between defense and serve-receive, out-of-system ball handling, and owning the position as the back-row quarterback. Private training shifted from solo reps to small groups built to simulate actual in-game pressure — because solo practice builds skill in a vacuum, not the read-and-react speed a real rotation requires.</p>
+        <p class="cs-body">The current team was confirmed as the right fit. She needs the reps more than she needs a different name on the jersey.</p>
+        <p class="cs-body">The pattern that mattered most: the same "they" language that showed up in the parents' first message — <em>they didn't see her, they played favorites</em> — was showing up in the athlete's own self-talk almost word for word. Coaching now targets both sides of that pattern together. Parents were coached on specific shifts: replacing comparison prompts with a chosen role model, reframing "if you get demoted" into "here's what it takes to make the team."</p>
+      </div>
+
     </div>
 
-    <!-- FAQ 3: How do we communicate? -->
-    <div class="faq-item">
-      <div class="faq-number">03</div>
-      <div class="faq-body">
-        <div class="faq-q">How do we communicate?</div>
-        <div style="font-size:13px;font-weight:300;color:#555;letter-spacing:0.06em;font-style:italic;margin-bottom:20px;">Dynamic virtual communication.</div>
-        <div class="faq-divider"></div>
-        <button class="faq-watch-btn" onclick="openVideo('Vzw4xkz2Huc','9/16')" style="margin-bottom:28px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Watch the Answer
-        </button>
-
-        <!-- Ask Your Question — highlighted sub-section -->
-        <div style="border:1px solid #7B35C0;padding:28px 24px;background:#0d0d0d;margin-top:4px;">
-          <div style="font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#7B35C0;margin-bottom:10px;">Still Have a Question?</div>
-          <div style="font-family:'Permanent Marker',cursive;font-size:22px;color:#fff;line-height:1.2;margin-bottom:16px;">Ask us directly — we'll answer on video.</div>
-          <a href="https://www.videoask.com/f97zwv8xm" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#7B35C0;border:none;color:#fff;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;padding:14px 24px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#5A28A0'" onmouseout="this.style.background='#7B35C0'">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Ask Your Question
-          </a>
-          <div style="margin-top:12px;font-size:9px;color:#444;letter-spacing:0.15em;text-transform:uppercase;">Submit via VideoAsk · We'll respond on video</div>
-        </div>
-      </div>
+    <!-- Closing Quote -->
+    <div style="border-left:3px solid #7B35C0;padding:28px 32px;margin-top:64px;background:#0d0d0d;">
+      <p style="font-family:'Permanent Marker',cursive;font-size:clamp(16px,2.8vw,22px);color:#fff;line-height:1.4;margin-bottom:0;">"This is what training the intangibles actually looks like end to end — not a single intervention, but a full season-long system that turns a tryout spiral into a real development plan. For the athlete and the parents both."</p>
     </div>
 
   </div>
 </section>
 
 <style>
-.faq-item { display:flex; gap:28px; padding:40px 0; border-bottom:1px solid #1a1a1a; }
-.faq-item:first-of-type { border-top:1px solid #1a1a1a; }
-.faq-number { font-family:'Permanent Marker',cursive; font-size:36px; color:#7B35C0; opacity:0.35; flex-shrink:0; line-height:1; padding-top:4px; min-width:48px; }
-.faq-body { flex:1; }
-.faq-q { font-family:'Permanent Marker',cursive; font-size:clamp(18px,3vw,26px); color:#fff; line-height:1.2; margin-bottom:20px; }
-.faq-divider { width:48px; height:2px; background:#7B35C0; margin-bottom:24px; }
-.faq-watch-btn { background:#7B35C0; border:none; color:#fff; font-family:'Oswald',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:12px 20px; cursor:pointer; display:flex; align-items:center; gap:8px; transition:background .15s; }
-.faq-watch-btn:hover { background:#5A28A0; }
+.cs-blocks { display:flex; flex-direction:column; gap:0; }
+.cs-block { padding:44px 0; border-bottom:1px solid #1a1a1a; }
+.cs-block:first-child { border-top:1px solid #1a1a1a; }
+.cs-label { font-family:'Permanent Marker',cursive; font-size:clamp(18px,3vw,26px); color:#fff; line-height:1.2; margin-bottom:18px; }
+.cs-divider { width:40px; height:2px; background:#7B35C0; margin-bottom:22px; }
+.cs-body { font-size:14px; font-weight:300; color:#888; letter-spacing:0.04em; line-height:1.75; margin-bottom:16px; }
+.cs-body:last-child { margin-bottom:0; }
+.cs-body em { font-style:italic; color:#aaa; }
+.cs-pull { font-size:15px; font-weight:400; color:#bbb; letter-spacing:0.06em; }
+.cs-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px; }
+.cs-list li { font-size:14px; font-weight:300; color:#888; letter-spacing:0.04em; line-height:1.7; padding-left:20px; position:relative; }
+.cs-list li::before { content:''; position:absolute; left:0; top:10px; width:6px; height:6px; background:#7B35C0; border-radius:50%; }
 </style>
 
 <script>
