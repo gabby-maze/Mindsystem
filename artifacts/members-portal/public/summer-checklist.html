@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Training Checklist: Building Both Games | Gabby Cole</title>
+<meta name="description" content="The free checklist volleyball families are missing. Balance the physical work everyone can see with the intangible work that actually separates in-season performance.">
+<meta property="og:title" content="Summer Training Checklist: Building Both Games">
+<meta property="og:description" content="Physical reps and mental reps should be treated equally. Are you training the intangible side?">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:    #FF2D78;
+  --purple:  #982FF7;
+  --teal:    #00D4C8;
+  --bg:      #080808;
+  --surface: #101010;
+  --surface2:#161616;
+  --border:  #1E1E1E;
+  --muted:   #555566;
+  --text:    #EFEFEF;
+  --lgray:   #cfcfcf;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container { max-width: 620px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Header ── */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-text {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 18px;
+  color: var(--pink);
+  letter-spacing: 0.02em;
+}
+.logo-text span { color: var(--text); }
+
+/* ── Hero ── */
+.hero {
+  padding: 56px 0 48px;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 212, 200, 0.3);
+  border-radius: 2px;
+}
+.hero h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(28px, 6vw, 46px);
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.hero h1 .accent { color: var(--teal); }
+.hero .sub {
+  font-size: clamp(15px, 2.5vw, 18px);
+  font-weight: 300;
+  color: var(--lgray);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ── Reframe block ── */
+.reframe {
+  padding: 40px 0 48px;
+  border-top: 1px solid var(--border);
+}
+.reframe-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 14px;
+}
+.reframe h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(22px, 4vw, 30px);
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.reframe p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--lgray);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.reframe p strong { color: #fff; font-weight: 600; }
+
+.truth-box {
+  background: var(--surface);
+  border-left: 3px solid var(--teal);
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 15px;
+  color: var(--lgray);
+  line-height: 1.7;
+}
+.truth-box strong { color: #fff; }
+
+/* ── Checklist preview ── */
+.checklist-section { padding: 40px 0; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  color: #000;
+  flex-shrink: 0;
+}
+.badge.pink { background: var(--pink); }
+.badge.teal { background: var(--teal); }
+.section-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.section-tag {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface2);
+  border-radius: 3px;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--lgray);
+  line-height: 1.5;
+}
+.checklist-item strong { color: #fff; }
+.check-box {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #444;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+.blur-preview {
+  position: relative;
+  margin-top: 8px;
+}
+.blur-inner {
+  filter: blur(4px);
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+}
+.blur-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.blur-sub {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ── Convergence ── */
+.convergence {
+  background: #000;
+  border: 1.5px solid var(--purple);
+  border-radius: 6px;
+  padding: 28px 28px 24px;
+  margin: 40px 0;
+}
+.conv-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.conv-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1a1a;
+  font-size: 14px;
+  color: var(--lgray);
+  line-height: 1.5;
+}
+.conv-item:last-of-type { border-bottom: none; }
+.conv-box {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--purple);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.conv-note {
+  font-size: 13px;
+  color: var(--lgray);
+  line-height: 1.6;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #1a1a1a;
+}
+.conv-note strong { color: #fff; }
+
+/* ── Form section ── */
+.form-section {
+  padding: 48px 0 64px;
+}
+.form-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 26px);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.form-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: #888;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.opt-form { display: flex; flex-direction: column; gap: 14px; }
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-group label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888;
+}
+.field-group input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 13px 16px;
+  width: 100%;
+  transition: border-color 0.15s;
+  outline: none;
+  -webkit-appearance: none;
+}
+.field-group input::placeholder { color: #444; }
+.field-group input:focus { border-color: var(--teal); }
+.field-group input.error { border-color: var(--pink); }
+
+.field-error {
+  display: none;
+  font-size: 11px;
+  color: var(--pink);
+  letter-spacing: 0.05em;
+}
+.field-error.visible { display: block; }
+
+.submit-error {
+  display: none;
+  font-size: 13px;
+  color: var(--pink);
+  padding: 12px 16px;
+  background: rgba(255,45,120,0.08);
+  border: 1px solid rgba(255,45,120,0.2);
+  border-radius: 3px;
+}
+.submit-error.visible { display: block; }
+
+.btn-submit {
+  background: var(--teal);
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-top: 4px;
+}
+.btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.microcopy {
+  font-size: 11px;
+  font-weight: 300;
+  color: #555;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+/* ── Thank you state ── */
+.thankyou-state {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+.thankyou-state.visible { display: block; }
+.ty-check {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0,212,200,0.1);
+  border: 1.5px solid var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.ty-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 26px);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.ty-body {
+  font-size: 14px;
+  font-weight: 300;
+  color: #888;
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 0 auto 24px;
+}
+.btn-download {
+  display: inline-block;
+  background: var(--teal);
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-download:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-calendly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 13px 24px;
+  background: transparent;
+  border: 1px solid rgba(0,212,200,0.4);
+  border-radius: 3px;
+  color: var(--teal);
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-calendly:hover { background: rgba(0,212,200,0.06); border-color: var(--teal); }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 0;
+}
+.footer-cred {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .hero { padding: 40px 0 36px; }
+  .reframe { padding: 32px 0 36px; }
+  .checklist-section { padding: 32px 0; }
+  .form-section { padding: 36px 0 48px; }
+  .convergence { padding: 22px 20px 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo-wrap">
+      <div class="logo-text">MAZE<span>PERFORMANCE</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Free Summer Checklist</div>
+    <h1>Summer Training:<br>Building <span class="accent">Both Games.</span></h1>
+    <p class="sub">Balance the physical work everyone can see with the intangible work that actually separates in-season performance.</p>
+    <a class="btn-primary" href="#get-checklist">Get the Free Checklist</a>
+  </div>
+</section>
+
+<!-- ── REFRAME ── -->
+<section class="reframe">
+  <div class="container">
+    <div class="reframe-label">The Thing Most Families Miss</div>
+    <h2>Every physical skill has a mental side.<br>Are you training both?</h2>
+    <p>You're already handling the physical side. Private lessons. Camps. Conditioning. Touches outside of practice. You're investing in the game everyone can see.</p>
+    <p>But here's what most families don't realize: <strong>every single one of those physical reps has a mental component that is either helping or hurting the result.</strong></p>
+
+    <div class="truth-box">
+      If she's doing the physical work without training the intangible side, those reps aren't reaching their full potential. She could get more out of the same hours <strong>without burning out her body further</strong> — just by also training what's happening between the ears.
+    </div>
+
+    <p>That's the goal here. Not more work. <strong>Better work</strong> — because both sides of the game are being developed at the same time.</p>
+  </div>
+</section>
+
+<!-- ── CHECKLIST PREVIEW ── -->
+<section class="checklist-section">
+  <div class="container">
+
+    <!-- Physical (fully visible) -->
+    <div class="section-header">
+      <div class="badge pink">P</div>
+      <div class="section-title">The Physical Game
+        <span class="section-tag">What you're probably already doing</span>
+      </div>
+    </div>
+
+    <div class="checklist-item"><div class="check-box"></div><div>Private lessons or skill-specific reps</div></div>
+    <div class="checklist-item"><div class="check-box"></div><div>College camps / exposure camps</div></div>
+    <div class="checklist-item"><div class="check-box"></div><div>Strength &amp; conditioning</div></div>
+    <div class="checklist-item"><div class="check-box"></div><div>Ball control / touches outside of team practice</div></div>
+    <div class="checklist-item"><div class="check-box"></div><div>Active recovery days (movement, not shutdown)</div></div>
+
+    <hr class="divider">
+
+    <!-- Intangible (first 2 visible, rest blurred) -->
+    <div class="section-header">
+      <div class="badge teal">I</div>
+      <div class="section-title">The Intangible Game
+        <span class="section-tag">What's usually missing</span>
+      </div>
+    </div>
+
+    <div class="checklist-item"><div class="check-box"></div><div>Practice <strong>composure under pressure</strong> in a low-stakes setting — a camp, a pickup game, not a tryout</div></div>
+    <div class="checklist-item"><div class="check-box"></div><div>Notice her <strong>self-talk after a mistake</strong> — name it, don't fix it yet</div></div>
+
+    <div class="blur-preview">
+      <div class="blur-inner">
+        <div class="checklist-item"><div class="check-box"></div><div>Role-play receiving hard coach feedback without getting defensive</div></div>
+        <div class="checklist-item"><div class="check-box"></div><div>Build a between-points reset routine now, while nothing's on the line</div></div>
+        <div class="checklist-item"><div class="check-box"></div><div>Have one real conversation about what she wants from next season</div></div>
+        <div class="checklist-item"><div class="check-box"></div><div>Identify one recurring in-game reaction pattern from last season</div></div>
+        <div class="checklist-item"><div class="check-box"></div><div>Practice sitting with disappointment without spiraling</div></div>
+        <div class="checklist-item"><div class="check-box"></div><div>Write down her season goals in her own words</div></div>
+      </div>
+      <div class="blur-overlay">
+        <div class="blur-label">6 more intangible items inside</div>
+        <div class="blur-sub">Enter your info below to get the full checklist PDF</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONVERGENCE ── -->
+<div class="container">
+  <div class="convergence">
+    <div class="conv-title">The Convergence Check</div>
+    <div class="conv-item"><div class="conv-box"></div><div>By the time the season starts, can she name her go-to reset routine without thinking?</div></div>
+    <div class="conv-item"><div class="conv-box"></div><div>Does she have language for what she's feeling instead of just reacting to it?</div></div>
+    <div class="conv-item"><div class="conv-box"></div><div>Has she practiced the hard conversation with a coach before she's actually in it?</div></div>
+    <p class="conv-note">If you can check those three at the top of the season, the physical work and the inner work converge. <strong>That's when she takes off.</strong></p>
+  </div>
+</div>
+
+<!-- ── OPT-IN FORM ── -->
+<section class="form-section" id="get-checklist">
+  <div class="container">
+    <hr class="divider" style="margin-top:0;">
+
+    <div id="form-state">
+      <div class="form-headline">Get the Full Checklist PDF — Free</div>
+      <p class="form-sub">Both the physical and intangible sections, printable and ready to use this summer.</p>
+
+      <form class="opt-form" id="opt-form" novalidate>
+
+        <div class="field-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="firstName" placeholder="Your first name" autocomplete="given-name">
+          <span class="field-error" id="name-error">Please enter your first name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="lastName" placeholder="Your last name" autocomplete="family-name">
+          <span class="field-error" id="last-name-error">Please enter your last name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="field-error" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+          <span class="field-error" id="phone-error">Please enter a valid phone number.</span>
+        </div>
+
+        <div class="submit-error" id="submit-error">
+          Something went wrong. Please try again or email gabby@mazeperformance.ai directly.
+        </div>
+
+        <button class="btn-submit" type="submit" id="submit-btn">Send Me The Checklist</button>
+
+        <p class="microcopy">No spam. Just the checklist and occasional emails from me. Unsubscribe anytime.</p>
+
+      </form>
+    </div>
+
+    <!-- THANK YOU STATE -->
+    <div class="thankyou-state" id="thankyou-state">
+      <div class="ty-check">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1.5 7L8 13.5L20.5 1" stroke="#00D4C8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ty-headline">You're in. Here's your checklist.</div>
+      <p class="ty-body">Download it below, print it out, and put it somewhere both of you can see it this summer.</p>
+      <a class="btn-download" href="/summer-training-checklist.pdf" download>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9m0 0L5 7m3 3l3-3M2 12h12" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download the Checklist PDF
+      </a>
+      <p class="ty-body" style="margin-top:20px;">Want this to actually happen for your family — not just sit on the fridge? Book a Clarity Call and we'll walk through exactly what your specific situation needs.</p>
+      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <p class="footer-cred">
+      <strong>Gabby Cole</strong>, Former D1 outside hitter, UC Berkeley.<br>
+      Daughter of a lifelong volleyball coach. Founder of MindSystem.
+    </p>
+  </div>
+</footer>
+
+<script>
+// ── GHL Webhook — swap for summer-checklist trigger once created in GoHighLevel ──
+const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/0MA6xJ1bECwmqZBI5uvI/webhook-trigger/09ecb4da-85a4-44cd-9b49-48e55c4822cb';
+// ───────────────────────────────────────────────────────────────────────────────
+
+const form          = document.getElementById('opt-form');
+const submitBtn     = document.getElementById('submit-btn');
+const formState     = document.getElementById('form-state');
+const thankyou      = document.getElementById('thankyou-state');
+const submitError   = document.getElementById('submit-error');
+const nameInput     = document.getElementById('first-name');
+const lastNameInput = document.getElementById('last-name');
+const emailInput    = document.getElementById('email');
+const phoneInput    = document.getElementById('phone');
+const nameError     = document.getElementById('name-error');
+const lastNameError = document.getElementById('last-name-error');
+const emailError    = document.getElementById('email-error');
+const phoneError    = document.getElementById('phone-error');
+
+function isValidEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+}
+
+function clearErrors() {
+  [nameInput, lastNameInput, emailInput, phoneInput].forEach(el => el.classList.remove('error'));
+  [nameError, lastNameError, emailError, phoneError].forEach(el => el.classList.remove('visible'));
+  submitError.classList.remove('visible');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearErrors();
+
+  const firstName = nameInput.value.trim();
+  const lastName  = lastNameInput.value.trim();
+  const email     = emailInput.value.trim();
+  const phone     = phoneInput.value.trim();
+  let valid = true;
+
+  if (!firstName) {
+    nameInput.classList.add('error');
+    nameError.classList.add('visible');
+    valid = false;
+  }
+  if (!lastName) {
+    lastNameInput.classList.add('error');
+    lastNameError.classList.add('visible');
+    valid = false;
+  }
+  if (!isValidEmail(email)) {
+    emailInput.classList.add('error');
+    emailError.classList.add('visible');
+    valid = false;
+  }
+  if (phone.replace(/\D/g, '').length < 10) {
+    phoneInput.classList.add('error');
+    phoneError.classList.add('visible');
+    valid = false;
+  }
+  if (!valid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const payload = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      source: 'summer-checklist-landing-page',
+      submittedAt: new Date().toISOString()
+    };
+
+    const res = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    formState.style.display = 'none';
+    thankyou.classList.add('visible');
+    window.scrollTo({ top: document.getElementById('get-checklist').offsetTop - 20, behavior: 'smooth' });
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Me The Checklist';
+    submitError.classList.add('visible');
+  }
+});
+
+const errorMap = { 'first-name': 'name-error', 'last-name': 'last-name-error', 'email': 'email-error', 'phone': 'phone-error' };
+[nameInput, lastNameInput, emailInput, phoneInput].forEach(input => {
+  input.addEventListener('input', () => {
+    input.classList.remove('error');
+    document.getElementById(errorMap[input.id]).classList.remove('visible');
+  });
+});
+</script>
+
+</body>
+</html>

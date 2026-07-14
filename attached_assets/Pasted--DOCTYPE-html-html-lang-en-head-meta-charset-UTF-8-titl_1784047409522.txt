@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Summer Training Checklist — Building Both Games</title>
+<style>
+  @font-face {
+    font-family: 'Permanent Marker';
+    src: url('FONT_PM_PLACEHOLDER') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Oswald';
+    src: url('FONT_OS_PLACEHOLDER') format('truetype');
+    font-weight: 300 700;
+    font-style: normal;
+  }
+
+  :root{
+    --bg:#0a0a0a;
+    --card:#161616;
+    --card2:#1c1c1c;
+    --pink:#ff2e93;
+    --purple:#8b2fe8;
+    --teal:#2ee6c8;
+    --orange:#ff9f1c;
+    --white:#ffffff;
+    --gray:#9a9a9a;
+    --lgray:#cfcfcf;
+  }
+
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Oswald',sans-serif;
+    margin:0;
+    padding:0;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:56px 48px 70px;}
+
+  .brand{font-size:15px;letter-spacing:1px;font-weight:700;margin-bottom:8px;}
+  .brand .m{color:var(--pink);}
+
+  .eyebrow{
+    color:var(--purple);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:36px 0 10px;
+  }
+
+  h1{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:42px;
+    line-height:1.2;
+    margin:0 0 6px;
+  }
+  h1 .accent{color:var(--teal);}
+  .sub{color:var(--lgray);font-size:16px;line-height:1.6;margin:0 0 8px;max-width:640px;}
+
+  .section-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:40px 0 18px;
+  }
+  .badge{
+    width:44px;height:44px;
+    border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Permanent Marker',cursive;
+    font-size:22px;
+    color:#000;
+    flex-shrink:0;
+  }
+  .badge.pink{background:var(--pink);}
+  .badge.teal{background:var(--teal);}
+  .badge.purple{background:var(--purple);}
+  .section-title{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:24px;
+  }
+  .section-title .tag{
+    display:block;
+    font-family:'Oswald',sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+    color:var(--gray);
+    font-weight:600;
+    margin-top:2px;
+  }
+
+  .item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    background:var(--card);
+    border-radius:4px;
+    padding:16px 20px;
+    margin-bottom:8px;
+  }
+  .box{
+    width:20px;height:20px;
+    border:2px solid var(--gray);
+    border-radius:3px;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .item.done .box{border-color:var(--teal);}
+  .item-text{font-size:15px;line-height:1.5;color:var(--lgray);}
+  .item-text strong{color:var(--white);}
+
+  .divider{border:none;border-top:1px solid #262626;margin:44px 0;}
+
+  .convergence{
+    background:#000;
+    border:1.5px solid var(--purple);
+    border-radius:6px;
+    padding:28px 30px;
+    margin-top:10px;
+  }
+  .convergence .section-title{margin-bottom:16px;}
+
+  .cta-box{
+    margin-top:52px;
+    background:linear-gradient(135deg, #1a0e24 0%, #0a0a0a 60%);
+    border:1.5px solid var(--pink);
+    border-radius:6px;
+    padding:36px 40px;
+    text-align:center;
+  }
+  .cta-box h2{
+    font-family:'Permanent Marker',cursive;
+    font-weight:400;
+    font-size:26px;
+    margin:0 0 12px;
+    color:var(--white);
+  }
+  .cta-box p{
+    font-size:15px;
+    color:var(--lgray);
+    line-height:1.6;
+    max-width:560px;
+    margin:0 auto 22px;
+  }
+  .cta-button{
+    display:inline-block;
+    background:var(--pink);
+    color:#000;
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:16px 34px;
+    border-radius:4px;
+    text-decoration:none;
+  }
+  .cta-link{
+    display:block;
+    margin-top:14px;
+    font-size:13px;
+    color:var(--gray);
+  }
+
+  .footer{
+    text-align:center;
+    margin-top:48px;
+    font-size:12px;
+    color:#555;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><span class="m">MAZE</span>PERFORMANCE</div>
+
+  <div class="eyebrow">Free Summer Guide</div>
+  <h1>Summer Training Checklist:<br>Building <span class="accent">Both Games.</span></h1>
+  <p class="sub">Balance the physical work everyone can see with the intangible work that actually separates in-season performance.</p>
+
+  <!-- PHYSICAL GAME -->
+  <div class="section-header">
+    <div class="badge pink">P</div>
+    <div class="section-title">The Physical Game
+      <span class="tag">WHAT YOU'RE PROBABLY ALREADY DOING</span>
+    </div>
+  </div>
+
+  <div class="item"><div class="box"></div><div class="item-text">Private lessons or skill-specific reps</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">College camps / exposure camps</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Strength &amp; conditioning</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Ball control / touches outside of team practice</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Active recovery days (movement, not shutdown)</div></div>
+
+  <hr class="divider">
+
+  <!-- INTANGIBLE GAME -->
+  <div class="section-header">
+    <div class="badge teal">I</div>
+    <div class="section-title">The Intangible Game
+      <span class="tag">WHAT'S USUALLY MISSING</span>
+    </div>
+  </div>
+
+  <div class="item"><div class="box"></div><div class="item-text">Practice <strong>composure under pressure</strong> in a low-stakes setting (a camp, a pickup game — not a tryout)</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Notice her <strong>self-talk after a mistake</strong> — name it, don't fix it yet</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Role-play <strong>receiving hard coach feedback</strong> without getting defensive</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Build a <strong>between-points reset routine</strong> now, while nothing's on the line</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Have one real conversation about <strong>what she wants</strong> from next season — not what she thinks she should want</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Identify <strong>one recurring in-game reaction pattern</strong> from last season worth changing</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Practice sitting with <strong>disappointment</strong> (a bad rep, a lost point) without spiraling</div></div>
+  <div class="item"><div class="box"></div><div class="item-text">Write down <strong>her season goals</strong> in her own words, before anyone else's expectations get added</div></div>
+
+  <hr class="divider">
+
+  <!-- CONVERGENCE CHECK -->
+  <div class="convergence">
+    <div class="section-title" style="font-size:22px;">The Convergence Check</div>
+    <div class="item" style="background:transparent;padding:10px 0;"><div class="box"></div><div class="item-text">By the time the season starts, can she name her go-to reset routine without thinking?</div></div>
+    <div class="item" style="background:transparent;padding:10px 0;"><div class="box"></div><div class="item-text">Does she have language for what she's feeling instead of just reacting to it?</div></div>
+    <div class="item" style="background:transparent;padding:10px 0;"><div class="box"></div><div class="item-text">Has she practiced the hard conversation with a coach before she's actually in it?</div></div>
+    <p style="font-size:14px;color:var(--lgray);margin:18px 0 0;line-height:1.6;">If you can check those three at the top of the season, the physical work and the inner work converge — <strong style="color:var(--white);">that's when she takes off.</strong></p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>Want This to Actually Happen — Not Just Sit on the Fridge?</h2>
+    <p>On a Clarity Call, we'll walk through what's actually going on in your specific ecosystem — so you can apply these techniques to what your family needs, not a generic version of it.</p>
+    <a class="cta-button" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby">Book Your Clarity Call</a>
+    <span class="cta-link">calendly.com/gabby-mazeperformance/clarity-call-with-gabby</span>
+  </div>
+
+  <div class="footer">MazePerformance · MindSystem &copy; Gabby Cole</div>
+
+</div>
+</body>
+</html>
