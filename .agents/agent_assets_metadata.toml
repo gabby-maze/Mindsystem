@@ -65,3 +65,9 @@ id = "Chzawjh1FvzYm-EosObrY"
 uri = "file://artifacts/members-portal/public/415-habit-tracker.pdf"
 type = "pdf"
 title = "415 Habit Tracker — Bold Break Journal Pages 13–14"
+
+[[outputs]]
+id = "jsFXDBKzeyaXQzPcRYuyp"
+uri = "file://summer-training-checklist.zip"
+type = "unspecified"
+title = "Summer Training Checklist"
