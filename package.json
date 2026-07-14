@@ -13,5 +13,10 @@
     "adm-zip": "^0.5.17",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^149.0.0",
+    "puppeteer": "^25.3.0",
+    "puppeteer-core": "^25.3.0"
   }
 }
