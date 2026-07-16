@@ -7,8 +7,8 @@ export function canAccessSection(tier: string, courseId: string): boolean {
   if (tier === "courtside" || tier === "independent" || tier === "supported" || tier === "innerCircle") {
     return true;
   }
-  // Free tier - video-game-library only
-  if (tier === "free") return courseId === "video-game-library";
+  // Free tier - video-game-library and nutrition-library (guide tab only; recipes gated in NutritionPage)
+  if (tier === "free") return courseId === "video-game-library" || courseId === "nutrition-library";
   return false;
 }
 

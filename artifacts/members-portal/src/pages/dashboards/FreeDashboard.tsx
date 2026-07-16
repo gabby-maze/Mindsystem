@@ -198,11 +198,13 @@ export default function FreeDashboard() {
           >
             {COURTSIDE_COURSES.map((course) => {
               const isVideoGame = course.id === "video-game-library";
+              const isNutrition = course.id === "nutrition-library";
               const accessible = canAccessSection("free", course.id);
+              const destination = isNutrition ? "/nutrition" : `/courses/${course.id}`;
               return (
                 <div
                   key={course.id}
-                  onClick={() => accessible ? navigate(`/courses/${course.id}`) : setModalContext("courtside")}
+                  onClick={() => accessible ? navigate(destination) : setModalContext("courtside")}
                   className="relative rounded-lg overflow-hidden cursor-pointer"
                   style={{
                     aspectRatio: "4/3",
@@ -214,12 +216,19 @@ export default function FreeDashboard() {
                 >
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75))" }} />
                   <div className="absolute top-3 right-3">
-                    {isVideoGame ? (
+                    {isVideoGame && (
                       <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
                         style={{ backgroundColor: "#00D4C8", color: "#0a0a0a", fontSize: "0.65rem" }}>
                         1 Free Lesson Available
                       </span>
-                    ) : (
+                    )}
+                    {isNutrition && (
+                      <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                        style={{ backgroundColor: "#00D4C8", color: "#0a0a0a", fontSize: "0.65rem" }}>
+                        Free Guide Available
+                      </span>
+                    )}
+                    {!isVideoGame && !isNutrition && (
                       <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
                         <Lock size={11} style={{ color: "rgba(255,255,255,0.7)" }} />
                         <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.7)", textTransform: "uppercase", letterSpacing: "0.08em" }}>Courtside</span>

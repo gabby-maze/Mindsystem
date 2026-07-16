@@ -6,7 +6,7 @@ import { FUEL_CATEGORIES, type FuelCategoryId } from "@/lib/nutritionData";
 import NutritionGuide from "./NutritionGuide";
 import FuelCategoryView from "./FuelCategoryView";
 import AskGabbySection from "./AskGabbySection";
-import { Lock } from "lucide-react";
+import { UpgradeModal } from "@/components/UpgradeModal";
 
 const PINK = "#FF2D78";
 
@@ -15,25 +15,22 @@ type ActiveTab = "guide" | FuelCategoryId;
 export default function NutritionPage() {
   const { family } = useAuth();
   const [activeTab, setActiveTab] = useState<ActiveTab>("guide");
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   if (!family) return null;
 
-  const hasAccess = hasTierAccess(family.tier, "courtside");
+  const hasRecipeAccess = hasTierAccess(family.tier, "courtside");
 
-  if (!hasAccess) {
-    return (
-      <Layout>
-        <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
-          <Lock size={32} style={{ color: "rgba(255,255,255,0.2)", marginBottom: "1.5rem" }} />
-          <h2 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "1.8rem", color: "#fff", marginBottom: "0.75rem" }}>
-            Nutrition Library
-          </h2>
-          <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.4)", maxWidth: "400px" }}>
-            The Nutrition Library is available on Courtside Conversations and above.
-          </p>
-        </div>
-      </Layout>
-    );
+  function handleTabClick(tabId: ActiveTab) {
+    if (tabId === "guide") {
+      setActiveTab("guide");
+      return;
+    }
+    if (!hasRecipeAccess) {
+      setShowUpgrade(true);
+      return;
+    }
+    setActiveTab(tabId);
   }
 
   const activeFuelCategory = activeTab !== "guide"
@@ -54,17 +51,39 @@ export default function NutritionPage() {
           </h1>
         </div>
 
-        {/* Fuel category buttons */}
+        {/* Tab buttons */}
         <div
           className="flex justify-center flex-wrap gap-2 mb-10"
           style={{ rowGap: "0.5rem" }}
         >
+          {/* Guide tab — always free */}
+          <button
+            onClick={() => handleTabClick("guide")}
+            style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: activeTab === "guide" ? 700 : 600,
+              fontSize: "0.78rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              padding: "0.5rem 1.1rem",
+              backgroundColor: "#1A1A1A",
+              color: activeTab === "guide" ? "#fff" : "#A0A0A0",
+              border: activeTab === "guide" ? `2px solid ${PINK}` : "1px solid #2A2A2A",
+              cursor: "pointer",
+              borderRadius: "4px",
+              transition: "all 0.15s",
+            }}
+          >
+            Nutrition Guide
+          </button>
+
+          {/* Recipe category tabs — locked for free */}
           {FUEL_CATEGORIES.map(cat => {
             const active = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
+                onClick={() => handleTabClick(cat.id)}
                 style={{
                   fontFamily: "'Oswald', sans-serif",
                   fontWeight: active ? 700 : 600,
@@ -73,14 +92,18 @@ export default function NutritionPage() {
                   textTransform: "uppercase",
                   padding: "0.5rem 1.1rem",
                   backgroundColor: "#1A1A1A",
-                  color: active ? "#fff" : "#A0A0A0",
+                  color: active ? "#fff" : hasRecipeAccess ? "#A0A0A0" : "rgba(255,255,255,0.3)",
                   border: active ? `2px solid ${PINK}` : "1px solid #2A2A2A",
                   cursor: "pointer",
                   borderRadius: "4px",
                   transition: "all 0.15s",
+                  position: "relative" as const,
                 }}
               >
                 {cat.label}
+                {!hasRecipeAccess && (
+                  <span style={{ marginLeft: "0.4rem", fontSize: "0.6rem", opacity: 0.5 }}>🔒</span>
+                )}
               </button>
             );
           })}
@@ -92,12 +115,20 @@ export default function NutritionPage() {
         {/* Content area */}
         <div className="mb-4">
           {activeTab === "guide" && <NutritionGuide />}
-          {activeFuelCategory && <FuelCategoryView category={activeFuelCategory} />}
+          {activeFuelCategory && hasRecipeAccess && <FuelCategoryView category={activeFuelCategory} />}
         </div>
 
         {/* Ask Gabby — always visible */}
         <AskGabbySection />
       </div>
+
+      {showUpgrade && (
+        <UpgradeModal
+          onClose={() => setShowUpgrade(false)}
+          headline="Recipes are part of Courtside Conversations."
+          body="Upgrade to Courtside Conversations to unlock all 5 recipe categories — Recovery, Energy, Focus, Build, and Quick Fuel — plus the full training library."
+        />
+      )}
     </Layout>
   );
 }
