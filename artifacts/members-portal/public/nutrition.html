@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Her Body Is the Engine. Most Families Never Learn How to Fuel It. | Gabby Cole</title>
-<meta name="description" content="She trains hard, burns through calories most parents don't realize, and still eats like nothing happened. This free guide starts the conversation — and teaches her to own it herself.">
+<meta name="description" content="She trains hard, burns through calories most parents don't realize, and still eats like nothing happened. This free guide starts the conversation and teaches her to own it herself.">
 <meta property="og:title" content="Her Body Is the Engine. Most Families Never Learn How to Fuel It.">
 <meta property="og:description" content="She trains hard, burns through calories most parents don't realize, and still eats like nothing happened. This free guide starts the conversation.">
 <meta property="og:type" content="website">
@@ -41,7 +41,7 @@ body {
 
 .container { max-width: 620px; margin: 0 auto; padding: 0 20px; }
 
-/* ── Header ── */
+/* Header */
 .site-header {
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
@@ -59,7 +59,7 @@ body {
 }
 .logo-text span { color: var(--text); }
 
-/* ── Hero ── */
+/* Hero */
 .hero {
   padding: 56px 0 48px;
   text-align: center;
@@ -94,7 +94,7 @@ body {
   line-height: 1.7;
 }
 
-/* ── What's Inside ── */
+/* What's Inside */
 .inside-section {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -133,9 +133,7 @@ body {
   background: rgba(0, 212, 200, 0.12);
   border: 1px solid rgba(0, 212, 200, 0.4);
 }
-.bullet-icon svg {
-  display: block;
-}
+.bullet-icon svg { display: block; }
 .bullets li p {
   font-size: 0.97rem;
   font-weight: 400;
@@ -143,46 +141,7 @@ body {
   line-height: 1.65;
 }
 
-/* ── Clarity Call block ── */
-.clarity-block {
-  padding: 52px 0;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-.clarity-block h2 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: clamp(1.3rem, 4vw, 1.75rem);
-  color: var(--text);
-  margin-bottom: 16px;
-  line-height: 1.25;
-}
-.clarity-block p {
-  font-size: 0.97rem;
-  color: rgba(239,239,239,0.6);
-  max-width: 500px;
-  margin: 0 auto 28px;
-  line-height: 1.7;
-}
-.btn-outline {
-  display: inline-block;
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pink);
-  border: 1.5px solid var(--pink);
-  padding: 13px 28px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background 0.2s, color 0.2s;
-}
-.btn-outline:hover {
-  background: var(--pink);
-  color: #fff;
-}
-
-/* ── Form section ── */
+/* Form section */
 .form-section {
   padding: 52px 0 56px;
 }
@@ -202,9 +161,7 @@ body {
 @media (max-width: 480px) {
   .form-grid { grid-template-columns: 1fr; }
 }
-.field-full {
-  grid-column: 1 / -1;
-}
+.field-full { grid-column: 1 / -1; }
 .form-group {
   display: flex;
   flex-direction: column;
@@ -273,7 +230,7 @@ body {
 }
 .form-error.visible { display: block; }
 
-/* ── Thank-you state ── */
+/* Thank-you state */
 .thankyou-state {
   display: none;
   text-align: center;
@@ -296,6 +253,13 @@ body {
   margin: 0 auto 28px;
   line-height: 1.7;
 }
+.spam-note {
+  font-size: 0.82rem;
+  color: rgba(239,239,239,0.35);
+  max-width: 400px;
+  margin: 0 auto 32px;
+  letter-spacing: 0.03em;
+}
 .btn-primary-link {
   display: inline-block;
   background: var(--pink);
@@ -312,14 +276,47 @@ body {
 }
 .btn-primary-link:hover { background: #e0255f; }
 
-/* ── Divider line ── */
-.divider {
-  height: 1px;
-  background: var(--border);
-  margin: 0;
+/* Clarity Call block */
+.clarity-block {
+  padding: 52px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.clarity-block h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.3rem, 4vw, 1.75rem);
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.clarity-block p {
+  font-size: 0.97rem;
+  color: rgba(239,239,239,0.6);
+  max-width: 500px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+.btn-outline {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  border: 1.5px solid var(--pink);
+  padding: 13px 28px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover {
+  background: var(--pink);
+  color: #fff;
 }
 
-/* ── Footer ── */
+/* Footer */
 .site-footer {
   padding: 36px 0 40px;
   border-top: 1px solid var(--border);
@@ -334,7 +331,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* ── Accent stripe ── */
+/* Accent stripe */
 .stripe {
   height: 3px;
   background: linear-gradient(90deg, var(--purple) 0%, var(--pink) 50%, var(--teal) 100%);
@@ -349,7 +346,6 @@ body {
 <header class="site-header">
   <div class="container">
     <div class="logo-wrap">
-      <!-- Logo placeholder: swap img tag below for actual logo -->
       <img src="gc-logo.png" alt="Gabby Cole" style="height:36px;" onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='block';">
       <span id="logo-fallback" style="display:none;" class="logo-text">Gabby <span>Cole</span></span>
     </div>
@@ -361,7 +357,7 @@ body {
   <div class="container">
     <div class="eyebrow">Free Guide for Volleyball Families</div>
     <h1>Her Body Is the <span class="accent-pink">Engine.</span><br>Most Families Never Learn<br>How to <span class="accent-teal">Fuel It.</span></h1>
-    <p class="subhead">She trains hard, burns through calories most parents don't realize, and still eats like nothing happened — because nobody's ever taught her the difference between eating for pleasure and eating for performance. This free guide starts that conversation, and starts teaching her to own it herself.</p>
+    <p class="subhead">She trains hard, burns through calories most parents don't realize, and still eats like nothing happened. Because nobody has ever taught her the difference between eating for pleasure and eating for performance. This free guide starts that conversation, and starts teaching her to own it herself.</p>
   </div>
 </section>
 
@@ -376,7 +372,7 @@ body {
             <path d="M2 6l3 3 5-5" stroke="#00D4C8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <p>The difference between eating for pleasure and eating for performance — and why her body can't tell them apart yet</p>
+        <p>The difference between eating for pleasure and eating for performance, and why her body can't tell them apart yet</p>
       </li>
       <li>
         <div class="bullet-icon">
@@ -395,15 +391,6 @@ body {
         <p>How to start experimenting with food herself, so nutrition becomes something she owns, not something you're constantly managing for her</p>
       </li>
     </ul>
-  </div>
-</section>
-
-<!-- Clarity Call CTA -->
-<section class="clarity-block">
-  <div class="container">
-    <h2>Already know this is bigger than one guide?</h2>
-    <p>If mealtime has turned into a daily negotiation, or you can already tell her energy and mood on the court are tied to what she's eating (or not eating), a Clarity Call is where we map out the rest.</p>
-    <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-outline">Book Your Clarity Call</a>
   </div>
 </section>
 
@@ -440,24 +427,32 @@ body {
     <!-- Thank-you state -->
     <div id="thankyou" class="thankyou-state">
       <h2>You're in! Check your email for access to the studio.</h2>
-      <p>While it's on its way — if you already know your family needs more than a guide to fix what's happening around food right now, grab a spot on my calendar.</p>
+      <p class="spam-note">Check your spam folder if you don't see it right away.</p>
+      <p>While it's on its way, if you already know your family needs more than a guide to fix what's happening around food right now, grab a spot on my calendar.</p>
       <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-primary-link">Book Your Clarity Call</a>
     </div>
+  </div>
+</section>
+
+<!-- Clarity Call CTA -->
+<section class="clarity-block">
+  <div class="container">
+    <h2>Already know this is bigger than one guide?</h2>
+    <p>If mealtime has turned into a daily negotiation, or you can already tell her energy and mood on the court are tied to what she's eating (or not eating), a Clarity Call is where we map out the rest.</p>
+    <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-outline">Book Your Clarity Call</a>
   </div>
 </section>
 
 <!-- Footer -->
 <footer class="site-footer">
   <div class="container">
-    <p class="footer-cred">Gabby Cole — Former D1 outside hitter, UC Berkeley. Volleyball mom. Founder of MindSystem — training the whole athlete, not just the skills that show up in a stat line.</p>
+    <p class="footer-cred">Gabby Cole. Former D1 outside hitter, UC Berkeley. Volleyball mom. Founder of MindSystem. Training the whole athlete, not just the skills that show up in a stat line.</p>
   </div>
 </footer>
 
 <script>
-  // ── Constants — swap these before going live ──────────────────────────────
   const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/0MA6xJ1bECwmqZBI5uvI/webhook-trigger/hgYziRfxYyIA7yDLULOe";
   const CALENDLY_URL    = "https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby";
-  // ─────────────────────────────────────────────────────────────────────────
 
   const form      = document.getElementById("lead-form");
   const formWrap  = document.getElementById("form-wrap");
@@ -486,12 +481,10 @@ body {
     const email     = document.getElementById("email").value.trim();
     const phone     = document.getElementById("phone").value.trim();
 
-    // Clear field error states
     ["firstName","lastName","email","phone"].forEach(id => {
       document.getElementById(id).classList.remove("error-field");
     });
 
-    // Validate
     let hasError = false;
     if (!firstName) { document.getElementById("firstName").classList.add("error-field"); hasError = true; }
     if (!lastName)  { document.getElementById("lastName").classList.add("error-field");  hasError = true; }
@@ -517,7 +510,6 @@ body {
 
       if (!res.ok) throw new Error("Server error: " + res.status);
 
-      // Success — show thank-you
       formWrap.classList.add("hidden");
       thankyou.classList.add("visible");
       window.scrollTo({ top: document.getElementById("thankyou")?.offsetTop - 60 || 0, behavior: "smooth" });
@@ -525,7 +517,7 @@ body {
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.textContent = "Get Access";
-      showError("Something went wrong. Please try again — your info has not been lost.");
+      showError("Something went wrong. Please try again. Your info has not been lost.");
       console.error(err);
     }
   });
