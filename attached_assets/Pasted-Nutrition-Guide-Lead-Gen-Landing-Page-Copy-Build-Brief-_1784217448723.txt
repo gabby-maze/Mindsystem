@@ -1,0 +1,127 @@
+Nutrition Guide — Lead Gen Landing Page
+
+Copy + Build Brief for Replit / Claude Code
+
+
+PART 1: PAGE COPY
+
+Eyebrow (small text above headline)
+
+FREE GUIDE FOR VOLLEYBALL FAMILIES
+
+Headline
+
+Her Body Is the Engine. Most Families Never Learn How to Fuel It.
+
+Subheadline
+
+She trains hard, burns through calories most parents don't realize, and still eats like nothing happened — because nobody's ever taught her the difference between eating for pleasure and eating for performance. This free guide starts that conversation, and starts teaching her to own it herself.
+
+What's Inside (3 bullets)
+
+
+The difference between eating for pleasure and eating for performance — and why her body can't tell them apart yet
+Why she has to eat even when she's not hungry, and what actually happens to her energy, mood, and recovery when she doesn't
+How to start experimenting with food herself, so nutrition becomes something she owns, not something you're constantly managing for her
+
+
+Clarity Call CTA (placed directly after the bullets, before the opt-in form)
+
+Headline: Already know this is bigger than one guide?
+Body: If mealtime has turned into a daily negotiation, or you can already tell her energy and mood on the court are tied to what she's eating (or not eating), a Clarity Call is where we map out the rest.
+Button copy: Book Your Clarity Call
+Button link: https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby
+
+Form section headline
+
+Get free access to the Nutrition Guide
+
+Form fields
+
+
+First Name
+Last Name
+Email Address
+Phone Number
+
+
+Button copy
+
+Get Access
+
+Micro-copy under button
+
+No spam. Just your access, and occasional emails from me. Unsubscribe anytime.
+
+Post-submit thank you state (second Clarity Call opportunity)
+
+Headline: You're in! Check your email for access to the studio.
+Body: While it's on its way — if you already know your family needs more than a guide to fix what's happening around food right now, grab a spot on my calendar.
+Button copy: Book Your Clarity Call
+Button link: https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby
+
+Footer credibility line
+
+Gabby Cole — Former D1 outside hitter, UC Berkeley. Volleyball mom. Founder of MindSystem — training the whole athlete, not just the skills that show up in a stat line.
+
+
+PART 2: BUILD INSTRUCTIONS FOR REPLIT / CLAUDE CODE
+
+Paste everything below this line as the build prompt.
+
+
+Build a single-page lead generation landing page with the following spec:
+
+Purpose: Capture name + email in exchange for free access to the Nutrition Guide course inside the digital studio. On submit, show a thank-you state and (eventually) trigger studio access provisioning + an access email.
+
+Page structure (single scrolling page, in this order):
+
+
+Header/logo area — leave placeholder for logo image, transparent background
+Hero section: eyebrow text, headline, subheadline
+"What's Inside" section: 3 bullet points, each with a simple icon placeholder (checkmark or similar)
+Clarity Call CTA block: headline, body copy, button linking to Calendly (opens in new tab)
+Opt-in form section: headline, First Name field, Email field, submit button, micro-copy below button
+Footer: credibility line, small text
+
+
+Visual style:
+
+
+Base background: black
+Accent colors: hot pink, purple, and teal (use as highlights on headline text, button, bullet icons — not as full-section backgrounds)
+Headline font: "Permanent Marker" (Google Font)
+Body/UI font: "Oswald" (Google Font)
+Aesthetic reference: 80s retro sports poster, same visual system as the "Reframe Before You Respond" and pitch deck materials — keep this page visually consistent with those rather than introducing a new look
+Fully responsive — assume most traffic is mobile (Instagram click-throughs)
+
+
+Form behavior:
+
+
+First Name, Last Name, Email, and Phone are all required fields (matching the pattern used on the other MazePerformance landing pages)
+On submit: validate email format client-side
+POST the form data to a webhook URL — use a placeholder constant GHL_WEBHOOK_URL at the top of the file so it can be swapped for the real GoHighLevel webhook URL later
+That webhook is doing double duty on the backend (already built, no new work needed in Replit): it creates/updates the contact in GoHighLevel and creates a free Supabase account for that same person, using the same account system already used for paid-plan studio access. The Supabase account should be provisioned with the Nutrition Guide course unlocked and recipes locked behind the $30/month upgrade prompt.
+On successful submit: replace the form with the thank-you message + a second "Book Your Clarity Call" button (copy provided above). Do not navigate away from the page.
+On failed submit: show an inline error message near the form, do not lose the user's entered data
+Use a constant CALENDLY_URL = "https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" at the top of the file, referenced by both the mid-page Clarity Call button and the post-submit Clarity Call button. Both buttons should open Calendly in a new tab.
+
+
+Technical notes:
+
+
+Single HTML/CSS/JS page is fine, or a simple React component if that's the project's existing stack — match whatever framework the Replit project is already using
+No backend database needed for this build — the webhook POST is the only data handoff
+Keep the page lightweight — no unnecessary libraries
+Add basic SEO meta tags (title, description) using the headline and subheadline copy above
+
+
+
+NOTES FOR GABBY
+
+
+This page does NOT mention Courtside Conversations or the $30/month subscription anywhere. That upsell lives entirely inside the digital studio as prompts once someone's in — the only conversion path on this landing page itself is the Clarity Call. Worth double-checking this stays true if anyone edits the copy later, since it'd be easy to accidentally blend the two asks.
+Webhook URL: You'll need to grab the actual GoHighLevel inbound webhook URL from your funnel and swap it in for the GHL_WEBHOOK_URL placeholder before this goes live.
+Guide delivery: There's no PDF for this one. The Nutrition Guide is a course inside the digital studio, same access model as the free first-lesson library. The webhook creates a free Supabase account (your existing account system for paid studio access) with the Nutrition Guide unlocked and recipes gated behind the $30/month prompt. Replit doesn't need to build any of this — it's already handled backend-side; Replit's only job is to POST the form fields to the webhook and handle the success/failure states on the page.
+Delivery email: Should point to studio login/access, not a file — by the time the email sends, the Supabase account already exists from the webhook step above, so this is just handing them the door, not creating the account.
