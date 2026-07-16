@@ -53,10 +53,12 @@ async function approveContact(email: string, tier: string, familyName: string) {
 // Use a different URL per plan in GoHighLevel — no body config needed
 
 const TIER_ROUTES: Record<string, string> = {
-  "courtside":   "courtside",
-  "independent": "independent",
-  "supported":   "supported",
-  "inner-circle": "innerCircle",
+  "courtside":        "courtside",
+  "independent":      "independent",
+  "supported":        "supported",
+  "inner-circle":     "innerCircle",
+  "free":             "free",
+  "nutrition-free":   "free",
 };
 
 for (const [slug, tier] of Object.entries(TIER_ROUTES)) {
