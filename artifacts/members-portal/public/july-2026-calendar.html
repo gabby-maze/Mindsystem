@@ -100,7 +100,7 @@
 </div>
 
 <div class="makeup-banner">
-  ★ July 1 — Makeup calls for week of June 22–28 (Junior Nationals) · Parent Group moved to 10AM
+  ★ July 1 — Makeup calls for week of June 22–28 (Junior Nationals) · Parent Group moved to 10AM &nbsp;|&nbsp; ★ July 20 — Athlete Group Makeup Call 9:00 AM PST
 </div>
 
 <div class="legend">
@@ -184,6 +184,10 @@
       { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
       { type: 'parent-group',  label: 'Parent Group Call',  time: '4:00 – 5:00 PM PST'  },
     ],
+    // July 20 (Mon) — Athlete Group makeup call
+    20: [
+      { type: 'athlete-makeup', label: 'Athlete Group (Makeup)', time: '9:00 – 10:00 AM PST', makeup: true },
+    ],
     // July 22 (Wed) — Group calls only
     22: [
       { type: 'parent-group',  label: 'Parent Group Call',  time: '9:00 – 10:00 AM PST' },
@@ -245,7 +249,7 @@
 
   for (let day = 1; day <= TOTAL_DAYS; day++) {
     const calls = CALLS[day] || [];
-    const isMakeup = day === 1;
+    const isMakeup = day === 1 || day === 20;
     const el = document.createElement('div');
     el.className = 'day-cell' + (calls.length ? ' has-calls' : '') + (isMakeup ? ' makeup' : '');
     if (calls.length) el.style.borderLeftColor = borderColor(calls);
