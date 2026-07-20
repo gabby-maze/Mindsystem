@@ -47,7 +47,7 @@ export default function LivePage() {
                     )}
                   </div>
                   <span className="text-xs uppercase tracking-wider px-2 py-1 rounded shrink-0" style={{ backgroundColor: `${tierColor}15`, color: tierColor }}>
-                    Recurring
+                    {session.recurring ? "Recurring" : "Makeup Call"}
                   </span>
                 </div>
 
