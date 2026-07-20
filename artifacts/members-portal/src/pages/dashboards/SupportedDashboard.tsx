@@ -275,12 +275,22 @@ export default function SupportedDashboard() {
                 <div key={title} className="p-5 rounded-lg" style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
                   <p className="font-bold text-xs uppercase tracking-wider mb-4" style={{ color: TEAL }}>{title}</p>
                   {calls.map((c) => (
-                    <div key={c.id} className="flex items-center justify-between mb-3">
-                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>{c.time}</p>
-                      <a href={c.zoomLink} target="_blank" rel="noopener noreferrer"
-                        style={{ backgroundColor: TEAL, color: "#0a0a0a", padding: "0.35rem 0.9rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
-                        Join Zoom
-                      </a>
+                    <div key={c.id} className="mb-4">
+                      {!c.recurring && (
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded" style={{ backgroundColor: "rgba(255,179,0,0.12)", color: "#FFB300", border: "1px solid rgba(255,179,0,0.3)" }}>
+                            Makeup Call
+                          </span>
+                          <span className="text-xs" style={{ color: "#FFB300" }}>{c.schedule}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs" style={{ color: c.recurring ? "rgba(255,255,255,0.65)" : "#FFB300" }}>{c.time}</p>
+                        <a href={c.zoomLink} target="_blank" rel="noopener noreferrer"
+                          style={{ backgroundColor: c.recurring ? TEAL : "#FFB300", color: "#0a0a0a", padding: "0.35rem 0.9rem", fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", textDecoration: "none" }}>
+                          Join Zoom
+                        </a>
+                      </div>
                     </div>
                   ))}
                 </div>
