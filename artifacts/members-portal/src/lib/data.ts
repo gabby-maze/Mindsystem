@@ -530,7 +530,7 @@ export const LIVE_SESSIONS: LiveSession[] = [
   {
     id: "supported-athlete-makeup-jul19",
     title: "Athlete Group Call - Makeup",
-    schedule: "Sunday July 19, 2026",
+    schedule: "Monday July 20, 2026",
     time: "9:00am PST / 12:00pm EST",
     zoomLink: "https://us06web.zoom.us/j/87177408803?pwd=zb5TZjoSxZUxraHvh6QhyLVUzOlI4x.1",
     tier: "supported",

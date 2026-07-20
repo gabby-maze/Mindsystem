@@ -121,15 +121,22 @@ export default function LivePage() {
                     {!accessible && <Lock size={14} style={{ color: "rgba(255,255,255,0.3)", flexShrink: 0 }} />}
                   </div>
                   {accessible && (
-                    <a
-                      href={session.zoomLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs uppercase tracking-wider px-4 py-2 mt-2"
-                      style={{ backgroundColor: tierColor, color: "#fff", fontFamily: "'Oswald', sans-serif", fontWeight: 700, textDecoration: "none" }}
-                    >
-                      Join Zoom <ExternalLink size={12} />
-                    </a>
+                    <div className="flex items-center gap-3 mt-2 flex-wrap">
+                      <a
+                        href={session.zoomLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-wider px-4 py-2"
+                        style={{ backgroundColor: tierColor, color: "#fff", fontFamily: "'Oswald', sans-serif", fontWeight: 700, textDecoration: "none" }}
+                      >
+                        Join Zoom <ExternalLink size={12} />
+                      </a>
+                      {!session.recurring && (
+                        <span className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded" style={{ backgroundColor: "rgba(255,179,0,0.12)", color: "#FFB300", border: "1px solid rgba(255,179,0,0.3)" }}>
+                          {session.schedule}
+                        </span>
+                      )}
+                    </div>
                   )}
                 </div>
               );
