@@ -1,4 +1,4 @@
-modules = ["nodejs-24", "python-3.11"]
+modules = ["nodejs-24", "python-3.11", "postgresql-16"]
 
 [[artifacts]]
 id = "artifacts/api-server"
@@ -33,3 +33,6 @@ VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhY
 SUPABASE_URL = "https://vtkyhptqglhvupbdrhuv.supabase.co"
 SUPABASE_SERVICE_ROLE_KEY = "sb_secret_b3kZd5fdkS2Y4A6580Mblw_XR5QGdxP"
 VITE_GHL_QUESTION_WEBHOOK_URL = ""
+
+[nix]
+channel = "stable-25_05"
