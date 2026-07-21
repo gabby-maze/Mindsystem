@@ -170,30 +170,57 @@ function RecipePage({ recipe, accentColor }: { recipe: Recipe; accentColor: stri
         </p>
       </div>
 
-      {/* PDF download */}
-      {recipe.pdfUrl && (
-        <a
-          href={recipe.pdfUrl}
-          download
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            backgroundColor: accentColor,
-            color: "#0a0a0a",
-            padding: "0.875rem 2rem",
-            fontFamily: "'Oswald', sans-serif",
-            fontWeight: 700,
-            fontSize: "0.85rem",
-            textTransform: "uppercase",
-            letterSpacing: "0.15em",
-            textDecoration: "none",
-            borderRadius: "3px",
-          }}
-        >
-          ↓ Download Recipe Card
-        </a>
-      )}
+      {/* PDF download + Video link */}
+      <div className="flex flex-wrap gap-3">
+        {recipe.pdfUrl && (
+          <a
+            href={recipe.pdfUrl}
+            download
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              backgroundColor: accentColor,
+              color: "#0a0a0a",
+              padding: "0.875rem 2rem",
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              textDecoration: "none",
+              borderRadius: "3px",
+            }}
+          >
+            ↓ Download Recipe Card
+          </a>
+        )}
+        {recipe.videoUrl && (
+          <a
+            href={recipe.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              backgroundColor: "transparent",
+              color: accentColor,
+              padding: "0.875rem 2rem",
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.15em",
+              textDecoration: "none",
+              borderRadius: "3px",
+              border: `1px solid ${accentColor}60`,
+            }}
+          >
+            ▶ Watch Video
+          </a>
+        )}
+      </div>
     </div>
   );
 }

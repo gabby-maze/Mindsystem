@@ -15,6 +15,7 @@ export interface Recipe {
   carbs: string;
   fat: string;
   pdfUrl?: string;
+  videoUrl?: string;
 }
 
 export interface FuelCategory {
@@ -297,6 +298,32 @@ export const FUEL_CATEGORIES: FuelCategory[] = [
           "Season with salt, pepper, and herbs. Mix well and serve.",
         ],
         athleteTip: "Keep canned tuna stocked at all times. It's one of the highest protein-to-cost foods available. Cook a batch of quinoa on Sunday and this bowl is ready in 10 minutes flat any night of the week.",
+      }),
+      r("recovery", 11, {
+        name: "High Octane Yogurt Parfait",
+        why: "Greek yogurt delivers fast-absorbing protein and is easier on the stomach than other dairy. Chia seeds add omega-3s, fiber, and minerals that fight muscle cramps. Granola provides complex carbs for sustained energy. Works as a full meal or a pre- or post-workout snack depending on your portion size.",
+        prepTime: "10 min", cookTime: "15 min", servings: "3–4",
+        protein: "25g", carbs: "48g", fat: "7g",
+        videoUrl: "https://youtu.be/v9d7qEeiLsg",
+        ingredients: [
+          "2 cups plain Greek yogurt",
+          "2 cups fresh berries (strawberries, blueberries, raspberries, or blackberries)",
+          "¼ cup chia seeds",
+          "3 tbsp honey",
+          "1–2 tbsp fresh lemon juice (added if pan gets dry while cooking)",
+          "½ cup granola",
+          "Glass jars for serving and storage",
+        ],
+        instructions: [
+          "Chop berries into bite-sized pieces based on preference.",
+          "Heat a cast iron skillet over medium heat. Add the berries.",
+          "Stir in chia seeds and honey. Mix well to combine.",
+          "Simmer 8–10 minutes, stirring occasionally, until the berries break down into a thick jam. If the pan gets too dry, add a squeeze of lemon juice to loosen.",
+          "Transfer the berry jam to jars and cool in the refrigerator for at least 20 minutes.",
+          "Build your parfaits: spoon a base layer of Greek yogurt into each jar, add a layer of berry jam, then a second layer of yogurt, and top with granola.",
+          "Seal and refrigerate for up to 4 days.",
+        ],
+        athleteTip: "Pre-workout: eat 1–2 hours before practice or competition. The granola provides complex carbs for sustained court energy. Post-workout: the Greek yogurt reduces inflammation and supports muscle repair. These travel well for tournaments and the mess stays contained in the jar. Variations: mix different berry combinations, stir collagen powder, creatine, or protein powder directly into the yogurt layer, add vanilla extract, or mix in matcha, cacao, or any other performance powder you use.",
       }),
     ],
   },
