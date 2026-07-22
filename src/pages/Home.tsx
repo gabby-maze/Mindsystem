@@ -220,7 +220,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* Training 1: The Missing Framework */}
               <motion.div
@@ -274,26 +274,53 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Training 3: Coming Soon */}
+              {/* Training 3: Summer Checklist */}
               <motion.div
                 variants={fadeUp}
-                className="bg-background border border-dashed border-border/30 relative overflow-hidden flex flex-col"
+                className="bg-background border border-border/50 relative overflow-hidden flex flex-col"
               >
-                <div className="p-8 flex flex-col flex-1 items-center justify-center text-center">
-                  <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground px-3 py-1 border border-border/30 self-center mb-6">
-                    Coming Soon
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#FF9F1C]/70 to-transparent" />
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest font-semibold border border-[#FF9F1C]/40 text-[#FF9F1C] px-3 py-1 self-start mb-6">
+                    Checklist + Training
                   </span>
-                  <h3 className="text-2xl font-serif text-muted-foreground mb-3">More Trainings</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8">
-                    Additional free trainings are in development. Check back soon.
+                  <h3 className="text-2xl font-serif text-foreground mb-3">Summer Checklist</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                    The off-season is not a break. It is the window. Use this checklist to build the habits, review the season honestly, and show up to fall camp already ahead.
                   </p>
                   <a
-                    href="https://www.videoask.com/fg4ocxw4e"
+                    href="https://members.gabbycole.com/summer-checklist"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-border/40 text-muted-foreground hover:bg-muted/30 transition-all text-xs font-bold tracking-widest uppercase w-full"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-[#FF9F1C] text-[#FF9F1C] hover:bg-[#FF9F1C] hover:text-black transition-all text-xs font-bold tracking-widest uppercase w-full"
                   >
-                    Fill Out the Parent Survey
+                    Get the Free Checklist
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Training 4: Nutrition Guide */}
+              <motion.div
+                variants={fadeUp}
+                className="bg-background border border-border/50 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00D4C8]/70 to-transparent" />
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest font-semibold border border-[#00D4C8]/40 text-[#00D4C8] px-3 py-1 self-start mb-6">
+                    Nutrition Guide
+                  </span>
+                  <h3 className="text-2xl font-serif text-foreground mb-3">Athlete Nutrition Guide</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                    What your athlete eats before, during, and after competition changes everything. A practical guide built for youth sports families who want to fuel performance without overcomplicating it.
+                  </p>
+                  <a
+                    href="https://members.gabbycole.com/nutrition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-[#00D4C8] text-[#00D4C8] hover:bg-[#00D4C8] hover:text-black transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Get the Free Guide
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
                 </div>
