@@ -398,7 +398,8 @@ body {
 <section class="form-section">
   <div class="container">
     <div id="form-wrap" class="form-wrap">
-      <h2>Get free access to the Nutrition Guide</h2>
+      <h2>Enter your info to get the free guide</h2>
+      <p style="text-align:center;font-size:0.95rem;font-weight:300;color:rgba(239,239,239,0.45);margin-bottom:24px;line-height:1.6;">You'll get instant access to the guide right here on this page.</p>
       <form id="lead-form" novalidate>
         <div class="form-grid">
           <div class="form-group">
@@ -419,29 +420,43 @@ body {
           </div>
         </div>
         <div id="form-error" class="form-error" role="alert"></div>
-        <button type="submit" id="submit-btn" class="btn-primary">Get Access</button>
+        <button type="submit" id="submit-btn" class="btn-primary">Get the Free Guide</button>
         <p class="micro-copy">No spam. Just your access, and occasional emails from me. Unsubscribe anytime.</p>
       </form>
     </div>
+  </div>
+</section>
 
-    <!-- Thank-you state -->
-    <div id="thankyou" class="thankyou-state">
-      <h2>You're in! Check your email for access to the studio.</h2>
-      <p class="spam-note">Check your spam folder if you don't see it right away.</p>
-      <p>While it's on its way, if you already know your family needs more than a guide to fix what's happening around food right now, grab a spot on my calendar.</p>
-      <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-primary-link">Book Your Clarity Call</a>
+<!-- Gated content (revealed after submit) -->
+<div id="gated-content" style="display:none;">
+
+  <!-- Confirmation + download -->
+  <section style="padding:52px 0 48px;border-top:1px solid var(--border);">
+    <div class="container" style="text-align:center;">
+      <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,212,200,0.12);border:1px solid rgba(0,212,200,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1.5 7L8 13.5L20.5 1" stroke="#00D4C8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 style="font-family:'Permanent Marker',cursive;font-size:clamp(1.5rem,5vw,2rem);color:#fff;margin-bottom:12px;line-height:1.2;">You're in. Download the guide below.</h2>
+      <p style="font-size:0.97rem;color:rgba(239,239,239,0.55);max-width:420px;margin:0 auto 32px;line-height:1.7;">Start with Section 1. Read it with her, not to her.</p>
+      <a href="nutrition-guide.pdf" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:12px;background:var(--teal);color:#000;font-family:'Oswald',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:16px 32px;text-decoration:none;border-radius:2px;transition:opacity 0.15s;"
+         onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M7 1v9M7 10l-3-3M7 10l3-3M1 13h12" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download the Nutrition Guide
+      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Clarity Call CTA -->
-<section class="clarity-block">
-  <div class="container">
-    <h2>Already know this is bigger than one guide?</h2>
-    <p>If mealtime has turned into a daily negotiation, or you can already tell her energy and mood on the court are tied to what she's eating (or not eating), a Clarity Call is where we map out the rest.</p>
-    <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-outline">Book Your Clarity Call</a>
-  </div>
-</section>
+  <!-- Clarity Call CTA -->
+  <section class="clarity-block">
+    <div class="container">
+      <h2>Already know this is bigger than one guide?</h2>
+      <p>If mealtime has turned into a daily negotiation, or you can already tell her energy and mood on the court are tied to what she's eating (or not eating), a Clarity Call is where we map out the rest.</p>
+      <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener noreferrer" class="btn-outline">Book Your Clarity Call</a>
+    </div>
+  </section>
+
+</div>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -511,12 +526,14 @@ body {
       if (!res.ok) throw new Error("Server error: " + res.status);
 
       formWrap.classList.add("hidden");
-      thankyou.classList.add("visible");
-      window.scrollTo({ top: document.getElementById("thankyou")?.offsetTop - 60 || 0, behavior: "smooth" });
+      document.querySelector(".form-section").style.paddingBottom = "0";
+      const gated = document.getElementById("gated-content");
+      gated.style.display = "block";
+      window.scrollTo({ top: gated.offsetTop - 20, behavior: "smooth" });
 
     } catch (err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Get Access";
+      submitBtn.textContent = "Get the Free Guide";
       showError("Something went wrong. Please try again. Your info has not been lost.");
       console.error(err);
     }
