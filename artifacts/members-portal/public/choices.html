@@ -322,13 +322,14 @@ body {
 }
 .submit-error.visible { display: block; }
 
-/* ── THANK YOU STATE ── */
-#thank-you { display: none; }
-#thank-you.visible { display: block; }
+/* ── GATED CONTENT (revealed after submit) ── */
+#gated-content { display: none; }
+#gated-content.visible { display: block; }
 
-.ty-wrap {
+.gated-confirm {
   text-align: center;
-  padding: 56px 0 0;
+  padding: 56px 0 36px;
+  border-top: 1px solid var(--border);
 }
 .ty-check {
   width: 60px; height: 60px;
@@ -342,13 +343,86 @@ body {
   font-family: 'Permanent Marker', cursive;
   font-size: clamp(22px, 5vw, 34px);
   color: #fff;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   line-height: 1.2;
 }
 .ty-body {
   font-size: 15px; font-weight: 300; color: #8080A0;
-  max-width: 440px; margin: 0 auto 36px; line-height: 1.7;
+  max-width: 440px; margin: 0 auto; line-height: 1.7;
 }
+
+/* Video embed */
+.video-wrap {
+  position: relative; width: 100%; padding-bottom: 56.25%;
+  background: #000; border-radius: 6px; overflow: hidden;
+  border: 1px solid var(--border); margin-bottom: 0;
+}
+.video-wrap iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+}
+
+/* Chapter guide */
+.chapters-wrap {
+  margin-top: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.chapters-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(152,47,247,0.06);
+}
+.chapters-header span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+.chapter-list { list-style: none; }
+.chapter-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(30,30,30,0.8);
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.chapter-item:last-child { border-bottom: none; }
+.chapter-item:hover { background: rgba(152,47,247,0.06); }
+.chapter-item:hover .chapter-title { color: #fff; }
+.chapter-ts {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--purple);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+.chapter-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333350;
+  flex-shrink: 0;
+  min-width: 18px;
+}
+.chapter-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9090B0;
+  line-height: 1.4;
+  transition: color 0.15s;
+}
+.chapter-title strong { color: #C0C0D8; font-weight: 600; }
 
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; margin-top: 64px; }
@@ -535,19 +609,96 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: cente
   </div>
 </section>
 
-<!-- THANK YOU STATE (revealed after submit) -->
-<div id="thank-you">
-  <div class="container">
-    <div class="ty-wrap">
+<!-- GATED CONTENT (revealed after submit) -->
+<div id="gated-content">
+
+  <div class="gated-confirm">
+    <div class="container">
       <div class="ty-check">
         <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1.5 7L8 13.5L20.5 1" stroke="#00D4C8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="ty-headline">You're in!<br>Check your email for the training.</div>
-      <p class="ty-body">While it's on its way — if you already know your family's compass needs more than a training to get calibrated, grab a spot on my calendar now.</p>
-      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+      <div class="ty-headline">You're in. Watch the training below.</div>
+      <p class="ty-body">It's a long one — use the chapter guide below the video to jump straight to whatever hits closest to home.</p>
     </div>
-    <div style="height: 72px;"></div>
   </div>
+
+  <!-- VIDEO -->
+  <div style="padding: 0 0 8px;">
+    <div class="container">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/fMxD_PVvfeI?rel=0&modestbranding=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER GUIDE -->
+  <!-- UPDATE TIMESTAMPS: replace each "0:00" with the real start time for that section -->
+  <div style="padding: 0 0 0;">
+    <div class="container">
+      <div class="chapters-wrap">
+        <div class="chapters-header">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#982FF7" stroke-width="1.4"/><path d="M7 4v3.5l2 2" stroke="#982FF7" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span>Chapter Guide — Jump to Any Section</span>
+        </div>
+        <ul class="chapter-list">
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">01</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>Why most advice is irrelevant to your decision</strong> — and the one question that tells you which opinions are worth listening to</span>
+            </a>
+          </li>
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">02</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>The "strawberries and orange juice" test</strong> — why the outcome you're upset about is one you already chose</span>
+            </a>
+          </li>
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">03</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>The two-step method for reading any coach, club, or teammate</strong> — no more guessing, no more getting blindsided</span>
+            </a>
+          </li>
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">04</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>The one-move test that reveals how much someone actually values you</strong> — no interpretation required</span>
+            </a>
+          </li>
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">05</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>Why your daughter builds her identity off your patterns, not your pep talks</strong> — and what that means for every choice you make in front of her</span>
+            </a>
+          </li>
+          <li>
+            <a class="chapter-item" href="https://youtu.be/fMxD_PVvfeI?t=0" target="_blank" rel="noopener">
+              <span class="chapter-num">06</span>
+              <span class="chapter-ts">0:00</span>
+              <span class="chapter-title"><strong>What "the process is the point" actually means</strong> — wins, playing time, scholarships, and why an uncalibrated process gets you none of them</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLARITY CALL CTA (post-video) -->
+  <div style="padding: 40px 0 72px;">
+    <div class="container">
+      <div class="cta-block">
+        <h3>Ready to go deeper than a training?</h3>
+        <p>If this hit close to home, you don't have to wait. Book a free Clarity Call and we'll look at exactly where your family is right now — and build a plan that's actually calibrated to your outcomes.</p>
+        <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- FOOTER -->
@@ -567,7 +718,7 @@ const CALENDLY_URL     = 'https://calendly.com/gabby-mazeperformance/clarity-cal
 const form          = document.getElementById('opt-form');
 const submitBtn     = document.getElementById('submit-btn');
 const formState     = document.getElementById('form-state');
-const thankYou      = document.getElementById('thank-you');
+const gatedContent  = document.getElementById('gated-content');
 const submitError   = document.getElementById('submit-error');
 const nameInput     = document.getElementById('first-name');
 const lastNameInput = document.getElementById('last-name');
@@ -627,11 +778,11 @@ form.addEventListener('submit', async (e) => {
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    // Hide form, reveal thank you
+    // Hide form, reveal gated content
     formState.style.display = 'none';
     document.getElementById('get-training').style.paddingBottom = '0';
-    thankYou.classList.add('visible');
-    window.scrollTo({ top: thankYou.offsetTop - 30, behavior: 'smooth' });
+    gatedContent.classList.add('visible');
+    window.scrollTo({ top: gatedContent.offsetTop - 20, behavior: 'smooth' });
 
   } catch (err) {
     console.error('Submission error:', err);
