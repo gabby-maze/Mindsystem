@@ -1,0 +1,119 @@
+# "Choices" — Lead Gen Landing Page
+Copy + Build Brief for Replit / Claude Code
+Trigger word: CHOICES
+
+---
+
+## PART 1: PAGE COPY
+
+### Eyebrow (small text above headline)
+FREE TRAINING FOR VOLLEYBALL FAMILIES
+
+### Headline
+**Youth Sports Is Chaos. Your Decisions Don't Have to Be.**
+
+### Subheadline
+If you don't have a strong internal compass, the chaos around you, other parents' opinions, a coach's confidence, a club's reputation, will make your decisions for you. This free training gives you the process to calibrate your compass, so every decision your family makes is actually built for your outcomes, not someone else's.
+
+### What You'll Learn (teaser section — see build notes on visual treatment below)
+*Each of these should read as a real takeaway, but stop just short of explaining the mechanism, that's what's behind the form.*
+
+1. **Why most of the advice you're getting about your decision is irrelevant to it** — and the one question that tells you which opinions are actually worth listening to
+2. **The "strawberries and orange juice" test** that shows you exactly why the outcome you're upset about is one you already chose
+3. **The two-step method for reading any coach, club, or teammate with real accuracy** — no more guessing, no more getting blindsided
+4. **The one-move test that reveals exactly how much someone actually values you** — no interpretation required
+5. **Why your daughter is building her identity off your patterns, not your pep talks** — and what that means for every choice you make in front of her
+6. **What "the process is the point" actually means for wins, playing time, and scholarships** — and why an uncalibrated process gets you none of them
+
+### Why This Matters (short section, placed after the teaser list, before the CTA)
+You can't do any of this if your compass isn't calibrated. If you feel uneasy, or like you don't have enough information about the club volleyball landscape to trust your own decision-making right now, that's exactly the gap this training is built to close.
+
+The process is the point. A calibrated process is what leads to wins, to playing time, to scholarships. An uncalibrated one means you're blowing in the wind, winging it, being shaped by the chaos around you instead of your own compass.
+
+### Clarity Call CTA (placed directly after the "Why This Matters" section, before the opt-in form)
+**Headline:** Already know your compass needs calibrating?
+**Body:** My job is to help you analyze your ecosystem, what you actually have available to you, what your real goals are, and build a shared language and a shared system for tracking your decisions and your outcomes the whole way through. If that's where you are right now, let's skip ahead.
+**Button copy:** Book Your Clarity Call
+**Button link:** https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby
+
+### Form section headline
+Unlock the full training
+
+### Form fields
+- First Name
+- Last Name
+- Email Address
+- Phone Number
+
+### Button copy
+**Unlock The Training**
+
+### Micro-copy under button
+No spam. Just the training, and occasional emails from me. Unsubscribe anytime.
+
+### Post-submit thank you state (second Clarity Call opportunity)
+**Headline:** You're in! Check your email for the training.
+**Body:** While it's on its way — if you already know your family's compass needs more than a training to get calibrated, grab a spot on my calendar now.
+**Button copy:** Book Your Clarity Call
+**Button link:** https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby
+
+### Footer credibility line
+Gabby Cole — Former D1 outside hitter, UC Berkeley. Volleyball mom navigating this exact process herself. Founder of MindSystem.
+
+---
+
+## PART 2: BUILD INSTRUCTIONS FOR REPLIT / CLAUDE CODE
+
+Paste everything below this line as the build prompt.
+
+---
+
+**Build a single-page lead generation landing page with the following spec:**
+
+**Purpose:** Capture First Name, Last Name, Email, and Phone in exchange for access to a free video training. This page needs a higher-conversion treatment than previous lead pages — most of the page content should visually communicate "there's more here, unlock it" rather than just listing plain bullet points.
+
+**Page structure (single scrolling page, in this order):**
+1. Header/logo area — leave placeholder for logo image, transparent background
+2. Hero section: eyebrow text, headline, subheadline
+3. "What You'll Learn" teaser section: 6 items, styled as a locked/teased list (see visual treatment below)
+4. "Why This Matters" section: two short paragraphs, no lock treatment, this is persuasive copy, not gated content
+5. Clarity Call CTA block: headline, body copy, button linking to Calendly (opens in new tab)
+6. Opt-in form section: headline, First Name, Last Name, Email, Phone fields, submit button, micro-copy below button
+7. Footer: credibility line, small text
+
+**Visual treatment for the teaser section (important, this is the conversion upgrade):**
+- Each of the 6 items should have a small lock icon next to it
+- Style each item as a card with a subtle blurred or dimmed overlay effect on part of the text, or a "locked" badge in the corner, to visually signal there's more behind each one than what's shown
+- Do not fully blur the teaser text into unreadability, people need to be able to read the hook itself, just visually signal that the full explanation is gated
+- On hover/tap (mobile), a small lock icon can pulse or highlight to reinforce the "unlock this" feeling without being gimmicky
+
+**Visual style:**
+- Base background: black
+- Accent colors: hot pink, purple, and teal (use as highlights on headline text, button, lock icons, list numbering, not as full-section backgrounds)
+- Headline font: "Permanent Marker" (Google Font)
+- Body/UI font: "Oswald" (Google Font)
+- Aesthetic reference: same visual system as the other MazePerformance funnel pages, keep this consistent rather than introducing a new look
+- Fully responsive, assume most traffic is mobile (Instagram click-throughs from the CHOICES comment trigger)
+
+**Form behavior:**
+- First Name, Last Name, Email, and Phone are all required fields
+- On submit: validate email format client-side
+- POST the form data to a webhook URL, use a placeholder constant `GHL_WEBHOOK_URL` at the top of the file so it can be swapped for the real GoHighLevel webhook URL later
+- On successful submit: replace the form with the thank-you message + a second "Book Your Clarity Call" button (copy provided above). Do not navigate away from the page.
+- On failed submit: show an inline error message near the form, do not lose the user's entered data
+- Use a constant `CALENDLY_URL = "https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby"` at the top of the file, referenced by both the mid-page Clarity Call button and the post-submit Clarity Call button. Both buttons should open Calendly in a new tab.
+
+**Technical notes:**
+- Single HTML/CSS/JS page is fine, or a simple React component if that's the project's existing stack, match whatever framework the Replit project is already using
+- No backend database needed for this build, the webhook POST is the only data handoff
+- Keep the page lightweight, no unnecessary libraries beyond what's needed for the lock/blur visual effect (pure CSS should be enough, no need for a JS library)
+- Add basic SEO meta tags (title, description) using the headline and subheadline copy above
+
+---
+
+## NOTES FOR GABBY
+
+- **This is a video training, not a PDF.** Once the six segments are compiled into one training video, you'll need it hosted somewhere (same as the Reframe training) with a link ready to drop into the delivery email.
+- **Webhook URL:** Grab the real GoHighLevel inbound webhook URL and swap it in for the `GHL_WEBHOOK_URL` placeholder before this goes live.
+- **Trigger word CHOICES:** worth confirming this matches whatever ManyChat flow or comment-trigger automation points people to this specific landing page, since the page itself doesn't reference the trigger word anywhere in the copy above. If you want the page to acknowledge it (e.g., "You commented CHOICES. Good instinct." as a line above the headline), let me know and I'll add it.
+- **Delivery email:** Next step once this is built, same pattern as your other funnels, video link, a short reinforcement of the six teaser points now fully unlocked, and the Clarity Call CTA.

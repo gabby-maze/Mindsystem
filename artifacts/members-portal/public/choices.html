@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Sports Is Chaos. Your Decisions Don't Have to Be. | Gabby Cole</title>
+<meta name="description" content="If you don't have a strong internal compass, the chaos around you will make your decisions for you. This free training gives you the process to calibrate your compass.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:    #FF2D78;
+  --purple:  #982FF7;
+  --teal:    #00D4C8;
+  --bg:      #080808;
+  --surface: #101010;
+  --border:  #1E1E1E;
+  --muted:   #555566;
+  --text:    #EFEFEF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+/* ── HEADER ── */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 60px 0 52px;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 22px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0,212,200,0.3);
+  border-radius: 2px;
+}
+.hero h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 22px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 .pink   { color: var(--pink); }
+.hero h1 .purple { color: var(--purple); }
+.hero h1 .teal   { color: var(--teal); }
+.hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: #8888A0;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── LOCKED CARDS ── */
+.learn-section { padding: 52px 0 44px; }
+.learn-section h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 28px);
+  color: #fff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.learn-section .section-sub {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555570;
+  margin-bottom: 32px;
+  letter-spacing: 0.05em;
+}
+.locked-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.locked-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 18px 18px 20px;
+  display: grid;
+  grid-template-columns: 36px 1fr 28px;
+  gap: 0 14px;
+  align-items: center;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: default;
+}
+.locked-card:hover {
+  border-color: rgba(152,47,247,0.35);
+}
+.locked-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(152,47,247,0.04) 0%, rgba(255,45,120,0.02) 100%);
+  pointer-events: none;
+}
+.card-num {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  color: var(--purple);
+  text-align: center;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.card-body { min-width: 0; }
+.card-body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.card-body .card-teaser {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666680;
+  line-height: 1.55;
+}
+/* Lock icon area */
+.lock-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(152,47,247,0.1);
+  border: 1px solid rgba(152,47,247,0.2);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.locked-card:hover .lock-icon {
+  background: rgba(152,47,247,0.22);
+  border-color: rgba(152,47,247,0.5);
+  transform: scale(1.1);
+}
+.lock-icon svg { display: block; }
+
+/* Locked overlay bar on the teaser text (visual "gate" signal) */
+.card-teaser-wrap {
+  position: relative;
+  display: inline;
+}
+
+/* ── WHY THIS MATTERS ── */
+.why-section {
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+}
+.why-section h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(18px, 4vw, 26px);
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+.why-section p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #8080A0;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.why-section p:last-child { margin-bottom: 0; }
+.why-section p strong { color: #C0C0D8; font-weight: 500; }
+
+/* ── CLARITY CALL CTA ── */
+.cta-block {
+  margin: 0 0 0;
+  padding: 28px 28px 32px;
+  background: linear-gradient(135deg, rgba(152,47,247,0.12) 0%, rgba(255,45,120,0.10) 100%);
+  border: 1px solid rgba(152,47,247,0.25);
+  border-radius: 8px;
+  text-align: center;
+}
+.cta-block h3 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(18px, 4vw, 24px);
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.cta-block p {
+  font-size: 15px;
+  font-weight: 300;
+  color: #8080A0;
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+.btn-calendly {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--pink);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn-calendly:hover { background: #e02268; transform: translateY(-1px); }
+
+.cta-section {
+  padding: 48px 0 0;
+}
+
+/* ── FORM ── */
+.form-section {
+  padding: 52px 0 60px;
+  border-top: 1px solid var(--border);
+}
+.divider {
+  width: 40px; height: 2px; margin: 0 auto 40px;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  opacity: 0.5; border-radius: 1px;
+}
+.form-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(20px, 4vw, 30px);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.form-subhead {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  color: #555570;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.opt-form { display: flex; flex-direction: column; gap: 14px; }
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-group label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
+}
+.field-group input {
+  width: 100%; padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px; font-weight: 300;
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+.field-group input::placeholder { color: #333; }
+.field-group input:focus { border-color: var(--teal); background: #111; }
+.field-group input.error { border-color: var(--pink); }
+.field-error { font-size: 12px; color: var(--pink); display: none; }
+.field-error.visible { display: block; }
+.btn-submit {
+  width: 100%; padding: 18px;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  border: none; border-radius: 4px; cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-top: 4px;
+}
+.btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.microcopy {
+  text-align: center; font-size: 12px; color: #444;
+  line-height: 1.5; margin-top: 4px; font-weight: 300;
+}
+.submit-error {
+  font-size: 13px; color: var(--pink); text-align: center;
+  padding: 10px 14px;
+  background: rgba(255,45,120,0.08);
+  border: 1px solid rgba(255,45,120,0.2);
+  border-radius: 4px; display: none;
+}
+.submit-error.visible { display: block; }
+
+/* ── THANK YOU STATE ── */
+#thank-you { display: none; }
+#thank-you.visible { display: block; }
+
+.ty-wrap {
+  text-align: center;
+  padding: 56px 0 0;
+}
+.ty-check {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(0,212,200,0.1);
+  border: 1px solid rgba(0,212,200,0.35);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 22px;
+}
+.ty-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(22px, 5vw, 34px);
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.ty-body {
+  font-size: 15px; font-weight: 300; color: #8080A0;
+  max-width: 440px; margin: 0 auto 36px; line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; margin-top: 64px; }
+.footer-cred {
+  font-size: 13px; font-weight: 300; color: #444;
+  line-height: 1.65; max-width: 480px; margin: 0 auto;
+}
+.footer-cred strong { color: #666; font-weight: 400; }
+
+@media (max-width: 480px) {
+  .hero { padding: 44px 0 40px; }
+  .learn-section { padding: 40px 0 36px; }
+  .form-section { padding: 40px 0 52px; }
+  .cta-block { padding: 22px 18px 26px; }
+  .locked-card { grid-template-columns: 28px 1fr 24px; gap: 0 10px; padding: 16px 14px; }
+  .card-num { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="/gc-logo.png" alt="Gabby Cole" height="48">
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Free Training for Volleyball Families</div>
+    <h1>Youth Sports Is Chaos.<br><span class="pink">Your Decisions</span> Don't Have to Be.</h1>
+    <p class="hero-sub">If you don't have a strong internal compass, the chaos around you — other parents' opinions, a coach's confidence, a club's reputation — will make your decisions for you. This free training gives you the process to calibrate your compass, so every decision your family makes is actually built for your outcomes, not someone else's.</p>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN — Locked Cards -->
+<section class="learn-section">
+  <div class="container">
+    <h2>What You'll <span style="color:var(--teal)">Unlock</span></h2>
+    <p class="section-sub">Submit your info below to get instant access to all six.</p>
+
+    <div class="locked-grid">
+
+      <div class="locked-card">
+        <div class="card-num">1</div>
+        <div class="card-body">
+          <strong>Why most of the advice you're getting about your decision is irrelevant to it</strong>
+          <span class="card-teaser">— and the one question that tells you which opinions are actually worth listening to</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div class="locked-card">
+        <div class="card-num">2</div>
+        <div class="card-body">
+          <strong>The "strawberries and orange juice" test</strong>
+          <span class="card-teaser">that shows you exactly why the outcome you're upset about is one you already chose</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div class="locked-card">
+        <div class="card-num">3</div>
+        <div class="card-body">
+          <strong>The two-step method for reading any coach, club, or teammate with real accuracy</strong>
+          <span class="card-teaser">— no more guessing, no more getting blindsided</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div class="locked-card">
+        <div class="card-num">4</div>
+        <div class="card-body">
+          <strong>The one-move test that reveals exactly how much someone actually values you</strong>
+          <span class="card-teaser">— no interpretation required</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div class="locked-card">
+        <div class="card-num">5</div>
+        <div class="card-body">
+          <strong>Why your daughter is building her identity off your patterns, not your pep talks</strong>
+          <span class="card-teaser">— and what that means for every choice you make in front of her</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div class="locked-card">
+        <div class="card-num">6</div>
+        <div class="card-body">
+          <strong>What "the process is the point" actually means for wins, playing time, and scholarships</strong>
+          <span class="card-teaser">— and why an uncalibrated process gets you none of them</span>
+        </div>
+        <div class="lock-icon">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><rect x="2" y="6" width="8" height="7" rx="1.5" stroke="#982FF7" stroke-width="1.5"/><path d="M4 6V4a2 2 0 1 1 4 0v2" stroke="#982FF7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section class="why-section">
+  <div class="container">
+    <h2>Why This Matters</h2>
+    <p>You can't do any of this if your compass isn't calibrated. If you feel uneasy, or like you don't have enough information about the club volleyball landscape to trust your own decision-making right now, that's exactly the gap this training is built to close.</p>
+    <p><strong>The process is the point.</strong> A calibrated process is what leads to wins, to playing time, to scholarships. An uncalibrated one means you're blowing in the wind — winging it, being shaped by the chaos around you instead of your own compass.</p>
+  </div>
+</section>
+
+<!-- CLARITY CALL CTA (mid-page) -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-block">
+      <h3>Already know your compass needs calibrating?</h3>
+      <p>My job is to help you analyze your ecosystem — what you actually have available to you, what your real goals are, and build a shared language and a shared system for tracking your decisions and your outcomes the whole way through. If that's where you are right now, let's skip ahead.</p>
+      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- OPT-IN FORM -->
+<section class="form-section" id="get-training">
+  <div class="container">
+    <div class="divider"></div>
+
+    <div id="form-state">
+      <div class="form-headline">Unlock the full training</div>
+      <p class="form-subhead">Enter your info and get instant access — straight to your inbox.</p>
+
+      <form class="opt-form" id="opt-form" novalidate>
+
+        <div class="field-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="firstName" placeholder="Your first name" autocomplete="given-name">
+          <span class="field-error" id="name-error">Please enter your first name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="lastName" placeholder="Your last name" autocomplete="family-name">
+          <span class="field-error" id="last-name-error">Please enter your last name.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="field-error" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+          <span class="field-error" id="phone-error">Please enter a valid phone number.</span>
+        </div>
+
+        <div class="submit-error" id="submit-error">
+          Something went wrong. Please try again or email gabby@mazeperformance.ai directly.
+        </div>
+
+        <button class="btn-submit" type="submit" id="submit-btn">Unlock The Training</button>
+
+        <p class="microcopy">No spam. Just the training, and occasional emails from me. Unsubscribe anytime.</p>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- THANK YOU STATE (revealed after submit) -->
+<div id="thank-you">
+  <div class="container">
+    <div class="ty-wrap">
+      <div class="ty-check">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M1.5 7L8 13.5L20.5 1" stroke="#00D4C8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ty-headline">You're in!<br>Check your email for the training.</div>
+      <p class="ty-body">While it's on its way — if you already know your family's compass needs more than a training to get calibrated, grab a spot on my calendar now.</p>
+      <a class="btn-calendly" href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener">Book Your Clarity Call</a>
+    </div>
+    <div style="height: 72px;"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-cred">
+      <strong>Gabby Cole</strong> — Former D1 outside hitter, UC Berkeley.<br>
+      Volleyball mom navigating this exact process herself. Founder of MindSystem.
+    </p>
+  </div>
+</footer>
+
+<script>
+const GHL_WEBHOOK_URL  = 'YOUR_GHL_WEBHOOK_URL_HERE';
+const CALENDLY_URL     = 'https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby';
+
+const form          = document.getElementById('opt-form');
+const submitBtn     = document.getElementById('submit-btn');
+const formState     = document.getElementById('form-state');
+const thankYou      = document.getElementById('thank-you');
+const submitError   = document.getElementById('submit-error');
+const nameInput     = document.getElementById('first-name');
+const lastNameInput = document.getElementById('last-name');
+const emailInput    = document.getElementById('email');
+const phoneInput    = document.getElementById('phone');
+const nameError     = document.getElementById('name-error');
+const lastNameError = document.getElementById('last-name-error');
+const emailError    = document.getElementById('email-error');
+const phoneError    = document.getElementById('phone-error');
+
+function isValidEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+}
+
+function clearErrors() {
+  [nameInput, lastNameInput, emailInput, phoneInput].forEach(el => el.classList.remove('error'));
+  [nameError, lastNameError, emailError, phoneError].forEach(el => el.classList.remove('visible'));
+  submitError.classList.remove('visible');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearErrors();
+
+  const firstName = nameInput.value.trim();
+  const lastName  = lastNameInput.value.trim();
+  const email     = emailInput.value.trim();
+  const phone     = phoneInput.value.trim();
+  let valid = true;
+
+  if (!firstName) { nameInput.classList.add('error'); nameError.classList.add('visible'); valid = false; }
+  if (!lastName)  { lastNameInput.classList.add('error'); lastNameError.classList.add('visible'); valid = false; }
+  if (!isValidEmail(email)) { emailInput.classList.add('error'); emailError.classList.add('visible'); valid = false; }
+  if (phone.replace(/\D/g, '').length < 10) { phoneInput.classList.add('error'); phoneError.classList.add('visible'); valid = false; }
+
+  if (!valid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'One sec...';
+
+  try {
+    const payload = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      source: 'choices-landing-page',
+      triggerWord: 'CHOICES',
+      submittedAt: new Date().toISOString()
+    };
+
+    const res = await fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    // Hide form, reveal thank you
+    formState.style.display = 'none';
+    document.getElementById('get-training').style.paddingBottom = '0';
+    thankYou.classList.add('visible');
+    window.scrollTo({ top: thankYou.offsetTop - 30, behavior: 'smooth' });
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Unlock The Training';
+    submitError.classList.add('visible');
+  }
+});
+
+const errorMap = {
+  'first-name': 'name-error',
+  'last-name':  'last-name-error',
+  'email':      'email-error',
+  'phone':      'phone-error'
+};
+[nameInput, lastNameInput, emailInput, phoneInput].forEach(input => {
+  input.addEventListener('input', () => {
+    input.classList.remove('error');
+    document.getElementById(errorMap[input.id]).classList.remove('visible');
+  });
+});
+</script>
+
+</body>
+</html>
