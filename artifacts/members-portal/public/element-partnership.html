@@ -75,7 +75,7 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
 .fb-stage { position:absolute; top:0; left:0; right:0; bottom:56px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .fb-slide { display:none; position:absolute; inset:0; align-items:center; justify-content:center; padding:16px; box-sizing:border-box; }
 .fb-slide.active { display:flex; }
-.slide-inner { transform-origin:center center; transition:transform .12s; }
+.slide-inner { transform-origin:center center; }
 .fb-navbar { position:absolute; bottom:0; left:0; right:0; height:56px; background:#000; border-top:1px solid #1a1a1a; display:flex; align-items:center; justify-content:center; gap:16px; z-index:100; }
 .nav-btn { background:none; border:1px solid #333; color:#888; font-family:'Oswald',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; padding:8px 28px; cursor:pointer; transition:all .15s; }
 .nav-btn:hover { border-color:#CC1C1C; color:#CC1C1C; }
@@ -400,10 +400,6 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
   <div class="jpage spread-left" style="background:#CC1C1C;">
     <div style="position:absolute;bottom:24px;left:0;right:0;text-align:center;">
       <div class="pm" style="font-size:52px;color:rgba(0,0,0,0.15);line-height:1;white-space:nowrap;">The Process</div>
-    </div>
-    <!-- Element E bolt watermark -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.08;">
-      <div class="pm" style="font-size:140px;color:#000;line-height:1;">E</div>
     </div>
   </div>
   <div class="jpage" style="background:#CC1C1C;">
@@ -932,14 +928,14 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
       <div class="option-divider"></div>
       <p class="option-desc">The full MindSystem for every family at Element — without adding anything to your plate. Families get access from day one. You get a system running in the background of your club.</p>
       <ul class="option-features">
-        <li><span class="check-a">✓</span>Full MindSystem athlete journal — physical, shipped to each family</li>
-        <li><span class="check-a">✓</span>Parent Alignment Guide journal — physical, shipped</li>
-        <li><span class="check-a">✓</span>Group onboarding session with Gabby for all families</li>
-        <li><span class="check-a">✓</span>Bi-weekly live group athlete calls with Gabby</li>
-        <li><span class="check-a">✓</span>Bi-weekly live group parent calls with Gabby</li>
+        <li><span class="check-a">✓</span>Full MindSystem athlete journal — physical</li>
+        <li><span class="check-a">✓</span>Custom branded parent journal — physical</li>
+        <li><span class="check-a">✓</span>Onsite athlete onboarding with Gabby</li>
+        <li><span class="check-a">✓</span>Onsite parent onboarding with Gabby</li>
+        <li><span class="check-a">✓</span>Bi-weekly virtual group athlete calls with Gabby</li>
+        <li><span class="check-a">✓</span>Bi-weekly virtual group parent calls with Gabby</li>
         <li><span class="check-a">✓</span>Mental performance + nutrition modules (on-demand)</li>
-        <li><span class="check-a">✓</span>Athlete Compass Training — full video library</li>
-        <li><span class="check-a">✓</span>24-hr message turnaround for parents and athletes</li>
+        <li><span class="check-a">✓</span>MindSystem Training — full video library</li>
         <li><span class="check-a">✓</span>12 months community access</li>
       </ul>
       <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener" class="option-cta cta-a">Let's Talk Option A</a>
@@ -960,7 +956,7 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
         <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Monthly on-site visit</strong> — tied to a weekday practice, built around your schedule</li>
         <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Monthly weekend community-builder</strong> — for Inner Circle families, club-wide</li>
         <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Inner Circle Coach Voxer Access</strong> — direct line for your coaching staff, 24-hr turnaround</li>
-        <li><span class="check-plus">+</span>The Courtside Feed — weekly blog/vlog, included club-wide</li>
+        <li><span class="check-plus">+</span>The Courtside Feed — custom blog/newsletter, club-wide and open to the community we build at the weekend series</li>
         <li><span class="check-plus">+</span>Branded as Element's own home base — not a generic program</li>
       </ul>
       <div style="margin:32px 0 28px;">
@@ -991,24 +987,24 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
     </thead>
     <tbody>
       <tr class="section-row"><td colspan="3">Journals</td></tr>
-      <tr><td>Physical athlete journal, shipped</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>Physical parent journal, shipped</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>Guided video instruction for both journals</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Physical athlete journal</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Custom branded parent journal</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
 
       <tr class="section-row"><td colspan="3">Live Calls</td></tr>
-      <tr><td>Group onboarding session with Gabby</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>Bi-weekly live group athlete calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>Bi-weekly live group parent calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Onsite athlete onboarding with Gabby</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Onsite parent onboarding with Gabby</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Bi-weekly virtual group athlete calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Bi-weekly virtual group parent calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
       <tr><td>Monthly weekend community-builder session</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
 
       <tr class="section-row"><td colspan="3">Content Library</td></tr>
       <tr><td>Mental performance modules (on-demand)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
       <tr><td>Nutrition modules (on-demand)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>Athlete Compass Training video library</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
-      <tr><td>The Courtside Feed (weekly blog/vlog)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>MindSystem Training video library</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>The Courtside Feed (custom blog/newsletter)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
 
       <tr class="section-row"><td colspan="3">Access &amp; Support</td></tr>
-      <tr><td>24-hr message turnaround (parents + athletes)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>24-hr message turnaround (parents + athletes)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
       <tr><td>12 months community access</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
       <tr><td>Coach Voxer Access (coaching staff, 24-hr)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
 
@@ -1071,7 +1067,7 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
     slides[cur].classList.add('active'); dots[cur].classList.add('active');
     if (ctr) ctr.textContent = (cur + 1) + ' / ' + slides.length;
     prev.disabled = cur === 0; next.disabled = cur === slides.length - 1;
-    setTimeout(function(){ scale(slides[cur]); }, 30);
+    scale(slides[cur]);
   }
   window.afbGoTo = afbGoTo;
   prev.addEventListener('click', function(){ afbGoTo(cur - 1); });
@@ -1107,7 +1103,7 @@ body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:wh
     slides[cur].classList.add('active'); dots[cur].classList.add('active');
     if (ctr) ctr.textContent = (cur + 1) + ' / ' + slides.length;
     prev.disabled = cur === 0; next.disabled = cur === slides.length - 1;
-    setTimeout(function(){ scale(slides[cur]); }, 30);
+    scale(slides[cur]);
   }
   window.pfbGoTo = pfbGoTo;
   prev.addEventListener('click', function(){ pfbGoTo(cur - 1); });
