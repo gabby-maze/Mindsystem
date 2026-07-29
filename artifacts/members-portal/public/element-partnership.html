@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MazePerformance × Element Volleyball Club — Private Proposal</title>
+<meta property="og:title" content="MazePerformance × Element Volleyball Club">
+<meta property="og:description" content="A private proposal for Michelle — two paths to bring MindSystem to Element Volleyball Club.">
+<meta property="og:image" content="https://members.gabbycole.com/opengraph.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://members.gabbycole.com/element-partnership.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://members.gabbycole.com/opengraph.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET + BASE ── */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { width:100%; background:#0a0a0a; font-family:'Oswald',sans-serif; color:white; overflow-x:hidden; }
+
+/* ── ELEMENT VB BRAND TOKENS ── */
+/* Red:  #CC1C1C  |  Gold: #C9A227  |  Dark: #0a0a0a  |  Black: #000 */
+
+/* ── TOPBAR ── */
+#topbar { position:fixed; top:0; left:0; right:0; height:44px; background:#000; border-bottom:2px solid #CC1C1C; display:flex; align-items:center; justify-content:space-between; padding:0 24px; z-index:1000; }
+.brand { font-family:'Permanent Marker',cursive; font-size:14px; color:#C9A227; }
+.stitle { font-size:10px; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:#666; }
+
+/* ── PAGE CONTENT ── */
+#page-content { padding-top:44px; display:flex; flex-direction:column; }
+
+/* ── HERO ── */
+#hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 24px 60px; background:#000; position:relative; overflow:hidden; }
+#hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 60%, rgba(204,28,28,0.12) 0%, transparent 70%); pointer-events:none; }
+#hero .eyebrow { font-size:11px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:28px; }
+#hero h1 { font-family:'Permanent Marker',cursive; font-size:clamp(40px,7vw,88px); line-height:1.0; color:#fff; max-width:860px; }
+#hero h1 span { color:#C9A227; }
+#hero .rule { width:80px; height:2px; background:linear-gradient(to right,#CC1C1C,#C9A227); margin:36px auto; }
+#hero .sub { font-size:clamp(13px,2vw,17px); font-weight:300; color:#888; letter-spacing:0.06em; line-height:1.75; max-width:600px; }
+#hero .tag { display:inline-block; margin-top:28px; border:1px solid #333; padding:6px 20px; font-size:9px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:#555; }
+#hero .scroll-hint { margin-top:56px; font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:#333; display:flex; flex-direction:column; align-items:center; gap:8px; }
+#hero .scroll-hint::after { content:''; display:block; width:1px; height:40px; background:linear-gradient(to bottom,#CC1C1C,transparent); }
+
+/* ── VIDEO SECTION ── */
+#video-section { background:#000; padding:80px 24px; display:flex; flex-direction:column; align-items:center; border-top:1px solid #1a1a1a; }
+#video-section .section-eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:16px; }
+#video-section h2 { font-family:'Permanent Marker',cursive; font-size:clamp(22px,4vw,38px); color:#fff; margin-bottom:12px; text-align:center; }
+#video-section .sub { font-size:14px; font-weight:300; color:#555; margin-bottom:40px; text-align:center; max-width:500px; }
+.video-wrap { width:100%; max-width:860px; aspect-ratio:16/9; background:#111; box-shadow:0 0 0 1px #222, 0 32px 80px rgba(0,0,0,0.8); }
+.video-wrap iframe { width:100%; height:100%; border:none; display:block; }
+
+/* ── WHAT'S IN THE PROGRAM ── */
+#program-overview { background:#0a0a0a; padding:80px 24px; border-top:1px solid #111; }
+#program-overview .inner { max-width:860px; margin:0 auto; }
+#program-overview .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:16px; text-align:center; }
+#program-overview h2 { font-family:'Permanent Marker',cursive; font-size:clamp(24px,4vw,40px); color:#fff; line-height:1.1; margin-bottom:48px; text-align:center; }
+.program-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+.program-card { background:#111; border-top:2px solid #CC1C1C; padding:28px 24px; }
+.program-card .num { font-size:9px; font-weight:700; letter-spacing:0.2em; color:#CC1C1C; margin-bottom:10px; }
+.program-card h3 { font-size:14px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:10px; line-height:1.3; }
+.program-card p { font-size:12px; font-weight:300; color:#888; line-height:1.75; }
+
+/* ── ATHLETE JOURNAL ── */
+#athlete-journal-intro { background:#000; padding:80px 24px; display:flex; flex-direction:column; align-items:center; border-top:1px solid #1a1a1a; text-align:center; }
+#athlete-journal-intro .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:16px; }
+#athlete-journal-intro h2 { font-family:'Permanent Marker',cursive; font-size:clamp(22px,4vw,38px); color:#fff; margin-bottom:12px; }
+#athlete-journal-intro p { font-size:14px; font-weight:300; color:#555; letter-spacing:0.06em; margin-bottom:32px; max-width:520px; }
+#athlete-journal-intro .arrow { font-size:9px; color:#333; letter-spacing:0.3em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px; }
+#athlete-journal-intro .arrow::after { content:''; display:block; width:1px; height:32px; background:linear-gradient(to bottom,#CC1C1C,transparent); }
+
+/* ── FLIPBOOK ── */
+.flipbook-section { position:relative; height:100vh; overflow:hidden; background:#0a0a0a; border-top:1px solid #1a1a1a; }
+.fb-stage { position:absolute; top:0; left:0; right:0; bottom:56px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.fb-slide { display:none; position:absolute; inset:0; align-items:center; justify-content:center; padding:16px; box-sizing:border-box; }
+.fb-slide.active { display:flex; }
+.slide-inner { transform-origin:center center; transition:transform .12s; }
+.fb-navbar { position:absolute; bottom:0; left:0; right:0; height:56px; background:#000; border-top:1px solid #1a1a1a; display:flex; align-items:center; justify-content:center; gap:16px; z-index:100; }
+.nav-btn { background:none; border:1px solid #333; color:#888; font-family:'Oswald',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; padding:8px 28px; cursor:pointer; transition:all .15s; }
+.nav-btn:hover { border-color:#CC1C1C; color:#CC1C1C; }
+.nav-btn:disabled { opacity:.2; cursor:default; pointer-events:none; }
+.nav-btn.next-btn { background:#CC1C1C; border-color:#CC1C1C; color:#fff; }
+.nav-btn.next-btn:hover { background:#a81515 !important; }
+.nav-btn.next-btn:disabled { background:none !important; border-color:#333 !important; color:#333 !important; }
+.fb-dots { display:flex; gap:6px; align-items:center; }
+.fb-dot { width:5px; height:5px; border-radius:50%; background:#333; cursor:pointer; transition:background .2s; }
+.fb-dot.active { background:#CC1C1C; }
+.fb-ctr { font-size:10px; font-weight:300; letter-spacing:0.3em; text-transform:uppercase; color:#444; }
+
+/* ── JOURNAL PAGE BASE (6×9 = 432×648px @ 72dpi) ── */
+.jpage { width:432px; height:648px; position:relative; overflow:hidden; box-shadow:0 12px 48px rgba(0,0,0,0.7); flex-shrink:0; background:#fff; }
+.jspread { display:flex; gap:0; box-shadow:0 12px 48px rgba(0,0,0,0.7); }
+.jspread .jpage { box-shadow:none; }
+.jspread .spread-left { border-right:1px solid #333; }
+.ca { position:absolute; top:36px; left:54px; right:36px; bottom:40px; }
+.pm { font-family:'Permanent Marker',cursive; }
+.os-thin{font-weight:200} .os-light{font-weight:300} .os-reg{font-weight:400}
+.os-med{font-weight:500} .os-semi{font-weight:600} .os-bold{font-weight:700}
+.caps{text-transform:uppercase}
+.c-white{color:#fff} .c-black{color:#000}
+/* Element VB recolor for parent journal: red + gold */
+.c-el-red{color:#CC1C1C} .c-el-gold{color:#C9A227}
+.c-gray{color:#888} .c-lgray{color:#ccc} .c-dgray{color:#444}
+.ol-el{height:1.5px;background:#CC1C1C}
+.ol-el-s{height:1px;background:#CC1C1C}
+.gl{height:0.5px;background:#ddd}
+.wl{height:22px;border-bottom:0.5px solid #e0e0e0}
+.wl-d{height:22px;border-bottom:0.5px solid #555}
+.s2{height:2px}.s4{height:4px}.s6{height:6px}.s8{height:8px}
+.s10{height:10px}.s12{height:12px}.s14{height:14px}.s16{height:16px}
+.s18{height:18px}.s20{height:20px}.s24{height:24px}.s28{height:28px}.s32{height:32px}
+
+/* Athlete journal: keep MindSystem purple brand */
+.ol-ms{height:1.5px;background:#982FF7}
+.ol-ms-s{height:1px;background:#982FF7}
+.bb-pg{height:648px;width:auto;display:block}
+.bb-pg.spread-left{border-right:1px solid #333}
+
+/* ── FAMILY JOURNAL LABEL ── */
+#family-journal-label { background:#000; padding:64px 24px; display:flex; flex-direction:column; align-items:center; border-top:1px solid #1a1a1a; text-align:center; }
+#family-journal-label .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#C9A227; margin-bottom:16px; }
+#family-journal-label h2 { font-family:'Permanent Marker',cursive; font-size:clamp(22px,4vw,38px); color:#fff; margin-bottom:12px; }
+#family-journal-label p { font-size:14px; font-weight:300; color:#555; letter-spacing:0.06em; margin-bottom:32px; max-width:520px; }
+#family-journal-label .note { font-size:11px; font-weight:400; color:#CC1C1C; letter-spacing:0.06em; background:#1a0a0a; border:1px solid #CC1C1C; padding:8px 20px; margin-bottom:28px; }
+#family-journal-label .arrow { font-size:9px; color:#333; letter-spacing:0.3em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px; }
+#family-journal-label .arrow::after { content:''; display:block; width:1px; height:32px; background:linear-gradient(to bottom,#C9A227,transparent); }
+
+/* ── PROPOSAL / PRICING ── */
+#proposal { background:#0a0a0a; padding:90px 24px 100px; border-top:1px solid #111; }
+#proposal .inner { max-width:960px; margin:0 auto; }
+#proposal .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:16px; text-align:center; }
+#proposal h2 { font-family:'Permanent Marker',cursive; font-size:clamp(26px,5vw,48px); color:#fff; line-height:1.1; margin-bottom:16px; text-align:center; }
+#proposal .lead { font-size:15px; font-weight:300; color:#666; max-width:640px; margin:0 auto 64px; line-height:1.75; text-align:center; }
+
+/* ── OPTION CARDS ── */
+.option-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:28px; margin-bottom:72px; }
+.option-card { background:#111; padding:40px 32px; position:relative; border:1.5px solid #333; }
+.option-card.card-a { border-color:#CC1C1C; }
+.option-card.card-b { border-color:#C9A227; }
+.option-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); padding:4px 20px; font-size:9px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#fff; white-space:nowrap; }
+.badge-a { background:#CC1C1C; }
+.badge-b { background:#C9A227; color:#000; }
+.option-label { font-size:10px; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; margin-bottom:8px; }
+.label-a { color:#CC1C1C; }
+.label-b { color:#C9A227; }
+.option-name { font-family:'Permanent Marker',cursive; font-size:clamp(22px,3vw,30px); color:#fff; margin-bottom:4px; }
+.option-sub { font-size:11px; font-weight:300; color:#555; letter-spacing:0.08em; margin-bottom:24px; }
+.option-price { font-family:'Permanent Marker',cursive; font-size:clamp(42px,6vw,56px); color:#fff; line-height:1; margin-bottom:4px; }
+.option-price-note { font-size:12px; font-weight:300; color:#666; letter-spacing:0.08em; margin-bottom:24px; }
+.option-divider { height:1px; background:#1e1e1e; margin-bottom:24px; }
+.option-desc { font-size:14px; font-weight:300; color:#aaa; line-height:1.8; margin-bottom:28px; }
+.option-features { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:36px; }
+.option-features li { display:flex; align-items:flex-start; gap:10px; font-size:13px; font-weight:300; color:#ccc; line-height:1.5; }
+.check-a { color:#CC1C1C; flex-shrink:0; margin-top:2px; }
+.check-b { color:#C9A227; flex-shrink:0; margin-top:2px; }
+.check-plus { color:#C9A227; flex-shrink:0; margin-top:2px; font-weight:700; }
+.option-cta { display:block; text-align:center; padding:15px 24px; font-family:'Oswald',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; }
+.cta-a { background:#CC1C1C; color:#fff; }
+.cta-a:hover { background:#a81515; }
+.cta-b { background:#C9A227; color:#000; }
+.cta-b:hover { background:#a88020; }
+
+/* ── COMPARE TABLE ── */
+#compare { background:#000; padding:80px 24px; border-top:1px solid #111; }
+#compare .inner { max-width:860px; margin:0 auto; }
+#compare .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:16px; text-align:center; }
+#compare h2 { font-family:'Permanent Marker',cursive; font-size:clamp(22px,4vw,36px); color:#fff; margin-bottom:48px; text-align:center; }
+.compare-table { width:100%; border-collapse:collapse; }
+.compare-table th { padding:14px 20px; font-size:9px; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; border-bottom:1px solid #222; text-align:left; }
+.compare-table th.col-feature { color:#555; width:44%; }
+.compare-table th.col-a { color:#CC1C1C; text-align:center; width:28%; }
+.compare-table th.col-b { color:#C9A227; text-align:center; width:28%; }
+.compare-table td { padding:14px 20px; font-size:13px; font-weight:300; color:#888; border-bottom:1px solid #111; vertical-align:middle; }
+.compare-table td.col-a, .compare-table td.col-b { text-align:center; }
+.compare-table tr:hover td { background:#0d0d0d; }
+.tick-a { color:#CC1C1C; font-size:16px; }
+.tick-b { color:#C9A227; font-size:16px; }
+.tick-none { color:#333; font-size:16px; }
+.section-row td { background:#0a0a0a; font-size:9px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#444; padding:20px 20px 8px; border-bottom:none; }
+
+/* ── MATH BREAKDOWN ── */
+#math { background:#0a0a0a; padding:80px 24px; border-top:1px solid #111; }
+#math .inner { max-width:860px; margin:0 auto; }
+#math .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#C9A227; margin-bottom:16px; text-align:center; }
+#math h2 { font-family:'Permanent Marker',cursive; font-size:clamp(22px,4vw,36px); color:#fff; margin-bottom:12px; text-align:center; }
+#math .lead { font-size:14px; font-weight:300; color:#555; max-width:580px; margin:0 auto 48px; line-height:1.75; text-align:center; }
+.math-row { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; background:#161616; padding:20px 24px; margin-bottom:8px; }
+.math-item-label { font-size:15px; font-weight:500; color:#fff; }
+.math-desc { color:#666; font-size:12px; margin-top:4px; line-height:1.6; }
+.math-amount { font-family:'Permanent Marker',cursive; font-size:22px; white-space:nowrap; padding-left:16px; flex-shrink:0; color:#CC1C1C; }
+.math-gold { color:#C9A227; }
+.math-total { background:#000; border:1.5px solid #C9A227; padding:22px 28px; display:flex; justify-content:space-between; align-items:center; margin-top:8px; margin-bottom:4px; }
+.math-total-label { font-size:13px; letter-spacing:1px; color:#ccc; font-weight:500; }
+.math-total-amount { font-family:'Permanent Marker',cursive; font-size:28px; color:#fff; white-space:nowrap; padding-left:16px; }
+.math-note { font-size:12px; color:#555; line-height:1.65; margin-top:12px; }
+.math-divider { border:none; border-top:1px solid #1e1e1e; margin:48px 0; }
+.math-option-label { font-size:11px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; margin-bottom:20px; padding:8px 16px; display:inline-block; }
+.math-label-a { color:#CC1C1C; background:#1a0606; border:1px solid #CC1C1C; }
+.math-label-b { color:#C9A227; background:#12100a; border:1px solid #C9A227; }
+.math-per-fam { background:#111; border-left:3px solid #C9A227; padding:16px 20px; margin-top:12px; }
+.math-per-fam .label { font-size:9px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:#C9A227; margin-bottom:6px; }
+.math-per-fam .val { font-family:'Permanent Marker',cursive; font-size:22px; color:#fff; }
+.math-per-fam .note { font-size:11px; font-weight:300; color:#555; margin-top:4px; }
+@media(max-width:600px){
+  .math-row{flex-direction:column}
+  .math-amount{padding-left:0;padding-top:6px}
+  .math-total{flex-direction:column;align-items:flex-start;gap:8px}
+}
+
+/* ── CTA SECTION ── */
+#cta { background:#000; padding:100px 24px; border-top:1px solid #111; text-align:center; }
+#cta .eyebrow { font-size:9px; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#CC1C1C; margin-bottom:20px; }
+#cta h2 { font-family:'Permanent Marker',cursive; font-size:clamp(28px,5vw,52px); color:#fff; margin-bottom:24px; line-height:1.0; }
+#cta h2 span { color:#C9A227; }
+#cta p { font-size:15px; font-weight:300; color:#666; max-width:560px; margin:0 auto 44px; line-height:1.75; }
+.cta-btn { display:inline-block; background:#CC1C1C; color:#fff; padding:18px 48px; font-family:'Oswald',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:background .2s; }
+.cta-btn:hover { background:#a81515; }
+.cta-rule { width:80px; height:2px; background:linear-gradient(to right,#CC1C1C,#C9A227); margin:48px auto 0; }
+#cta .footer-note { margin-top:32px; font-size:9px; font-weight:300; letter-spacing:0.2em; color:#333; text-transform:uppercase; }
+
+/* ── MODAL ── */
+#modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9000; align-items:center; justify-content:center; }
+#modal-box { position:relative; width:90vw; max-width:860px; }
+#modal-close { position:absolute; top:-40px; right:0; background:none; border:none; color:#CC1C1C; font-family:'Oswald',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; }
+#modal-frame { width:100%; background:#000; }
+
+/* ── MOBILE ── */
+@media(max-width:680px){
+  #hero { min-height:0 !important; padding:60px 20px 44px !important; }
+  #hero .scroll-hint { margin-top:28px !important; }
+  #video-section, #program-overview, #athlete-journal-intro, #family-journal-label, #proposal, #compare, #math, #cta { padding-left:16px !important; padding-right:16px !important; }
+  .option-grid { grid-template-columns:1fr; }
+  .compare-table td, .compare-table th { padding:10px 12px; font-size:11px; }
+}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <span class="brand">MazePerformance × Element Volleyball</span>
+  <span class="stitle">Private Proposal · 2026</span>
+</div>
+
+<div id="page-content">
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="eyebrow">MindSystem · MazePerformance · Element Volleyball Club</div>
+  <h1>A Path Forward<br>for <span>Element.</span></h1>
+  <div class="rule"></div>
+  <p class="sub">Great connecting, Michelle. Based on our conversation, here are two ways we could work together. They are not mutually exclusive — and we can start with either one.</p>
+  <div class="tag">Private · Prepared for Michelle</div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ── OUR CALL ── -->
+<section id="video-section">
+  <div class="section-eyebrow">Our Conversation</div>
+  <h2>Where We Left Off.</h2>
+  <p class="sub">The context behind both options — from our call.</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/y0-hCMfaWRA?rel=0&modestbranding=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+</section>
+
+<!-- ── PROGRAM OVERVIEW ── -->
+<section id="program-overview">
+  <div class="inner">
+    <div class="eyebrow">What the MindSystem Does</div>
+    <h2>A Framework for the Whole Family.</h2>
+    <div class="program-cards">
+      <div class="program-card">
+        <div class="num">01</div>
+        <h3>Shared Language</h3>
+        <p>Everyone in the family — athlete, parent, coach — learns to talk about performance the same way. No one is speaking a different dialect under pressure.</p>
+      </div>
+      <div class="program-card">
+        <div class="num">02</div>
+        <h3>Shared Definition of Success</h3>
+        <p>Stop measuring against other families. Start measuring against your own compass — calibrated to your athlete's actual outcomes, not the noise around her.</p>
+      </div>
+      <div class="program-card">
+        <div class="num">03</div>
+        <h3>Shared System for Tracking Progress</h3>
+        <p>A physical and digital framework that keeps the whole family oriented, accountable, and moving in the same direction — across 12 months of a real season.</p>
+      </div>
+      <div class="program-card">
+        <div class="num">04</div>
+        <h3>On-Demand Access</h3>
+        <p>Mental performance, nutrition content, bi-weekly calls, and a video library. The system runs in the background so it doesn't add anything to your plate — it removes noise from theirs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ATHLETE JOURNAL INTRO ── -->
+<section id="athlete-journal-intro">
+  <div class="eyebrow">The Athlete Journal</div>
+  <h2>MindSystem</h2>
+  <p>Every athlete receives this. Flip through the intro pages, instruction spreads, habit tracker, practice entries, and game day pages below.</p>
+  <div class="arrow">Athlete Journal</div>
+</section>
+
+<!-- ── ATHLETE FLIPBOOK ── -->
+<div class="flipbook-section" id="afb">
+<div class="fb-stage" id="afb-stage">
+
+<div class="fb-slide active" id="afb-0"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-001.jpg" alt="Getting Started left">
+  <img class="bb-pg" src="/bb-journal/page-002.jpg" alt="Getting Started right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-1"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-003.jpg" alt="Bold Commitment left">
+  <img class="bb-pg" src="/bb-journal/page-004.jpg" alt="Bold Commitment right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-2"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-005.jpg" alt="Mindset left">
+  <img class="bb-pg" src="/bb-journal/page-006.jpg" alt="Mindset right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-3"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-007.jpg" alt="Analyze left">
+  <img class="bb-pg bb-pg-land" src="/bb-journal/page-008-land.jpg" alt="Analyze right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-4"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-009.jpg" alt="Zero In left">
+  <img class="bb-pg" src="/bb-journal/page-010.jpg" alt="Zero In right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-5"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-011.jpg" alt="Execution left">
+  <img class="bb-pg" src="/bb-journal/page-012.jpg" alt="Execution right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-6"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-013.jpg" alt="Habit Tracker left">
+  <img class="bb-pg bb-pg-land" src="/bb-journal/page-014-land.jpg" alt="Habit Tracker right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-7"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-023.jpg" alt="Practice left">
+  <img class="bb-pg" src="/bb-journal/page-024.jpg" alt="Practice right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-8"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-055.jpg" alt="Game Day left">
+  <img class="bb-pg" src="/bb-journal/page-056.jpg" alt="Game Day right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-9"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg spread-left" src="/bb-journal/page-151.jpg" alt="Reflection left">
+  <img class="bb-pg" src="/bb-journal/page-152.jpg" alt="Reflection right">
+</div></div></div>
+
+<div class="fb-slide" id="afb-10"><div class="slide-inner"><div class="jspread">
+  <img class="bb-pg" src="/bb-journal/page-153.jpg" alt="Reflection (2)">
+</div></div></div>
+
+</div><!-- /afb-stage -->
+<div class="fb-navbar">
+  <button class="nav-btn" id="afb-prev">← Prev</button>
+  <div class="fb-dots" id="afb-dots">
+    <div class="fb-dot active" onclick="afbGoTo(0)" title="Getting Started"></div>
+    <div class="fb-dot" onclick="afbGoTo(1)" title="Bold Commitment"></div>
+    <div class="fb-dot" onclick="afbGoTo(2)" title="Mindset"></div>
+    <div class="fb-dot" onclick="afbGoTo(3)" title="Analyze"></div>
+    <div class="fb-dot" onclick="afbGoTo(4)" title="Zero In"></div>
+    <div class="fb-dot" onclick="afbGoTo(5)" title="Execution"></div>
+    <div class="fb-dot" onclick="afbGoTo(6)" title="Habit Tracker"></div>
+    <div class="fb-dot" onclick="afbGoTo(7)" title="Practice"></div>
+    <div class="fb-dot" onclick="afbGoTo(8)" title="Game Day"></div>
+    <div class="fb-dot" onclick="afbGoTo(9)" title="Reflection"></div>
+    <div class="fb-dot" onclick="afbGoTo(10)" title="Reflection (2)"></div>
+  </div>
+  <button class="nav-btn next-btn" id="afb-next">Next →</button>
+  <span class="fb-ctr" id="afb-ctr" style="margin-left:8px;">1 / 11</span>
+</div>
+</div><!-- /afb -->
+
+<!-- ── FAMILY JOURNAL LABEL ── -->
+<section id="family-journal-label">
+  <div class="eyebrow">The Parent Journal</div>
+  <h2>What Parents Receive.</h2>
+  <div class="note">Recolored in Element Volleyball Club branding</div>
+  <p>Every family also receives this parent-facing journal — the Parent Alignment Guide — to keep the whole family moving in the same direction.</p>
+  <div class="arrow">Family Journal</div>
+</section>
+
+<!-- ── PARENT JOURNAL FLIPBOOK (Element VB red/gold) ── -->
+<div class="flipbook-section" id="pfb">
+<div class="fb-stage" id="pfb-stage">
+
+<!-- Slide 0: Cover spread -->
+<div class="fb-slide active" id="pfb-0"><div class="slide-inner">
+<div class="jspread">
+  <div class="jpage spread-left" style="background:#CC1C1C;">
+    <div style="position:absolute;bottom:24px;left:0;right:0;text-align:center;">
+      <div class="pm" style="font-size:52px;color:rgba(0,0,0,0.15);line-height:1;white-space:nowrap;">The Process</div>
+    </div>
+    <!-- Element E bolt watermark -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.08;">
+      <div class="pm" style="font-size:140px;color:#000;line-height:1;">E</div>
+    </div>
+  </div>
+  <div class="jpage" style="background:#CC1C1C;">
+    <div style="position:absolute;bottom:24px;left:0;right:0;text-align:center;">
+      <div class="pm" style="font-size:52px;color:rgba(0,0,0,0.15);line-height:1;white-space:nowrap;">Is The Point.</div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 1: Title page -->
+<div class="fb-slide" id="pfb-1"><div class="slide-inner">
+<div class="jspread">
+  <!-- LEFT: Copyright -->
+  <div class="jpage spread-left" style="background:#fff;">
+    <div class="ca">
+      <div class="s24"></div>
+      <div style="font-size:8px;font-weight:300;letter-spacing:0.1em;color:#000;line-height:1.8;">
+        <div style="font-weight:700;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;font-size:7px;color:#CC1C1C;">Parent Alignment Guide</div>
+        MindSystem Program<br>MazePerformance.ai<br><br>
+        © 2026 Gabby Cole / MazePerformance<br>All rights reserved.<br><br>
+        MindSystem Edition · First Edition<br><br>
+        No portion of this journal may be reproduced without written permission from the publisher.<br><br>
+        Printed by Blurb, Inc.<br>bookwright.blurb.com
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;">
+        <div class="gl"></div><div class="s8"></div>
+        <div style="font-size:7px;font-weight:300;letter-spacing:0.1em;color:#888;">MazePerformance.ai  ·  info@mazeperformance.ai</div>
+      </div>
+    </div>
+  </div>
+  <!-- RIGHT: Title -->
+  <div class="jpage" style="background:#000;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding:0 36px 0 54px;">
+      <div style="font-size:7px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#CC1C1C;margin-bottom:18px;">MindSystem</div>
+      <div class="pm c-white" style="font-size:72px;line-height:0.88;">Gabby</div>
+      <div class="pm" style="font-size:72px;color:#CC1C1C;line-height:0.88;">Cole</div>
+      <div style="font-size:22px;font-weight:200;color:#444;letter-spacing:0.15em;margin:14px 0;">×</div>
+      <div style="font-size:28px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;line-height:1.05;">Element</div>
+      <div style="font-size:14px;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:#888;line-height:1.2;margin-bottom:28px;">Volleyball Club</div>
+      <div style="width:60px;height:1.5px;background:#C9A227;margin-bottom:14px;"></div>
+      <div style="font-size:9px;font-weight:300;letter-spacing:0.12em;color:#555;text-transform:uppercase;line-height:1.8;">Parent Alignment Guide<br>MindSystem Program</div>
+    </div>
+    <div style="position:absolute;bottom:28px;left:54px;right:36px;">
+      <div style="height:0.5px;background:#222;margin-bottom:10px;"></div>
+      <div style="font-size:7px;font-weight:300;letter-spacing:0.1em;color:#444;">MazePerformance.ai</div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 2: Roadmap spread -->
+<div class="fb-slide" id="pfb-2"><div class="slide-inner">
+<div class="jspread">
+  <!-- LEFT PAGE -->
+  <div class="jpage spread-left" style="background:#000;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(204,28,28,0.14) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;"></div>
+    <div style="position:absolute;top:14px;left:54px;right:36px;z-index:2;">
+      <div style="font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:3px;">The MindSystem · 12-Month Map</div>
+      <div class="pm c-white" style="font-size:22px;line-height:1;">Your Roadmap.</div>
+    </div>
+    <div style="position:absolute;top:60px;left:54px;right:36px;height:1px;background:linear-gradient(to right,#CC1C1C,transparent);z-index:2;"></div>
+    <svg style="position:absolute;inset:0;width:432px;height:648px;pointer-events:none;z-index:1;" viewBox="0 0 432 648"><path d="M 78,120 C 78,215 378,215 378,310 C 378,405 78,405 78,500" stroke="#CC1C1C" stroke-width="2.5" stroke-dasharray="12 8" fill="none" opacity="0.75"/><path d="M 78,500 C 78,560 432,580 432,648" stroke="#CC1C1C" stroke-width="2.5" stroke-dasharray="12 8" fill="none" opacity="0.25"/></svg>
+    <!-- Node 1 -->
+    <div style="position:absolute;top:96px;left:54px;right:24px;z-index:2;">
+      <div style="position:absolute;left:0;top:0;width:48px;height:48px;background:#CC1C1C;border-radius:50%;box-shadow:0 0 0 3px #000,0 0 0 5px #CC1C1C;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#fff;line-height:1;">1</div>
+      </div>
+      <div style="margin-left:62px;padding-top:4px;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">MAZE Foundation</div>
+        <div style="font-size:7px;font-weight:300;color:#888;line-height:1.5;margin-bottom:5px;">Weeks 1–4 · Athlete + Parent<br>Build the four-column awareness framework.</div>
+        <div style="display:flex;gap:3px;flex-wrap:wrap;">
+          <span style="font-size:6px;font-weight:700;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">M</span>
+          <span style="font-size:6px;font-weight:700;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">A</span>
+          <span style="font-size:6px;font-weight:700;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">Z</span>
+          <span style="font-size:6px;font-weight:700;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">E</span>
+        </div>
+      </div>
+    </div>
+    <!-- Node 2 -->
+    <div style="position:absolute;top:286px;left:54px;right:30px;z-index:2;">
+      <div style="position:absolute;right:0;top:0;width:48px;height:48px;background:#CC1C1C;border-radius:50%;box-shadow:0 0 0 3px #000,0 0 0 5px #CC1C1C;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#fff;line-height:1;">2</div>
+      </div>
+      <div style="margin-right:62px;padding-top:4px;text-align:right;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">12-Month Learn While Doing</div>
+        <div style="font-size:7px;font-weight:300;color:#888;line-height:1.5;margin-bottom:5px;">The reps you don't see are the ones that build her.</div>
+        <div style="display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end;">
+          <span style="font-size:6px;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">Habit Tracker</span>
+          <span style="font-size:6px;color:#CC1C1C;border:0.5px solid #CC1C1C;padding:1px 5px;">Bi-Weekly Calls</span>
+        </div>
+      </div>
+    </div>
+    <!-- Node 3 -->
+    <div style="position:absolute;top:476px;left:54px;right:24px;z-index:2;">
+      <div style="position:absolute;left:0;top:0;width:48px;height:48px;background:#CC1C1C;border-radius:50%;box-shadow:0 0 0 3px #000,0 0 0 5px #CC1C1C;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#fff;line-height:1;">3</div>
+      </div>
+      <div style="margin-left:62px;padding-top:4px;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">Weekly Checkpoints</div>
+        <div style="font-size:7px;font-weight:300;color:#888;line-height:1.5;">Every Sunday · 15 min · Bi-weekly calls to debrief + recalibrate.</div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:12px;right:16px;font-size:6.5px;color:#CC1C1C;font-weight:700;letter-spacing:0.1em;z-index:2;">CONTINUES →</div>
+  </div>
+  <!-- RIGHT PAGE -->
+  <div class="jpage" style="background:#0D1B2A;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C9A227;"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,162,39,0.1) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;"></div>
+    <svg style="position:absolute;inset:0;width:432px;height:648px;pointer-events:none;z-index:1;" viewBox="0 0 432 648"><path d="M 54,28 C 120,44 378,58 378,82" stroke="#C9A227" stroke-width="2.5" stroke-dasharray="12 8" fill="none" opacity="0.5"/><path d="M 378,82 C 378,178 78,178 78,272 C 78,368 378,368 378,454" stroke="#C9A227" stroke-width="2.5" stroke-dasharray="12 8" fill="none" opacity="0.75"/></svg>
+    <div style="position:absolute;top:12px;left:16px;font-size:6.5px;color:#C9A227;font-weight:700;letter-spacing:0.1em;z-index:2;">← CONTINUED</div>
+    <!-- Node 4 -->
+    <div style="position:absolute;top:58px;left:54px;right:30px;z-index:2;">
+      <div style="position:absolute;right:0;top:0;width:48px;height:48px;background:#CC1C1C;border-radius:50%;box-shadow:0 0 0 3px #0D1B2A,0 0 0 5px #CC1C1C;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#fff;line-height:1;">4</div>
+      </div>
+      <div style="margin-right:62px;padding-top:4px;text-align:right;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">Mid-Season Check-In</div>
+        <div style="font-size:7px;font-weight:300;color:#8daab8;line-height:1.5;margin-bottom:4px;">Pause. Score the habits. Adjust the three Focus Areas.</div>
+        <div style="font-size:6.5px;color:#C9A227;font-style:italic;">"The halfway line is not the finish line."</div>
+      </div>
+    </div>
+    <!-- Node 5 -->
+    <div style="position:absolute;top:248px;left:54px;right:24px;z-index:2;">
+      <div style="position:absolute;left:0;top:0;width:48px;height:48px;background:#CC1C1C;border-radius:50%;box-shadow:0 0 0 3px #0D1B2A,0 0 0 5px #CC1C1C;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#fff;line-height:1;">5</div>
+      </div>
+      <div style="margin-left:62px;padding-top:4px;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">End of Season Reflection</div>
+        <div style="font-size:7px;font-weight:300;color:#8daab8;line-height:1.5;margin-bottom:4px;">Full MAZE audit. What you built. What travels forward.</div>
+      </div>
+    </div>
+    <!-- Node 6 -->
+    <div style="position:absolute;top:430px;left:54px;right:30px;z-index:2;">
+      <div style="position:absolute;right:0;top:-18px;background:#C9A227;padding:2px 7px;">
+        <div style="font-size:5.5px;font-weight:700;color:#000;letter-spacing:0.2em;text-transform:uppercase;">Destination</div>
+      </div>
+      <div style="position:absolute;right:0;top:0;width:48px;height:48px;background:#fff;border-radius:50%;box-shadow:0 0 0 3px #0D1B2A,0 0 0 5px #C9A227;display:flex;align-items:center;justify-content:center;">
+        <div class="pm" style="font-size:20px;color:#CC1C1C;line-height:1;">6</div>
+      </div>
+      <div style="margin-right:62px;padding-top:4px;text-align:right;">
+        <div style="font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:3px;">Monthly Community Calls</div>
+        <div style="font-size:7px;font-weight:300;color:#8daab8;line-height:1.5;">Your next entry point. Once a month, live in the community.</div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:14px;left:54px;right:24px;">
+      <div class="pm" style="font-size:11px;color:#C9A227;line-height:1.3;font-style:italic;">"The family that does the work<br>doesn't start over. She starts ahead."</div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 3: M — Mindset Mirror -->
+<div class="fb-slide" id="pfb-3"><div class="slide-inner">
+<div class="jspread">
+  <div class="jpage spread-left" style="background:#000;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:40px;left:54px;right:250px;">
+      <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">M · Mindset Mirror</div>
+      <div class="pm c-white" style="font-size:58px;line-height:0.88;">Your</div>
+    </div>
+    <div style="position:absolute;top:145px;left:54px;right:36px;">
+      <div class="pm c-el-red" style="font-size:50px;line-height:0.9;">Ecosystem.</div>
+    </div>
+    <div style="position:absolute;top:210px;left:54px;width:50px;height:1.5px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:222px;left:54px;width:175px;">
+      <div style="font-size:9px;font-weight:400;color:#fff;line-height:1.7;">Before you can show up for her, you have to understand the environment she's actually in.</div>
+      <div style="height:10px;"></div>
+      <div style="font-size:8.5px;font-weight:300;color:#aaa;line-height:1.75;">The pause between your emotion and your reaction — that's the Mirror Moment. Before every game. Every drive home. Every coach conversation.</div>
+    </div>
+    <div style="position:absolute;top:348px;left:0;right:0;background:#CC1C1C;padding:16px 54px;">
+      <div class="pm" style="font-size:20px;color:#fff;line-height:1.25;">"She's not watching the scoreboard.<br>She's watching you."</div>
+    </div>
+    <div style="position:absolute;top:464px;left:54px;right:36px;">
+      <div style="font-size:8.5px;font-weight:300;color:#ccc;line-height:1.75;">Three questions. Every game. Every drive home. Every coach conversation. Ask her — don't answer for her.</div>
+      <div style="height:12px;"></div>
+      <div style="border-left:2px solid #CC1C1C;padding-left:10px;">
+        <div class="pm c-white" style="font-size:13px;line-height:1.3;">Write what she says.<br>Not what you think she'd say.</div>
+      </div>
+    </div>
+  </div>
+  <div class="jpage" style="background:#fff;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:12px;left:54px;font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;">M — Mindset Mirror</div>
+    <div style="position:absolute;top:30px;left:54px;right:36px;">
+      <div style="font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:2px;">In Her Own Words.</div>
+      <div style="font-size:8px;font-weight:300;color:#aaa;font-style:italic;margin-bottom:8px;">Ask her. Write exactly what she says.</div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:195px;background:#fff;border-top:2px solid #CC1C1C;">
+      <div style="padding:14px 54px 12px 54px;">
+        <div style="font-size:6.5px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">The Commitment</div>
+        <div class="pm" style="font-size:15px;color:#000;line-height:1.3;margin-bottom:3px;">The dynamic I am changing this season is</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;margin-bottom:10px;"></div>
+        <div class="pm" style="font-size:13px;color:#333;line-height:1.3;margin-bottom:3px;">The pattern I want her to see me break:</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;margin-bottom:8px;"></div>
+        <div style="font-size:7px;font-weight:300;color:#aaa;font-style:italic;">Return to this page at the end of the season.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 4: A — Analyze Mirror -->
+<div class="fb-slide" id="pfb-4"><div class="slide-inner">
+<div class="jspread">
+  <div class="jpage spread-left" style="background:#0D1B2A;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:40px;left:54px;right:250px;">
+      <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">A · Analyze Mirror</div>
+      <div class="pm c-white" style="font-size:58px;line-height:0.88;">Your</div>
+    </div>
+    <div style="position:absolute;top:145px;left:54px;right:36px;">
+      <div class="pm c-el-red" style="font-size:50px;line-height:0.9;">Audit.</div>
+    </div>
+    <div style="position:absolute;top:210px;left:54px;width:50px;height:1.5px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:222px;left:54px;width:175px;">
+      <div style="font-size:9px;font-weight:400;color:#fff;line-height:1.7;">Awareness doesn't happen by accident. It takes the willingness to see your patterns — not what you intend, but what you actually do.</div>
+      <div style="height:10px;"></div>
+      <div style="font-size:8.5px;font-weight:300;color:#aaa;line-height:1.75;">Not the car ride you imagine. The car ride home. The silence after a tough loss. The comparison you make out loud without knowing it.</div>
+    </div>
+    <div style="position:absolute;top:348px;left:0;right:0;background:#CC1C1C;padding:16px 54px;">
+      <div class="pm" style="font-size:20px;color:#fff;line-height:1.25;">"The habits that feel good to you<br>aren't always the ones serving her."</div>
+    </div>
+    <div style="position:absolute;top:464px;left:54px;right:36px;">
+      <div style="border-left:2px solid #CC1C1C;padding-left:10px;">
+        <div class="pm c-white" style="font-size:13px;line-height:1.3;">Write what you notice.<br>Not what you wish you'd done.</div>
+      </div>
+    </div>
+  </div>
+  <div class="jpage" style="background:#fff;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:12px;left:54px;font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;">A — Analyze Mirror</div>
+    <div style="position:absolute;top:30px;left:54px;right:36px;">
+      <div style="font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:2px;">What I'm Actually Doing.</div>
+      <div style="font-size:8px;font-weight:300;color:#aaa;font-style:italic;margin-bottom:8px;">Honest inventory. No judgment — just data.</div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+      <div style="border-bottom:1px solid #CC1C1C;height:26px;margin-bottom:3px;"></div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:195px;background:#fff;border-top:2px solid #CC1C1C;">
+      <div style="padding:14px 54px 12px 54px;">
+        <div style="font-size:6.5px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">The Commitment</div>
+        <div class="pm" style="font-size:15px;color:#000;line-height:1.3;margin-bottom:3px;">The habit I'm auditing this season is</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;margin-bottom:10px;"></div>
+        <div class="pm" style="font-size:13px;color:#333;line-height:1.3;margin-bottom:3px;">What I'm replacing it with:</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 5: Z — Zero In Mirror -->
+<div class="fb-slide" id="pfb-5"><div class="slide-inner">
+<div class="jspread">
+  <div class="jpage spread-left" style="background:#000;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:40px;left:54px;right:250px;">
+      <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">Z · Zero In Mirror</div>
+      <div class="pm c-white" style="font-size:58px;line-height:0.88;">Your</div>
+    </div>
+    <div style="position:absolute;top:145px;left:54px;right:36px;">
+      <div class="pm c-el-red" style="font-size:50px;line-height:0.9;">Focus.</div>
+    </div>
+    <div style="position:absolute;top:210px;left:54px;width:50px;height:1.5px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:222px;left:54px;width:175px;">
+      <div style="font-size:9px;font-weight:400;color:#fff;line-height:1.7;">Stop watching the game. Start watching her three things. Your job just shifted from general support to precision instrument.</div>
+    </div>
+    <div style="position:absolute;top:348px;left:0;right:0;background:#CC1C1C;padding:16px 54px;">
+      <div class="pm" style="font-size:20px;color:#fff;line-height:1.25;">"You can't acknowledge<br>what you don't understand."</div>
+    </div>
+    <div style="position:absolute;top:464px;left:54px;right:36px;">
+      <div style="border-left:2px solid #CC1C1C;padding-left:10px;">
+        <div class="pm c-white" style="font-size:13px;line-height:1.3;">Write what you see.<br>Not what you hoped to see.</div>
+      </div>
+    </div>
+  </div>
+  <div class="jpage" style="background:#fff;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:12px;left:54px;font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;">Z — Zero In Mirror</div>
+    <div style="position:absolute;top:30px;left:54px;right:36px;">
+      <div style="font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:2px;">Her Three Things.</div>
+      <div style="font-size:8px;font-weight:300;color:#aaa;font-style:italic;margin-bottom:10px;">Her skills. Her words. Not yours.</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;flex-shrink:0;">SKILL 01</div><div style="flex:1;border-bottom:1px solid #CC1C1C;height:22px;"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;flex-shrink:0;">SKILL 02</div><div style="flex:1;border-bottom:1px solid #CC1C1C;height:22px;"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;flex-shrink:0;">SKILL 03</div><div style="flex:1;border-bottom:1px solid #CC1C1C;height:22px;"></div></div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:195px;background:#fff;border-top:2px solid #CC1C1C;">
+      <div style="padding:14px 54px 12px 54px;">
+        <div style="font-size:6.5px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">The Commitment</div>
+        <div class="pm" style="font-size:15px;color:#000;line-height:1.3;margin-bottom:3px;">The specific skill I'm watching this season is</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;margin-bottom:10px;"></div>
+        <div class="pm" style="font-size:13px;color:#333;line-height:1.3;margin-bottom:3px;">How I'll acknowledge it when I see it:</div>
+        <div style="border-bottom:1px solid #ccc;height:22px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 6: E — Execute Mirror -->
+<div class="fb-slide" id="pfb-6"><div class="slide-inner">
+<div class="jspread">
+  <div class="jpage spread-left" style="background:#111;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:40px;left:54px;right:250px;">
+      <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:10px;">E · Execute Mirror</div>
+      <div class="pm c-white" style="font-size:58px;line-height:0.88;">Your</div>
+    </div>
+    <div style="position:absolute;top:145px;left:54px;right:36px;">
+      <div class="pm c-el-red" style="font-size:50px;line-height:0.9;">Actions.</div>
+    </div>
+    <div style="position:absolute;top:210px;left:54px;width:50px;height:1.5px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:222px;left:54px;width:175px;">
+      <div style="font-size:9px;font-weight:400;color:#fff;line-height:1.7;">Every gym day, you are choosing one of two roles. Manager speaks for her. Collaborator asks, waits, witnesses.</div>
+    </div>
+    <div style="position:absolute;top:348px;left:0;right:0;background:#CC1C1C;padding:16px 54px;">
+      <div class="pm" style="font-size:20px;color:#fff;line-height:1.25;">"Intentions don't raise athletes.<br>Actions do."</div>
+    </div>
+    <div style="position:absolute;top:464px;left:54px;right:36px;">
+      <div style="border-left:2px solid #CC1C1C;padding-left:10px;">
+        <div class="pm c-white" style="font-size:13px;line-height:1.3;">Write what you did.<br>Not what you meant to do.</div>
+      </div>
+    </div>
+  </div>
+  <div class="jpage" style="background:#fff;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+    <div style="position:absolute;top:12px;left:54px;font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;">E — Execute Mirror</div>
+    <div style="position:absolute;top:30px;left:54px;right:36px;">
+      <div style="font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#000;margin-bottom:2px;">My Execution Map.</div>
+      <div style="font-size:8px;font-weight:300;color:#aaa;font-style:italic;margin-bottom:10px;">Open this first. Return here when confidence drops.</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#CC1C1C;flex-shrink:0;white-space:nowrap;">MY SEASON GOAL</div><div style="flex:1;border-bottom:1px solid #CC1C1C;height:22px;"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#aaa;flex-shrink:0;white-space:nowrap;">WHY THIS GOAL</div><div style="flex:1;border-bottom:1px solid #eee;height:22px;"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px;"><div style="font-size:6px;font-weight:700;color:#aaa;flex-shrink:0;white-space:nowrap;">MY DAILY HABIT</div><div style="flex:1;border-bottom:1px solid #eee;height:22px;"></div></div>
+      <div style="display:flex;align-items:baseline;gap:6px;"><div style="font-size:6px;font-weight:700;color:#aaa;flex-shrink:0;white-space:nowrap;">SIDELINE INTENTION</div><div style="flex:1;border-bottom:1px solid #eee;height:20px;"></div></div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:195px;background:#fff;border-top:2px solid #CC1C1C;">
+      <div style="padding:14px 54px 12px 54px;">
+        <div style="font-size:6.5px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#CC1C1C;margin-bottom:8px;">The Mantra</div>
+        <div class="pm" style="font-size:13px;color:#000;line-height:1.3;margin-bottom:3px;">When things get hard, my job is to</div>
+        <div style="border-bottom:1px solid #ccc;height:20px;margin-bottom:6px;"></div>
+        <div class="pm" style="font-size:13px;color:#333;line-height:1.3;margin-bottom:3px;">not</div>
+        <div style="border-bottom:1px solid #ccc;height:20px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 7: Win Log -->
+<div class="fb-slide" id="pfb-7"><div class="slide-inner">
+<div class="jpage" style="background:#fff;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:60px;background:#000;"></div>
+  <div style="position:absolute;top:10px;left:54px;right:36px;">
+    <div style="font-size:6.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#CC1C1C;margin-bottom:2px;">Parent Compass</div>
+    <div class="pm c-white" style="font-size:22px;line-height:1;">Win Log.</div>
+  </div>
+  <div style="position:absolute;top:62px;left:54px;right:36px;">
+    <div style="font-size:7.5px;font-weight:300;color:#aaa;font-style:italic;margin-bottom:2px;">"Track what you did — not what she did."</div>
+    <div style="height:0.5px;background:#eee;margin:8px 0;"></div>
+    <div style="display:flex;gap:0;margin-bottom:4px;">
+      <div style="width:28px;flex-shrink:0;font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;text-transform:uppercase;">#</div>
+      <div style="width:70px;flex-shrink:0;font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;text-transform:uppercase;">Date</div>
+      <div style="flex:1;font-size:6px;font-weight:700;color:#CC1C1C;letter-spacing:0.1em;text-transform:uppercase;">What I did (behavior win)</div>
+      <div style="width:90px;flex-shrink:0;font-size:6px;font-weight:700;color:#aaa;letter-spacing:0.08em;text-transform:uppercase;text-align:right;">What I noticed</div>
+    </div>
+    <div style="height:0.5px;background:#CC1C1C;margin-bottom:6px;"></div>
+  </div>
+  <div style="position:absolute;top:132px;left:54px;right:36px;bottom:30px;">
+    <!-- 12 rows -->
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">01</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">02</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">03</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">04</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">05</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">06</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">07</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">08</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">09</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">10</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;margin-bottom:4px;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">11</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+    <div style="display:flex;gap:0;align-items:flex-end;"><div style="width:28px;flex-shrink:0;font-size:7px;font-weight:700;color:#CC1C1C;">12</div><div style="width:70px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="flex:1;border-bottom:1px solid #eee;height:18px;margin-right:6px;"></div><div style="width:90px;flex-shrink:0;border-bottom:1px solid #eee;height:18px;"></div></div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 8: Game Day -->
+<div class="fb-slide" id="pfb-8"><div class="slide-inner">
+<div class="jpage" style="background:#fff;">
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#CC1C1C;"></div>
+  <div style="position:absolute;top:10px;right:36px;text-align:right;">
+    <div style="font-size:7px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:#CC1C1C;">Game</div>
+    <div class="pm c-black" style="font-size:26px;line-height:1;">07</div>
+  </div>
+  <div class="ca">
+    <div class="s4"></div>
+    <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#000;">Game Day</div>
+    <div class="s6"></div><div class="gl"></div><div class="s8"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;">Date / Tournament:</div>
+    <div class="wl"></div><div class="s14"></div>
+    <div style="font-size:8.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#CC1C1C;">Before</div>
+    <div class="s2"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;font-style:italic;">My intention today:</div>
+    <div class="s4"></div><div class="wl"></div><div class="wl"></div>
+    <div class="s6"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;font-style:italic;">My mantra:</div>
+    <div class="s4"></div><div class="wl"></div><div class="s14"></div>
+    <div class="ol-el-s" style="width:30px;"></div><div class="s8"></div>
+    <div style="font-size:8.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#CC1C1C;">During</div>
+    <div class="s2"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;font-style:italic;">My one focus — on my behavior, not her performance:</div>
+    <div class="s4"></div><div class="wl"></div><div class="wl"></div><div class="s14"></div>
+    <div class="ol-el-s" style="width:30px;"></div><div class="s8"></div>
+    <div style="font-size:8.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#CC1C1C;">After</div>
+    <div class="s2"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;font-style:italic;">Her words first:</div>
+    <div class="s4"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div>
+    <div class="s6"></div>
+    <div style="font-size:7.5px;font-weight:300;color:#888;font-style:italic;">What I observed about my own behavior:</div>
+    <div class="s4"></div><div class="wl"></div><div class="wl"></div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 9: Weekly Checkpoint -->
+<div class="fb-slide" id="pfb-9"><div class="slide-inner">
+<div class="jpage" style="background:#fff;">
+  <div style="position:absolute;top:0;left:0;right:0;height:180px;background:#000;"></div>
+  <div style="position:absolute;top:20px;left:54px;">
+    <div style="font-size:7px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:#666;">Weekly Checkpoint</div>
+    <div class="s4"></div>
+    <div style="display:flex;align-items:baseline;gap:5px;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:200;font-size:68px;line-height:1;letter-spacing:-0.04em;color:#CC1C1C;">03</div>
+      <div style="font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:#555;align-self:flex-end;padding-bottom:8px;">of 12</div>
+    </div>
+  </div>
+  <div style="position:absolute;top:115px;left:54px;right:36px;">
+    <div class="pm c-white" style="font-size:16px;line-height:1.2;">Am I watching the game<br>or watching her?</div>
+  </div>
+  <div style="position:absolute;top:200px;left:54px;right:36px;bottom:40px;">
+    <div class="s10"></div>
+    <div style="font-size:7.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#888;">1. Where did I show up the way I committed to?</div>
+    <div class="s6"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div>
+    <div class="s10"></div>
+    <div style="font-size:7.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#888;">2. Where did I slip — and what was the trigger?</div>
+    <div class="s6"></div><div class="wl"></div><div class="wl"></div>
+    <div class="s10"></div>
+    <div style="font-size:7.5px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#888;">3. One change I'll make next week:</div>
+    <div class="s6"></div><div class="wl"></div><div class="wl"></div>
+    <div class="s10"></div>
+    <div style="height:0.5px;background:#eee;"></div>
+    <div class="s6"></div>
+    <div style="font-size:7px;font-weight:300;color:#aaa;font-style:italic;">Pen on paper. Not in your head. — Sun. Same time. 15 min. No exceptions.</div>
+  </div>
+</div>
+</div></div>
+
+<!-- Slide 10: The Bridge -->
+<div class="fb-slide" id="pfb-10"><div class="slide-inner">
+<div class="jpage" style="background:#000;">
+  <div class="pm" style="position:absolute;bottom:40px;right:-24px;font-size:180px;line-height:1;color:#CC1C1C;opacity:0.2;user-select:none;white-space:nowrap;">UP.</div>
+  <div style="position:absolute;top:36px;left:54px;right:36px;">
+    <div style="font-size:7px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#555;">End of Season · The Bridge</div>
+    <div class="s16"></div>
+    <div class="pm c-white" style="font-size:44px;line-height:0.92;">This isn't<br>the end.</div>
+    <div class="s4"></div>
+    <div class="pm c-el-gold" style="font-size:44px;line-height:0.92;">It's where<br>you level up.</div>
+    <div class="s18"></div>
+    <div class="ol-el" style="width:50px;"></div>
+    <div class="s12"></div>
+    <div style="font-size:10.5px;font-weight:400;color:#fff;line-height:1.65;">Every ending is a new beginning — but not a reset. The family who walks into next season having done this work does not start over. She starts ahead.</div>
+    <div class="s14"></div>
+    <div style="background:#111;border-left:3px solid #CC1C1C;padding:12px 16px;">
+      <div style="font-size:6.5px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#CC1C1C;margin-bottom:6px;">Your Next Entry Point</div>
+      <div style="font-size:9px;font-weight:600;color:#fff;margin-bottom:4px;">Monthly Community Calls</div>
+      <div style="font-size:8px;font-weight:300;color:#aaa;line-height:1.6;">Once a month, live in the community. Same compass — new depth. Bring your journal. The work continues.</div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div><!-- /pfb-stage -->
+<div class="fb-navbar">
+  <button class="nav-btn" id="pfb-prev">← Prev</button>
+  <div class="fb-dots" id="pfb-dots">
+    <div class="fb-dot active" onclick="pfbGoTo(0)" title="Cover"></div>
+    <div class="fb-dot" onclick="pfbGoTo(1)" title="Title Page"></div>
+    <div class="fb-dot" onclick="pfbGoTo(2)" title="Roadmap"></div>
+    <div class="fb-dot" onclick="pfbGoTo(3)" title="M — Mindset Mirror"></div>
+    <div class="fb-dot" onclick="pfbGoTo(4)" title="A — Analyze Mirror"></div>
+    <div class="fb-dot" onclick="pfbGoTo(5)" title="Z — Zero In Mirror"></div>
+    <div class="fb-dot" onclick="pfbGoTo(6)" title="E — Execute Mirror"></div>
+    <div class="fb-dot" onclick="pfbGoTo(7)" title="Win Log"></div>
+    <div class="fb-dot" onclick="pfbGoTo(8)" title="Game Day"></div>
+    <div class="fb-dot" onclick="pfbGoTo(9)" title="Weekly Checkpoint"></div>
+    <div class="fb-dot" onclick="pfbGoTo(10)" title="The Bridge"></div>
+  </div>
+  <button class="nav-btn next-btn" id="pfb-next">Next →</button>
+  <span class="fb-ctr" id="pfb-ctr" style="margin-left:8px;">1 / 11</span>
+</div>
+</div><!-- /pfb -->
+
+<!-- ── PROPOSAL / OPTIONS ── -->
+<section id="proposal">
+<div class="inner">
+  <div class="eyebrow">Two Paths Forward</div>
+  <h2>The Options for Element.</h2>
+  <p class="lead">Both are built on the same system. The difference is scope, depth, and how deeply I'm embedded in your club's season. Either can start independently — or Option A can roll straight into Option B once we've mapped your team schedule.</p>
+
+  <div class="option-grid">
+
+    <!-- OPTION A -->
+    <div class="option-card card-a">
+      <div class="option-badge badge-a">Option A</div>
+      <div class="option-label label-a">MindSystem Club-Supported</div>
+      <div class="option-name">Club-Supported</div>
+      <div class="option-sub">48 families · 12-month access · Club invoiced</div>
+      <div class="option-price">$33,600</div>
+      <div class="option-price-note">per year · billed to Element as ~$2,800/mo</div>
+      <div style="font-size:11px;font-weight:300;color:#CC1C1C;letter-spacing:0.06em;margin-bottom:20px;">$700 per family · no individual opt-in required</div>
+      <div class="option-divider"></div>
+      <p class="option-desc">The full MindSystem for every family at Element — without adding anything to your plate. Families get access from day one. You get a system running in the background of your club.</p>
+      <ul class="option-features">
+        <li><span class="check-a">✓</span>Full MindSystem athlete journal — physical, shipped to each family</li>
+        <li><span class="check-a">✓</span>Parent Alignment Guide journal — physical, shipped</li>
+        <li><span class="check-a">✓</span>Group onboarding session with Gabby for all families</li>
+        <li><span class="check-a">✓</span>Bi-weekly live group athlete calls with Gabby</li>
+        <li><span class="check-a">✓</span>Bi-weekly live group parent calls with Gabby</li>
+        <li><span class="check-a">✓</span>Mental performance + nutrition modules (on-demand)</li>
+        <li><span class="check-a">✓</span>Athlete Compass Training — full video library</li>
+        <li><span class="check-a">✓</span>24-hr message turnaround for parents and athletes</li>
+        <li><span class="check-a">✓</span>12 months community access</li>
+      </ul>
+      <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener" class="option-cta cta-a">Let's Talk Option A</a>
+    </div>
+
+    <!-- OPTION B -->
+    <div class="option-card card-b">
+      <div class="option-badge badge-b">Option B</div>
+      <div class="option-label label-b">Inner Circle Home Base</div>
+      <div class="option-name">Inner Circle</div>
+      <div class="option-sub">48 families · 12-month access · Club invoiced</div>
+      <div class="option-price">$7,984</div>
+      <div class="option-price-note">per month · ~$95,808/year total</div>
+      <div style="font-size:11px;font-weight:300;color:#C9A227;letter-spacing:0.06em;margin-bottom:20px;">~$2,000 per family · one club-level bill to Michelle</div>
+      <div class="option-divider"></div>
+      <p class="option-desc">Everything in Option A, plus a physical on-site component built directly into your practice schedule — and a private community layer positioned as Element's own home base for athletes and families.</p>
+      <ul class="option-features">
+        <li><span class="check-b">✓</span>Everything in MindSystem Club-Supported</li>
+        <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Monthly on-site visit</strong> — tied to a weekday practice, built around your schedule</li>
+        <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Monthly weekend community-builder</strong> — for Inner Circle families, club-wide</li>
+        <li><span class="check-plus">+</span><strong style="color:#fff;font-weight:500;">Inner Circle Coach Voxer Access</strong> — direct line for your coaching staff, 24-hr turnaround</li>
+        <li><span class="check-plus">+</span>The Courtside Feed — weekly blog/vlog, included club-wide</li>
+        <li><span class="check-plus">+</span>Branded as Element's own home base — not a generic program</li>
+      </ul>
+      <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener" class="option-cta cta-b">Let's Talk Option B</a>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ── COMPARE TABLE ── -->
+<section id="compare">
+<div class="inner">
+  <div class="eyebrow">Side by Side</div>
+  <h2>What Each Option Includes.</h2>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th class="col-feature">Feature</th>
+        <th class="col-a">Club-Supported<br><span style="font-size:8px;font-weight:400;color:#555;">Option A</span></th>
+        <th class="col-b">Inner Circle<br><span style="font-size:8px;font-weight:400;color:#555;">Option B</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-row"><td colspan="3">Journals</td></tr>
+      <tr><td>Physical athlete journal, shipped</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Physical parent journal, shipped</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Guided video instruction for both journals</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+
+      <tr class="section-row"><td colspan="3">Live Calls</td></tr>
+      <tr><td>Group onboarding session with Gabby</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Bi-weekly live group athlete calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Bi-weekly live group parent calls</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Monthly weekend community-builder session</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+
+      <tr class="section-row"><td colspan="3">Content Library</td></tr>
+      <tr><td>Mental performance modules (on-demand)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Nutrition modules (on-demand)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Athlete Compass Training video library</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>The Courtside Feed (weekly blog/vlog)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+
+      <tr class="section-row"><td colspan="3">Access &amp; Support</td></tr>
+      <tr><td>24-hr message turnaround (parents + athletes)</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>12 months community access</td><td class="col-a"><span class="tick-a">✓</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Coach Voxer Access (coaching staff, 24-hr)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+
+      <tr class="section-row"><td colspan="3">In-Person</td></tr>
+      <tr><td>Monthly on-site visit (tied to practice schedule)</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+      <tr><td>Branded as Element's own home base</td><td class="col-a"><span class="tick-none">—</span></td><td class="col-b"><span class="tick-b">✓</span></td></tr>
+
+      <tr class="section-row"><td colspan="3">Pricing</td></tr>
+      <tr><td>Per family / year</td><td class="col-a" style="color:#CC1C1C;font-weight:600;">$700</td><td class="col-b" style="color:#C9A227;font-weight:600;">~$2,000</td></tr>
+      <tr><td>Club total / year (48 families)</td><td class="col-a" style="color:#CC1C1C;font-weight:600;">$33,600</td><td class="col-b" style="color:#C9A227;font-weight:600;">~$95,808</td></tr>
+      <tr><td>Monthly billing to club</td><td class="col-a" style="color:#CC1C1C;font-weight:600;">~$2,800/mo</td><td class="col-b" style="color:#C9A227;font-weight:600;">~$7,984/mo</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<!-- ── MATH BREAKDOWN ── -->
+<section id="math">
+<div class="inner">
+  <div class="eyebrow">The Numbers</div>
+  <h2>How the Math Works.</h2>
+  <p class="lead">Both options are built on the same per-family logic. At full 48-family enrollment, the Inner Circle rate matches what you'd expect at this level of service.</p>
+
+  <div class="math-option-label math-label-a">Option A — Club-Supported</div>
+  <div class="math-row">
+    <div><div class="math-item-label">MindSystem Club-Supported</div><div class="math-desc">Full journal, bi-weekly calls, mental performance + nutrition content, video library, 24-hr turnaround</div></div>
+    <div class="math-amount">$700/family</div>
+  </div>
+  <div class="math-row">
+    <div><div class="math-item-label">48 Families</div><div class="math-desc">Full Element roster — no individual opt-in, no collection from families</div></div>
+    <div class="math-amount">× 48</div>
+  </div>
+  <div class="math-total">
+    <div class="math-total-label">TOTAL — Annual · Billed Monthly</div>
+    <div class="math-total-amount">$33,600/yr &nbsp;<span style="font-size:16px;color:#888;">~$2,800/mo</span></div>
+  </div>
+  <div class="math-per-fam">
+    <div class="label">Per Family, Per Year</div>
+    <div class="val">$700</div>
+    <div class="note">Michelle pays one invoice. Families receive access from day one.</div>
+  </div>
+
+  <hr class="math-divider">
+
+  <div class="math-option-label math-label-b">Option B — Inner Circle Home Base</div>
+  <div class="math-row">
+    <div><div class="math-item-label">MindSystem Club-Supported</div><div class="math-desc">Everything in Option A — full foundation layer</div></div>
+    <div class="math-amount math-gold">$700/family</div>
+  </div>
+  <div class="math-row">
+    <div><div class="math-item-label">In-Person Access</div><div class="math-desc">Monthly on-site visit, built around practice — every family at Element</div></div>
+    <div class="math-amount math-gold">$77/family/mo</div>
+  </div>
+  <div class="math-row">
+    <div><div class="math-item-label">Courtside Conversations</div><div class="math-desc">Monthly weekend community-builder sessions, club-wide</div></div>
+    <div class="math-amount math-gold">$31/family/mo</div>
+  </div>
+  <div class="math-row">
+    <div><div class="math-item-label">Coach Voxer Access</div><div class="math-desc">Direct line for coaching staff — the piece you said you never got the chance to build</div></div>
+    <div class="math-amount math-gold">Included</div>
+  </div>
+  <div class="math-total">
+    <div class="math-total-label">TOTAL — Annual · Billed Monthly to Element</div>
+    <div class="math-total-amount">~$95,808/yr &nbsp;<span style="font-size:16px;color:#888;">~$7,984/mo</span></div>
+  </div>
+  <div class="math-per-fam">
+    <div class="label">Per Family, Per Year</div>
+    <div class="val">~$2,000</div>
+    <div class="note">One invoice to Michelle. Not a per-family charge she has to collect. If the roster grows or changes, the total moves proportionally.</div>
+  </div>
+  <div class="math-note" style="margin-top:20px;">The per-family rates ($77/mo, $31/mo) are back-solved from the $2,000/family Inner Circle target. If the enrollment number or base rate needs to move, adjust from there.</div>
+</div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="eyebrow">Next Step</div>
+  <h2>Let's Lock In <span>Before the Season</span><br>Ramps Up.</h2>
+  <p>Both options can start independently, or Option A can roll straight into Option B once we've mapped your schedule. Book a call and we'll figure out which path fits where Element is right now.</p>
+  <a href="https://calendly.com/gabby-mazeperformance/clarity-call-with-gabby" target="_blank" rel="noopener" class="cta-btn">Book a Clarity Call</a>
+  <div class="cta-rule"></div>
+  <div class="footer-note">Maze Performance Inc. &nbsp;·&nbsp; Private — Prepared for Michelle &nbsp;·&nbsp; Element Volleyball Club · 2026</div>
+</section>
+
+</div><!-- /#page-content -->
+
+<!-- ── MODAL ── -->
+<div id="modal-overlay" onclick="closeVideo()">
+  <div id="modal-box" onclick="event.stopPropagation()">
+    <button id="modal-close" onclick="closeVideo()">✕ Close</button>
+    <div id="modal-frame"></div>
+  </div>
+</div>
+
+<script>
+// ── ATHLETE FLIPBOOK ──
+(function(){
+  var stage = document.getElementById('afb-stage');
+  var slides = document.querySelectorAll('#afb .fb-slide');
+  var dots   = document.querySelectorAll('#afb-dots .fb-dot');
+  var prev   = document.getElementById('afb-prev');
+  var next   = document.getElementById('afb-next');
+  var ctr    = document.getElementById('afb-ctr');
+  var cur = 0;
+
+  function scale(slide) {
+    var inner = slide.querySelector('.slide-inner');
+    if (!inner) return;
+    inner.style.transform = 'scale(1)';
+    var w = inner.offsetWidth, h = inner.offsetHeight;
+    if (!w || !h) { setTimeout(function(){ scale(slide); }, 100); return; }
+    var s = Math.min((stage.clientWidth - 40) / w, (stage.clientHeight - 40) / h, 1);
+    inner.style.transform = 'scale(' + s + ')';
+  }
+  function afbGoTo(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = idx;
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    if (ctr) ctr.textContent = (cur + 1) + ' / ' + slides.length;
+    prev.disabled = cur === 0; next.disabled = cur === slides.length - 1;
+    setTimeout(function(){ scale(slides[cur]); }, 30);
+  }
+  window.afbGoTo = afbGoTo;
+  prev.addEventListener('click', function(){ afbGoTo(cur - 1); });
+  next.addEventListener('click', function(){ afbGoTo(cur + 1); });
+  afbGoTo(0);
+  window.addEventListener('resize', function(){ scale(slides[cur]); });
+  window.addEventListener('load', function(){ setTimeout(function(){ scale(slides[cur]); }, 500); });
+})();
+
+// ── PARENT FLIPBOOK ──
+(function(){
+  var stage = document.getElementById('pfb-stage');
+  var slides = document.querySelectorAll('#pfb .fb-slide');
+  var dots   = document.querySelectorAll('#pfb-dots .fb-dot');
+  var prev   = document.getElementById('pfb-prev');
+  var next   = document.getElementById('pfb-next');
+  var ctr    = document.getElementById('pfb-ctr');
+  var cur = 0;
+
+  function scale(slide) {
+    var inner = slide.querySelector('.slide-inner');
+    if (!inner) return;
+    inner.style.transform = 'scale(1)';
+    var w = inner.offsetWidth, h = inner.offsetHeight;
+    if (!w || !h) { setTimeout(function(){ scale(slide); }, 100); return; }
+    var s = Math.min((stage.clientWidth - 40) / w, (stage.clientHeight - 40) / h, 1);
+    inner.style.transform = 'scale(' + s + ')';
+  }
+  function pfbGoTo(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = idx;
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    if (ctr) ctr.textContent = (cur + 1) + ' / ' + slides.length;
+    prev.disabled = cur === 0; next.disabled = cur === slides.length - 1;
+    setTimeout(function(){ scale(slides[cur]); }, 30);
+  }
+  window.pfbGoTo = pfbGoTo;
+  prev.addEventListener('click', function(){ pfbGoTo(cur - 1); });
+  next.addEventListener('click', function(){ pfbGoTo(cur + 1); });
+  pfbGoTo(0);
+  window.addEventListener('resize', function(){ scale(slides[cur]); });
+  window.addEventListener('load', function(){ setTimeout(function(){ scale(slides[cur]); }, 600); });
+})();
+
+// ── VIDEO MODAL ──
+function closeVideo() {
+  document.getElementById('modal-overlay').style.display = 'none';
+  document.getElementById('modal-frame').innerHTML = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideo(); });
+</script>
+
+</body>
+</html>
