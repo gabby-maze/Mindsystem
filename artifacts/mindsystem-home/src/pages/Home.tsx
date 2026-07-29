@@ -326,6 +326,32 @@ export default function Home() {
                 </div>
               </motion.div>
 
+              {/* Training 5: Choices */}
+              <motion.div
+                variants={fadeUp}
+                className="bg-background border border-border/50 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#9B5DE5]/70 to-transparent" />
+                <div className="p-8 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest font-semibold border border-[#9B5DE5]/40 text-[#9B5DE5] px-3 py-1 self-start mb-6">
+                    Free Training
+                  </span>
+                  <h3 className="text-2xl font-serif text-foreground mb-3">Youth Sports Is Chaos. Your Decisions Don't Have to Be.</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm mb-8 flex-1">
+                    If you don't have a strong internal compass, the chaos around you will make your decisions for you. This free training gives you the process to calibrate yours.
+                  </p>
+                  <a
+                    href="https://members.gabbycole.com/choices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-4 bg-transparent border border-[#9B5DE5] text-[#9B5DE5] hover:bg-[#9B5DE5] hover:text-white transition-all text-xs font-bold tracking-widest uppercase w-full"
+                  >
+                    Get the Free Training
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </a>
+                </div>
+              </motion.div>
+
             </div>
           </motion.div>
         </div>
