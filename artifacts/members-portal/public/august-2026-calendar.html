@@ -124,6 +124,11 @@
   const TOTAL_DAYS = 31;
 
   const CALLS = {
+    // Aug 1 (Sat) — Onboarding
+    1: [
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '10:00 – 11:00 AM PST' },
+    ],
     // Aug 2 (Sun) — Group calls
     2: [
       { type: 'athlete-group', label: 'Athlete Group Call', time: '12:00 – 1:00 PM PST' },
@@ -137,11 +142,13 @@
     ],
     // Aug 12 (Wed) — Onboarding
     12: [
-      { type: 'onboarding', label: 'Onboarding', time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'   },
     ],
     // Aug 15 (Sat) — Onboarding
     15: [
-      { type: 'onboarding', label: 'Onboarding', time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '10:00 – 11:00 AM PST' },
     ],
     // Aug 16 (Sun) — Group calls
     16: [
@@ -155,11 +162,13 @@
     ],
     // Aug 26 (Wed) — Onboarding
     26: [
-      { type: 'onboarding', label: 'Onboarding', time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '5:30 – 6:30 PM PST'   },
     ],
     // Aug 29 (Sat) — Onboarding
     29: [
-      { type: 'onboarding', label: 'Onboarding', time: '9:00 – 10:00 AM PST' },
+      { type: 'onboarding-parent',  label: 'Parent Onboarding',  time: '9:00 – 10:00 AM PST'  },
+      { type: 'onboarding-athlete', label: 'Athlete Onboarding', time: '10:00 – 11:00 AM PST' },
     ],
     // Aug 30 (Sun) — Group calls
     30: [
@@ -169,17 +178,17 @@
   };
 
   function pillClass(type) {
-    if (type === 'onboarding')   return 'pill-onboarding';
-    if (type === 'parent-group') return 'pill-parent';
-    if (type === 'athlete-group')return 'pill-athlete';
-    if (type === 'courtside')    return 'pill-courtside';
+    if (type.startsWith('onboarding')) return 'pill-onboarding';
+    if (type === 'parent-group')       return 'pill-parent';
+    if (type === 'athlete-group')      return 'pill-athlete';
+    if (type === 'courtside')          return 'pill-courtside';
     return '';
   }
 
   function borderColor(calls) {
     if (!calls.length) return '#222';
     const types = calls.map(c => c.type);
-    const hasOnboard   = types.includes('onboarding');
+    const hasOnboard   = types.some(t => t.startsWith('onboarding'));
     const hasParent    = types.includes('parent-group');
     const hasAthlete   = types.includes('athlete-group');
     const hasCourtside = types.includes('courtside');
