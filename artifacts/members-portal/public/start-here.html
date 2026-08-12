@@ -5,120 +5,229 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ask Gabby — MazePerformance</title>
 <meta property="og:title" content="Ask Gabby — MazePerformance">
-<meta property="og:description" content="Got a question about your athlete? Submit it. Gabby answers with a personal video response.">
+<meta property="og:description" content="One question. One answer. From me, not a template.">
 <meta property="og:image" content="https://members.gabbycole.com/415-social.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://members.gabbycole.com/415-social.png">
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{min-height:100%;background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
+html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 80px;}
+.pm{font-family:'Permanent Marker',cursive;}
+.eyebrow{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#FF1D6C;}
+.rule{width:40px;height:2px;background:#FF1D6C;margin:0 auto;}
 
-/* Logo / brand */
-.brand{font-family:'Permanent Marker',cursive;font-size:13px;color:#FF1D6C;letter-spacing:0.04em;margin-bottom:48px;opacity:0.7;}
+/* ── TOPBAR ── */
+#topbar{position:fixed;top:0;left:0;right:0;height:44px;background:#000;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;}
+.brand{font-family:'Permanent Marker',cursive;font-size:14px;color:#FF1D6C;}
+.top-link{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#555;text-decoration:none;}
+.top-link:hover{color:#FF1D6C;}
 
-/* Hero */
-.eyebrow{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#FF1D6C;margin-bottom:20px;}
-h1{font-family:'Permanent Marker',cursive;font-size:clamp(36px,8vw,72px);line-height:1.05;text-align:center;max-width:700px;margin-bottom:24px;}
-.sub{font-size:clamp(14px,2vw,17px);font-weight:300;color:#777;line-height:1.85;text-align:center;max-width:480px;margin-bottom:48px;}
+/* ── HERO ── */
+#hero{padding:120px 24px 72px;text-align:center;}
+#hero .eyebrow{margin-bottom:24px;}
+#hero h1{font-family:'Permanent Marker',cursive;font-size:clamp(38px,7vw,72px);line-height:1.05;max-width:720px;margin:0 auto 24px;}
+#hero .sub{font-size:clamp(14px,1.8vw,17px);font-weight:300;color:#777;line-height:1.9;max-width:500px;margin:0 auto;}
 
-/* CTA block */
-.cta-block{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:56px;}
-.price{font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#555;}
-.cta-btn{display:inline-block;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;border:none;cursor:pointer;}
-.cta-btn:hover{background:#e0145a;}
-.cta-note{font-size:11px;font-weight:300;color:#444;letter-spacing:0.08em;}
+/* ── VSL ── */
+#vsl{padding:48px 24px 80px;}
+.vsl-wrap{max-width:800px;margin:0 auto;aspect-ratio:16/9;background:#111;border:1px solid #1e1e1e;position:relative;display:flex;align-items:center;justify-content:center;}
+.vsl-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.vsl-placeholder{text-align:center;padding:40px;}
+.vsl-placeholder p{font-size:12px;font-weight:300;color:#333;letter-spacing:0.1em;font-style:italic;}
 
-/* Divider */
-.divider{width:40px;height:1px;background:#FF1D6C;margin:0 auto 48px;opacity:0.4;}
+/* ── TIERS ── */
+#tiers{padding:0 24px 100px;}
+.tiers-inner{max-width:860px;margin:0 auto;}
+.tiers-head{text-align:center;margin-bottom:48px;}
+.tiers-head h2{font-family:'Permanent Marker',cursive;font-size:clamp(26px,4vw,44px);line-height:1.1;margin-top:16px;}
+.tiers-grid{display:flex;gap:2px;flex-wrap:wrap;}
 
-/* How it works */
-.steps{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;max-width:680px;margin-bottom:56px;}
-.step{text-align:center;flex:1;min-width:140px;}
-.step-num{font-family:'Permanent Marker',cursive;font-size:32px;color:#FF1D6C;margin-bottom:8px;}
-.step-label{font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#888;line-height:1.6;}
+/* Tier card */
+.tier{flex:1;min-width:280px;background:#111;display:flex;flex-direction:column;}
+.tier-top{padding:36px 32px 24px;border-top:3px solid #222;}
+.tier.featured .tier-top{border-top-color:#FF1D6C;}
+.tier-tag{font-size:8px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#555;margin-bottom:14px;}
+.tier.featured .tier-tag{color:#FF1D6C;}
+.tier-name{font-family:'Permanent Marker',cursive;font-size:30px;color:#fff;margin-bottom:12px;}
+.tier-price{font-size:48px;font-weight:700;letter-spacing:-0.02em;color:#fff;line-height:1;}
+.tier-price sup{font-size:22px;font-weight:400;vertical-align:super;}
+.tier-price-note{font-size:11px;font-weight:300;color:#555;letter-spacing:0.08em;margin-top:6px;}
+.tier-hook{padding:0 32px 24px;font-size:15px;font-weight:300;color:#999;line-height:1.8;border-bottom:1px solid #1a1a1a;font-style:italic;}
+.tier-body{padding:28px 32px;flex:1;}
+.tier-label{font-size:8px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#333;margin-bottom:12px;}
+.tier-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
+.tier-list li{font-size:13px;font-weight:300;color:#888;line-height:1.6;padding-left:16px;position:relative;}
+.tier-list li::before{content:'—';position:absolute;left:0;color:#FF1D6C;}
+.tier-not li::before{color:#333;}
+.tier-not li{color:#555;}
+.tier-foot{padding:0 32px 36px;}
+.tier-cta{display:block;width:100%;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-align:center;padding:17px 24px;text-decoration:none;cursor:pointer;border:none;}
+.tier.featured .tier-cta{background:#FF1D6C;color:#fff;}
+.tier:not(.featured) .tier-cta{background:transparent;border:1px solid #FF1D6C;color:#FF1D6C;}
+.tier:not(.featured) .tier-cta:hover{background:#FF1D6C;color:#fff;}
+.tier-credit{font-size:11px;font-weight:300;color:#444;text-align:center;margin-top:10px;line-height:1.6;}
 
-/* Quotes */
-.quotes{display:flex;flex-direction:column;gap:20px;max-width:560px;width:100%;}
-.quote-item{border-left:2px solid #1e1e1e;padding:0 0 0 20px;}
-.quote-item:hover{border-left-color:#FF1D6C;}
-.quote-text{font-size:14px;font-weight:300;color:#666;line-height:1.8;font-style:italic;margin-bottom:6px;}
-.quote-name{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;}
+/* ── QUOTES ── */
+#quotes{background:#111;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:72px 24px;}
+.quotes-inner{max-width:800px;margin:0 auto;}
+.quotes-head{text-align:center;margin-bottom:48px;}
+.quotes-head h2{font-family:'Permanent Marker',cursive;font-size:clamp(22px,3.5vw,36px);margin-top:12px;}
+.quotes-grid{display:flex;flex-direction:column;gap:24px;}
+.q{border-left:2px solid #1e1e1e;padding:4px 0 4px 24px;transition:border-color .15s;}
+.q:hover{border-left-color:#FF1D6C;}
+.q-text{font-size:15px;font-weight:300;color:#666;line-height:1.85;font-style:italic;margin-bottom:8px;}
+.q-name{font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#444;}
 
-/* Footer */
-footer{position:fixed;bottom:0;left:0;right:0;padding:12px 24px;text-align:center;background:linear-gradient(to top,#0a0a0a,transparent);}
+/* ── FOOTER ── */
+footer{padding:28px 24px;text-align:center;border-top:1px solid #111;}
 footer p{font-size:10px;font-weight:300;color:#333;letter-spacing:0.12em;}
+footer a{color:#333;text-decoration:none;}
+footer a:hover{color:#FF1D6C;}
 
-@media(max-width:500px){
-  .steps{gap:24px;}
-  .cta-btn{padding:18px 40px;font-size:13px;}
+@media(max-width:580px){
+  .tiers-grid{gap:16px;}
+  .tier-top,.tier-hook,.tier-body,.tier-foot{padding-left:24px;padding-right:24px;}
 }
 </style>
 </head>
 <body>
 
-<div class="page">
-
+<!-- TOPBAR -->
+<div id="topbar">
   <div class="brand">MazePerformance</div>
-
-  <div class="eyebrow">Ask Gabby</div>
-
-  <h1>Got a Question<br>About Your Athlete?</h1>
-
-  <p class="sub">Submit your question. Gabby answers with a personal video response — specific to your situation, delivered within 3 business days.</p>
-
-  <div class="cta-block">
-    <div class="price">$97 · One question · One video response</div>
-    <a href="#" class="cta-btn">Submit Your Question →</a>
-    <div class="cta-note">No call required. No back-and-forth. Just your question and her answer.</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- How it works -->
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-label">Submit your question about your athlete or your family dynamic</div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-label">Gabby records a personal video response — specific to you</div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-label">Delivered within 3 business days. Real answer. Real voice.</div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Testimonials -->
-  <div class="quotes">
-    <div class="quote-item">
-      <div class="quote-text">"We were putting all our energy into skill development — what we didn't appreciate is how truly mental this game is."</div>
-      <div class="quote-name">Troy · Club Volleyball Dad</div>
-    </div>
-    <div class="quote-item">
-      <div class="quote-text">"Gabby walks us through the game and gets inside the mind of our athletes so we actually understand what they're going through."</div>
-      <div class="quote-name">Lauren · Club Volleyball Mom</div>
-    </div>
-    <div class="quote-item">
-      <div class="quote-text">"Gabby called me while my daughter was in surgery — that one conversation made me feel so much better. I knew I'd be signing up."</div>
-      <div class="quote-name">Stacey · Volleyball Mom</div>
-    </div>
-    <div class="quote-item">
-      <div class="quote-text">"I gained confidence in myself — not just volleyball skills, but the mindset training to manage my emotions in tough game situations."</div>
-      <div class="quote-name">Brielle · Club Athlete</div>
-    </div>
-  </div>
-
+  <a href="mailto:gabby@mazeperformance.ai" class="top-link">gabby@mazeperformance.ai</a>
 </div>
 
+<!-- HERO -->
+<section id="hero">
+  <div class="eyebrow">Work With Gabby</div>
+  <h1>One Question.<br>One Answer.<br>From Me.</h1>
+  <p class="sub">Not a template. Not a team member. Not a bot. You tell me exactly what's going on with your athlete — I sit down and give you my real thoughts.</p>
+</section>
+
+<!-- VSL -->
+<section id="vsl">
+  <div class="vsl-wrap">
+    <!-- Replace VIDEO_ID when ready:
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" allowfullscreen></iframe>
+    -->
+    <div class="vsl-placeholder">
+      <div class="pm" style="font-size:20px;color:#2a2a2a;margin-bottom:8px;">Video coming soon</div>
+      <p>Drop in the YouTube ID to activate</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers">
+  <div class="tiers-inner">
+    <div class="tiers-head">
+      <div class="eyebrow">Two Ways to Work Together</div>
+      <h2>Pick What Fits<br>Your Situation.</h2>
+    </div>
+    <div class="tiers-grid">
+
+      <!-- ASK GABBY -->
+      <div class="tier">
+        <div class="tier-top">
+          <div class="tier-tag">Written · Async</div>
+          <div class="tier-name">Ask Gabby</div>
+          <div class="tier-price"><sup>$</sup>49</div>
+          <div class="tier-price-note">One question · Written response</div>
+        </div>
+        <div class="tier-hook">For the situation that's specific enough to need my eyes on it — but doesn't need a full call to solve.</div>
+        <div class="tier-body">
+          <div class="tier-label">What's Included</div>
+          <ul class="tier-list">
+            <li>Submit one question, as detailed as you need</li>
+            <li>A personal written response from Gabby — not a team member, not a template</li>
+            <li>Direct recommendations you can act on immediately</li>
+            <li>Response within 2 business days</li>
+          </ul>
+          <div class="tier-label">This Is For You If</div>
+          <ul class="tier-list">
+            <li>You have one specific situation — a conversation, a conflict, a decision — and you need clarity</li>
+            <li>You want a real answer, not a generic tip</li>
+            <li>You're not ready for ongoing support, but you're done guessing</li>
+          </ul>
+          <div class="tier-label">This Is Not For</div>
+          <ul class="tier-list tier-not">
+            <li>Multi-part situations that need back-and-forth → that's Deep Dive</li>
+            <li>Building a full plan across the season or the family system</li>
+          </ul>
+        </div>
+        <div class="tier-foot">
+          <a href="#" class="tier-cta">Submit Your Question →</a>
+        </div>
+      </div>
+
+      <!-- DEEP DIVE -->
+      <div class="tier featured">
+        <div class="tier-top">
+          <div class="tier-tag">Live · 1-Hour Call</div>
+          <div class="tier-name">Deep Dive</div>
+          <div class="tier-price"><sup>$</sup>250</div>
+          <div class="tier-price-note">60-min call · Written takeaways after</div>
+        </div>
+        <div class="tier-hook">Sometimes you just need an hour with someone who has seen this from every angle.</div>
+        <div class="tier-body">
+          <div class="tier-label">What's Included</div>
+          <ul class="tier-list">
+            <li>60-minute private call with Gabby</li>
+            <li>Gabby reviews your situation before the call — you're not spending the first 20 minutes getting her up to speed</li>
+            <li>A clear picture of what's happening in your family's ecosystem and what to do about it</li>
+            <li>Written document of takeaways and action items sent after the session</li>
+          </ul>
+          <div class="tier-label">This Is For You If</div>
+          <ul class="tier-list">
+            <li>You want Gabby's eyes on the full picture before making a bigger commitment</li>
+            <li>Your situation needs real back-and-forth, not just a written answer</li>
+            <li>You need an hour of clarity from someone who understands the full ecosystem</li>
+          </ul>
+        </div>
+        <div class="tier-foot">
+          <a href="#" class="tier-cta">Book Your Deep Dive →</a>
+          <div class="tier-credit">Your $250 applies in full toward any MindSystem program — Independent, Supported, or Inner Circle — if you decide to move forward.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<section id="quotes">
+  <div class="quotes-inner">
+    <div class="quotes-head">
+      <div class="eyebrow">Real Families</div>
+      <h2>What Happens When You<br>Actually Get an Answer.</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="q">
+        <div class="q-text">"We were putting all our energy into skill development — what we didn't appreciate is how truly mental this game is."</div>
+        <div class="q-name">Troy · Club Volleyball Dad</div>
+      </div>
+      <div class="q">
+        <div class="q-text">"Gabby walks us through the game and gets inside the mind of our athletes so we actually understand what they're going through."</div>
+        <div class="q-name">Lauren · Club Volleyball Mom</div>
+      </div>
+      <div class="q">
+        <div class="q-text">"Gabby called me while my daughter was in surgery — that one conversation made me feel so much better. I knew I'd be signing up."</div>
+        <div class="q-name">Stacey · Volleyball Mom</div>
+      </div>
+      <div class="q">
+        <div class="q-text">"I gained confidence in myself — not just volleyball skills, but the mindset training to manage my emotions in tough game situations."</div>
+        <div class="q-name">Brielle · Club Athlete</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>MazePerformance · Gabby Cole · <a href="mailto:gabby@mazeperformance.ai" style="color:#333;text-decoration:none;">gabby@mazeperformance.ai</a></p>
+  <p>© 2026 MazePerformance · Gabby Cole · <a href="mailto:gabby@mazeperformance.ai">gabby@mazeperformance.ai</a></p>
 </footer>
 
 </body>
