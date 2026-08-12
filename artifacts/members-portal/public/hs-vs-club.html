@@ -6,9 +6,9 @@
 <title>High School vs. Club Volleyball — Gabby Cole</title>
 <meta property="og:title" content="High School vs. Club Volleyball — What Every Parent Needs to Know">
 <meta property="og:description" content="Nobody explained this part. A free guide from Gabby Cole — built from 300+ surveys of parents, athletes, and coaches.">
-<meta property="og:image" content="https://members.gabbycole.com/415-social.png">
+<meta property="og:image" content="https://members.gabbycole.com/hs-vs-club-thumb.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://members.gabbycole.com/415-social.png">
+<meta name="twitter:image" content="https://members.gabbycole.com/hs-vs-club-thumb.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -22,13 +22,22 @@ html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 .brand{font-family:'Permanent Marker',cursive;font-size:14px;color:#FF1D6C;}
 
 /* ── HERO ── */
-#hero{padding:110px 24px 80px;text-align:center;border-bottom:1px solid #111;}
-.hero-inner{max-width:720px;margin:0 auto;}
+#hero{padding:80px 24px 0;border-bottom:1px solid #111;overflow:hidden;}
+.hero-layout{max-width:1080px;margin:0 auto;display:flex;align-items:flex-end;gap:0;}
+.hero-copy{flex:1;min-width:280px;padding-bottom:80px;text-align:left;}
+.hero-img{flex:0 0 380px;display:flex;align-items:flex-end;}
+.hero-img img{width:100%;display:block;object-fit:cover;object-position:center top;mask-image:linear-gradient(to bottom,black 60%,transparent 100%);}
 #hero .eyebrow{margin-bottom:24px;}
-#hero h1{font-family:'Permanent Marker',cursive;font-size:clamp(34px,6vw,64px);line-height:1.1;margin-bottom:12px;}
+#hero h1{font-family:'Permanent Marker',cursive;font-size:clamp(32px,5vw,60px);line-height:1.1;margin-bottom:12px;}
 #hero h1 span{color:#FF1D6C;}
-#hero .subtitle{font-size:clamp(15px,2vw,19px);font-weight:300;color:#fff;line-height:1.8;margin-bottom:32px;}
-#hero .hook{font-size:clamp(13px,1.8vw,16px);font-weight:300;color:#aaa;line-height:1.9;max-width:580px;margin:0 auto 40px;}
+#hero .subtitle{font-size:clamp(14px,1.8vw,18px);font-weight:300;color:#fff;line-height:1.8;margin-bottom:28px;}
+#hero .hook{font-size:clamp(13px,1.4vw,15px);font-weight:300;color:#aaa;line-height:1.9;max-width:460px;margin:0 0 36px;}
+@media(max-width:680px){
+  .hero-layout{flex-direction:column-reverse;align-items:center;}
+  .hero-copy{text-align:center;padding-bottom:48px;}
+  .hero-copy .hook{margin:0 auto 36px;}
+  .hero-img{flex:0 0 auto;width:80%;max-width:320px;}
+}
 .cta-primary{display:inline-block;background:linear-gradient(90deg,#7B35C0 0%,#FF1D6C 100%);color:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;}
 .cta-primary:hover{background:linear-gradient(90deg,#6a29a8 0%,#e0145a 100%);}
 .free-note{font-size:10px;font-weight:300;color:#444;letter-spacing:0.1em;margin-top:12px;}
@@ -105,13 +114,18 @@ footer a:hover{color:#FF1D6C;}
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Instant Download · $27</div>
-    <h1>High School vs.<br><span>Club Volleyball.</span></h1>
-    <p class="subtitle">What Every Parent Needs to Know<br>(That No One Tells You)</p>
-    <p class="hook">You're not crazy. Nobody explained this part. Your daughter plays both and somewhere in the middle you realized they are not the same vibe. The room feels different. The coaching feels different. The expectations feel different. And no one has said why.</p>
-    <a href="https://link.fastpaydirect.com/payment-link/6a7cdb34c8cc9a2ce7267ac2" class="cta-primary">Get the Guide — $27</a>
-    <div class="free-note">Instant PDF download · No fluff</div>
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <div class="eyebrow">Instant Download · $27</div>
+      <h1>High School vs.<br><span>Club Volleyball.</span></h1>
+      <p class="subtitle">What Every Parent Needs to Know<br>(That No One Tells You)</p>
+      <p class="hook">You're not crazy. Nobody explained this part. Your daughter plays both and somewhere in the middle you realized they are not the same vibe. The room feels different. The coaching feels different. The expectations feel different. And no one has said why.</p>
+      <a href="https://link.fastpaydirect.com/payment-link/6a7cdb34c8cc9a2ce7267ac2" class="cta-primary">Get the Guide — $27</a>
+      <div class="free-note">Instant PDF download · No fluff</div>
+    </div>
+    <div class="hero-img">
+      <img src="hs-vs-club-thumb.jpg" alt="Volleyball player mid-spike, lit in pink and purple neon">
+    </div>
   </div>
 </section>
 
