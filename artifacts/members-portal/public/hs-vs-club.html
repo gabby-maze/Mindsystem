@@ -29,8 +29,8 @@ html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 #hero h1 span{color:#FF1D6C;}
 #hero .subtitle{font-size:clamp(15px,2vw,19px);font-weight:300;color:#fff;line-height:1.8;margin-bottom:32px;}
 #hero .hook{font-size:clamp(13px,1.8vw,16px);font-weight:300;color:#aaa;line-height:1.9;max-width:580px;margin:0 auto 40px;}
-.cta-primary{display:inline-block;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;}
-.cta-primary:hover{background:#e0145a;}
+.cta-primary{display:inline-block;background:linear-gradient(90deg,#7B35C0 0%,#FF1D6C 100%);color:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;}
+.cta-primary:hover{background:linear-gradient(90deg,#6a29a8 0%,#e0145a 100%);}
 .free-note{font-size:10px;font-weight:300;color:#444;letter-spacing:0.1em;margin-top:12px;}
 
 /* ── CREDIBILITY ── */
@@ -38,7 +38,11 @@ html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 .cred-inner{max-width:760px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap;}
 .cred-item{flex:1;min-width:160px;text-align:center;padding:16px 20px;border-right:1px solid #1e1e1e;}
 .cred-item:last-child{border-right:none;}
-.cred-num{font-family:'Permanent Marker',cursive;font-size:32px;color:#FF1D6C;line-height:1;}
+.cred-num{font-family:'Permanent Marker',cursive;font-size:32px;line-height:1;}
+.cred-item:nth-child(1) .cred-num{color:#FF1D6C;}
+.cred-item:nth-child(2) .cred-num{color:#7B35C0;}
+.cred-item:nth-child(3) .cred-num{color:#FF1D6C;}
+.cred-item:nth-child(4) .cred-num{color:#7B35C0;}
 .cred-label{font-size:10px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:#aaa;margin-top:6px;line-height:1.5;}
 
 /* ── COPY ── */
@@ -55,7 +59,9 @@ html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 .inside-head h2{font-family:'Permanent Marker',cursive;font-size:clamp(26px,4vw,44px);line-height:1.1;margin-top:14px;}
 .inside-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
 .inside-item{background:#0d0d0d;padding:22px 24px;display:flex;gap:14px;align-items:flex-start;}
-.inside-dot{width:6px;height:6px;border-radius:50%;background:#FF1D6C;flex-shrink:0;margin-top:8px;}
+.inside-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:8px;}
+.inside-item:nth-child(odd) .inside-dot{background:#FF1D6C;}
+.inside-item:nth-child(even) .inside-dot{background:#7B35C0;}
 .inside-text{font-size:14px;font-weight:300;color:#fff;line-height:1.7;}
 @media(max-width:580px){.inside-grid{grid-template-columns:1fr;}}
 
@@ -64,23 +70,23 @@ html,body{background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 .for-inner{max-width:680px;margin:0 auto;}
 .for-grid{display:flex;gap:2px;margin-top:36px;flex-wrap:wrap;}
 .for-card{flex:1;min-width:260px;padding:32px 28px;}
-.for-card.yes{background:#111;border-top:3px solid #FF1D6C;}
+.for-card.yes{background:#111;border-top:3px solid #7B35C0;}
 .for-card.no{background:#0d0d0d;border-top:3px solid #1e1e1e;}
 .for-label{font-size:8px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:16px;}
-.for-card.yes .for-label{color:#FF1D6C;}
+.for-card.yes .for-label{color:#7B35C0;}
 .for-card.no .for-label{color:#444;}
 .for-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .for-list li{font-size:13px;font-weight:300;color:#fff;line-height:1.7;padding-left:16px;position:relative;}
 .for-list li::before{position:absolute;left:0;font-weight:700;}
-.for-card.yes .for-list li::before{content:'✓';color:#FF1D6C;}
+.for-card.yes .for-list li::before{content:'✓';color:#7B35C0;}
 .for-card.no .for-list li::before{content:'×';color:#444;}
 .for-card.no .for-list li{color:#666;}
 
 /* ── BOTTOM CTA ── */
-#bottom-cta{background:#FF1D6C;padding:90px 24px;text-align:center;}
+#bottom-cta{background:linear-gradient(135deg,#7B35C0 0%,#FF1D6C 100%);padding:90px 24px;text-align:center;}
 #bottom-cta h2{font-family:'Permanent Marker',cursive;font-size:clamp(28px,5vw,52px);color:#fff;line-height:1.1;margin-bottom:16px;}
-#bottom-cta p{font-size:16px;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.8;max-width:480px;margin:0 auto 36px;}
-.cta-wht{display:inline-block;background:#fff;color:#FF1D6C;font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;}
+#bottom-cta p{font-size:16px;font-weight:300;color:rgba(255,255,255,0.85);line-height:1.8;max-width:480px;margin:0 auto 36px;}
+.cta-wht{display:inline-block;background:#fff;color:#7B35C0;font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;}
 .cta-wht:hover{background:#f0f0f0;}
 
 /* ── FOOTER ── */
@@ -100,12 +106,12 @@ footer a:hover{color:#FF1D6C;}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Free Guide · Instant Download</div>
+    <div class="eyebrow">Instant Download · $27</div>
     <h1>High School vs.<br><span>Club Volleyball.</span></h1>
     <p class="subtitle">What Every Parent Needs to Know<br>(That No One Tells You)</p>
-    <p class="hook">You're not crazy. Nobody explained this part. Your daughter plays both and somewhere in the middle you realized they are not the same sport. The room feels different. The coaching feels different. The expectations feel different. And no one has said why.</p>
-    <a href="/hs-vs-club-download.html" class="cta-primary">Get the Free Guide</a>
-    <div class="free-note">Free · Instant PDF download · No fluff</div>
+    <p class="hook">You're not crazy. Nobody explained this part. Your daughter plays both and somewhere in the middle you realized they are not the same vibe. The room feels different. The coaching feels different. The expectations feel different. And no one has said why.</p>
+    <a href="https://link.fastpaydirect.com/payment-link/6a7cdb34c8cc9a2ce7267ac2" class="cta-primary">Get the Guide — $27</a>
+    <div class="free-note">Instant PDF download · No fluff</div>
   </div>
 </section>
 
@@ -125,18 +131,9 @@ footer a:hover{color:#FF1D6C;}
       <div class="cred-label">Former Division I Player</div>
     </div>
     <div class="cred-item">
-      <div class="cred-num">40 yr</div>
-      <div class="cred-label">Coach in the Family</div>
+      <div class="cred-num">Mom</div>
+      <div class="cred-label">Daughters Playing the Game Right Now</div>
     </div>
-  </div>
-</section>
-
-<!-- COPY -->
-<section id="copy">
-  <div class="copy-inner">
-    <div class="body-p">That's not a parenting failure. It's what happens when two systems share a name and nobody says out loud that they have two different jobs.</div>
-    <div class="pull"><p>"Every quote inside is real. None of them are mine."</p></div>
-    <div class="body-p">This guide gives you the comparison. Not motivation, not platitudes, and not a list of drills. Fifteen sections on how high school volleyball and club volleyball actually differ, built from surveys of more than 300 parents, athletes, and coaches, and written by someone who has sat in every seat at the table.</div>
   </div>
 </section>
 
@@ -196,9 +193,9 @@ footer a:hover{color:#FF1D6C;}
 
 <!-- BOTTOM CTA -->
 <section id="bottom-cta">
-  <h2>Get the Guide.<br>Free. Right Now.</h2>
-  <p>Download it, read it, and finally understand what you've been watching from the stands.</p>
-  <a href="/hs-vs-club-download.html" class="cta-wht">Get the Free Guide</a>
+  <h2>Get the Guide.<br>Right Now.</h2>
+  <p>Read it and finally understand what you've been watching from the stands.</p>
+  <a href="https://link.fastpaydirect.com/payment-link/6a7cdb34c8cc9a2ce7267ac2" class="cta-wht">Get the Guide — $27</a>
 </section>
 
 <!-- FOOTER -->
