@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Download — MazePerformance</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-height:100%;background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
+
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 80px;text-align:center;}
+
+.brand{font-family:'Permanent Marker',cursive;font-size:13px;color:#FF1D6C;margin-bottom:48px;opacity:0.7;}
+
+.eyebrow{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#FF1D6C;margin-bottom:20px;}
+
+.guide-card{background:#111;border-top:3px solid #FF1D6C;padding:44px 48px;max-width:580px;width:100%;margin-bottom:16px;}
+.guide-label{font-size:9px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#FF1D6C;margin-bottom:16px;}
+.guide-title{font-family:'Permanent Marker',cursive;font-size:clamp(22px,4vw,34px);line-height:1.2;color:#fff;margin-bottom:8px;}
+.guide-sub{font-size:14px;font-weight:300;color:#fff;line-height:1.7;margin-bottom:32px;}
+.btn-download{display:inline-flex;align-items:center;gap:12px;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:18px 40px;text-decoration:none;width:100%;justify-content:center;}
+.btn-download:hover{background:#e0145a;}
+.btn-download svg{flex-shrink:0;}
+
+.divider{width:40px;height:1px;background:#222;margin:0 auto 16px;}
+
+.webinar-card{background:#111;border-top:3px solid #7B35C0;padding:36px 48px;max-width:580px;width:100%;}
+.webinar-label{font-size:9px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#7B35C0;margin-bottom:12px;}
+.webinar-title{font-family:'Permanent Marker',cursive;font-size:clamp(18px,3vw,26px);color:#fff;line-height:1.2;margin-bottom:8px;}
+.webinar-sub{font-size:13px;font-weight:300;color:#fff;line-height:1.7;margin-bottom:28px;}
+.btn-webinar{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid #7B35C0;color:#7B35C0;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:16px 40px;text-decoration:none;width:100%;justify-content:center;}
+.btn-webinar:hover{background:#7B35C0;color:#fff;}
+
+footer{margin-top:48px;font-size:10px;font-weight:300;color:#333;letter-spacing:0.12em;}
+footer a{color:#333;text-decoration:none;}
+footer a:hover{color:#FF1D6C;}
+
+@media(max-width:500px){
+  .guide-card,.webinar-card{padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="brand">MazePerformance</div>
+
+  <div class="eyebrow">Your Download Is Ready</div>
+
+  <!-- PDF Download -->
+  <div class="guide-card">
+    <div class="guide-label">Free Guide</div>
+    <div class="guide-title">High School vs. Club Volleyball</div>
+    <div class="guide-sub">What Every Parent Needs to Know<br>(That No One Tells You)</div>
+    <a href="https://assets.cdn.filesafe.space/0MA6xJ1bECwmqZBI5uvI/media/6a7cc023fe4291bd10682798.pdf" target="_blank" class="btn-download">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download the Guide
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Webinar -->
+  <div class="webinar-card">
+    <div class="webinar-label">Free Training</div>
+    <div class="webinar-title">The Missing Framework</div>
+    <div class="webinar-sub">The webinar that goes deeper on everything in the guide. Watch it free.</div>
+    <a href="https://members.gabbycole.com/missing-framework.html" target="_blank" class="btn-webinar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Watch the Training
+    </a>
+  </div>
+
+  <footer>
+    <p>MazePerformance · Gabby Cole · <a href="mailto:gabby@mazeperformance.ai">gabby@mazeperformance.ai</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
