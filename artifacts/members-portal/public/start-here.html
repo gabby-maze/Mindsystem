@@ -3,482 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Work with Gabby Cole — MazePerformance</title>
-<meta property="og:title" content="Work with Gabby Cole — MazePerformance">
-<meta property="og:description" content="Mental performance coaching for club volleyball families. Find out if Gabby is the right fit for your daughter.">
+<title>Ask Gabby — MazePerformance</title>
+<meta property="og:title" content="Ask Gabby — MazePerformance">
+<meta property="og:description" content="Got a question about your athlete? Submit it. Gabby answers with a personal video response.">
 <meta property="og:image" content="https://members.gabbycole.com/415-social.png">
-<meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://members.gabbycole.com/415-social.png">
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{width:100%;background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;overflow-x:hidden;}
+html,body{min-height:100%;background:#0a0a0a;font-family:'Oswald',sans-serif;color:#fff;}
 
-/* ── TOPBAR ── */
-#topbar{position:fixed;top:0;left:0;right:0;height:44px;background:#000;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000;}
-.brand{font-family:'Permanent Marker',cursive;font-size:14px;color:#FF1D6C;}
-.stitle{font-size:10px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:#555;}
-.top-cta{background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;border:none;padding:7px 18px;cursor:pointer;text-decoration:none;}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 80px;}
 
-/* ── SHARED ── */
-.pm{font-family:'Permanent Marker',cursive;}
-.eyebrow{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#FF1D6C;}
-.section-rule{height:1px;background:linear-gradient(to right,transparent,#FF1D6C,transparent);margin:0 auto;}
+/* Logo / brand */
+.brand{font-family:'Permanent Marker',cursive;font-size:13px;color:#FF1D6C;letter-spacing:0.04em;margin-bottom:48px;opacity:0.7;}
 
-/* ── HERO ── */
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;background:#0a0a0a;}
-#hero .eyebrow{margin-bottom:28px;}
-#hero h1{font-family:'Permanent Marker',cursive;font-size:clamp(40px,7vw,84px);line-height:1.05;color:#fff;max-width:860px;margin-bottom:8px;}
-#hero h1 span{color:#FF1D6C;}
-#hero .sub{font-size:clamp(13px,1.8vw,16px);font-weight:300;color:#777;letter-spacing:0.06em;line-height:1.8;max-width:540px;margin:28px auto 0;}
-.hero-rule{width:60px;height:2px;background:#FF1D6C;margin:32px auto;}
+/* Hero */
+.eyebrow{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:#FF1D6C;margin-bottom:20px;}
+h1{font-family:'Permanent Marker',cursive;font-size:clamp(36px,8vw,72px);line-height:1.05;text-align:center;max-width:700px;margin-bottom:24px;}
+.sub{font-size:clamp(14px,2vw,17px);font-weight:300;color:#777;line-height:1.85;text-align:center;max-width:480px;margin-bottom:48px;}
 
-/* ── VSL ── */
-#vsl{background:#0a0a0a;padding:0 24px 80px;display:flex;flex-direction:column;align-items:center;}
-.vsl-frame{width:100%;max-width:840px;aspect-ratio:16/9;background:#111;border:1px solid #1e1e1e;position:relative;display:flex;align-items:center;justify-content:center;}
-.vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+/* CTA block */
+.cta-block{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:56px;}
+.price{font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#555;}
+.cta-btn{display:inline-block;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:20px 56px;text-decoration:none;border:none;cursor:pointer;}
+.cta-btn:hover{background:#e0145a;}
+.cta-note{font-size:11px;font-weight:300;color:#444;letter-spacing:0.08em;}
 
-/* ── PROOF BAND ── */
-#proof{background:#111;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:40px 24px;}
-.proof-inner{max-width:900px;margin:0 auto;display:flex;gap:0;justify-content:center;flex-wrap:wrap;}
-.proof-item{flex:1;min-width:160px;text-align:center;padding:16px 24px;border-right:1px solid #1e1e1e;}
-.proof-item:last-child{border-right:none;}
-.proof-num{font-family:'Permanent Marker',cursive;font-size:36px;color:#FF1D6C;line-height:1;}
-.proof-label{font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#555;margin-top:6px;}
+/* Divider */
+.divider{width:40px;height:1px;background:#FF1D6C;margin:0 auto 48px;opacity:0.4;}
 
-/* ── BODY SECTIONS ── */
-.section{padding:90px 24px 100px;}
-.section-inner{max-width:760px;margin:0 auto;}
+/* How it works */
+.steps{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;max-width:680px;margin-bottom:56px;}
+.step{text-align:center;flex:1;min-width:140px;}
+.step-num{font-family:'Permanent Marker',cursive;font-size:32px;color:#FF1D6C;margin-bottom:8px;}
+.step-label{font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#888;line-height:1.6;}
 
-/* ── IDENTITY / PROBLEM ── */
-#identity{background:#0a0a0a;border-top:1px solid #111;}
-.big-stmt{font-family:'Permanent Marker',cursive;font-size:clamp(28px,4.5vw,52px);color:#fff;line-height:1.2;margin-bottom:20px;}
-.big-stmt span{color:#FF1D6C;}
-.body-p{font-size:16px;font-weight:300;color:#888;line-height:1.9;margin-bottom:20px;}
-.body-p strong{color:#ccc;font-weight:500;}
-.pull-quote{border-left:3px solid #FF1D6C;padding:18px 28px;margin:36px 0;background:#111;}
-.pull-quote p{font-family:'Permanent Marker',cursive;font-size:22px;color:#fff;line-height:1.4;}
+/* Quotes */
+.quotes{display:flex;flex-direction:column;gap:20px;max-width:560px;width:100%;}
+.quote-item{border-left:2px solid #1e1e1e;padding:0 0 0 20px;}
+.quote-item:hover{border-left-color:#FF1D6C;}
+.quote-text{font-size:14px;font-weight:300;color:#666;line-height:1.8;font-style:italic;margin-bottom:6px;}
+.quote-name{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#444;}
 
-/* ── FALSE SOLUTIONS ── */
-#false-solutions{background:#111;border-top:1px solid #1a1a1a;}
-.fs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#1e1e1e;border:1px solid #1e1e1e;margin-top:48px;}
-.fs-item{background:#111;padding:32px 28px;}
-.fs-title{font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FF1D6C;margin-bottom:10px;}
-.fs-why{font-size:14px;font-weight:300;color:#666;line-height:1.8;}
+/* Footer */
+footer{position:fixed;bottom:0;left:0;right:0;padding:12px 24px;text-align:center;background:linear-gradient(to top,#0a0a0a,transparent);}
+footer p{font-size:10px;font-weight:300;color:#333;letter-spacing:0.12em;}
 
-/* ── MECHANISM ── */
-#mechanism{background:#0a0a0a;border-top:1px solid #111;}
-.mech-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px;}
-@media(max-width:680px){.mech-grid{grid-template-columns:1fr;gap:36px;}}
-.mech-stat{text-align:center;padding:36px;background:#111;border-top:2px solid #FF1D6C;}
-.mech-stat .num{font-family:'Permanent Marker',cursive;font-size:56px;color:#FF1D6C;line-height:1;}
-.mech-stat .lbl{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#555;margin-top:8px;}
-
-/* ── TESTIMONIALS ── */
-#testimonials{background:#0d0d0d;border-top:1px solid #111;padding:90px 24px 100px;}
-.test-card{background:#111;border:1px solid #1e1e1e;padding:0 0 28px;display:flex;flex-direction:column;align-items:center;width:220px;flex-shrink:0;}
-.test-photo{width:220px;height:220px;overflow:hidden;margin-bottom:20px;background:#1a1a1a;}
-.test-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:grayscale(30%);}
-.test-photo-sm{width:160px;height:160px;}
-.test-card-sm{width:160px;}
-.test-name{font-family:'Permanent Marker',cursive;font-size:20px;color:#fff;margin-bottom:3px;}
-.test-role{font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#555;margin-bottom:18px;}
-.test-btn{background:transparent;border:1px solid #FF1D6C;color:#FF1D6C;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:9px 20px;cursor:pointer;transition:all .15s;}
-.test-btn:hover{background:#FF1D6C;color:#fff;}
-
-/* ── VIDEO MODAL ── */
-#modal{position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:9000;display:none;align-items:center;justify-content:center;padding:24px;}
-#modal.open{display:flex;}
-.modal-inner{position:relative;width:100%;max-width:700px;}
-.modal-inner iframe{width:100%;aspect-ratio:16/9;border:none;display:block;}
-.modal-inner.tall iframe{aspect-ratio:9/16;max-height:80vh;width:auto;margin:0 auto;}
-#modal-close{position:absolute;top:-36px;right:0;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;letter-spacing:0.1em;font-family:'Oswald',sans-serif;}
-
-/* ── TIERS ── */
-#tiers{background:#0a0a0a;border-top:1px solid #111;padding:90px 24px 100px;}
-.tiers-grid{display:flex;gap:2px;max-width:1080px;margin:60px auto 0;flex-wrap:wrap;}
-.tier-card{flex:1;min-width:280px;background:#111;border-top:3px solid #333;display:flex;flex-direction:column;transition:border-color .2s;}
-.tier-card:hover{border-top-color:#FF1D6C;}
-.tier-card.featured{border-top-color:#FF1D6C;background:#141414;}
-.tier-head{padding:36px 32px 24px;}
-.tier-badge{font-size:8px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#FF1D6C;margin-bottom:14px;}
-.tier-name{font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1.1;margin-bottom:10px;}
-.tier-price{font-size:42px;font-weight:700;color:#fff;letter-spacing:-0.02em;line-height:1;}
-.tier-price sup{font-size:22px;font-weight:400;vertical-align:super;}
-.tier-period{font-size:11px;font-weight:300;color:#555;letter-spacing:0.1em;margin-top:4px;}
-.tier-summary{padding:0 32px 24px;font-size:14px;font-weight:300;color:#777;line-height:1.8;border-bottom:1px solid #1e1e1e;}
-.tier-body{padding:28px 32px;flex:1;}
-.tier-section-label{font-size:8px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#444;margin-bottom:14px;}
-.tier-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
-.tier-list li{font-size:13px;font-weight:300;color:#999;line-height:1.6;padding-left:18px;position:relative;}
-.tier-list li::before{content:'—';position:absolute;left:0;color:#FF1D6C;font-weight:700;}
-.tier-not{color:#444 !important;}
-.tier-not::before{color:#333 !important;}
-.tier-foot{padding:0 32px 36px;}
-.tier-cta{display:block;width:100%;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-align:center;padding:16px 24px;text-decoration:none;border:none;cursor:pointer;}
-.tier-card.featured .tier-cta{background:#FF1D6C;}
-.tier-card:not(.featured) .tier-cta{background:transparent;border:1px solid #FF1D6C;color:#FF1D6C;}
-.tier-card:not(.featured) .tier-cta:hover{background:#FF1D6C;color:#fff;}
-.tier-process{padding:0 32px 24px;font-size:12px;font-weight:300;color:#555;line-height:1.8;font-style:italic;}
-
-/* ── FINAL CTA ── */
-#final-cta{background:#FF1D6C;padding:100px 24px;text-align:center;}
-#final-cta h2{font-family:'Permanent Marker',cursive;font-size:clamp(32px,5vw,60px);color:#fff;line-height:1.1;margin-bottom:20px;}
-#final-cta p{font-size:16px;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.8;max-width:520px;margin:0 auto 40px;}
-.cta-btn-wht{display:inline-block;background:#fff;color:#FF1D6C;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:18px 48px;text-decoration:none;border:none;cursor:pointer;}
-
-/* ── FOOTER ── */
-footer{background:#000;border-top:1px solid #111;padding:32px 24px;text-align:center;}
-footer p{font-size:10px;font-weight:300;letter-spacing:0.15em;color:#333;}
-
-@media(max-width:600px){
-  .proof-item{min-width:140px;}
-  .tiers-grid{gap:16px;}
-  #topbar .stitle{display:none;}
+@media(max-width:500px){
+  .steps{gap:24px;}
+  .cta-btn{padding:18px 40px;font-size:13px;}
 }
 </style>
 </head>
 <body>
 
-<!-- ── TOPBAR ── -->
-<div id="topbar">
+<div class="page">
+
   <div class="brand">MazePerformance</div>
-  <div class="stitle">Gabby Cole · Mental Performance</div>
-  <a href="#tiers" class="top-cta">Work With Gabby</a>
+
+  <div class="eyebrow">Ask Gabby</div>
+
+  <h1>Got a Question<br>About Your Athlete?</h1>
+
+  <p class="sub">Submit your question. Gabby answers with a personal video response — specific to your situation, delivered within 3 business days.</p>
+
+  <div class="cta-block">
+    <div class="price">$97 · One question · One video response</div>
+    <a href="#" class="cta-btn">Submit Your Question →</a>
+    <div class="cta-note">No call required. No back-and-forth. Just your question and her answer.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- How it works -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-label">Submit your question about your athlete or your family dynamic</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-label">Gabby records a personal video response — specific to you</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-label">Delivered within 3 business days. Real answer. Real voice.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Testimonials -->
+  <div class="quotes">
+    <div class="quote-item">
+      <div class="quote-text">"We were putting all our energy into skill development — what we didn't appreciate is how truly mental this game is."</div>
+      <div class="quote-name">Troy · Club Volleyball Dad</div>
+    </div>
+    <div class="quote-item">
+      <div class="quote-text">"Gabby walks us through the game and gets inside the mind of our athletes so we actually understand what they're going through."</div>
+      <div class="quote-name">Lauren · Club Volleyball Mom</div>
+    </div>
+    <div class="quote-item">
+      <div class="quote-text">"Gabby called me while my daughter was in surgery — that one conversation made me feel so much better. I knew I'd be signing up."</div>
+      <div class="quote-name">Stacey · Volleyball Mom</div>
+    </div>
+    <div class="quote-item">
+      <div class="quote-text">"I gained confidence in myself — not just volleyball skills, but the mindset training to manage my emotions in tough game situations."</div>
+      <div class="quote-name">Brielle · Club Athlete</div>
+    </div>
+  </div>
+
 </div>
 
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="eyebrow">Mental Performance · Club Volleyball Families</div>
-  <h1>Your Daughter Is Putting In the Work.<br><span>Is the Rest of You?</span></h1>
-  <div class="hero-rule"></div>
-  <p class="sub">She has a coach for her serve. Her setting. Her footwork. Nobody is coaching the part that determines whether any of it sticks.</p>
-</section>
-
-<!-- ── VSL ── -->
-<section id="vsl">
-  <div class="vsl-frame">
-    <!-- Replace VIDEO_ID with the triage VSL YouTube ID when ready -->
-    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;">
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:#333;">Video Placeholder</div>
-      <div class="pm" style="font-size:24px;color:#555;line-height:1.3;">VSL goes here.<br>Drop in the YouTube embed ID below.</div>
-      <div style="font-size:12px;font-weight:300;color:#333;font-style:italic;">Replace VIDEO_ID in the src below with the YouTube video ID</div>
-    </div>
-    <!-- UNCOMMENT AND REPLACE VIDEO_ID WHEN READY:
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&autoplay=0" allowfullscreen></iframe>
-    -->
-  </div>
-</section>
-
-<!-- ── PROOF BAND ── -->
-<section id="proof">
-  <div class="proof-inner">
-    <div class="proof-item">
-      <div class="proof-num">8+</div>
-      <div class="proof-label">Years Coaching Families</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">Pro</div>
-      <div class="proof-label">Played at the Highest Level</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">3</div>
-      <div class="proof-label">Ways to Work Together</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">1</div>
-      <div class="proof-label">Framework. Tested in Real Seasons.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── IDENTITY / PROBLEM ── -->
-<section id="identity" class="section">
-  <div class="section-inner">
-    <div class="eyebrow" style="margin-bottom:24px;">The Real Problem</div>
-    <div class="big-stmt">You're Not Confused About <span>Volleyball.</span><br>You're Confused About Your Role In It.</div>
-    <p class="body-p">Your daughter is 13 or 14. She's on a club team. She's getting reps. She's in the gym three, four, five days a week. You're spending real money to make sure she has every opportunity.</p>
-    <p class="body-p">And something still isn't clicking.</p>
-    <p class="body-p">Not her serve. Not her footwork. Something harder to name. The way she shuts down after a mistake. The car ride home that goes quiet or sideways. The way she can't seem to play the way she practices. The way she looks at you in the stands.</p>
-    <div class="pull-quote"><p>"What's happening in the gym is a symptom. What's happening in the family is the system."</p></div>
-    <p class="body-p">The physical investment is there. The <strong>mental and intangible investment</strong> — the part that determines how she processes failure, receives feedback, and builds a competitive identity — that part hasn't been coached. And it won't happen by accident.</p>
-    <p class="body-p">That's where Gabby works.</p>
-  </div>
-</section>
-
-<!-- ── FALSE SOLUTIONS ── -->
-<section id="false-solutions" class="section">
-  <div class="section-inner">
-    <div class="eyebrow" style="margin-bottom:16px;">Why Nothing Else Is Working</div>
-    <div class="big-stmt" style="font-size:clamp(24px,4vw,44px);">You've Probably Already Tried<br>Some Version of This.</div>
-    <p class="body-p" style="margin-top:20px;">And it didn't stick. Not because you didn't care — because none of it addresses the actual gap.</p>
-    <div class="fs-grid">
-      <div class="fs-item">
-        <div class="fs-title">More Private Lessons</div>
-        <div class="fs-why">Technical reps don't address the moments between the reps. The mindset, the reset, the identity — those don't get better with repetition alone.</div>
-      </div>
-      <div class="fs-item">
-        <div class="fs-title">More Tournaments</div>
-        <div class="fs-why">Competition exposes the gaps. It doesn't close them. Throwing her into more pressure without a framework for processing it just reinforces the patterns you're trying to break.</div>
-      </div>
-      <div class="fs-item">
-        <div class="fs-title">Therapy or Counseling</div>
-        <div class="fs-why">General mental health support isn't sport-specific. What athletes and their families need is performance language — a shared framework, not just a place to talk about feelings.</div>
-      </div>
-      <div class="fs-item">
-        <div class="fs-title">Talking to Her More</div>
-        <div class="fs-why">More conversation without structure adds noise, not clarity. Athletes don't need more advice from the stands. They need parents who know their role — and play it.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── MECHANISM ── -->
-<section id="mechanism" class="section">
-  <div class="section-inner">
-    <div class="eyebrow" style="margin-bottom:16px;">Why Gabby</div>
-    <div class="big-stmt" style="font-size:clamp(24px,4vw,44px);">She Didn't Learn This<br>in a Classroom.</div>
-    <div class="mech-grid">
-      <div>
-        <p class="body-p">Gabby Cole played professionally. She grew up inside the competitive volleyball system — not watching it, living it. She knows what the car ride home feels like from both seats.</p>
-        <p class="body-p">After her playing career, she noticed the same pattern in every family she worked with: the athlete was being coached, but the <strong>family dynamic</strong> — the thing that either accelerates or sabotages everything else — was completely unaddressed.</p>
-        <p class="body-p">So she built a system. Not a theory. A framework tested across real families, real seasons, real stakes. It's called the MindSystem, and it gives athletes and parents a <strong>shared language</strong> for the work that doesn't happen in the gym.</p>
-        <div class="pull-quote"><p>"The coaches are coaching the game. Gabby coaches the family."</p></div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:2px;">
-        <div class="mech-stat">
-          <div class="num">Pro</div>
-          <div class="lbl">Playing Background</div>
-        </div>
-        <div class="mech-stat" style="border-top-color:#FF1D6C;">
-          <div class="num">1</div>
-          <div class="lbl">System. Built for Families.</div>
-        </div>
-        <div class="mech-stat">
-          <div class="num">Both</div>
-          <div class="lbl">Athletes + Parents Coached</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TESTIMONIALS ── -->
-<section id="testimonials">
-  <div style="text-align:center;margin-bottom:64px;">
-    <div class="eyebrow" style="margin-bottom:16px;">Real Families. Real Seasons.</div>
-    <h2 class="pm" style="font-size:clamp(26px,5vw,48px);color:#fff;line-height:1.1;">Families Who've Done the Work.</h2>
-  </div>
-
-  <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto 32px;">
-    <div class="test-card">
-      <div class="test-photo"><img src="troy.png" alt="Troy"></div>
-      <div class="test-name">Troy</div>
-      <div class="test-role">Athlete Parent</div>
-      <button class="test-btn" onclick="openVideo('KyJwOTGtGLo','16/9')">▶ Watch Troy's Story</button>
-    </div>
-    <div class="test-card">
-      <div class="test-photo"><img src="lauren.png" alt="Lauren"></div>
-      <div class="test-name">Lauren</div>
-      <div class="test-role">Athlete Parent</div>
-      <button class="test-btn" onclick="openVideo('C7zwruNsIhY','9/16')">▶ Watch Lauren's Story</button>
-    </div>
-  </div>
-
-  <div style="max-width:480px;margin:0 auto 60px;text-align:center;">
-    <div style="height:1px;background:linear-gradient(to right,transparent,#FF1D6C,transparent);margin-bottom:24px;"></div>
-    <div style="font-size:9px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#333;">More from the field</div>
-  </div>
-
-  <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-    <div class="test-card">
-      <div class="test-photo"><img src="stacey.png" alt="Stacey"></div>
-      <div class="test-name">Stacey</div>
-      <div class="test-role">Athlete Parent</div>
-      <button class="test-btn" onclick="openVideo('ESWv-soW-PA','9/16')">🎧 Listen Now</button>
-    </div>
-    <div class="test-card">
-      <div class="test-photo"><img src="brielle.png" alt="Brielle"></div>
-      <div class="test-name">Brielle</div>
-      <div class="test-role">The Athlete</div>
-      <button class="test-btn" onclick="openVideo('rS1XPNw7S_k','9/16')">🎧 Listen Now</button>
-    </div>
-  </div>
-</section>
-
-<!-- ── TIERS ── -->
-<section id="tiers">
-  <div style="text-align:center;max-width:760px;margin:0 auto;">
-    <div class="eyebrow" style="margin-bottom:16px;">Three Ways to Work Together</div>
-    <h2 class="pm" style="font-size:clamp(28px,5vw,52px);color:#fff;line-height:1.1;">Find the Right Level<br>For Your Family.</h2>
-    <p style="font-size:15px;font-weight:300;color:#666;line-height:1.8;margin-top:20px;">Every family is at a different point. Start where you are.</p>
-  </div>
-
-  <div class="tiers-grid">
-
-    <!-- TIER 1: ASK GABBY -->
-    <div class="tier-card">
-      <div class="tier-head">
-        <div class="tier-badge">Entry Point</div>
-        <div class="tier-name">Ask Gabby</div>
-        <div class="tier-price"><sup>$</sup>97</div>
-        <div class="tier-period">One-time · Async Q&amp;A</div>
-      </div>
-      <div class="tier-summary">
-        You have a specific question — about your daughter, your dynamic, a moment that happened. Submit it. Gabby answers with a personal video response.
-      </div>
-      <div class="tier-body">
-        <div class="tier-section-label">What's Included</div>
-        <ul class="tier-list">
-          <li>Submit one focused question about your family's dynamic, your athlete, or a specific situation</li>
-          <li>Personalized video response from Gabby — not a template, not a form reply</li>
-          <li>Delivered within 3 business days</li>
-          <li>Actionable, specific, in Gabby's voice</li>
-        </ul>
-        <div class="tier-section-label">Best For</div>
-        <ul class="tier-list">
-          <li>Families at the beginning — testing if this is the right fit</li>
-          <li>One situation that needs a real answer, not more research</li>
-          <li class="tier-not">Not a fit if you need ongoing support or a full system</li>
-        </ul>
-      </div>
-      <div class="tier-process">After you submit, expect your video response within 3 business days. No back-and-forth needed — just your question, clearly stated.</div>
-      <div class="tier-foot">
-        <a href="#" class="tier-cta">Get Your Answer →</a>
-      </div>
-    </div>
-
-    <!-- TIER 2: STRATEGY SESSION -->
-    <div class="tier-card featured">
-      <div class="tier-head">
-        <div class="tier-badge">Most Popular</div>
-        <div class="tier-name">Strategy Session</div>
-        <div class="tier-price"><sup>$</sup>350</div>
-        <div class="tier-period">One-time · Live 60-Min Call</div>
-      </div>
-      <div class="tier-summary">
-        A real conversation — live, focused, and built around your family's specific situation. You leave with a clear picture of what's happening and a plan for what comes next.
-      </div>
-      <div class="tier-body">
-        <div class="tier-section-label">What's Included</div>
-        <ul class="tier-list">
-          <li>60-minute live session with Gabby — you and/or your athlete</li>
-          <li>Full intake before the call so Gabby comes prepared, not cold</li>
-          <li>Situational breakdown: what's actually happening beneath the surface</li>
-          <li>A clear action plan — language, behaviors, and next steps you can use immediately</li>
-          <li>Session notes sent after the call</li>
-        </ul>
-        <div class="tier-section-label">Best For</div>
-        <ul class="tier-list">
-          <li>Families who want real-time dialogue and personalized direction</li>
-          <li>A specific season, event, or transition coming up</li>
-          <li>Parents who want to understand what their role actually looks like in practice</li>
-          <li class="tier-not">Not a fit if you need ongoing weekly accountability</li>
-        </ul>
-      </div>
-      <div class="tier-process">After purchase, you'll receive a short intake form. Book your call from the confirmation page. Gabby reviews your intake before you ever get on the phone.</div>
-      <div class="tier-foot">
-        <a href="#" class="tier-cta">Book Your Strategy Session →</a>
-      </div>
-    </div>
-
-    <!-- TIER 3: ECOSYSTEM PLANNING SESSION -->
-    <div class="tier-card">
-      <div class="tier-head">
-        <div class="tier-badge">Full System</div>
-        <div class="tier-name">Ecosystem Planning Session</div>
-        <div class="tier-price"><sup>$</sup>1,500</div>
-        <div class="tier-period">One-time · Deep-Dive Engagement</div>
-      </div>
-      <div class="tier-summary">
-        A comprehensive look at your athlete's full ecosystem — family, team, coaches, schedule, and mental framework. Built for families ready to do the real work from the ground up.
-      </div>
-      <div class="tier-body">
-        <div class="tier-section-label">What's Included</div>
-        <ul class="tier-list">
-          <li>Full ecosystem audit — athlete, parent, coach communication, and environment</li>
-          <li>Deep-dive intake process before the session begins</li>
-          <li>Multiple-hour engagement with Gabby (athlete and parent, together and separate)</li>
-          <li>Complete MindSystem framework introduction and personalized roadmap</li>
-          <li>Documented plan — language, protocols, and seasonal benchmarks</li>
-          <li>Follow-up check-in call within 30 days</li>
-        </ul>
-        <div class="tier-section-label">Best For</div>
-        <ul class="tier-list">
-          <li>Families who've tried everything and want a complete reset</li>
-          <li>Athletes in a pivotal season — recruiting year, major transition, or performance plateau</li>
-          <li>Parents committed to changing the dynamic, not just understanding it</li>
-          <li class="tier-not">Not a fit if you're looking for a quick fix or single conversation</li>
-        </ul>
-      </div>
-      <div class="tier-process">After purchase, Gabby's team will reach out to schedule your intake and build the session around your timeline and your athlete's season.</div>
-      <div class="tier-foot">
-        <a href="#" class="tier-cta">Apply for an Ecosystem Session →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Courtside band -->
-  <div style="max-width:860px;margin:60px auto 0;background:#111;border-top:2px solid #FF1D6C;padding:40px 48px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
-    <div style="flex:1;min-width:220px;">
-      <div class="eyebrow" style="margin-bottom:10px;">Not Ready for 1-on-1?</div>
-      <div class="pm" style="font-size:28px;color:#fff;line-height:1.2;margin-bottom:12px;">Start with Courtside Conversations.</div>
-      <p style="font-size:14px;font-weight:300;color:#666;line-height:1.8;">The virtual learning community where Gabby answers your questions with full video trainings — and the more your family engages, the more you learn. Starting at $30/month.</p>
-    </div>
-    <div style="flex-shrink:0;">
-      <a href="https://gabbycole.com/community" target="_blank" style="display:inline-block;background:#FF1D6C;color:#fff;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:16px 32px;text-decoration:none;">Join Courtside →</a>
-    </div>
-  </div>
-
-</section>
-
-<!-- ── FINAL CTA ── -->
-<section id="final-cta">
-  <h2>Ready to Match<br>the Investment?</h2>
-  <p>She's already putting in the physical work. The part that determines how far it takes her — that starts with you. Pick your starting point above.</p>
-  <a href="#tiers" class="cta-btn-wht">See the Options</a>
-</section>
-
-<!-- ── FOOTER ── -->
 <footer>
-  <p>© 2026 MazePerformance · Gabby Cole · All rights reserved · <a href="mailto:gabby@mazeperformance.ai" style="color:#333;text-decoration:none;">gabby@mazeperformance.ai</a></p>
+  <p>MazePerformance · Gabby Cole · <a href="mailto:gabby@mazeperformance.ai" style="color:#333;text-decoration:none;">gabby@mazeperformance.ai</a></p>
 </footer>
-
-<!-- ── VIDEO MODAL ── -->
-<div id="modal">
-  <div class="modal-inner" id="modal-inner">
-    <button id="modal-close" onclick="closeVideo()">✕ Close</button>
-    <iframe id="modal-iframe" src="" allowfullscreen></iframe>
-  </div>
-</div>
-
-<script>
-function openVideo(id, ratio) {
-  var modal = document.getElementById('modal');
-  var inner = document.getElementById('modal-inner');
-  var iframe = document.getElementById('modal-iframe');
-  iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
-  inner.className = (ratio === '9/16') ? 'modal-inner tall' : 'modal-inner';
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeVideo() {
-  var modal = document.getElementById('modal');
-  var iframe = document.getElementById('modal-iframe');
-  modal.classList.remove('open');
-  iframe.src = '';
-  document.body.style.overflow = '';
-}
-document.getElementById('modal').addEventListener('click', function(e) {
-  if (e.target === this) closeVideo();
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVideo();
-});
-</script>
 
 </body>
 </html>
