@@ -270,6 +270,42 @@ export default function MindSystemPage() {
         </div>
       </section>
 
+      {/* ── SECTION: COURTSIDE CONVERSATIONS ─────────────────────── */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
+            <motion.p
+              variants={fadeUp}
+              className="uppercase tracking-[0.3em] text-sm font-semibold mb-6"
+              style={{ color: "#00d4c8" }}
+            >
+              Courtside Conversations
+            </motion.p>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+              Want to go deeper, <span className="italic" style={{ color: "#00d4c8" }}>every month?</span>
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-lg text-muted-foreground font-light mb-10 leading-relaxed max-w-2xl mx-auto">
+              Courtside Conversations is Gabby's membership community: a growing library of deep-dive trainings, season guides, position breakdowns, nutrition plans, and a monthly live Q&A with Gabby — for $30/month.
+            </motion.p>
+            <motion.div variants={fadeUp}>
+              <a
+                href="/courtsideconversation"
+                className="group inline-flex items-center justify-center px-10 py-5 transition-all text-sm font-bold tracking-widest uppercase"
+                style={{ backgroundColor: "#00d4c8", color: "#0a0a0a" }}
+              >
+                Explore Courtside Conversations
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── SECTION 4: WHO IT'S FOR ──────────────────────────────── */}
       <section className="py-24 md:py-32 bg-card border-y border-border/40">
         <div className="max-w-7xl mx-auto px-6">

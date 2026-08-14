@@ -47,6 +47,13 @@ export function Footer() {
               Accessibility
             </Link>
             <Link
+              href="/courtsideconversation"
+              aria-current={location === "/courtsideconversation" ? "page" : undefined}
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
+              Courtside Conversations
+            </Link>
+            <Link
               href="/contact"
               aria-current={location === "/contact" ? "page" : undefined}
               className="hover:text-primary transition-colors underline-offset-2 hover:underline"

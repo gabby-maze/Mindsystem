@@ -1,7 +1,6 @@
 import { X } from "lucide-react";
 
-// TODO: replace with GHL Courtside landing page URL
-const COURTSIDE_UPGRADE_LINK = "TODO_COURTSIDE_GHL_LINK";
+const COURTSIDE_UPGRADE_LINK = "https://link.fastpaydirect.com/payment-link/69c704f5fb727d9c905d2f06";
 // TODO: replace with GHL MindSystem info page link
 const MINDSYSTEM_INFO_LINK = "TODO_MINDSYSTEM_INFO_GHL_LINK";
 

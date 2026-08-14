@@ -1,0 +1,1 @@
+- [SVG icon rendering](svg-icon-rendering.md) — ImageMagick here silently drops SVG `<textPath>`; place rotated per-glyph `<text>` elements for circular text in generated icons.

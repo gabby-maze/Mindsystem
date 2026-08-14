@@ -34,6 +34,10 @@ const WHATS_INSIDE = [
     body: "A curated reading list for athletes and parents. Every recommendation comes with context for why it matters and what to look for as you read. Built around the ecosystem, not the highlight reel.",
   },
   {
+    title: "App-Style Access on Your Phone",
+    body: "Add Courtside Conversations straight to your phone's home screen. One tap opens the full member area like an app — no app store, no downloads. Your entire library, courtside, wherever you are.",
+  },
+  {
     title: "Monthly Live with Gabby + Full Replay Library",
     body: "Every month Gabby goes live for an open Q&A. Submit your questions in advance or bring them live. Miss it, the replay is always there. The library never stops growing.",
   },

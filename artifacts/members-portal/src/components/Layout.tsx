@@ -3,7 +3,8 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/context/AuthContext";
 import { signOut } from "@/lib/auth";
 import { TIER_COLORS, TIER_LABELS } from "@/lib/data";
-import { Bell, Menu, X, LogOut, Home, BookOpen, Radio, TrendingUp, HelpCircle, Salad } from "lucide-react";
+import { Bell, Menu, X, LogOut, Home, BookOpen, Radio, TrendingUp, HelpCircle, Salad, Smartphone } from "lucide-react";
+import { AddToPhoneProvider, useAddToPhone } from "@/components/AddToPhone";
 
 const NAV_LINKS = [
   { href: "/dashboard", label: "Home", icon: Home },
@@ -15,7 +16,16 @@ const NAV_LINKS = [
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <AddToPhoneProvider>
+      <LayoutInner>{children}</LayoutInner>
+    </AddToPhoneProvider>
+  );
+}
+
+function LayoutInner({ children }: { children: React.ReactNode }) {
   const { family } = useAuth();
+  const { openWalkthrough } = useAddToPhone();
   const [, navigate] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
@@ -54,6 +64,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </Link>
           ))}
+          <button
+            onClick={openWalkthrough}
+            className="flex items-center gap-1.5 text-sm uppercase tracking-wider transition-colors"
+            style={{ color: "rgba(255,255,255,0.5)", background: "none", border: "none", cursor: "pointer" }}
+          >
+            <Smartphone size={14} />
+            Add to Phone
+          </button>
         </nav>
 
         {/* Right side */}
@@ -113,6 +131,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </Link>
           ))}
+          <button
+            onClick={() => { setMobileOpen(false); openWalkthrough(); }}
+            className="flex items-center gap-3 text-lg uppercase tracking-wider py-3 border-b"
+            style={{ borderColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)", background: "none", cursor: "pointer" }}
+          >
+            <Smartphone size={18} />
+            Add to Phone
+          </button>
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 text-lg uppercase tracking-wider mt-4"

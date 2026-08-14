@@ -37,6 +37,7 @@ function Router() {
       <Route path="/coaches" component={CoachesPage} />
       <Route path="/coaches/thank-you" component={CoachesThankYou} />
       <Route path="/community" component={CommunityPage} />
+      <Route path="/courtsideconversation" component={CommunityPage} />
       <Route path="/strategy-session" component={StrategySessionPage} />
       <Route path="/compare-teams" component={B2BComparePage} />
       <Route path="/compare" component={ComparisonPage} />
