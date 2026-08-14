@@ -26,8 +26,16 @@ function isIos(): boolean {
     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 }
 
+function isAndroid(): boolean {
+  return /Android/i.test(navigator.userAgent);
+}
+
+function isChrome(): boolean {
+  return /Chrome\//.test(navigator.userAgent) && !/Edg\/|OPR\//.test(navigator.userAgent);
+}
+
 function isMobile(): boolean {
-  return isIos() || /Android/i.test(navigator.userAgent);
+  return isIos() || isAndroid();
 }
 
 function markDone() {
@@ -203,6 +211,7 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
         {mobile && !ios && (
           <div className="mb-8">
             {canNativeInstall ? (
+              /* Chrome detected native install prompt — one tap */
               <button
                 onClick={handleNativeInstall}
                 className="w-full flex items-center justify-center gap-2"
@@ -211,12 +220,39 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
                 <Smartphone size={16} />
                 Install the app
               </button>
+            ) : !isChrome() ? (
+              /* Not Chrome — prompt them to switch */
+              <div className="space-y-4">
+                <div className="rounded-lg p-4" style={{ backgroundColor: `${PINK}18`, border: `1px solid ${PINK}50` }}>
+                  <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em", color: PINK, marginBottom: "0.5rem" }}>
+                    Use Chrome for best results
+                  </p>
+                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.85rem", lineHeight: 1.6 }}>
+                    It looks like you're using a browser that doesn't fully support home screen installation. <strong style={{ color: "#fff" }}>Open this page in Chrome</strong> to get the full app experience with the Courtside icon.
+                  </p>
+                </div>
+                <ol className="space-y-4 mt-4">
+                  {[
+                    { icon: <Smartphone size={18} color={TEAL} />, text: <>Download <strong style={{ color: "#fff" }}>Google Chrome</strong> from the Play Store if you don't have it</> },
+                    { icon: <Share size={18} color={TEAL} />, text: <>Open Chrome and go to <strong style={{ color: "#fff" }}>members.gabbycole.com</strong>, then log in</> },
+                    { icon: <SquarePlus size={18} color={TEAL} />, text: <>Tap the <strong style={{ color: "#fff" }}>⋮ menu → Add to Home screen</strong> — the CC icon will appear</> },
+                  ].map((step, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full shrink-0" style={{ backgroundColor: `${TEAL}18`, border: `1px solid ${TEAL}40` }}>
+                        {step.icon}
+                      </span>
+                      <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.9rem", lineHeight: 1.6, paddingTop: 4 }}>{step.text}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             ) : (
+              /* Chrome but no prompt yet — manual steps */
               <ol className="space-y-4">
                 {[
-                  { icon: <Share size={18} color={TEAL} />, text: <>Open your browser's <strong style={{ color: "#fff" }}>menu</strong> (⋮ in the top corner)</> },
-                  { icon: <SquarePlus size={18} color={TEAL} />, text: <>Tap <strong style={{ color: "#fff" }}>Add to Home screen</strong> or <strong style={{ color: "#fff" }}>Install app</strong></> },
-                  { icon: <Check size={18} color={TEAL} />, text: <>Confirm — the CC icon appears on your home screen</> },
+                  { icon: <Share size={18} color={TEAL} />, text: <>Tap the <strong style={{ color: "#fff" }}>⋮ menu</strong> in Chrome's top-right corner</> },
+                  { icon: <SquarePlus size={18} color={TEAL} />, text: <>Tap <strong style={{ color: "#fff" }}>Add to Home screen</strong></> },
+                  { icon: <Check size={18} color={TEAL} />, text: <>Tap <strong style={{ color: "#fff" }}>Add</strong> — the CC icon appears on your home screen</> },
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="flex items-center justify-center w-8 h-8 rounded-full shrink-0" style={{ backgroundColor: `${TEAL}18`, border: `1px solid ${TEAL}40` }}>
