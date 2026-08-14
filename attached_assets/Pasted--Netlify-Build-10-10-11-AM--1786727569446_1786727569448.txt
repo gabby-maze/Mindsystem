@@ -1,0 +1,58 @@
+ Netlify Build                                                 
+10:10:11 AM: ────────────────────────────────────────────────────────────────
+10:10:11 AM: ​
+10:10:11 AM: ❯ Version
+10:10:11 AM:   @netlify/build 36.2.4
+10:10:11 AM: ​
+10:10:11 AM: ❯ Flags
+10:10:11 AM:   accountId: 69c08a81f960f65441165bbf
+10:10:11 AM:   baseRelDir: true
+10:10:11 AM:   buildId: 6a7f4bd8a3bffe8f82e1203c
+10:10:11 AM:   deployId: 6a7f4bd8a3bffe8f82e1203e
+10:10:11 AM:   packagePath: artifacts/mindsystem-home
+10:10:11 AM: ​
+10:10:11 AM: ❯ Current directory
+10:10:11 AM:   /opt/build/repo
+10:10:11 AM: ​
+10:10:11 AM: ❯ Config file
+10:10:11 AM:   /opt/build/repo/artifacts/mindsystem-home/netlify.toml
+10:10:11 AM: ​
+10:10:11 AM: ❯ Context
+10:10:11 AM:   production
+10:10:11 AM: ​
+10:10:11 AM: build.command from netlify.toml                               
+10:10:11 AM: ────────────────────────────────────────────────────────────────
+10:10:11 AM: ​
+10:10:11 AM: $ npm install --legacy-peer-deps && npm run build
+10:12:00 AM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+10:11:59 AM: npm error Cannot read properties of null (reading 'matches')
+10:11:59 AM: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-08-14T17_10_11_212Z-debug-0.log
+10:11:59 AM: ​
+10:11:59 AM: "build.command" failed                                        
+10:11:59 AM: ────────────────────────────────────────────────────────────────
+10:11:59 AM: ​
+10:11:59 AM:   Error message
+10:11:59 AM:   Command failed with exit code 1: npm install --legacy-peer-deps && npm run build (https://ntl.fyi/exit-code-1)
+10:11:59 AM: ​
+10:11:59 AM:   Error location
+10:11:59 AM:   In build.command from netlify.toml:
+10:11:59 AM:   npm install --legacy-peer-deps && npm run build
+10:11:59 AM: ​
+10:11:59 AM:   Resolved config
+10:11:59 AM:   build:
+10:11:59 AM:     command: npm install --legacy-peer-deps && npm run build
+10:11:59 AM:     commandOrigin: config
+10:11:59 AM:     environment:
+10:11:59 AM:       - BASE_PATH
+10:11:59 AM:       - PORT
+10:11:59 AM:       - NODE_VERSION
+10:11:59 AM:     publish: /opt/build/repo/dist/public
+10:11:59 AM:     publishOrigin: config
+10:11:59 AM:   redirects:
+10:11:59 AM:     - from: /*
+10:11:59 AM:       status: 200
+10:11:59 AM:       to: /index.html
+10:11:59 AM:   redirectsOrigin: config
+10:11:59 AM: Build failed due to a user error: Build script returned non-zero exit code: 2
+10:12:00 AM: Failing build: Failed to build site
+10:12:00 AM: Finished processing build request in 2m14.802s
