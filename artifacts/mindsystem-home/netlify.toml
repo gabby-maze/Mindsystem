@@ -1,10 +1,10 @@
 [build]
-  command   = "npm install --legacy-peer-deps && npm run build"
+  command   = "cd /opt/build/repo && pnpm install --frozen-lockfile && pnpm --filter @workspace/mindsystem-home run build"
   publish   = "dist/public"
 
 [build.environment]
-  BASE_PATH = "/"
-  PORT      = "3000"
+  BASE_PATH    = "/"
+  PORT         = "3000"
   NODE_VERSION = "20"
 
 [[redirects]]
