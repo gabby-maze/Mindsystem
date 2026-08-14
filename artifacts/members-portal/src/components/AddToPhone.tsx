@@ -1,8 +1,13 @@
 import { useEffect, useState, createContext, useContext, useCallback } from "react";
-import { X, Share, SquarePlus, Smartphone, Check } from "lucide-react";
+import { X, Share, SquarePlus, Smartphone, Check, Clock } from "lucide-react";
 import { isStandalone } from "@/lib/pwa";
+import { supabase } from "@/lib/supabase";
 
-const DONE_KEY = "cc-add-to-phone-done";
+// ── Storage keys ──────────────────────────────────────────────────
+const DISMISSED_KEY    = "courtside_pwa_prompt_dismissed";   // "1" = permanently dismissed
+const REMIND_AFTER_KEY = "courtside_pwa_prompt_remind_after"; // ms timestamp — snooze until then
+const SEVEN_DAYS_MS    = 7 * 24 * 60 * 60 * 1000;
+
 const EASY_URL = "gabbycole.com/courtsideconversation";
 const PINK = "#FF2D78";
 const TEAL = "#00D4C8";
@@ -21,6 +26,7 @@ if (typeof window !== "undefined") {
   });
 }
 
+// ── Platform helpers ──────────────────────────────────────────────
 function isIos(): boolean {
   return /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
@@ -38,15 +44,37 @@ function isMobile(): boolean {
   return isIos() || isAndroid();
 }
 
-function markDone() {
-  try { localStorage.setItem(DONE_KEY, "1"); } catch { /* ignore */ }
+// ── Persistence helpers ───────────────────────────────────────────
+function isPermanentlyDismissed(): boolean {
+  try { return localStorage.getItem(DISMISSED_KEY) === "1"; } catch { return false; }
 }
 
-function isDone(): boolean {
-  try { return localStorage.getItem(DONE_KEY) === "1"; } catch { return false; }
+function isSnoozed(): boolean {
+  try {
+    const until = Number(localStorage.getItem(REMIND_AFTER_KEY) ?? "0");
+    return until > Date.now();
+  } catch { return false; }
 }
 
-// ── Context so any menu item can reopen the walkthrough ──────────
+function shouldShowBanner(): boolean {
+  return !isPermanentlyDismissed() && !isSnoozed();
+}
+
+/** Permanently dismiss — saves to localStorage immediately, then syncs to Supabase. */
+async function saveDismissed(): Promise<void> {
+  try { localStorage.setItem(DISMISSED_KEY, "1"); } catch { /* ignore */ }
+  try { localStorage.removeItem(REMIND_AFTER_KEY); } catch { /* ignore */ }
+  try {
+    await supabase.auth.updateUser({ data: { pwa_prompt_dismissed: true } });
+  } catch { /* non-fatal — localStorage is the primary signal */ }
+}
+
+/** Snooze for 7 days. */
+function saveRemindLater(): void {
+  try { localStorage.setItem(REMIND_AFTER_KEY, String(Date.now() + SEVEN_DAYS_MS)); } catch { /* ignore */ }
+}
+
+// ── Context ───────────────────────────────────────────────────────
 interface AddToPhoneContextValue {
   openWalkthrough: () => void;
 }
@@ -57,27 +85,53 @@ export function useAddToPhone() {
   return useContext(AddToPhoneContext);
 }
 
+// ── Provider ──────────────────────────────────────────────────────
 export function AddToPhoneProvider({ children }: { children: React.ReactNode }) {
   const [walkthroughOpen, setWalkthroughOpen] = useState(false);
-  const [bannerVisible, setBannerVisible] = useState(false);
+  const [bannerVisible, setBannerVisible]     = useState(false);
 
   useEffect(() => {
+    // Already installed — mark done silently and never show.
     if (isStandalone()) {
-      markDone();
+      saveDismissed();
       return;
     }
-    if (!isDone()) {
+
+    // Fast localStorage check first.
+    if (!shouldShowBanner()) return;
+
+    // Check Supabase user metadata asynchronously.
+    // If the server says dismissed, honour it and sync locally.
+    supabase.auth.getUser().then(({ data }) => {
+      if (data?.user?.user_metadata?.pwa_prompt_dismissed) {
+        try { localStorage.setItem(DISMISSED_KEY, "1"); } catch { /* ignore */ }
+        return; // Don't show.
+      }
       setBannerVisible(true);
-    }
-    const onInstalled = () => {
-      markDone();
-      setBannerVisible(false);
-    };
+    }).catch(() => {
+      // If Supabase is unreachable, fall back to localStorage decision.
+      setBannerVisible(true);
+    });
+
+    // Listen for native install event.
+    const onInstalled = () => { saveDismissed(); setBannerVisible(false); };
     window.addEventListener("appinstalled", onInstalled);
     return () => window.removeEventListener("appinstalled", onInstalled);
-  }, []);
+  }, []); // ← runs once on initial mount only
 
   const openWalkthrough = useCallback(() => setWalkthroughOpen(true), []);
+
+  async function handleDone() {
+    await saveDismissed();
+    setBannerVisible(false);
+    setWalkthroughOpen(false);
+  }
+
+  function handleRemindLater() {
+    saveRemindLater();
+    setBannerVisible(false);
+    setWalkthroughOpen(false);
+  }
 
   return (
     <AddToPhoneContext.Provider value={{ openWalkthrough }}>
@@ -85,14 +139,15 @@ export function AddToPhoneProvider({ children }: { children: React.ReactNode }) 
       {bannerVisible && !walkthroughOpen && (
         <InstallBanner
           onOpen={() => setWalkthroughOpen(true)}
-          onDismiss={() => setBannerVisible(false)}
-          onDone={() => { markDone(); setBannerVisible(false); }}
+          onDone={handleDone}
+          onRemindLater={handleRemindLater}
         />
       )}
       {walkthroughOpen && (
         <InstallWalkthrough
-          onClose={() => setWalkthroughOpen(false)}
-          onDone={() => { markDone(); setBannerVisible(false); setWalkthroughOpen(false); }}
+          onClose={handleDone}        // X = permanent dismissal
+          onDone={handleDone}
+          onRemindLater={handleRemindLater}
         />
       )}
     </AddToPhoneContext.Provider>
@@ -100,18 +155,27 @@ export function AddToPhoneProvider({ children }: { children: React.ReactNode }) 
 }
 
 // ── Banner ────────────────────────────────────────────────────────
-function InstallBanner({ onOpen, onDismiss, onDone }: { onOpen: () => void; onDismiss: () => void; onDone: () => void }) {
+function InstallBanner({
+  onOpen,
+  onDone,
+  onRemindLater,
+}: {
+  onOpen: () => void;
+  onDone: () => void;
+  onRemindLater: () => void;
+}) {
   const mobile = isMobile();
   return (
-    <div
-      className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4"
-      style={{ pointerEvents: "none" }}
-    >
+    <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4" style={{ pointerEvents: "none" }}>
       <div
         className="max-w-md mx-auto rounded-lg p-4 flex items-start gap-3 shadow-2xl"
         style={{ backgroundColor: "#111", border: `1px solid ${PINK}50`, pointerEvents: "auto" }}
       >
-        <img src={`${BASE}icons/cc-icon-192.png`} alt="Courtside Conversations icon" className="w-12 h-12 rounded-lg shrink-0" />
+        <img
+          src={`${BASE}icons/cc-icon-192.png`}
+          alt="Courtside Conversations icon"
+          className="w-12 h-12 rounded-lg shrink-0"
+        />
         <div className="flex-1 min-w-0">
           <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#fff" }}>
             Add Courtside to your phone
@@ -134,11 +198,18 @@ function InstallBanner({ onOpen, onDismiss, onDone }: { onOpen: () => void; onDi
             >
               Done — I added it
             </button>
+            <button
+              onClick={onRemindLater}
+              style={{ backgroundColor: "transparent", color: "rgba(255,255,255,0.35)", border: "none", padding: "0.45rem 0.5rem", fontFamily: "'Oswald', sans-serif", fontWeight: 400, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer" }}
+            >
+              Remind me in 7 days
+            </button>
           </div>
         </div>
+        {/* X = permanent dismissal */}
         <button
-          onClick={onDismiss}
-          aria-label="Dismiss for now"
+          onClick={onDone}
+          aria-label="Dismiss permanently"
           style={{ background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", padding: 4 }}
         >
           <X size={16} />
@@ -149,9 +220,17 @@ function InstallBanner({ onOpen, onDismiss, onDone }: { onOpen: () => void; onDi
 }
 
 // ── Walkthrough modal ─────────────────────────────────────────────
-function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
-  const ios = isIos();
-  const mobile = isMobile();
+function InstallWalkthrough({
+  onClose,
+  onDone,
+  onRemindLater,
+}: {
+  onClose: () => void;
+  onDone: () => void;
+  onRemindLater: () => void;
+}) {
+  const ios          = isIos();
+  const mobile       = isMobile();
   const canNativeInstall = deferredPrompt !== null;
 
   async function handleNativeInstall() {
@@ -172,16 +251,21 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
         className="relative w-full max-w-md rounded-lg p-8 max-h-[90vh] overflow-y-auto"
         style={{ backgroundColor: "#111", border: "1px solid rgba(255,255,255,0.12)" }}
       >
+        {/* X = permanent dismissal */}
         <button
           onClick={onClose}
-          aria-label="Close"
+          aria-label="Dismiss permanently"
           className="absolute top-4 right-4"
           style={{ background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", padding: 4 }}
         >
           <X size={18} />
         </button>
 
-        <img src={`${BASE}icons/cc-icon-192.png`} alt="Courtside Conversations icon" className="w-16 h-16 rounded-xl mb-5" />
+        <img
+          src={`${BASE}icons/cc-icon-192.png`}
+          alt="Courtside Conversations icon"
+          className="w-16 h-16 rounded-xl mb-5"
+        />
 
         <h2 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "1.35rem", marginBottom: "0.75rem", color: "#fff", lineHeight: 1.3 }}>
           Put Courtside on your home screen
@@ -190,7 +274,7 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
           One tap, full screen, straight into the member area. No app store needed.
         </p>
 
-        {/* Platform-specific content */}
+        {/* iOS */}
         {mobile && ios && (
           <ol className="mb-8 space-y-4">
             {[
@@ -208,10 +292,10 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
           </ol>
         )}
 
+        {/* Android */}
         {mobile && !ios && (
           <div className="mb-8">
             {canNativeInstall ? (
-              /* Chrome detected native install prompt — one tap */
               <button
                 onClick={handleNativeInstall}
                 className="w-full flex items-center justify-center gap-2"
@@ -221,14 +305,14 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
                 Install the app
               </button>
             ) : !isChrome() ? (
-              /* Not Chrome — prompt them to switch */
               <div className="space-y-4">
                 <div className="rounded-lg p-4" style={{ backgroundColor: `${PINK}18`, border: `1px solid ${PINK}50` }}>
                   <p style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em", color: PINK, marginBottom: "0.5rem" }}>
                     Use Chrome for best results
                   </p>
                   <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.85rem", lineHeight: 1.6 }}>
-                    It looks like you're using a browser that doesn't fully support home screen installation. <strong style={{ color: "#fff" }}>Open this page in Chrome</strong> to get the full app experience with the Courtside icon.
+                    It looks like you're using a browser that doesn't fully support home screen installation.{" "}
+                    <strong style={{ color: "#fff" }}>Open this page in Chrome</strong> to get the full app experience with the Courtside icon.
                   </p>
                 </div>
                 <ol className="space-y-4 mt-4">
@@ -247,7 +331,6 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
                 </ol>
               </div>
             ) : (
-              /* Chrome but no prompt yet — manual steps */
               <ol className="space-y-4">
                 {[
                   { icon: <Share size={18} color={TEAL} />, text: <>Tap the <strong style={{ color: "#fff" }}>⋮ menu</strong> in Chrome's top-right corner</> },
@@ -266,6 +349,7 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
           </div>
         )}
 
+        {/* Desktop */}
         {!mobile && (
           <div className="mb-8 rounded-lg p-5" style={{ backgroundColor: `${TEAL}0d`, border: `1px solid ${TEAL}30` }}>
             <div className="flex items-start gap-3">
@@ -287,10 +371,12 @@ function InstallWalkthrough({ onClose, onDone }: { onClose: () => void; onDone: 
             Done — I added it
           </button>
           <button
-            onClick={onClose}
+            onClick={onRemindLater}
+            className="flex items-center justify-center gap-2"
             style={{ backgroundColor: "transparent", border: "none", color: "rgba(255,255,255,0.4)", padding: "0.5rem", fontFamily: "'Oswald', sans-serif", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.12em", cursor: "pointer" }}
           >
-            Maybe later
+            <Clock size={13} />
+            Remind me in 7 days
           </button>
         </div>
       </div>
